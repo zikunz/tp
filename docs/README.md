@@ -1,4 +1,4 @@
-# Duke
+# easyLog
 
 {Give product intro here}
 

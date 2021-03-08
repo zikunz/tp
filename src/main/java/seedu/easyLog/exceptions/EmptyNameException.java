@@ -1,5 +1,5 @@
 package seedu.easyLog.exceptions;
 
-public class EmptyNameException {
+public class EmptyNameException extends Throwable {
     // no other code needed
 }

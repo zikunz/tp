@@ -1,4 +1,8 @@
 package seedu.easyLog.commands;
 
-public class Command {
+import seedu.easyLog.ui.Ui;
+
+public abstract class Command {
+
+    public Ui ui = new Ui();
 }

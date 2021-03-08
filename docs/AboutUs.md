@@ -6,4 +6,4 @@ Display | Name | Github Profile | Portfolio
 ![](https://via.placeholder.com/100.png?text=Photo) | Don Joe | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
 ![](https://via.placeholder.com/100.png?text=Photo) | Ron John | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
 ![](https://via.placeholder.com/100.png?text=Photo) | John Roe | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
-![](https://via.placeholder.com/100.png?text=Photo) | Don Roe | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
+![photo_of_Zikun_to_be_added](https://via.placeholder.com/100.png?text=Photo) | Zhu Zikun | [Github](https://github.com/zikunz) | [Portfolio](https://www.linkedin.com/in/zhu-zikun/)

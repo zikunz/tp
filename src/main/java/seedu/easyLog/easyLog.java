@@ -1,8 +1,8 @@
-package seedu.duke;
+package seedu.easyLog;
 
 import java.util.Scanner;
 
-public class Duke {
+public class easyLog {
     /**
      * Main entry-point for the java.duke.Duke application.
      */

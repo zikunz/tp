@@ -4,11 +4,10 @@ import java.util.Scanner;
 import seedu.easylog.ui.Ui;
 import seedu.easylog.parser.Parser;
 
-
 public class EasyLog {
 
-    private static Ui ui = new Ui();
-    private static Parser parser = new Parser();
+    private static final Ui ui = new Ui();
+    private static final Parser parser = new Parser();
 
     private static final Scanner SCANNER = new Scanner(System.in);
 

@@ -1,11 +1,11 @@
-package seedu.easyLog.parser;
+package seedu.easylog.parser;
 
-import seedu.easyLog.commands.ExitCommand;
-import seedu.easyLog.common.Constants;
-import seedu.easyLog.ui.Ui;
+import seedu.easylog.commands.ExitCommand;
+import seedu.easylog.common.Constants;
+import seedu.easylog.ui.Ui;
 
 /**
- * process raw user input
+ * Process raw user input.
  */
 public class Parser {
 
@@ -20,7 +20,7 @@ public class Parser {
         String[] commandTypeAndParams = splitCommandWordAndArgs(rawUserInput);
         String commandType = commandTypeAndParams[0];
         String commandArgs = commandTypeAndParams[1];
-        switch(commandType) {
+        switch (commandType) {
         case (Constants.COMMAND_HELP):
             ui.showHelp();
             break;
@@ -34,7 +34,6 @@ public class Parser {
             break;
         default:
             ui.showInvalidCommand();
-            break;
         }
     }
 }

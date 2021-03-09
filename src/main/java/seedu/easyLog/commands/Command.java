@@ -1,6 +1,6 @@
-package seedu.easyLog.commands;
+package seedu.easylog.commands;
 
-import seedu.easyLog.ui.Ui;
+import seedu.easylog.ui.Ui;
 
 public abstract class Command {
 

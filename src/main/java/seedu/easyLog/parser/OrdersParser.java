@@ -1,4 +1,4 @@
-package seedu.easyLog.parser;
+package seedu.easylog.parser;
 
 public class OrdersParser {
 }

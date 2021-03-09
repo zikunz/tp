@@ -1,7 +1,10 @@
-package seedu.easyLog.ui;
+package seedu.easylog.ui;
 
-import seedu.easyLog.item.Item;
+import seedu.easylog.item.Item;
 
+/**
+ * Handles ui related methods.
+ */
 public class Ui {
 
     public void showGreeting() {

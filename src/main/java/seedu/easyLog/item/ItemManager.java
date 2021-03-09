@@ -1,9 +1,9 @@
-package seedu.easyLog.item;
+package seedu.easylog.item;
 
 import java.util.ArrayList;
 
 /**
- * Manage item list manipulation commands
+ * Manage item list manipulation commands.
  */
 public class ItemManager {
 

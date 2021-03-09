@@ -1,4 +1,4 @@
-package seedu.easyLog.common;
+package seedu.easylog.common;
 
 public class Constants {
 

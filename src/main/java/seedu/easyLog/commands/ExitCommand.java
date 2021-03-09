@@ -1,4 +1,4 @@
-package seedu.easyLog.commands;
+package seedu.easylog.commands;
 
 public class ExitCommand extends Command {
 

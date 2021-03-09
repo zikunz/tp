@@ -1,7 +1,7 @@
-package seedu.easyLog.commands.itemscommands;
+package seedu.easylog.commands.itemscommands;
 
-import seedu.easyLog.item.*;
-import seedu.easyLog.ui.Ui;
+import seedu.easylog.item.*;
+import seedu.easylog.ui.Ui;
 
 public abstract class ItemsCommand {
 

@@ -1,7 +1,7 @@
-package seedu.easyLog.commands.itemscommands;
+package seedu.easylog.commands.itemscommands;
 
-import seedu.easyLog.exceptions.EmptyNameException;
-import seedu.easyLog.item.Item;
+import seedu.easylog.exceptions.EmptyNameException;
+import seedu.easylog.item.Item;
 
 public class ItemsAddCommand extends ItemsCommand {
 

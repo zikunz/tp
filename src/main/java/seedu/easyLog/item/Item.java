@@ -1,4 +1,4 @@
-package seedu.easyLog.item;
+package seedu.easylog.item;
 
 public class Item {
 

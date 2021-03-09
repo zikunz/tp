@@ -1,0 +1,3 @@
+Hello! I'm easyLog!
+What can I do for you? Enter help to view commands.
+Bye. Thanks for using easyLog!

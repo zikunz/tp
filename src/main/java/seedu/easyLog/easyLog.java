@@ -1,11 +1,11 @@
-package seedu.easyLog;
+package seedu.easylog;
 
 import java.util.Scanner;
-import seedu.easyLog.ui.Ui;
-import seedu.easyLog.parser.Parser;
+import seedu.easylog.ui.Ui;
+import seedu.easylog.parser.Parser;
 
 
-public class easyLog {
+public class EasyLog {
 
     private static Ui ui = new Ui();
     private static Parser parser = new Parser();

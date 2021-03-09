@@ -1,4 +1,4 @@
-package seedu.easyLog.storage;
+package seedu.easylog.storage;
 
 public class Storage {
 }

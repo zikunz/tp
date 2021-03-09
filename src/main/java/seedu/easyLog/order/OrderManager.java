@@ -1,4 +1,4 @@
-package seedu.easyLog.order;
+package seedu.easylog.order;
 
 public class OrderManager {
 }

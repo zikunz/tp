@@ -8,4 +8,6 @@ public class Constants {
     public static final String COMMAND_ITEMS = "items";
     public static final String COMMAND_ORDERS = "orders";
     public static final String COMMAND_ADD = "add";
+    public static final String COMMAND_DELETE = "delete";
+
 }

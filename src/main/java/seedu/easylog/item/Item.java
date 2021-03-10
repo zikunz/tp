@@ -11,4 +11,12 @@ public class Item {
     public String getItemName() {
         return itemName;
     }
+
+    public String getAddItemMessage() {
+        return "Got it! The item [" + itemName + "] is added\n";
+    }
+
+    public String getDeleteItemMessage() {
+        return "Got it! The item [" + itemName + "] is deleted\n";
+    }
 }

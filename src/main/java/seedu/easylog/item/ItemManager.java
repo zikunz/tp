@@ -1,3 +1,4 @@
+
 package seedu.easylog.item;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class ItemManager {
     }
 
     /**
-     * Obtains all the Items in the itemList
+     * Obtains all the Items in the itemList.
      */
     public String getItemList() {
         int taskCount = 1;
@@ -24,5 +25,9 @@ public class ItemManager {
             taskCount++;
         }
         return itemsOutput;
+    }
+
+    public void deleteItem(int index) {
+        itemList.remove(index);
     }
 }

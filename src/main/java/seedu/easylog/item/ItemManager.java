@@ -1,3 +1,4 @@
+
 package seedu.easylog.item;
 
 import java.util.ArrayList;
@@ -11,5 +12,9 @@ public class ItemManager {
 
     public void addItem(Item item) {
         itemList.add(item);
+    }
+
+    public void deleteItem(int index) {
+        itemList.remove(index);
     }
 }

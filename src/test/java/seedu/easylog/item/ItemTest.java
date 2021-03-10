@@ -19,4 +19,9 @@ public class ItemTest {
                 new Item("bag").getAddItemMessage());
     }
 
+    @Test
+    public void testGetDeletedItemMessage() {
+        assertEquals("Got it! The item [wood] is deleted\n",
+                new Item("wood").getDeleteItemMessage());
+    }
 }

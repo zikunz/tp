@@ -40,4 +40,13 @@ public class Ui {
                 + "Please complete the information! :) ";
         System.out.println(emptyNameMessage);
     }
+
+    public void showDeletedItem(int index) {
+        String deletedItem = "Item " + index + " deleted!";
+        System.out.println(deletedItem);
+    }
+
+    public void showEmptyNumber() {
+
+    }
 }

@@ -26,15 +26,19 @@ public class Ui {
     }
 
     public void showInvalidCommand() {
-
+        String invalidCommandMessage = "OOPS!!! I'm Sorry! I don't know what that means.\n"
+                + "Please input again! :)";
+        System.out.println(invalidCommandMessage);
     }
 
     public void showAddItem(Item item) {
-
+        item.getAddItemMessage();
     }
 
     public void showEmptyName() {
-
+        String emptyNameMessage = "OOPS!!!. The item name is missing!\n"
+                + "Please complete the information! :) ";
+        System.out.println(emptyNameMessage);
     }
 
     public void showDeletedItem(int index) {

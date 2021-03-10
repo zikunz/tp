@@ -13,4 +13,8 @@ public class ItemTest {
         assertEquals("PS5", new Item("PS5").getItemName());
     }
 
+    @Test
+    public void testGetAddItemMessage() {assertEquals("Got it! The item [bag] is added",
+            new Item("bag").getAddItemMessage());}
+
 }

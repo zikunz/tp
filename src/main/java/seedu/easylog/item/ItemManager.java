@@ -14,6 +14,19 @@ public class ItemManager {
         itemList.add(item);
     }
 
+    /**
+     * Obtains all the Items in the itemList.
+     */
+    public String getItemList() {
+        int taskCount = 1;
+        String itemsOutput = "";
+        for (Item item : itemList) {
+            itemsOutput += taskCount + ". " + item.getItemName() + "\n";
+            taskCount++;
+        }
+        return itemsOutput;
+    }
+
     public void deleteItem(int index) {
         itemList.remove(index);
     }

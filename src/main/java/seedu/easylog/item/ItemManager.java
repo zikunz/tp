@@ -26,7 +26,6 @@ public class ItemManager {
         }
         return itemsOutput;
     }
-}
 
     public void deleteItem(int index) {
         itemList.remove(index);

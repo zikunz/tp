@@ -15,7 +15,7 @@ public class ItemManager {
     }
 
     /**
-     * Obtains all the Items in the itemList
+     * Obtains all the Items in the itemList.
      */
     public String getItemList() {
         int taskCount = 1;

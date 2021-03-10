@@ -36,4 +36,12 @@ public class Ui {
     public void showEmptyName() {
 
     }
+
+    public void shoeDeletedItem(int index) {
+
+    }
+
+    public void showEmptyNumber() {
+
+    }
 }

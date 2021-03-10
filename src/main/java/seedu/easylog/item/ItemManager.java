@@ -12,4 +12,8 @@ public class ItemManager {
     public void addItem(Item item) {
         itemList.add(item);
     }
+
+    public void deleteItem(int index){
+        itemList.remove(index);
+    }
 }

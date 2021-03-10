@@ -13,7 +13,7 @@ public class ItemManager {
         itemList.add(item);
     }
 
-    public void deleteItem(int index){
+    public void deleteItem(int index) {
         itemList.remove(index);
     }
 }

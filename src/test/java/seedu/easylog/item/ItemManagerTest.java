@@ -10,8 +10,12 @@ public class ItemManagerTest {
 
     @Test
     public void testGetItemList() {
-        new ItemManager();
-        assertEquals("", new ItemManager().getItemList());
-    }
+        Item itemOne = new Item("PS5");
+        Item itemTwo = new Item("MP3");
+        ItemManager itemManager = new ItemManager();
+        itemManager.addItem(itemOne);
+        itemManager.addItem(itemTwo);
 
+        assertEquals("1. PS5\n2. MP3\n", new ItemManager().getItemList());
+    }
 }

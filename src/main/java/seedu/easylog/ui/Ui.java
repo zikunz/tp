@@ -36,4 +36,8 @@ public class Ui {
     public void showEmptyName() {
 
     }
+
+    public void showItemList(String rawItemList) {
+
+    }
 }

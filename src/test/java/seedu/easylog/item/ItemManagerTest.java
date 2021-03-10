@@ -1,4 +1,3 @@
 package seedu.easylog.item;
 
-public class ItemManagerTest {
-}
+public class ItemManagerTest {}

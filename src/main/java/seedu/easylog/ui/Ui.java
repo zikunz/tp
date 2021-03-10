@@ -32,7 +32,7 @@ public class Ui {
     }
 
     public void showAddItem(Item item) {
-
+        item.getAddItemMessage();
     }
 
     public void showEmptyName() {

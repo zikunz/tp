@@ -14,7 +14,9 @@ public class ItemTest {
     }
 
     @Test
-    public void testGetAddItemMessage() {assertEquals("Got it! The item [bag] is added",
-            new Item("bag").getAddItemMessage());}
+    public void testGetAddItemMessage() {
+        assertEquals("Got it! The item [bag] is added\n",
+                new Item("bag").getAddItemMessage());
+    }
 
 }

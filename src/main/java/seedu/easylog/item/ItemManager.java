@@ -1,3 +1,4 @@
+
 package seedu.easylog.item;
 
 import java.util.ArrayList;

@@ -37,8 +37,9 @@ public class Ui {
 
     }
 
-    public void shoeDeletedItem(int index) {
-
+    public void showDeletedItem(int index) {
+        String deletedItem = "Item " + index + " deleted!";
+        System.out.println(deletedItem);
     }
 
     public void showEmptyNumber() {

@@ -11,6 +11,6 @@ public class ItemsDeleteCommand extends ItemsCommand {
         }
         int index = Integer.parseInt(commandArgs);
         itemManager.deleteItem(index);
-        ui.shoeDeletedItem(index);
+        ui.showDeletedItem(index);
     }
 }

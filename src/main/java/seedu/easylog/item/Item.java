@@ -11,4 +11,8 @@ public class Item {
     public String getItemName() {
         return itemName;
     }
+
+    public String getAddItemMessage() {
+        return "Got it! The item [" + itemName + "] is added";
+    }
 }

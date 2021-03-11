@@ -10,7 +10,7 @@ public class ItemsDeleteCommand extends ItemsCommand {
             throw new EmptyNumberException();
         }
         int index = Integer.parseInt(commandArgs);
+        ui.showDeletedItem(itemManager.getItem(index));
         itemManager.deleteItem(index);
-        ui.showDeletedItem(index);
     }
 }

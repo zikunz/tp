@@ -17,4 +17,8 @@ public class ItemManager {
     public void deleteItem(int index) {
         itemList.remove(index);
     }
+
+    public Item getItem(int index) {
+        return itemList.get(index);
+    }
 }

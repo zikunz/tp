@@ -41,9 +41,8 @@ public class Ui {
         System.out.println(emptyNameMessage);
     }
 
-    public void showDeletedItem(int index) {
-        String deletedItem = "Item " + index + " deleted!";
-        System.out.println(deletedItem);
+    public void showDeletedItem(Item item) {
+        item.getDeleteItemMessage();
     }
 
     public void showEmptyNumber() {

@@ -48,4 +48,8 @@ public class Ui {
     public void showEmptyNumber() {
 
     }
+
+    public void showItemList(String rawItemList) {
+
+    }
 }

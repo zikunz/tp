@@ -2,6 +2,8 @@ package seedu.easylog.common;
 
 public class Constants {
 
+    public static final int ARRAY_OFFSET = 1;
+
     // Commands constants
     public static final String COMMAND_HELP = "help";
     public static final String COMMAND_EXIT = "exit";

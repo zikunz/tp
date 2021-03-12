@@ -15,13 +15,13 @@ public class ItemTest {
 
     @Test
     public void testGetAddItemMessage() {
-        assertEquals("Got it! The item [bag] is added\n",
+        assertEquals("Got it! The item [bag] is added.",
                 new Item("bag").getAddItemMessage());
     }
 
     @Test
     public void testGetDeletedItemMessage() {
-        assertEquals("Got it! The item [wood] is deleted\n",
+        assertEquals("Got it! The item [wood] is deleted.",
                 new Item("wood").getDeleteItemMessage());
     }
 }

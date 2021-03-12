@@ -12,7 +12,6 @@ import java.util.ArrayList;
  */
 public class OrdersParser extends Parser {
 
-
     public static void processOrdersInput(String ordersInput) {
         String[] splitOrdersArg = splitCommandWordAndArgs(ordersInput);
         String ordersType = splitOrdersArg[0];

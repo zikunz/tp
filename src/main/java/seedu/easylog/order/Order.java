@@ -17,7 +17,7 @@ public class Order {
         return customerName;
     }
 
-    public ArrayList<Item> getItemsInorder() {
+    public ArrayList<Item> getItemsInOrder() {
         return itemsInOrder;
     }
 

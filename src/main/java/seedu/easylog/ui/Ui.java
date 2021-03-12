@@ -23,9 +23,7 @@ public class Ui {
 
     }
 
-    public void showItemsHelp() {
-        System.out.println(Messages.MESSAGE_SHOW_ITEMS_COMMANDS);
-    }
+
 
     public void showInvalidCommand() {
         String invalidCommandMessage = "OOPS!!! I'm Sorry! I don't know what that means.\n"

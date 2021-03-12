@@ -56,4 +56,8 @@ public class Ui {
         System.out.println(Messages.MESSAGE_LIST_ITEMS);
         System.out.print(rawItemListOutput);
     }
+
+    public void showOrdersHelp() {
+
+    }
 }

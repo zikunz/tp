@@ -15,4 +15,20 @@ public class Messages {
             + "  8. orders list                    List all orders\n"
             + "  9. orders remove <order_name>     Remove an order\n"
             + "  10. orders clear                  Empty all orders\n";
+    public static final String MESSAGE_GREETING = "Hello! I'm easyLog!\n"
+            + "What can I do for you? Enter help to view commands.";
+    public static final String MESSAGE_GOODBYE = "Bye. Thanks for using easyLog!";
+    public static final String MESSAGE_INVALID_COMMAND = "OOPS!!! I'm Sorry! I don't know what that means.\n"
+            + "Please input again! :)";
+    public static final String MESSAGE_EMPTY_ITEM_NAME = "OOPS!!!. The item name is missing!\n"
+            + "Please complete the information! :) ";
+    public static final String MESSAGE_EMPTY_ORDER_CUSTOMER_NAME = "OOPS!!!. The customer name is missing!\n"
+            + "Please complete the information! :) ";
+    public static final String MESSAGE_EMPTY_ITEM_NUMBER = "OOPS!!!. The item number is missing!\n";
+    public static final String MESSAGE_SHOW_ORDERS_RELATED_COMMANDS = "General Options:\n"
+            + "  1. orders add <order_name>        Add an order\n"
+            + "  2. orders list                    List all orders\n"
+            + "  3. orders remove <order_name>     Remove an order\n"
+            + "  4. orders clear                   Empty all orders\n";
+
 }

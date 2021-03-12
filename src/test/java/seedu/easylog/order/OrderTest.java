@@ -21,11 +21,11 @@ public class OrderTest {
 
     @Test
     public void getCustomerNameTest() {
-        Item item_one = new Item("bag");
-        Item item_two = new Item("earphone");
+        Item itemOne = new Item("bag");
+        Item itemTwo = new Item("earphone");
         ArrayList<Item> itemList = new ArrayList<>();
-        itemList.add(item_one);
-        itemList.add(item_two);
+        itemList.add(itemOne);
+        itemList.add(itemTwo);
         Order order = new Order("Coco", itemList);
         String customerName = "Coco";
         assertEquals(customerName, order.getCustomerName());
@@ -33,12 +33,13 @@ public class OrderTest {
 
     @Test
     public void getItemsInOrderTest() {
-        Item item_one = new Item("milk");
-        Item item_two = new Item("tea");
-        Item item_three = new Item("milk tea");
+        Item itemOne = new Item("milk");
+        Item itemTwo = new Item("tea");
+        Item itemThree = new Item("milk tea");
         ArrayList<Item> itemList =  new ArrayList<>();
-        itemList.add(item_one);
-        itemList.add(item_two);
+        itemList.add(itemOne);
+        itemList.add(itemTwo);
+        itemList.add(itemThree);
         Order order = new Order("Coco", itemList);
         assertEquals(itemList, order.getItemsInOrder());
     }

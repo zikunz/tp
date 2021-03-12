@@ -5,7 +5,7 @@ import seedu.easylog.common.Constants;
 /**
  * Process orders commands input.
  */
-public class OrdersParser extends Parser{
+public class OrdersParser extends Parser {
 
     public static void processOrdersInput(String ordersInput) {
         String[] splitOrdersArg = splitCommandWordAndArgs(ordersInput);

@@ -22,7 +22,7 @@ public class Ui {
     }
 
     public void showItemsHelp() {
-
+        System.out.println(Messages.MESSAGE_SHOW_ITEMS_COMMANDS);
     }
 
     public void showInvalidCommand() {

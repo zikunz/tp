@@ -10,7 +10,7 @@ public class OrdersParserTest {
 
     @Test
     public void processItemsAddedToOrderTest() {
-        OrdersParser ordersParser = new OrdersParser();
+        final OrdersParser ordersParser = new OrdersParser();
         ItemManager itemManager = new ItemManager();
 
         ArrayList<Item> itemsTestList = new ArrayList<>();

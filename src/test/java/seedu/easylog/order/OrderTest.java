@@ -18,4 +18,29 @@ public class OrderTest {
         assertEquals("Got it! The order for customer [weisheng] is added.",
                 new Order(customerName, itemList).getAddOrderMessage());
     }
+
+    @Test
+    public void getCustomerNameTest() {
+        Item itemOne = new Item("bag");
+        Item itemTwo = new Item("earphone");
+        ArrayList<Item> itemList = new ArrayList<>();
+        itemList.add(itemOne);
+        itemList.add(itemTwo);
+        Order order = new Order("Coco", itemList);
+        String customerName = "Coco";
+        assertEquals(customerName, order.getCustomerName());
+    }
+
+    @Test
+    public void getItemsInOrderTest() {
+        Item itemOne = new Item("milk");
+        Item itemTwo = new Item("tea");
+        Item itemThree = new Item("milk tea");
+        ArrayList<Item> itemList =  new ArrayList<>();
+        itemList.add(itemOne);
+        itemList.add(itemTwo);
+        itemList.add(itemThree);
+        Order order = new Order("Coco", itemList);
+        assertEquals(itemList, order.getItemsInOrder());
+    }
 }

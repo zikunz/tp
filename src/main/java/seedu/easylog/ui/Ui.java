@@ -20,7 +20,7 @@ public class Ui {
     }
 
     public void showHelp() {
-
+        System.out.println(Messages.MESSAGE_SHOW_ALL_COMMANDS);
     }
 
 

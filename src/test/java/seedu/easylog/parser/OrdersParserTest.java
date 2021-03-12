@@ -16,11 +16,11 @@ public class OrdersParserTest {
         ArrayList<Item> itemsTestList = new ArrayList<>();
         Item testItem1 = new Item("PS5");
         Item testItem2 = new Item("Keyboard");
-        itemsTestList.add(testItem1);
-        itemsTestList.add(testItem2);
         itemManager.addItem(testItem1);
         itemManager.addItem(testItem2);
-        assertEquals(itemsTestList.get(0), ordersParser.processItemsAddedToOrder("1 2").get(0));
-        assertEquals(itemsTestList.get(1), ordersParser.processItemsAddedToOrder("1 2").get(1));
+        assertEquals(itemManager.getItem(0).getItemName(),
+                ordersParser.processItemsAddedToOrder("1 2").get(0).getItemName());
+        assertEquals(itemManager.getItem(1).getItemName(),
+                ordersParser.processItemsAddedToOrder("1 2").get(1).getItemName());
     }
 }

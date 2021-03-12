@@ -13,10 +13,10 @@ public class Item {
     }
 
     public String getAddItemMessage() {
-        return "Got it! The item [" + itemName + "] is added\n";
+        return "Got it! The item [" + itemName + "] is added.";
     }
 
     public String getDeleteItemMessage() {
-        return "Got it! The item [" + itemName + "] is deleted\n";
+        return "Got it! The item [" + itemName + "] is deleted.";
     }
 }

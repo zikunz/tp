@@ -1,6 +1,9 @@
 package seedu.easylog.ui;
 
+import seedu.easylog.common.Messages;
 import seedu.easylog.item.Item;
+
+import java.sql.SQLOutput;
 
 /**
  * Handles ui related methods.
@@ -32,7 +35,7 @@ public class Ui {
     }
 
     public void showAddItem(Item item) {
-        item.getAddItemMessage();
+        System.out.println(item.getAddItemMessage());
     }
 
     public void showEmptyName() {
@@ -42,14 +45,15 @@ public class Ui {
     }
 
     public void showDeletedItem(Item item) {
-        item.getDeleteItemMessage();
+        System.out.println(item.getDeleteItemMessage());
     }
 
     public void showEmptyNumber() {
 
     }
 
-    public void showItemList(String rawItemList) {
-
+    public void showItemList(String rawItemListOutput) {
+        System.out.println(Messages.MESSAGE_LIST_ITEMS);
+        System.out.print(rawItemListOutput);
     }
 }

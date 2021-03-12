@@ -2,6 +2,7 @@ package seedu.easylog.parser;
 
 import seedu.easylog.commands.itemscommands.ItemsAddCommand;
 import seedu.easylog.commands.itemscommands.ItemsDeleteCommand;
+import seedu.easylog.commands.itemscommands.ItemsListCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyNumberException;
@@ -29,6 +30,9 @@ public class ItemsParser extends Parser {
             } catch (EmptyNumberException e) {
                 ui.showEmptyNumber();
             }
+            break;
+        case (Constants.COMMAND_LIST):
+            new ItemsListCommand().execute();
             break;
         default:
             ui.showItemsHelp();

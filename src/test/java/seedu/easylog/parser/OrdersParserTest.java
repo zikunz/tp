@@ -8,11 +8,11 @@ import java.util.ArrayList;
 
 public class OrdersParserTest {
 
-    public OrdersParser ordersParser = new OrdersParser();
-    public ItemManager itemManager = new ItemManager();
-
     @Test
     public void processItemsAddedToOrderTest() {
+        OrdersParser ordersParser = new OrdersParser();
+        ItemManager itemManager = new ItemManager();
+
         ArrayList<Item> itemsTestList = new ArrayList<>();
         Item testItem1 = new Item("PS5");
         Item testItem2 = new Item("Keyboard");

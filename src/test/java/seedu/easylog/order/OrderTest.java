@@ -11,7 +11,7 @@ public class OrderTest {
 
     @Test
     public void getAddOrderMessageTest() {
-        ArrayList<Item> itemList = new ArrayList<Item>();
+        ArrayList<Item> itemList = new ArrayList<>();
         itemList.add(new Item("ps5"));
         itemList.add(new Item("water"));
         String customerName = "weisheng";

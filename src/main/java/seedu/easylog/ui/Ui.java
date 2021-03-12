@@ -4,8 +4,6 @@ import seedu.easylog.common.Messages;
 import seedu.easylog.item.Item;
 import seedu.easylog.order.Order;
 
-import java.sql.SQLOutput;
-
 /**
  * Handles ui related methods.
  */
@@ -26,7 +24,7 @@ public class Ui {
     }
 
     public void showItemsHelp() {
-
+        System.out.println(Messages.MESSAGE_SHOW_ITEMS_COMMANDS);
     }
 
     public void showInvalidCommand() {

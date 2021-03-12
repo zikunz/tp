@@ -10,6 +10,6 @@ public class ItemManagerTest {
     public void testGetItemListPrintFormat() {
         ItemManager itemManager = new ItemManager();
 
-        assertEquals("1. PS5\n2. keyboard\n", itemManager.getItemListPrintFormat(itemManager.getItemList()));
+        assertEquals("1. PS5\n2. Keyboard\n", itemManager.getItemListPrintFormat(itemManager.getItemList()));
     }
 }

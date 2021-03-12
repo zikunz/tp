@@ -14,17 +14,22 @@ public class ItemManager {
         itemList.add(item);
     }
 
+    public ArrayList<Item> getItemList() {
+        return itemList;
+    }
+
     /**
-     * Obtains all the Items in the itemList.
+     * Get list of items in string format to be printed as output to user.
+     * @return String format for the list of items to be printed.
      */
-    public String getItemList() {
+    public String getItemListPrintFormat(ArrayList<Item> itemListToBePrinted) {
         int taskCount = 1;
-        String itemsOutput = "";
-        for (Item item : itemList) {
-            itemsOutput += taskCount + ". " + item.getItemName() + "\n";
-            taskCount++;
+        String itemsListOutput = "";
+        for (Item item : itemListToBePrinted) {
+            itemsListOutput += taskCount + ". " + item.getItemName() + "\n";
+            ++taskCount;
         }
-        return itemsOutput;
+        return itemsListOutput;
     }
 
     public void deleteItem(int index) {

@@ -2,6 +2,7 @@ package seedu.easylog.ui;
 
 import seedu.easylog.common.Messages;
 import seedu.easylog.item.Item;
+import seedu.easylog.order.Order;
 
 import java.sql.SQLOutput;
 
@@ -38,10 +39,16 @@ public class Ui {
         System.out.println(item.getAddItemMessage());
     }
 
-    public void showEmptyName() {
-        String emptyNameMessage = "OOPS!!!. The item name is missing!\n"
+    public void showItemEmptyName() {
+        String emptyItemMessage = "OOPS!!!. The item name is missing!\n"
                 + "Please complete the information! :) ";
-        System.out.println(emptyNameMessage);
+        System.out.println(emptyItemMessage);
+    }
+
+    public void showOrderEmptyCustomerName() {
+        String showOrderEmptyCustomerName = "OOPS!!!. The customer name is missing!\n"
+                + "Please complete the information! :) ";
+        System.out.println(showOrderEmptyCustomerName);
     }
 
     public void showDeletedItem(Item item) {
@@ -59,5 +66,13 @@ public class Ui {
 
     public void showOrdersHelp() {
 
+    }
+
+    public void showAddItemsToOrder() {
+        System.out.println(Messages.MESSAGE_ADD_ITEMS_TO_ORDER);
+    }
+
+    public void showOrderAdded(Order order) {
+        System.out.println(order.getAddOrderMessage());
     }
 }

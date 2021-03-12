@@ -20,4 +20,8 @@ public class Order {
     public ArrayList<Item> getItemsInorder() {
         return itemsInOrder;
     }
+
+    public String getAddOrderMessage() {
+        return "Got it! The order for customer [" + customerName + "] is added.";
+    }
 }

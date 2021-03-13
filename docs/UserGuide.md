@@ -1,20 +1,25 @@
-# Duke User Guide
+# easyLog User Guide
 
-Duke is a command line interface (CLI) application to track different types of tasks that the user adds.
-If you can type fast, Duke can get do task management faster than traditional Graphical User Interface (GUI) apps.
+easyLog is a command line interface (CLI) application for warehouse employees to manage their items and
+orders in their warehouse. easyLog allows information of new items and orders to be added,
+view existing items and orders in the warehouse, remove specific existing items and order,
+clear all existing items and orders. If you type fast, easyLog can get your logistic management tasks done
+faster than traditional graphical user interface (GUI) apps.
 
 - [Quick start](#quick-start)
 - [Features](#features)
-    * [Viewing help: `help`](#viewing-help-help)
-    * [Add a Todo task: `todo`](#add-a-todo-task-todo)
-    * [Add a Deadline task: `deadline`](#add-a-deadline-task-deadline)
-    * [Add an Event task: `event`](#add-an-event-task-event)
+  * [Viewing help: `help`](#viewing-help-help)
+  * [Items](#items)
+    - [Show items-related commands: `items`](#show-items-related-commands-items)
+    - [Adding an item: `items add`](#adding-an-item-items-add)
     * [List all the tasks: `list`](#list-all-the-tasks-list)
     * [Complete a task: `done`](#complete-a-task-done)
     * [Delete a task: `delete`](#delete-a-task-delete)
-    * [Search task by keyword: `find`](#search-task-by-keyword-find)
-    * [Exit the program: `exit`](#exit-the-program-bye)
-    * [Save task list](#save-task-list)
+  * [Orders](#orders)
+    - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
+    - [Adding an order: `orders add`](#adding-an-order-orders-add)
+  * [Exit the program: `exit`](#exit-the-program-bye)
+  * [Save task list](#save-task-list)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
 
@@ -44,45 +49,49 @@ Format: `help`
 
 Expected Output:
 ```
-  todo <description> - Add new todo task
-  deadline <description> /by <dd/mm/yy and time> - Add new deadline task 
-  event <description> /at <dd/mm/yy and time> - Add new event task
-  list - List all tasks
-  done <index> - Mark task number _ as done
-  delete <index> - Delete task number _ 
-  find <keyword> - Search for task with keyword in description
-  exit - Save tasks list and exit program
+General Options:
+  1. items                          Show items-related commands
+  2. items add <item_name>          Add an item
+  3. items list                     List all items
+  4. items remove <item_name>       Remove an item
+  5. items clear                    Empty all items
+  6. orders                         Show orders-related commands
+  7. orders add <order_name>        Add an order
+  8. orders list                    List all orders
+  9. orders remove <order_name>     Remove an order
+  10. orders clear                  Empty all orders
 ```
-### Add a Todo task: `todo`
+### Items
 
-Add a Todo task to the task list.
+####Show items-related commands: items
 
-Format: `todo <description>`
+Show commands related to items and brief description of the commands: add item, list items, remove items, clear items
 
-Example: `todo edit ip`
+Format: `items`
 
 Expected Output:
 ```
-Got it. I've added this task:
-  [T][ ] edit ip
-Now you have 1 tasks in the list.
+Items-Related Options:
+  1. items add <item_name>          Add an item
+  2. items list                     List all items
+  3. items remove <item_name>       Remove an item
+  4. items clear                    Empty all items
 ```
-### Add a Deadline task: `deadline`
 
-Add a Deadline task to the task list.
+#### Adding an item: `items add`
 
-Format: `deadline <Task Description> /by <dd/mm/yyyy and time>`
+Add an item to the system.
 
-Example: `deadline complete ip /by 23/02/2021 2359`
+Format: `items add <item_name>`
+
+Example: `items add PS5`
 
 Expected Output:
 ```
-Got it. I've added this task:
-  [D][ ] complete ip (by: 23/02/2021 2359)
-Now you have 2 tasks in the list.
+Got it! The item [PS5] is added.
 ```
 
-### Add an Event task: `Event`
+#### Add an Event task: `Event`
 
 Add an Event task to the task list.
 
@@ -97,7 +106,7 @@ Got it. I've added this task:
 Now you have 3 tasks in the list.
 ```
 
-### List all the tasks: `list`
+#### List all the tasks: `list`
 
 List all the tasks in the task list.
 
@@ -111,7 +120,7 @@ Here are the tasks in your list:
 3.[E][ ] Liverpool v Sheffield Utd (at: 01/03/2021 0315)
 ```
 
-### Complete a task: `done`
+#### Complete a task: `done`
 
 Mark task number _ as done.
 
@@ -125,7 +134,7 @@ Nice! I've marked this task as done:
   [D][X] complete ip (by: 23/02/2021 2359)
 ```
 
-### Delete a task: `delete`
+#### Delete a task: `delete`
 
 Delete task number _ from task list.
 
@@ -140,19 +149,47 @@ Noted. I've removed this task:
 Now you have 2 tasks in the list.
 ```
 
-### Search task by keyword: `find`
+### Orders
 
-Search all the tasks with the keyword found in the task description.
-The keyword is case-sensitive.
+#### Show orders-related commands : `orders`
 
-Format: `find <keyword>`
+Show commands related to orders and brief description of the commands:
+add order, list orders, remove orders, clear orders
 
-Example: `find Liverpool`
+Format: `orders`
 
 Expected Output:
 ```
-Here are the matching tasks in your list:
-1.[E][ ] Liverpool v Sheffield Utd (at: 01/03/2021 0315)
+Orders-Related Options:
+  1. orders add <order_name>        Add an order
+  2. orders list                    List all orders
+  3. orders remove <order_name>     Remove an order
+  4. orders clear                   Empty all orders
+```
+
+#### Adding an order: `orders add`
+
+Add an order to the system.
+
+Format:
+```aidl
+orders add <customer_name>
+Input the items to be added to this order.
+<index> <index> <index>
+```
+
+Example:
+```aidl
+orders add weisheng
+Input the items to be added to this order.
+1 2 
+```
+
+Expected Output:
+
+```aidl
+Input the items to be added to this order.
+Got it! The order for customer [weisheng] is added.
 ```
 
 ### Exit the program: `exit`
@@ -163,8 +200,7 @@ Format: `exit`
 
 Expected Output:
 ```
-File saved.
-Bye. Hope to see you again soon!
+Bye. Thanks for using easyLog!
 ```
 
 ### Save task list

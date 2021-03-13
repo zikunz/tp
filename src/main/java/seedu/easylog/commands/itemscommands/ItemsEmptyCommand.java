@@ -9,6 +9,6 @@ public class ItemsEmptyCommand extends ItemsCommand {
             throw new ItemListAlreadyEmptyException();
         }
         ui.showEmptyItemList();
-        itemManager.EmptyItemList();
+        itemManager.emptyItemList();
     }
 }

@@ -53,7 +53,7 @@ public class ItemManager {
     /**
      * Empties all items in the system.
      */
-    public void EmptyItemList() {
+    public void emptyItemList() {
         itemList.clear();
     }
 }

@@ -2,6 +2,7 @@ package seedu.easylog.parser;
 
 import seedu.easylog.commands.orderscommands.OrdersAddCommand;
 import seedu.easylog.commands.orderscommands.OrdersDeleteCommand;
+import seedu.easylog.commands.orderscommands.OrdersListCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyNumberException;
@@ -36,7 +37,8 @@ public class OrdersParser extends Parser {
                 ui.showInvalidOrderNumber();
             }
             break;
-        case(Constants.COMMAND_LIST):
+        case (Constants.COMMAND_LIST):
+            new OrdersListCommand().execute();
             break;
         default:
             ui.showOrdersHelp();
@@ -46,7 +48,7 @@ public class OrdersParser extends Parser {
     public ArrayList<Item> processItemsAddedToOrder(String itemsAdded) {
         ArrayList<Item> itemsAddedToOrder = new ArrayList<>();
         String[] splitInput = itemsAdded.split(" ");
-        for (String input: splitInput) {
+        for (String input : splitInput) {
             int index = Integer.parseInt(input) - Constants.ARRAY_OFFSET;
             itemsAddedToOrder.add(itemManager.getItem(index));
         }

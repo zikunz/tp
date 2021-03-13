@@ -1,9 +1,10 @@
 package seedu.easylog;
 
-import java.util.Scanner;
-import seedu.easylog.ui.Ui;
-import seedu.easylog.parser.Parser;
 import seedu.easylog.common.Constants;
+import seedu.easylog.parser.Parser;
+import seedu.easylog.ui.Ui;
+
+import java.util.Scanner;
 
 public class EasyLog {
 

@@ -53,12 +53,17 @@ public class Ui {
         System.out.println(Messages.MESSAGE_EMPTY_ITEM_NUMBER);
     }
 
-    public void showItemList(String rawItemListOutput) {
-        if (rawItemListOutput.equals("")) {
+    /**
+     * Prints the list of all items or orders in the system.
+     * For a list of orders, this includes
+     * each customer's name followed by his or her items in the record.
+     */
+    public void showList(String rawListOutput) {
+        if (rawListOutput.equals("")) {
             System.out.println(Messages.MESSAGE_EMPTY_ITEM_LIST);
         } else {
             System.out.println(Messages.MESSAGE_LIST_ITEMS);
-            System.out.print(rawItemListOutput);
+            System.out.print(rawListOutput);
         }
     }
 

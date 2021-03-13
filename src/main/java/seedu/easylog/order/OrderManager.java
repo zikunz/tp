@@ -1,5 +1,7 @@
 package seedu.easylog.order;
 
+import seedu.easylog.item.Item;
+
 import java.util.ArrayList;
 
 /**
@@ -29,4 +31,25 @@ public class OrderManager {
         return orderList;
     }
 
+    /**
+     * Gets the customer's name specified by the index
+     * of the order given.
+     *
+     * @param index index of the order given
+     * @return customer's name specified by the index of the order given
+     */
+    public String getCustomerName(int index) {
+        return getOrder(index).getCustomerName();
+    }
+
+    /**
+     * Gets the customer's items specified by the index
+     * of the order given.
+     *
+     * @param index index of the order given
+     * @return customer's items specified by the index of the order given
+     */
+    public ArrayList<Item> getItems(int index) {
+        return getOrder(index).getItemsInOrder();
+    }
 }

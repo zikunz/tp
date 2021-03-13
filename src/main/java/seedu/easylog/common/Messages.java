@@ -43,4 +43,7 @@ public class Messages {
             "OOPS!!! There is no single item which can be cleared right now!";
     public static final String MESSAGE_CLEAR_ITEM_LIST = "Done! I just cleared all items for you.";
     public static final String MESSAGE_EMPTY_ITEM_LIST = "No item list.";
+    public static final String MESSAGE_EMPTY_ORDER_LIST = "No order list.";
+    public static final String MESSAGE_ORDERS_ITEMS = "Here are the list of orders.";
+    public static final String MESSAGE_INDENTATION = "    ";
 }

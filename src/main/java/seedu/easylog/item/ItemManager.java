@@ -1,6 +1,8 @@
 
 package seedu.easylog.item;
 
+import seedu.easylog.common.Messages;
+
 import java.util.ArrayList;
 
 /**
@@ -19,17 +21,28 @@ public class ItemManager {
     }
 
     /**
-     * Get list of items in string format to be printed as output to user.
+     * Gets the list of items in String format to be printed as output to the user.
+     * Indentation is added if this method is called to help print the list of orders.
+     * No indentation is added if this method is called when only printing the list of items.
      *
      * @return String format for the list of items to be printed.
      */
-    public String getItemListPrintFormat(ArrayList<Item> itemListToBePrinted) {
+    public String getItemListPrintFormat(ArrayList<Item> itemListToBePrinted, boolean shouldIncludeIndentation) {
         int taskCount = 1;
         String itemsListOutput = "";
-        for (Item item : itemListToBePrinted) {
-            itemsListOutput += taskCount + ". " + item.getItemName() + "\n";
-            ++taskCount;
+
+        if (shouldIncludeIndentation) {
+            for (Item item : itemListToBePrinted) {
+                itemsListOutput += Messages.MESSAGE_INDENTATION + taskCount + ". " + item.getItemName() + "\n";
+                ++taskCount;
+            }
+        } else {
+            for (Item item : itemListToBePrinted) {
+                itemsListOutput += taskCount + ". " + item.getItemName() + "\n";
+                ++taskCount;
+            }
         }
+
         return itemsListOutput;
     }
 

@@ -1,6 +1,7 @@
 package seedu.easylog.order;
 
 import seedu.easylog.item.Item;
+
 import java.util.ArrayList;
 
 public class Order {

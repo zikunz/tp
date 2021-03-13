@@ -43,7 +43,6 @@ public class OrderManager {
         return orderList.size();
     }
 
-
     /**
      * Gets the customer's name specified by the index
      * of the order given.

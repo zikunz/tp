@@ -1,4 +1,4 @@
 package seedu.easylog.exceptions;
 
-public class InvalidNumberException extends Throwable{
+public class InvalidNumberException extends Throwable {
 }

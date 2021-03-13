@@ -21,7 +21,7 @@ public class OrderManager {
         return orderList.get(index);
     }
 
-    public int getSize(ArrayList<Order> orderList) {
+    public int getSize() {
         return orderList.size();
     }
 

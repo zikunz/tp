@@ -16,7 +16,7 @@ public class OrdersDeleteCommand extends OrdersCommand {
             throw new EmptyNumberException();
         }
         int index = Integer.parseInt(ordersArg) - Constants.ARRAY_OFFSET;
-        int size = orderManager.getSize(orderManager.getOrderList());
+        int size = orderManager.getSize();
         if ((index < 0) || (index >= size)) {
             throw new InvalidNumberException();
         }

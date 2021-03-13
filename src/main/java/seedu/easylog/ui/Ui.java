@@ -65,4 +65,19 @@ public class Ui {
     public void showOrderAdded(Order order) {
         System.out.println(order.getAddOrderMessage());
     }
+
+    /**
+     * Prints a message to notify the user that there is no single item in the system.
+     * This means the user should not attempt to clear items.
+     */
+    public void showAlreadyClearedItemList() {
+        System.out.println(Messages.MESSAGE_ALREADY_CLEARED_ITEM_LIST);
+    }
+
+    /**
+     * Prints a message to notify the user that all the items are cleared successfully.
+     */
+    public void showClearedItemList() {
+        System.out.println(Messages.MESSAGE_CLEAR_ITEM_LIST);
+    }
 }

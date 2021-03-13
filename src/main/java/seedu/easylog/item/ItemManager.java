@@ -20,6 +20,7 @@ public class ItemManager {
 
     /**
      * Get list of items in string format to be printed as output to user.
+     *
      * @return String format for the list of items to be printed.
      */
     public String getItemListPrintFormat(ArrayList<Item> itemListToBePrinted) {
@@ -38,6 +39,22 @@ public class ItemManager {
 
     public Item getItem(int index) {
         return itemList.get(index);
+    }
+
+    /**
+     * Gets the number of items in the system.
+     *
+     * @return the size of item list
+     */
+    public int getSize() {
+        return itemList.size();
+    }
+
+    /**
+     * Clears all items in the system.
+     */
+    public void clearItemList() {
+        itemList.clear();
     }
 }
 

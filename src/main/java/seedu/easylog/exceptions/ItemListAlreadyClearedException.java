@@ -1,5 +1,5 @@
 package seedu.easylog.exceptions;
 
-public class ItemListAlreadyEmptyException extends Throwable {
+public class ItemListAlreadyClearedException extends Throwable {
     // no other code needed
 }

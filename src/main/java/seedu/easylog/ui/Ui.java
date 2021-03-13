@@ -70,14 +70,14 @@ public class Ui {
      * Prints a message to notify the user that there is no single item in the system.
      * This means the user should not attempt to clear items.
      */
-    public void showAlreadyEmptyItemList() {
-        System.out.println(Messages.MESSAGE_ALREADY_EMPTY_ITEM_LIST);
+    public void showAlreadyClearedItemList() {
+        System.out.println(Messages.MESSAGE_ALREADY_CLEARED_ITEM_LIST);
     }
 
     /**
      * Prints a message to notify the user that all the items are cleared successfully.
      */
-    public void showEmptyItemList() {
-        System.out.println(Messages.MESSAGE_EMPTY_ITEM_LIST);
+    public void showClearItemList() {
+        System.out.println(Messages.MESSAGE_CLEAR_ITEM_LIST);
     }
 }

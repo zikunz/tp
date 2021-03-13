@@ -15,5 +15,5 @@ public class Constants {
     public static final String COMMAND_ADD = "add";
     public static final String COMMAND_DELETE = "delete";
     public static final String COMMAND_LIST = "list";
-    public static final String COMMAND_EMPTY = "clear";
+    public static final String COMMAND_CLEAR = "clear";
 }

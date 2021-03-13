@@ -51,9 +51,9 @@ public class ItemManager {
     }
 
     /**
-     * Empties all items in the system.
+     * Clears all items in the system.
      */
-    public void emptyItemList() {
+    public void clearItemList() {
         itemList.clear();
     }
 }

@@ -15,21 +15,34 @@ public class OrderManager {
         orderList.add(order);
     }
 
+    /**
+     * Deletes an order from this list of orders.
+     *
+     * @param index the number of the order to be deleted.
+     */
     public void deleteOrder(int index) {
         orderList.remove(index);
     }
 
+    /**
+     * Gets the item list under a specific order.
+     *
+     * @param index the number of this order
+     * @return a item list
+     */
     public Order getOrder(int index) {
         return orderList.get(index);
     }
 
+    /**
+     * Gets the number of orders in the system.
+     *
+     * @return the size of order list
+     */
     public int getSize() {
         return orderList.size();
     }
 
-    public ArrayList<Order> getOrderList() {
-        return orderList;
-    }
 
     /**
      * Gets the customer's name specified by the index

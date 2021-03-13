@@ -41,6 +41,10 @@ public class Ui {
         System.out.println(Messages.MESSAGE_EMPTY_ORDER_CUSTOMER_NAME);
     }
 
+    /**
+     * Prints a message to notify the user that there is no input order number.
+     * This means the user should complete the order number.
+     */
     public void showOrderEmptyNumber() {
         System.out.println(Messages.MESSAGE_EMPTY_ORDER_NUMBER);
     }
@@ -79,10 +83,19 @@ public class Ui {
         System.out.println(order.getAddOrderMessage());
     }
 
+    /**
+     * Prints a message to notify the user that this order is deleted successfully.
+     *
+     * @param order an object to store orders information
+     */
     public void showOrderDeleted(Order order) {
         System.out.println(order.getDeleteOrderMessage());
     }
 
+    /**
+     * Prints a message to notify the user that the input order number is out of range.
+     * This means the user should input another order number.
+     */
     public void showInvalidOrderNumber() {
         System.out.println(Messages.MESSAGE_INVALID_ORDER_NUMBER);
     }

@@ -41,11 +41,15 @@ public class Ui {
         System.out.println(Messages.MESSAGE_EMPTY_ORDER_CUSTOMER_NAME);
     }
 
+    public void showOrderEmptyNumber() {
+        System.out.println(Messages.MESSAGE_EMPTY_ORDER_NUMBER);
+    }
+
     public void showDeletedItem(Item item) {
         System.out.println(item.getDeleteItemMessage());
     }
 
-    public void showEmptyNumber() {
+    public void showItemEmptyNumber() {
         System.out.println(Messages.MESSAGE_EMPTY_ITEM_NUMBER);
     }
 
@@ -68,6 +72,14 @@ public class Ui {
 
     public void showOrderAdded(Order order) {
         System.out.println(order.getAddOrderMessage());
+    }
+
+    public void showOrderDeleted(Order order) {
+        System.out.println(order.getDeleteOrderMessage());
+    }
+
+    public void showInvalidOrderNumber() {
+        System.out.println(Messages.MESSAGE_INVALID_ORDER_NUMBER);
     }
 
     /**

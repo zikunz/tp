@@ -1,7 +1,5 @@
 package seedu.easylog.order;
 
-import seedu.easylog.item.Item;
-
 import java.util.ArrayList;
 
 /**
@@ -14,4 +12,21 @@ public class OrderManager {
     public void addOrder(Order order) {
         orderList.add(order);
     }
+
+    public void deleteOrder(int index) {
+        orderList.remove(index);
+    }
+
+    public Order getOrder(int index) {
+        return orderList.get(index);
+    }
+
+    public int getSize() {
+        return orderList.size();
+    }
+
+    public ArrayList<Order> getOrderList() {
+        return orderList;
+    }
+
 }

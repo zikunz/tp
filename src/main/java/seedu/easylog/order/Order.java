@@ -24,4 +24,8 @@ public class Order {
     public String getAddOrderMessage() {
         return "Got it! The order for customer [" + customerName + "] is added.";
     }
+
+    public String getDeleteOrderMessage() {
+        return "Got it! The order for customer [" + customerName + "] is deleted";
+    }
 }

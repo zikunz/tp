@@ -1,8 +1,11 @@
 package seedu.easylog.parser;
 
 import seedu.easylog.commands.orderscommands.OrdersAddCommand;
+import seedu.easylog.commands.orderscommands.OrdersDeleteCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNameException;
+import seedu.easylog.exceptions.EmptyNumberException;
+import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.item.Item;
 
 import java.util.ArrayList;
@@ -25,6 +28,13 @@ public class OrdersParser extends Parser {
             }
             break;
         case (Constants.COMMAND_DELETE):
+            try {
+                new OrdersDeleteCommand().execute(ordersArg);
+            } catch (EmptyNumberException e) {
+                ui.showOrderEmptyNumber();
+            } catch (InvalidNumberException e) {
+                ui.showInvalidOrderNumber();
+            }
             break;
         case(Constants.COMMAND_LIST):
             break;
@@ -42,4 +52,6 @@ public class OrdersParser extends Parser {
         }
         return itemsAddedToOrder;
     }
+
+
 }

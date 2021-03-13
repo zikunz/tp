@@ -30,7 +30,7 @@ public class ItemsParser extends Parser {
             try {
                 new ItemsDeleteCommand().execute(itemsArg);
             } catch (EmptyNumberException e) {
-                ui.showEmptyNumber();
+                ui.showItemEmptyNumber();
             }
             break;
         case (Constants.COMMAND_LIST):

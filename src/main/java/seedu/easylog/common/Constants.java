@@ -1,6 +1,11 @@
 package seedu.easylog.common;
 
+import java.util.Scanner;
+
 public class Constants {
+
+    public static final int ARRAY_OFFSET = 1;
+    public static final Scanner SCANNER = new Scanner(System.in);
 
     // Commands constants
     public static final String COMMAND_HELP = "help";
@@ -10,4 +15,5 @@ public class Constants {
     public static final String COMMAND_ADD = "add";
     public static final String COMMAND_DELETE = "delete";
     public static final String COMMAND_LIST = "list";
+    public static final String COMMAND_CLEAR = "clear";
 }

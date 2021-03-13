@@ -1,15 +1,15 @@
 package seedu.easylog.commands.itemscommands;
 
+import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNumberException;
-import seedu.easylog.item.Item;
 
 public class ItemsDeleteCommand extends ItemsCommand {
 
-    public void execute(String commandArgs) throws EmptyNumberException {
-        if (commandArgs.equals("")) {
+    public void execute(String itemsArg) throws EmptyNumberException {
+        if (itemsArg.equals("")) {
             throw new EmptyNumberException();
         }
-        int index = Integer.parseInt(commandArgs);
+        int index = Integer.parseInt(itemsArg) - Constants.ARRAY_OFFSET;
         ui.showDeletedItem(itemManager.getItem(index));
         itemManager.deleteItem(index);
     }

@@ -40,6 +40,7 @@ public class Messages {
             + "  3. items remove <item_name>       Remove an item\n"
             + "  4. items clear                    Empty all items";
     public static final String MESSAGE_ALREADY_CLEARED_ITEM_LIST =
-            "OOPS!!! There is no single item which can be cleared right now!\n";
-    public static final String MESSAGE_CLEAR_ITEM_LIST = "Done! I just cleared all items for you.\n";
+            "OOPS!!! There is no single item which can be cleared right now!";
+    public static final String MESSAGE_CLEAR_ITEM_LIST = "Done! I just cleared all items for you.";
+    public static final String MESSAGE_EMPTY_ITEM_LIST = "No item list.";
 }

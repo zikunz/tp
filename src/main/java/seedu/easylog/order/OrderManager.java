@@ -15,6 +15,7 @@ public class OrderManager {
 
     /**
      * Deletes an order from this list of orders.
+     *
      * @param index the number of the order to be deleted.
      */
     public void deleteOrder(int index) {
@@ -23,6 +24,7 @@ public class OrderManager {
 
     /**
      * Gets the item list under a specific order.
+     *
      * @param index the number of this order
      * @return a item list
      */

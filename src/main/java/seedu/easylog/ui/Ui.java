@@ -80,6 +80,7 @@ public class Ui {
 
     /**
      * Prints a message to notify the user that this order is deleted successfully.
+     *
      * @param order an object to store orders information
      */
     public void showOrderDeleted(Order order) {

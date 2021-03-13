@@ -50,8 +50,12 @@ public class Ui {
     }
 
     public void showItemList(String rawItemListOutput) {
-        System.out.println(Messages.MESSAGE_LIST_ITEMS);
-        System.out.print(rawItemListOutput);
+        if (rawItemListOutput.equals("")) {
+            System.out.println(Messages.MESSAGE_EMPTY_ITEM_LIST);
+        } else {
+            System.out.println(Messages.MESSAGE_LIST_ITEMS);
+            System.out.print(rawItemListOutput);
+        }
     }
 
     public void showOrdersHelp() {

@@ -77,7 +77,7 @@ public class Ui {
     /**
      * Prints a message to notify the user that all the items are cleared successfully.
      */
-    public void showClearItemList() {
+    public void showClearedItemList() {
         System.out.println(Messages.MESSAGE_CLEAR_ITEM_LIST);
     }
 }

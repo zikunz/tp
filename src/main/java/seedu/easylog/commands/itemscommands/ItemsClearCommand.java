@@ -8,7 +8,7 @@ public class ItemsClearCommand extends ItemsCommand {
         if (itemManager.getSize() == 0) {
             throw new ItemListAlreadyClearedException();
         }
-        ui.showClearItemList();
+        ui.showClearedItemList();
         itemManager.clearItemList();
     }
 }

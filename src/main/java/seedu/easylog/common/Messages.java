@@ -14,7 +14,7 @@ public class Messages {
             + "  7. orders add <order_name>        Add an order\n"
             + "  8. orders list                    List all orders\n"
             + "  9. orders remove <order_name>     Remove an order\n"
-            + "  10. orders clear                  Empty all orders\n";
+            + "  10. orders clear                  Empty all orders";
     public static final String MESSAGE_GREETING = "Hello! I'm easyLog!\n"
             + "What can I do for you? Enter help to view commands.";
     public static final String MESSAGE_GOODBYE = "Bye. Thanks for using easyLog!";
@@ -29,12 +29,12 @@ public class Messages {
             + "  1. orders add <order_name>        Add an order\n"
             + "  2. orders list                    List all orders\n"
             + "  3. orders remove <order_name>     Remove an order\n"
-            + "  4. orders clear                   Empty all orders\n";
+            + "  4. orders clear                   Empty all orders";
     public static final String MESSAGE_SHOW_ITEMS_COMMANDS = "Items-Related Options:\n"
             + "  1. items add <item_name>          Add an item\n"
             + "  2. items list                     List all items\n"
             + "  3. items remove <item_name>       Remove an item\n"
-            + "  4. items clear                    Empty all items\n";
+            + "  4. items clear                    Empty all items";
     public static final String MESSAGE_ALREADY_CLEARED_ITEM_LIST =
             "OOPS!!! There is no single item which can be cleared right now!\n";
     public static final String MESSAGE_CLEAR_ITEM_LIST = "Done! I just cleared all items for you.\n";

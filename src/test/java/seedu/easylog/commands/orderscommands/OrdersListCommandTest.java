@@ -19,6 +19,7 @@ class OrdersListCommandTest {
     @Test
     @DisplayName("(All Orders) Should Have Correct Attributes After the List Operation")
     public void ordersListCommand_shouldHaveCorrectAttributesAfterListOperation() {
+        OrdersListCommand ordersListCommand = new OrdersListCommand();
         // Add three items in an order which belongs to Zikun
         String customerName = "Zikun";
 
@@ -43,6 +44,8 @@ class OrdersListCommandTest {
         Order order = new Order(customerName, itemsInOrder);
         OrderManager orderManager = new OrderManager();
         orderManager.addOrder(order);
+
+        ordersListCommand.execute();
 
         // Test if there is only 1 order (for Zikun only)
         assertSame(1, orderManager.getSize());

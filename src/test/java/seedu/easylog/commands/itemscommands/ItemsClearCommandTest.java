@@ -7,7 +7,7 @@ import seedu.easylog.item.Item;
 import seedu.easylog.item.ItemManager;
 import seedu.easylog.ui.Ui;
 
-import static junit.framework.TestCase.assertSame;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 class ItemsClearCommandTest {
     @Test

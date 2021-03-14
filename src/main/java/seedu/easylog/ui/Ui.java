@@ -109,9 +109,24 @@ public class Ui {
     }
 
     /**
+     * Prints a message to notify the user that there is no single order in the system.
+     * This means the user should not attempt to clear orders.
+     */
+    public void showAlreadyClearedOrderList() {
+        System.out.println(Messages.MESSAGE_ALREADY_CLEARED_ORDER_LIST);
+    }
+
+    /**
      * Prints a message to notify the user that all the items are cleared successfully.
      */
     public void showClearedItemList() {
         System.out.println(Messages.MESSAGE_CLEAR_ITEM_LIST);
+    }
+
+    /**
+     * Prints a message to notify the user that all the orders are cleared successfully.
+     */
+    public void showClearedOrderList() {
+        System.out.println(Messages.MESSAGE_CLEAR_ORDER_LIST);
     }
 }

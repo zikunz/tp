@@ -19,10 +19,7 @@ class OrdersListCommandTest {
     @Test
     @DisplayName("(All Orders) Should Have Correct Attributes After the List Operation")
     public void ordersListCommand_shouldHaveCorrectAttributesAfterListOperation() {
-        OrdersListCommand ordersListCommand = new OrdersListCommand();
         // Add three items in an order which belongs to Zikun
-        String customerName = "Zikun";
-
         Item firstItem = new Item("Spider-Man slippers");
         Item secondItem = new Item("Yeezy Boost 350 V2 44");
         Item thirdItem = new Item("LED bulb (warm white)");
@@ -41,10 +38,12 @@ class OrdersListCommandTest {
         OrdersParser ordersParser = new OrdersParser();
         ArrayList<Item> itemsInOrder = ordersParser.processItemsAddedToOrder(itemsAdded);
 
+        String customerName = "Zikun";
         Order order = new Order(customerName, itemsInOrder);
         OrderManager orderManager = new OrderManager();
         orderManager.addOrder(order);
 
+        OrdersListCommand ordersListCommand = new OrdersListCommand();
         ordersListCommand.execute();
 
         // Test if there is only 1 order (for Zikun only)

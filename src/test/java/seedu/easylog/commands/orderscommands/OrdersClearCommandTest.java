@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class OrdersClearCommandTest {
     @Test
-    @DisplayName("(All Orders) Should Be Cleared Correctly")
+    @DisplayName("(If Any, All Orders) Should Be Cleared Correctly")
     public void ordersClearCommand_shouldBeClearedCorrectly() throws OrderListAlreadyClearedException {
         OrdersClearCommand ordersClearCommand = new OrdersClearCommand();
         OrderManager orderManager = new OrderManager();
@@ -28,21 +28,21 @@ class OrdersClearCommandTest {
         exception = assertThrows(OrderListAlreadyClearedException.class, () -> ordersClearCommand.execute());
 
         // 1 order
-        String NameForZikun = "Zikun";
+        String nameForZikun = "Zikun";
         Item firstItem = new Item("iPhone X charger");
         itemManager.addItem(firstItem);
         String itemIndexForZikun = "1";
         ArrayList<Item> itemForZikun = ordersParser.processItemsAddedToOrder(itemIndexForZikun);
 
-        Order firstOrder = new Order(NameForZikun, itemForZikun);
+        Order firstOrder = new Order(nameForZikun, itemForZikun);
         orderManager.addOrder(firstOrder);
 
         ordersClearCommand.execute();
         assertSame(0, orderManager.getSize());
 
         // multiple orders
-        String NameForYiwen = "Yiwen";
-        String NameForQixiong = "Qixiong";
+        String nameForYiwen = "Yiwen";
+        String nameForQixiong = "Qixiong";
 
         Item secondItem = new Item("Competitive Programming 3");
         Item thirdItem = new Item("Competitive Programming 4");
@@ -56,8 +56,8 @@ class OrdersClearCommandTest {
         ArrayList<Item> itemForYiwen = ordersParser.processItemsAddedToOrder(itemIndexForYiwen);
         ArrayList<Item> itemForQixiong = ordersParser.processItemsAddedToOrder(itemsIndexForQixiong);
 
-        Order secondOrder = new Order(NameForYiwen, itemForYiwen);
-        Order thirdOrder = new Order(NameForQixiong, itemForQixiong);
+        Order secondOrder = new Order(nameForYiwen, itemForYiwen);
+        Order thirdOrder = new Order(nameForQixiong, itemForQixiong);
 
         orderManager.addOrder(secondOrder);
         orderManager.addOrder(thirdOrder);

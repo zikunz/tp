@@ -16,6 +16,6 @@ public class OrdersListCommand extends OrdersCommand {
             customersItems = itemManager.getItemListPrintFormat(orderManager.getItems(i), shouldIncludeIndentation);
             rawOrderListOutput += customerName + "\n" + customersItems;
         }
-        ui.showList(rawOrderListOutput);
+        ui.showOrderList(rawOrderListOutput);
     }
 }

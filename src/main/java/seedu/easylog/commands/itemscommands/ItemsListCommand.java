@@ -7,6 +7,6 @@ public class ItemsListCommand extends ItemsCommand {
 
         String rawItemListOutput =
                 itemManager.getItemListPrintFormat(itemManager.getItemList(), shouldIncludeIndentation);
-        ui.showList(rawItemListOutput);
+        ui.showItemList(rawItemListOutput);
     }
 }

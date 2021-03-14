@@ -58,16 +58,28 @@ public class Ui {
     }
 
     /**
-     * Prints the list of all items or orders in the system.
-     * For a list of orders, this includes
-     * each customer's name followed by his or her items in the record.
+     * Prints the list of all items in the system.
      */
-    public void showList(String rawListOutput) {
-        if (rawListOutput.equals("")) {
+    public void showItemList(String rawItemListOutput) {
+        if (rawItemListOutput.equals("")) {
             System.out.println(Messages.MESSAGE_EMPTY_ITEM_LIST);
         } else {
             System.out.println(Messages.MESSAGE_LIST_ITEMS);
-            System.out.print(rawListOutput);
+            System.out.print(rawItemListOutput);
+        }
+    }
+
+    /**
+     * Prints the list of all orders in the system.
+     * This includes each customer's name
+     * followed by his or her items in the record.
+     */
+    public void showOrderList(String rawOrderListOutput) {
+        if (rawOrderListOutput.equals("")) {
+            System.out.println(Messages.MESSAGE_EMPTY_ORDER_LIST);
+        } else {
+            System.out.println(Messages.MESSAGE_LIST_ORDERS);
+            System.out.print(rawOrderListOutput);
         }
     }
 

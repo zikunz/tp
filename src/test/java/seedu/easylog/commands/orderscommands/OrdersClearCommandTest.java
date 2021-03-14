@@ -23,7 +23,7 @@ class OrdersClearCommandTest {
         OrdersParser ordersParser = new OrdersParser();
         ItemManager itemManager = new ItemManager();
 
-        // 0 item
+        // 0 order
         OrderListAlreadyClearedException exception;
         exception = assertThrows(OrderListAlreadyClearedException.class, () -> ordersClearCommand.execute());
 

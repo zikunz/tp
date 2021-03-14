@@ -12,7 +12,6 @@ import seedu.easylog.parser.OrdersParser;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class OrdersClearCommandTest {
     @Test
@@ -22,10 +21,6 @@ class OrdersClearCommandTest {
         OrderManager secondOrderManager = new OrderManager();
         OrdersParser ordersParser = new OrdersParser();
         ItemManager itemManager = new ItemManager();
-
-        // 0 order
-        OrderListAlreadyClearedException exception;
-        exception = assertThrows(OrderListAlreadyClearedException.class, () -> ordersClearCommand.execute());
 
         // 1 order
         String nameForKexuan = "Kexuan";

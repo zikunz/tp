@@ -1,12 +1,14 @@
 package seedu.easylog.parser;
 
 import seedu.easylog.commands.orderscommands.OrdersAddCommand;
+import seedu.easylog.commands.orderscommands.OrdersClearCommand;
 import seedu.easylog.commands.orderscommands.OrdersDeleteCommand;
 import seedu.easylog.commands.orderscommands.OrdersListCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
+import seedu.easylog.exceptions.OrderListAlreadyClearedException;
 import seedu.easylog.item.Item;
 
 import java.util.ArrayList;
@@ -39,6 +41,13 @@ public class OrdersParser extends Parser {
             break;
         case (Constants.COMMAND_LIST):
             new OrdersListCommand().execute();
+            break;
+        case (Constants.COMMAND_CLEAR):
+            try {
+                new OrdersClearCommand().execute();
+            } catch (OrderListAlreadyClearedException e) {
+                ui.showAlreadyClearedOrderList();
+            }
             break;
         default:
             ui.showOrdersHelp();

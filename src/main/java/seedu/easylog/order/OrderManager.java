@@ -64,4 +64,11 @@ public class OrderManager {
     public ArrayList<Item> getItems(int index) {
         return getOrder(index).getItemsInOrder();
     }
+
+    /**
+     * Clears all orders in the system.
+     */
+    public void clearOrderList() {
+        orderList.clear();
+    }
 }

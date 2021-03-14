@@ -7,6 +7,8 @@ import seedu.easylog.item.Item;
 import seedu.easylog.item.ItemManager;
 import seedu.easylog.ui.Ui;
 
+import static junit.framework.TestCase.assertSame;
+
 class ItemsClearCommandTest {
     @Test
     @DisplayName("(If Any, All Items) Should Be Cleared Correctly")
@@ -19,7 +21,7 @@ class ItemsClearCommandTest {
         Item firstItem = new Item("CS2113T Textbook");
         itemManager.addItem(firstItem);
         itemsClearCommand.execute();
-        //assertSame(0, itemManager.getSize());
+        assertSame(0, itemManager.getSize());
 
         // multiple items
         Item secondItem = new Item("CS2113T Textbook");
@@ -29,6 +31,6 @@ class ItemsClearCommandTest {
         itemManager.addItem(thirdItem);
         itemManager.addItem(fourthItem);
         itemsClearCommand.execute();
-        //assertSame(0, itemManager.getSize());
+        assertSame(0, itemManager.getSize());
     }
 }

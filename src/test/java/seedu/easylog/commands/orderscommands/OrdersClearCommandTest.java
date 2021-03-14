@@ -19,7 +19,7 @@ class OrdersClearCommandTest {
     @DisplayName("(If Any, All Orders) Should Be Cleared Correctly")
     public void ordersClearCommand_shouldBeClearedCorrectly() throws OrderListAlreadyClearedException {
         OrdersClearCommand ordersClearCommand = new OrdersClearCommand();
-        OrderManager orderManager = new OrderManager();
+        OrderManager secondOrderManager = new OrderManager();
         OrdersParser ordersParser = new OrdersParser();
         ItemManager itemManager = new ItemManager();
 
@@ -28,17 +28,17 @@ class OrdersClearCommandTest {
         exception = assertThrows(OrderListAlreadyClearedException.class, () -> ordersClearCommand.execute());
 
         // 1 order
-        String nameForZikun = "Zikun";
+        String nameForKexuan = "Kexuan";
         Item firstItem = new Item("iPhone X charger");
         itemManager.addItem(firstItem);
-        String itemIndexForZikun = "1";
-        ArrayList<Item> itemForZikun = ordersParser.processItemsAddedToOrder(itemIndexForZikun);
+        String itemIndexForKexuan = "1";
+        ArrayList<Item> itemForKexuan = ordersParser.processItemsAddedToOrder(itemIndexForKexuan);
 
-        Order firstOrder = new Order(nameForZikun, itemForZikun);
-        orderManager.addOrder(firstOrder);
+        Order firstOrder = new Order(nameForKexuan, itemForKexuan);
+        secondOrderManager.addOrder(firstOrder);
 
         ordersClearCommand.execute();
-        assertSame(0, orderManager.getSize());
+        assertSame(0, secondOrderManager.getSize());
 
         // multiple orders
         String nameForYiwen = "Yiwen";
@@ -59,10 +59,10 @@ class OrdersClearCommandTest {
         Order secondOrder = new Order(nameForYiwen, itemForYiwen);
         Order thirdOrder = new Order(nameForQixiong, itemForQixiong);
 
-        orderManager.addOrder(secondOrder);
-        orderManager.addOrder(thirdOrder);
+        secondOrderManager.addOrder(secondOrder);
+        secondOrderManager.addOrder(thirdOrder);
 
         ordersClearCommand.execute();
-        assertSame(0, orderManager.getSize());
+        assertSame(0, secondOrderManager.getSize());
     }
 }

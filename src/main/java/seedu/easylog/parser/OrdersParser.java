@@ -6,6 +6,7 @@ import seedu.easylog.commands.orderscommands.OrdersDeleteCommand;
 import seedu.easylog.commands.orderscommands.OrdersListCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNameException;
+import seedu.easylog.exceptions.EmptyItemListException;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.exceptions.OrderListAlreadyClearedException;
@@ -28,6 +29,9 @@ public class OrdersParser extends Parser {
                 new OrdersAddCommand().execute(ordersArg);
             } catch (EmptyNameException e) {
                 ui.showOrderEmptyCustomerName();
+            } catch (EmptyItemListException e) {
+                ui.showEmptyItemList();
+                ui.showAddItemFirst();
             }
             break;
         case (Constants.COMMAND_DELETE):
@@ -59,7 +63,11 @@ public class OrdersParser extends Parser {
         String[] splitInput = itemsAdded.split(" ");
         for (String input : splitInput) {
             int index = Integer.parseInt(input) - Constants.ARRAY_OFFSET;
-            itemsAddedToOrder.add(itemManager.getItem(index));
+            try {
+                itemsAddedToOrder.add(itemManager.getItem(index));
+            } catch (IndexOutOfBoundsException e) {
+                ui.showItemNotFound(index);
+            }
         }
         return itemsAddedToOrder;
     }

@@ -14,7 +14,7 @@ faster than traditional graphical user interface (GUI) apps.
     - [Adding an item: `items add`](#adding-an-item-items-add)
     * [List all the tasks: `list`](#list-all-the-tasks-list)
     * [Complete a task: `done`](#complete-a-task-done)
-    * [Delete a task: `delete`](#delete-a-task-delete)
+    * [Delete an item: `delete`](#delete-an-item-items-delete)
   * [Orders](#orders)
     - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
     - [Adding an order: `orders add`](#adding-an-order-orders-add)
@@ -53,17 +53,17 @@ General Options:
   1. items                          Show items-related commands
   2. items add <item_name>          Add an item
   3. items list                     List all items
-  4. items delete <item_index>      Remove an item
+  4. items delete <item_index>      Delete an item
   5. items clear                    Empty all items
   6. orders                         Show orders-related commands
   7. orders add <order_name>        Add an order
   8. orders list                    List all orders
-  9. orders delete <order_index>     Remove an order
+  9. orders delete <order_index>    delete an order
   10. orders clear                  Empty all orders
 ```
 ### Items
 
-####Show items-related commands: items
+#### Show items-related commands: `items`
 
 Show commands related to items and brief description of the commands: add item, list items, remove items, clear items
 
@@ -74,7 +74,7 @@ Expected Output:
 Items-Related Options:
   1. items add <item_name>          Add an item
   2. items list                     List all items
-  3. items delete <item_index>      Remove an item
+  3. items delete <item_index>      Delete an item
   4. items clear                    Empty all items
 ```
 
@@ -105,6 +105,20 @@ Expected Output:
 Here are the list of items.
 1. PS5
 2. bag
+```
+
+#### Delete an item: `items delete`
+
+Delete item number _ from item list.
+
+Format: `items delete <item_index>`
+
+Example: `items delete 2`
+
+Expected Output:
+
+```
+Got it! The item [glove] is deleted.
 ```
 
 #### Emptying the item list: `items clear`
@@ -163,6 +177,58 @@ Expected Output:
 Input the items to be added to this order.
 Got it! The order for customer [weisheng] is added.
 ```
+
+#### Showing the order list: `orders list`
+
+Display all recorded orders in the system.
+
+Format: `orders list`
+
+Example: `orders list`
+
+Expected Output:
+
+```
+Here are the list of orders.
+1. weisheng
+    1. PS5
+    2. bag
+2. Coco
+    1. PS5
+
+```
+
+#### Remove an order: `orders delete`
+
+Delete an order from the order list
+
+Format: `orders delete <order_index>`
+
+Example: `orders delete 2`
+
+Expected Output:
+
+```
+Got it! The order for customer [Coco] is deleted.
+```
+
+#### Emptying the order list: `orders clear`
+
+Clear all recorded orders in the system.
+
+Format: `orders clear`
+
+Example: `orders clear`
+
+Expected Output:
+
+```
+Done! I just cleared all orders for you.
+```
+
+
+
+
 
 ### Exit the program: `exit`
 

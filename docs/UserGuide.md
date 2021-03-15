@@ -53,12 +53,12 @@ General Options:
   1. items                          Show items-related commands
   2. items add <item_name>          Add an item
   3. items list                     List all items
-  4. items remove <item_name>       Remove an item
+  4. items delete <item_index>      Remove an item
   5. items clear                    Empty all items
   6. orders                         Show orders-related commands
   7. orders add <order_name>        Add an order
   8. orders list                    List all orders
-  9. orders remove <order_name>     Remove an order
+  9. orders delete <order_index>     Remove an order
   10. orders clear                  Empty all orders
 ```
 ### Items
@@ -74,7 +74,7 @@ Expected Output:
 Items-Related Options:
   1. items add <item_name>          Add an item
   2. items list                     List all items
-  3. items remove <item_name>       Remove an item
+  3. items delete <item_index>      Remove an item
   4. items clear                    Empty all items
 ```
 
@@ -91,62 +91,34 @@ Expected Output:
 Got it! The item [PS5] is added.
 ```
 
-#### Add an Event task: `Event`
+#### Showing the item list: `items list`
 
-Add an Event task to the task list.
+Display all recorded items in the system.
 
-Format: `event <Task Description> /at <dd/mm/yy and time>`
+Format: `items list`
 
-Example: `event Liverpool v Sheffield Utd /at 01/03/2021 0315`
-
-Expected Output:
-```
-Got it. I've added this task:
-  [E][ ] Liverpool v Sheffield Utd (at: 01/03/2021 0315)
-Now you have 3 tasks in the list.
-```
-
-#### List all the tasks: `list`
-
-List all the tasks in the task list.
-
-Format: `list`
+Example: `items list`
 
 Expected Output:
+
 ```
-Here are the tasks in your list:
-1.[T][ ] edit ip
-2.[D][ ] complete ip (by: 23/02/2021 2359)
-3.[E][ ] Liverpool v Sheffield Utd (at: 01/03/2021 0315)
+Here are the list of items.
+1. PS5
+2. bag
 ```
 
-#### Complete a task: `done`
+#### Emptying the item list: `items clear`
 
-Mark task number _ as done.
+Clear all recorded items in the system.
 
-Format: `done <index>`
+Format: `items clear`
 
-Example: `done 2`
+Example: `items clear`
 
 Expected Output:
+
 ```
-Nice! I've marked this task as done:
-  [D][X] complete ip (by: 23/02/2021 2359)
-```
-
-#### Delete a task: `delete`
-
-Delete task number _ from task list.
-
-Format: `delete <index>`
-
-Example: `delete 2`
-
-Expected Output:
-```
-Noted. I've removed this task:
-  [D][X] complete ip (by: 23/02/2021 2359)
-Now you have 2 tasks in the list.
+Done! I just cleared all items for you.
 ```
 
 ### Orders
@@ -163,7 +135,7 @@ Expected Output:
 Orders-Related Options:
   1. orders add <order_name>        Add an order
   2. orders list                    List all orders
-  3. orders remove <order_name>     Remove an order
+  3. orders delete <order_index>    Remove an order
   4. orders clear                   Empty all orders
 ```
 
@@ -172,14 +144,14 @@ Orders-Related Options:
 Add an order to the system.
 
 Format:
-```aidl
+```
 orders add <customer_name>
 Input the items to be added to this order.
 <index> <index> <index>
 ```
 
 Example:
-```aidl
+```
 orders add weisheng
 Input the items to be added to this order.
 1 2 
@@ -187,7 +159,7 @@ Input the items to be added to this order.
 
 Expected Output:
 
-```aidl
+```
 Input the items to be added to this order.
 Got it! The order for customer [weisheng] is added.
 ```

@@ -63,7 +63,7 @@ General Options:
 ```
 ### Items
 
-####Show items-related commands: items
+#### Show items-related commands: `items`
 
 Show commands related to items and brief description of the commands: add item, list items, remove items, clear items
 

@@ -14,7 +14,7 @@ faster than traditional graphical user interface (GUI) apps.
     - [Adding an item: `items add`](#adding-an-item-items-add)
     * [List all the tasks: `list`](#list-all-the-tasks-list)
     * [Complete a task: `done`](#complete-a-task-done)
-    * [Delete an item: `delete`](#delete-an-item-delete)
+    * [Delete an item: `delete`](#delete-an-item-items-delete)
   * [Orders](#orders)
     - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
     - [Adding an order: `orders add`](#adding-an-order-orders-add)
@@ -74,7 +74,7 @@ Expected Output:
 Items-Related Options:
   1. items add <item_name>          Add an item
   2. items list                     List all items
-  3. items delete <item_name>       Delete an item
+  3. items delete <item_index>       Delete an item
   4. items clear                    Empty all items
 ```
 

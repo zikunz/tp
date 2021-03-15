@@ -49,4 +49,5 @@ public class Messages {
     public static final String MESSAGE_EMPTY_ITEM_LIST = "There is no item in the warehouse at the moment.";
     public static final String MESSAGE_EMPTY_ORDER_LIST = "There is no order at the moment.";
     public static final String MESSAGE_INDENTATION = "    ";
+
 }

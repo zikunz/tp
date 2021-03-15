@@ -12,7 +12,7 @@ faster than traditional graphical user interface (GUI) apps.
   * [Items](#items)
     - [Show items-related commands: `items`](#show-items-related-commands-items)
     - [Adding an item: `items add`](#adding-an-item-items-add)
-    * [Showing the item list : `itemlist`](#showing-the-item-list-items-list)
+    * [Showing the item list : `item list`](#showing-the-item-list-items-list)
     * [Delete an item: `delete`](#delete-an-item-items-delete)
     * [Emptying the item list: `items clear`](#emptying-the-item-list-items-clear)
   * [Orders](#orders)
@@ -22,7 +22,7 @@ faster than traditional graphical user interface (GUI) apps.
     - [Removing an order: `orders delete`](#removing-an-order-orders-delete)
     - [Emptying the order list: `orders clear`](#emptying-the-order-list-orders-clear)
   * [Exit the program: `exit`](#exit-the-program-exit)
-  * [Save task list](#save-task-list)
+  * [Save record](#save-record)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
 
@@ -241,7 +241,7 @@ Done! I just cleared all orders for you.
 Bye. Thanks for using easyLog!
 ```
 
-### Save task list
+### Save record
 
 Duke save files are automatically updated or created when there is no existing save file
 when `exit` command is entered. There is no need to save manually. Save files are also loaded on start up

@@ -43,11 +43,12 @@ What can I do for you? Enter help to view commands.
 
 ### Viewing help: `help`
 
-Shows available commands of the app.
+* Shows available commands of the app.
 
-Format: `help`
+* Format: `help`
 
-Expected Output:
+* Expected Output:
+
 ```
 General Options:
   1. items                          Show items-related commands
@@ -58,18 +59,20 @@ General Options:
   6. orders                         Show orders-related commands
   7. orders add <order_name>        Add an order
   8. orders list                    List all orders
-  9. orders remove <order_name>     Remove an order
+  9. orders delete <order_index>    delete an order
   10. orders clear                  Empty all orders
 ```
+
 ### Items
 
 #### Show items-related commands: `items`
 
-Show commands related to items and brief description of the commands: add item, list items, remove items, clear items
+* Show commands related to items and brief description of the commands: add item, list items, remove items, clear items
 
-Format: `items`
+* Format: `items`
 
-Expected Output:
+* Expected Output:
+
 ```
 Items-Related Options:
   1. items add <item_name>          Add an item
@@ -80,123 +83,157 @@ Items-Related Options:
 
 #### Adding an item: `items add`
 
-Add an item to the system.
+* Add an item to the system.
 
-Format: `items add <item_name>`
+* Format: `items add <item_name>`
 
-Example: `items add PS5`
+* Example: `items add PS5`
 
-Expected Output:
+* Expected Output:
+
 ```
 Got it! The item [PS5] is added.
 ```
 
-#### Add an Event task: `Event`
+#### Showing the item list: `items list`
 
-Add an Event task to the task list.
+* Display all recorded items in the system.
 
-Format: `event <Task Description> /at <dd/mm/yy and time>`
+* Format: `items list`
 
-Example: `event Liverpool v Sheffield Utd /at 01/03/2021 0315`
+* Expected Output:
 
-Expected Output:
 ```
-Got it. I've added this task:
-  [E][ ] Liverpool v Sheffield Utd (at: 01/03/2021 0315)
-Now you have 3 tasks in the list.
-```
-
-#### List all the tasks: `list`
-
-List all the tasks in the task list.
-
-Format: `list`
-
-Expected Output:
-```
-Here are the tasks in your list:
-1.[T][ ] edit ip
-2.[D][ ] complete ip (by: 23/02/2021 2359)
-3.[E][ ] Liverpool v Sheffield Utd (at: 01/03/2021 0315)
-```
-
-#### Complete a task: `done`
-
-Mark task number _ as done.
-
-Format: `done <index>`
-
-Example: `done 2`
-
-Expected Output:
-```
-Nice! I've marked this task as done:
-  [D][X] complete ip (by: 23/02/2021 2359)
+Here are the list of items.
+1. PS5
+2. bag
 ```
 
 #### Delete an item: `items delete`
 
-Delete item number _ from item list.
+* Delete item number _ from item list.
 
-Format: `items delete <item_index>`
+* Format: `items delete <item_index>`
 
-Example: `items delete 2`
+* Example: `items delete 2`
 
-Expected Output:
+* Expected Output:
+
 ```
 Got it! The item [glove] is deleted.
+```
+
+#### Emptying the item list: `items clear`
+
+* Clear all recorded items in the system.
+
+* Format: `items clear`
+
+* Expected Output:
+
+```
+Done! I just cleared all items for you.
 ```
 
 ### Orders
 
 #### Show orders-related commands : `orders`
 
-Show commands related to orders and brief description of the commands:
+* Show commands related to orders and brief description of the commands:
 add order, list orders, remove orders, clear orders
 
-Format: `orders`
+* Format: `orders`
 
-Expected Output:
+* Expected Output:
+
 ```
 Orders-Related Options:
   1. orders add <order_name>        Add an order
   2. orders list                    List all orders
-  3. orders remove <order_name>     Remove an order
+  3. orders delete <order_index>    Remove an order
   4. orders clear                   Empty all orders
 ```
 
 #### Adding an order: `orders add`
 
-Add an order to the system.
+* Add an order to the system.
 
-Format:
-```aidl
+* Format:
+
+```
 orders add <customer_name>
 Input the items to be added to this order.
 <index> <index> <index>
 ```
 
-Example:
-```aidl
+* Example:
+
+```
 orders add weisheng
 Input the items to be added to this order.
 1 2 
 ```
 
-Expected Output:
+* Expected Output:
 
-```aidl
+```
 Input the items to be added to this order.
 Got it! The order for customer [weisheng] is added.
 ```
 
+#### Showing the order list: `orders list`
+
+* Display all recorded orders in the system.
+
+* Format: `orders list`
+
+* Expected Output:
+
+```
+Here are the list of orders.
+1. weisheng
+    1. PS5
+    2. bag
+2. Coco
+    1. PS5
+
+```
+
+#### Removing an order: `orders delete`
+
+* Delete an order from the order list
+
+* Format: `orders delete <order_index>`
+
+* Example: `orders delete 2`
+
+* Expected Output:
+
+```
+Got it! The order for customer [Coco] is deleted.
+```
+
+
+#### Emptying the order list: `orders clear`
+
+* Clear all recorded orders in the system.
+
+* Format: `orders clear`
+
+* Expected Output:
+
+```
+Done! I just cleared all orders for you.
+```
+
 ### Exit the program: `exit`
 
-Exit the app.
+* Exit the app.
 
-Format: `exit`
+* Format: `exit`
 
-Expected Output:
+* Expected Output:
+
 ```
 Bye. Thanks for using easyLog!
 ```

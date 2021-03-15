@@ -153,6 +153,7 @@ public class Ui {
 
     public void showItemNotFound(int index) {
         int itemNumber = index + Constants.ARRAY_OFFSET;
-        System.out.println("Item number " + itemNumber + " does not exist.");
+        System.out.println("Item number " + itemNumber + " does not exist. "
+                + "Please try another valid item number until at least one item is added to the order.");
     }
 }

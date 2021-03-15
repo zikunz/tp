@@ -8,21 +8,21 @@ faster than traditional graphical user interface (GUI) apps.
 
 - [Quick start](#quick-start)
 - [Features](#features)
-    * [Viewing help: `help`](#viewing-help-help)
-    * [Items](#items)
-        - [Show items-related commands: `items`](#show-items-related-commands-items)
-        - [Adding an item: `items add`](#adding-an-item-items-add)
-        * [Showing the item list : `itemlist`](#showing-the-item-list-items-list)
-        * [Delete an item: `delete`](#delete-an-item-items-delete)
-        * [Emptying the item list: `items clear`](#emptying-the-item-list-items-clear)
-    * [Orders](#orders)
-        - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
-        - [Adding an order: `orders add`](#adding-an-order-orders-add)
-        - [Showing the order list: `orders list`](#showing-the-order-list-orders-list)
-        - [Removing an order: `orders delete`](#removing-an-order-orders-delete)
-        - [Emptying the order list: `orders clear`](#emptying-the-order-list-orders-clear)
-    * [Exit the program: `exit`](#exit-the-program-exit)
-    * [Save task list](#save-task-list)
+  * [Viewing help: `help`](#viewing-help-help)
+  * [Items](#items)
+    - [Show items-related commands: `items`](#show-items-related-commands-items)
+    - [Adding an item: `items add`](#adding-an-item-items-add)
+    * [Showing the item list : `itemlist`](#showing-the-item-list-items-list)
+    * [Delete an item: `delete`](#delete-an-item-items-delete)
+    * [Emptying the item list: `items clear`](#emptying-the-item-list-items-clear)
+  * [Orders](#orders)
+    - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
+    - [Adding an order: `orders add`](#adding-an-order-orders-add)
+    - [Showing the order list: `orders list`](#showing-the-order-list-orders-list)
+    - [Removing an order: `orders delete`](#removing-an-order-orders-delete)
+    - [Emptying the order list: `orders clear`](#emptying-the-order-list-orders-clear)
+  * [Exit the program: `exit`](#exit-the-program-exit)
+  * [Save task list](#save-task-list)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
 
@@ -143,7 +143,7 @@ Done! I just cleared all items for you.
 #### Show orders-related commands : `orders`
 
 * Show commands related to orders and brief description of the commands:
-  add order, list orders, remove orders, clear orders
+add order, list orders, remove orders, clear orders
 
 * Format: `orders`
 

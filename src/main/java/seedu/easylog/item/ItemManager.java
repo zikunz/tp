@@ -27,23 +27,23 @@ public class ItemManager {
      *
      * @return String format for the list of items to be printed.
      */
-    public String getItemListPrintFormat(ArrayList<Item> itemListToBePrinted, boolean shouldIncludeIndentation) {
+    public String getItemListPrintFormat(ArrayList<Item> itemList, boolean shouldIncludeIndentation) {
         int taskCount = 1;
-        String itemsListOutput = "";
+        String itemsList = "";
 
         if (shouldIncludeIndentation) {
-            for (Item item : itemListToBePrinted) {
-                itemsListOutput += Messages.MESSAGE_INDENTATION + taskCount + ". " + item.getItemName() + "\n";
+            for (Item item : itemList) {
+                itemsList += Messages.MESSAGE_INDENTATION + taskCount + ". " + item.getItemName() + "\n";
                 ++taskCount;
             }
         } else {
-            for (Item item : itemListToBePrinted) {
-                itemsListOutput += taskCount + ". " + item.getItemName() + "\n";
+            for (Item item : itemList) {
+                itemsList += taskCount + ". " + item.getItemName() + "\n";
                 ++taskCount;
             }
         }
 
-        return itemsListOutput;
+        return itemsList;
     }
 
     public void deleteItem(int index) {

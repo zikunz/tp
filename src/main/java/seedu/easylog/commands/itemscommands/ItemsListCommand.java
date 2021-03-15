@@ -5,8 +5,9 @@ public class ItemsListCommand extends ItemsCommand {
     public void execute() {
         boolean shouldIncludeIndentation = false;
 
-        String rawItemListOutput =
+        String rawItemList =
                 itemManager.getItemListPrintFormat(itemManager.getItemList(), shouldIncludeIndentation);
-        ui.showItemList(rawItemListOutput);
+        ui.showItemList(rawItemList);
+
     }
 }

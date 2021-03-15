@@ -2,7 +2,7 @@ package seedu.easylog.common;
 
 public class Messages {
 
-    public static final String MESSAGE_LIST_ITEMS = "Here are the list of items.";
+    public static final String MESSAGE_LIST_ITEMS = "Here are the list of items in the warehouse.";
     public static final String MESSAGE_LIST_ORDERS = "Here are the list of orders.";
     public static final String MESSAGE_ADD_ITEMS_TO_ORDER = "Input the items to be added to this order.";
     public static final String MESSAGE_SHOW_ALL_COMMANDS = "General Options:\n"
@@ -46,7 +46,7 @@ public class Messages {
             "OOPS!!! There is no single order which can be cleared right now!";
     public static final String MESSAGE_CLEAR_ITEM_LIST = "Done! I just cleared all items for you.";
     public static final String MESSAGE_CLEAR_ORDER_LIST = "Done! I just cleared all orders for you.";
-    public static final String MESSAGE_EMPTY_ITEM_LIST = "No item list.";
-    public static final String MESSAGE_EMPTY_ORDER_LIST = "No order list.";
+    public static final String MESSAGE_EMPTY_ITEM_LIST = "There is no item in the warehouse at the moment.";
+    public static final String MESSAGE_EMPTY_ORDER_LIST = "There is no order at the moment.";
     public static final String MESSAGE_INDENTATION = "    ";
 }

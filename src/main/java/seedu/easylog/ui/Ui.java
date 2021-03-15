@@ -60,12 +60,12 @@ public class Ui {
     /**
      * Prints the list of all items in the system.
      */
-    public void showItemList(String rawItemListOutput) {
-        if (rawItemListOutput.equals("")) {
+    public void showItemList(String rawItemList) {
+        if (rawItemList.equals("")) {
             System.out.println(Messages.MESSAGE_EMPTY_ITEM_LIST);
         } else {
             System.out.println(Messages.MESSAGE_LIST_ITEMS);
-            System.out.print(rawItemListOutput);
+            System.out.print(rawItemList);
         }
     }
 

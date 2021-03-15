@@ -14,7 +14,7 @@ faster than traditional graphical user interface (GUI) apps.
     - [Adding an item: `items add`](#adding-an-item-items-add)
     * [List all the tasks: `list`](#list-all-the-tasks-list)
     * [Complete a task: `done`](#complete-a-task-done)
-    * [Delete a task: `delete`](#delete-a-task-delete)
+    * [Delete an item: `delete`](#delete-an-item-items-delete)
   * [Orders](#orders)
     - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
     - [Adding an order: `orders add`](#adding-an-order-orders-add)
@@ -53,7 +53,7 @@ General Options:
   1. items                          Show items-related commands
   2. items add <item_name>          Add an item
   3. items list                     List all items
-  4. items remove <item_name>       Remove an item
+  4. items delete <item_index>      Delete an item
   5. items clear                    Empty all items
   6. orders                         Show orders-related commands
   7. orders add <order_name>        Add an order
@@ -74,7 +74,7 @@ Expected Output:
 Items-Related Options:
   1. items add <item_name>          Add an item
   2. items list                     List all items
-  3. items remove <item_name>       Remove an item
+  3. items delete <item_index>      Delete an item
   4. items clear                    Empty all items
 ```
 
@@ -134,13 +134,13 @@ Nice! I've marked this task as done:
   [D][X] complete ip (by: 23/02/2021 2359)
 ```
 
-#### Delete a task: `delete`
+#### Delete an item: `items delete`
 
-Delete task number _ from task list.
+Delete item number _ from item list.
 
-Format: `delete <index>`
+Format: `items delete <item_index>`
 
-Example: `delete 2`
+Example: `items delete 2`
 
 Expected Output:
 ```

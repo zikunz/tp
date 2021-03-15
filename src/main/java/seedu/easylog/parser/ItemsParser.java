@@ -17,6 +17,7 @@ public class ItemsParser extends Parser {
         String[] splitItemsArg = splitCommandWordAndArgs(itemsInput);
         String itemsType = splitItemsArg[0];
         String itemsArg = splitItemsArg[1];
+
         switch (itemsType) {
         case (Constants.COMMAND_ADD):
             try {

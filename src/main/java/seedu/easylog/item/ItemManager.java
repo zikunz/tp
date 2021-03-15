@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class ItemManager {
 
     private static final ArrayList<Item> itemList = new ArrayList<>();
+
     public void addItem(Item item) {
         itemList.add(item);
     }
@@ -31,7 +32,8 @@ public class ItemManager {
 
         if (shouldIncludeIndentation) {
             for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
-                itemsListOutput += Messages.MESSAGE_INDENTATION + (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName() + "\n";
+                itemsListOutput += Messages.MESSAGE_INDENTATION + (itemIndex + 1) + ". " +
+                        itemListToBePrint.get(itemIndex).getItemName() + "\n";
             }
         } else {
             for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {

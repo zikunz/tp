@@ -12,24 +12,31 @@ public class Ui {
     public void showGreeting() {
         System.out.println(Messages.MESSAGE_GREETING);
     }
+
     public void showExit() {
         System.out.println(Messages.MESSAGE_GOODBYE);
     }
+
     public void showHelp() {
         System.out.println(Messages.MESSAGE_SHOW_ALL_COMMANDS);
     }
+
     public void showItemsHelp() {
         System.out.println(Messages.MESSAGE_SHOW_ITEMS_COMMANDS);
     }
+
     public void showInvalidCommand() {
         System.out.println(Messages.MESSAGE_INVALID_COMMAND);
     }
+
     public void showAddItem(Item item) {
         System.out.println(item.getAddItemMessage());
     }
+
     public void showItemEmptyName() {
         System.out.println(Messages.MESSAGE_EMPTY_ITEM_NAME);
     }
+
     public void showOrderEmptyCustomerName() {
         System.out.println(Messages.MESSAGE_EMPTY_ORDER_CUSTOMER_NAME);
     }
@@ -41,9 +48,11 @@ public class Ui {
     public void showOrderEmptyNumber() {
         System.out.println(Messages.MESSAGE_EMPTY_ORDER_NUMBER);
     }
+
     public void showDeletedItem(Item item) {
         System.out.println(item.getDeleteItemMessage());
     }
+
     public void showItemEmptyNumber() {
         System.out.println(Messages.MESSAGE_EMPTY_ITEM_NUMBER);
     }
@@ -77,9 +86,11 @@ public class Ui {
     public void showOrdersHelp() {
         System.out.println(Messages.MESSAGE_SHOW_ORDERS_RELATED_COMMANDS);
     }
+
     public void showAddItemsToOrder() {
         System.out.println(Messages.MESSAGE_ADD_ITEMS_TO_ORDER);
     }
+
     public void showOrderAdded(Order order) {
         System.out.println(order.getAddOrderMessage());
     }

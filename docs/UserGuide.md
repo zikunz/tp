@@ -1,9 +1,10 @@
 # easyLog User Guide
 
-easyLog is a command line interface (CLI) application for warehouse employees to manage their items and orders in their
-warehouse. easyLog allows information of new items and orders to be added, view existing items and orders in the
-warehouse, remove specific existing items and order, clear all existing items and orders. If you type fast, easyLog can
-get your logistic management tasks done faster than traditional graphical user interface (GUI) apps.
+easyLog is a command line interface (CLI) application for warehouse employees to manage their items and
+orders in their warehouse. easyLog allows information of new items and orders to be added,
+view existing items and orders in the warehouse, remove specific existing items and order,
+clear all existing items and orders. If you type fast, easyLog can get your logistic management tasks done
+faster than traditional graphical user interface (GUI) apps.
 
 - [Quick start](#quick-start)
 - [Features](#features)
@@ -11,7 +12,6 @@ get your logistic management tasks done faster than traditional graphical user i
     * [Items](#items)
         - [Show items-related commands: `items`](#show-items-related-commands-items)
         - [Adding an item: `items add`](#adding-an-item-items-add)
-
         * [Showing the item list : `itemlist`](#showing-the-item-list-items-list)
         * [Delete an item: `delete`](#delete-an-item-items-delete)
         * [Emptying the item list: `items clear`](#emptying-the-item-list-items-clear)
@@ -39,7 +39,6 @@ get your logistic management tasks done faster than traditional graphical user i
 Hello! I'm easyLog!
 What can I do for you? Enter help to view commands.
 ```
-
 7. Type a command and press enter to continue using the app.
 8. Refer to the [Features](#features) below for details of each command.
 
@@ -217,6 +216,7 @@ Here are the list of orders.
 Got it! The order for customer [Coco] is deleted.
 ```
 
+
 #### Emptying the order list: `orders clear`
 
 * Clear all recorded orders in the system.
@@ -243,8 +243,9 @@ Bye. Thanks for using easyLog!
 
 ### Save task list
 
-Duke save files are automatically updated or created when there is no existing save file when `exit` command is entered.
-There is no need to save manually. Save files are also loaded on start up of the application if it exists.
+Duke save files are automatically updated or created when there is no existing save file
+when `exit` command is entered. There is no need to save manually. Save files are also loaded on start up
+of the application if it exists.
 
 ## FAQ
 
@@ -268,6 +269,7 @@ There is no need to save manually. Save files are also loaded on start up of the
 
 **Q3**: I am scared that I input any command which I do not intend to execute. Is there a way to revert changes in the
 system?
+
 > If you input any invalid command (e.g., an unrecognized command or a clearing command for the item list when the list
 > is already empty), it will not be executed. <br/>
 >

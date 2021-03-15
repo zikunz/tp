@@ -43,11 +43,12 @@ What can I do for you? Enter help to view commands.
 
 ### Viewing help: `help`
 
-Shows available commands of the app.
+* Shows available commands of the app.
 
-Format: `help`
+* Format: `help`
 
-Expected Output:
+* Expected Output:
+
 ```
 General Options:
   1. items                          Show items-related commands
@@ -61,15 +62,17 @@ General Options:
   9. orders delete <order_index>    delete an order
   10. orders clear                  Empty all orders
 ```
+
 ### Items
 
 #### Show items-related commands: `items`
 
-Show commands related to items and brief description of the commands: add item, list items, remove items, clear items
+* Show commands related to items and brief description of the commands: add item, list items, remove items, clear items
 
-Format: `items`
+* Format: `items`
 
-Expected Output:
+* Expected Output:
+
 ```
 Items-Related Options:
   1. items add <item_name>          Add an item
@@ -80,26 +83,25 @@ Items-Related Options:
 
 #### Adding an item: `items add`
 
-Add an item to the system.
+* Add an item to the system.
 
-Format: `items add <item_name>`
+* Format: `items add <item_name>`
 
-Example: `items add PS5`
+* Example: `items add PS5`
 
-Expected Output:
+* Expected Output:
+
 ```
 Got it! The item [PS5] is added.
 ```
 
 #### Showing the item list: `items list`
 
-Display all recorded items in the system.
+* Display all recorded items in the system.
 
-Format: `items list`
+* Format: `items list`
 
-Example: `items list`
-
-Expected Output:
+* Expected Output:
 
 ```
 Here are the list of items.
@@ -109,13 +111,13 @@ Here are the list of items.
 
 #### Delete an item: `items delete`
 
-Delete item number _ from item list.
+* Delete item number _ from item list.
 
-Format: `items delete <item_index>`
+* Format: `items delete <item_index>`
 
-Example: `items delete 2`
+* Example: `items delete 2`
 
-Expected Output:
+* Expected Output:
 
 ```
 Got it! The item [glove] is deleted.
@@ -123,13 +125,11 @@ Got it! The item [glove] is deleted.
 
 #### Emptying the item list: `items clear`
 
-Clear all recorded items in the system.
+* Clear all recorded items in the system.
 
-Format: `items clear`
+* Format: `items clear`
 
-Example: `items clear`
-
-Expected Output:
+* Expected Output:
 
 ```
 Done! I just cleared all items for you.
@@ -139,12 +139,13 @@ Done! I just cleared all items for you.
 
 #### Show orders-related commands : `orders`
 
-Show commands related to orders and brief description of the commands:
+* Show commands related to orders and brief description of the commands:
 add order, list orders, remove orders, clear orders
 
-Format: `orders`
+* Format: `orders`
 
-Expected Output:
+* Expected Output:
+
 ```
 Orders-Related Options:
   1. orders add <order_name>        Add an order
@@ -155,23 +156,25 @@ Orders-Related Options:
 
 #### Adding an order: `orders add`
 
-Add an order to the system.
+* Add an order to the system.
 
-Format:
+* Format:
+
 ```
 orders add <customer_name>
 Input the items to be added to this order.
 <index> <index> <index>
 ```
 
-Example:
+* Example:
+
 ```
 orders add weisheng
 Input the items to be added to this order.
 1 2 
 ```
 
-Expected Output:
+* Expected Output:
 
 ```
 Input the items to be added to this order.
@@ -180,13 +183,11 @@ Got it! The order for customer [weisheng] is added.
 
 #### Showing the order list: `orders list`
 
-Display all recorded orders in the system.
+* Display all recorded orders in the system.
 
-Format: `orders list`
+* Format: `orders list`
 
-Example: `orders list`
-
-Expected Output:
+* Expected Output:
 
 ```
 Here are the list of orders.
@@ -198,45 +199,41 @@ Here are the list of orders.
 
 ```
 
-#### Remove an order: `orders delete`
+#### Removing an order: `orders delete`
 
-Delete an order from the order list
+* Delete an order from the order list
 
-Format: `orders delete <order_index>`
+* Format: `orders delete <order_index>`
 
-Example: `orders delete 2`
+* Example: `orders delete 2`
 
-Expected Output:
+* Expected Output:
 
 ```
 Got it! The order for customer [Coco] is deleted.
 ```
 
+
 #### Emptying the order list: `orders clear`
 
-Clear all recorded orders in the system.
+* Clear all recorded orders in the system.
 
-Format: `orders clear`
+* Format: `orders clear`
 
-Example: `orders clear`
-
-Expected Output:
+* Expected Output:
 
 ```
 Done! I just cleared all orders for you.
 ```
 
-
-
-
-
 ### Exit the program: `exit`
 
-Exit the app.
+* Exit the app.
 
-Format: `exit`
+* Format: `exit`
 
-Expected Output:
+* Expected Output:
+
 ```
 Bye. Thanks for using easyLog!
 ```

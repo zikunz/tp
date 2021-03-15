@@ -11,11 +11,9 @@ import java.util.ArrayList;
 public class ItemManager {
 
     private static final ArrayList<Item> itemList = new ArrayList<>();
-
     public void addItem(Item item) {
         itemList.add(item);
     }
-
     public ArrayList<Item> getItemList() {
         return itemList;
     }
@@ -27,29 +25,23 @@ public class ItemManager {
      *
      * @return String format for the list of items to be printed.
      */
-    public String getItemListPrintFormat(ArrayList<Item> itemList, boolean shouldIncludeIndentation) {
-        int taskCount = 1;
-        String itemsList = "";
-
+    public String getItemListPrintFormat(ArrayList<Item> itemListToBePrint, boolean shouldIncludeIndentation) {
+        String itemsListOutput = "";
         if (shouldIncludeIndentation) {
-            for (Item item : itemList) {
-                itemsList += Messages.MESSAGE_INDENTATION + taskCount + ". " + item.getItemName() + "\n";
-                ++taskCount;
+            for (int itemIndex=0; itemIndex < itemListToBePrint.size(); itemIndex++) {
+                itemsListOutput += Messages.MESSAGE_INDENTATION + (itemIndex+1) + ". " + itemListToBePrint.get(itemIndex).getItemName() + "\n";
             }
         } else {
-            for (Item item : itemList) {
-                itemsList += taskCount + ". " + item.getItemName() + "\n";
-                ++taskCount;
+            for (int itemIndex=0; itemIndex < itemListToBePrint.size();itemIndex++) {
+                itemsListOutput += (itemIndex+1) + ". " + itemListToBePrint.get(itemIndex).getItemName() + "\n";
             }
         }
-
-        return itemsList;
+        return itemsListOutput;
     }
 
     public void deleteItem(int index) {
         itemList.remove(index);
     }
-
     public Item getItem(int index) {
         return itemList.get(index);
     }

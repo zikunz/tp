@@ -12,7 +12,7 @@ faster than traditional graphical user interface (GUI) apps.
   * [Items](#items)
     - [Show items-related commands: `items`](#show-items-related-commands-items)
     - [Adding an item: `items add`](#adding-an-item-items-add)
-    * [Showing the item list : `item list`](#showing-the-item-list-items-list)
+    * [Showing the item list : `items list`](#showing-the-item-list-items-list)
     * [Delete an item: `delete`](#delete-an-item-items-delete)
     * [Emptying the item list: `items clear`](#emptying-the-item-list-items-clear)
   * [Orders](#orders)

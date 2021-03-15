@@ -30,12 +30,12 @@ public class ItemManager {
         String itemsListOutput = "";
 
         if (shouldIncludeIndentation) {
-            for (int itemIndex=0; itemIndex < itemListToBePrint.size(); itemIndex++) {
-                itemsListOutput += Messages.MESSAGE_INDENTATION + (itemIndex+1) + ". " + itemListToBePrint.get(itemIndex).getItemName() + "\n";
+            for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
+                itemsListOutput += Messages.MESSAGE_INDENTATION + (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName() + "\n";
             }
         } else {
-            for (int itemIndex=0; itemIndex < itemListToBePrint.size();itemIndex++) {
-                itemsListOutput += (itemIndex+1) + ". " + itemListToBePrint.get(itemIndex).getItemName() + "\n";
+            for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
+                itemsListOutput += (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName() + "\n";
             }
         }
         return itemsListOutput;

@@ -48,9 +48,11 @@ public class Ui {
     public void showOrderEmptyNumber() {
         System.out.println(Messages.MESSAGE_EMPTY_ORDER_NUMBER);
     }
+
     public void showDeletedItem(Item item) {
         System.out.println(item.getDeleteItemMessage());
     }
+
     public void showItemEmptyNumber() {
         System.out.println(Messages.MESSAGE_EMPTY_ITEM_NUMBER);
     }
@@ -84,9 +86,11 @@ public class Ui {
     public void showOrdersHelp() {
         System.out.println(Messages.MESSAGE_SHOW_ORDERS_RELATED_COMMANDS);
     }
+
     public void showAddItemsToOrder() {
         System.out.println(Messages.MESSAGE_ADD_ITEMS_TO_ORDER);
     }
+
     public void showOrderAdded(Order order) {
         System.out.println(order.getAddOrderMessage());
     }

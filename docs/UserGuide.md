@@ -63,7 +63,7 @@ General Options:
 ```
 ### Items
 
-#### Show items-related commands: `items`
+####Show items-related commands: items
 
 Show commands related to items and brief description of the commands: add item, list items, remove items, clear items
 
@@ -134,9 +134,9 @@ Nice! I've marked this task as done:
   [D][X] complete ip (by: 23/02/2021 2359)
 ```
 
-#### Delete an item: `delete`
+#### Delete a task: `delete`
 
-Delete an item from the system.
+Delete task number _ from task list.
 
 Format: `delete <index>`
 
@@ -144,7 +144,9 @@ Example: `delete 2`
 
 Expected Output:
 ```
-Got it! The item [glove] is deleted.
+Noted. I've removed this task:
+  [D][X] complete ip (by: 23/02/2021 2359)
+Now you have 2 tasks in the list.
 ```
 
 ### Orders

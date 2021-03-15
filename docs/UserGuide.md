@@ -53,7 +53,7 @@ General Options:
   1. items                          Show items-related commands
   2. items add <item_name>          Add an item
   3. items list                     List all items
-  4. items remove <item_name>       Remove an item
+  4. items delete <item_index>      Delete an item
   5. items clear                    Empty all items
   6. orders                         Show orders-related commands
   7. orders add <order_name>        Add an order
@@ -74,7 +74,7 @@ Expected Output:
 Items-Related Options:
   1. items add <item_name>          Add an item
   2. items list                     List all items
-  3. items delete <item_index>       Delete an item
+  3. items delete <item_index>      Delete an item
   4. items clear                    Empty all items
 ```
 
@@ -138,7 +138,7 @@ Nice! I've marked this task as done:
 
 Delete an item from the system.
 
-Format: `items delete <index>`
+Format: `items delete <item_index>`
 
 Example: `items delete 2`
 

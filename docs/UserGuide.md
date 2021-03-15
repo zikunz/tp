@@ -144,9 +144,7 @@ Example: `items delete 2`
 
 Expected Output:
 ```
-Noted. I've removed this task:
-  [D][X] complete ip (by: 23/02/2021 2359)
-Now you have 2 tasks in the list.
+Got it! The item [glove] is deleted.
 ```
 
 ### Orders

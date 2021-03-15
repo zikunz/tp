@@ -12,13 +12,16 @@ faster than traditional graphical user interface (GUI) apps.
   * [Items](#items)
     - [Show items-related commands: `items`](#show-items-related-commands-items)
     - [Adding an item: `items add`](#adding-an-item-items-add)
-    * [List all the tasks: `list`](#list-all-the-tasks-list)
-    * [Complete a task: `done`](#complete-a-task-done)
+    * [Showing the item list : `itemlist`](#showing-the-item-list-items-list)
     * [Delete an item: `delete`](#delete-an-item-items-delete)
+    * [Emptying the item list: `items clear`](#emptying-the-item-list-items-clear)
   * [Orders](#orders)
     - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
     - [Adding an order: `orders add`](#adding-an-order-orders-add)
-  * [Exit the program: `exit`](#exit-the-program-bye)
+    - [Showing the order list: `orders list`](#showing-the-order-list-orders-list)
+    - [Removing an order: `orders delete`](#removing-an-order-orders-delete)
+    - [Emptying the order list: `orders clear`](#emptying-the-order-list-orders-clear)
+  * [Exit the program: `exit`](#exit-the-program-exit)
   * [Save task list](#save-task-list)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
@@ -26,14 +29,14 @@ faster than traditional graphical user interface (GUI) apps.
 ## Quick start
 
 1. Ensure you have Java 11 or above installed in your Computer.
-2. Download the latest Duke.jar from [here](https://github.com/ongweisheng/ip/releases/tag/A-Release).
+2. Download the latest easyLog.jar from [here](https://github.com/ongweisheng/ip/releases/tag/A-Release).
 3. Copy the file to the folder you want to use as the home folder for your Duke.
 4. Open up a terminal/command window at the location where Duke.jar
-5. Run the command `java -jar Duke.jar`
+5. Run the command `java -jar easyLog.jar`
 6. The app should load as shown below
 
 ```
-Hello! I'm Duke
+Hello! I'm easyLog!
 What can I do for you? Enter help to view commands.
 ```
 7. Type a command and press enter to continue using the app.
@@ -254,11 +257,15 @@ of the application if it exists.
 
 Command | Format | Example |
 ------- | ------- | ------- | 
-todo | `todo <description>` | `todo edit ip` |
-deadline | `deadline <description> /by <dd/mm/yyyy and time>` | `deadline complete ip /by 23/02/2021 2359` |
-event | `event <description> /at <dd/mm/yyyy and time>`      | `event Liverpool v Sheffield Utd /at 01/03/2021 0315` |
-list | `list` | `list` |
-done | `done <index>` | `done 2` |
-delete | `delete <index>` | `delete 2` |
-find | `find <keyword>` | `find mushroom` |
+help | `help` | `help` |
+item | `items` | `items` |
+items add | `items add <item_name>` | `items add PS5` |
+items list | `items list`      | `items list` |
+items delete | `tems delete <item_index>` | `items delete 2` |
+items clear | `items clear ` | `items clear` |
+orders | `orders` | `orders` |
+orders add | `orders add <order_name> `<br />` Input the items to be added to this order. `<br />` <index> <index> <index>` | `orders add weisheng`<br />` Input the items to be added to this order.`<br />` 1 2 ` |
+orders list | `orders list` | `orders list` |
+orders delete | `orders delete <order_index>` | `orders delete 2` |
+orders clear | `orders clear` | `orders clear` |
 exit | `exit` | `exit` |

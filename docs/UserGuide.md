@@ -1,28 +1,28 @@
 # easyLog User Guide
 
-easyLog is a command line interface (CLI) application for warehouse employees to manage their items and
-orders in their warehouse. easyLog allows information of new items and orders to be added,
-view existing items and orders in the warehouse, remove specific existing items and order,
-clear all existing items and orders. If you type fast, easyLog can get your logistic management tasks done
-faster than traditional graphical user interface (GUI) apps.
+easyLog is a command line interface (CLI) application for warehouse employees to manage their items and orders in their
+warehouse. easyLog allows information of new items and orders to be added, view existing items and orders in the
+warehouse, remove specific existing items and order, clear all existing items and orders. If you type fast, easyLog can
+get your logistic management tasks done faster than traditional graphical user interface (GUI) apps.
 
 - [Quick start](#quick-start)
 - [Features](#features)
-  * [Viewing help: `help`](#viewing-help-help)
-  * [Items](#items)
-    - [Show items-related commands: `items`](#show-items-related-commands-items)
-    - [Adding an item: `items add`](#adding-an-item-items-add)
-    * [Showing the item list : `itemlist`](#showing-the-item-list-items-list)
-    * [Delete an item: `delete`](#delete-an-item-items-delete)
-    * [Emptying the item list: `items clear`](#emptying-the-item-list-items-clear)
-  * [Orders](#orders)
-    - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
-    - [Adding an order: `orders add`](#adding-an-order-orders-add)
-    - [Showing the order list: `orders list`](#showing-the-order-list-orders-list)
-    - [Removing an order: `orders delete`](#removing-an-order-orders-delete)
-    - [Emptying the order list: `orders clear`](#emptying-the-order-list-orders-clear)
-  * [Exit the program: `exit`](#exit-the-program-exit)
-  * [Save task list](#save-task-list)
+    * [Viewing help: `help`](#viewing-help-help)
+    * [Items](#items)
+        - [Show items-related commands: `items`](#show-items-related-commands-items)
+        - [Adding an item: `items add`](#adding-an-item-items-add)
+
+        * [Showing the item list : `itemlist`](#showing-the-item-list-items-list)
+        * [Delete an item: `delete`](#delete-an-item-items-delete)
+        * [Emptying the item list: `items clear`](#emptying-the-item-list-items-clear)
+    * [Orders](#orders)
+        - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
+        - [Adding an order: `orders add`](#adding-an-order-orders-add)
+        - [Showing the order list: `orders list`](#showing-the-order-list-orders-list)
+        - [Removing an order: `orders delete`](#removing-an-order-orders-delete)
+        - [Emptying the order list: `orders clear`](#emptying-the-order-list-orders-clear)
+    * [Exit the program: `exit`](#exit-the-program-exit)
+    * [Save task list](#save-task-list)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
 
@@ -39,6 +39,7 @@ faster than traditional graphical user interface (GUI) apps.
 Hello! I'm easyLog!
 What can I do for you? Enter help to view commands.
 ```
+
 7. Type a command and press enter to continue using the app.
 8. Refer to the [Features](#features) below for details of each command.
 
@@ -143,7 +144,7 @@ Done! I just cleared all items for you.
 #### Show orders-related commands : `orders`
 
 * Show commands related to orders and brief description of the commands:
-add order, list orders, remove orders, clear orders
+  add order, list orders, remove orders, clear orders
 
 * Format: `orders`
 
@@ -216,7 +217,6 @@ Here are the list of orders.
 Got it! The order for customer [Coco] is deleted.
 ```
 
-
 #### Emptying the order list: `orders clear`
 
 * Clear all recorded orders in the system.
@@ -243,15 +243,39 @@ Bye. Thanks for using easyLog!
 
 ### Save task list
 
-Duke save files are automatically updated or created when there is no existing save file
-when `exit` command is entered. There is no need to save manually. Save files are also loaded on start up
-of the application if it exists.
+Duke save files are automatically updated or created when there is no existing save file when `exit` command is entered.
+There is no need to save manually. Save files are also loaded on start up of the application if it exists.
 
 ## FAQ
 
-**Q1**: Where is the save file stored or created after I exit the program?
+**Q1**: Where is the saved file (record) stored or created after I exit the program?
 
-> Save file `duke.txt` is stored in the directory you ran the app in.
+> The saved file or record is not stored anywhere for easyLog v1.0. This feature will be added in the next iteration
+> (i.e., easyLog v2.0).
+
+**Q2**: I do not seem to be able to add an order. Why is this so?
+
+> There could be many possibilities which can result in you not being able to add an order. We advise you to follow
+> the below steps when intending to add an order. <br/>
+>
+> Please note that you need to specify a customer's name as he or she is the one whom the order of interest will be
+> sent to. For instance, you can do this by typing `orders add Alice`. <br/>
+>
+> After that, input the item number found in the item list (if unsure, simply type `items list` to check). Please
+> separate each item number by exactly one empty space (i.e., ` `). Do not attempt to enter an item number
+> which does not exist in the item list or belongs to another order. For example, you could type `1 2`, provided
+> the first and second items exist in the item list and are not added to other orders.
+
+**Q3**: I am scared that I input any command which I do not intend to execute. Is there a way to revert changes in the
+system?
+> If you input any invalid command (e.g., an unrecognized command or a clearing command for the item list when the list
+> is already empty), it will not be executed. <br/>
+>
+> In the event that you accidentally add an item or order, you can always undo it by deleting it. Likewise, you can
+> add an item or order back if you delete it mistakenly. For now, easyLog does not have a command to revert any
+> changes and we may consider adding it in the upcoming version. <br/>
+>
+> You should not worry too much as easyLog is highly optimized for fast typists working in a warehouse like you.
 
 ## Command Summary
 

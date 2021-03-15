@@ -1,5 +1,6 @@
 package seedu.easylog.ui;
 
+import seedu.easylog.common.Constants;
 import seedu.easylog.common.Messages;
 import seedu.easylog.item.Item;
 import seedu.easylog.order.Order;
@@ -67,6 +68,14 @@ public class Ui {
             System.out.println(Messages.MESSAGE_LIST_ITEMS);
             System.out.print(rawItemListOutput);
         }
+    }
+
+    public void showEmptyItemList() {
+        System.out.println(Messages.MESSAGE_EMPTY_ITEM_LIST);
+    }
+
+    public void showAddItemFirst() {
+        System.out.println(Messages.MESSAGE_ADD_ITEM_FIRST);
     }
 
     /**
@@ -140,5 +149,10 @@ public class Ui {
      */
     public void showClearedOrderList() {
         System.out.println(Messages.MESSAGE_CLEAR_ORDER_LIST);
+    }
+
+    public void showItemNotFound(int index) {
+        int itemNumber = index + Constants.ARRAY_OFFSET;
+        System.out.println("Item number " + itemNumber + " does not exist.");
     }
 }

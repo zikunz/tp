@@ -48,6 +48,7 @@ public class Messages {
     public static final String MESSAGE_CLEAR_ORDER_LIST = "Done! I just cleared all orders for you.";
     public static final String MESSAGE_EMPTY_ITEM_LIST = "There is no item in the warehouse at the moment.";
     public static final String MESSAGE_EMPTY_ORDER_LIST = "There is no order at the moment.";
+    public static final String MESSAGE_ADD_ITEM_FIRST = "Please add items to the system first.";
     public static final String MESSAGE_INDENTATION = "    ";
 
 }

@@ -13,7 +13,6 @@ import seedu.easylog.exceptions.ItemListAlreadyClearedException;
  * Process items command input.
  */
 public class ItemsParser extends Parser {
-
     public static void processItemsInput(String itemsInput) {
         String[] splitItemsArg = splitCommandWordAndArgs(itemsInput);
         String itemsType = splitItemsArg[0];

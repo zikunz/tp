@@ -249,9 +249,35 @@ of the application if it exists.
 
 ## FAQ
 
-**Q1**: Where is the save file stored or created after I exit the program?
+**Q1**: Where is the saved file (record) stored or created after I exit the program?
 
-> Save file `duke.txt` is stored in the directory you ran the app in.
+> The saved file or record is not stored anywhere for easyLog v1.0. This feature will be added in the next iteration
+> (i.e., easyLog v2.0).
+
+**Q2**: I do not seem to be able to add an order. Why is this so?
+
+> There could be many possibilities which can result in you not being able to add an order. We advise you to follow
+> the below steps when intending to add an order. <br/>
+>
+> Please note that you need to specify a customer's name as he or she is the one whom the order of interest will be
+> sent to. For instance, you can do this by typing `orders add Alice`. <br/>
+>
+> After that, input the item number found in the item list (if unsure, simply type `items list` to check). Please
+> separate each item number by exactly one empty space (i.e., ` `). Do not attempt to enter an item number
+> which does not exist in the item list or belongs to another order. For example, you could type `1 2`, provided
+> the first and second items exist in the item list and are not added to other orders.
+
+**Q3**: I am scared that I input any command which I do not intend to execute. Is there a way to revert changes in the
+system?
+
+> If you input any invalid command (e.g., an unrecognized command or a clearing command for the item list when the list
+> is already empty), it will not be executed. <br/>
+>
+> In the event that you accidentally add an item or order, you can always undo it by deleting it. Likewise, you can
+> add an item or order back if you delete it mistakenly. For now, easyLog does not have a command to revert any
+> changes and we may consider adding it in the upcoming version. <br/>
+>
+> You should not worry too much as easyLog is highly optimized for fast typists working in a warehouse like you.
 
 ## Command Summary
 

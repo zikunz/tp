@@ -1,5 +1,6 @@
 package seedu.easylog.order;
 
+import seedu.easylog.common.Constants;
 import seedu.easylog.item.Item;
 
 import java.util.ArrayList;
@@ -61,7 +62,7 @@ public class OrderManager {
      * @param index index of the order given
      * @return customer's items specified by the index of the order given
      */
-    public ArrayList<Item> getItems(int index) {
+    public ArrayList<Item> getItemsInOrder(int index) {
         return getOrder(index).getItemsInOrder();
     }
 
@@ -70,5 +71,14 @@ public class OrderManager {
      */
     public void clearOrderList() {
         orderList.clear();
+    }
+
+    /**
+     * Get latest order added to the order list.
+     * @return Latest order added to the order list.
+     */
+    public Order getLatestOrderAdded() {
+        int index = getSize() - Constants.ARRAY_OFFSET;
+        return getOrder(index);
     }
 }

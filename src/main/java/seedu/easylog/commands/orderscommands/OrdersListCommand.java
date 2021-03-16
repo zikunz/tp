@@ -9,11 +9,10 @@ public class OrdersListCommand extends OrdersCommand {
         String customerName;
         String customersItems;
         String rawOrderListOutput = "";
-        boolean shouldIncludeIndentation = true;
 
         for (int i = 0; i < orderSize; i++) {
             customerName = (i + 1) + ". " + orderManager.getCustomerName(i);
-            customersItems = itemManager.getItemListPrintFormat(orderManager.getItems(i), shouldIncludeIndentation);
+            customersItems = itemManager.getItemListPrintFormat(orderManager.getItemsInOrder(i), true);
             rawOrderListOutput += customerName + "\n" + customersItems;
         }
         ui.showOrderList(rawOrderListOutput);

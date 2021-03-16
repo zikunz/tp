@@ -11,6 +11,7 @@ public class ItemsAddCommand extends ItemsCommand {
         }
         Item item = new Item(itemsArg);
         itemManager.addItem(item);
+        assert itemManager.getLatestItemAdded().equals(item);
         ui.showAddItem(item);
     }
 }

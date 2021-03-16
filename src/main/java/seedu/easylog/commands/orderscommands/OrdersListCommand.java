@@ -17,5 +17,8 @@ public class OrdersListCommand extends OrdersCommand {
             rawOrderListOutput += customerName + "\n" + customersItems;
         }
         ui.showOrderList(rawOrderListOutput);
+
+        assert rawOrderListOutput.startsWith("1.") : "rawOrderListOutput is either empty " +
+                "or starts with \"1. First Customer's Name\"";
     }
 }

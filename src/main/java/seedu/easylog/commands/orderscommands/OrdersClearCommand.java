@@ -10,7 +10,10 @@ public class OrdersClearCommand extends OrdersCommand {
         if (orderManager.getSize() == 0) {
             throw new OrderListAlreadyClearedException();
         }
+        assert ui != null : "ui should not be null";
         ui.showClearedOrderList();
+
+        assert orderManager != null : "orderManager should not be null";
         orderManager.clearOrderList();
     }
 }

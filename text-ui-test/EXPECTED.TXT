@@ -17,10 +17,10 @@ Items-Related Options:
   3. items remove <item_name>       Remove an item
   4. items clear                    Empty all items
 Orders-Related Options:
-    1. orders add <order_name>        Add an order
-    2. orders list                    List all orders
-    3. orders remove <order_name>     Remove an order
-    4. orders clear                   Empty all orders
+  1. orders add <order_name>        Add an order
+  2. orders list                    List all orders
+  3. orders remove <order_name>     Remove an order
+  4. orders clear                   Empty all orders
 There is no item in the warehouse at the moment.
 Please add items to the system first.
 Got it! The item [ps5] is added.

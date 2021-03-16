@@ -22,7 +22,7 @@ public class OrdersListCommand extends OrdersCommand {
             isCorrectOutput = true;
         }
 
-        assert isCorrectOutput == true : "rawOrderListOutput is either empty " +
-                "or starts with \"1. First Customer's Name\"";
+        assert isCorrectOutput == true : "rawOrderListOutput is either empty "
+                + "or starts with \"1. First Customer's Name\"";
     }
 }

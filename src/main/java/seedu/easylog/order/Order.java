@@ -4,6 +4,9 @@ import seedu.easylog.item.Item;
 
 import java.util.ArrayList;
 
+/**
+ * Handles orders related information.
+ */
 public class Order {
 
     protected String customerName;
@@ -12,6 +15,8 @@ public class Order {
     public Order(String customerName, ArrayList<Item> itemsInOrder) {
         this.customerName = customerName;
         this.itemsInOrder = itemsInOrder;
+        assert customerName != null;
+        assert itemsInOrder != null;
     }
 
     public String getCustomerName() {

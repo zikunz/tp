@@ -58,6 +58,11 @@ public class OrdersParser extends Parser {
         }
     }
 
+    /**
+     * Process input for respective items to be added into a specific order.
+     * @param itemsAdded Input for the items to be added into a order.
+     * @return ArrayList of item for the items in the order.
+     */
     public ArrayList<Item> processItemsAddedToOrder(String itemsAdded) {
         ArrayList<Item> itemsAddedToOrder = new ArrayList<>();
         String[] splitInput = itemsAdded.split(" ");

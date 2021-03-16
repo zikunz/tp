@@ -2,6 +2,7 @@
 package seedu.easylog.item;
 
 import seedu.easylog.common.Messages;
+import seedu.easylog.common.Constants;
 
 import java.util.ArrayList;
 
@@ -65,6 +66,15 @@ public class ItemManager {
      */
     public void clearItemList() {
         itemList.clear();
+    }
+
+    /**
+     * Get the latest item added to the itemList.
+     * @return Latest item added to itemList.
+     */
+    public Item getLatestItemAdded() {
+        int index = getSize() - Constants.ARRAY_OFFSET;
+        return getItem(index);
     }
 }
 

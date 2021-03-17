@@ -29,6 +29,10 @@ Here are the list of items in the warehouse.
 1. ps5
 2. keyboard
 Got it! The item [keyboard] is deleted.
+OOPS!!!. The item number is invalid!
+Please input again!
+OOPS!!!. The item number is missing!
+Please complete the information!
 Input the items to be added to this order.
 Item number 2 does not exist. Please try another valid item number until at least one item is added to the order.
 Item number 3 does not exist. Please try another valid item number until at least one item is added to the order.
@@ -43,6 +47,10 @@ Here are the list of orders.
     1. ps5
     2. water
 Got it! The order for customer [zikun] is deleted.
+OOPS!!!. The order number is invalid!
+Please input again!
+OOPS!!!. The order number is missing!
+Please complete the information!
 Got it! The item [water] is deleted.
 Here are the list of items in the warehouse.
 1. ps5

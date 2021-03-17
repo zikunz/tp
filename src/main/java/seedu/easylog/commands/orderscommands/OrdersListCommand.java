@@ -16,5 +16,13 @@ public class OrdersListCommand extends OrdersCommand {
             rawOrderListOutput += customerName + "\n" + customersItems;
         }
         ui.showOrderList(rawOrderListOutput);
+
+        boolean isCorrectOutput = false;
+        if (rawOrderListOutput == "" || rawOrderListOutput.startsWith("1. ")) {
+            isCorrectOutput = true;
+        }
+
+        assert isCorrectOutput == true : "rawOrderListOutput is either empty "
+                + "or starts with \"1. First Customer's Name\"";
     }
 }

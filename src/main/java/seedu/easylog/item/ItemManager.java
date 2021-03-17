@@ -13,9 +13,7 @@ public class ItemManager {
 
     private static final ArrayList<Item> itemList = new ArrayList<>();
 
-    public void addItem(Item item) {
-        itemList.add(item);
-    }
+    public void addItem(Item item) { itemList.add(item); }
 
     public ArrayList<Item> getItemList() {
         return itemList;
@@ -70,6 +68,7 @@ public class ItemManager {
 
     /**
      * Get the latest item added to the itemList.
+     *
      * @return Latest item added to itemList.
      */
     public Item getLatestItemAdded() {

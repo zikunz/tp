@@ -60,6 +60,8 @@ public class Ui {
 
     /**
      * Prints the list of all items in the system.
+     *
+     * @param rawItemListOutput List of items in String format
      */
     public void showItemList(String rawItemListOutput) {
         if (rawItemListOutput.equals("")) {
@@ -82,6 +84,8 @@ public class Ui {
      * Prints the list of all orders in the system.
      * This includes each customer's name
      * followed by his or her items in the record.
+     *
+     * @param rawOrderListOutput List of orders in String format
      */
     public void showOrderList(String rawOrderListOutput) {
         if (rawOrderListOutput.equals("")) {

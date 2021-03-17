@@ -15,7 +15,7 @@ import java.util.logging.SimpleFormatter;
  * Handles file logging when using easyLog.
  */
 public class EasyLogLogger {
-    private final static Logger easyLogLogger = Logger.getLogger(EasyLog.class.getName());
+    private static final Logger easyLogLogger = Logger.getLogger(EasyLog.class.getName());
 
     public EasyLogLogger() {
         LogManager.getLogManager().reset();

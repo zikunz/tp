@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  * Process orders commands input.
  */
 public class OrdersParser extends Parser {
-    private final static Logger logger = Logger.getLogger(EasyLog.class.getName());
+    private static final Logger logger = Logger.getLogger(EasyLog.class.getName());
 
     public static void processOrdersInput(String ordersInput) {
         String[] splitOrdersArg = splitCommandWordAndArgs(ordersInput);

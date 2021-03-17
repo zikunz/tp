@@ -14,7 +14,7 @@ public class EasyLog {
 
     private static final Scanner SCANNER = new Scanner(System.in);
 
-    private final static Logger logger = Logger.getLogger(EasyLog.class.getName());
+    private static final Logger logger = Logger.getLogger(EasyLog.class.getName());
 
     /**
      * Main entry-point for the easyLog application.

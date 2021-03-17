@@ -22,6 +22,11 @@ public class OrdersDeleteCommand extends OrdersCommand {
         }
         ui.showOrderDeleted(orderManager.getOrder(index));
         orderManager.deleteOrder(index);
+        assert orderManager.getSize() == size - 1 : "After a valid deletion, the size decreases by 1";
+        if (size > 1) {
+            assert orderManager.getOrder(orderManager.getSize()) == orderManager.getOrder(size - 1) :
+                    "After a valid deletion, the second last order becomes the last order";
+        }
     }
 
 }

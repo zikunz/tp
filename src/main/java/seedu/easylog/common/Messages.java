@@ -32,7 +32,7 @@ public class Messages {
     public static final String MESSAGE_INVALID_ORDER_NUMBER = "OOPS!!!. The order number is invalid!\n"
             + "Please input again!";
     public static final String MESSAGE_EMPTY_ITEM_NUMBER = "OOPS!!!. The item number is missing!\n"
-            + "Please complete the information!";;
+            + "Please complete the information!";
     public static final String MESSAGE_SHOW_ORDERS_RELATED_COMMANDS = "Orders-Related Options:\n"
             + "  1. orders add <order_name>        Add an order\n"
             + "  2. orders list                    List all orders\n"

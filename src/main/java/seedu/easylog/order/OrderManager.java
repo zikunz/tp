@@ -17,7 +17,6 @@ public class OrderManager {
     }
 
     /**
-     *
      * Deletes an order from this list of orders.
      *
      * @param index the number of the order to be deleted.

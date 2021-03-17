@@ -75,6 +75,7 @@ public class OrderManager {
 
     /**
      * Get latest order added to the order list.
+     *
      * @return Latest order added to the order list.
      */
     public Order getLatestOrderAdded() {

@@ -121,6 +121,14 @@ public class Ui {
      * Prints a message to notify the user that the input order number is out of range.
      * This means the user should input another order number.
      */
+    public void showInvalidItemNumber() {
+        System.out.println(Messages.MESSAGE_INVALID_ITEM_NUMBER);
+    }
+
+    /**
+     * Prints a message to notify the user that the input order number is out of range.
+     * This means the user should input another order number.
+     */
     public void showInvalidOrderNumber() {
         System.out.println(Messages.MESSAGE_INVALID_ORDER_NUMBER);
     }

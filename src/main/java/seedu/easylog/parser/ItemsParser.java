@@ -7,6 +7,7 @@ import seedu.easylog.commands.itemscommands.ItemsListCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyNumberException;
+import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.exceptions.ItemListAlreadyClearedException;
 
 /**
@@ -30,6 +31,8 @@ public class ItemsParser extends Parser {
                 new ItemsDeleteCommand().execute(itemsArg);
             } catch (EmptyNumberException e) {
                 ui.showItemEmptyNumber();
+            } catch (InvalidNumberException e) {
+                ui.showInvalidItemNumber();
             }
             break;
         case (Constants.COMMAND_LIST):

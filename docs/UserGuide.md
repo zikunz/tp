@@ -29,9 +29,9 @@ faster than traditional graphical user interface (GUI) apps.
 ## Quick start
 
 1. Ensure you have Java 11 or above installed in your Computer.
-2. Download the latest easyLog.jar from [here](https://github.com/ongweisheng/ip/releases/tag/A-Release).
+2. Download the latest easyLog.jar from [here](https://github.com/AY2021S2-CS2113T-T09-4/tp/releases/v1.0).
 3. Copy the file to the folder you want to use as the home folder for your Duke.
-4. Open up a terminal/command window at the location where Duke.jar
+4. Open up a terminal/command window at the location where easyLog.jar is located.
 5. Run the command `java -jar easyLog.jar`
 6. The app should load as shown below
 
@@ -240,12 +240,6 @@ Done! I just cleared all orders for you.
 ```
 Bye. Thanks for using easyLog!
 ```
-
-### Save record
-
-Duke save files are automatically updated or created when there is no existing save file
-when `exit` command is entered. There is no need to save manually. Save files are also loaded on start up
-of the application if it exists.
 
 ## FAQ
 

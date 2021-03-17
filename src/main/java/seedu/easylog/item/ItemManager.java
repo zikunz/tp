@@ -11,10 +11,10 @@ import java.util.ArrayList;
  */
 public class ItemManager {
 
-    private static final ArrayList<Item> itemList = new ArrayList<>();
+    private static final ArrayList<Item> ITEM_LIST = new ArrayList<>();
 
     public void addItem(Item item) {
-        itemList.add(item);
+        ITEM_LIST.add(item);
     }
 
     /**
@@ -23,7 +23,7 @@ public class ItemManager {
      * @return The list of items in the system
      */
     public ArrayList<Item> getItemList() {
-        return itemList;
+        return ITEM_LIST;
     }
 
     /**
@@ -50,11 +50,11 @@ public class ItemManager {
     }
 
     public void deleteItem(int index) {
-        itemList.remove(index);
+        ITEM_LIST.remove(index);
     }
 
     public Item getItem(int index) {
-        return itemList.get(index);
+        return ITEM_LIST.get(index);
     }
 
     /**
@@ -63,20 +63,20 @@ public class ItemManager {
      * @return the size of item list
      */
     public int getSize() {
-        return itemList.size();
+        return ITEM_LIST.size();
     }
 
     /**
      * Clears all items in the system.
      */
     public void clearItemList() {
-        itemList.clear();
+        ITEM_LIST.clear();
     }
 
     /**
-     * Gets the latest item added to the itemList.
+     * Gets the latest item added to the ITEM_LIST.
      *
-     * @return Latest item added to itemList
+     * @return Latest item added to ITEM_LIST
      */
     public Item getLatestItemAdded() {
         int index = getSize() - Constants.ARRAY_OFFSET;

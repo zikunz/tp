@@ -26,10 +26,13 @@ public class Messages {
     public static final String MESSAGE_EMPTY_ORDER_CUSTOMER_NAME = "OOPS!!!. The customer name is missing!\n"
             + "Please complete the information! :) ";
     public static final String MESSAGE_EMPTY_ORDER_NUMBER = "OOPS!!!. The order number is missing!\n"
-            + "Please complete the information! :) ";
+            + "Please complete the information!";
+    public static final String MESSAGE_INVALID_ITEM_NUMBER = "OOPS!!!. The item number is invalid!\n"
+            + "Please input again!";
     public static final String MESSAGE_INVALID_ORDER_NUMBER = "OOPS!!!. The order number is invalid!\n"
-            + "Please input again! :) ";
-    public static final String MESSAGE_EMPTY_ITEM_NUMBER = "OOPS!!!. The item number is missing!\n";
+            + "Please input again!";
+    public static final String MESSAGE_EMPTY_ITEM_NUMBER = "OOPS!!!. The item number is missing!\n"
+            + "Please complete the information!";
     public static final String MESSAGE_SHOW_ORDERS_RELATED_COMMANDS = "Orders-Related Options:\n"
             + "  1. orders add <order_name>        Add an order\n"
             + "  2. orders list                    List all orders\n"
@@ -50,5 +53,4 @@ public class Messages {
     public static final String MESSAGE_EMPTY_ORDER_LIST = "There is no order at the moment.";
     public static final String MESSAGE_ADD_ITEM_FIRST = "Please add items to the system first.";
     public static final String MESSAGE_INDENTATION = "    ";
-
 }

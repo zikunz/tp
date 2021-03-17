@@ -10,10 +10,10 @@ import java.util.ArrayList;
  */
 public class OrderManager {
 
-    private static final ArrayList<Order> orderList = new ArrayList<>();
+    private static final ArrayList<Order> ORDER_LIST = new ArrayList<>();
 
     public void addOrder(Order order) {
-        orderList.add(order);
+        ORDER_LIST.add(order);
     }
 
     /**
@@ -22,7 +22,7 @@ public class OrderManager {
      * @param index the number of the order to be deleted.
      */
     public void deleteOrder(int index) {
-        orderList.remove(index);
+        ORDER_LIST.remove(index);
     }
 
     /**
@@ -32,7 +32,7 @@ public class OrderManager {
      * @return a item list
      */
     public Order getOrder(int index) {
-        return orderList.get(index);
+        return ORDER_LIST.get(index);
     }
 
     /**
@@ -41,7 +41,7 @@ public class OrderManager {
      * @return the size of order list
      */
     public int getSize() {
-        return orderList.size();
+        return ORDER_LIST.size();
     }
 
     /**
@@ -70,7 +70,7 @@ public class OrderManager {
      * Clears all orders in the system.
      */
     public void clearOrderList() {
-        orderList.clear();
+        ORDER_LIST.clear();
     }
 
     /**

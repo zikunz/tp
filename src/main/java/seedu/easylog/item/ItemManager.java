@@ -13,8 +13,15 @@ public class ItemManager {
 
     private static final ArrayList<Item> itemList = new ArrayList<>();
 
-    public void addItem(Item item) { itemList.add(item); }
+    public void addItem(Item item) {
+        itemList.add(item);
+    }
 
+    /**
+     * Gets the item list.
+     *
+     * @return The list of items in the system
+     */
     public ArrayList<Item> getItemList() {
         return itemList;
     }
@@ -24,7 +31,7 @@ public class ItemManager {
      * Indentation is added if this method is called to help print the list of orders.
      * No indentation is added if this method is called when only printing the list of items.
      *
-     * @return String format for the list of items to be printed.
+     * @return String format for the list of items to be printed
      */
     public String getItemListPrintFormat(ArrayList<Item> itemListToBePrint, boolean shouldIncludeIndentation) {
         String itemsListOutput = "";
@@ -67,9 +74,9 @@ public class ItemManager {
     }
 
     /**
-     * Get the latest item added to the itemList.
+     * Gets the latest item added to the itemList.
      *
-     * @return Latest item added to itemList.
+     * @return Latest item added to itemList
      */
     public Item getLatestItemAdded() {
         int index = getSize() - Constants.ARRAY_OFFSET;

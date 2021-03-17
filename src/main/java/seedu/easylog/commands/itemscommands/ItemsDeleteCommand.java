@@ -11,6 +11,8 @@ public class ItemsDeleteCommand extends ItemsCommand {
         }
         int index = Integer.parseInt(itemsArg) - Constants.ARRAY_OFFSET;
         ui.showDeletedItem(itemManager.getItem(index));
+        int size = itemManager.getSize();
         itemManager.deleteItem(index);
+        assert itemManager.getSize() == size - 1 : "After a valid deletion, one item is deleted.";
     }
 }

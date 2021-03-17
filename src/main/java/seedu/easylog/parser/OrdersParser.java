@@ -1,5 +1,6 @@
 package seedu.easylog.parser;
 
+import seedu.easylog.EasyLog;
 import seedu.easylog.commands.orderscommands.OrdersAddCommand;
 import seedu.easylog.commands.orderscommands.OrdersClearCommand;
 import seedu.easylog.commands.orderscommands.OrdersDeleteCommand;
@@ -13,11 +14,13 @@ import seedu.easylog.exceptions.OrderListAlreadyClearedException;
 import seedu.easylog.item.Item;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 /**
  * Process orders commands input.
  */
 public class OrdersParser extends Parser {
+    private final static Logger logger = Logger.getLogger(EasyLog.class.getName());
 
     public static void processOrdersInput(String ordersInput) {
         String[] splitOrdersArg = splitCommandWordAndArgs(ordersInput);
@@ -51,6 +54,7 @@ public class OrdersParser extends Parser {
                 new OrdersClearCommand().execute();
             } catch (OrderListAlreadyClearedException e) {
                 ui.showAlreadyClearedOrderList();
+                logger.info("The program fails to clear the order list because it is already empty!");
             }
             break;
         default:

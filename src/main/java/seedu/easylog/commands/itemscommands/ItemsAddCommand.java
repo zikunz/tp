@@ -4,7 +4,9 @@ import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.item.Item;
 
 public class ItemsAddCommand extends ItemsCommand {
-
+    /**
+     * Adds items to the system.
+     */
     public void execute(String itemsArg) throws EmptyNameException {
         if (itemsArg.equals("")) {
             throw new EmptyNameException();

@@ -41,6 +41,8 @@ public class OrdersParser extends Parser {
                 ui.showOrderEmptyNumber();
             } catch (InvalidNumberException e) {
                 ui.showInvalidOrderNumber();
+            } catch (NumberFormatException e) {
+                ui.showNonIntegerOrderNumber();
             }
             break;
         case (Constants.COMMAND_LIST):

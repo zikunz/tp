@@ -33,6 +33,8 @@ public class ItemsParser extends Parser {
                 ui.showItemEmptyNumber();
             } catch (InvalidNumberException e) {
                 ui.showInvalidItemNumber();
+            } catch (NumberFormatException e) {
+                ui.showNonIntegerItemNumber();
             }
             break;
         case (Constants.COMMAND_LIST):

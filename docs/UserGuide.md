@@ -1,10 +1,9 @@
 # easyLog User Guide
 
-easyLog is a command line interface (CLI) application for warehouse employees to manage their items and
-orders in their warehouse. easyLog allows information of new items and orders to be added,
-view existing items and orders in the warehouse, remove specific existing items and order,
-clear all existing items and orders. If you type fast, easyLog can get your logistic management tasks done
-faster than traditional graphical user interface (GUI) apps.
+easyLog is a Command Line Interface (CLI) application for warehouse employees to manage items and orders in the 
+warehouse. easyLog allows users to add new items and orders, view existing items and orders, remove specific items and 
+orders and clear all existing items and orders in the warehouse at ease. If the user types fast, easyLog can get 
+logistic management tasks done faster than traditional Graphical User Interface (GUI) applications.
 
 - [Quick start](#quick-start)
 - [Features](#features)
@@ -22,7 +21,6 @@ faster than traditional graphical user interface (GUI) apps.
     - [Removing an order: `orders delete`](#removing-an-order-orders-delete)
     - [Emptying the order list: `orders clear`](#emptying-the-order-list-orders-clear)
   * [Exit the program: `exit`](#exit-the-program-exit)
-  * [Save record](#save-record)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
 
@@ -30,7 +28,7 @@ faster than traditional graphical user interface (GUI) apps.
 
 1. Ensure you have Java 11 or above installed in your Computer.
 2. Download the latest easyLog.jar from [here](https://github.com/AY2021S2-CS2113T-T09-4/tp/releases/v1.0).
-3. Copy the file to the folder you want to use as the home folder for your Duke.
+3. Copy the file to the folder you want to use as the home folder for your easyLog.
 4. Open up a terminal/command window at the location where easyLog.jar is located.
 5. Run the command `java -jar easyLog.jar`
 6. The app should load as shown below
@@ -269,7 +267,7 @@ system?
 >
 > In the event that you accidentally add an item or order, you can always undo it by deleting it. Likewise, you can
 > add an item or order back if you delete it mistakenly. For now, easyLog does not have a command to revert any
-> changes and we may consider adding it in the upcoming version. <br/>
+> changes. We may consider adding it in the upcoming version. <br/>
 >
 > You should not worry too much as easyLog is highly optimized for fast typists working in a warehouse like you.
 
@@ -284,7 +282,7 @@ items list | `items list`      | `items list` |
 items delete | `tems delete <item_index>` | `items delete 2` |
 items clear | `items clear ` | `items clear` |
 orders | `orders` | `orders` |
-orders add | `orders add <order_name> `<br />` Input the items to be added to this order. `<br />` <index> <index> <index>` | `orders add weisheng`<br />` Input the items to be added to this order.`<br />` 1 2 ` |
+orders add | `orders add <order_name> `<br />` Input the items to be added to this order. `<br />` <index> <index>` | `orders add weisheng`<br />` Input the items to be added to this order.`<br />` 1 2 ` |
 orders list | `orders list` | `orders list` |
 orders delete | `orders delete <order_index>` | `orders delete 2` |
 orders clear | `orders clear` | `orders clear` |

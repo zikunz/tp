@@ -20,7 +20,7 @@ class ItemsClearCommandTest {
         // 1 item
         Item firstItem = new Item("CS2113T Textbook");
         itemManager.addItem(firstItem);
-        itemsClearCommand.execute();
+        itemsClearCommand.execute(itemManager);
         assertSame(0, itemManager.getSize());
 
         // multiple items
@@ -30,7 +30,7 @@ class ItemsClearCommandTest {
         itemManager.addItem(secondItem);
         itemManager.addItem(thirdItem);
         itemManager.addItem(fourthItem);
-        itemsClearCommand.execute();
+        itemsClearCommand.execute(itemManager);
         assertSame(0, itemManager.getSize());
     }
 }

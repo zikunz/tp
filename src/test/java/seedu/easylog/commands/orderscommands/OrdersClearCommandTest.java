@@ -27,12 +27,12 @@ class OrdersClearCommandTest {
         Item firstItem = new Item("iPhone X charger");
         itemManager.addItem(firstItem);
         String itemIndexForKexuan = "1";
-        ArrayList<Item> itemForKexuan = ordersParser.processItemsAddedToOrder(itemIndexForKexuan);
+        ArrayList<Item> itemForKexuan = ordersParser.processItemsAddedToOrder(itemIndexForKexuan, itemManager);
 
         Order firstOrder = new Order(nameForKexuan, itemForKexuan);
         secondOrderManager.addOrder(firstOrder);
 
-        ordersClearCommand.execute();
+        ordersClearCommand.execute(secondOrderManager);
         assertSame(0, secondOrderManager.getSize());
 
         // multiple orders
@@ -48,8 +48,8 @@ class OrdersClearCommandTest {
         String itemIndexForYiwen = "2";
         String itemsIndexForQixiong = "3";
 
-        ArrayList<Item> itemForYiwen = ordersParser.processItemsAddedToOrder(itemIndexForYiwen);
-        ArrayList<Item> itemForQixiong = ordersParser.processItemsAddedToOrder(itemsIndexForQixiong);
+        ArrayList<Item> itemForYiwen = ordersParser.processItemsAddedToOrder(itemIndexForYiwen, itemManager);
+        ArrayList<Item> itemForQixiong = ordersParser.processItemsAddedToOrder(itemsIndexForQixiong, itemManager);
 
         Order secondOrder = new Order(nameForYiwen, itemForYiwen);
         Order thirdOrder = new Order(nameForQixiong, itemForQixiong);
@@ -57,7 +57,7 @@ class OrdersClearCommandTest {
         secondOrderManager.addOrder(secondOrder);
         secondOrderManager.addOrder(thirdOrder);
 
-        ordersClearCommand.execute();
+        ordersClearCommand.execute(secondOrderManager);
         assertSame(0, secondOrderManager.getSize());
     }
 }

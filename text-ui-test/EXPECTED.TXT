@@ -50,7 +50,7 @@ Got it! The order for customer [zikun] is deleted.
 OOPS!!! The order number is invalid!
 Please input the order information again! :)
 OOPS!!! The order number is missing!
-Please complete the order information again! :)
+Please complete the order information! :)
 Got it! The item [water] is deleted.
 Here are the list of items in the warehouse.
 1. ps5

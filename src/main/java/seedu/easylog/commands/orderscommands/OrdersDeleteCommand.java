@@ -14,7 +14,7 @@ public class OrdersDeleteCommand extends OrdersCommand {
     /**
      * Deletes a single order from the list of orders.
      */
-    public void execute(String ordersArg) throws EmptyNumberException, InvalidNumberException, NumberFormatException {
+    public void execute(String ordersArg) throws EmptyNumberException, InvalidNumberException {
         if (ordersArg.equals("")) {
             throw new EmptyNumberException();
         }

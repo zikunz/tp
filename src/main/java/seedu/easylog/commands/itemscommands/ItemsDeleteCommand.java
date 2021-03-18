@@ -8,7 +8,7 @@ public class ItemsDeleteCommand extends ItemsCommand {
     /**
      * Deletes a single item from the list of items.
      */
-    public void execute(String itemsArg) throws EmptyNumberException, InvalidNumberException, NumberFormatException {
+    public void execute(String itemsArg) throws EmptyNumberException, InvalidNumberException {
         if (itemsArg.equals("")) {
             throw new EmptyNumberException();
         }

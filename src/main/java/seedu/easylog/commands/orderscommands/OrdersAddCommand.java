@@ -4,7 +4,9 @@ import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyItemListException;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.item.Item;
+import seedu.easylog.item.ItemManager;
 import seedu.easylog.order.Order;
+import seedu.easylog.order.OrderManager;
 
 import java.util.ArrayList;
 
@@ -13,7 +15,8 @@ import java.util.ArrayList;
  */
 public class OrdersAddCommand extends OrdersCommand {
 
-    public void execute(String customerName) throws EmptyNameException, EmptyItemListException {
+    public void execute(String customerName, ItemManager itemManager, OrderManager orderManager)
+            throws EmptyNameException, EmptyItemListException {
         if (customerName.equals("")) {
             throw new EmptyNameException();
         }
@@ -24,7 +27,7 @@ public class OrdersAddCommand extends OrdersCommand {
         ArrayList<Item> itemsInOrder;
         do {
             String itemsAdded = Constants.SCANNER.nextLine();
-            itemsInOrder = ordersParser.processItemsAddedToOrder(itemsAdded);
+            itemsInOrder = ordersParser.processItemsAddedToOrder(itemsAdded, itemManager);
         } while (itemsInOrder.isEmpty());
         Order order = new Order(customerName, itemsInOrder);
         orderManager.addOrder(order);

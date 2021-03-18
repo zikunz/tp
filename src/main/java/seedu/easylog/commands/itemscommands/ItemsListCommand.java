@@ -1,10 +1,12 @@
 package seedu.easylog.commands.itemscommands;
 
+import seedu.easylog.item.ItemManager;
+
 public class ItemsListCommand extends ItemsCommand {
     /**
      * Print out all the items in the items list.
      */
-    public void execute() {
+    public void execute(ItemManager itemManager) {
         boolean shouldIncludeIndentation = false;
 
         assert ui != null : "ui should not be null";

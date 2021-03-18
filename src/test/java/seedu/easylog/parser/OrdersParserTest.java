@@ -19,8 +19,8 @@ public class OrdersParserTest {
         itemManager.addItem(testItem1);
         itemManager.addItem(testItem2);
         assertEquals(itemManager.getItem(0).getItemName(),
-                ordersParser.processItemsAddedToOrder("1 2").get(0).getItemName());
+                ordersParser.processItemsAddedToOrder("1 2", itemManager).get(0).getItemName());
         assertEquals(itemManager.getItem(1).getItemName(),
-                ordersParser.processItemsAddedToOrder("1 2").get(1).getItemName());
+                ordersParser.processItemsAddedToOrder("1 2", itemManager).get(1).getItemName());
     }
 }

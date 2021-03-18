@@ -1,10 +1,13 @@
 package seedu.easylog.commands.orderscommands;
 
+import seedu.easylog.item.ItemManager;
+import seedu.easylog.order.OrderManager;
+
 public class OrdersListCommand extends OrdersCommand {
     /**
      * Prints the list of orders.
      */
-    public void execute() {
+    public void execute(ItemManager itemManager, OrderManager orderManager) {
         int orderSize = orderManager.getSize();
         String customerName;
         String customersItems;

@@ -8,7 +8,5 @@ import seedu.easylog.parser.OrdersParser;
 public abstract class OrdersCommand {
 
     public Ui ui = new Ui();
-    public ItemManager itemManager = new ItemManager();
-    public OrderManager orderManager = new OrderManager();
     public OrdersParser ordersParser = new OrdersParser();
 }

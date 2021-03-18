@@ -7,13 +7,13 @@ import seedu.easylog.commands.itemscommands.ItemsListCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyNumberException;
+import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.exceptions.ItemListAlreadyClearedException;
 
 /**
  * Process items command input.
  */
 public class ItemsParser extends Parser {
-
     public static void processItemsInput(String itemsInput) {
         String[] splitItemsArg = splitCommandWordAndArgs(itemsInput);
         String itemsType = splitItemsArg[0];
@@ -30,7 +30,11 @@ public class ItemsParser extends Parser {
             try {
                 new ItemsDeleteCommand().execute(itemsArg);
             } catch (EmptyNumberException e) {
-                ui.showEmptyNumber();
+                ui.showItemEmptyNumber();
+            } catch (InvalidNumberException e) {
+                ui.showInvalidItemNumber();
+            } catch (NumberFormatException e) {
+                ui.showNonIntegerItemNumber();
             }
             break;
         case (Constants.COMMAND_LIST):

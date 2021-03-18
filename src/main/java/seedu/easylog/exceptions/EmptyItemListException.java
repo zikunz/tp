@@ -1,5 +1,5 @@
 package seedu.easylog.exceptions;
 
-public class EmptyNumberException extends Throwable {
+public class EmptyItemListException extends Throwable {
     // no other code needed
 }

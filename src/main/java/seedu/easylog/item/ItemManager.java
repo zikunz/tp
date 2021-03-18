@@ -1,6 +1,9 @@
 
 package seedu.easylog.item;
 
+import seedu.easylog.common.Messages;
+import seedu.easylog.common.Constants;
+
 import java.util.ArrayList;
 
 /**
@@ -8,37 +11,50 @@ import java.util.ArrayList;
  */
 public class ItemManager {
 
-    private static final ArrayList<Item> itemList = new ArrayList<>();
+    private static final ArrayList<Item> ITEM_LIST = new ArrayList<>();
 
     public void addItem(Item item) {
-        itemList.add(item);
-    }
-
-    public ArrayList<Item> getItemList() {
-        return itemList;
+        ITEM_LIST.add(item);
     }
 
     /**
-     * Get list of items in string format to be printed as output to user.
+     * Gets the item list.
      *
-     * @return String format for the list of items to be printed.
+     * @return The list of items in the system
      */
-    public String getItemListPrintFormat(ArrayList<Item> itemListToBePrinted) {
-        int taskCount = 1;
+    public ArrayList<Item> getItemList() {
+        return ITEM_LIST;
+    }
+
+    /**
+     * Gets the list of items in String format to be printed as output to the user.
+     * Indentation is added if this method is called to help print the list of orders.
+     * No indentation is added if this method is called when only printing the list of items.
+     *
+     * @return String format for the list of items to be printed
+     */
+    public String getItemListPrintFormat(ArrayList<Item> itemListToBePrint, boolean shouldIncludeIndentation) {
         String itemsListOutput = "";
-        for (Item item : itemListToBePrinted) {
-            itemsListOutput += taskCount + ". " + item.getItemName() + "\n";
-            ++taskCount;
+
+        if (shouldIncludeIndentation) {
+            for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
+                itemsListOutput += Messages.MESSAGE_INDENTATION + (itemIndex + 1) + ". "
+                        + itemListToBePrint.get(itemIndex).getItemName() + "\n";
+            }
+        } else {
+            for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
+                itemsListOutput += (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName() + "\n";
+            }
         }
         return itemsListOutput;
     }
 
     public void deleteItem(int index) {
-        itemList.remove(index);
+        ITEM_LIST.remove(index);
     }
 
     public Item getItem(int index) {
-        return itemList.get(index);
+        return ITEM_LIST.get(index);
     }
 
     /**
@@ -47,14 +63,24 @@ public class ItemManager {
      * @return the size of item list
      */
     public int getSize() {
-        return itemList.size();
+        return ITEM_LIST.size();
     }
 
     /**
      * Clears all items in the system.
      */
     public void clearItemList() {
-        itemList.clear();
+        ITEM_LIST.clear();
+    }
+
+    /**
+     * Gets the latest item added to the ITEM_LIST.
+     *
+     * @return Latest item added to ITEM_LIST
+     */
+    public Item getLatestItemAdded() {
+        int index = getSize() - Constants.ARRAY_OFFSET;
+        return getItem(index);
     }
 }
 

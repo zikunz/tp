@@ -21,17 +21,17 @@ public class Messages {
     public static final String MESSAGE_GOODBYE = "Bye. Thanks for using easyLog!";
     public static final String MESSAGE_INVALID_COMMAND = "OOPS!!! I'm Sorry! I don't know what that means.\n"
             + "Please input again! :)";
-    public static final String MESSAGE_EMPTY_ITEM_NAME = "OOPS!!!. The item name is missing!\n"
+    public static final String MESSAGE_EMPTY_ITEM_NAME = "OOPS!!! The item name is missing!\n"
             + "Please complete the information! :) ";
-    public static final String MESSAGE_EMPTY_ORDER_CUSTOMER_NAME = "OOPS!!!. The customer name is missing!\n"
+    public static final String MESSAGE_EMPTY_ORDER_CUSTOMER_NAME = "OOPS!!! The customer name is missing!\n"
             + "Please complete the information! :) ";
-    public static final String MESSAGE_EMPTY_ORDER_NUMBER = "OOPS!!!. The order number is missing!\n"
-            + "Please complete the information!";
-    public static final String MESSAGE_INVALID_ITEM_NUMBER = "OOPS!!!. The item number is invalid!\n"
-            + "Please input again!";
-    public static final String MESSAGE_INVALID_ORDER_NUMBER = "OOPS!!!. The order number is invalid!\n"
-            + "Please input again!";
-    public static final String MESSAGE_EMPTY_ITEM_NUMBER = "OOPS!!!. The item number is missing!\n"
+    public static final String MESSAGE_EMPTY_ORDER_NUMBER = "OOPS!!! The order number is missing!\n"
+            + "Please complete the information! :)";
+    public static final String MESSAGE_INVALID_ITEM_NUMBER = "OOPS!!! The item number is invalid!\n"
+            + "Please input the item information again!";
+    public static final String MESSAGE_INVALID_ORDER_NUMBER = "OOPS!!! The order number is invalid!\n"
+            + "Please input the order information again!";
+    public static final String MESSAGE_EMPTY_ITEM_NUMBER = "OOPS!!! The item number is missing!\n"
             + "Please complete the information!";
     public static final String MESSAGE_SHOW_ORDERS_RELATED_COMMANDS = "Orders-Related Options:\n"
             + "  1. orders add <order_name>        Add an order\n"
@@ -53,4 +53,10 @@ public class Messages {
     public static final String MESSAGE_EMPTY_ORDER_LIST = "There is no order at the moment.";
     public static final String MESSAGE_ADD_ITEM_FIRST = "Please add items to the system first.";
     public static final String MESSAGE_INDENTATION = "    ";
+    public static final String MESSAGE_NON_INTEGER_ORDER_NUMBER = "OOPS!!! The input order information "
+            + "is not an integer number.\n"
+            + "Please input the order information again! :)";
+    public static final String MESSAGE_NON_INTEGER_ITEM_NUMBER = "OOPS!!! The input item information "
+            + "is not an integer number.\n"
+            + "Please input the item information again! :)";
 }

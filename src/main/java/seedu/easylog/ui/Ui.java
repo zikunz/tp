@@ -59,6 +59,14 @@ public class Ui {
     }
 
     /**
+     * Prints a message to notify the user that the input item number is not an integer.
+     * This means the user should input an integer type item number.
+     */
+    public void showNonIntegerItemNumber() {
+        System.out.println(Messages.MESSAGE_NON_INTEGER_ITEM_NUMBER);
+    }
+
+    /**
      * Prints the list of all items in the system.
      *
      * @param rawItemListOutput List of items in String format
@@ -123,6 +131,14 @@ public class Ui {
      */
     public void showInvalidItemNumber() {
         System.out.println(Messages.MESSAGE_INVALID_ITEM_NUMBER);
+    }
+
+    /**
+     * Prints a message to notify the user that the input order number is not an integer.
+     * This means the user should input an integer type order number.
+     */
+    public void showNonIntegerOrderNumber() {
+        System.out.println(Messages.MESSAGE_NON_INTEGER_ORDER_NUMBER);
     }
 
     /**

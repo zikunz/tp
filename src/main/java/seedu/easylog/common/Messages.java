@@ -54,9 +54,25 @@ public class Messages {
     public static final String MESSAGE_ADD_ITEM_FIRST = "Please add items to the system first.";
     public static final String MESSAGE_INDENTATION = "    ";
     public static final String MESSAGE_NON_INTEGER_ORDER_NUMBER = "OOPS!!! The input order information "
-            + "is not an integer number.\n"
+            + "is not an integer number!\n"
             + "Please input the order information again! :)";
     public static final String MESSAGE_NON_INTEGER_ITEM_NUMBER = "OOPS!!! The input item information "
-            + "is not an integer number.\n"
+            + "is not an integer number!\n"
+            + "Please input the item information again! :)";
+    public static final String MESSAGE_PROMPT_ITEM_PRICE =
+            "Please enter the price of the item.\n"
+                    + "Note: The price to be entered should be either 0 or a positive number "
+                    + "smaller than or equal to S$1000000000.\n"
+                    + "Also, The system supports a maximum scale of 2 (number of digits right after the decimal).\n"
+                    + "If you enter any number having a scale greater than 2, it will be automatically rounded up "
+                    + "to a number having an exact scale of 2.\n"
+                    + "Lastly, the system automatically strips trailing zeros, if any.";
+    public static final String MESSAGE_SHOW_INVALID_ITEM_PRICE = "OOPS!!! The item price is invalid!\n"
+            + "Please complete the item information! :)";
+    public static final String MESSAGE_NULL_ITEM_PRICE = "OOPS!!! The input item price is null!\n"
+            + "Please input the item information again! :)";
+    public static final String MESSAGE_EMPTY_ITEM_PRICE = "OOPS!!! The input item price is empty!\n"
+            + "Please input the item information again! :)";
+    public static final String MESSAGE_NON_NUMERIC_ITEM_PRICE = "OOPS!!! The input item price is not a number!\n"
             + "Please input the item information again! :)";
 }

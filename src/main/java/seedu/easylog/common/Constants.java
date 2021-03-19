@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class Constants {
 
     public static final int ARRAY_OFFSET = 1;
+    public static final int PRICING_SCALE = 2;
+    public static final int MINIMUM_ITEM_PRICE = 0;
+    public static final int MAXIMUM_ITEM_PRICE = 1000000000;
     public static final Scanner SCANNER = new Scanner(System.in);
 
     // Commands constants
@@ -16,4 +19,7 @@ public class Constants {
     public static final String COMMAND_DELETE = "delete";
     public static final String COMMAND_LIST = "list";
     public static final String COMMAND_CLEAR = "clear";
+
+    public static final String ITEM_NAME_AND_PRICE_SEPARATOR = ", S$";
+    public static final String REGEX_NUMERIC_INPUT = "-?\\d+(\\.\\d+)?";
 }

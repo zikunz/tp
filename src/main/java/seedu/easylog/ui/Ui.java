@@ -184,4 +184,44 @@ public class Ui {
         System.out.println("Item number " + itemNumber + " does not exist. "
                 + "Please try another valid item number until at least one item is added to the order.");
     }
+
+    /**
+     * Prints a message to ask the user about the price of the item entered earlier.
+     */
+    public void promptItemPrice() {
+        System.out.println(Messages.MESSAGE_PROMPT_ITEM_PRICE);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item price is invalid.
+     * This means the user should input either 0 or a positive number
+     * smaller than or equal to 1000000000
+     */
+    public void showInvalidItemPrice() {
+        System.out.println(Messages.MESSAGE_SHOW_INVALID_ITEM_PRICE);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item price is not numeric.
+     * This means the user should input a numeric and valid item price.
+     */
+    public void showNonNumericItemPrice() {
+        System.out.println(Messages.MESSAGE_NON_NUMERIC_ITEM_PRICE);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item price is null.
+     * This means the user should input a non-null and valid item price.
+     */
+    public void showNullItemPrice() {
+        System.out.println(Messages.MESSAGE_NULL_ITEM_PRICE);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item price is empty.
+     * This means the user should input a non-empty and valid item price.
+     */
+    public void showEmptyItemPrice() {
+        System.out.println(Messages.MESSAGE_EMPTY_ITEM_PRICE);
+    }
 }

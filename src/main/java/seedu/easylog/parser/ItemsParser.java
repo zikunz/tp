@@ -5,7 +5,12 @@ import seedu.easylog.commands.itemscommands.ItemsDeleteCommand;
 import seedu.easylog.commands.itemscommands.ItemsClearCommand;
 import seedu.easylog.commands.itemscommands.ItemsListCommand;
 import seedu.easylog.common.Constants;
+
 import seedu.easylog.exceptions.EmptyNameException;
+import seedu.easylog.exceptions.NonNumericItemPriceException;
+import seedu.easylog.exceptions.InvalidItemPriceException;
+import seedu.easylog.exceptions.EmptyItemPriceException;
+import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.exceptions.ItemListAlreadyClearedException;
@@ -19,12 +24,21 @@ public class ItemsParser extends Parser {
         String[] splitItemsArg = splitCommandWordAndArgs(itemsInput);
         String itemsType = splitItemsArg[0];
         String itemsArg = splitItemsArg[1];
+
         switch (itemsType) {
         case (Constants.COMMAND_ADD):
             try {
                 new ItemsAddCommand().execute(itemsArg, itemManager);
             } catch (EmptyNameException e) {
                 ui.showItemEmptyName();
+            } catch (InvalidItemPriceException e) {
+                ui.showInvalidItemPrice();
+            } catch (EmptyItemPriceException e) {
+                ui.showEmptyItemPrice();
+            } catch (NullItemPriceException e) {
+                ui.showNullItemPrice();
+            } catch (NonNumericItemPriceException e) {
+                ui.showNonNumericItemPrice();
             }
             break;
         case (Constants.COMMAND_DELETE):
@@ -51,5 +65,16 @@ public class ItemsParser extends Parser {
         default:
             ui.showItemsHelp();
         }
+    }
+
+    /**
+     * Prompts the user for the item price.
+     *
+     * @return item price
+     */
+    public String processItemsPrice() {
+        String price = Constants.SCANNER.nextLine();
+
+        return price;
     }
 }

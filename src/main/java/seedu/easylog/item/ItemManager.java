@@ -39,11 +39,14 @@ public class ItemManager {
         if (shouldIncludeIndentation) {
             for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
                 itemsListOutput += Messages.MESSAGE_INDENTATION + (itemIndex + 1) + ". "
-                        + itemListToBePrint.get(itemIndex).getItemName() + "\n";
+                        + itemListToBePrint.get(itemIndex).getItemName() + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
+                        + itemListToBePrint.get(itemIndex).getItemPrice() + "\n";
             }
         } else {
             for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
-                itemsListOutput += (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName() + "\n";
+                itemsListOutput += (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName()
+                        + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
+                        + itemListToBePrint.get(itemIndex).getItemPrice() + "\n";
             }
         }
         return itemsListOutput;

@@ -54,10 +54,10 @@ public class Messages {
     public static final String MESSAGE_ADD_ITEM_FIRST = "Please add items to the system first.";
     public static final String MESSAGE_INDENTATION = "    ";
     public static final String MESSAGE_NON_INTEGER_ORDER_NUMBER = "OOPS!!! The input order information "
-            + "is not an integer number.\n"
+            + "is not an integer number!\n"
             + "Please input the order information again! :)";
     public static final String MESSAGE_NON_INTEGER_ITEM_NUMBER = "OOPS!!! The input item information "
-            + "is not an integer number.\n"
+            + "is not an integer number!\n"
             + "Please input the item information again! :)";
     public static final String MESSAGE_PROMPT_ITEM_PRICE =
             "Please enter the price of the item.\n"

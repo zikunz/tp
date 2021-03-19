@@ -197,7 +197,9 @@ public class Ui {
      * This means the user should input either 0 or a positive number
      * smaller than or equal to 1000000000
      */
-    public void showInvalidItemPrice() { System.out.println(Messages.MESSAGE_SHOW_INVALID_ITEM_PRICE); }
+    public void showInvalidItemPrice() {
+        System.out.println(Messages.MESSAGE_SHOW_INVALID_ITEM_PRICE);
+    }
 
     /**
      * Prints a message to notify the user that the input item price is not numeric.

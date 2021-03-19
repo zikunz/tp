@@ -18,6 +18,11 @@ public class Item {
         return itemName;
     }
 
+    /**
+     * Returns the item price of a particular item.
+     *
+     * @return item price
+     */
     public String getItemPrice() {
         return itemPrice;
     }

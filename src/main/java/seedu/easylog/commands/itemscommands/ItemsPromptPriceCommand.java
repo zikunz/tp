@@ -37,7 +37,7 @@ public class ItemsPromptPriceCommand extends ItemsCommand {
 
         double priceInDouble = Double.parseDouble(priceInString);
 
-        if (priceInDouble < 0 || priceInDouble > 1000000000) {
+        if (priceInDouble < Constants.MINIMUM_ITEM_PRICE || priceInDouble > Constants.MAXIMUM_ITEM_PRICE) {
             throw new InvalidItemPriceException();
         }
 

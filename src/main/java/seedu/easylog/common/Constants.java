@@ -6,6 +6,8 @@ public class Constants {
 
     public static final int ARRAY_OFFSET = 1;
     public static final int PRICING_SCALE = 2;
+    public static final int MINIMUM_ITEM_PRICE = 0;
+    public static final int MAXIMUM_ITEM_PRICE = 1000000000;
     public static final Scanner SCANNER = new Scanner(System.in);
 
     // Commands constants

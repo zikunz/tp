@@ -1,0 +1,25 @@
+help
+items help
+orders help
+orders add weisheng
+items add ps5
+items add keyboard
+items list
+items delete 2
+items delete 0
+items delete
+orders add weisheng
+2
+3
+1
+items add water
+orders add zikun
+1 2
+orders list
+orders delete 2
+orders delete 0
+orders delete
+items delete 2
+items list
+orders list
+exit

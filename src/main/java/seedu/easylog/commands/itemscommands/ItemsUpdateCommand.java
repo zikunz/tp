@@ -17,6 +17,10 @@ import java.util.regex.Pattern;
 public class ItemsUpdateCommand extends ItemsCommand {
     /**
      * Updates a particular field of an item of interest in the system.
+     *
+     * @param extraDescription Any extra input from the user, this field should be empty
+     *                         in order to execute an update command successfully
+     * @param itemManager      item manager object which modifies items when necessary
      */
     public void execute(String extraDescription, ItemManager itemManager) throws WrongUpdateCommandException,
             WrongItemFieldException, EmptyItemIndexException, NonNumericItemIndexException, InvalidItemIndexException,

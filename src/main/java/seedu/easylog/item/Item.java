@@ -36,7 +36,7 @@ public class Item {
     }
 
     /**
-     * Sets item price.
+     * Sets the price of an item of interest.
      */
     public void setItemPrice(String itemPrice) {
         this.itemPrice = itemPrice;

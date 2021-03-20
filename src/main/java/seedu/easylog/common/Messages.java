@@ -77,10 +77,10 @@ public class Messages {
             + "Please input the item information again! :)";
     public static final String MESSAGE_WRONG_UPDATE_COMMAND = "OOPS!!! I'm sorry! I don't know what that means.\n"
             + "Do you mean \"items update\"? Alternatively, see \"items help\" for more information";
-    public static final String MESSAGE_ASK_FOR_ITEM_INDEX = "Below is the exhaustive list for all items. May I know" +
-            " which item should be updated? Please input the index of the item of interest only.";
-    public static final String MESSAGE_ASK_FOR_ITEM_FIELD_TO_BE_UPDATED = "What would you like to update, price " +
-            "or stock? (p/s)";
+    public static final String MESSAGE_ASK_FOR_ITEM_INDEX = "Below is the exhaustive list for all items. May I know"
+            + " which item should be updated? Please input the index of the item of interest only.";
+    public static final String MESSAGE_ASK_FOR_ITEM_FIELD_TO_BE_UPDATED = "What would you like to update, price "
+            + "or stock? (p/s)";
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_PRICE = "What is the revised item price?";
     public static final String MESSAGE_SHOW_UPDATE_ITEM_PRICE = "Done! I just updated the item price for you.";
     public static final String MESSAGE_WRONG_ITEM_FIELD_COMMAND = "OOPS!!! I'm sorry! I don't know what that means.\n"

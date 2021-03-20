@@ -104,5 +104,14 @@ public class ItemManager {
         Item itemToBeUpdated = getItem(itemIndex);
         itemToBeUpdated.setItemPrice(revisedItemPrice);
     }
+
+    /**
+     * Sets the stock of an item specified by its index to
+     * be the revised one.
+     */
+    public void setRevisedItemStock(int itemIndex, String revisedItemStock) {
+        Item itemToBeUpdated = getItem(itemIndex);
+        itemToBeUpdated.setItemStock(revisedItemStock);
+    }
 }
 

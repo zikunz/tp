@@ -356,4 +356,16 @@ public class Ui {
         System.out.println(order.getOrderShippingStatusMessage());
     }
 
+     * Prints a message to ask the user about the revised item stock.
+     */
+    public void askForRevisedItemStock() {
+        System.out.println(Messages.MESSAGE_ASK_FOR_REVISED_ITEM_STOCK);
+    }
+
+    /**
+     * Prints a message to notify the user the item field is updated successfully.
+     */
+    public void showUpdateItemStock() {
+        System.out.println(Messages.MESSAGE_SHOW_UPDATE_ITEM_STOCK);
+    }
 }

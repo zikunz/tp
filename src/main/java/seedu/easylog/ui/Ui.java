@@ -343,6 +343,20 @@ public class Ui {
     }
 
     /**
+     * Prints a message to inform the users about the total price of their order.
+     */
+    public void showOrderTotalPrice(Order order) {
+        System.out.println(order.getOrderTotalPriceMessage(order));
+    }
+
+    /**
+     * Prints a message to inform the users about the shipping status of their order.
+     */
+    public void showOrderShippingStatus(Order order) {
+        System.out.println(order.getOrderShippingStatusMessage());
+    }
+
+    /**
      * Prints a message to ask the user about the revised item stock.
      */
     public void askForRevisedItemStock() {

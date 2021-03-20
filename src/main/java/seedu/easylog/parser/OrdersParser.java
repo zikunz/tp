@@ -4,6 +4,8 @@ import seedu.easylog.commands.orderscommands.OrdersAddCommand;
 import seedu.easylog.commands.orderscommands.OrdersClearCommand;
 import seedu.easylog.commands.orderscommands.OrdersDeleteCommand;
 import seedu.easylog.commands.orderscommands.OrdersListCommand;
+import seedu.easylog.commands.orderscommands.OrdersPriceCommand;
+import seedu.easylog.commands.orderscommands.OrdersShipCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyItemListException;
@@ -55,6 +57,28 @@ public class OrdersParser extends Parser {
                 new OrdersClearCommand().execute(orderManager);
             } catch (OrderListAlreadyClearedException e) {
                 ui.showAlreadyClearedOrderList();
+            }
+            break;
+        case (Constants.COMMAND_PRICE):
+            try {
+                new OrdersPriceCommand().execute(ordersArg, orderManager);
+            } catch (EmptyNumberException e) {
+                ui.showOrderEmptyNumber();
+            } catch (InvalidNumberException e) {
+                ui.showInvalidOrderNumber();
+            } catch (NumberFormatException e) {
+                ui.showNonIntegerOrderNumber();
+            }
+            break;
+        case (Constants.COMMAND_SHIP):
+            try {
+                new OrdersShipCommand().execute(ordersArg, orderManager);
+            } catch (EmptyNumberException e) {
+                ui.showOrderEmptyNumber();
+            } catch (InvalidNumberException e) {
+                ui.showInvalidOrderNumber();
+            } catch (NumberFormatException e) {
+                ui.showNonIntegerOrderNumber();
             }
             break;
         default:

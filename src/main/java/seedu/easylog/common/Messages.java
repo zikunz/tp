@@ -68,18 +68,18 @@ public class Messages {
                     + "to a number having an exact scale of 2.\n"
                     + "Lastly, the system automatically strips trailing zeros, if any.";
     public static final String MESSAGE_SHOW_INVALID_ITEM_PRICE = "OOPS!!! The item price is invalid!\n"
-            + "Please complete the item information! :)";
+            + "Please input again and give a valid item price! :)";
     public static final String MESSAGE_NULL_ITEM_PRICE = "OOPS!!! The input item price is null!\n"
-            + "Please input the item information again! :)";
+            + "Please input again and complete the item price! :)";
     public static final String MESSAGE_EMPTY_ITEM_PRICE = "OOPS!!! The input item price is empty!\n"
-            + "Please input the item information again! :)";
+            + "Please input again and complete the item price! :)";
     public static final String MESSAGE_NON_NUMERIC_ITEM_PRICE = "OOPS!!! The input item price is not a number!\n"
-            + "Please input the item information again! :)";
+            + "Please input again and give a valid item price! :)";
     public static final String MESSAGE_PROMPT_ITEM_STOCK =
             "Please enter the stock of the item.\n"
                     + "Note: The stock to be entered should be either 0 or a positive integer number "
                     + "smaller than or equal to 100000000 "
-                    + "(The warehouse cannot store more than one hundred million items.";
+                    + "(The warehouse cannot store more than one hundred million items.)";
     public static final String MESSAGE_SHOW_INVALID_ITEM_STOCK = "OOPS!!! The item stock is invalid!\n"
             + "Please input again and give a valid item stock! :)";
     public static final String MESSAGE_NULL_ITEM_STOCK = "OOPS!!! The input item stock is null!\n"
@@ -100,10 +100,12 @@ public class Messages {
     public static final String MESSAGE_WRONG_ITEM_FIELD_COMMAND = "OOPS!!! I'm sorry! I don't know what that means.\n"
             + "Please input either \"p\" for (item) price or s for (item) stock.";
     public static final String MESSAGE_INVALID_ITEM_INDEX = "OOPS!!! The item index is invalid!\n"
-            + "Please complete the item information! :)";
+            + "Please input again and give a valid item index! :)";
     public static final String MESSAGE_EMPTY_ITEM_INDEX = "OOPS!!! The item index is empty!\n"
-            + "Please complete the item information! :)";
+            + "Please input again and complete the item index! :)";
     public static final String MESSAGE_NON_NUMERIC_ITEM_INDEX = "OOPS!!! The item index is non-numeric!\n"
-            + "Please complete the item information! :)";
+            + "Please input again and give a valid item index! :)";
+    public static final String MESSAGE_ASK_FOR_REVISED_ITEM_STOCK = "What is the revised item stock?";
+    public static final String MESSAGE_SHOW_UPDATE_ITEM_STOCK = "Done! I just updated the item stock for you.";
 }
 

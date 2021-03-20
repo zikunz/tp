@@ -52,4 +52,11 @@ public class Item {
     public void setItemPrice(String itemPrice) {
         this.itemPrice = itemPrice;
     }
+
+    /**
+     * Sets the stock of an item of interest.
+     */
+    public void setItemStock(String itemStock) {
+        this.itemStock = itemStock;
+    }
 }

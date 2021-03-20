@@ -224,4 +224,78 @@ public class Ui {
     public void showEmptyItemPrice() {
         System.out.println(Messages.MESSAGE_EMPTY_ITEM_PRICE);
     }
+
+    /**
+     * Prints a message to notify the user that the update command is entered wrongly.
+     * This means the user should input "items update" exactly if he / she
+     * really wants to execute an update command for any item of interest.
+     */
+    public void showWrongUpdateCommand() {
+        System.out.println(Messages.MESSAGE_WRONG_UPDATE_COMMAND);
+    }
+
+    /**
+     * Prints a message to ask the user for the index of the item
+     * in order for a field of the item to be updated later.
+     */
+    public void askForItemIndex() {
+        System.out.println(Messages.MESSAGE_ASK_FOR_ITEM_INDEX);
+    }
+
+    /**
+     * Prints a message to ask the user for the field of the item to be updated.
+     */
+    public void askForItemFieldToBeUpdated() {
+        System.out.println(Messages.MESSAGE_ASK_FOR_ITEM_FIELD_TO_BE_UPDATED);
+    }
+
+    /**
+     * Prints a message to ask the user about the revised item price.
+     */
+    public void askForRevisedItemPrice() {
+        System.out.println(Messages.MESSAGE_ASK_FOR_REVISED_ITEM_PRICE);
+    }
+
+    /**
+     * Prints a message to notify the user the item field is updated successfully.
+     */
+    public void showUpdateItemPrice() {
+        System.out.println(Messages.MESSAGE_SHOW_UPDATE_ITEM_PRICE);
+    }
+
+    /**
+     * Prints a message to notify the user that the item field entered is wrong.
+     * This means the user should input either "p" for (item) price
+     * or s for (item) stock.
+     */
+    public void showWrongItemField() {
+        System.out.println(Messages.MESSAGE_WRONG_ITEM_FIELD_COMMAND);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item index is invalid.
+     * This means the user should input a valid number corresponding to the index
+     * in the item list.
+     */
+    public void showInvalidItemIndex() {
+        System.out.println(Messages.MESSAGE_INVALID_ITEM_INDEX);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item index is empty.
+     * This means the user should input a non-empty and
+     * valid number corresponding to the index in the item list.
+     */
+    public void showEmptyItemIndex() {
+        System.out.println(Messages.MESSAGE_EMPTY_ITEM_INDEX);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item index is empty.
+     * This means the user should input a numeric and
+     * valid number corresponding to the index in the item list.
+     */
+    public void showNonNumericItemIndex() {
+        System.out.println(Messages.MESSAGE_NON_NUMERIC_ITEM_INDEX);
+    }
 }

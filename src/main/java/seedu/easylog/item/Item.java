@@ -34,4 +34,11 @@ public class Item {
     public String getDeleteItemMessage() {
         return "Got it! The item [" + itemName + "] is deleted.";
     }
+
+    /**
+     * Sets item price.
+     */
+    public void setItemPrice(String itemPrice) {
+        this.itemPrice = itemPrice;
+    }
 }

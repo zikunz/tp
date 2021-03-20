@@ -22,7 +22,7 @@ import seedu.easylog.exceptions.ItemListAlreadyClearedException;
 import seedu.easylog.exceptions.WrongUpdateCommandException;
 import seedu.easylog.exceptions.InvalidItemIndexException;
 import seedu.easylog.exceptions.EmptyItemIndexException;
-import seedu.easylog.exceptions.NonNumericItemIndexException;
+import seedu.easylog.exceptions.NonIntegerNumericItemIndexException;
 import seedu.easylog.exceptions.WrongItemFieldException;
 import seedu.easylog.item.ItemManager;
 
@@ -91,7 +91,7 @@ public class ItemsParser extends Parser {
                 ui.showInvalidItemIndex();
             } catch (EmptyItemIndexException e) {
                 ui.showEmptyItemIndex();
-            } catch (NonNumericItemIndexException e) {
+            } catch (NonIntegerNumericItemIndexException e) {
                 ui.showNonNumericItemIndex();
             } catch (EmptyItemPriceException e) {
                 ui.showEmptyItemPrice();
@@ -101,6 +101,14 @@ public class ItemsParser extends Parser {
                 ui.showNonNumericItemPrice();
             } catch (InvalidItemPriceException e) {
                 ui.showInvalidItemPrice();
+            } catch (InvalidItemStockException e) {
+                ui.showInvalidItemStock();
+            } catch (EmptyItemStockException e) {
+                ui.showEmptyItemStock();
+            } catch (NullItemStockException e) {
+                ui.showNullItemStock();
+            } catch (NonIntegerNumericItemStockException e) {
+                ui.showNonIntegerNumericItemStock();
             }
             break;
         default:

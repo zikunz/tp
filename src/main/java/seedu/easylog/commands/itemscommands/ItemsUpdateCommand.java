@@ -1,15 +1,22 @@
 package seedu.easylog.commands.itemscommands;
 
 import seedu.easylog.common.Constants;
+
 import seedu.easylog.exceptions.WrongUpdateCommandException;
 import seedu.easylog.exceptions.WrongItemFieldException;
 import seedu.easylog.exceptions.EmptyItemIndexException;
-import seedu.easylog.exceptions.NonNumericItemIndexException;
+import seedu.easylog.exceptions.NonIntegerNumericItemIndexException;
 import seedu.easylog.exceptions.InvalidItemIndexException;
 import seedu.easylog.exceptions.NonNumericItemPriceException;
 import seedu.easylog.exceptions.EmptyItemPriceException;
 import seedu.easylog.exceptions.InvalidItemPriceException;
 import seedu.easylog.exceptions.NullItemPriceException;
+import seedu.easylog.exceptions.NullItemStockException;
+import seedu.easylog.exceptions.EmptyItemStockException;
+import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
+import seedu.easylog.exceptions.InvalidItemStockException;
+
+
 import seedu.easylog.item.ItemManager;
 
 import java.util.regex.Pattern;
@@ -23,8 +30,10 @@ public class ItemsUpdateCommand extends ItemsCommand {
      * @param itemManager      item manager object which modifies items when necessary
      */
     public void execute(String extraDescription, ItemManager itemManager) throws WrongUpdateCommandException,
-            WrongItemFieldException, EmptyItemIndexException, NonNumericItemIndexException, InvalidItemIndexException,
-            NonNumericItemPriceException, EmptyItemPriceException, InvalidItemPriceException, NullItemPriceException {
+            WrongItemFieldException, EmptyItemIndexException, NonIntegerNumericItemIndexException,
+            InvalidItemIndexException, NonNumericItemPriceException, EmptyItemPriceException, InvalidItemPriceException,
+            NullItemPriceException, NullItemStockException, EmptyItemStockException,
+            NonIntegerNumericItemStockException, InvalidItemStockException {
         if (!extraDescription.isEmpty()) {
             throw new WrongUpdateCommandException();
         }
@@ -39,9 +48,9 @@ public class ItemsUpdateCommand extends ItemsCommand {
             throw new EmptyItemIndexException();
         }
 
-        Pattern pattern = Pattern.compile(Constants.REGEX_NUMERIC_INPUT);
-        if (!pattern.matcher(itemIndexInString).matches()) { // If itemIndexInString is not numeric
-            throw new NonNumericItemIndexException();
+        Pattern pattern = Pattern.compile(Constants.REGEX_INT_NUMERIC_INPUT);
+        if (!pattern.matcher(itemIndexInString).matches()) { // If itemIndexInString is not integer numeric
+            throw new NonIntegerNumericItemIndexException();
         }
 
         int itemIndexInInt = Integer.parseInt(itemIndexInString) - Constants.ARRAY_OFFSET;
@@ -55,6 +64,7 @@ public class ItemsUpdateCommand extends ItemsCommand {
         String itemField = Constants.SCANNER.nextLine();
 
         String revisedItemPrice;
+        String revisedItemStock;
 
         if (itemField.equals("p")) {
             ui.askForRevisedItemPrice();
@@ -62,12 +72,20 @@ public class ItemsUpdateCommand extends ItemsCommand {
 
             // Get revised item price while handling all possible exceptions
             revisedItemPrice = itemsPromptPriceCommand.execute();
+            itemManager.setRevisedItemPrice(itemIndexInInt, revisedItemPrice);
+            ui.showUpdateItemPrice();
+        } else if (itemField.equals("s")) {
+            ui.askForRevisedItemStock();
+            ItemsPromptStockCommand itemsPromptStockCommand = new ItemsPromptStockCommand();
+
+            // Get revised item stock while handling all possible exceptions
+            revisedItemStock = itemsPromptStockCommand.execute();
+            itemManager.setRevisedItemStock(itemIndexInInt, revisedItemStock);
+            ui.showUpdateItemStock();
         } else {
             throw new WrongItemFieldException();
         }
 
-        itemManager.setRevisedItemPrice(itemIndexInInt, revisedItemPrice);
 
-        ui.showUpdateItemPrice();
     }
 }

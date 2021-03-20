@@ -66,15 +66,4 @@ public class ItemsParser extends Parser {
             ui.showItemsHelp();
         }
     }
-
-    /**
-     * Prompts the user for the item price.
-     *
-     * @return item price
-     */
-    public String processItemsPrice() {
-        String price = Constants.SCANNER.nextLine();
-
-        return price;
-    }
 }

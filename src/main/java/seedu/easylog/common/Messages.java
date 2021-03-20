@@ -19,7 +19,7 @@ public class Messages {
     public static final String MESSAGE_GREETING = "Hello! I'm easyLog!\n"
             + "What can I do for you? Enter help to view commands.";
     public static final String MESSAGE_GOODBYE = "Bye. Thanks for using easyLog!";
-    public static final String MESSAGE_INVALID_COMMAND = "OOPS!!! I'm Sorry! I don't know what that means.\n"
+    public static final String MESSAGE_INVALID_COMMAND = "OOPS!!! I'm sorry! I don't know what that means.\n"
             + "Please input again! :)";
     public static final String MESSAGE_EMPTY_ITEM_NAME = "OOPS!!! The item name is missing!\n"
             + "Please complete the item information! :) ";
@@ -75,4 +75,20 @@ public class Messages {
             + "Please input the item information again! :)";
     public static final String MESSAGE_NON_NUMERIC_ITEM_PRICE = "OOPS!!! The input item price is not a number!\n"
             + "Please input the item information again! :)";
+    public static final String MESSAGE_WRONG_UPDATE_COMMAND = "OOPS!!! I'm sorry! I don't know what that means.\n"
+            + "Do you mean \"items update\"? Alternatively, see \"items help\" for more information";
+    public static final String MESSAGE_ASK_FOR_ITEM_INDEX = "Below is the exhaustive list for all items. May I know"
+            + " which item should be updated? Please input the index of the item of interest only.";
+    public static final String MESSAGE_ASK_FOR_ITEM_FIELD_TO_BE_UPDATED = "What would you like to update, price "
+            + "or stock? (p/s)";
+    public static final String MESSAGE_ASK_FOR_REVISED_ITEM_PRICE = "What is the revised item price?";
+    public static final String MESSAGE_SHOW_UPDATE_ITEM_PRICE = "Done! I just updated the item price for you.";
+    public static final String MESSAGE_WRONG_ITEM_FIELD_COMMAND = "OOPS!!! I'm sorry! I don't know what that means.\n"
+            + "Please input either \"p\" for (item) price or s for (item) stock.";
+    public static final String MESSAGE_INVALID_ITEM_INDEX = "OOPS!!! The item index is invalid!\n"
+            + "Please complete the item information! :)";
+    public static final String MESSAGE_EMPTY_ITEM_INDEX = "OOPS!!! The item index is empty!\n"
+            + "Please complete the item information! :)";
+    public static final String MESSAGE_NON_NUMERIC_ITEM_INDEX = "OOPS!!! The item index is non-numeric!\n"
+            + "Please complete the item information! :)";
 }

@@ -85,5 +85,14 @@ public class ItemManager {
         int index = getSize() - Constants.ARRAY_OFFSET;
         return getItem(index);
     }
+
+    /**
+     * Sets the price of an item specified by its index to
+     * be the revised one.
+     */
+    public void setRevisedItemPrice(int itemIndex, String revisedItemPrice) {
+        Item itemToBeUpdated = getItem(itemIndex);
+        itemToBeUpdated.setItemPrice(revisedItemPrice);
+    }
 }
 

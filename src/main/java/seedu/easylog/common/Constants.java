@@ -19,6 +19,7 @@ public class Constants {
     public static final String COMMAND_DELETE = "delete";
     public static final String COMMAND_LIST = "list";
     public static final String COMMAND_CLEAR = "clear";
+    public static final String COMMAND_UPDATE = "update";
 
     public static final String ITEM_NAME_AND_PRICE_SEPARATOR = ", S$";
     public static final String REGEX_NUMERIC_INPUT = "-?\\d+(\\.\\d+)?";

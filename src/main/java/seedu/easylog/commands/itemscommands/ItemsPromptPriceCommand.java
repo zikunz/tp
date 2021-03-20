@@ -19,7 +19,7 @@ public class ItemsPromptPriceCommand extends ItemsCommand {
     public String execute() throws NullItemPriceException, EmptyItemPriceException, InvalidItemPriceException,
             NonNumericItemPriceException {
         ui.promptItemPrice();
-        String priceInString = itemsParser.processItemsPrice();
+        String priceInString = Constants.SCANNER.nextLine();
 
         if (priceInString == null) {
             throw new NullItemPriceException();

@@ -55,7 +55,7 @@ public class Order {
         return (isShipped ? "X" : ""); //return X or empty symbols
     }
 
-    public void markAsShipped(){
+    public void markAsShipped() {
         isShipped = true;
     }
 

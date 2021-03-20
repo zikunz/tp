@@ -356,6 +356,7 @@ public class Ui {
         System.out.println(order.getOrderShippingStatusMessage());
     }
 
+    /**
      * Prints a message to ask the user about the revised item stock.
      */
     public void askForRevisedItemStock() {

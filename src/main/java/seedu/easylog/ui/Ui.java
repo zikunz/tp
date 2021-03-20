@@ -352,7 +352,7 @@ public class Ui {
     /**
      * Prints a message to inform the users about the shipping status of their order.
      */
-    public void showOrderShippingStatus(Order order){
+    public void showOrderShippingStatus(Order order) {
         System.out.println(order.getOrderShippingStatusMessage());
     }
 

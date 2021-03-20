@@ -341,4 +341,19 @@ public class Ui {
     public void showNonNumericItemIndex() {
         System.out.println(Messages.MESSAGE_NON_NUMERIC_ITEM_INDEX);
     }
+
+    /**
+     * Prints a message to inform the users about the total price of their order.
+     */
+    public void showOrderTotalPrice(Order order) {
+        System.out.println(order.getOrderTotalPriceMessage(order));
+    }
+
+    /**
+     * Prints a message to inform the users about the shipping status of their order.
+     */
+    public void showOrderShippingStatus(Order order){
+        System.out.println(order.getOrderShippingStatusMessage());
+    }
+
 }

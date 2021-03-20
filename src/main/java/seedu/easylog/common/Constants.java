@@ -1,5 +1,6 @@
 package seedu.easylog.common;
 
+import java.security.PublicKey;
 import java.util.Scanner;
 
 public class Constants {
@@ -22,6 +23,8 @@ public class Constants {
     public static final String COMMAND_LIST = "list";
     public static final String COMMAND_CLEAR = "clear";
     public static final String COMMAND_UPDATE = "update";
+    public static final String COMMAND_PRICE = "price";
+    public static final String COMMAND_SHIP = "ship";
 
     public static final String ITEM_NAME_AND_PRICE_SEPARATOR = ", S$";
     public static final String ITEM_PRICE_AND_STOCK_SEPARATOR = ", ";

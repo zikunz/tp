@@ -57,6 +57,28 @@ public class OrdersParser extends Parser {
                 ui.showAlreadyClearedOrderList();
             }
             break;
+        case (Constants.COMMAND_PRICE):
+            try {
+                new OrdersPriceCommand().execute(ordersArg, orderManager);
+            } catch (EmptyNumberException e) {
+                ui.showOrderEmptyNumber();
+            } catch (InvalidNumberException e) {
+                ui.showInvalidOrderNumber();
+            } catch (NumberFormatException e) {
+                ui.showNonIntegerOrderNumber();
+            }
+            break;
+        case (Constants.COMMAND_SHIP):
+            try {
+                new OrdersShipCommand().execute(ordersArg, orderManager);
+            } catch (EmptyNumberException e) {
+                ui.showOrderEmptyNumber();
+            } catch (InvalidNumberException e) {
+                ui.showInvalidOrderNumber();
+            } catch (NumberFormatException e) {
+                ui.showNonIntegerOrderNumber();
+            }
+            break;
         default:
             ui.showOrdersHelp();
         }

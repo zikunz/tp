@@ -4,6 +4,8 @@ import seedu.easylog.commands.orderscommands.OrdersAddCommand;
 import seedu.easylog.commands.orderscommands.OrdersClearCommand;
 import seedu.easylog.commands.orderscommands.OrdersDeleteCommand;
 import seedu.easylog.commands.orderscommands.OrdersListCommand;
+import seedu.easylog.commands.orderscommands.OrdersPriceCommand;
+import seedu.easylog.commands.orderscommands.OrdersShipCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyItemListException;

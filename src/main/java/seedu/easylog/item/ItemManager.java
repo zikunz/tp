@@ -40,22 +40,32 @@ public class ItemManager {
             for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
                 itemsListOutput += Messages.MESSAGE_INDENTATION + (itemIndex + 1) + ". "
                         + itemListToBePrint.get(itemIndex).getItemName() + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
-                        + itemListToBePrint.get(itemIndex).getItemPrice() + "\n";
+                        + itemListToBePrint.get(itemIndex).getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
+                        + itemListToBePrint.get(itemIndex).getItemStock() + "\n";
             }
         } else {
             for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
                 itemsListOutput += (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName()
                         + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
-                        + itemListToBePrint.get(itemIndex).getItemPrice() + "\n";
+                        + itemListToBePrint.get(itemIndex).getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
+                        + itemListToBePrint.get(itemIndex).getItemStock() + "\n";
             }
         }
         return itemsListOutput;
     }
 
+    /**
+     * Removes a specific item from the system.
+     */
     public void deleteItem(int index) {
         ITEM_LIST.remove(index);
     }
 
+    /**
+     * Gets the description of a specific item based on the given index.
+     *
+     * @return the description of the specific item
+     */
     public Item getItem(int index) {
         return ITEM_LIST.get(index);
     }

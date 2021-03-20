@@ -8,10 +8,14 @@ import seedu.easylog.commands.itemscommands.ItemsUpdateCommand;
 import seedu.easylog.common.Constants;
 
 import seedu.easylog.exceptions.EmptyNameException;
-import seedu.easylog.exceptions.NonNumericItemPriceException;
 import seedu.easylog.exceptions.InvalidItemPriceException;
 import seedu.easylog.exceptions.EmptyItemPriceException;
 import seedu.easylog.exceptions.NullItemPriceException;
+import seedu.easylog.exceptions.NonNumericItemPriceException;
+import seedu.easylog.exceptions.InvalidItemStockException;
+import seedu.easylog.exceptions.EmptyItemStockException;
+import seedu.easylog.exceptions.NullItemStockException;
+import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.exceptions.ItemListAlreadyClearedException;
@@ -20,7 +24,6 @@ import seedu.easylog.exceptions.InvalidItemIndexException;
 import seedu.easylog.exceptions.EmptyItemIndexException;
 import seedu.easylog.exceptions.NonNumericItemIndexException;
 import seedu.easylog.exceptions.WrongItemFieldException;
-
 import seedu.easylog.item.ItemManager;
 
 /**
@@ -46,6 +49,14 @@ public class ItemsParser extends Parser {
                 ui.showNullItemPrice();
             } catch (NonNumericItemPriceException e) {
                 ui.showNonNumericItemPrice();
+            } catch (InvalidItemStockException e) {
+                ui.showInvalidItemStock();
+            } catch (EmptyItemStockException e) {
+                ui.showEmptyItemStock();
+            } catch (NullItemStockException e) {
+                ui.showNullItemStock();
+            } catch (NonIntegerNumericItemStockException e) {
+                ui.showNonIntegerNumericItemStock();
             }
             break;
         case (Constants.COMMAND_DELETE):

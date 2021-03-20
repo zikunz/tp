@@ -80,6 +80,9 @@ public class Ui {
         }
     }
 
+    /**
+     * Prints a message to notify the user that the item list is empty.
+     */
     public void showEmptyItemList() {
         System.out.println(Messages.MESSAGE_EMPTY_ITEM_LIST);
     }
@@ -223,6 +226,46 @@ public class Ui {
      */
     public void showEmptyItemPrice() {
         System.out.println(Messages.MESSAGE_EMPTY_ITEM_PRICE);
+    }
+
+    /**
+     * Prints a message to ask the user about the stock of the item entered earlier.
+     */
+    public void promptItemStock() {
+        System.out.println(Messages.MESSAGE_PROMPT_ITEM_STOCK);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item stock is invalid.
+     * This means the user should input either 0 or a positive integer number
+     * smaller than or equal to 100000000.
+     */
+    public void showInvalidItemStock() {
+        System.out.println(Messages.MESSAGE_SHOW_INVALID_ITEM_STOCK);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item price is not an integer numeric.
+     * This means the user should input an integer numeric and valid item stock.
+     */
+    public void showNonIntegerNumericItemStock() {
+        System.out.println(Messages.MESSAGE_NON_INTEGER_NUMERIC_ITEM_STOCK);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item stock is null.
+     * This means the user should input a non-null and valid item stock.
+     */
+    public void showNullItemStock() {
+        System.out.println(Messages.MESSAGE_NULL_ITEM_STOCK);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item stock is empty.
+     * This means the user should input a non-empty and valid item stock.
+     */
+    public void showEmptyItemStock() {
+        System.out.println(Messages.MESSAGE_EMPTY_ITEM_STOCK);
     }
 
     /**

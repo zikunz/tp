@@ -75,4 +75,22 @@ public class Messages {
             + "Please input the item information again! :)";
     public static final String MESSAGE_NON_NUMERIC_ITEM_PRICE = "OOPS!!! The input item price is not a number!\n"
             + "Please input the item information again! :)";
+    public static final String MESSAGE_PROMPT_ITEM_STOCK =
+            "Please enter the stock of the item.\n"
+                    + "Note: The stock to be entered should be either 0 or a positive integer number "
+                    + "smaller than or equal to 100000000 "
+                    + "(The warehouse cannot store more than one hundred million items.";
+    public static final String MESSAGE_SHOW_INVALID_ITEM_STOCK = "OOPS!!! The item stock is invalid!\n"
+            + "Please input again and give a valid item stock! :)";
+    public static final String MESSAGE_NULL_ITEM_STOCK = "OOPS!!! The input item stock is null!\n"
+            + "Please input again and give a valid item stock! :)";
+    public static final String MESSAGE_EMPTY_ITEM_STOCK = "OOPS!!! The input item stock is empty!\n"
+            + "Please input again and complete the item stock! :)";
+    public static final String MESSAGE_NON_INTEGER_NUMERIC_ITEM_STOCK = "OOPS!!! The input item stock "
+            + "is not an integer number!\n"
+            + "Please input again and give a valid item stock! :)";
+
+
+
+
 }

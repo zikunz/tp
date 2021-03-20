@@ -7,10 +7,12 @@ public class Item {
 
     protected String itemName;
     protected String itemPrice;
+    protected String itemStock;
 
-    public Item(String itemName, String price) {
+    public Item(String itemName, String price, String stock) {
         this.itemName = itemName;
         this.itemPrice = price;
+        this.itemStock = stock;
         assert itemName != null;
     }
 
@@ -25,6 +27,15 @@ public class Item {
      */
     public String getItemPrice() {
         return itemPrice;
+    }
+
+    /**
+     * Returns the item stock of a particular item.
+     *
+     * @return item stock
+     */
+    public String getItemStock() {
+        return itemStock;
     }
 
     public String getAddItemMessage() {

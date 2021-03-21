@@ -35,6 +35,8 @@ public class OrdersParser extends Parser {
                 ui.showAddItemFirst();
             } catch (OrderEmptyException e) {
                 ui.showOrderEmpty();
+            } catch (NumberFormatException e) {
+                ui.showInvalidStopAddingItemToOrder();
             }
             break;
         case (Constants.COMMAND_DELETE):
@@ -49,7 +51,7 @@ public class OrdersParser extends Parser {
             }
             break;
         case (Constants.COMMAND_LIST):
-            new OrdersListCommand().execute(itemManager, orderManager);
+            new OrdersListCommand().execute(orderManager);
             break;
         case (Constants.COMMAND_CLEAR):
             try {
@@ -90,26 +92,31 @@ public class OrdersParser extends Parser {
         ArrayList<Item> itemsAddedToOrder = new ArrayList<>();
         ArrayList<Integer> itemsStockAddedToOrder = new ArrayList<>();
         do {
+            if (addItemsInput.equals("stop")) {
+                break;
+            }
             String[] splitInput = addItemsInput.split(" ");
             int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;
             int stockAdded = Integer.parseInt(splitInput[1]);
             try {
                 Item itemToBeAddedToOrder = itemManager.getItem(itemIndex);
                 int currentItemStock = itemToBeAddedToOrder.getItemStock();
-                if (stockAdded <0 || stockAdded > currentItemStock) {
+                if (stockAdded < 0 || stockAdded > currentItemStock) {
                     throw new InvalidItemStockException();
                 }
                 int updatedItemStock = currentItemStock - stockAdded;
                 itemToBeAddedToOrder.setItemStock(updatedItemStock);
                 itemsAddedToOrder.add(itemManager.getItem(itemIndex));
-                itemsStockAddedToOrder.add(updatedItemStock);
+                itemsStockAddedToOrder.add(stockAdded);
+                ui.showItemAndStockAddedToOrder(itemToBeAddedToOrder.getItemName(), stockAdded);
             } catch (IndexOutOfBoundsException e) {
                 ui.showItemNotFound(itemIndex);
             } catch (InvalidItemStockException e) {
                 ui.showNotEnoughStock();
             }
+            ui.showContinueAddingItemsToOrder();
             addItemsInput = Constants.SCANNER.nextLine();
-        } while(addItemsInput.equals("yes"));
+        } while (true);
         if (itemsAddedToOrder.isEmpty()) {
             throw new OrderEmptyException();
         }

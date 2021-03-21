@@ -352,4 +352,15 @@ public class Ui {
     public void showUpdateItemStock() {
         System.out.println(Messages.MESSAGE_SHOW_UPDATE_ITEM_STOCK);
     }
+
+    /**
+     * Prints a message to notify user to retype orders add command due to no item added to the order.
+     */
+    public void showOrderEmpty() {
+        System.out.println(Messages.MESSAGE_EMPTY_ORDER);
+    }
+
+    public void showNotEnoughStock() {
+        System.out.println(Messages.MESSAGE_NOT_ENOUGH_STOCK);
+    }
 }

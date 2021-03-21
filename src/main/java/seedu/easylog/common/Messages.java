@@ -103,5 +103,8 @@ public class Messages {
             + "Please input again and complete the item index! :)";
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_STOCK = "What is the revised item stock?";
     public static final String MESSAGE_SHOW_UPDATE_ITEM_STOCK = "Done! I just updated the item stock for you.";
+    public static final String MESSAGE_EMPTY_ORDER = "No items added to the order. Please input command again!";
+    public static final String MESSAGE_NOT_ENOUGH_STOCK = "Not enough stock to be added into the order. "
+            + "Please retry and type valid stock number.";
 }
 

@@ -11,11 +11,13 @@ public class Order {
 
     protected String customerName;
     protected ArrayList<Item> itemsInOrder;
+    protected ArrayList<Integer> itemsStockCount;
     protected boolean isShipped;
 
-    public Order(String customerName, ArrayList<Item> itemsInOrder) {
+    public Order(String customerName, ArrayList<Item> itemsInOrder, ArrayList<Integer> itemsStockCount) {
         this.customerName = customerName;
         this.itemsInOrder = itemsInOrder;
+        this.itemsStockCount = itemsStockCount;
         isShipped = false;
         assert customerName != null;
         assert itemsInOrder != null;

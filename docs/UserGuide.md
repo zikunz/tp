@@ -86,9 +86,9 @@ Items-Related Options:
 
 * Add an item to the system.
 
-* Format: `items add <item_name>`
+* Format: `items add <item_name>` followed by `<item_price>` and `<item_stock>`
 
-* Example: `items add PS5`
+* Example: `items add PS5` followed by `100` and `10`
 
 * Expected Output:
 
@@ -134,6 +134,18 @@ Got it! The item [glove] is deleted.
 
 ```
 Done! I just cleared all items for you.
+```
+
+#### Updating an item: `items update`
+
+* Update either the price of stock of an item in the system.
+
+* Format: `items update` followed by `p` or `s`<br/>
+  if `p` is entered, the user needs to enter `<revised_item_price>`<br/>
+  if `s` is entered, the user needs to enter `<revised_item_stock>`
+* Expected Output:
+
+```
 ```
 
 ### Orders
@@ -241,10 +253,19 @@ Bye. Thanks for using easyLog!
 
 ## FAQ
 
-**Q1**: Where is the saved file (record) stored or created after I exit the program?
+**Q1**: I do not seem to be able to add an item. Why is this so?
 
-> The saved file or record is not stored anywhere for easyLog v1.0. This feature will be added in the next iteration
-> (i.e., easyLog v2.0).
+> There could be many possibilities which can result in you not being able to add an item. We advise you to follow
+> the below steps when intending to add an item. <br/>
+>
+> Please note that you need to specify the description of the item. For instance, you can do this
+> by typing `orders add Competitive Programming 4: The Lower Bound of Programming Contests in the 2020s`. <br/>
+>
+> After that, input the **price per item** *(unit price)*. Please note that the unit price is either zero (free item) or
+> a positive number smaller or equal to 1000000000 (the system currently accepts a unit price not more than
+> SG$1,000,000,000). For example, you can enter `100` for the item price field. <br/>
+>
+> Lastly, please provide number of items to be added, also known as stock. (TO BE REVISED)
 
 **Q2**: I do not seem to be able to add an order. Why is this so?
 

@@ -28,8 +28,8 @@ public class OrdersAddCommand extends OrdersCommand {
         ItemsListCommand itemsListCommand = new ItemsListCommand();
         itemsListCommand.execute(itemManager); // to show available items and item stock
         ui.showAddItemsToOrder();
-        String addItemsInput = Constants.SCANNER.nextLine();
-        Order order = ordersParser.processItemsAddedToOrder(customerName, addItemsInput, itemManager);
+        String addItemsToOrderInput = Constants.SCANNER.nextLine();
+        Order order = ordersParser.processItemsAddedToOrder(customerName, addItemsToOrderInput, itemManager);
         orderManager.addOrder(order);
         assert orderManager.getLatestOrderAdded().equals(order);
         ui.showOrderAdded(order);

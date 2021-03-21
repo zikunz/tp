@@ -89,15 +89,12 @@ public class OrdersParser extends Parser {
         }
     }
 
-    public Order processItemsAddedToOrder(String customerName, String addItemsInput, ItemManager itemManager)
+    public Order processItemsAddedToOrder(String customerName, String addItemsToOrderInput, ItemManager itemManager)
             throws OrderEmptyException {
         ArrayList<Item> itemsAddedToOrder = new ArrayList<>();
         ArrayList<Integer> itemsStockAddedToOrder = new ArrayList<>();
         do {
-            if (addItemsInput.equals("stop")) {
-                break;
-            }
-            String[] splitInput = addItemsInput.split(" ");
+            String[] splitInput = addItemsToOrderInput.split(" ");
             int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;
             int stockAdded = Integer.parseInt(splitInput[1]);
             try {
@@ -117,13 +114,12 @@ public class OrdersParser extends Parser {
                 ui.showNotEnoughStock();
             }
             ui.showContinueAddingItemsToOrder();
-            addItemsInput = Constants.SCANNER.nextLine();
-        } while (true);
+            addItemsToOrderInput = Constants.SCANNER.nextLine();
+        } while (!addItemsToOrderInput.equals("stop"));
         if (itemsAddedToOrder.isEmpty()) {
             throw new OrderEmptyException();
         }
-        Order order = new Order(customerName, itemsAddedToOrder, itemsStockAddedToOrder);
-        return order;
+        return new Order(customerName, itemsAddedToOrder, itemsStockAddedToOrder);
     }
 
 

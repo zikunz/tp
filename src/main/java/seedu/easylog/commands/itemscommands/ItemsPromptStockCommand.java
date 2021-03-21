@@ -18,7 +18,7 @@ public class ItemsPromptStockCommand extends ItemsCommand {
         if (stockInString == null) {
             throw new NullItemStockException();
         }
-        if (stockInString.equals("")){
+        if (stockInString.equals("")) {
             throw new EmptyItemStockException();
         }
         int stock = itemsParser.processStockInput(stockInString);

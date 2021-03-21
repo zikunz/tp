@@ -50,7 +50,7 @@ public class Item {
 
     /**
      * Sets the price of an item of interest.
-     * @param itemPrice
+     * @param itemPrice price of the item in BigDecimal.
      */
     public void setItemPrice(BigDecimal itemPrice) {
         this.itemPrice = itemPrice;
@@ -58,7 +58,7 @@ public class Item {
 
     /**
      * Sets the stock of an item of interest.
-     * @param itemStock
+     * @param itemStock amount of stock of the item in integer.
      */
     public void setItemStock(int itemStock) {
         this.itemStock = itemStock;

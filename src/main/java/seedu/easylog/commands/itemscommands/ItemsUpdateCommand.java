@@ -19,6 +19,7 @@ import seedu.easylog.exceptions.InvalidItemStockException;
 
 import seedu.easylog.item.ItemManager;
 
+import java.math.BigDecimal;
 import java.util.regex.Pattern;
 
 public class ItemsUpdateCommand extends ItemsCommand {
@@ -63,8 +64,8 @@ public class ItemsUpdateCommand extends ItemsCommand {
         ui.askForItemFieldToBeUpdated();
         String itemField = Constants.SCANNER.nextLine();
 
-        String revisedItemPrice;
-        String revisedItemStock;
+        BigDecimal revisedItemPrice;
+        int revisedItemStock;
 
         if (itemField.equals("p")) {
             ui.askForRevisedItemPrice();
@@ -85,7 +86,5 @@ public class ItemsUpdateCommand extends ItemsCommand {
         } else {
             throw new WrongItemFieldException();
         }
-
-
     }
 }

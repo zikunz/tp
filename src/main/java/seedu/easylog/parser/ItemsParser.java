@@ -26,6 +26,9 @@ import seedu.easylog.exceptions.NonIntegerNumericItemIndexException;
 import seedu.easylog.exceptions.WrongItemFieldException;
 import seedu.easylog.item.ItemManager;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /**
  * Process items command input.
  */
@@ -47,7 +50,7 @@ public class ItemsParser extends Parser {
                 ui.showEmptyItemPrice();
             } catch (NullItemPriceException e) {
                 ui.showNullItemPrice();
-            } catch (NonNumericItemPriceException e) {
+            } catch (NumberFormatException e) {
                 ui.showNonNumericItemPrice();
             } catch (InvalidItemStockException e) {
                 ui.showInvalidItemStock();
@@ -55,8 +58,6 @@ public class ItemsParser extends Parser {
                 ui.showEmptyItemStock();
             } catch (NullItemStockException e) {
                 ui.showNullItemStock();
-            } catch (NonIntegerNumericItemStockException e) {
-                ui.showNonIntegerNumericItemStock();
             }
             break;
         case (Constants.COMMAND_DELETE):
@@ -114,5 +115,24 @@ public class ItemsParser extends Parser {
         default:
             ui.showItemsHelp();
         }
+    }
+
+    public BigDecimal processPriceInput(String priceInString) {
+        int endIndex = priceInString.indexOf(" ");
+        if (endIndex != -1) { // if spaces found in the string, remove anything after and including the first space
+            priceInString = priceInString.substring(0, endIndex);
+        }
+        BigDecimal price = new BigDecimal(priceInString);
+        price = price.setScale(Constants.PRICING_SCALE, RoundingMode.HALF_EVEN);
+        return price;
+    }
+
+    public int processStockInput(String stockInString) {
+        int endIndex = stockInString.indexOf(" ");
+        if (endIndex != -1) {
+            stockInString = stockInString.substring(0, endIndex);
+        }
+        int price = Integer.parseInt(stockInString);
+        return price;
     }
 }

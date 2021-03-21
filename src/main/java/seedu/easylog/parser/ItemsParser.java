@@ -125,8 +125,7 @@ public class ItemsParser extends Parser {
         if (endIndex != -1) {
             stockInString = stockInString.substring(0, endIndex);
         }
-        int price = Integer.parseInt(stockInString);
-        return price;
+        return Integer.parseInt(stockInString); // returns stock input in integer
     }
 
     public void processUpdateAttributeInput(String updateInput, int itemIndex, ItemManager itemManager) throws

@@ -73,8 +73,9 @@ public class Messages {
             + "Please input again and complete the item price! :)";
     public static final String MESSAGE_EMPTY_ITEM_PRICE = "OOPS!!! The input item price is empty!\n"
             + "Please input again and complete the item price! :)";
-    public static final String MESSAGE_NON_NUMERIC_ITEM_PRICE = "OOPS!!! The input item price is not a number!\n"
-            + "Please input again and give a valid item price! :)";
+    public static final String MESSAGE_NON_NUMERIC_INPUT =
+            "OOPS!!! The input item is not a number!\n"
+            + "Please input again and give a number! :)";
     public static final String MESSAGE_PROMPT_ITEM_STOCK =
             "Please enter the stock of the item.\n"
                     + "Note: The stock to be entered should be either 0 or a positive integer number "
@@ -86,9 +87,6 @@ public class Messages {
             + "Please input again and give a valid item stock! :)";
     public static final String MESSAGE_EMPTY_ITEM_STOCK = "OOPS!!! The input item stock is empty!\n"
             + "Please input again and complete the item stock! :)";
-    public static final String MESSAGE_NON_INTEGER_NUMERIC_ITEM_STOCK = "OOPS!!! The input item stock "
-            + "is not an integer number!\n"
-            + "Please input again and give a valid item stock! :)";
     public static final String MESSAGE_WRONG_UPDATE_COMMAND = "OOPS!!! I'm sorry! I don't know what that means.\n"
             + "Do you mean \"items update\"? Alternatively, see \"items help\" for more information";
     public static final String MESSAGE_ASK_FOR_ITEM_INDEX = "Below is the exhaustive list for all items. May I know"
@@ -103,8 +101,6 @@ public class Messages {
             + "Please input again and give a valid item index! :)";
     public static final String MESSAGE_EMPTY_ITEM_INDEX = "OOPS!!! The item index is empty!\n"
             + "Please input again and complete the item index! :)";
-    public static final String MESSAGE_NON_NUMERIC_ITEM_INDEX = "OOPS!!! The item index is non-numeric!\n"
-            + "Please input again and give a valid item index! :)";
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_STOCK = "What is the revised item stock?";
     public static final String MESSAGE_SHOW_UPDATE_ITEM_STOCK = "Done! I just updated the item stock for you.";
 }

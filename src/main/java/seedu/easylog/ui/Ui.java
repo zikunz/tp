@@ -205,11 +205,11 @@ public class Ui {
     }
 
     /**
-     * Prints a message to notify the user that the input item price is not numeric.
-     * This means the user should input a numeric and valid item price.
+     * Prints a message to notify the user that the input  is not numeric.
+     * This means the user should input a numeric and valid field.
      */
-    public void showNonNumericItemPrice() {
-        System.out.println(Messages.MESSAGE_NON_NUMERIC_ITEM_PRICE);
+    public void showNonNumericInput() {
+        System.out.println(Messages.MESSAGE_NON_NUMERIC_INPUT);
     }
 
     /**
@@ -242,14 +242,6 @@ public class Ui {
      */
     public void showInvalidItemStock() {
         System.out.println(Messages.MESSAGE_SHOW_INVALID_ITEM_STOCK);
-    }
-
-    /**
-     * Prints a message to notify the user that the input item price is not an integer numeric.
-     * This means the user should input an integer numeric and valid item stock.
-     */
-    public void showNonIntegerNumericItemStock() {
-        System.out.println(Messages.MESSAGE_NON_INTEGER_NUMERIC_ITEM_STOCK);
     }
 
     /**
@@ -331,15 +323,6 @@ public class Ui {
      */
     public void showEmptyItemIndex() {
         System.out.println(Messages.MESSAGE_EMPTY_ITEM_INDEX);
-    }
-
-    /**
-     * Prints a message to notify the user that the input item index is empty.
-     * This means the user should input a numeric and
-     * valid number corresponding to the index in the item list.
-     */
-    public void showNonNumericItemIndex() {
-        System.out.println(Messages.MESSAGE_NON_NUMERIC_ITEM_INDEX);
     }
 
     /**

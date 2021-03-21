@@ -208,8 +208,12 @@ public class Ui {
      * Prints a message to notify the user that the input  is not numeric.
      * This means the user should input a numeric and valid field.
      */
-    public void showNonNumericInput() {
-        System.out.println(Messages.MESSAGE_NON_NUMERIC_INPUT);
+    public void showNonNumericInputForAdd() {
+        System.out.println(Messages.MESSAGE_NON_NUMERIC_INPUT_FOR_ADD);
+    }
+
+    public void showNonNumericInputForUpdate() {
+        System.out.println(Messages.MESSAGE_NON_NUMERIC_INPUT_FOR_UPDATE);
     }
 
     /**
@@ -362,5 +366,17 @@ public class Ui {
 
     public void showNotEnoughStock() {
         System.out.println(Messages.MESSAGE_NOT_ENOUGH_STOCK);
+    }
+
+    public void showContinueAddingItemsToOrder() {
+        System.out.println(Messages.MESSAGE_CONTINUE_ADDING_ITEM_TO_ORDER);
+    }
+
+    public void showItemAndStockAddedToOrder(String itemName, int stockAdded) {
+        System.out.println(itemName + " and stock of " + stockAdded + " added to the order.");
+    }
+
+    public void showInvalidStopAddingItemToOrder() {
+        System.out.println(Messages.MESSAGE_INVALID_STOP_ADDING_ITEM_TO_ORDER);
     }
 }

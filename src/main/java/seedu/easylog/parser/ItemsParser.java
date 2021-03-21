@@ -48,7 +48,7 @@ public class ItemsParser extends Parser {
             } catch (NullItemPriceException e) {
                 ui.showNullItemPrice();
             } catch (NumberFormatException e) {
-                ui.showNonNumericInput();
+                ui.showNonNumericInputForAdd();
             } catch (InvalidItemStockException e) {
                 ui.showInvalidItemStock();
             } catch (EmptyItemStockException e) {
@@ -94,7 +94,7 @@ public class ItemsParser extends Parser {
             } catch (NullItemPriceException e) {
                 ui.showNullItemPrice();
             } catch (NumberFormatException e) {
-                ui.showNonNumericInput();
+                ui.showNonNumericInputForUpdate();
             } catch (InvalidItemPriceException e) {
                 ui.showInvalidItemPrice();
             } catch (InvalidItemStockException e) {

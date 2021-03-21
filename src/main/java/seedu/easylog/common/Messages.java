@@ -73,9 +73,12 @@ public class Messages {
             + "Please input again and complete the item price! :)";
     public static final String MESSAGE_EMPTY_ITEM_PRICE = "OOPS!!! The input item price is empty!\n"
             + "Please input again and complete the item price! :)";
-    public static final String MESSAGE_NON_NUMERIC_INPUT =
+    public static final String MESSAGE_NON_NUMERIC_INPUT_FOR_ADD =
             "OOPS!!! The input item is not a number!\n"
-            + "Please input again and give a number! :)";
+            + "Please retry items add command and give a number for stock/price! :)";
+    public static final String MESSAGE_NON_NUMERIC_INPUT_FOR_UPDATE =
+            "OOPS!!! The input item is not a number!\n"
+                    + "Please retry items update command and give a number for stock/price! :)";
     public static final String MESSAGE_PROMPT_ITEM_STOCK =
             "Please enter the stock of the item.\n"
                     + "Note: The stock to be entered should be either 0 or a positive integer number "
@@ -103,8 +106,13 @@ public class Messages {
             + "Please input again and complete the item index! :)";
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_STOCK = "What is the revised item stock?";
     public static final String MESSAGE_SHOW_UPDATE_ITEM_STOCK = "Done! I just updated the item stock for you.";
-    public static final String MESSAGE_EMPTY_ORDER = "No items added to the order. Please input command again!";
+    public static final String MESSAGE_EMPTY_ORDER = "No items added to the order. Please input `orders add` "
+            + "command again!";
     public static final String MESSAGE_NOT_ENOUGH_STOCK = "Not enough stock to be added into the order. "
             + "Please retry and type valid stock number.";
+    public static final String MESSAGE_CONTINUE_ADDING_ITEM_TO_ORDER = "Type (stop) to stop adding items to order,"
+            + " else continue entering items in the same format.\nNote that you need at least 1 item in the order.";
+    public static final String MESSAGE_INVALID_STOP_ADDING_ITEM_TO_ORDER = "Invalid stop command to stop adding"
+            + " items to the order. Type (stop) for the correct command.\nPlease retry orders add command.";
 }
 

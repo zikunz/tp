@@ -37,6 +37,8 @@ public class OrdersParser extends Parser {
                 ui.showOrderEmpty();
             } catch (NumberFormatException e) {
                 ui.showInvalidStopAddingItemToOrder();
+            } catch (ArrayIndexOutOfBoundsException e) {
+                ui.showInvalidFormatOrdersAdd();
             }
             break;
         case (Constants.COMMAND_DELETE):

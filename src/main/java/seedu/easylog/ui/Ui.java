@@ -379,4 +379,8 @@ public class Ui {
     public void showInvalidStopAddingItemToOrder() {
         System.out.println(Messages.MESSAGE_INVALID_STOP_ADDING_ITEM_TO_ORDER);
     }
+
+    public void showInvalidFormatOrdersAdd() {
+        System.out.println(Messages.MESSAGE_INVALID_FORMAT_ORDERS_ADD);
+    }
 }

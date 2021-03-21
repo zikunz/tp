@@ -54,7 +54,7 @@ public class Order {
     }
 
     public String getOrderTotalPriceMessage(Order order) {
-        return "The total price for customer [" + customerName + "]'s order is s$"
+        return "The total price for customer [" + customerName + "]'s order is S$"
                 + order.getOrderTotalPrice(itemsInOrder) + ".";
     }
 

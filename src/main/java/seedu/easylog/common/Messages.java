@@ -114,5 +114,7 @@ public class Messages {
             + " else continue entering items in the same format.\nNote that you need at least 1 item in the order.";
     public static final String MESSAGE_INVALID_STOP_ADDING_ITEM_TO_ORDER = "Invalid stop command to stop adding"
             + " items to the order. Type (stop) for the correct command.\nPlease retry orders add command.";
+    public static final String MESSAGE_INVALID_FORMAT_ORDERS_ADD = "Invalid format for inputting of items into order."
+            + "Please retry orders add command.";
 }
 

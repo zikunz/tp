@@ -5,27 +5,24 @@ import seedu.easylog.commands.itemscommands.ItemsDeleteCommand;
 import seedu.easylog.commands.itemscommands.ItemsClearCommand;
 import seedu.easylog.commands.itemscommands.ItemsListCommand;
 import seedu.easylog.commands.itemscommands.ItemsUpdateCommand;
+import seedu.easylog.commands.itemscommands.ItemsPromptPriceCommand;
+import seedu.easylog.commands.itemscommands.ItemsPromptStockCommand;
 import seedu.easylog.common.Constants;
-
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.InvalidItemPriceException;
 import seedu.easylog.exceptions.EmptyItemPriceException;
 import seedu.easylog.exceptions.NullItemPriceException;
-import seedu.easylog.exceptions.NonNumericItemPriceException;
 import seedu.easylog.exceptions.InvalidItemStockException;
 import seedu.easylog.exceptions.EmptyItemStockException;
 import seedu.easylog.exceptions.NullItemStockException;
-import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.exceptions.ItemListAlreadyClearedException;
 import seedu.easylog.exceptions.WrongUpdateCommandException;
 import seedu.easylog.exceptions.InvalidItemIndexException;
 import seedu.easylog.exceptions.EmptyItemIndexException;
-import seedu.easylog.exceptions.NonIntegerNumericItemIndexException;
 import seedu.easylog.exceptions.WrongItemFieldException;
 import seedu.easylog.item.ItemManager;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -51,7 +48,7 @@ public class ItemsParser extends Parser {
             } catch (NullItemPriceException e) {
                 ui.showNullItemPrice();
             } catch (NumberFormatException e) {
-                ui.showNonNumericItemPrice();
+                ui.showNonNumericInput();
             } catch (InvalidItemStockException e) {
                 ui.showInvalidItemStock();
             } catch (EmptyItemStockException e) {
@@ -92,14 +89,12 @@ public class ItemsParser extends Parser {
                 ui.showInvalidItemIndex();
             } catch (EmptyItemIndexException e) {
                 ui.showEmptyItemIndex();
-            } catch (NonIntegerNumericItemIndexException e) {
-                ui.showNonNumericItemIndex();
             } catch (EmptyItemPriceException e) {
                 ui.showEmptyItemPrice();
             } catch (NullItemPriceException e) {
                 ui.showNullItemPrice();
-            } catch (NonNumericItemPriceException e) {
-                ui.showNonNumericItemPrice();
+            } catch (NumberFormatException e) {
+                ui.showNonNumericInput();
             } catch (InvalidItemPriceException e) {
                 ui.showInvalidItemPrice();
             } catch (InvalidItemStockException e) {
@@ -108,8 +103,6 @@ public class ItemsParser extends Parser {
                 ui.showEmptyItemStock();
             } catch (NullItemStockException e) {
                 ui.showNullItemStock();
-            } catch (NonIntegerNumericItemStockException e) {
-                ui.showNonIntegerNumericItemStock();
             }
             break;
         default:
@@ -134,5 +127,25 @@ public class ItemsParser extends Parser {
         }
         int price = Integer.parseInt(stockInString);
         return price;
+    }
+
+    public void processUpdateAttributeInput(String updateInput, int itemIndex, ItemManager itemManager) throws
+            EmptyItemPriceException, InvalidItemPriceException, NullItemPriceException, NullItemStockException,
+            EmptyItemStockException, InvalidItemStockException, WrongItemFieldException {
+        if (updateInput.equals("p")) {
+            ui.askForRevisedItemPrice();
+            ItemsPromptPriceCommand itemsPromptPriceCommand = new ItemsPromptPriceCommand();
+            BigDecimal revisedItemPrice = itemsPromptPriceCommand.execute();
+            itemManager.setRevisedItemPrice(itemIndex, revisedItemPrice);
+            ui.showUpdateItemPrice();
+        } else if (updateInput.equals("s")) {
+            ui.askForRevisedItemStock();
+            ItemsPromptStockCommand itemsPromptStockCommand = new ItemsPromptStockCommand();
+            int revisedStockPrice = itemsPromptStockCommand.execute();
+            itemManager.setRevisedItemStock(itemIndex, revisedStockPrice);
+            ui.showUpdateItemStock();
+        } else {
+            throw new WrongItemFieldException();
+        }
     }
 }

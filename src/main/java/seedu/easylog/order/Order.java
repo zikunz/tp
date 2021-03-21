@@ -2,6 +2,7 @@ package seedu.easylog.order;
 
 import seedu.easylog.item.Item;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
@@ -18,7 +19,7 @@ public class Order {
         this.customerName = customerName;
         this.itemsInOrder = itemsInOrder;
         this.itemsStockCount = itemsStockCount;
-        isShipped = false;
+        this.isShipped = false;
         assert customerName != null;
         assert itemsInOrder != null;
     }
@@ -31,6 +32,10 @@ public class Order {
         return itemsInOrder;
     }
 
+    public ArrayList<Integer> getStockCounts() {
+        return itemsStockCount;
+    }
+
     public String getAddOrderMessage() {
         return "Got it! The order for customer [" + customerName + "] is added.";
     }
@@ -39,11 +44,11 @@ public class Order {
         return "Got it! The order for customer [" + customerName + "] is deleted.";
     }
 
-    public int getOrderTotalPrice(ArrayList<Item> itemsInOrder) {
-        int totalPrice = 0;
+    public BigDecimal getOrderTotalPrice(ArrayList<Item> itemsInOrder) {
+        BigDecimal totalPrice = new BigDecimal(0);
+        int stockIndex = 0;
         for (Item item : itemsInOrder) {
-            String rawTotalPrice = item.getItemPrice();
-            totalPrice += Integer.parseInt(rawTotalPrice);
+            totalPrice = totalPrice.add(item.getItemPrice().multiply(new BigDecimal(itemsStockCount.get(stockIndex))));
         }
         return totalPrice;
     }

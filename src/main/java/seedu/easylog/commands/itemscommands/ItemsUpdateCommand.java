@@ -31,60 +31,29 @@ public class ItemsUpdateCommand extends ItemsCommand {
      * @param itemManager      item manager object which modifies items when necessary
      */
     public void execute(String extraDescription, ItemManager itemManager) throws WrongUpdateCommandException,
-            WrongItemFieldException, EmptyItemIndexException, NonIntegerNumericItemIndexException,
-            InvalidItemIndexException, NonNumericItemPriceException, EmptyItemPriceException, InvalidItemPriceException,
-            NullItemPriceException, NullItemStockException, EmptyItemStockException,
-            NonIntegerNumericItemStockException, InvalidItemStockException {
+            WrongItemFieldException, EmptyItemIndexException, InvalidItemIndexException, EmptyItemPriceException,
+            InvalidItemPriceException, NullItemPriceException, NullItemStockException, EmptyItemStockException,
+            InvalidItemStockException {
         if (!extraDescription.isEmpty()) {
             throw new WrongUpdateCommandException();
         }
 
         ui.askForItemIndex();
         ItemsListCommand itemsListCommand = new ItemsListCommand();
-        itemsListCommand.execute(itemManager); // Show item list
+        itemsListCommand.execute(itemManager); // Show item list to allow user to see the item index to update
 
         String itemIndexInString = Constants.SCANNER.nextLine();
-        String itemIndexInStringWithoutSpaces = itemIndexInString.replace(" ", "");
-        if (itemIndexInStringWithoutSpaces.isEmpty()) {
+        if (itemIndexInString.equals("")) {
             throw new EmptyItemIndexException();
         }
-
-        Pattern pattern = Pattern.compile(Constants.REGEX_INT_NUMERIC_INPUT);
-        if (!pattern.matcher(itemIndexInString).matches()) { // If itemIndexInString is not integer numeric
-            throw new NonIntegerNumericItemIndexException();
-        }
-
-        int itemIndexInInt = Integer.parseInt(itemIndexInString) - Constants.ARRAY_OFFSET;
-
+        int itemIndex = Integer.parseInt(itemIndexInString) - Constants.ARRAY_OFFSET;
         int size = itemManager.getSize();
-        if (itemIndexInInt < 0 || itemIndexInInt >= size) {
+        if (itemIndex < 0 || itemIndex >= size) {
             throw new InvalidItemIndexException();
         }
 
         ui.askForItemFieldToBeUpdated();
         String itemField = Constants.SCANNER.nextLine();
-
-        BigDecimal revisedItemPrice;
-        int revisedItemStock;
-
-        if (itemField.equals("p")) {
-            ui.askForRevisedItemPrice();
-            ItemsPromptPriceCommand itemsPromptPriceCommand = new ItemsPromptPriceCommand();
-
-            // Get revised item price while handling all possible exceptions
-            revisedItemPrice = itemsPromptPriceCommand.execute();
-            itemManager.setRevisedItemPrice(itemIndexInInt, revisedItemPrice);
-            ui.showUpdateItemPrice();
-        } else if (itemField.equals("s")) {
-            ui.askForRevisedItemStock();
-            ItemsPromptStockCommand itemsPromptStockCommand = new ItemsPromptStockCommand();
-
-            // Get revised item stock while handling all possible exceptions
-            revisedItemStock = itemsPromptStockCommand.execute();
-            itemManager.setRevisedItemStock(itemIndexInInt, revisedItemStock);
-            ui.showUpdateItemStock();
-        } else {
-            throw new WrongItemFieldException();
-        }
+        itemsParser.processUpdateAttributeInput(itemField, itemIndex, itemManager);
     }
 }

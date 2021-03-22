@@ -3,9 +3,7 @@ package seedu.easylog.commands.itemscommands;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.NullItemStockException;
 import seedu.easylog.exceptions.EmptyItemStockException;
-import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
 import seedu.easylog.exceptions.InvalidItemStockException;
-import java.util.regex.Pattern;
 
 public class ItemsPromptStockCommand extends ItemsCommand {
     /**
@@ -14,32 +12,19 @@ public class ItemsPromptStockCommand extends ItemsCommand {
      * @return item stock
      */
 
-    public String execute() throws NullItemStockException, EmptyItemStockException,
-            NonIntegerNumericItemStockException, InvalidItemStockException {
+    public int execute() throws NullItemStockException, EmptyItemStockException, InvalidItemStockException {
         ui.promptItemStock();
         String stockInString = Constants.SCANNER.nextLine();
-
         if (stockInString == null) {
             throw new NullItemStockException();
         }
-
-        String priceInStringWithoutSpace = stockInString.replace(" ", "");
-        if (priceInStringWithoutSpace.isEmpty()) {
+        if (stockInString.equals("")) {
             throw new EmptyItemStockException();
         }
-
-        Pattern pattern = Pattern.compile(Constants.REGEX_INT_NUMERIC_INPUT);
-        if (!pattern.matcher(stockInString).matches()) {
-            throw new NonIntegerNumericItemStockException();
-        }
-
-        int stockInInt = Integer.parseInt(stockInString);
-        if (stockInInt < Constants.MINIMUM_ITEM_STOCK || stockInInt > Constants.MAXIMUM_ITEM_STOCK) {
+        int stock = itemsParser.processStockInput(stockInString);
+        if (stock < Constants.MINIMUM_ITEM_STOCK || stock > Constants.MAXIMUM_ITEM_STOCK) {
             throw new InvalidItemStockException();
         }
-
-        return stockInString;
-
-
+        return stock;
     }
 }

@@ -28,7 +28,6 @@ public class Constants {
 
     public static final String ITEM_NAME_AND_PRICE_SEPARATOR = ", S$";
     public static final String ITEM_PRICE_AND_STOCK_SEPARATOR = ", ";
-    public static final String REGEX_NUMERIC_INPUT = "-?\\d+(\\.\\d+)?";
-    public static final String REGEX_INT_NUMERIC_INPUT = "^-?\\d+$";
+    public static final String TOTAL_PRICE_FORMAT = "Total Price : S$";
 
 }

@@ -21,7 +21,6 @@ public class OrdersPriceCommand extends OrdersCommand {
             throw new InvalidNumberException();
         }
         ui.showOrderTotalPrice(orderManager.getOrder(index));
-
     }
 }
 

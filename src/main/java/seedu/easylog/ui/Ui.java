@@ -205,11 +205,15 @@ public class Ui {
     }
 
     /**
-     * Prints a message to notify the user that the input item price is not numeric.
-     * This means the user should input a numeric and valid item price.
+     * Prints a message to notify the user that the input  is not numeric.
+     * This means the user should input a numeric and valid field.
      */
-    public void showNonNumericItemPrice() {
-        System.out.println(Messages.MESSAGE_NON_NUMERIC_ITEM_PRICE);
+    public void showNonNumericInputForAdd() {
+        System.out.println(Messages.MESSAGE_NON_NUMERIC_INPUT_FOR_ADD);
+    }
+
+    public void showNonNumericInputForUpdate() {
+        System.out.println(Messages.MESSAGE_NON_NUMERIC_INPUT_FOR_UPDATE);
     }
 
     /**
@@ -242,14 +246,6 @@ public class Ui {
      */
     public void showInvalidItemStock() {
         System.out.println(Messages.MESSAGE_SHOW_INVALID_ITEM_STOCK);
-    }
-
-    /**
-     * Prints a message to notify the user that the input item price is not an integer numeric.
-     * This means the user should input an integer numeric and valid item stock.
-     */
-    public void showNonIntegerNumericItemStock() {
-        System.out.println(Messages.MESSAGE_NON_INTEGER_NUMERIC_ITEM_STOCK);
     }
 
     /**
@@ -334,15 +330,6 @@ public class Ui {
     }
 
     /**
-     * Prints a message to notify the user that the input item index is empty.
-     * This means the user should input a numeric and
-     * valid number corresponding to the index in the item list.
-     */
-    public void showNonNumericItemIndex() {
-        System.out.println(Messages.MESSAGE_NON_NUMERIC_ITEM_INDEX);
-    }
-
-    /**
      * Prints a message to inform the users about the total price of their order.
      */
     public void showOrderTotalPrice(Order order) {
@@ -368,5 +355,32 @@ public class Ui {
      */
     public void showUpdateItemStock() {
         System.out.println(Messages.MESSAGE_SHOW_UPDATE_ITEM_STOCK);
+    }
+
+    /**
+     * Prints a message to notify user to retype orders add command due to no item added to the order.
+     */
+    public void showOrderEmpty() {
+        System.out.println(Messages.MESSAGE_EMPTY_ORDER);
+    }
+
+    public void showNotEnoughStock() {
+        System.out.println(Messages.MESSAGE_NOT_ENOUGH_STOCK);
+    }
+
+    public void showContinueAddingItemsToOrder() {
+        System.out.println(Messages.MESSAGE_CONTINUE_ADDING_ITEM_TO_ORDER);
+    }
+
+    public void showItemAndStockAddedToOrder(String itemName, int stockAdded) {
+        System.out.println(itemName + " and stock of " + stockAdded + " added to the order.");
+    }
+
+    public void showInvalidStopAddingItemToOrder() {
+        System.out.println(Messages.MESSAGE_INVALID_STOP_ADDING_ITEM_TO_ORDER);
+    }
+
+    public void showInvalidFormatOrdersAdd() {
+        System.out.println(Messages.MESSAGE_INVALID_FORMAT_ORDERS_ADD);
     }
 }

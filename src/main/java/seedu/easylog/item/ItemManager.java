@@ -4,6 +4,7 @@ package seedu.easylog.item;
 import seedu.easylog.common.Messages;
 import seedu.easylog.common.Constants;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
@@ -100,7 +101,7 @@ public class ItemManager {
      * Sets the price of an item specified by its index to
      * be the revised one.
      */
-    public void setRevisedItemPrice(int itemIndex, String revisedItemPrice) {
+    public void setRevisedItemPrice(int itemIndex, BigDecimal revisedItemPrice) {
         Item itemToBeUpdated = getItem(itemIndex);
         itemToBeUpdated.setItemPrice(revisedItemPrice);
     }
@@ -109,7 +110,7 @@ public class ItemManager {
      * Sets the stock of an item specified by its index to
      * be the revised one.
      */
-    public void setRevisedItemStock(int itemIndex, String revisedItemStock) {
+    public void setRevisedItemStock(int itemIndex, int revisedItemStock) {
         Item itemToBeUpdated = getItem(itemIndex);
         itemToBeUpdated.setItemStock(revisedItemStock);
     }

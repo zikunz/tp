@@ -1,8 +1,10 @@
 package seedu.easylog.order;
 
 import seedu.easylog.common.Constants;
+import seedu.easylog.common.Messages;
 import seedu.easylog.item.Item;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
@@ -81,5 +83,30 @@ public class OrderManager {
     public Order getLatestOrderAdded() {
         int index = getSize() - Constants.ARRAY_OFFSET;
         return getOrder(index);
+    }
+
+    public ArrayList<Integer> getStockCountInOrder(int index) {
+        return getOrder(index).getStockCounts();
+    }
+
+    public String getOrderListPrintFormat() {
+        String rawOrderListOutput = "";
+        for (Order order: ORDER_LIST) {
+            String customerName = order.getCustomerName();
+            String shippingStatus = " [" + order.getStatusIcon() + "]";
+            String customersItemList = "";
+            int itemAndStockIndex = 0;
+            for (Item item: order.getItemsInOrder()) {
+                customersItemList += Messages.MESSAGE_INDENTATION + (itemAndStockIndex + 1) + ". "
+                        + item.getItemName() + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
+                        + item.getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
+                        + order.getStockCounts().get(itemAndStockIndex) + "\n";
+                ++itemAndStockIndex;
+            }
+            BigDecimal totalPrice = order.getOrderTotalPrice(order.getItemsInOrder());
+            rawOrderListOutput += customerName + shippingStatus + "\n" + customersItemList
+                    + Messages.MESSAGE_INDENTATION + Constants.TOTAL_PRICE_FORMAT + totalPrice + "\n";
+        }
+        return rawOrderListOutput;
     }
 }

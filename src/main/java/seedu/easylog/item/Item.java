@@ -1,15 +1,17 @@
 package seedu.easylog.item;
 
+import java.math.BigDecimal;
+
 /**
  * Handles Item related information.
  */
 public class Item {
 
     protected String itemName;
-    protected String itemPrice;
-    protected String itemStock;
+    protected BigDecimal itemPrice;
+    protected int itemStock;
 
-    public Item(String itemName, String price, String stock) {
+    public Item(String itemName, BigDecimal price, int stock) {
         this.itemName = itemName;
         this.itemPrice = price;
         this.itemStock = stock;
@@ -25,7 +27,7 @@ public class Item {
      *
      * @return item price
      */
-    public String getItemPrice() {
+    public BigDecimal getItemPrice() {
         return itemPrice;
     }
 
@@ -34,7 +36,7 @@ public class Item {
      *
      * @return item stock
      */
-    public String getItemStock() {
+    public int getItemStock() {
         return itemStock;
     }
 
@@ -48,15 +50,17 @@ public class Item {
 
     /**
      * Sets the price of an item of interest.
+     * @param itemPrice price of the item in BigDecimal.
      */
-    public void setItemPrice(String itemPrice) {
+    public void setItemPrice(BigDecimal itemPrice) {
         this.itemPrice = itemPrice;
     }
 
     /**
      * Sets the stock of an item of interest.
+     * @param itemStock amount of stock of the item in integer.
      */
-    public void setItemStock(String itemStock) {
+    public void setItemStock(int itemStock) {
         this.itemStock = itemStock;
     }
 }

@@ -14,6 +14,8 @@ public class OrderManager {
 
     private static final ArrayList<Order> ORDER_LIST = new ArrayList<>();
 
+    private static final ArrayList<Order> FOUND_LIST = new ArrayList<>();
+
     public void addOrder(Order order) {
         ORDER_LIST.add(order);
     }
@@ -108,5 +110,17 @@ public class OrderManager {
                     + Messages.MESSAGE_INDENTATION + Constants.TOTAL_PRICE_FORMAT + totalPrice + "\n";
         }
         return rawOrderListOutput;
+    }
+
+    public void findOrder(String name) {
+        for (int i = 0; i < getSize(); i++) {
+            if (getCustomerName(i).contains(name)) {
+                FOUND_LIST.add(getOrder(i));
+            }
+        }
+    }
+
+    public ArrayList<Order> getFoundList() {
+        return FOUND_LIST;
     }
 }

@@ -383,4 +383,16 @@ public class Ui {
     public void showInvalidFormatOrdersAdd() {
         System.out.println(Messages.MESSAGE_INVALID_FORMAT_ORDERS_ADD);
     }
+
+    public void showItemNotFound() {
+        System.out.println(Messages.MESSAGE_ITEM_NOT_FOUND);
+    }
+    public void showFoundList(String rawItemListOutput) {
+        if (rawItemListOutput.equals("")) {
+            System.out.println(Messages.MESSAGE_EMPTY_ITEM_LIST);
+        } else {
+            System.out.println(Messages.MESSAGE_LIST_ITEMS);
+            System.out.print(rawItemListOutput);
+        }
+    }
 }

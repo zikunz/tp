@@ -13,6 +13,8 @@ import java.util.ArrayList;
 public class ItemManager {
 
     private static final ArrayList<Item> ITEM_LIST = new ArrayList<>();
+    
+    private static final ArrayList<Item> FOUND_LIST = new ArrayList<>();
 
     public void addItem(Item item) {
         ITEM_LIST.add(item);
@@ -63,6 +65,28 @@ public class ItemManager {
     }
 
     /**
+     * Finds items by keyword
+     * 
+     * @param keyword keyword to be searched
+     */
+    public void findItem(String keyword) {
+        for (int i = 0; i < getSize(); i++) {
+            if (getItem(i).itemName.contains(keyword)) {
+                FOUND_LIST.add(getItem(i));
+            }
+        }
+    }
+
+    /**
+     * Gets the found items
+     * 
+     * @return list of found item(s) from ITEM_LIST
+     */
+    public ArrayList<Item> getFoundList() {
+        return FOUND_LIST;
+    }
+
+    /**
      * Gets the description of a specific item based on the given index.
      *
      * @return the description of the specific item
@@ -85,6 +109,13 @@ public class ItemManager {
      */
     public void clearItemList() {
         ITEM_LIST.clear();
+    }
+
+    /**
+     * Clears all found items in Found List
+     */
+    public void clearFoundList() {
+        FOUND_LIST.clear();
     }
 
     /**

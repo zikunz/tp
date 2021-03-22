@@ -116,5 +116,6 @@ public class Messages {
             + " items to the order. Type (stop) for the correct command.\nPlease retry orders add command.";
     public static final String MESSAGE_INVALID_FORMAT_ORDERS_ADD = "Invalid format for inputting of items into order."
             + "Please retry orders add command.";
+    public static final String MESSAGE_ITEM_NOT_FOUND = "Sorry! No relevant item is found in the warehouse.";
 }
 

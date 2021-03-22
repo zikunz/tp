@@ -58,6 +58,22 @@ public class ItemManager {
     }
 
     /**
+     * Gets the list of items in String format to be printed as output to the user.
+     *
+     * @return String format for the list of relevant items to be printed
+     */
+    public String getFoundListPrintFormat(ArrayList<Item> itemListToBePrint) {
+        String foundListOutput = "";
+        for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
+            foundListOutput += (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName()
+                    + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
+                    + itemListToBePrint.get(itemIndex).getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
+                    + itemListToBePrint.get(itemIndex).getItemStock() + "\n";
+        }
+        return foundListOutput;
+    }
+
+    /**
      * Removes a specific item from the system.
      */
     public void deleteItem(int index) {
@@ -84,6 +100,14 @@ public class ItemManager {
      */
     public ArrayList<Item> getFoundList() {
         return FOUND_LIST;
+    }
+
+    /**
+     * Gets the number of relevant items after search
+     * @return the size of FOUND_LIST
+     */
+    public int foundSize() {
+        return FOUND_LIST.size();
     }
 
     /**

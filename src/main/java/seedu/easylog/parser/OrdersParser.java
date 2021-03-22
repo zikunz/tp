@@ -2,13 +2,7 @@ package seedu.easylog.parser;
 
 import seedu.easylog.commands.orderscommands.*;
 import seedu.easylog.common.Constants;
-import seedu.easylog.exceptions.EmptyItemListException;
-import seedu.easylog.exceptions.EmptyNameException;
-import seedu.easylog.exceptions.OrderEmptyException;
-import seedu.easylog.exceptions.EmptyNumberException;
-import seedu.easylog.exceptions.InvalidNumberException;
-import seedu.easylog.exceptions.OrderListAlreadyClearedException;
-import seedu.easylog.exceptions.InvalidItemStockException;
+import seedu.easylog.exceptions.*;
 import seedu.easylog.item.Item;
 import seedu.easylog.item.ItemManager;
 import seedu.easylog.order.Order;
@@ -90,6 +84,8 @@ public class OrdersParser extends Parser {
                 new OrdersFindCommand().execute(ordersArg, orderManager);
             } catch (EmptyNameException e) {
                 ui.showItemEmptyName();
+            } catch (OrderNotFoundException e) {
+                ui.showOrderNotFound();
             }
             break;
         default:

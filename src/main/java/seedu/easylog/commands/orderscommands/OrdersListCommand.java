@@ -15,12 +15,12 @@ public class OrdersListCommand extends OrdersCommand {
         String rawOrderListOutput = orderManager.getOrderListPrintFormat();
         ui.showOrderList(rawOrderListOutput);
 
-        boolean isCorrectOutput = false;
-        if (rawOrderListOutput == "" || rawOrderListOutput.startsWith("1. ")) {
-            isCorrectOutput = true;
-        }
-
-        assert isCorrectOutput == true : "rawOrderListOutput is either empty "
-                + "or starts with \"1. First Customer's Name\"";
+//        boolean isCorrectOutput = false;
+//        if (rawOrderListOutput == "" || rawOrderListOutput.startsWith("1. ")) {
+//            isCorrectOutput = true;
+//        }
+//
+//        assert isCorrectOutput == true : "rawOrderListOutput is either empty "
+//                + "or starts with \"1. First Customer's Name\"";
     }
 }

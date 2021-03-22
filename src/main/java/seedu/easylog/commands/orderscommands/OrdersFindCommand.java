@@ -1,18 +1,23 @@
 package seedu.easylog.commands.orderscommands;
 
 import seedu.easylog.exceptions.EmptyNameException;
+import seedu.easylog.exceptions.OrderNotFoundException;
 import seedu.easylog.order.OrderManager;
 
 public class OrdersFindCommand extends OrdersCommand {
-
-    public void execute(String customerName, OrderManager orderManager) throws EmptyNameException {
-
+    /**
+     * Prints relevant orders by customer's name
+     */
+    public void execute(String customerName, OrderManager orderManager) throws EmptyNameException, OrderNotFoundException {
         if (customerName.equals("")) {
             throw new EmptyNameException();
         }
         orderManager.findOrder(customerName);
-
-        String rawOrderListOutput = orderManager.getOrderListPrintFormat();
-        ui.showOrderList(rawOrderListOutput);
+        if(orderManager.foundOrderEmpty()) {
+            throw new OrderNotFoundException();
+        }
+        String rawOrderListOutput = orderManager.getFoundOrderListPrintFormat();
+        ui.showFoundOrderList(rawOrderListOutput);
+        orderManager.clearFoundList();
     }
 }

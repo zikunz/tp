@@ -11,15 +11,17 @@ logistic management tasks done faster than traditional Graphical User Interface 
   * [Items](#items)
     - [Show items-related commands: `items`](#show-items-related-commands-items)
     - [Adding an item: `items add`](#adding-an-item-items-add)
-    * [Showing the item list : `items list`](#showing-the-item-list-items-list)
-    * [Delete an item: `delete`](#delete-an-item-items-delete)
-    * [Emptying the item list: `items clear`](#emptying-the-item-list-items-clear)
+    - [Showing the item list : `items list`](#showing-the-item-list-items-list)
+    - [Delete an item: `delete`](#delete-an-item-items-delete)
+    - [Emptying the item list: `items clear`](#emptying-the-item-list-items-clear)
+    - [Finding an item: `items find`](#finding-an-item-items-find)
   * [Orders](#orders)
     - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
     - [Adding an order: `orders add`](#adding-an-order-orders-add)
     - [Showing the order list: `orders list`](#showing-the-order-list-orders-list)
     - [Removing an order: `orders delete`](#removing-an-order-orders-delete)
     - [Emptying the order list: `orders clear`](#emptying-the-order-list-orders-clear)
+    - [Finding an order: `orders find`](#finding-an-order-orders-find)
   * [Exit the program: `exit`](#exit-the-program-exit)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
@@ -57,11 +59,13 @@ General Options:
   3. items list                     List all items
   4. items delete <item_index>      Delete an item
   5. items clear                    Empty all items
-  6. orders                         Show orders-related commands
-  7. orders add <order_name>        Add an order
-  8. orders list                    List all orders
-  9. orders delete <order_index>    delete an order
-  10. orders clear                  Empty all orders
+  6. items find <item_name>         Find relevant items by keyword
+  7. orders                         Show orders-related commands
+  8. orders add <order_name>        Add an order
+  9. orders list                    List all orders
+  10. orders delete <order_index>   Delete an order
+  11. orders clear                  Empty all orders
+  12. orders find <order_name>      Find relevant order by order name
 ```
 
 ### Items
@@ -146,6 +150,19 @@ Done! I just cleared all items for you.
 * Expected Output:
 
 ```
+```
+
+#### Finding an item: `items find`
+
+* Display all items relating to the keyword
+
+* Format: `items find <item_name>`
+
+* Expected Output:
+
+```
+Here is the list of relevant items found.
+1. PS4, S$23.00, 199
 ```
 
 ### Orders
@@ -238,7 +255,21 @@ Got it! The order for customer [Coco] is deleted.
 ```
 Done! I just cleared all orders for you.
 ```
+#### Finding an order: `orders find`
 
+* Display all orders relating to the order name
+
+* Format: `orders find <order_name>`
+
+* Expected Output:
+
+```
+orders find Gus
+Here is the list of relevant orders found.
+Gus []
+    1. PS4, S$23.00, 2
+    Total Price : S$46.00
+```
 ### Exit the program: `exit`
 
 * Exit the app.
@@ -302,9 +333,11 @@ items add | `items add <item_name>` | `items add PS5` |
 items list | `items list`      | `items list` |
 items delete | `tems delete <item_index>` | `items delete 2` |
 items clear | `items clear ` | `items clear` |
+items find | `items find` | `items find <item_name>`|
 orders | `orders` | `orders` |
 orders add | `orders add <order_name> `<br />` Input the items to be added to this order. `<br />` <index> <index>` | `orders add weisheng`<br />` Input the items to be added to this order.`<br />` 1 2 ` |
 orders list | `orders list` | `orders list` |
 orders delete | `orders delete <order_index>` | `orders delete 2` |
 orders clear | `orders clear` | `orders clear` |
+orders find | `orders find` | `orders find <order_name>`|
 exit | `exit` | `exit` |

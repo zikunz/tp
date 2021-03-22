@@ -76,6 +76,8 @@ What can I do for you? Enter help to view commands.
 |v2.0|expert user|create, save data and load existing data|edit the data file directly|
 |v2.0|user|delete multiple items|save time by not deleting items one by one|
 |v2.0|user|delete multiple orders|save time by not deleting orders one by one|
+|v2.0|user|find relevant items|save time by looking through relevant items|
+|v2.0|user|find relevant orders|save time by looking through relevant orders|
 
 ## Non-Functional Requirements
 

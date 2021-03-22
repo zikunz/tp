@@ -91,7 +91,7 @@ public class ItemsParser extends Parser {
                 new ItemsFindCommand().execute(itemsArg, itemManager);
             } catch (EmptyNameException e) {
                 ui.showItemEmptyName();
-            } catch (ItemNotFound e) {
+            } catch (ItemNotFoundException e) {
                 ui.showItemNotFound();
             }
             break;

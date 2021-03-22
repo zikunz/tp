@@ -387,12 +387,26 @@ public class Ui {
     public void showItemNotFound() {
         System.out.println(Messages.MESSAGE_ITEM_NOT_FOUND);
     }
+
     public void showFoundList(String rawItemListOutput) {
         if (rawItemListOutput.equals("")) {
             System.out.println(Messages.MESSAGE_EMPTY_ITEM_LIST);
         } else {
-            System.out.println(Messages.MESSAGE_LIST_ITEMS);
+            System.out.println(Messages.MESSAGE_FOUNDLIST_ITEMS);
             System.out.print(rawItemListOutput);
         }
+    }
+
+    public void showFoundOrderList(String rawOrderListOutput) {
+        if (rawOrderListOutput.equals("")) {
+            System.out.println(Messages.MESSAGE_EMPTY_ORDER_LIST);
+        } else {
+            System.out.println(Messages.MESSAGE_FOUNDLIST_ORDERS);
+            System.out.print(rawOrderListOutput);
+        }
+    }
+
+    public void showOrderNotFound() {
+        System.out.println(Messages.MESSAGE_ORDER_NOT_FOUND);
     }
 }

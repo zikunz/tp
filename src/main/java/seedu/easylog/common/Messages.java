@@ -2,8 +2,10 @@ package seedu.easylog.common;
 
 public class Messages {
 
-    public static final String MESSAGE_LIST_ITEMS = "Here are the list of items in the warehouse.";
-    public static final String MESSAGE_LIST_ORDERS = "Here are the list of orders.";
+    public static final String MESSAGE_LIST_ITEMS = "Here is the list of items in the warehouse.";
+    public static final String MESSAGE_FOUNDLIST_ITEMS = "Here is the list of relevant items found.";
+    public static final String MESSAGE_LIST_ORDERS = "Here is the list of orders.";
+    public static final String MESSAGE_FOUNDLIST_ORDERS = "Here is the list of relevant orders found.";
     public static final String MESSAGE_ADD_ITEMS_TO_ORDER = "Input the items to be added to this order.";
     public static final String MESSAGE_SHOW_ALL_COMMANDS = "General Options:\n"
             + "  1. items                          Show items-related commands\n"
@@ -11,11 +13,13 @@ public class Messages {
             + "  3. items list                     List all items\n"
             + "  4. items delete <item_index>      Delete an item\n"
             + "  5. items clear                    Empty all items\n"
-            + "  6. orders                         Show orders-related commands\n"
-            + "  7. orders add <order_name>        Add an order\n"
-            + "  8. orders list                    List all orders\n"
-            + "  9. orders delete <order_index>    Delete an order\n"
-            + "  10. orders clear                  Empty all orders";
+            + "  6. items find <item_name>         Finding an item\n"
+            + "  7. orders                         Show orders-related commands\n"
+            + "  8. orders add <order_name>        Add an order\n"
+            + "  9. orders list                    List all orders\n"
+            + "  10. orders delete <order_index>   Delete an order\n"
+            + "  11. orders clear                  Empty all orders\n"
+            + "  12. orders find <order_name>      Finding an order";
     public static final String MESSAGE_GREETING = "Hello! I'm easyLog!\n"
             + "What can I do for you? Enter help to view commands.";
     public static final String MESSAGE_GOODBYE = "Bye. Thanks for using easyLog!";
@@ -117,5 +121,6 @@ public class Messages {
     public static final String MESSAGE_INVALID_FORMAT_ORDERS_ADD = "Invalid format for inputting of items into order."
             + "Please retry orders add command.";
     public static final String MESSAGE_ITEM_NOT_FOUND = "Sorry! No relevant item is found in the warehouse.";
+    public static final String MESSAGE_ORDER_NOT_FOUND = "Sorry! No relevant order is found.";
 }
 

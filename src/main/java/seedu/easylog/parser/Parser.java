@@ -23,7 +23,8 @@ public class Parser {
         return splitCommand.length == 2 ? splitCommand : new String[]{splitCommand[0], ""};
     }
 
-    public void processUserInput(String rawUserInput, ItemManager itemManager, OrderManager orderManager) throws IOException {
+    public void processUserInput(String rawUserInput, ItemManager itemManager, OrderManager orderManager)
+            throws IOException {
         String[] commandTypeAndParams = splitCommandWordAndArgs(rawUserInput);
         String commandType = commandTypeAndParams[0];
         String commandArgs = commandTypeAndParams[1];

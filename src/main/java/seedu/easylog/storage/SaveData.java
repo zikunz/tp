@@ -16,8 +16,8 @@ public class SaveData extends Storage {
 
     /**
      * Load save file if any.
-     * @param itemManager
-     * @param orderManager
+     * @param itemManager manipulates item inventory
+     * @param orderManager manipulates orders
      * @throws FileNotFoundException when no save file found.
      * @throws InvalidFileInputException when line from file cannot is in invalid format.
      */
@@ -46,8 +46,8 @@ public class SaveData extends Storage {
 
     /**
      * Save data to save file.
-     * @param itemManager
-     * @param orderManager
+     * @param itemManager manipulates item inventory
+     * @param orderManager manipulates orders
      * @throws IOException when there is an error during the saving of the file.
      */
     public void saveFile(ItemManager itemManager, OrderManager orderManager) throws IOException {

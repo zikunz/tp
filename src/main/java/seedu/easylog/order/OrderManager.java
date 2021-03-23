@@ -164,7 +164,7 @@ public class OrderManager {
     }
 
     /**
-     * clears the existing orders in FOUND_LIST
+     * Clears the existing orders in FOUND_LIST.
      */
     public void clearFoundList() {
         FOUND_LIST.clear();

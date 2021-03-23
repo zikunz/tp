@@ -1,5 +1,15 @@
 # Developer Guide
 
+![Supported Java versions](https://img.shields.io/badge/Java-11-blue.svg)
+![Supported OS](https://img.shields.io/badge/Supported%20OS-Windows|MacOS|Linux-yellow.svg)
+![Java CI](https://github.com/AY2021S1-CS2113T-T09-4/tp/workflows/Java%20CI/badge.svg)
+
+## Table of Contents
+
+- [Introduction](#introduction)
+    * [To be added](#to-be-added)
+        + [To be added](#to-be-added)
+
 ## 1.Introduction
 
 ### 1.1 Software Overview
@@ -78,6 +88,10 @@ What can I do for you? Enter help to view commands.
 |v2.0|user|delete multiple orders|save time by not deleting orders one by one|
 |v2.0|user|find relevant items|save time by looking through relevant items|
 |v2.0|user|find relevant orders|save time by looking through relevant orders|
+|v2.0|user|add a new item with a specified unit price|calculate order price more easily|
+|v2.0|user|update the unit price of an item|revise unit price or correct mistaken unit price entered earlier|
+|v2.0|user|add a new item with its stock|keep track of total number of stock and calculate order price more easily|
+|v2.0|user|update the stock of an item|Correct mistaken stock number entered earlier|
 
 ## Non-Functional Requirements
 
@@ -89,4 +103,6 @@ What can I do for you? Enter help to view commands.
 
 ## Instructions for manual testing
 
-{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
+{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing} <br> <br>
+
+[Return to Top](#introduction)

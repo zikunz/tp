@@ -92,6 +92,7 @@ What can I do for you? Enter help to view commands.
 |v2.0|user|update the unit price of an item|revise unit price or correct mistaken unit price entered earlier|
 |v2.0|user|add a new item with its stock|keep track of total number of stock and calculate order price more easily|
 |v2.0|user|update the stock of an item|Correct mistaken stock number entered earlier|
+|v2.0|user|specify the quantity of a item to add to the order|calculate the total price of the order and update the item inventory correctly.|
 
 ## Non-Functional Requirements
 

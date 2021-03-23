@@ -126,7 +126,7 @@ public class OrdersParser extends Parser {
                 itemsStockAddedToOrder.add(stockAdded);
                 ui.showItemAndStockAddedToOrder(itemToBeAddedToOrder.getItemName(), stockAdded);
             } catch (IndexOutOfBoundsException e) {
-                ui.showItemNotFound(itemIndex);
+                ui.showItemNotFoundWhenAddingToOrder(itemIndex);
             } catch (InvalidItemStockException e) {
                 ui.showNotEnoughStock();
             }

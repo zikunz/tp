@@ -182,7 +182,7 @@ public class Ui {
         System.out.println(Messages.MESSAGE_CLEAR_ORDER_LIST);
     }
 
-    public void showItemNotFound(int index) {
+    public void showItemNotFoundWhenAddingToOrder(int index) {
         int itemNumber = index + Constants.ARRAY_OFFSET;
         System.out.println("Item number " + itemNumber + " does not exist. "
                 + "Please try another valid item number until at least one item is added to the order.");

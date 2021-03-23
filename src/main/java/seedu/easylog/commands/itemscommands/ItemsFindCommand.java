@@ -8,7 +8,8 @@ public class ItemsFindCommand extends ItemsCommand {
     /**
      * Print out all the found items in the found list.
      */
-    public void execute(String itemDescription, ItemManager itemManager) throws EmptyNameException, ItemNotFoundException {
+    public void execute(String itemDescription, ItemManager itemManager) 
+        throws EmptyNameException, ItemNotFoundException {
         if (itemDescription.equals("")) {
             throw new EmptyNameException();
         }

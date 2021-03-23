@@ -64,6 +64,10 @@ public class Item {
         this.itemStock = itemStock;
     }
 
+    /**
+     * Convert item attributes to a string to save in save file.
+     * @return 1 line string that contains details regarding the item.
+     */
     public String saveToFileFormat() {
         return itemName + " " + itemPrice.toPlainString() + " " + itemStock;
     }

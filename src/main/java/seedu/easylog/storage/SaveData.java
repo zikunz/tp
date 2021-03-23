@@ -5,6 +5,7 @@ import seedu.easylog.item.Item;
 import seedu.easylog.item.ItemManager;
 import seedu.easylog.order.Order;
 import seedu.easylog.order.OrderManager;
+import seedu.easylog.parser.Parser;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,6 +13,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Deals with save files.
+ */
 public class SaveData extends Storage {
 
     /**
@@ -19,7 +23,6 @@ public class SaveData extends Storage {
      * @param itemManager manipulates item inventory
      * @param orderManager manipulates orders
      * @throws FileNotFoundException when no save file found.
-     * @throws InvalidFileInputException when line from file cannot is in invalid format.
      */
     public void loadFile(ItemManager itemManager, OrderManager orderManager) throws FileNotFoundException {
         ui.showLookingForSaveData();
@@ -31,7 +34,7 @@ public class SaveData extends Storage {
         int fileLine = 1;
         while (s.hasNext()) {
             String fileInput = s.nextLine();
-            String[] splitCommandTypeAndArgs = parser.splitCommandWordAndArgs(fileInput);
+            String[] splitCommandTypeAndArgs = Parser.splitCommandWordAndArgs(fileInput);
             String commandType = splitCommandTypeAndArgs[0];
             String commandArgs = splitCommandTypeAndArgs[1];
             try {

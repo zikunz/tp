@@ -10,6 +10,12 @@ import java.util.ArrayList;
 
 public class OrdersAddFromFileCommand extends OrdersCommand {
 
+    /**
+     * Execute the required actions to add file input relating to order into the order manager.
+     * @param orderFileInput Item details from file relating to the order.
+     * @param itemManager Manipulates inventory.
+     * @param orderManager Manipulates orders.
+     */
     public void execute(String orderFileInput, ItemManager itemManager, OrderManager orderManager) {
         String[] rawOrderFileInput = orderFileInput.split(" ");
         String customerName = rawOrderFileInput[0];

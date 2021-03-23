@@ -113,7 +113,7 @@ public class OrderManager {
     }
 
     /**
-     * Finds relevant orders by customer's name
+     * Finds relevant orders by customer's name.
      *
      * @param name name to be searched
      */
@@ -152,11 +152,11 @@ public class OrderManager {
     }
 
     /**
-     * Checks if any relevant orders found
+     * Checks if any relevant orders found.
      * @return the presence of valid order in FOUND_LIST
      */
     public boolean foundOrderEmpty() {
-        if (FOUND_LIST.size() > 0){
+        if (FOUND_LIST.size() > 0) {
             return false;
         } else {
             return true;

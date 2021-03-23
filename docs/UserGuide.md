@@ -10,18 +10,20 @@ logistic management tasks done faster than traditional Graphical User Interface 
   * [Viewing help: `help`](#viewing-help-help)
   * [Items](#items)
     - [Show items-related commands: `items`](#show-items-related-commands-items)
-    - [Adding an item: `items add`](#adding-an-item-items-add)
-    - [Showing the item list : `items list`](#showing-the-item-list-items-list)
-    - [Delete an item: `delete`](#delete-an-item-items-delete)
-    - [Emptying the item list: `items clear`](#emptying-the-item-list-items-clear)
-    - [Finding an item: `items find`](#finding-an-item-items-find)
+    - [Add an item: `items add`](#add-an-item-items-add)
+    * [Show the item list : `items list`](#show-the-item-list-items-list)
+    * [Delete an item: `delete`](#delete-an-item-items-delete)
+    * [Empty the item list: `items clear`](#empty-the-item-list-items-clear)
+    - [Find items: `items find`](#find-items-items-find)
   * [Orders](#orders)
     - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
-    - [Adding an order: `orders add`](#adding-an-order-orders-add)
-    - [Showing the order list: `orders list`](#showing-the-order-list-orders-list)
-    - [Removing an order: `orders delete`](#removing-an-order-orders-delete)
-    - [Emptying the order list: `orders clear`](#emptying-the-order-list-orders-clear)
-    - [Finding an order: `orders find`](#finding-an-order-orders-find)
+    - [Add an order: `orders add`](#add-an-order-orders-add)
+    - [Show the order list: `orders list`](#show-the-order-list-orders-list)
+    - [Remove an order: `orders delete`](#remove-an-order-orders-delete)
+    - [Empty the order list: `orders clear`](#empty-the-order-list-orders-clear)
+    - [Find orders: `orders find`](#find-orders-orders-find)
+    - [Get the total price of an order:: `orders price`](#get-the-total-price-of-an-order-orders-price)
+    - [Update the shipping status of an order: `orders ship`](#update-the-shipping-status-of-an-order-orders-ship)
   * [Exit the program: `exit`](#exit-the-program-exit)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
@@ -66,6 +68,8 @@ General Options:
   10. orders delete <order_index>   Delete an order
   11. orders clear                  Empty all orders
   12. orders find <order_name>      Find relevant order by order name
+  13. orders price <order_index>    Check the total price of an order
+  14. orders ship <order_index>     Update the shipping status of an order once the order is shipped
 ```
 
 ### Items
@@ -86,7 +90,7 @@ Items-Related Options:
   4. items clear                    Empty all items
 ```
 
-#### Adding an item: `items add`
+#### Add an item: `items add`
 
 * Add an item to the system.
 
@@ -100,7 +104,7 @@ Items-Related Options:
 Got it! The item [PS5] is added.
 ```
 
-#### Showing the item list: `items list`
+#### Show the item list: `items list`
 
 * Display all recorded items in the system.
 
@@ -109,9 +113,9 @@ Got it! The item [PS5] is added.
 * Expected Output:
 
 ```
-Here are the list of items.
-1. PS5
-2. bag
+Here are the list of items in the warehouse.
+1. ps5, S$100.00, 10
+2. bag, S$20.00, 20
 ```
 
 #### Delete an item: `items delete`
@@ -128,7 +132,7 @@ Here are the list of items.
 Got it! The item [glove] is deleted.
 ```
 
-#### Emptying the item list: `items clear`
+#### Empty the item list: `items clear`
 
 * Clear all recorded items in the system.
 
@@ -140,7 +144,7 @@ Got it! The item [glove] is deleted.
 Done! I just cleared all items for you.
 ```
 
-#### Updating an item: `items update`
+#### Update an item: `items update`
 
 * Update either the price of stock of an item in the system.
 
@@ -152,7 +156,7 @@ Done! I just cleared all items for you.
 ```
 ```
 
-#### Finding an item: `items find`
+#### Find items: `items find`
 
 * Display all items relating to the keyword
 
@@ -182,9 +186,11 @@ Orders-Related Options:
   2. orders list                    List all orders
   3. orders delete <order_index>    Remove an order
   4. orders clear                   Empty all orders
+  5. orders price <order_index>    Check the total price of an order
+  6. orders ship <order_index>     Update the shipping status of an order once the order is shipped
 ```
 
-#### Adding an order: `orders add`
+#### Add an order: `orders add`
 
 * Add an order to the system.
 
@@ -211,7 +217,7 @@ Input the items to be added to this order.
 Got it! The order for customer [weisheng] is added.
 ```
 
-#### Showing the order list: `orders list`
+#### Show the order list: `orders list`
 
 * Display all recorded orders in the system.
 
@@ -226,10 +232,9 @@ Here are the list of orders.
     2. bag
 2. Coco
     1. PS5
-
 ```
 
-#### Removing an order: `orders delete`
+#### Remove an order: `orders delete`
 
 * Delete an order from the order list
 
@@ -244,7 +249,7 @@ Got it! The order for customer [Coco] is deleted.
 ```
 
 
-#### Emptying the order list: `orders clear`
+#### Empty the order list: `orders clear`
 
 * Clear all recorded orders in the system.
 
@@ -255,7 +260,7 @@ Got it! The order for customer [Coco] is deleted.
 ```
 Done! I just cleared all orders for you.
 ```
-#### Finding an order: `orders find`
+#### Find orders: `orders find`
 
 * Display all orders relating to the order name
 
@@ -270,6 +275,31 @@ Gus []
     1. PS4, S$23.00, 2
     Total Price : S$46.00
 ```
+
+#### Get the total price of an order: `orders price`
+
+* Check total price of a specific order. 
+
+* Format: `orders price 2`
+
+* Expected Output:
+
+```
+The total price for customer [coco]'s order is S$500.00.
+```
+
+#### Update the shipping status of an order: `orders ship`
+
+* Change the shipping status of an order once it is shipped.
+
+* Format: `orders ship 2`
+
+* Expected Output:
+
+```
+Got it! The order for customer [coco] has been shipped.
+```
+
 ### Exit the program: `exit`
 
 * Exit the app.
@@ -331,7 +361,7 @@ help | `help` | `help` |
 item | `items` | `items` |
 items add | `items add <item_name>` | `items add PS5` |
 items list | `items list`      | `items list` |
-items delete | `tems delete <item_index>` | `items delete 2` |
+items delete | `items delete <item_index>` | `items delete 2` |
 items clear | `items clear ` | `items clear` |
 items find | `items find` | `items find <item_name>`|
 orders | `orders` | `orders` |
@@ -340,4 +370,6 @@ orders list | `orders list` | `orders list` |
 orders delete | `orders delete <order_index>` | `orders delete 2` |
 orders clear | `orders clear` | `orders clear` |
 orders find | `orders find` | `orders find <order_name>`|
+orders price | `orders price <order_index>` | `orders price 2` |
+orders ship  | `orders ship <order_index>` | `orders ship 2` |
 exit | `exit` | `exit` |

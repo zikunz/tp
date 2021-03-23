@@ -1,5 +1,6 @@
 package seedu.easylog.order;
 
+import seedu.easylog.common.Constants;
 import seedu.easylog.item.Item;
 import seedu.easylog.item.ItemManager;
 
@@ -76,7 +77,7 @@ public class Order {
         String itemQuantities = "itemQuantity ";
         String orderStatus = "";
         for (Item item: itemsInOrder) {
-            itemIndexes += itemManager.getItemIndex(item.getItemName()) + " ";
+            itemIndexes += (itemManager.getItemIndex(item.getItemName()) + Constants.ARRAY_OFFSET) + " ";
         }
         for (int quantity: itemsStockCount) {
             itemQuantities += quantity + " ";

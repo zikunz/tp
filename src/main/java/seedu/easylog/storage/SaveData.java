@@ -36,7 +36,7 @@ public class SaveData extends Storage {
             String commandArgs = splitCommandTypeAndArgs[1];
             try {
                 parser.processFileInput(commandType, commandArgs, itemManager, orderManager);
-            } catch (InvalidFileInputException e) {
+            } catch (InvalidFileInputException | NumberFormatException | IndexOutOfBoundsException e) {
                 ui.showInvalidFileInputLine(fileLine);
             }
             ++fileLine;

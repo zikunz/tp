@@ -1,5 +1,6 @@
 package seedu.easylog.commands.orderscommands;
 
+import seedu.easylog.common.Constants;
 import seedu.easylog.item.Item;
 import seedu.easylog.item.ItemManager;
 import seedu.easylog.order.Order;
@@ -24,7 +25,7 @@ public class OrdersAddFromFileCommand extends OrdersCommand {
                 inputIsItemIndex = false;
                 inputIsItemQuantity = true;
             } else if (inputIsItemIndex) {
-                itemIndex = Integer.parseInt(rawOrderFileInput[i]);
+                itemIndex = Integer.parseInt(rawOrderFileInput[i]) - Constants.ARRAY_OFFSET;
                 itemsInOrder.add(itemManager.getItem(itemIndex));
             } else if (inputIsItemQuantity) {
                 quantityOfItem = Integer.parseInt(rawOrderFileInput[i]);

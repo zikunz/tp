@@ -124,5 +124,14 @@ public class Messages {
             + "Please retry orders add command.";
     public static final String MESSAGE_ITEM_NOT_FOUND = "Sorry! No relevant item is found in the warehouse.";
     public static final String MESSAGE_ORDER_NOT_FOUND = "Sorry! No relevant order is found.";
+    public static final String MESSAGE_SAVE_DATA_LOADING = "Loading save data.";
+    public static final String MESSAGE_LOOKING_FOR_SAVE_DATA = "Looking for save data.";
+    public static final String MESSAGE_SAVE_DATA_LOADED = "Save data loaded.";
+    public static final String MESSAGE_SAVE_DATA_CREATED = "Save data created as there is no existing save data";
+    public static final String MESSAGE_SAVE_DATA_SAVED = "Save data saved.";
+    public static final String MESSAGE_SAVE_DATA_NOT_FOUND = "Save data not found.";
+    public static final String MESSAGE_INVALID_FILE_INPUT_LINE = "Invalid file input at line : ";
+    public static final String MESSAGE_ERROR_WHILE_SAVING = "Error while saving. Save file may or may not be "
+            + "saved correctly";
 }
 

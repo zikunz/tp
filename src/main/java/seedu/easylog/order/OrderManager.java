@@ -48,6 +48,10 @@ public class OrderManager {
         return ORDER_LIST.size();
     }
 
+    public ArrayList<Order> getOrderList() {
+        return ORDER_LIST;
+    }
+
     /**
      * Gets the customer's name specified by the index
      * of the order given.

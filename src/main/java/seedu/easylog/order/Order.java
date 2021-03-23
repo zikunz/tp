@@ -1,6 +1,7 @@
 package seedu.easylog.order;
 
 import seedu.easylog.item.Item;
+import seedu.easylog.item.ItemManager;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -68,5 +69,23 @@ public class Order {
 
     public String getOrderShippingStatusMessage() {
         return "Got it! The order for customer [" + customerName + "] has been shipped.";
+    }
+
+    public String saveToFileFormat(ItemManager itemManager) {
+        String itemIndexes = "";
+        String itemQuantities = "itemQuantity ";
+        String orderStatus = "";
+        for (Item item: itemsInOrder) {
+            itemIndexes += itemManager.getItemIndex(item.getItemName()) + " ";
+        }
+        for (int quantity: itemsStockCount) {
+            itemQuantities += quantity + " ";
+        }
+        if (isShipped) {
+            orderStatus = "done";
+        } else {
+            orderStatus = "notDone";
+        }
+        return customerName + " " + itemIndexes + itemQuantities + orderStatus;
     }
 }

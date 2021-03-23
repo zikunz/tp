@@ -94,8 +94,24 @@ public class ItemManager {
     }
 
     /**
+     * get index of the item name in the inventory.
+     * @param itemName name of the item to get it's index.
+     * @return index of the corresponding item name in the inventory.
+     */
+    public int getItemIndex(String itemName) {
+        int itemIndex = 0;
+        for (int i = 0; i < getSize(); ++i) {
+            if (getItem(i).itemName.contains(itemName)) {
+                itemIndex = i;
+                break;
+            }
+        }
+        return itemIndex;
+    }
+
+    /**
      * Gets the found items.
-     * 
+     *
      * @return list of found item(s) from ITEM_LIST
      */
     public ArrayList<Item> getFoundList() {

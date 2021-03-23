@@ -409,4 +409,36 @@ public class Ui {
     public void showOrderNotFound() {
         System.out.println(Messages.MESSAGE_ORDER_NOT_FOUND);
     }
+
+    public void showSaveDataLoading() {
+        System.out.println(Messages.MESSAGE_SAVE_DATA_LOADING);
+    }
+
+    public void showLookingForSaveData() {
+        System.out.println(Messages.MESSAGE_LOOKING_FOR_SAVE_DATA);
+    }
+
+    public void showSaveDataLoaded() {
+        System.out.println(Messages.MESSAGE_SAVE_DATA_LOADED);
+    }
+
+    public void showSaveDataCreated() {
+        System.out.println(Messages.MESSAGE_SAVE_DATA_CREATED);
+    }
+
+    public void showSaveDataSaved() {
+        System.out.println(Messages.MESSAGE_SAVE_DATA_SAVED);
+    }
+
+    public void showNoSaveDataFound() {
+        System.out.println(Messages.MESSAGE_SAVE_DATA_NOT_FOUND);
+    }
+
+    public void showInvalidFileInputLine(int fileLine) {
+        System.out.println(Messages.MESSAGE_INVALID_FILE_INPUT_LINE + fileLine);
+    }
+
+    public void showErrorWhileSaving() {
+        System.out.println(Messages.MESSAGE_ERROR_WHILE_SAVING);
+    }
 }

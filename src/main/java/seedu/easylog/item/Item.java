@@ -63,4 +63,8 @@ public class Item {
     public void setItemStock(int itemStock) {
         this.itemStock = itemStock;
     }
+
+    public String saveToFileFormat() {
+        return itemName + " " + itemPrice.toPlainString() + " " + itemStock;
+    }
 }

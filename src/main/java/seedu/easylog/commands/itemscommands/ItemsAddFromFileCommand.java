@@ -7,6 +7,11 @@ import java.math.BigDecimal;
 
 public class ItemsAddFromFileCommand extends ItemsCommand {
 
+    /**
+     * Execute the required actions to add file input related to item into the inventory.
+     * @param itemFileInput Item details from file to be added into the inventory.
+     * @param itemManager Manipulates inventory.
+     */
     public void execute(String itemFileInput, ItemManager itemManager) {
         String[] rawItemFileInput = itemFileInput.split(" ");
         String itemName = rawItemFileInput[0];

@@ -24,6 +24,8 @@ logistic management tasks done faster than traditional Graphical User Interface 
     - [Find orders: `orders find`](#find-orders-orders-find)
     - [Get the total price of an order:: `orders price`](#get-the-total-price-of-an-order-orders-price)
     - [Update the shipping status of an order: `orders ship`](#update-the-shipping-status-of-an-order-orders-ship)
+  * [Storage](#storage)  
+    - [Load, create and save data](#load-create-and-save-data)
   * [Exit the program: `exit`](#exit-the-program-exit)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
@@ -199,21 +201,26 @@ Orders-Related Options:
 ```
 orders add <customer_name>
 Input the items to be added to this order.
-<index> <index> <index>
+<item_index> <item_quantity>
 ```
 
 * Example:
 
 ```
 orders add weisheng
-Input the items to be added to this order.
 1 2 
+stop
 ```
 
 * Expected Output:
 
 ```
+Here is the list of items in the warehouse.
+1. ps5, S$599.00, 55
 Input the items to be added to this order.
+ps5 and stock of 2 added to the order.
+Type (stop) to stop adding items to order, else continue entering items in the same format.
+Note that you need at least 1 item in the order.
 Got it! The order for customer [weisheng] is added.
 ```
 
@@ -300,6 +307,23 @@ The total price for customer [coco]'s order is S$500.00.
 Got it! The order for customer [coco] has been shipped.
 ```
 
+### Storage
+
+#### Load, create and save data
+
+While initializing easyLog, it automatically looks for an available save file to load so that you can continue your 
+progress from the previous exit. If there are no save file available to load, easyLog will automatically create a save
+file and save your data and information when exiting the app. The save file will be named as `easyLog.txt` and will be
+located in the same folder/directory as the easyLog app. 
+
+The save file can be copied to another machine and placed in
+the same folder/directory that contains the easyLog app. Do take note that only one `easyLog.txt` should be in the
+directory or there would be an error. This transfer of save file allows you to work on multiple devices if you choose
+to do so.
+
+It is not recommeneded that you manipulate the data in `easyLog.txt`. However, if you are an expert user and confident,
+do feel free to manipulate the data in `easyLog.txt` manually if it enhances your workflow.
+
 ### Exit the program: `exit`
 
 * Exit the app.
@@ -365,7 +389,7 @@ items delete | `items delete <item_index>` | `items delete 2` |
 items clear | `items clear ` | `items clear` |
 items find | `items find` | `items find <item_name>`|
 orders | `orders` | `orders` |
-orders add | `orders add <order_name> `<br />` Input the items to be added to this order. `<br />` <index> <index>` | `orders add weisheng`<br />` Input the items to be added to this order.`<br />` 1 2 ` |
+orders add | `orders add <order_name> `<br />` Input the items to be added to this order. `<br />` <item_index> <item_quantity>` | `orders add weisheng`<br />` Input the items to be added to this order.`<br />` 1 2 ` |
 orders list | `orders list` | `orders list` |
 orders delete | `orders delete <order_index>` | `orders delete 2` |
 orders clear | `orders clear` | `orders clear` |

@@ -1,5 +1,6 @@
 package seedu.easylog.order;
 
+import seedu.easylog.common.Constants;
 import seedu.easylog.item.Item;
 import seedu.easylog.item.ItemManager;
 
@@ -71,12 +72,17 @@ public class Order {
         return "Got it! The order for customer [" + customerName + "] has been shipped.";
     }
 
+    /**
+     * Convert order attributes to a string to save in save file.
+     * @param itemManager manipulates item inventory.
+     * @return 1 line string that contains details regarding the order.
+     */
     public String saveToFileFormat(ItemManager itemManager) {
         String itemIndexes = "";
         String itemQuantities = "itemQuantity ";
         String orderStatus = "";
         for (Item item: itemsInOrder) {
-            itemIndexes += itemManager.getItemIndex(item.getItemName()) + " ";
+            itemIndexes += (itemManager.getItemIndex(item.getItemName()) + Constants.ARRAY_OFFSET) + " ";
         }
         for (int quantity: itemsStockCount) {
             itemQuantities += quantity + " ";

@@ -434,6 +434,10 @@ public class Ui {
         System.out.println(Messages.MESSAGE_SAVE_DATA_NOT_FOUND);
     }
 
+    /**
+     * Shows which line in the file causes and error when trying to process it.
+     * @param fileLine Line of the file with the format error.
+     */
     public void showInvalidFileInputLine(int fileLine) {
         System.out.println(Messages.MESSAGE_INVALID_FILE_INPUT_LINE + fileLine);
     }

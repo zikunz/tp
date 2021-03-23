@@ -81,7 +81,7 @@ public class ItemManager {
     }
 
     /**
-     * Finds items by keyword
+     * Finds items by keyword.
      * 
      * @param keyword keyword to be searched
      */
@@ -94,7 +94,7 @@ public class ItemManager {
     }
 
     /**
-     * Gets the found items
+     * Gets the found items.
      * 
      * @return list of found item(s) from ITEM_LIST
      */
@@ -103,7 +103,7 @@ public class ItemManager {
     }
 
     /**
-     * Gets the number of relevant items after search
+     * Gets the number of relevant items after search.
      * @return the size of FOUND_LIST
      */
     public int foundSize() {
@@ -136,7 +136,7 @@ public class ItemManager {
     }
 
     /**
-     * Clears all found items in Found List
+     * Clears all found items in Found List.
      */
     public void clearFoundList() {
         FOUND_LIST.clear();

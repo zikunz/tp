@@ -86,11 +86,12 @@ What can I do for you? Enter help to view commands.
 |v2.0|expert user|create, save data and load existing data|edit the data file directly|
 |v2.0|user|delete multiple items|save time by not deleting items one by one|
 |v2.0|user|delete multiple orders|save time by not deleting orders one by one|
+|v2.0|user|find relevant items|save time by looking through relevant items|
+|v2.0|user|find relevant orders|save time by looking through relevant orders|
 |v2.0|user|add a new item with a specified unit price|calculate order price more easily|
 |v2.0|user|update the unit price of an item|revise unit price or correct mistaken unit price entered earlier|
 |v2.0|user|add a new item with its stock|keep track of total number of stock and calculate order price more easily|
 |v2.0|user|update the stock of an item|Correct mistaken stock number entered earlier|
-
 
 ## Non-Functional Requirements
 

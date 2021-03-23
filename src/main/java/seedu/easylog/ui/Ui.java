@@ -182,7 +182,7 @@ public class Ui {
         System.out.println(Messages.MESSAGE_CLEAR_ORDER_LIST);
     }
 
-    public void showItemNotFound(int index) {
+    public void showItemNotFoundWhenAddingToOrder(int index) {
         int itemNumber = index + Constants.ARRAY_OFFSET;
         System.out.println("Item number " + itemNumber + " does not exist. "
                 + "Please try another valid item number until at least one item is added to the order.");
@@ -382,5 +382,31 @@ public class Ui {
 
     public void showInvalidFormatOrdersAdd() {
         System.out.println(Messages.MESSAGE_INVALID_FORMAT_ORDERS_ADD);
+    }
+
+    public void showItemNotFound() {
+        System.out.println(Messages.MESSAGE_ITEM_NOT_FOUND);
+    }
+
+    public void showFoundList(String rawItemListOutput) {
+        if (rawItemListOutput.equals("")) {
+            System.out.println(Messages.MESSAGE_EMPTY_ITEM_LIST);
+        } else {
+            System.out.println(Messages.MESSAGE_FOUNDLIST_ITEMS);
+            System.out.print(rawItemListOutput);
+        }
+    }
+
+    public void showFoundOrderList(String rawOrderListOutput) {
+        if (rawOrderListOutput.equals("")) {
+            System.out.println(Messages.MESSAGE_EMPTY_ORDER_LIST);
+        } else {
+            System.out.println(Messages.MESSAGE_FOUNDLIST_ORDERS);
+            System.out.print(rawOrderListOutput);
+        }
+    }
+
+    public void showOrderNotFound() {
+        System.out.println(Messages.MESSAGE_ORDER_NOT_FOUND);
     }
 }

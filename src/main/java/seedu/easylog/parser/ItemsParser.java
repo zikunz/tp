@@ -7,6 +7,7 @@ import seedu.easylog.commands.itemscommands.ItemsListCommand;
 import seedu.easylog.commands.itemscommands.ItemsUpdateCommand;
 import seedu.easylog.commands.itemscommands.ItemsPromptPriceCommand;
 import seedu.easylog.commands.itemscommands.ItemsPromptStockCommand;
+import seedu.easylog.commands.itemscommands.ItemsFindCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.InvalidItemPriceException;
@@ -22,6 +23,7 @@ import seedu.easylog.exceptions.WrongUpdateCommandException;
 import seedu.easylog.exceptions.InvalidItemIndexException;
 import seedu.easylog.exceptions.EmptyItemIndexException;
 import seedu.easylog.exceptions.WrongItemFieldException;
+import seedu.easylog.exceptions.ItemNotFoundException;
 import seedu.easylog.item.ItemManager;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -103,6 +105,15 @@ public class ItemsParser extends Parser {
                 ui.showEmptyItemStock();
             } catch (NullItemStockException e) {
                 ui.showNullItemStock();
+            }
+            break;
+        case (Constants.COMMAND_FIND):
+            try {
+                new ItemsFindCommand().execute(itemsArg, itemManager);
+            } catch (EmptyNameException e) {
+                ui.showItemEmptyName();
+            } catch (ItemNotFoundException e) {
+                ui.showItemNotFound();
             }
             break;
         default:

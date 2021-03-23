@@ -37,7 +37,9 @@ public class Messages {
             + "  1. orders add <order_name>        Add an order\n"
             + "  2. orders list                    List all orders\n"
             + "  3. orders delete <order_index>    Delete an order\n"
-            + "  4. orders clear                   Empty all orders";
+            + "  4. orders clear                   Empty all orders\n"
+            + "  5. orders price <order_index>     check the total price of an order\n"
+            + "  6. orders ship <order_index>      update the shipping status of an order";
     public static final String MESSAGE_SHOW_ITEMS_COMMANDS = "Items-Related Options:\n"
             + "  1. items add <item_name>          Add an item\n"
             + "  2. items list                     List all items\n"

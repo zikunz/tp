@@ -84,11 +84,17 @@ component and their respective functionalities below.
 ## Product scope
 ### Target user profile
 
-{Describe the target user profile}
+- IT savvy online businessman
+- has a need to manage numerous sales data
+- the list gets constantly updated (add & delete items/orders)
+- prefers typing over mouse/handwritten
+- can type fast
+- enjoys using CLI software
 
 ### Value proposition
 
-{Describe the value proposition: what problem does it solve?}
+A simple database application that helps target user to store and accesse a collection of data electronically from a computer
+system.  
 
 ## User Stories
 
@@ -97,8 +103,8 @@ component and their respective functionalities below.
 |v1.0|user|add new items|track the items added to the warehouse|
 |v1.0|user|view the items in the warehouse|track the items that are added or not added to the warehouse|
 |v1.0|user|remove items|remove the items that are no longer required to be tracked|
-|v1.0|user|add new orders|track the orders added to the warehouse|
-|v1.0|user|view the orders in the warehouse|track the orders that are added or not added to the warehouse|
+|v1.0|user|add new orders|track the orders added to the system|
+|v1.0|user|view the orders in the system|track the orders that are added or not added to the system|
 |v1.0|user|remove orders|remove the orders that are no longer required to be tracked|
 |v1.0|user|clear all items|re-track all the items if there are any problems|
 |v1.0|user|clear all orders|re-track all the orders if there are any problems|
@@ -116,6 +122,8 @@ component and their respective functionalities below.
 |v2.0|user|add a new item with its stock|keep track of total number of stock and calculate order price more easily|
 |v2.0|user|update the stock of an item|Correct mistaken stock number entered earlier|
 |v2.0|user|specify the quantity of a item to add to the order|calculate the total price of the order and update the item inventory correctly.|
+|v2.0|user|check the total price of a specific order|feedback to customer when they ask for it and do not have to look through the order list.|
+|v2.0|user|update the shipping status of an order|differentiate the orders by their shipping status.|
 
 ## Non-Functional Requirements
 

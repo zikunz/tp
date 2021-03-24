@@ -5,9 +5,9 @@ import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.model.OrderManager;
 
-public class OrdersShipCommand extends OrdersCommand {
+public class OrdersDoneCommand extends OrdersCommand {
     /**
-     * Updating the shipping status of the specific order.
+     * Updating the status of the specific order.
      */
     public void execute(String ordersArg, OrderManager orderManager)
             throws EmptyNumberException, InvalidNumberException {
@@ -20,7 +20,7 @@ public class OrdersShipCommand extends OrdersCommand {
             throw new InvalidNumberException();
         }
         ui.showOrderShippingStatus(orderManager.getOrder(index));
-        orderManager.getOrder(index).markAsShipped();
+        orderManager.getOrder(index).markAsDone();
 
     }
 }

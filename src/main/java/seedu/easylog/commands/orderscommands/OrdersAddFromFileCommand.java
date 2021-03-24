@@ -41,7 +41,7 @@ public class OrdersAddFromFileCommand extends OrdersCommand {
         Order orderToBeAddedFromFile = new Order(customerName, itemsInOrder, quantifyOfItemsInOrder);
         // check last input for whether order is done
         if (rawOrderFileInput[sizeOfRawOrderFileInput - 1].equals("done")) {
-            orderToBeAddedFromFile.markAsShipped();
+            orderToBeAddedFromFile.markAsDone();
         }
         orderManager.addOrder(orderToBeAddedFromFile);
     }

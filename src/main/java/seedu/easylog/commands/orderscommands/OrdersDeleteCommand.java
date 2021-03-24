@@ -22,13 +22,13 @@ public class OrdersDeleteCommand extends OrdersCommand {
             throw new InvalidNumberException();
         }
         if (!orderManager.getOrder(index).getStatus()) {
-            int itemStockCount = 0;
+            int itemStockIndex = 0;
             for (Item item : orderManager.getItemsInOrder(index)) {
                 int itemCurrentStock = item.getItemStock();
-                int itemsStockInOrder = orderManager.getOrder(index).getStockCounts().get(itemStockCount);
+                int itemsStockInOrder = orderManager.getOrder(index).getStockCounts().get(itemStockIndex);
                 int itemUpdateStock = itemCurrentStock + itemsStockInOrder;
-                orderManager.getOrder(index).getItemInOrder(itemStockCount).setItemStock(itemUpdateStock);
-                ++itemStockCount;
+                item.setItemStock(itemUpdateStock);
+                ++itemStockIndex;
             }
             ui.showOrderDeleted(orderManager.getOrder(index));
             orderManager.deleteOrder(index);

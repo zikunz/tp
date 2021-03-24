@@ -1,7 +1,7 @@
 package seedu.easylog.commands.orderscommands;
 
 import seedu.easylog.exceptions.OrderListAlreadyClearedException;
-import seedu.easylog.order.OrderManager;
+import seedu.easylog.model.OrderManager;
 
 public class OrdersClearCommand extends OrdersCommand {
     /**

@@ -3,7 +3,7 @@ package seedu.easylog.commands.itemscommands;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
-import seedu.easylog.item.ItemManager;
+import seedu.easylog.model.ItemManager;
 
 public class ItemsDeleteCommand extends ItemsCommand {
     /**

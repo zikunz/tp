@@ -18,10 +18,8 @@ public class OrderTest {
         ArrayList<Integer> itemStockList = new ArrayList<>();
         itemList.add(new Item("milk", new BigDecimal("5.6"), Integer.parseInt("20")));
         itemList.add(new Item("tea", new BigDecimal("3.4"), Integer.parseInt("20")));
-        itemList.add(new Item("milk tea", new BigDecimal("9.0"), Integer.parseInt("20")));
         itemStockList.add(Integer.parseInt("1"));
         itemStockList.add(Integer.parseInt("2"));
-        itemStockList.add(Integer.parseInt("3"));
         String customerName = "Coco";
         assertEquals("Got it! The order for customer [Coco] is added.",
                 new Order(customerName, itemList, itemStockList).getAddOrderMessage());

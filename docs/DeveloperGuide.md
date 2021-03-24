@@ -10,7 +10,7 @@
     * [To be added](#to-be-added)
         + [To be added](#to-be-added)
 
-## 1.Introduction
+## 1. Introduction
 
 ### 1.1 Software Overview
 
@@ -53,9 +53,32 @@ Hello! I'm easyLog!
 What can I do for you? Enter help to view commands.
 ```
 
-## Design & implementation
+## 2. Design & implementation
 
-{Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
+### 2.1 Architecture
+
+![image](https://user-images.githubusercontent.com/57165946/112262176-2f3f3d00-8ca8-11eb-81a6-c6053c111188.png)
+
+The Architecture Diagram shown above illustrates the high-level design of easyLog. We will now proceed to explain each 
+component and their respective functionalities below.
+
+### 2.2 EasyLog Component
+
+### 2.3 Storage Component
+
+### 2.4 Ui Component
+
+### 2.5 Parser Component
+
+### 2.6 Command Component
+
+### 2.7 Model Component
+
+### 2.8 Exceptions Component
+
+### 2.9 Common Component
+
+
 
 
 ## Product scope

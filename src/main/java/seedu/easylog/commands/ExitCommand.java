@@ -14,6 +14,7 @@ public class ExitCommand extends Command {
             ui.showErrorWhileSaving();
         }
         ui.showExit();
+        logging.writeInfoLevelLog("Exiting app now.");
         System.exit(0);
     }
 }

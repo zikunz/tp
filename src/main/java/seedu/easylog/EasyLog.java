@@ -4,11 +4,13 @@ import seedu.easylog.common.Constants;
 import seedu.easylog.model.ItemManager;
 import seedu.easylog.model.OrderManager;
 import seedu.easylog.parser.Parser;
+import seedu.easylog.storage.Logging;
 import seedu.easylog.storage.SaveData;
 import seedu.easylog.ui.Ui;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 public class EasyLog {
 
@@ -17,6 +19,7 @@ public class EasyLog {
     private static final ItemManager ITEM_MANAGER = new ItemManager();
     private static final OrderManager ORDER_MANAGER = new OrderManager();
     private static final SaveData SAVE_DATA = new SaveData();
+    private static final Logging LOGGING = new Logging();
 
     /**
      * Main entry-point for the easyLog application.
@@ -28,8 +31,10 @@ public class EasyLog {
         } catch (FileNotFoundException e) {
             UI.showNoSaveDataFound();
         }
+        LOGGING.setUpLogger();
         while (true) {
             String userInput = Constants.SCANNER.nextLine();
+            LOGGING.writeInfoLevelLog("Asking for user input.");
             PARSER.processUserInput(userInput, ITEM_MANAGER, ORDER_MANAGER);
         }
     }

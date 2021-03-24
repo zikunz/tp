@@ -1,9 +1,8 @@
 package seedu.easylog;
 
 import seedu.easylog.common.Constants;
-import seedu.easylog.exceptions.InvalidFileInputException;
-import seedu.easylog.item.ItemManager;
-import seedu.easylog.order.OrderManager;
+import seedu.easylog.model.ItemManager;
+import seedu.easylog.model.OrderManager;
 import seedu.easylog.parser.Parser;
 import seedu.easylog.storage.SaveData;
 import seedu.easylog.ui.Ui;

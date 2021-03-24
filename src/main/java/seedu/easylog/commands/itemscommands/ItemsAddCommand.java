@@ -7,8 +7,8 @@ import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NullItemStockException;
 import seedu.easylog.exceptions.EmptyItemStockException;
 import seedu.easylog.exceptions.InvalidItemStockException;
-import seedu.easylog.item.Item;
-import seedu.easylog.item.ItemManager;
+import seedu.easylog.model.Item;
+import seedu.easylog.model.ItemManager;
 
 import java.math.BigDecimal;
 

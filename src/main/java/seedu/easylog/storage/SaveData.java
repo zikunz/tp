@@ -1,10 +1,10 @@
 package seedu.easylog.storage;
 
 import seedu.easylog.exceptions.InvalidFileInputException;
-import seedu.easylog.item.Item;
-import seedu.easylog.item.ItemManager;
-import seedu.easylog.order.Order;
-import seedu.easylog.order.OrderManager;
+import seedu.easylog.model.Item;
+import seedu.easylog.model.ItemManager;
+import seedu.easylog.model.Order;
+import seedu.easylog.model.OrderManager;
 import seedu.easylog.parser.Parser;
 
 import java.io.File;

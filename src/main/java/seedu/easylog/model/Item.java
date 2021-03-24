@@ -1,4 +1,4 @@
-package seedu.easylog.item;
+package seedu.easylog.model;
 
 import java.math.BigDecimal;
 

@@ -1,7 +1,7 @@
 package seedu.easylog.commands.itemscommands;
 
 import seedu.easylog.exceptions.ItemListAlreadyClearedException;
-import seedu.easylog.item.ItemManager;
+import seedu.easylog.model.ItemManager;
 
 public class ItemsClearCommand extends ItemsCommand {
     /**

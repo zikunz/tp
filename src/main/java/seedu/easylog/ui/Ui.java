@@ -2,8 +2,8 @@ package seedu.easylog.ui;
 
 import seedu.easylog.common.Constants;
 import seedu.easylog.common.Messages;
-import seedu.easylog.item.Item;
-import seedu.easylog.order.Order;
+import seedu.easylog.model.Item;
+import seedu.easylog.model.Order;
 
 /**
  * Handles ui related methods.

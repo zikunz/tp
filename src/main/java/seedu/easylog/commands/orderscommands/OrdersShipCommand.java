@@ -3,7 +3,7 @@ package seedu.easylog.commands.orderscommands;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
-import seedu.easylog.order.OrderManager;
+import seedu.easylog.model.OrderManager;
 
 public class OrdersShipCommand extends OrdersCommand {
     /**

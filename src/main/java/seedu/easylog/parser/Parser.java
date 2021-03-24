@@ -5,8 +5,8 @@ import seedu.easylog.commands.itemscommands.ItemsAddFromFileCommand;
 import seedu.easylog.commands.orderscommands.OrdersAddFromFileCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.InvalidFileInputException;
-import seedu.easylog.item.ItemManager;
-import seedu.easylog.order.OrderManager;
+import seedu.easylog.model.ItemManager;
+import seedu.easylog.model.OrderManager;
 import seedu.easylog.ui.Ui;
 
 import java.io.IOException;

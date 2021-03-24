@@ -1,5 +1,5 @@
 
-package seedu.easylog.item;
+package seedu.easylog.model;
 
 import seedu.easylog.common.Messages;
 import seedu.easylog.common.Constants;

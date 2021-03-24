@@ -1,10 +1,6 @@
 package seedu.easylog.commands.orderscommands;
 
-import seedu.easylog.item.ItemManager;
-import seedu.easylog.order.OrderManager;
-import seedu.easylog.common.Messages;
-
-import java.math.BigDecimal;
+import seedu.easylog.model.OrderManager;
 
 public class OrdersListCommand extends OrdersCommand {
     /**

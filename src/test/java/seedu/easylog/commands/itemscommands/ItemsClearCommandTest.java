@@ -3,8 +3,8 @@
 //import org.junit.jupiter.api.DisplayName;
 //import org.junit.jupiter.api.Test;
 //import seedu.easylog.exceptions.ItemListAlreadyClearedException;
-//import seedu.easylog.item.Item;
-//import seedu.easylog.item.ItemManager;
+//import seedu.easylog.model.Item;
+//import seedu.easylog.model.ItemManager;
 //import seedu.easylog.ui.Ui;
 //
 //import static org.junit.jupiter.api.Assertions.assertSame;

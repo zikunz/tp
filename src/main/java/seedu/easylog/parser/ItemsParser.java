@@ -24,7 +24,7 @@ import seedu.easylog.exceptions.InvalidItemIndexException;
 import seedu.easylog.exceptions.EmptyItemIndexException;
 import seedu.easylog.exceptions.WrongItemFieldException;
 import seedu.easylog.exceptions.ItemNotFoundException;
-import seedu.easylog.item.ItemManager;
+import seedu.easylog.model.ItemManager;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 

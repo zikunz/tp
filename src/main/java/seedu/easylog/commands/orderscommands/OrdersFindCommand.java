@@ -2,7 +2,7 @@ package seedu.easylog.commands.orderscommands;
 
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.OrderNotFoundException;
-import seedu.easylog.order.OrderManager;
+import seedu.easylog.model.OrderManager;
 
 public class OrdersFindCommand extends OrdersCommand {
     /**

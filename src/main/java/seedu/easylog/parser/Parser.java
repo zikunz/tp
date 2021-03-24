@@ -1,6 +1,7 @@
 package seedu.easylog.parser;
 
 import seedu.easylog.commands.ExitCommand;
+import seedu.easylog.commands.HelpCommand;
 import seedu.easylog.commands.itemscommands.ItemsAddFromFileCommand;
 import seedu.easylog.commands.orderscommands.OrdersAddFromFileCommand;
 import seedu.easylog.common.Constants;
@@ -30,7 +31,7 @@ public class Parser {
         String commandArgs = commandTypeAndParams[1];
         switch (commandType) {
         case (Constants.COMMAND_HELP):
-            ui.showHelp();
+            new HelpCommand().execute();
             break;
         case (Constants.COMMAND_EXIT):
             new ExitCommand().execute(itemManager, orderManager);

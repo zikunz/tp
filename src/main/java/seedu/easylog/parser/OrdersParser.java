@@ -5,7 +5,7 @@ import seedu.easylog.commands.orderscommands.OrdersClearCommand;
 import seedu.easylog.commands.orderscommands.OrdersDeleteCommand;
 import seedu.easylog.commands.orderscommands.OrdersListCommand;
 import seedu.easylog.commands.orderscommands.OrdersPriceCommand;
-import seedu.easylog.commands.orderscommands.OrdersShipCommand;
+import seedu.easylog.commands.orderscommands.OrdersDoneCommand;
 import seedu.easylog.commands.orderscommands.OrdersFindCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyItemListException;
@@ -81,9 +81,9 @@ public class OrdersParser extends Parser {
                 ui.showNonIntegerOrderNumber();
             }
             break;
-        case (Constants.COMMAND_SHIP):
+        case (Constants.COMMAND_DONE):
             try {
-                new OrdersShipCommand().execute(ordersArg, orderManager);
+                new OrdersDoneCommand().execute(ordersArg, orderManager);
             } catch (EmptyNumberException e) {
                 ui.showOrderEmptyNumber();
             } catch (InvalidNumberException e) {

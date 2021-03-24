@@ -13,13 +13,13 @@ public class Order {
     protected String customerName;
     protected ArrayList<Item> itemsInOrder;
     protected ArrayList<Integer> itemsStockCount;
-    protected boolean isShipped;
+    protected boolean isDone;
 
     public Order(String customerName, ArrayList<Item> itemsInOrder, ArrayList<Integer> itemsStockCount) {
         this.customerName = customerName;
         this.itemsInOrder = itemsInOrder;
         this.itemsStockCount = itemsStockCount;
-        this.isShipped = false;
+        this.isDone = false;
         assert customerName != null;
         assert itemsInOrder != null;
     }
@@ -30,6 +30,10 @@ public class Order {
 
     public ArrayList<Item> getItemsInOrder() {
         return itemsInOrder;
+    }
+
+    public Item getItemInOrder(int i) {
+        return itemsInOrder.get(i);
     }
 
     public ArrayList<Integer> getStockCounts() {
@@ -59,15 +63,19 @@ public class Order {
     }
 
     public String getStatusIcon() {
-        return (isShipped ? "X" : ""); //return X or empty symbols
+        return (isDone ? "X" : ""); //return X or empty symbols
     }
 
-    public void markAsShipped() {
-        isShipped = true;
+    public boolean getStatus() {
+        return isDone;
     }
 
-    public String getOrderShippingStatusMessage() {
-        return "Got it! The order for customer [" + customerName + "] has been shipped.";
+    public void markAsDone() {
+        isDone = true;
+    }
+
+    public String getOrderStatusMessage() {
+        return "Got it! The order for customer [" + customerName + "] is completed.";
     }
 
     /**
@@ -85,7 +93,7 @@ public class Order {
         for (int quantity: itemsStockCount) {
             itemQuantities += quantity + " ";
         }
-        if (isShipped) {
+        if (isDone) {
             orderStatus = "done";
         } else {
             orderStatus = "notDone";

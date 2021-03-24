@@ -98,7 +98,7 @@ public class OrderManager {
         String rawOrderListOutput = "";
         for (Order order: ORDER_LIST) {
             String customerName = order.getCustomerName();
-            String shippingStatus = " [" + order.getStatusIcon() + "]";
+            String orderStatus = " [" + order.getStatusIcon() + "]";
             String customersItemList = "";
             int itemAndStockIndex = 0;
             for (Item item: order.getItemsInOrder()) {
@@ -109,7 +109,7 @@ public class OrderManager {
                 ++itemAndStockIndex;
             }
             BigDecimal totalPrice = order.getOrderTotalPrice(order.getItemsInOrder());
-            rawOrderListOutput += customerName + shippingStatus + "\n" + customersItemList
+            rawOrderListOutput += customerName + orderStatus + "\n" + customersItemList
                     + Messages.MESSAGE_INDENTATION + Constants.TOTAL_PRICE_FORMAT + totalPrice + "\n";
         }
         return rawOrderListOutput;

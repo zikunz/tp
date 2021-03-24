@@ -4,6 +4,8 @@ import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.model.OrderManager;
+import seedu.easylog.model.Order;
+import seedu.easylog.model.Item;
 
 public class OrdersDeleteCommand extends OrdersCommand {
     /**
@@ -19,8 +21,18 @@ public class OrdersDeleteCommand extends OrdersCommand {
         if ((index < 0) || (index >= size)) {
             throw new InvalidNumberException();
         }
-        ui.showOrderDeleted(orderManager.getOrder(index));
-        orderManager.deleteOrder(index);
+        if (!orderManager.getOrder(index).getStatus()) {
+            int itemStockCount = 0;
+            for (Item item : orderManager.getItemsInOrder(index)) {
+                int itemCurrentStock = item.getItemStock();
+                int itemsStockInOrder = orderManager.getOrder(index).getStockCounts().get(itemStockCount);
+                int itemUpdateStock = itemCurrentStock + itemsStockInOrder;
+                orderManager.getOrder(index).getItemInOrder(itemStockCount).setItemStock(itemUpdateStock);
+                ++itemStockCount;
+            }
+            ui.showOrderDeleted(orderManager.getOrder(index));
+            orderManager.deleteOrder(index);
+        }
         assert orderManager.getSize() == size - 1 : "After a valid deletion, the size decreases by 1";
         if (size > 1) {
             assert orderManager.getOrder(orderManager.getSize() - 1) == orderManager.getOrder(size - 2) :

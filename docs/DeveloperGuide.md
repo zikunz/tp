@@ -51,9 +51,11 @@ EasyLog class.
 ```
 Hello! I'm easyLog!
 What can I do for you? Enter help to view commands.
+Looking for save data.
+Save data not found.
 ```
 
-## 2. Design & implementation
+## 2. Design
 
 ### 2.1 Architecture
 
@@ -64,11 +66,28 @@ component and their respective functionalities below.
 
 ### 2.2 EasyLog Component
 
+The EasyLog component initializes the app and looks for any available save file to load. It then proceeds to
+continuously take in input from the user until the user types in a exit command.
+
 ### 2.3 Storage Component
+
+![image](https://user-images.githubusercontent.com/57165946/112269495-66ffb200-8cb3-11eb-9f0b-4d33db48d492.png)
+
+The storage component deals with
+- loading, saving and creating save data.
+- generation of receipts when order is done. (NOT YET IMPLEMENTED)
 
 ### 2.4 Ui Component
 
+The ui component deals with interactions with the user by displaying the appropriate messages according to the users
+input.
+
 ### 2.5 Parser Component
+
+![image](https://user-images.githubusercontent.com/57165946/112273156-fdce6d80-8cb7-11eb-9693-f46855141e7d.png)
+
+The parser components deals with the input of the user. It makes sense of the users input and executes commands
+according to the input of the user
 
 ### 2.6 Command Component
 
@@ -78,6 +97,8 @@ component and their respective functionalities below.
 
 ### 2.9 Common Component
 
+
+## Implementation
 
 
 

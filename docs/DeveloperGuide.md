@@ -148,11 +148,20 @@ system.
 
 ## Non-Functional Requirements
 
-{Give non-functional requirements}
+- Be able to work on any mainstream OS as long as it has Java 11 or above installed.
+- Be able to respond to any command in less than 2 seconds.
+- A user should be able to complete majority of tasks faster using CLI than GUI.
 
 ## Glossary
 
-* *glossary item* - Definition
+Abbreviation | Full title | Definition
+-------- | ---------- | ----------
+**CI**   | Continuous Integration | Combining parts of a software product to form a whole
+**IntelliJ** | IntelliJ | An Integrated Development Environment written in Java
+**CLI** | Command Line Interface | A program that accepts text inputs to execute operating system functions
+**GUI** | Graphical User Interface | An interface that allows users to interact through graphical icons
+**Mainstream OS** | Windows, Linux, Unix, OS-X | Operating systems
+
 
 ## Instructions for manual testing
 

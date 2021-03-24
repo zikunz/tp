@@ -20,10 +20,10 @@ orders and clear all existing items and orders in the warehouse at ease. If the 
 logistic management tasks done faster than traditional Graphical User Interface (GUI) applications.
 
 easyLog, comprises a Parser component, Ui component, Storage component, Item component, Order component and Command
-component. Each component consists of various classes that work in tandem, to ensure it meets the purpose of our 
+component. Each component consists of various classes that work in tandem, to ensure it meets the purpose of our
 program.
 
-The purpose of this developer guide is to allow any interested contributors, who wish to develop this application 
+The purpose of this developer guide is to allow any interested contributors, who wish to develop this application
 further or just curious about the workings of this application. This would allow potential contributors to be able to
 dive right in to improving the code, performance, features or even adding new features much more easily due to the
 understanding of the structure of the codebase and implementation of existing features.
@@ -36,16 +36,16 @@ understanding of the structure of the codebase and implementation of existing fe
 ### 1.3 Setting up
 
 1. Fork the easyLog repository [here](https://github.com/AY2021S2-CS2113T-T09-4/tp) and git clone it to any location on
-your computer.
-   
+   your computer.
+
 2. Open any IDE (IntelliJ Idea preferred as mentioned in the prerequisites) and click `Configure` -> `Project Defaults`
--> `Project Structure` -> `New`
-   
+   -> `Project Structure` -> `New`
+
 3. Next, go to `Import Project` and select the build.gradle file.
 
 4. After opening the project, go to `src` -> `main` -> `java` -> `seedu.easylog` -> EasyLog and right click on the
-EasyLog class. 
-   
+   EasyLog class.
+
 5. Upon successful run, the following opening message will be shown:
 
 ```
@@ -61,7 +61,7 @@ Save data not found.
 
 ![image](https://user-images.githubusercontent.com/57165946/112262176-2f3f3d00-8ca8-11eb-81a6-c6053c111188.png)
 
-The Architecture Diagram shown above illustrates the high-level design of easyLog. We will now proceed to explain each 
+The Architecture Diagram shown above illustrates the high-level design of easyLog. We will now proceed to explain each
 component and their respective functionalities below.
 
 ### 2.2 EasyLog Component
@@ -90,13 +90,17 @@ The parser components deals with the input of the user. It makes sense of the us
 according to the input of the user
 
 ### 2.6 Command Component
+Different Commands execute by the program.
 
 ### 2.7 Model Component
 
 ### 2.8 Exceptions Component
+Possible exceptions existing in the program.
 
 ### 2.9 Common Component
-
+Common components contains the constants and messages used in the program.
+- Constants: Fixed values used in the program
+- Messages: Output response from the program.
 
 ## Implementation
 
@@ -115,7 +119,7 @@ according to the input of the user
 ### Value proposition
 
 A simple database application that helps target user to store and accesse a collection of data electronically from a computer
-system.  
+system.
 
 ## User Stories
 

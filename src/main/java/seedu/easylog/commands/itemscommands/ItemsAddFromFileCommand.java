@@ -1,7 +1,7 @@
 package seedu.easylog.commands.itemscommands;
 
-import seedu.easylog.item.Item;
-import seedu.easylog.item.ItemManager;
+import seedu.easylog.model.Item;
+import seedu.easylog.model.ItemManager;
 
 import java.math.BigDecimal;
 

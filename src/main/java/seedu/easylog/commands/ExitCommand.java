@@ -1,7 +1,7 @@
 package seedu.easylog.commands;
 
-import seedu.easylog.item.ItemManager;
-import seedu.easylog.order.OrderManager;
+import seedu.easylog.model.ItemManager;
+import seedu.easylog.model.OrderManager;
 
 import java.io.IOException;
 

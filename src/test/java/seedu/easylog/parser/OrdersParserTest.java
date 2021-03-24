@@ -2,8 +2,8 @@
 //
 //import org.junit.jupiter.api.Test;
 //import static org.junit.jupiter.api.Assertions.assertEquals;
-//import seedu.easylog.item.Item;
-//import seedu.easylog.item.ItemManager;
+//import seedu.easylog.model.Item;
+//import seedu.easylog.model.ItemManager;
 //import java.util.ArrayList;
 //
 //public class OrdersParserTest {

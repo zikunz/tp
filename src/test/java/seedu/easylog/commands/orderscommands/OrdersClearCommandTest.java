@@ -3,10 +3,10 @@
 //import org.junit.jupiter.api.DisplayName;
 //import org.junit.jupiter.api.Test;
 //import seedu.easylog.exceptions.OrderListAlreadyClearedException;
-//import seedu.easylog.item.Item;
-//import seedu.easylog.item.ItemManager;
-//import seedu.easylog.order.Order;
-//import seedu.easylog.order.OrderManager;
+//import seedu.easylog.model.Item;
+//import seedu.easylog.model.ItemManager;
+//import seedu.easylog.model.Order;
+//import seedu.easylog.model.OrderManager;
 //import seedu.easylog.parser.OrdersParser;
 //
 //import java.util.ArrayList;

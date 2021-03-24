@@ -1,10 +1,10 @@
 package seedu.easylog.commands.orderscommands;
 
 import seedu.easylog.common.Constants;
-import seedu.easylog.item.Item;
-import seedu.easylog.item.ItemManager;
-import seedu.easylog.order.Order;
-import seedu.easylog.order.OrderManager;
+import seedu.easylog.model.Item;
+import seedu.easylog.model.ItemManager;
+import seedu.easylog.model.Order;
+import seedu.easylog.model.OrderManager;
 
 import java.util.ArrayList;
 

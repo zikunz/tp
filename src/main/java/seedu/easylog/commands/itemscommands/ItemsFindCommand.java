@@ -2,7 +2,7 @@ package seedu.easylog.commands.itemscommands;
 
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.ItemNotFoundException;
-import seedu.easylog.item.ItemManager;
+import seedu.easylog.model.ItemManager;
 
 public class ItemsFindCommand extends ItemsCommand {
     /**

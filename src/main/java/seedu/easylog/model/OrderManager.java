@@ -1,8 +1,7 @@
-package seedu.easylog.order;
+package seedu.easylog.model;
 
 import seedu.easylog.common.Constants;
 import seedu.easylog.common.Messages;
-import seedu.easylog.item.Item;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

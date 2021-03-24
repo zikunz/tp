@@ -3,7 +3,7 @@
 //import static org.junit.jupiter.api.Assertions.assertEquals;
 //import org.junit.jupiter.api.DisplayName;
 //import org.junit.jupiter.api.Test;
-//import seedu.easylog.item.Item;
+//import seedu.easylog.model.Item;
 //import java.util.ArrayList;
 //
 //

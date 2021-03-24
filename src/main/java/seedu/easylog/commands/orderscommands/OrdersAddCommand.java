@@ -5,12 +5,9 @@ import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyItemListException;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.OrderEmptyException;
-import seedu.easylog.item.Item;
-import seedu.easylog.item.ItemManager;
-import seedu.easylog.order.Order;
-import seedu.easylog.order.OrderManager;
-
-import java.util.ArrayList;
+import seedu.easylog.model.ItemManager;
+import seedu.easylog.model.Order;
+import seedu.easylog.model.OrderManager;
 
 /**
  * Adds orders to the system.

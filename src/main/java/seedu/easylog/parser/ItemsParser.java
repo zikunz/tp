@@ -9,7 +9,24 @@ import seedu.easylog.commands.itemscommands.ItemsPromptPriceCommand;
 import seedu.easylog.commands.itemscommands.ItemsPromptStockCommand;
 import seedu.easylog.commands.itemscommands.ItemsFindCommand;
 import seedu.easylog.common.Constants;
-import seedu.easylog.exceptions.*;
+
+import seedu.easylog.exceptions.EmptyItemPriceException;
+import seedu.easylog.exceptions.EmptyNameException;
+import seedu.easylog.exceptions.InvalidItemPriceException;
+import seedu.easylog.exceptions.NullItemPriceException;
+import seedu.easylog.exceptions.NullItemStockException;
+import seedu.easylog.exceptions.EmptyItemStockException;
+import seedu.easylog.exceptions.InvalidItemStockException;
+import seedu.easylog.exceptions.RepeatedItemException;
+import seedu.easylog.exceptions.EmptyNumberException;
+import seedu.easylog.exceptions.InvalidNumberException;
+import seedu.easylog.exceptions.ItemListAlreadyClearedException;
+import seedu.easylog.exceptions.ItemNotFoundException;
+import seedu.easylog.exceptions.WrongItemFieldException;
+import seedu.easylog.exceptions.WrongUpdateCommandException;
+import seedu.easylog.exceptions.InvalidItemIndexException;
+import seedu.easylog.exceptions.EmptyItemIndexException;
+
 import seedu.easylog.model.ItemManager;
 import java.math.BigDecimal;
 import java.math.RoundingMode;

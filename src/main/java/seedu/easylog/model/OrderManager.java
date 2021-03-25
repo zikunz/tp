@@ -175,7 +175,7 @@ public class OrderManager {
 
     public boolean checkRepeatOrder(String orderName) {
         for (Order order: ORDER_LIST) {
-            if(orderName.equals(order.customerName)) {
+            if (orderName.equals(order.customerName)) {
                 return true;
             }
         }

@@ -133,5 +133,9 @@ public class Messages {
     public static final String MESSAGE_INVALID_FILE_INPUT_LINE = "Invalid file input at line : ";
     public static final String MESSAGE_ERROR_WHILE_SAVING = "Error while saving. Save file may or may not be "
             + "saved correctly";
+    public static final String  MESSAGE_REPEAT_ITEM = "OOPS!! This item already exist. " +
+            "\nPlease use update function to make modification or use a different name. Thank you!";
+    public static final String MESSAGE_REPEAT_ORDER = "OOPS!! This order already exist. " +
+            "\nPlease use a different name for ordering. Thank you!";
 }
 

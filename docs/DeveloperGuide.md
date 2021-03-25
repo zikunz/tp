@@ -109,7 +109,7 @@ Common components contains the constants and messages used in the program.
 ## Product scope
 ### Target user profile
 
-- IT savvy online businessman
+- IT savvy home-based businessman
 - has a need to manage numerous sales data
 - the list gets constantly updated (add & delete items/orders)
 - prefers typing over mouse/handwritten
@@ -148,7 +148,7 @@ system.
 |v2.0|user|update the stock of an item|Correct mistaken stock number entered earlier|
 |v2.0|user|specify the quantity of a item to add to the order|calculate the total price of the order and update the item inventory correctly.|
 |v2.0|user|check the total price of a specific order|feedback to customer when they ask for it and do not have to look through the order list.|
-|v2.0|user|update the shipping status of an order|differentiate the orders by their shipping status.|
+|v2.0|user|update the status of an order|differentiate the orders by their status.|
 
 ## Non-Functional Requirements
 

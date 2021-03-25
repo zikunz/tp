@@ -135,7 +135,8 @@ public class Messages {
             + "saved correctly";
     public static final String  MESSAGE_REPEAT_ITEM = "OOPS!! This item already exist. "
             + "\nPlease use update function to make modification or use a different name. Thank you!";
-    public static final String MESSAGE_REPEAT_ORDER = "OOPS!! This order already exist. "
-            + "\nPlease use a different name for ordering. Thank you!";
+    public static final String MESSAGE_REPEAT_ORDER = "OOPS!! This order already exist."
+            + "\nPlease use a different name for ordering. Thank you!"
+            + "\nTo update an Order, please delete the original order and recreate a new one.";
 }
 

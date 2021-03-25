@@ -137,6 +137,7 @@ public class Messages {
             + "\nPlease use update function to make modification or use a different name. Thank you!";
     public static final String MESSAGE_REPEAT_ORDER = "OOPS!! This order already exist."
             + "\nPlease use a different name for ordering. Thank you!"
-            + "\nTo update an Order, please delete the original order and recreate a new one.";
+            + "\nTo update an Order, please delete the original order and recreate a new one."
+            + "\nFor completed order, please delete and create a new order to proceed on.";
 }
 

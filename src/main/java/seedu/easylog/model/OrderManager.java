@@ -172,4 +172,13 @@ public class OrderManager {
     public void clearFoundList() {
         FOUND_LIST.clear();
     }
+
+    public boolean checkRepeatOrder(String orderName) {
+        for (Order order: ORDER_LIST) {
+            if (orderName.equals(order.customerName)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

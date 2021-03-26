@@ -185,5 +185,14 @@ public class ItemManager {
         Item itemToBeUpdated = getItem(itemIndex);
         itemToBeUpdated.setItemStock(revisedItemStock);
     }
+
+    public static boolean checkRepeatItem(String itemName) {
+        for (Item item : ITEM_LIST) {
+            if (item.itemName.equals(itemName)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 

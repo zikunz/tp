@@ -62,10 +62,6 @@ public class Order {
                 + order.getOrderTotalPrice(itemsInOrder) + ".";
     }
 
-    public String getStatusIcon() {
-        return (isDone ? "X" : ""); //return X or empty symbols
-    }
-
     public boolean getStatus() {
         return isDone;
     }
@@ -86,18 +82,12 @@ public class Order {
     public String saveToFileFormat(ItemManager itemManager) {
         String itemIndexes = "";
         String itemQuantities = "itemQuantity ";
-        String orderStatus = "";
         for (Item item: itemsInOrder) {
             itemIndexes += (itemManager.getItemIndex(item.getItemName()) + Constants.ARRAY_OFFSET) + " ";
         }
         for (int quantity: itemsStockCount) {
             itemQuantities += quantity + " ";
         }
-        if (isDone) {
-            orderStatus = "done";
-        } else {
-            orderStatus = "notDone";
-        }
-        return customerName + " " + itemIndexes + itemQuantities + orderStatus;
+        return customerName + " " + itemIndexes + itemQuantities;
     }
 }

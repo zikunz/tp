@@ -26,6 +26,7 @@ logistic management tasks done faster than traditional Graphical User Interface 
     - [Update the shipping status of an order: `orders ship`](#update-the-shipping-status-of-an-order-orders-ship)
   * [Storage](#storage)  
     - [Load, create and save data](#load-create-and-save-data)
+    - [Generate receipts](#generate-receipts)
   * [Exit the program: `exit`](#exit-the-program-exit)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
@@ -304,7 +305,9 @@ The total price for customer [coco]'s order is S$500.00.
 * Expected Output:
 
 ```
-Got it! The order for customer [coco] has been shipped.
+Got it! The order for customer [coco] is completed.
+Generating receipt for customer: coco
+Receipt generated for customer: coco
 ```
 
 ### Storage
@@ -321,8 +324,14 @@ the same folder/directory that contains the easyLog app. Do take note that only 
 directory or there would be an error. This transfer of save file allows you to work on multiple devices if you choose
 to do so.
 
-It is not recommeneded that you manipulate the data in `easyLog.txt`. However, if you are an expert user and confident,
+It is not recommended that you manipulate the data in `easyLog.txt`. However, if you are an expert user and confident,
 do feel free to manipulate the data in `easyLog.txt` manually if it enhances your workflow.
+
+#### Generate receipts
+
+When [`orders done`](#update-the-shipping-status-of-an-order-orders-ship) feature is executed, a receipt will be automatically generated
+that contains the order details that was deleted. The generated receipts can be found in the same directory as the
+location of the easyLog app inside a `Receipts` folder. The receipts generated will be in a `.txt` format.
 
 ### Exit the program: `exit`
 

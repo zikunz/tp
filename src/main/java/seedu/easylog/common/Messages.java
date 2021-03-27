@@ -87,8 +87,8 @@ public class Messages {
             + "  6. orders done <order_index>      Update the status of an order\n"
             + "  7. orders find <order_name>       Finding an order\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_SHOW_ITEMS_COMMANDS = MESSAGE_LINE +
-            "Items-Related Options:\n"
+    public static final String MESSAGE_SHOW_ITEMS_COMMANDS = MESSAGE_LINE
+            + "Items-Related Options:\n"
             + "  1. items add <item_name>          Add an item\n"
             + "  2. items list                     List all items\n"
             + "  3. items delete <item_index>      Delete an item\n"

@@ -241,7 +241,7 @@ public class Messages {
     public static final String MESSAGE_SAVE_DATA_LOADING = "Loading save data.";
     public static final String MESSAGE_LOOKING_FOR_SAVE_DATA = "Looking for save data.";
     public static final String MESSAGE_SAVE_DATA_LOADED = "Save data loaded.\n" + MESSAGE_LINE;
-    public static final String MESSAGE_SAVE_DATA_CREATED = "Save data created as there is no existing save data";
+    public static final String MESSAGE_SAVE_DATA_CREATED = MESSAGE_LINE + "Save data created as there is no existing save data";
     public static final String MESSAGE_SAVE_DATA_SAVED = MESSAGE_LINE + "Save data saved.";
     public static final String MESSAGE_SAVE_DATA_NOT_FOUND = "Save data not found.\n" + MESSAGE_LINE;
     public static final String MESSAGE_INVALID_FILE_INPUT_LINE = "Invalid file input at line : ";

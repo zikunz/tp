@@ -21,7 +21,7 @@ public class OrdersDeleteCommand extends OrdersCommand {
         if ((index < 0) || (index >= size)) {
             throw new InvalidNumberException();
         }
-        if (!orderManager.getOrder(index).getStatus()) { // if the status of order is not done, return the stock to item stock.
+        if (!orderManager.getOrder(index).getStatus()) { // return item stock if order is not complete.
             int itemStockIndex = 0;
             for (Item item : orderManager.getItemsInOrder(index)) {
                 int itemCurrentStock = item.getItemStock();

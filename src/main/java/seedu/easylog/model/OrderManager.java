@@ -110,7 +110,8 @@ public class OrderManager {
             }
             BigDecimal totalPrice = order.getOrderTotalPrice(order.getItemsInOrder());
             rawOrderListOutput += customerName + orderStatus + "\n" + customersItemList
-                    + Messages.MESSAGE_INDENTATION + Constants.TOTAL_PRICE_FORMAT + totalPrice + "\n" + Messages.MESSAGE_LINE;
+                    + Messages.MESSAGE_INDENTATION + Constants.TOTAL_PRICE_FORMAT + totalPrice + "\n"
+                    + Messages.MESSAGE_LINE;
         }
         return rawOrderListOutput;
     }

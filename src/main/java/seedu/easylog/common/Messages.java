@@ -3,13 +3,13 @@ package seedu.easylog.common;
 public class Messages {
 
     public static final String MESSAGE_LOGO = "                       _                 \n"
-                                              +"                      | |                \n"
-                                              +"   ___  __ _ ___ _   _| |     ___   __ _ \n"
-                                              +"  / _ \\/ _` / __| | | | |    / _ \\ / _` |\n"
-                                              +" |  __/ (_| \\__ \\ |_| | |___| (_) | (_| |\n"
-                                              +"  \\___|\\__,_|___/\\__, |______\\___/ \\__, |\n"
-                                              +"                  __/ |             __/ |\n"
-                                              +"                 |___/             |___/ \n";
+            + "                      | |                \n"
+            + "   ___  __ _ ___ _   _| |     ___   __ _ \n"
+            + "  / _ \\/ _` / __| | | | |    / _ \\ / _` |\n"
+            + " |  __/ (_| \\__ \\ |_| | |___| (_) | (_| |\n"
+            + "  \\___|\\__,_|___/\\__, |______\\___/ \\__, |\n"
+            + "                  __/ |             __/ |\n"
+            + "                 |___/             |___/ \n";
     public static final String MESSAGE_LINE = "____________________________________________________________\n";
     public static final String MESSAGE_LIST_ITEMS = MESSAGE_LINE
             + "Here is the list of items in the warehouse.\n"
@@ -23,7 +23,8 @@ public class Messages {
     public static final String MESSAGE_FOUNDLIST_ORDERS = MESSAGE_LINE
             + "Here is the list of relevant orders found.\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_ADD_ITEMS_TO_ORDER = "Input the items to be added to this order.\n" + MESSAGE_LINE;
+    public static final String MESSAGE_ADD_ITEMS_TO_ORDER = "Input the items to be added to this order.\n"
+            + MESSAGE_LINE;
     public static final String MESSAGE_SHOW_ALL_COMMANDS = MESSAGE_LINE
             + "General Options:\n"
             + "  1. items                          Show items-related commands\n"
@@ -55,7 +56,7 @@ public class Messages {
     public static final String MESSAGE_EMPTY_ITEM_NAME = MESSAGE_LINE
             + "OOPS!!! The item name is missing!\n"
             + "Please complete the item information! :)n"
-            + MESSAGE_LINE ;
+            + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ORDER_CUSTOMER_NAME = MESSAGE_LINE
             + "OOPS!!! The customer name is missing!\n"
             + "Please complete the order information! :)\n"
@@ -76,8 +77,8 @@ public class Messages {
             + "OOPS!!! The item number is missing!\n"
             + "Please complete the item information! :)\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_SHOW_ORDERS_RELATED_COMMANDS = MESSAGE_LINE +
-            "Orders-Related Options:\n"
+    public static final String MESSAGE_SHOW_ORDERS_RELATED_COMMANDS = MESSAGE_LINE
+            + "Orders-Related Options:\n"
             + "  1. orders add <order_name>        Add an order\n"
             + "  2. orders list                    List all orders\n"
             + "  3. orders delete <order_index>    Delete an order\n"
@@ -113,12 +114,12 @@ public class Messages {
     public static final String MESSAGE_EMPTY_ORDER_LIST = MESSAGE_LINE
             + "There is no order at the moment.\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_ADD_ITEM_FIRST = MESSAGE_LINE +
-            "Please add items to the system first.\n"
+    public static final String MESSAGE_ADD_ITEM_FIRST = MESSAGE_LINE
+            + "Please add items to the system first.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_INDENTATION = "    ";
     public static final String MESSAGE_NON_INTEGER_ORDER_NUMBER = MESSAGE_LINE
-            +"OOPS!!! The input order information "
+            + "OOPS!!! The input order information "
             + "is not an integer number!\n"
             + "Please input the order information again! :)\n"
             + MESSAGE_LINE;

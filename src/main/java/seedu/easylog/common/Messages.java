@@ -265,8 +265,8 @@ public class Messages {
             + "To update an Order, please delete the original order and recreate a new one.\n"
             + "For completed order, please delete and create a new order to proceed on.\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_ITEM_IS_ALREADY_EXISTING = "The item entered already exists in the system, " +
-            "what is the new stock to be added?";
+    public static final String MESSAGE_ITEM_IS_ALREADY_EXISTING = "The item entered already exists in the system, "
+            + "what is the new stock to be added?";
     public static final String MESSAGE_PROMPT_ADDITIONAL_ITEM_STOCK = MESSAGE_LINE
             + "Please enter the additional stock of the item.\n"
             + "Note: The revised should be either 0 or a positive integer number "

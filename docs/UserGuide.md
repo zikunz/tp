@@ -23,7 +23,7 @@ logistic management tasks done faster than traditional Graphical User Interface 
     - [Empty the order list: `orders clear`](#empty-the-order-list-orders-clear)
     - [Find orders: `orders find`](#find-orders-orders-find)
     - [Get the total price of an order:: `orders price`](#get-the-total-price-of-an-order-orders-price)
-    - [Update the shipping status of an order: `orders ship`](#update-the-shipping-status-of-an-order-orders-ship)
+    - [Update the status of an order: `orders done`](#update-the-status-of-an-order-orders-done)
   * [Storage](#storage)  
     - [Load, create and save data](#load-create-and-save-data)
   * [Exit the program: `exit`](#exit-the-program-exit)
@@ -295,11 +295,11 @@ Gus []
 The total price for customer [coco]'s order is S$500.00.
 ```
 
-#### Update the shipping status of an order: `orders ship`
+#### Update the status of an order: `orders done`
 
 * Change the shipping status of an order once it is shipped.
 
-* Format: `orders ship 2`
+* Format: `orders done 2`
 
 * Expected Output:
 
@@ -321,7 +321,7 @@ the same folder/directory that contains the easyLog app. Do take note that only 
 directory or there would be an error. This transfer of save file allows you to work on multiple devices if you choose
 to do so.
 
-It is not recommeneded that you manipulate the data in `easyLog.txt`. However, if you are an expert user and confident,
+It is not recommended that you manipulate the data in `easyLog.txt`. However, if you are an expert user and confident,
 do feel free to manipulate the data in `easyLog.txt` manually if it enhances your workflow.
 
 ### Exit the program: `exit`
@@ -388,6 +388,7 @@ items list | `items list`      | `items list` |
 items delete | `items delete <item_index>` | `items delete 2` |
 items clear | `items clear ` | `items clear` |
 items find | `items find` | `items find <item_name>`|
+items update | `items update` | `items update`|
 orders | `orders` | `orders` |
 orders add | `orders add <order_name> `<br />` Input the items to be added to this order. `<br />` <item_index> <item_quantity>` | `orders add weisheng`<br />` Input the items to be added to this order.`<br />` 1 2 ` |
 orders list | `orders list` | `orders list` |
@@ -395,5 +396,5 @@ orders delete | `orders delete <order_index>` | `orders delete 2` |
 orders clear | `orders clear` | `orders clear` |
 orders find | `orders find` | `orders find <order_name>`|
 orders price | `orders price <order_index>` | `orders price 2` |
-orders ship  | `orders ship <order_index>` | `orders ship 2` |
+orders done  | `orders done <order_index>` | `orders done 2` |
 exit | `exit` | `exit` |

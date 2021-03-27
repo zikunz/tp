@@ -24,6 +24,7 @@ public class Messages {
             + "Here is the list of relevant orders found.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_ADD_ITEMS_TO_ORDER = "Input the items to be added to this order.\n"
+            + "Input format: <item_index> <item_quantity>\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_SHOW_ALL_COMMANDS = MESSAGE_LINE
             + "General Options:\n"
@@ -33,7 +34,7 @@ public class Messages {
             + "  4. items delete <item_index>      Delete an item\n"
             + "  5. items clear                    Empty all items\n"
             + "  6. items find <item_name>         Finding an item\n"
-            + "  7. items update                   pdate the detail of an item\n"
+            + "  7. items update                   Update the detail of an item\n"
             + "  8. orders                         Show orders-related commands\n"
             + "  9. orders add <order_name>        Add an order\n"
             + "  10. orders list                   List all orders\n"
@@ -219,7 +220,7 @@ public class Messages {
             + "Please retry and type valid stock number.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_CONTINUE_ADDING_ITEM_TO_ORDER = MESSAGE_LINE
-            + "Type (stop) to stop adding items to order,"
+            + "Type <stop> to stop adding items to order,"
             + " else continue entering items in the same format.\n"
             + "Note that you need at least 1 item in the order.\n"
             + MESSAGE_LINE;
@@ -241,7 +242,8 @@ public class Messages {
     public static final String MESSAGE_SAVE_DATA_LOADING = "Loading save data.";
     public static final String MESSAGE_LOOKING_FOR_SAVE_DATA = "Looking for save data.";
     public static final String MESSAGE_SAVE_DATA_LOADED = "Save data loaded.\n" + MESSAGE_LINE;
-    public static final String MESSAGE_SAVE_DATA_CREATED = "Save data created as there is no existing save data";
+    public static final String MESSAGE_SAVE_DATA_CREATED = MESSAGE_LINE
+            + "Save data created as there is no existing save data";
     public static final String MESSAGE_SAVE_DATA_SAVED = MESSAGE_LINE + "Save data saved.";
     public static final String MESSAGE_SAVE_DATA_NOT_FOUND = "Save data not found.\n" + MESSAGE_LINE;
     public static final String MESSAGE_INVALID_FILE_INPUT_LINE = "Invalid file input at line : ";

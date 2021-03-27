@@ -7,28 +7,27 @@ logistic management tasks done faster than traditional Graphical User Interface 
 
 - [Quick start](#quick-start)
 - [Features](#features)
-    * [Viewing help: `help`](#viewing-help-help)
-    * [Items](#items)
-        - [Show items-related commands: `items`](#show-items-related-commands-items)
-        - [Add an item: `items add`](#add-an-item-items-add)
-
-        * [Show the item list : `items list`](#show-the-item-list-items-list)
-        * [Delete an item: `delete`](#delete-an-item-items-delete)
-        * [Empty the item list: `items clear`](#empty-the-item-list-items-clear)
-
-        - [Find items: `items find`](#find-items-items-find)
-    * [Orders](#orders)
-        - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
-        - [Add an order: `orders add`](#add-an-order-orders-add)
-        - [Show the order list: `orders list`](#show-the-order-list-orders-list)
-        - [Remove an order: `orders delete`](#remove-an-order-orders-delete)
-        - [Empty the order list: `orders clear`](#empty-the-order-list-orders-clear)
-        - [Find orders: `orders find`](#find-orders-orders-find)
-        - [Get the total price of an order:: `orders price`](#get-the-total-price-of-an-order-orders-price)
-        - [Update the shipping status of an order: `orders ship`](#update-the-shipping-status-of-an-order-orders-ship)
-    * [Storage](#storage)
-        - [Load, create and save data](#load-create-and-save-data)
-    * [Exit the program: `exit`](#exit-the-program-exit)
+  * [Viewing help: `help`](#viewing-help-help)
+  * [Items](#items)
+    - [Show items-related commands: `items`](#show-items-related-commands-items)
+    - [Add an item: `items add`](#add-an-item-items-add)
+    * [Show the item list : `items list`](#show-the-item-list-items-list)
+    * [Delete an item: `delete`](#delete-an-item-items-delete)
+    * [Empty the item list: `items clear`](#empty-the-item-list-items-clear)
+    - [Find items: `items find`](#find-items-items-find)
+  * [Orders](#orders)
+    - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
+    - [Add an order: `orders add`](#add-an-order-orders-add)
+    - [Show the order list: `orders list`](#show-the-order-list-orders-list)
+    - [Remove an order: `orders delete`](#remove-an-order-orders-delete)
+    - [Empty the order list: `orders clear`](#empty-the-order-list-orders-clear)
+    - [Find orders: `orders find`](#find-orders-orders-find)
+    - [Get the total price of an order:: `orders price`](#get-the-total-price-of-an-order-orders-price)
+    - [Update the status of an order: `orders done`](#update-the-status-of-an-order-orders-done)
+  * [Storage](#storage)  
+    - [Load, create and save data](#load-create-and-save-data)
+    - [Generate receipts](#generate-receipts)
+  * [Exit the program: `exit`](#exit-the-program-exit)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
 
@@ -407,19 +406,23 @@ The total price for customer [coco]'s order is S$27.00.
 ____________________________________________________________
 ```
 
-#### Update the shipping status of an order: `orders ship`
+#### Update the status of an order: `orders done`
 
 * Change the shipping status of an order once it is shipped.
 
 * Format: `orders done <order_index>`
 
 * Example: `orders done 2`
+  
+* Format: `orders done 2`
 
 * Expected Output:
 
 ```
 ____________________________________________________________
-Got it! The order for customer [coco] has been shipped.
+Got it! The order for customer [coco] is completed.
+Generating receipt for customer: coco
+Receipt generated for customer: coco
 ____________________________________________________________
 ```
 
@@ -436,8 +439,14 @@ The save file can be copied to another machine and placed in the same folder/dir
 take note that only one `easyLog.txt` should be in the directory or there would be an error. This transfer of save file
 allows you to work on multiple devices if you choose to do so.
 
-It is not recommeneded that you manipulate the data in `easyLog.txt`. However, if you are an expert user and confident,
+It is not recommended that you manipulate the data in `easyLog.txt`. However, if you are an expert user and confident,
 do feel free to manipulate the data in `easyLog.txt` manually if it enhances your workflow.
+
+#### Generate receipts
+
+When [`orders done`](#update-the-shipping-status-of-an-order-orders-ship) feature is executed, a receipt will be automatically generated
+that contains the order details that was deleted. The generated receipts can be found in the same directory as the
+location of the easyLog app inside a `Receipts` folder. The receipts generated will be in a `.txt` format.
 
 ### Exit the program: `exit`
 
@@ -507,6 +516,7 @@ items list | `items list`      | `items list` |
 items delete | `items delete <item_index>` | `items delete 2` |
 items clear | `items clear ` | `items clear` |
 items find | `items find` | `items find <item_name>`|
+items update | `items update` | `items update`|
 orders | `orders` | `orders` |
 orders add | `orders add <order_name> `<br />` Input the items to be added to this order. `<br />` <item_index> <item_quantity>` | `orders add weisheng`<br />` Input the items to be added to this order.`<br />` 1 2 ` |
 orders list | `orders list` | `orders list` |

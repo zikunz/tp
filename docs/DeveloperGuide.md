@@ -90,6 +90,9 @@ The parser components deals with the input of the user. It makes sense of the us
 according to the input of the user
 
 ### 2.6 Command Component
+
+![Command UML](https://user-images.githubusercontent.com/60378963/112716136-7a16ba00-8f1f-11eb-90a6-8c26f3e7edcb.jpg)
+
 Different Commands execute by the program.
 
 ### 2.7 Model Component

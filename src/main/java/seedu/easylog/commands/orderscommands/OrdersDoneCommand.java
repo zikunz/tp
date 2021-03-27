@@ -5,6 +5,8 @@ import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.model.OrderManager;
 
+import java.io.IOException;
+
 public class OrdersDoneCommand extends OrdersCommand {
     /**
      * Updating the status of the specific order.
@@ -14,13 +16,18 @@ public class OrdersDoneCommand extends OrdersCommand {
         if (ordersArg.equals("")) {
             throw new EmptyNumberException();
         }
-        int index = Integer.parseInt(ordersArg) - Constants.ARRAY_OFFSET;
+        int orderIndex = Integer.parseInt(ordersArg) - Constants.ARRAY_OFFSET;
         int size = orderManager.getSize();
-        if ((index < 0) || (index >= size)) {
+        if ((orderIndex < 0) || (orderIndex >= size)) {
             throw new InvalidNumberException();
         }
-        ui.showOrderStatus(orderManager.getOrder(index));
-        orderManager.getOrder(index).markAsDone();
-
+        ui.showOrderStatus(orderManager.getOrder(orderIndex));
+        orderManager.getOrder(orderIndex).markAsDone();
+        try {
+            receipt.generateReceipt(orderIndex, orderManager);
+        } catch (IOException e) {
+            ui.showErrorGeneratingReceipt(orderManager.getOrder(orderIndex).getCustomerName());
+        }
+        orderManager.deleteOrder(orderIndex); // delete order once receipt is generated
     }
 }

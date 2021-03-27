@@ -31,6 +31,7 @@ public class Ui {
     }
 
     public void showAddItem(Item item) {
+        System.out.println(Messages.MESSAGE_LINE);
         System.out.println(item.getAddItemMessage());
     }
 
@@ -56,6 +57,7 @@ public class Ui {
 
     public void showDeletedItem(Item item) {
         System.out.println(item.getDeleteItemMessage());
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     public void showItemEmptyNumber() {
@@ -81,6 +83,7 @@ public class Ui {
         } else {
             System.out.println(Messages.MESSAGE_LIST_ITEMS);
             System.out.print(rawItemListOutput);
+            System.out.print(Messages.MESSAGE_LINE);
         }
     }
 
@@ -120,7 +123,9 @@ public class Ui {
     }
 
     public void showOrderAdded(Order order) {
+        System.out.print(Messages.MESSAGE_LINE);
         System.out.println(order.getAddOrderMessage());
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     /**
@@ -129,7 +134,9 @@ public class Ui {
      * @param order an object to store orders information
      */
     public void showOrderDeleted(Order order) {
+        System.out.print(Messages.MESSAGE_LINE);
         System.out.println(order.getDeleteOrderMessage());
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     /**
@@ -188,8 +195,10 @@ public class Ui {
 
     public void showItemNotFoundWhenAddingToOrder(int index) {
         int itemNumber = index + Constants.ARRAY_OFFSET;
+        System.out.print(Messages.MESSAGE_LINE);
         System.out.println("Item number " + itemNumber + " does not exist. "
                 + "Please try another valid item number until at least one item is added to the order.");
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     /**
@@ -337,14 +346,18 @@ public class Ui {
      * Prints a message to inform the users about the total price of their order.
      */
     public void showOrderTotalPrice(Order order) {
+        System.out.print(Messages.MESSAGE_LINE);
         System.out.println(order.getOrderTotalPriceMessage(order));
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     /**
      * Prints a message to inform the users about the shipping status of their order.
      */
-    public void showOrderShippingStatus(Order order) {
+    public void showOrderStatus(Order order) {
+        System.out.print(Messages.MESSAGE_LINE);
         System.out.println(order.getOrderStatusMessage());
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     /**
@@ -381,6 +394,7 @@ public class Ui {
     }
 
     public void showItemAndStockAddedToOrder(String itemName, int stockAdded) {
+        System.out.print(Messages.MESSAGE_LINE);
         System.out.println(itemName + " and stock of " + stockAdded + " added to the order.");
     }
 
@@ -402,6 +416,7 @@ public class Ui {
         } else {
             System.out.println(Messages.MESSAGE_FOUNDLIST_ITEMS);
             System.out.print(rawItemListOutput);
+            System.out.print(Messages.MESSAGE_LINE);
         }
     }
 
@@ -411,6 +426,7 @@ public class Ui {
         } else {
             System.out.println(Messages.MESSAGE_FOUNDLIST_ORDERS);
             System.out.print(rawOrderListOutput);
+            System.out.print(Messages.MESSAGE_LINE);
         }
     }
 

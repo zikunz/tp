@@ -11,9 +11,14 @@ public class ItemsPromptStockCommand extends ItemsCommand {
      *
      * @return item stock
      */
+    public int execute(boolean itemAlreadyExists) throws NullItemStockException, EmptyItemStockException,
+            InvalidItemStockException {
+        if (itemAlreadyExists) {
+            ui.promptAdditionalItemStock();
+        } else {
+            ui.promptItemStock();
+        }
 
-    public int execute() throws NullItemStockException, EmptyItemStockException, InvalidItemStockException {
-        ui.promptItemStock();
         String stockInString = Constants.SCANNER.nextLine();
         if (stockInString == null) {
             throw new NullItemStockException();

@@ -263,6 +263,15 @@ public class Ui {
     }
 
     /**
+     * Prints a message to notify the user that the total item stock is more than 1000000000.
+     * This means the user should input another valid number such that
+     * total item stock is a positive integer smaller than or equal to 100000000.
+     */
+    public void showInvalidTotalItemStock() {
+        System.out.println(Messages.MESSAGE_SHOW_INVALID_TOTAL_ITEM_STOCK);
+    }
+
+    /**
      * Prints a message to notify the user that the input item stock is null.
      * This means the user should input a non-null and valid item stock.
      */
@@ -460,6 +469,7 @@ public class Ui {
 
     /**
      * Shows which line in the file causes and error when trying to process it.
+     *
      * @param fileLine Line of the file with the format error.
      */
     public void showInvalidFileInputLine(int fileLine) {
@@ -482,5 +492,21 @@ public class Ui {
 
     public void showErrorGeneratingReceipt(String customerName) {
         System.out.println("Error while generating receipt for customer: " + customerName);
+    }
+
+    /**
+     * Prints a message to show that an item already exists.
+     * This means the user should proceed to enter a valid number to increment the stock,
+     * subject to total item stock smaller or equal to 1000000000.
+     */
+    public void showItemIsAlreadyExisting() {
+        System.out.println(Messages.MESSAGE_ITEM_IS_ALREADY_EXISTING);
+    }
+
+    /**
+     * Prints a message to ask the user about the additional stock of the item entered earlier.
+     */
+    public void promptAdditionalItemStock() {
+        System.out.println(Messages.MESSAGE_PROMPT_ADDITIONAL_ITEM_STOCK);
     }
 }

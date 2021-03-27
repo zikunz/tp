@@ -122,6 +122,8 @@ ____________________________________________________________
 * Format: `items add <item_name>` followed by `<item_price>` and `<item_stock>`
 
 * Example: `items add PS5` followed by `100` and `10`
+  (Please note that if an item to be added already exists in the system, additional stock will be requested and the item
+  information will be updated accordingly.)
 
 * Expected Output:
 
@@ -504,6 +506,17 @@ system?
 > changes. We may consider adding it in the upcoming version. <br/>
 >
 > You should not worry too much as easyLog is highly optimized for fast typists working in a warehouse like you.
+
+> **Q4**: Why does easyLog only allow me to enter additional stock number when I add an item which already exists in the
+> system? Why cannot I update the unit price?
+
+> It is typically hard for users to remember all items in the system. Hence, we make it easier and more efficient when
+> easyLog detects the item to be added already exists in the item list. Since this only happens when the user stocks up
+> a particular item, we allow the user to increase the stock as long as the total number of item stock is within the
+> threshold (i.e., 1000000). However, it does not naturally happen when a user wants to update the unit price when he or
+> she adds an item which already exists in the system.
+>
+> When it happens, the user is welcomed to use item `update command` instead.
 
 ## Command Summary
 

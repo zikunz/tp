@@ -7,10 +7,19 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Deals with receipt related features.
+ */
 public class Receipt extends Storage {
 
     public static int receiptCounter;
 
+    /**
+     * Generate a receipt file in .txt format.
+     * @param orderIndex order index of order to generate the order details into a receipt.
+     * @param orderManager manipulate orders.
+     * @throws IOException when there is an error while creating the file for the receipt.
+     */
     public void generateReceipt(int orderIndex, OrderManager orderManager) throws IOException {
         String customerName = orderManager.getCustomerName(orderIndex);
         ui.showGeneratingReceipt(customerName);
@@ -30,6 +39,10 @@ public class Receipt extends Storage {
         ++receiptCounter;
     }
 
+    /**
+     * Set the receipt counter from save file to ensure consistency.
+     * @param receiptCount receipt count obtained from save file.
+     */
     public void setReceiptCounter(int receiptCount) {
         receiptCounter = receiptCount;
     }

@@ -94,24 +94,27 @@ public class OrderManager {
         return getOrder(index).getStockCounts();
     }
 
+    public String getIndividualOrderPrintFormat(Order order) {
+        String customerName = order.getCustomerName();
+        String customersItemList = "";
+        int itemAndStockIndex = 0;
+        for (Item item: order.getItemsInOrder()) {
+            customersItemList += Messages.MESSAGE_INDENTATION + (itemAndStockIndex + 1) + ". "
+                    + item.getItemName() + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
+                    + item.getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
+                    + order.getStockCounts().get(itemAndStockIndex) + "\n";
+            ++itemAndStockIndex;
+        }
+        BigDecimal totalPrice = order.getOrderTotalPrice(order.getItemsInOrder());
+        return customerName + "\n" + customersItemList + Messages.MESSAGE_INDENTATION + Constants.TOTAL_PRICE_FORMAT
+                + totalPrice + "\n" + Messages.MESSAGE_LINE;
+    }
+
     public String getOrderListPrintFormat() {
         String rawOrderListOutput = "";
         for (Order order: ORDER_LIST) {
-            String customerName = order.getCustomerName();
-            String orderStatus = " [" + order.getStatusIcon() + "]";
-            String customersItemList = "";
-            int itemAndStockIndex = 0;
-            for (Item item: order.getItemsInOrder()) {
-                customersItemList += Messages.MESSAGE_INDENTATION + (itemAndStockIndex + 1) + ". "
-                        + item.getItemName() + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
-                        + item.getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
-                        + order.getStockCounts().get(itemAndStockIndex) + "\n";
-                ++itemAndStockIndex;
-            }
-            BigDecimal totalPrice = order.getOrderTotalPrice(order.getItemsInOrder());
-            rawOrderListOutput += customerName + orderStatus + "\n" + customersItemList
-                    + Messages.MESSAGE_INDENTATION + Constants.TOTAL_PRICE_FORMAT + totalPrice + "\n"
-                    + Messages.MESSAGE_LINE;
+            String individualOrderOutput = getIndividualOrderPrintFormat(order);
+            rawOrderListOutput += individualOrderOutput;
         }
         return rawOrderListOutput;
     }
@@ -135,24 +138,12 @@ public class OrderManager {
      * @return String format for the list of relevant orders to be printed
      */
     public String getFoundOrderListPrintFormat() {
-        String rawOrderListOutput = "";
+        String rawFoundOrderListOutput = "";
         for (Order order: FOUND_LIST) {
-            String customerName = order.getCustomerName();
-            String orderStatus = " [" + order.getStatusIcon() + "]";
-            String customersItemList = "";
-            int itemAndStockIndex = 0;
-            for (Item item: order.getItemsInOrder()) {
-                customersItemList += Messages.MESSAGE_INDENTATION + (itemAndStockIndex + 1) + ". "
-                        + item.getItemName() + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
-                        + item.getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
-                        + order.getStockCounts().get(itemAndStockIndex) + "\n";
-                ++itemAndStockIndex;
-            }
-            BigDecimal totalPrice = order.getOrderTotalPrice(order.getItemsInOrder());
-            rawOrderListOutput += customerName + orderStatus + "\n" + customersItemList
-                    + Messages.MESSAGE_INDENTATION + Constants.TOTAL_PRICE_FORMAT + totalPrice + "\n";
+            String individualOrderOutput = getIndividualOrderPrintFormat(order);
+            rawFoundOrderListOutput += individualOrderOutput;
         }
-        return rawOrderListOutput;
+        return rawFoundOrderListOutput;
     }
 
     /**

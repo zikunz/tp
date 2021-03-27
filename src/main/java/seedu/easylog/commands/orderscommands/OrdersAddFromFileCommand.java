@@ -26,7 +26,7 @@ public class OrdersAddFromFileCommand extends OrdersCommand {
         boolean inputIsItemQuantity = false;
         int itemIndex;
         int quantityOfItem;
-        for (int i = 1; i < (sizeOfRawOrderFileInput - 1); ++i) {
+        for (int i = 1; i < (sizeOfRawOrderFileInput); ++i) {
             if (rawOrderFileInput[i].equals("itemQuantity")) {
                 inputIsItemIndex = false;
                 inputIsItemQuantity = true;
@@ -39,10 +39,6 @@ public class OrdersAddFromFileCommand extends OrdersCommand {
             }
         }
         Order orderToBeAddedFromFile = new Order(customerName, itemsInOrder, quantifyOfItemsInOrder);
-        // check last input for whether order is done
-        if (rawOrderFileInput[sizeOfRawOrderFileInput - 1].equals("done")) {
-            orderToBeAddedFromFile.markAsDone();
-        }
         orderManager.addOrder(orderToBeAddedFromFile);
     }
 }

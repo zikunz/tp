@@ -33,6 +33,7 @@ public class Ui {
     public void showAddItem(Item item) {
         System.out.println(Messages.MESSAGE_LINE);
         System.out.println(item.getAddItemMessage());
+        System.out.println(Messages.MESSAGE_LINE);
     }
 
     public void showItemEmptyName() {
@@ -357,7 +358,6 @@ public class Ui {
     public void showOrderStatus(Order order) {
         System.out.print(Messages.MESSAGE_LINE);
         System.out.println(order.getOrderStatusMessage());
-        System.out.print(Messages.MESSAGE_LINE);
     }
 
     /**
@@ -468,5 +468,19 @@ public class Ui {
 
     public void showErrorWhileSaving() {
         System.out.println(Messages.MESSAGE_ERROR_WHILE_SAVING);
+    }
+
+    public void showGeneratingReceipt(String customerName) {
+        System.out.println("Generating receipt for customer: " + customerName);
+    }
+
+    public void showReceiptGenerated(String customerName) {
+        System.out.println("Receipt generated for customer: " + customerName);
+        System.out.println(Messages.MESSAGE_LINE);
+
+    }
+
+    public void showErrorGeneratingReceipt(String customerName) {
+        System.out.println("Error while generating receipt for customer: " + customerName);
     }
 }

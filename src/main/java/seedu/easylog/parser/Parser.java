@@ -8,6 +8,7 @@ import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.InvalidFileInputException;
 import seedu.easylog.model.ItemManager;
 import seedu.easylog.model.OrderManager;
+import seedu.easylog.storage.Receipt;
 import seedu.easylog.ui.Ui;
 
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.io.IOException;
  */
 public class Parser {
 
+    public static Receipt receipt = new Receipt();
     public static Ui ui = new Ui();
 
     public static String[] splitCommandWordAndArgs(String rawUserInput) {
@@ -55,6 +57,9 @@ public class Parser {
             break;
         case (Constants.COMMAND_ORDERS):
             new OrdersAddFromFileCommand().execute(commandArgs, itemManager, orderManager);
+            break;
+        case (Constants.COMMAND_RECEIPT_COUNTER):
+            receipt.setReceiptCounter(Integer.parseInt(commandArgs));
             break;
         default:
             throw new InvalidFileInputException();

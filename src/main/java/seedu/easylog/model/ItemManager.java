@@ -13,11 +13,14 @@ import java.util.ArrayList;
 public class ItemManager {
 
     private static final ArrayList<Item> ITEM_LIST = new ArrayList<>();
-    
+
     private static final ArrayList<Item> FOUND_LIST = new ArrayList<>();
+
+    private static final ArrayList<String> ITEM_DESCRIPTION_RECORD = new ArrayList<>();
 
     public void addItem(Item item) {
         ITEM_LIST.add(item);
+        ITEM_DESCRIPTION_RECORD.add(item.getItemName());
     }
 
     /**
@@ -78,11 +81,12 @@ public class ItemManager {
      */
     public void deleteItem(int index) {
         ITEM_LIST.remove(index);
+        ITEM_DESCRIPTION_RECORD.remove(index);
     }
 
     /**
      * Finds items by keyword.
-     * 
+     *
      * @param keyword keyword to be searched
      */
     public void findItem(String keyword) {
@@ -95,6 +99,7 @@ public class ItemManager {
 
     /**
      * get index of the item name in the inventory.
+     *
      * @param itemName name of the item to get it's index.
      * @return index of the corresponding item name in the inventory.
      */
@@ -120,6 +125,7 @@ public class ItemManager {
 
     /**
      * Gets the number of relevant items after search.
+     *
      * @return the size of FOUND_LIST
      */
     public int foundSize() {
@@ -149,6 +155,7 @@ public class ItemManager {
      */
     public void clearItemList() {
         ITEM_LIST.clear();
+        ITEM_DESCRIPTION_RECORD.clear();
     }
 
     /**
@@ -186,6 +193,16 @@ public class ItemManager {
         itemToBeUpdated.setItemStock(revisedItemStock);
     }
 
+    /**
+     * Gets the item stock of a particular item.
+     *
+     * @param item item of interest
+     * @return the current stock of the specified item
+     */
+    public int getItemStock(Item item) {
+        return item.getItemStock();
+    }
+
     public static boolean checkRepeatItem(String itemName) {
         for (Item item : ITEM_LIST) {
             if (item.itemName.equals(itemName)) {
@@ -193,6 +210,10 @@ public class ItemManager {
             }
         }
         return false;
+    }
+
+    public ArrayList<String> getItemDescriptionRecord() {
+        return ITEM_DESCRIPTION_RECORD;
     }
 }
 

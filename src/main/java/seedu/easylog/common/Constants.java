@@ -1,6 +1,5 @@
 package seedu.easylog.common;
 
-import java.security.PublicKey;
 import java.util.Scanner;
 
 public class Constants {
@@ -10,7 +9,7 @@ public class Constants {
     public static final int MINIMUM_ITEM_PRICE = 0;
     public static final int MAXIMUM_ITEM_PRICE = 1000000000;
     public static final int MINIMUM_ITEM_STOCK = 1;
-    public static final int MAXIMUM_ITEM_STOCK = 100000000;
+    public static final int MAXIMUM_ITEM_STOCK = 1000000000;
     public static final Scanner SCANNER = new Scanner(System.in);
 
     // Commands constants

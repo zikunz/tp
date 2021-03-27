@@ -130,14 +130,14 @@ public class Messages {
             + "Please input the item information again! :)"
             + MESSAGE_LINE;
     public static final String MESSAGE_PROMPT_ITEM_PRICE = MESSAGE_LINE
-                    + "Please enter the price of the item.\n"
-                    + "Note: The price to be entered should be either 0 or a positive number "
-                    + "smaller than or equal to S$1000000000.\n"
-                    + "Also, The system supports a maximum scale of 2 (number of digits right after the decimal).\n"
-                    + "If you enter any number having a scale greater than 2, it will be automatically rounded up "
-                    + "to a number having an exact scale of 2.\n"
-                    + "Lastly, the system automatically strips trailing zeros, if any.\n"
-                    + MESSAGE_LINE;
+            + "Please enter the price of the item.\n"
+            + "Note: The price to be entered should be either 0 or a positive number "
+            + "smaller than or equal to S$1000000000.\n"
+            + "Also, The system supports a maximum scale of 2 (number of digits right after the decimal).\n"
+            + "If you enter any number having a scale greater than 2, it will be automatically rounded up "
+            + "to a number having an exact scale of 2.\n"
+            + "Lastly, the system automatically strips trailing zeros, if any.\n"
+            + MESSAGE_LINE;
     public static final String MESSAGE_SHOW_INVALID_ITEM_PRICE = MESSAGE_LINE
             + "OOPS!!! The item price is invalid!\n"
             + "Please input again and give a valid item price! :)\n"
@@ -166,6 +166,10 @@ public class Messages {
             + MESSAGE_LINE;
     public static final String MESSAGE_SHOW_INVALID_ITEM_STOCK = MESSAGE_LINE
             + "OOPS!!! The item stock is invalid!\n"
+            + "Please input again and give a valid item stock! :)\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_SHOW_INVALID_TOTAL_ITEM_STOCK = MESSAGE_LINE
+            + "OOPS!!! The total item stock is more than 1000000000!\n"
             + "Please input again and give a valid item stock! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_NULL_ITEM_STOCK = MESSAGE_LINE
@@ -251,7 +255,7 @@ public class Messages {
             + "Error while saving. Save file may or may not be "
             + "saved correctly\n"
             + MESSAGE_LINE;
-    public static final String  MESSAGE_REPEAT_ITEM = MESSAGE_LINE
+    public static final String MESSAGE_REPEAT_ITEM = MESSAGE_LINE
             + "OOPS!! This item already exist.\n"
             + "Please use update function to make modification or use a different name. Thank you!\n"
             + MESSAGE_LINE;
@@ -261,6 +265,12 @@ public class Messages {
             + "To update an Order, please delete the original order and recreate a new one.\n"
             + "For completed order, please delete and create a new order to proceed on.\n"
             + MESSAGE_LINE;
-
+    public static final String MESSAGE_ITEM_IS_ALREADY_EXISTING = "The item entered already exists in the system, "
+            + "what is the new stock to be added?";
+    public static final String MESSAGE_PROMPT_ADDITIONAL_ITEM_STOCK = MESSAGE_LINE
+            + "Please enter the additional stock of the item.\n"
+            + "Note: The revised should be either 0 or a positive integer number "
+            + "smaller than or equal to 100000000 "
+            + "(The warehouse cannot store more than one hundred million items.)\n";
 }
 

@@ -10,26 +10,13 @@ import seedu.easylog.commands.itemscommands.ItemsPromptStockCommand;
 import seedu.easylog.commands.itemscommands.ItemsFindCommand;
 import seedu.easylog.common.Constants;
 
-import seedu.easylog.exceptions.EmptyItemPriceException;
-import seedu.easylog.exceptions.EmptyNameException;
-import seedu.easylog.exceptions.InvalidItemPriceException;
-import seedu.easylog.exceptions.NullItemPriceException;
-import seedu.easylog.exceptions.NullItemStockException;
-import seedu.easylog.exceptions.EmptyItemStockException;
-import seedu.easylog.exceptions.InvalidItemStockException;
-import seedu.easylog.exceptions.RepeatedItemException;
-import seedu.easylog.exceptions.EmptyNumberException;
-import seedu.easylog.exceptions.InvalidNumberException;
-import seedu.easylog.exceptions.ItemListAlreadyClearedException;
-import seedu.easylog.exceptions.ItemNotFoundException;
-import seedu.easylog.exceptions.WrongItemFieldException;
-import seedu.easylog.exceptions.WrongUpdateCommandException;
-import seedu.easylog.exceptions.InvalidItemIndexException;
-import seedu.easylog.exceptions.EmptyItemIndexException;
+import seedu.easylog.exceptions.*;
 
 import seedu.easylog.model.ItemManager;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 
 /**
  * Process items command input.
@@ -39,11 +26,12 @@ public class ItemsParser extends Parser {
         String[] splitItemsArg = splitCommandWordAndArgs(itemsInput);
         String itemsType = splitItemsArg[0];
         String itemsArg = splitItemsArg[1];
+        ArrayList<String> itemDescriptionRecord = itemManager.getItemDescriptionRecord();
 
         switch (itemsType) {
         case (Constants.COMMAND_ADD):
             try {
-                new ItemsAddCommand().execute(itemsArg, itemManager);
+                new ItemsAddCommand().execute(itemsArg, itemManager, itemDescriptionRecord);
             } catch (EmptyNameException e) {
                 ui.showItemEmptyName();
             } catch (InvalidItemPriceException e) {
@@ -60,8 +48,8 @@ public class ItemsParser extends Parser {
                 ui.showEmptyItemStock();
             } catch (NullItemStockException e) {
                 ui.showNullItemStock();
-            } catch (RepeatedItemException e) {
-                ui.showRepeatedItem();
+            } catch (InvalidTotalItemStockException e) {
+                ui.showInvalidTotalItemStock();
             }
             break;
         case (Constants.COMMAND_DELETE):
@@ -156,7 +144,8 @@ public class ItemsParser extends Parser {
         } else if (updateInput.equals("s")) {
             ui.askForRevisedItemStock();
             ItemsPromptStockCommand itemsPromptStockCommand = new ItemsPromptStockCommand();
-            int revisedStockPrice = itemsPromptStockCommand.execute();
+            boolean itemAlreadyExists = false;
+            int revisedStockPrice = itemsPromptStockCommand.execute(itemAlreadyExists);
             itemManager.setRevisedItemStock(itemIndex, revisedStockPrice);
             ui.showUpdateItemStock();
         } else {

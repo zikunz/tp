@@ -38,6 +38,10 @@ public class Ui {
         System.out.println(Messages.MESSAGE_EMPTY_ITEM_NAME);
     }
 
+    public void showRepeatedItem() {
+        System.out.println(Messages.MESSAGE_REPEAT_ITEM);
+    }
+
     public void showOrderEmptyCustomerName() {
         System.out.println(Messages.MESSAGE_EMPTY_ORDER_CUSTOMER_NAME);
     }
@@ -366,6 +370,10 @@ public class Ui {
 
     public void showNotEnoughStock() {
         System.out.println(Messages.MESSAGE_NOT_ENOUGH_STOCK);
+    }
+
+    public void showRepeatedOrder() {
+        System.out.println(Messages.MESSAGE_REPEAT_ORDER);
     }
 
     public void showContinueAddingItemsToOrder() {

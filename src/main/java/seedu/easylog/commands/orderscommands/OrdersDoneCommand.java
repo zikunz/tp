@@ -19,7 +19,7 @@ public class OrdersDoneCommand extends OrdersCommand {
         if ((index < 0) || (index >= size)) {
             throw new InvalidNumberException();
         }
-        ui.showOrderShippingStatus(orderManager.getOrder(index));
+        ui.showOrderStatus(orderManager.getOrder(index));
         orderManager.getOrder(index).markAsDone();
 
     }

@@ -1,9 +1,10 @@
 # easyLog User Guide
 
-easyLog is a Command Line Interface (CLI) application for warehouse employees to manage items and orders in the
-warehouse. easyLog allows users to add new items and orders, view existing items and orders, remove specific items and
-orders and clear all existing items and orders in the warehouse at ease. If the user types fast, easyLog can get
-logistic management tasks done faster than traditional Graphical User Interface (GUI) applications.
+easyLog is a desktop logistic management application optimized for workers of home-based businesses to manage items and
+orders via a carefully designed Command Line Interface (CLI). Primarily, easyLog allows users to add new items and
+orders, view existing items and orders, remove specific items and orders and clear all existing items and orders in the
+inventory at ease. If a user types fast, easyLog can get logistic management tasks done more easily and faster than
+traditional Graphical User Interface (GUI) applications.
 
 - [Quick start](#quick-start)
 - [Features](#features)

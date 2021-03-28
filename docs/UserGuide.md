@@ -1,10 +1,10 @@
 # easyLog User Guide
 
-easyLog is a desktop logistic management application optimized for workers of home-based businesses to manage items and
-orders via a carefully designed Command Line Interface (CLI). Primarily, easyLog allows users to add new items and
+easyLog is a **desktop logistic management application optimized for workers of home-based businesses to manage items
+and orders via a carefully designed Command Line Interface** (CLI). Primarily, easyLog allows users to add new items and
 orders, view existing items and orders, remove specific items and orders and clear all existing items and orders in the
 inventory at ease. If a user types fast, easyLog can get logistic management tasks done more easily and faster than
-traditional Graphical User Interface (GUI) applications.
+traditional Graphical User Interface (GUI) applications while still having the benefits of GUI.
 
 - [Quick start](#quick-start)
 - [Features](#features)
@@ -66,6 +66,14 @@ ____________________________________________________________
 8. Refer to the [Features](#features) below for details of each command.
 
 ## Features
+
+###### Notes about the command format:
+
+* Word(s) in UPPER_CASE is / are parameter(s) to be entered by the user. e.g. In `add n/CUSTOMER_NAME`, `CUSTOMER_NAME`
+  which can be used as `add n/Alice Tan`
+
+* Any extraneous parameters for commands not taking in parameters (such as `help` and `exit`) will not be ignored. The
+  system will notify the user that it cannot be understood by easyLog.
 
 ### Viewing help: `help`
 
@@ -475,11 +483,11 @@ ____________________________________________________________
 > the below steps when intending to add an item. <br/>
 >
 > Please note that you need to specify the description of the item. For instance, you can do this
-> by typing `orders add Competitive Programming 4: The Lower Bound of Programming Contests in the 2020s`. <br/>
+> by typing `orders add n/Competitive Programming 4: The Lower Bound of Programming Contests in the 2020s`. <br/>
 >
 > After that, input the **price per item** *(unit price)*. Please note that the unit price is either zero (free item) or
 > a positive number smaller or equal to 1000000000 (the system currently accepts a unit price not more than
-> SG$1,000,000,000). For example, you can enter `100` for the item price field. <br/>
+> SG$1,000,000,000). For example, you can enter `p/100` for the item price field. <br/>
 >
 > Lastly, please provide number of items to be added, also known as stock. (TO BE REVISED)
 
@@ -489,7 +497,7 @@ ____________________________________________________________
 > the below steps when intending to add an order. <br/>
 >
 > Please note that you need to specify a customer's name as he or she is the one whom the order of interest will be
-> sent to. For instance, you can do this by typing `orders add Alice`. <br/>
+> sent to. For instance, you can do this by typing `orders add n/Alice`. <br/>
 >
 > After that, input the item number found in the item list (if unsure, simply type `items list` to check). Please
 > separate each item number by exactly one empty space (i.e., ` `). Do not attempt to enter an item number
@@ -517,7 +525,7 @@ system?
 > threshold (i.e., 1000000). However, it does not naturally happen when a user wants to update the unit price when he or
 > she adds an item which already exists in the system.
 >
-> When it happens, the user is welcomed to use item `update command` instead.
+> When it happens, the user is welcomed to use `item update` command instead.
 
 ## Command Summary
 

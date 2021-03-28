@@ -508,7 +508,7 @@ system?
 >
 > You should not worry too much as easyLog is highly optimized for fast typists working in a warehouse like you.
 
-> **Q4**: Why does easyLog only allow me to enter additional stock number when I add an item which already exists in the
+**Q4**: Why does easyLog only allow me to enter additional stock number when I add an item which already exists in the
 > system? Why cannot I update the unit price?
 
 > It is typically hard for users to remember all items in the system. Hence, we make it easier and more efficient when

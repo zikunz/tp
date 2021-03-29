@@ -179,8 +179,8 @@ public class ItemsParser extends Parser {
      */
     public void processUpdateAttributeInput(String updateInput, int itemIndex, ItemManager itemManager) throws
             EmptyItemPriceException, InvalidItemPriceException, NullItemPriceException, NullItemStockException,
-            EmptyItemStockException, InvalidItemStockException, WrongItemFieldException, NonIntegerNumericItemStockException,
-            NonNumericItemPriceException {
+            EmptyItemStockException, InvalidItemStockException, WrongItemFieldException,
+            NonIntegerNumericItemStockException, NonNumericItemPriceException {
         if (updateInput.equals("p")) {
             ui.askForRevisedItemPrice();
             ItemsPromptPriceCommand itemsPromptPriceCommand = new ItemsPromptPriceCommand();

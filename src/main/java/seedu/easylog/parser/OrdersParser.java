@@ -111,7 +111,7 @@ public class OrdersParser extends Parser {
     }
 
     /**
-     * Processes the items added to the order
+     * Processes the items added to the order.
      * @param customerName the name of order
      * @param addItemsToOrderInput the item added to the order
      * @param itemManager item manager

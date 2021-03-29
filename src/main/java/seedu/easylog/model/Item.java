@@ -12,7 +12,7 @@ public class Item {
     protected int itemStock;
 
     /**
-     * Item constructor
+     * Item constructor.
      * @param itemName input string of the name of item
      * @param price input string of the price of item
      * @param stock input string of the stock number of item
@@ -25,7 +25,7 @@ public class Item {
     }
 
     /**
-     * Gets the name of the item
+     * Gets the name of the item.
      * @return the name of the item
      */
     public String getItemName() {

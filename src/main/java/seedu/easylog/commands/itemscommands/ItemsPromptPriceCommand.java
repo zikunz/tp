@@ -16,7 +16,7 @@ public class ItemsPromptPriceCommand extends ItemsCommand {
      * @return item price
      */
     public BigDecimal execute() throws NullItemPriceException, EmptyItemPriceException, InvalidItemPriceException,
-            NonNumericItemPriceException{
+            NonNumericItemPriceException {
         ui.promptItemPrice();
         String priceInString = Constants.SCANNER.nextLine();
         try {

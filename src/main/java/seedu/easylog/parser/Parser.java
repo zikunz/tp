@@ -22,7 +22,7 @@ public class Parser {
     public static Ui ui = new Ui();
 
     /**
-     * Splits the input to process the command, word and arguments
+     * Splits the input to process the command, word and arguments.
      * @param rawUserInput the input from user
      * @return the splitted command, word and arguments
      */
@@ -32,7 +32,7 @@ public class Parser {
     }
 
     /**
-     * Processes the user input
+     * Processes the user input.
      * @param rawUserInput the input from user
      * @param itemManager item manager
      * @param orderManager order manager
@@ -62,7 +62,7 @@ public class Parser {
     }
 
     /**
-     * Processes the input to file
+     * Processes the input to file.
      * @param commandType the type of command
      * @param commandArgs the argument of command
      * @param itemManager item manager

@@ -5,7 +5,7 @@ import seedu.easylog.ui.Ui;
 import seedu.easylog.parser.OrdersParser;
 
 /**
- * OrderCommand constructor
+ * OrderCommand constructor.
  */
 public abstract class OrdersCommand {
 

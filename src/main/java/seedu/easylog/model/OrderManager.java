@@ -16,7 +16,7 @@ public class OrderManager {
     private static final ArrayList<Order> FOUND_LIST = new ArrayList<>();
 
     /**
-     * Adds an order to the order list
+     * Adds an order to the order list.
      * @param order name of order to be added
      */
     public void addOrder(Order order) {
@@ -52,7 +52,7 @@ public class OrderManager {
     }
 
     /**
-     * Gets the list of orders
+     * Gets the list of orders.
      * @return the list of orders
      */
     public ArrayList<Order> getOrderList() {
@@ -103,7 +103,7 @@ public class OrderManager {
     }
 
     /**
-     * Prints the order for each order name
+     * Prints the order for each order name.
      * @param order the order to be printed
      * @return the print out order of the selected order
      */
@@ -124,7 +124,7 @@ public class OrderManager {
     }
 
     /**
-     * Gets the format of the printed order list
+     * Gets the format of the printed order list.
      * @return the formatted order list
      */
     public String getOrderListPrintFormat() {

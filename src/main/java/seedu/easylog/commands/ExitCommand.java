@@ -6,7 +6,7 @@ import seedu.easylog.model.OrderManager;
 import java.io.IOException;
 
 /**
- * Command to exit the program
+ * Command to exit the program.
  */
 public class ExitCommand extends Command {
 

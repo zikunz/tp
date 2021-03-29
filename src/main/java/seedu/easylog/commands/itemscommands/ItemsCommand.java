@@ -4,7 +4,7 @@ import seedu.easylog.parser.ItemsParser;
 import seedu.easylog.ui.Ui;
 
 /**
- * ItemsCommand class constructor
+ * ItemsCommand class constructor.
  */
 public abstract class ItemsCommand {
 

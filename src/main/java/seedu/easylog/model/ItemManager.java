@@ -19,7 +19,7 @@ public class ItemManager {
     private static final ArrayList<String> ITEM_DESCRIPTION_RECORD = new ArrayList<>();
 
     /**
-     * Adds item to the item list
+     * Adds item to the item list.
      * @param item item to be added to the item list
      */
     public void addItem(Item item) {
@@ -208,7 +208,7 @@ public class ItemManager {
     }
 
     /**
-     * Checks if the item exist in the item list
+     * Checks if the item exist in the item list.
      * @param itemName the item to be checked
      * @return the existence of item in the item list
      */
@@ -222,7 +222,7 @@ public class ItemManager {
     }
 
     /**
-     * Gets the item descriptions from the item list
+     * Gets the item descriptions from the item list.
      * @return the descriptions of items form the item list
      */
     public ArrayList<String> getItemDescriptionRecord() {

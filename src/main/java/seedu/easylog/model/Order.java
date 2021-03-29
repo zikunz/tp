@@ -16,7 +16,7 @@ public class Order {
     protected boolean isDone;
 
     /**
-     * Order constructor
+     * Order constructor.
      * @param customerName input string of the name of customers
      * @param itemsInOrder input string of the item to be added to order
      * @param itemsStockCount input string of the number of items to be added to order
@@ -31,7 +31,7 @@ public class Order {
     }
 
     /**
-     * Gets the name of the customer
+     * Gets the name of the customer.
      * @return the name of customer
      */
     public String getCustomerName() {
@@ -39,7 +39,7 @@ public class Order {
     }
 
     /**
-     * Gets the items in the order
+     * Gets the items in the order.
      * @return the items added in the order
      */
     public ArrayList<Item> getItemsInOrder() {
@@ -47,7 +47,7 @@ public class Order {
     }
 
     /**
-     * Gets the stock count of a item in the order
+     * Gets the stock count of a item in the order.
      * @return the number of stock of a item in the order
      */
     public ArrayList<Integer> getStockCounts() {
@@ -55,7 +55,7 @@ public class Order {
     }
 
     /**
-     * Gets the order added message
+     * Gets the order added message.
      * @return order added message
      */
     public String getAddOrderMessage() {
@@ -63,7 +63,7 @@ public class Order {
     }
 
     /**
-     * Gets the order delete message
+     * Gets the order delete message.
      * @return order delete message
      */
     public String getDeleteOrderMessage() {
@@ -71,7 +71,7 @@ public class Order {
     }
 
     /**
-     * Gets the total price of items in order
+     * Gets the total price of items in order.
      * @param itemsInOrder the list of items in order
      * @return the total price of all items in order
      */
@@ -85,7 +85,7 @@ public class Order {
     }
 
     /**
-     * Gets the total price in order message
+     * Gets the total price in order message.
      * @param order the order to be selected for total price calculation
      * @return the message for the total price of order
      */
@@ -95,7 +95,7 @@ public class Order {
     }
 
     /**
-     * Gets the status of the order
+     * Gets the status of the order.
      * @return boolean flag of the status of order
      */
     public boolean getStatus() {
@@ -103,14 +103,14 @@ public class Order {
     }
 
     /**
-     * To mark an order as done
+     * To mark an order as done.
      */
     public void markAsDone() {
         isDone = true;
     }
 
     /**
-     * Gets the status of order message
+     * Gets the status of order message.
      * @return the status of order message
      */
     public String getOrderStatusMessage() {

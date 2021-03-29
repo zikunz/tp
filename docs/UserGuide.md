@@ -84,6 +84,7 @@ Format: `help`
 Expected Output:
 
 ```
+help (user input)
 ____________________________________________________________
 General Options:
   1. items                          Show items-related commands
@@ -113,6 +114,7 @@ Format: `items`
 Expected Output:
 
 ```
+items (user input)
 ____________________________________________________________
 Items-Related Options:
   1. items add <item_name>          Add an item
@@ -137,6 +139,15 @@ Example: `items add PS5` followed by `100` and `10`
 Expected Output:
 
 ```
+items add PS5 (user input)
+____________________________________________________________
+Please enter the price of the item.
+____________________________________________________________
+100 (user input)
+____________________________________________________________
+Please enter the stock of the item.
+____________________________________________________________
+10 (user input)
 ____________________________________________________________
 Got it! The item [PS5] is added.
 ____________________________________________________________

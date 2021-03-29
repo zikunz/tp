@@ -67,6 +67,8 @@ ____________________________________________________________
 
 ## 2. Features
 
+Section 2 will explain the features available in easyLog.
+
 ###### Notes about the command format:
 
 * Word(s) in UPPER_CASE is / are parameter(s) to be entered by the user. e.g. In `add n/CUSTOMER_NAME`, `CUSTOMER_NAME`
@@ -104,6 +106,8 @@ ____________________________________________________________
 ```
 
 ### 2.2 Items
+
+Section 2.2 will explain the features related to items.
 
 #### 2.2.1. Show items-related commands: `items`
 
@@ -257,6 +261,8 @@ ____________________________________________________________
 ```
 
 ### 2.3. Orders
+
+Section 2.3 will explain the features related to orders.
 
 #### 2.3.1. Show orders-related commands : `orders`
 
@@ -450,25 +456,32 @@ ____________________________________________________________
 
 ### 2.4. Storage
 
+Section 2.4 will explain storage related features.
+
 #### 2.4.1. Load, create and save data
 
 While initializing easyLog, it automatically looks for an available save file to load so that you can continue your
 progress from the previous exit. If there are no save file available to load, easyLog will automatically create a save
-file and save your data and information when exiting the app. The save file will be named as `easyLog.txt` and will be
-located in the same folder/directory as the easyLog app.
+file for you and save your data and information when exiting the app. The save file will be named as `easyLog.txt` and 
+will be located in the same folder/directory as the easyLog app.
 
 The save file can be copied to another machine and placed in the same folder/directory that contains the easyLog app. Do
 take note that only one `easyLog.txt` should be in the directory or there would be an error. This transfer of save file
 allows you to work on multiple devices if you choose to do so.
 
-It is not recommended that you manipulate the data in `easyLog.txt`. However, if you are an expert user and confident,
+It is not recommended that you manipulate/edit the data in `easyLog.txt`. However, if you are an expert user and confident,
 do feel free to manipulate the data in `easyLog.txt` manually if it enhances your workflow.
 
 #### 2.4.2. Generate receipts
 
-When [`orders done`](#update-the-shipping-status-of-an-order-orders-ship) feature is executed, a receipt will be automatically generated
-that contains the order details that was deleted. The generated receipts can be found in the same directory as the
-location of the easyLog app inside a `Receipts` folder. The receipts generated will be in a `.txt` format.
+When [`orders done`](#238-update-the-status-of-an-order-orders-done) feature is executed, a receipt will be 
+automatically generated that contains the order details that was deleted. The generated receipts can be found in the 
+same directory as the location of the easyLog app inside a `Receipts` folder. The receipts generated will be in a `.txt` 
+format. This allows the list of orders while using the app to be kept clean with only the orders that are not done for
+easier viewing. Also, the generated receipts allows you to keep track of your revenue or to handle your taxes.
+Furthermore, receipts are numbered to show you how many orders you have fulfilled.
+
+(**ADD IMAGE OF RECEIPT FOLDER HERE**)
 
 ### 2.5. Exit the program: `exit`
 

@@ -77,11 +77,11 @@ ____________________________________________________________
 
 ### 2.1 Viewing help: `help`
 
-* Shows available commands of the app.
+Shows available commands of the app.
 
-* Format: `help`
+Format: `help`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -106,11 +106,11 @@ ____________________________________________________________
 
 #### 2.2.1. Show items-related commands: `items`
 
-* Show commands related to items and brief description of the commands: add item, list items, remove items, clear items
+Show commands related to items and brief description of the commands: add item, list items, remove items, clear items
 
-* Format: `items`
+Format: `items`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -126,15 +126,15 @@ ____________________________________________________________
 
 #### 2.2.2. Add an item: `items add`
 
-* Add an item to the system.
+Add an item to the system.
 
-* Format: `items add <item_name>` followed by `<item_price>` and `<item_stock>`
+Format: `items add <item_name>` followed by `<item_price>` and `<item_stock>`
 
-* Example: `items add PS5` followed by `100` and `10`
+Example: `items add PS5` followed by `100` and `10`
   (Please note that if an item to be added already exists in the system, additional stock will be requested and the item
   information will be updated accordingly.)
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -144,11 +144,11 @@ ____________________________________________________________
 
 #### 2.2.3. Show the item list: `items list`
 
-* Display all recorded items in the system.
+Display all recorded items in the system.
 
-* Format: `items list`
+Format: `items list`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -163,13 +163,13 @@ ____________________________________________________________
 
 #### 2.2.4. Delete an item: `items delete`
 
-* Delete an item from the item list.
+Delete an item from the item list.
 
-* Format: `items delete <item_index>`
+Format: `items delete <item_index>`
 
-* Example: `items delete 2`
+Example: `items delete 2`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -179,11 +179,11 @@ ____________________________________________________________
 
 #### 2.2.5. Empty the item list: `items clear`
 
-* Clear all recorded items in the system.
+Clear all recorded items in the system.
 
-* Format: `items clear`
+Format: `items clear`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -193,11 +193,11 @@ ____________________________________________________________
 
 #### 2.2.6. Update an item: `items update`
 
-* Update either the price of stock of an item in the system.
+Update either the price of stock of an item in the system.
 
-* Format: `items update` followed by `p` or `s`
+Format: `items update` followed by `p` or `s`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -227,13 +227,13 @@ ____________________________________________________________
 
 #### 2.2.7. Find items: `items find`
 
-* Display all items relating to the keyword
+Display all items relating to the keyword
 
-* Format: `items find <item_name>`
+Format: `items find <item_name>`
 
-* Example: `items find PS5`
+Example: `items find PS5`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -249,12 +249,12 @@ ____________________________________________________________
 
 #### 2.3.1. Show orders-related commands : `orders`
 
-* Show commands related to orders and brief description of the commands:
+Show commands related to orders and brief description of the commands:
   add order, list orders, remove orders, clear orders
 
-* Format: `orders`
+Format: `orders`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -271,9 +271,9 @@ ____________________________________________________________
 
 #### 2.3.2. Add an order: `orders add`
 
-* Add an order to the system.
+Add an order to the system.
 
-* Format:
+Format:
 
 ```
 orders add <customer_name>
@@ -281,7 +281,7 @@ Input the items to be added to this order.
 <item_index> <item_quantity>
 ```
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -327,11 +327,11 @@ ____________________________________________________________
 
 #### 2.3.3. Show the order list: `orders list`
 
-* Display all recorded orders in the system.
+Display all recorded orders in the system.
 
-* Format: `orders list`
+Format: `orders list`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -351,13 +351,13 @@ ____________________________________________________________
 
 #### 2.3.4. Remove an order: `orders delete`
 
-* Delete an order from the order list
+Delete an order from the order list
 
-* Format: `orders delete <order_index>`
+Format: `orders delete <order_index>`
 
-* Example: `orders delete 2`
+Example: `orders delete 2`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -367,11 +367,11 @@ ____________________________________________________________
 
 #### 2.3.5. Empty the order list: `orders clear`
 
-* Clear all recorded orders in the system.
+Clear all recorded orders in the system.
 
-* Format: `orders clear`
+Format: `orders clear`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -381,13 +381,13 @@ ____________________________________________________________
 
 #### 2.3.6. Find orders: `orders find`
 
-* Display all orders relating to the order name
+Display all orders relating to the order name
 
-* Format: `orders find <order_name>`
+Format: `orders find <order_name>`
 
-* Example: `orders find Coco`
+Example: `orders find Coco`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -403,13 +403,13 @@ ____________________________________________________________
 
 #### 2.3.7. Get the total price of an order: `orders price`
 
-* Check total price of a specific order.
+Check total price of a specific order.
 
-* Format: `orders price <order_index>`
+Format: `orders price <order_index>`
 
-* Example: `orders price 2`
+Example: `orders price 2`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -419,15 +419,15 @@ ____________________________________________________________
 
 #### 2.3.8. Update the status of an order: `orders done`
 
-* Change the shipping status of an order once it is shipped.
+Change the shipping status of an order once it is shipped.
 
-* Format: `orders done <order_index>`
+Format: `orders done <order_index>`
 
-* Example: `orders done 2`
+Example: `orders done 2`
   
-* Format: `orders done 2`
+Format: `orders done 2`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________
@@ -461,11 +461,11 @@ location of the easyLog app inside a `Receipts` folder. The receipts generated w
 
 ### 2.5. Exit the program: `exit`
 
-* Exit the app.
+Exit the app.
 
-* Format: `exit`
+Format: `exit`
 
-* Expected Output:
+Expected Output:
 
 ```
 ____________________________________________________________

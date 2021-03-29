@@ -1,38 +1,38 @@
 # easyLog User Guide
 
-easyLog is a **desktop logistic management application optimized for workers of home-based businesses to manage items
+easyLog is a **desktop logistic management application optimized for home-based businesses to manage items
 and orders via a carefully designed Command Line Interface** (CLI). Primarily, easyLog allows users to add new items and
 orders, view existing items and orders, remove specific items and orders and clear all existing items and orders in the
 inventory at ease. If a user types fast, easyLog can get logistic management tasks done more easily and faster than
 traditional Graphical User Interface (GUI) applications while still having the benefits of GUI.
 
-- [Quick start](#quick-start)
-- [Features](#features)
-  * [Viewing help: `help`](#viewing-help-help)
-  * [Items](#items)
-    - [Show items-related commands: `items`](#show-items-related-commands-items)
-    - [Add an item: `items add`](#add-an-item-items-add)
-    * [Show the item list : `items list`](#show-the-item-list-items-list)
-    * [Delete an item: `delete`](#delete-an-item-items-delete)
-    * [Empty the item list: `items clear`](#empty-the-item-list-items-clear)
-    - [Find items: `items find`](#find-items-items-find)
-  * [Orders](#orders)
-    - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
-    - [Add an order: `orders add`](#add-an-order-orders-add)
-    - [Show the order list: `orders list`](#show-the-order-list-orders-list)
-    - [Remove an order: `orders delete`](#remove-an-order-orders-delete)
-    - [Empty the order list: `orders clear`](#empty-the-order-list-orders-clear)
-    - [Find orders: `orders find`](#find-orders-orders-find)
-    - [Get the total price of an order:: `orders price`](#get-the-total-price-of-an-order-orders-price)
-    - [Update the status of an order: `orders done`](#update-the-status-of-an-order-orders-done)
-  * [Storage](#storage)  
-    - [Load, create and save data](#load-create-and-save-data)
-    - [Generate receipts](#generate-receipts)
-  * [Exit the program: `exit`](#exit-the-program-exit)
-- [FAQ](#faq)
-- [Command Summary](#command-summary)
+- [1. Quick start](#1-quick-start)
+- [2. Features](#2-features)
+  * [2.1. Viewing help: `help`](#21-viewing-help-help)
+  * [2.2. Items](#22-items)
+    - [2.2.1. Show items-related commands: `items`](#221-show-items-related-commands-items)
+    - [2.2.2. Add an item: `items add`](#222-add-an-item-items-add)
+    * [2.2.3. Show the item list : `items list`](#223-show-the-item-list-items-list)
+    * [2.2.4. Delete an item: `delete`](#224-delete-an-item-items-delete)
+    * [2.2.5. Empty the item list: `items clear`](#225-empty-the-item-list-items-clear)
+    - [2.2.6. Find items: `items find`](#226-update-an-item-items-update)
+  * [2.3. Orders](#23-orders)
+    - [2.3.1. Show orders-related commands: `orders`](#231-show-orders-related-commands--orders)
+    - [2.3.2. Add an order: `orders add`](#232-add-an-order-orders-add)
+    - [2.3.3. Show the order list: `orders list`](#233-show-the-order-list-orders-list)
+    - [2.3.4. Remove an order: `orders delete`](#234-remove-an-order-orders-delete)
+    - [2.3.5. Empty the order list: `orders clear`](#235-empty-the-order-list-orders-clear)
+    - [2.3.6. Find orders: `orders find`](#236-find-orders-orders-find)
+    - [2.3.7. Get the total price of an order:: `orders price`](#237-get-the-total-price-of-an-order-orders-price)
+    - [2.3.8. Update the status of an order: `orders done`](#238-update-the-status-of-an-order-orders-done)
+  * [2.4. Storage](#24-storage)  
+    - [2.4.1 Load, create and save data](#241-load-create-and-save-data)
+    - [2.4.2 Generate receipts](#242-generate-receipts)
+  * [2.5. Exit the program: `exit`](#25-exit-the-program-exit)
+- [3. FAQ](#3-faq)
+- [4. Command Summary](#4-command-summary)
 
-## Quick start
+## 1. Quick start
 
 1. Ensure you have Java 11 or above installed in your Computer.
 2. Download the latest easyLog.jar from [here](https://github.com/AY2021S2-CS2113T-T09-4/tp/releases/v1.0).
@@ -65,7 +65,7 @@ ____________________________________________________________
 7. Type a command and press enter to continue using the app.
 8. Refer to the [Features](#features) below for details of each command.
 
-## Features
+## 2. Features
 
 ###### Notes about the command format:
 
@@ -75,7 +75,7 @@ ____________________________________________________________
 * Any extraneous parameters for commands not taking in parameters (such as `help` and `exit`) will not be ignored. The
   system will notify the user that it cannot be understood by easyLog.
 
-### Viewing help: `help`
+### 2.1 Viewing help: `help`
 
 * Shows available commands of the app.
 
@@ -102,9 +102,9 @@ General Options:
 ____________________________________________________________
 ```
 
-### Items
+### 2.2 Items
 
-#### Show items-related commands: `items`
+#### 2.2.1. Show items-related commands: `items`
 
 * Show commands related to items and brief description of the commands: add item, list items, remove items, clear items
 
@@ -124,7 +124,7 @@ Items-Related Options:
 ____________________________________________________________
 ```
 
-#### Add an item: `items add`
+#### 2.2.2. Add an item: `items add`
 
 * Add an item to the system.
 
@@ -142,7 +142,7 @@ Got it! The item [PS5] is added.
 ____________________________________________________________
 ```
 
-#### Show the item list: `items list`
+#### 2.2.3. Show the item list: `items list`
 
 * Display all recorded items in the system.
 
@@ -161,7 +161,7 @@ ____________________________________________________________
 
 ```
 
-#### Delete an item: `items delete`
+#### 2.2.4. Delete an item: `items delete`
 
 * Delete an item from the item list.
 
@@ -177,7 +177,7 @@ Got it! The item [bag] is deleted.
 ____________________________________________________________
 ```
 
-#### Empty the item list: `items clear`
+#### 2.2.5. Empty the item list: `items clear`
 
 * Clear all recorded items in the system.
 
@@ -191,7 +191,7 @@ Done! I just cleared all items for you.
 ____________________________________________________________
 ```
 
-#### Update an item: `items update`
+#### 2.2.6. Update an item: `items update`
 
 * Update either the price of stock of an item in the system.
 
@@ -225,7 +225,7 @@ Done! I just updated the item stock for you.
 ____________________________________________________________
 ```
 
-#### Find items: `items find`
+#### 2.2.7. Find items: `items find`
 
 * Display all items relating to the keyword
 
@@ -245,9 +245,9 @@ ____________________________________________________________
 
 ```
 
-### Orders
+### 2.3. Orders
 
-#### Show orders-related commands : `orders`
+#### 2.3.1. Show orders-related commands : `orders`
 
 * Show commands related to orders and brief description of the commands:
   add order, list orders, remove orders, clear orders
@@ -269,7 +269,7 @@ Orders-Related Options:
 ____________________________________________________________
 ```
 
-#### Add an order: `orders add`
+#### 2.3.2. Add an order: `orders add`
 
 * Add an order to the system.
 
@@ -325,7 +325,7 @@ Got it! The order for customer [weisheng] is added.
 ____________________________________________________________
 ```
 
-#### Show the order list: `orders list`
+#### 2.3.3. Show the order list: `orders list`
 
 * Display all recorded orders in the system.
 
@@ -349,7 +349,7 @@ Coco []
 ____________________________________________________________
 ```
 
-#### Remove an order: `orders delete`
+#### 2.3.4. Remove an order: `orders delete`
 
 * Delete an order from the order list
 
@@ -365,7 +365,7 @@ Got it! The order for customer [Coco] is deleted.
 ____________________________________________________________
 ```
 
-#### Empty the order list: `orders clear`
+#### 2.3.5. Empty the order list: `orders clear`
 
 * Clear all recorded orders in the system.
 
@@ -379,7 +379,7 @@ Done! I just cleared all orders for you.
 ____________________________________________________________
 ```
 
-#### Find orders: `orders find`
+#### 2.3.6. Find orders: `orders find`
 
 * Display all orders relating to the order name
 
@@ -401,7 +401,7 @@ Coco []
 ____________________________________________________________
 ```
 
-#### Get the total price of an order: `orders price`
+#### 2.3.7. Get the total price of an order: `orders price`
 
 * Check total price of a specific order.
 
@@ -417,7 +417,7 @@ The total price for customer [coco]'s order is S$27.00.
 ____________________________________________________________
 ```
 
-#### Update the status of an order: `orders done`
+#### 2.3.8. Update the status of an order: `orders done`
 
 * Change the shipping status of an order once it is shipped.
 
@@ -437,9 +437,9 @@ Receipt generated for customer: coco
 ____________________________________________________________
 ```
 
-### Storage
+### 2.4. Storage
 
-#### Load, create and save data
+#### 2.4.1. Load, create and save data
 
 While initializing easyLog, it automatically looks for an available save file to load so that you can continue your
 progress from the previous exit. If there are no save file available to load, easyLog will automatically create a save
@@ -453,13 +453,13 @@ allows you to work on multiple devices if you choose to do so.
 It is not recommended that you manipulate the data in `easyLog.txt`. However, if you are an expert user and confident,
 do feel free to manipulate the data in `easyLog.txt` manually if it enhances your workflow.
 
-#### Generate receipts
+#### 2.4.2. Generate receipts
 
 When [`orders done`](#update-the-shipping-status-of-an-order-orders-ship) feature is executed, a receipt will be automatically generated
 that contains the order details that was deleted. The generated receipts can be found in the same directory as the
 location of the easyLog app inside a `Receipts` folder. The receipts generated will be in a `.txt` format.
 
-### Exit the program: `exit`
+### 2.5. Exit the program: `exit`
 
 * Exit the app.
 
@@ -475,7 +475,7 @@ Bye. Thanks for using easyLog!
 ____________________________________________________________
 ```
 
-## FAQ
+## 3. FAQ
 
 **Q1**: I do not seem to be able to add an item. Why is this so?
 
@@ -527,7 +527,7 @@ system?
 >
 > When it happens, the user is welcomed to use `item update` command instead.
 
-## Command Summary
+## 4. Command Summary
 
 Command | Format | Example |
 ------- | ------- | ------- | 

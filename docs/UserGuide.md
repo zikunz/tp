@@ -1,22 +1,23 @@
 # easyLog User Guide
 
-Welcome to the User Guide of **easyLog**! <br>
+Welcome to the user guide of **easyLog**! <br>
 
 Are you a home-based business owner tired of using a pen and paper to keep track of your inventory? Do you have limited
-budget investing in a new system to manage your business? Fret not, easyLog, our free and desktop logistic management
-application will get you covered! It is the application to boost your productivity when it comes to managing your items
-and orders. Primarily, the current version of easyLog allows you to add new items and orders, view existing items and
-orders, remove specific items and orders and clear all existing items and orders in the inventory at ease. You can also
-generate a receipt for your customer or simply, for your own record.
+budget investing in a new system to manage your business? Fret not, easyLog, our cross-platform<sup>1</sup> logistic
+management application will get you covered! It is the application to boost your productivity when it comes to managing
+your items and orders and best of all, it is free! Primarily, the current version of easyLog allows you to add new items
+and orders , view existing items and orders, remove specific items and orders and clear all existing items and orders in
+the inventory at ease. You can also generate a receipt for your customer or simply for your own record.
 
 easyLog is highly optimized for home-based business owners like you via a carefully designed Command Line Interface
-(CLI); this means that you need to operate the application by typing commands into a command terminal. If you type fast,
-easyLog can get logistic management tasks done more easily and significantly faster than traditional Graphical User
-Interface (GUI) applications while still having the benefits of GUI; GUI applications allow users to interact with the
-application through visuals such as buttons.
+(CLI); this means that you will run the application by typing commands into a command terminal<sup>2</sup>. If you type
+fast, easyLog can get logistic management tasks done more easily and significantly more efficiently than traditional
+Graphical User Interface (GUI) applications while still having the benefits of GUI; GUI applications allow users to
+interact with the application through visuals such as buttons, at the expense of lower precision and slower speed as
+compared to CLI.
 
-If this sounds great to you, we encourage you to visit [1. Quick start](#1-quick-start) to start learning how to manage
-your business using easyLog.
+If this sounds great to you, we encourage you to visit [1. Quick start](#1-quick-start) to learn how to manage your
+business using easyLog.
 
 - [1. Quick start](#1-quick-start)
 - [2. Features](#2-features)
@@ -587,3 +588,7 @@ orders find | `orders find` | `orders find <order_name>`|
 orders price | `orders price <order_index>` | `orders price 2` |
 orders done  | `orders done <order_index>` | `orders done 2` |
 exit | `exit` | `exit` |
+
+[1.](#1-super-script) Currently supports Windows, macOS and Linus machines. <br>
+[2.](#2-super-script) Depending on which operating system you are using, the command terminal application differs.
+Please refer to [1. Quick start](#1-quick-start) for more information.

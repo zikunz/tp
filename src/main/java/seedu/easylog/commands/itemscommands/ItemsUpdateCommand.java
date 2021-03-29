@@ -12,7 +12,8 @@ import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NullItemStockException;
 import seedu.easylog.exceptions.EmptyItemStockException;
 import seedu.easylog.exceptions.InvalidItemStockException;
-
+import seedu.easylog.exceptions.NonNumericItemPriceException;
+import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
 
 import seedu.easylog.model.ItemManager;
 
@@ -27,7 +28,7 @@ public class ItemsUpdateCommand extends ItemsCommand {
     public void execute(String extraDescription, ItemManager itemManager) throws WrongUpdateCommandException,
             WrongItemFieldException, EmptyItemIndexException, InvalidItemIndexException, EmptyItemPriceException,
             InvalidItemPriceException, NullItemPriceException, NullItemStockException, EmptyItemStockException,
-            InvalidItemStockException {
+            InvalidItemStockException, NonIntegerNumericItemStockException, NonNumericItemPriceException {
         if (!extraDescription.isEmpty()) {
             throw new WrongUpdateCommandException();
         }

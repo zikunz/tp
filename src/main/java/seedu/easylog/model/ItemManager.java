@@ -18,6 +18,10 @@ public class ItemManager {
 
     private static final ArrayList<String> ITEM_DESCRIPTION_RECORD = new ArrayList<>();
 
+    /**
+     * Adds item to the item list.
+     * @param item item to be added to the item list
+     */
     public void addItem(Item item) {
         ITEM_LIST.add(item);
         ITEM_DESCRIPTION_RECORD.add(item.getItemName());
@@ -203,6 +207,11 @@ public class ItemManager {
         return item.getItemStock();
     }
 
+    /**
+     * Checks if the item exist in the item list.
+     * @param itemName the item to be checked
+     * @return the existence of item in the item list
+     */
     public static boolean checkRepeatItem(String itemName) {
         for (Item item : ITEM_LIST) {
             if (item.itemName.equals(itemName)) {
@@ -212,6 +221,10 @@ public class ItemManager {
         return false;
     }
 
+    /**
+     * Gets the item descriptions from the item list.
+     * @return the descriptions of items form the item list
+     */
     public ArrayList<String> getItemDescriptionRecord() {
         return ITEM_DESCRIPTION_RECORD;
     }

@@ -110,6 +110,14 @@ public class OrdersParser extends Parser {
         }
     }
 
+    /**
+     * Processes the items added to the order.
+     * @param customerName the name of order
+     * @param addItemsToOrderInput the item added to the order
+     * @param itemManager item manager
+     * @return the items added to order
+     * @throws OrderEmptyException Exception when there is no item in order
+     */
     public Order processItemsAddedToOrder(String customerName, String addItemsToOrderInput, ItemManager itemManager)
             throws OrderEmptyException {
         ArrayList<Item> itemsAddedToOrder = new ArrayList<>();

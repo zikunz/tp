@@ -5,6 +5,9 @@ import seedu.easylog.model.OrderManager;
 
 import java.io.IOException;
 
+/**
+ * Command to exit the program.
+ */
 public class ExitCommand extends Command {
 
     public void execute(ItemManager itemManager, OrderManager orderManager) throws IOException {

@@ -9,6 +9,9 @@ import seedu.easylog.exceptions.InvalidItemStockException;
 import seedu.easylog.exceptions.InvalidTotalItemStockException;
 import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NullItemStockException;
+import seedu.easylog.exceptions.NonNumericItemPriceException;
+import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
+
 import seedu.easylog.model.Item;
 import seedu.easylog.model.ItemManager;
 
@@ -16,12 +19,14 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class ItemsAddCommand extends ItemsCommand {
+
     /**
      * Adds items to the system.
      */
     public void execute(String itemDescription, ItemManager itemManager, ArrayList<String> itemDescriptionRecord)
             throws EmptyNameException, EmptyItemPriceException, InvalidItemPriceException, NullItemPriceException,
-            NullItemStockException, EmptyItemStockException, InvalidItemStockException, InvalidTotalItemStockException {
+            NullItemStockException, EmptyItemStockException, InvalidItemStockException, InvalidTotalItemStockException,
+            NonNumericItemPriceException, NonIntegerNumericItemStockException {
         if (itemDescription.equals("")) {
             throw new EmptyNameException();
         }
@@ -50,14 +55,15 @@ public class ItemsAddCommand extends ItemsCommand {
      * the user will be prompted to enter the additional stock to be increment
      * the total number of stock.
      *
-     * @param itemAlreadyExists     a boolean flag which
+     * @param itemAlreadyExists     a boolean flag which indicate if the item exist in the item list
      * @param itemDescriptionRecord the arrayList of all item descriptions in the system
      * @param itemDescription       the description of an item
      * @param itemManager           item manager
      */
     private void handleAnItemWhichAlreadyExists(boolean itemAlreadyExists, ArrayList<String> itemDescriptionRecord,
                                                 String itemDescription, ItemManager itemManager) throws
-            NullItemStockException, EmptyItemStockException, InvalidItemStockException, InvalidTotalItemStockException {
+            NullItemStockException, EmptyItemStockException, InvalidItemStockException, InvalidTotalItemStockException,
+            NonIntegerNumericItemStockException {
         ui.showItemIsAlreadyExisting();
 
         itemAlreadyExists = true;

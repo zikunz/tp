@@ -1,25 +1,33 @@
 # easyLog User Guide
 
-easyLog is a Command Line Interface (CLI) application for warehouse employees to manage items and orders in the 
-warehouse. easyLog allows users to add new items and orders, view existing items and orders, remove specific items and 
-orders and clear all existing items and orders in the warehouse at ease. If the user types fast, easyLog can get 
-logistic management tasks done faster than traditional Graphical User Interface (GUI) applications.
+easyLog is a **desktop logistic management application optimized for workers of home-based businesses to manage items
+and orders via a carefully designed Command Line Interface** (CLI). Primarily, easyLog allows users to add new items and
+orders, view existing items and orders, remove specific items and orders and clear all existing items and orders in the
+inventory at ease. If a user types fast, easyLog can get logistic management tasks done more easily and faster than
+traditional Graphical User Interface (GUI) applications while still having the benefits of GUI.
 
 - [Quick start](#quick-start)
 - [Features](#features)
   * [Viewing help: `help`](#viewing-help-help)
   * [Items](#items)
     - [Show items-related commands: `items`](#show-items-related-commands-items)
-    - [Adding an item: `items add`](#adding-an-item-items-add)
-    * [Showing the item list : `items list`](#showing-the-item-list-items-list)
+    - [Add an item: `items add`](#add-an-item-items-add)
+    * [Show the item list : `items list`](#show-the-item-list-items-list)
     * [Delete an item: `delete`](#delete-an-item-items-delete)
-    * [Emptying the item list: `items clear`](#emptying-the-item-list-items-clear)
+    * [Empty the item list: `items clear`](#empty-the-item-list-items-clear)
+    - [Find items: `items find`](#find-items-items-find)
   * [Orders](#orders)
     - [Show orders-related commands: `orders`](#show-orders-related-commands--orders)
-    - [Adding an order: `orders add`](#adding-an-order-orders-add)
-    - [Showing the order list: `orders list`](#showing-the-order-list-orders-list)
-    - [Removing an order: `orders delete`](#removing-an-order-orders-delete)
-    - [Emptying the order list: `orders clear`](#emptying-the-order-list-orders-clear)
+    - [Add an order: `orders add`](#add-an-order-orders-add)
+    - [Show the order list: `orders list`](#show-the-order-list-orders-list)
+    - [Remove an order: `orders delete`](#remove-an-order-orders-delete)
+    - [Empty the order list: `orders clear`](#empty-the-order-list-orders-clear)
+    - [Find orders: `orders find`](#find-orders-orders-find)
+    - [Get the total price of an order:: `orders price`](#get-the-total-price-of-an-order-orders-price)
+    - [Update the status of an order: `orders done`](#update-the-status-of-an-order-orders-done)
+  * [Storage](#storage)  
+    - [Load, create and save data](#load-create-and-save-data)
+    - [Generate receipts](#generate-receipts)
   * [Exit the program: `exit`](#exit-the-program-exit)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
@@ -34,13 +42,38 @@ logistic management tasks done faster than traditional Graphical User Interface 
 6. The app should load as shown below
 
 ```
+                       _                 
+                      | |                
+   ___  __ _ ___ _   _| |     ___   __ _ 
+  / _ \/ _` / __| | | | |    / _ \ / _` |
+ |  __/ (_| \__ \ |_| | |___| (_) | (_| |
+  \___|\__,_|___/\__, |______\___/ \__, |
+                  __/ |             __/ |
+                 |___/             |___/ 
+____________________________________________________________
 Hello! I'm easyLog!
 What can I do for you? Enter help to view commands.
+____________________________________________________________
+
+Looking for save data.
+Loading save data.
+Save data loaded.
+____________________________________________________________
 ```
+
+
 7. Type a command and press enter to continue using the app.
 8. Refer to the [Features](#features) below for details of each command.
 
 ## Features
+
+###### Notes about the command format:
+
+* Word(s) in UPPER_CASE is / are parameter(s) to be entered by the user. e.g. In `add n/CUSTOMER_NAME`, `CUSTOMER_NAME`
+  which can be used as `add n/Alice Tan`
+
+* Any extraneous parameters for commands not taking in parameters (such as `help` and `exit`) will not be ignored. The
+  system will notify the user that it cannot be understood by easyLog.
 
 ### Viewing help: `help`
 
@@ -51,17 +84,22 @@ What can I do for you? Enter help to view commands.
 * Expected Output:
 
 ```
+____________________________________________________________
 General Options:
   1. items                          Show items-related commands
   2. items add <item_name>          Add an item
   3. items list                     List all items
   4. items delete <item_index>      Delete an item
   5. items clear                    Empty all items
-  6. orders                         Show orders-related commands
-  7. orders add <order_name>        Add an order
-  8. orders list                    List all orders
-  9. orders delete <order_index>    delete an order
-  10. orders clear                  Empty all orders
+  6. items find <item_name>         Finding an item
+  7. items update                   pdate the detail of an item
+  8. orders                         Show orders-related commands
+  9. orders add <order_name>        Add an order
+  10. orders list                   List all orders
+  11. orders delete <order_index>   Delete an order
+  12. orders clear                  Empty all orders
+  13. orders find <order_name>      Finding an order
+____________________________________________________________
 ```
 
 ### Items
@@ -75,28 +113,36 @@ General Options:
 * Expected Output:
 
 ```
+____________________________________________________________
 Items-Related Options:
   1. items add <item_name>          Add an item
   2. items list                     List all items
   3. items delete <item_index>      Delete an item
   4. items clear                    Empty all items
+  5. items find <item_name>         Finding an item
+  6. items update                   Update the detail of an item
+____________________________________________________________
 ```
 
-#### Adding an item: `items add`
+#### Add an item: `items add`
 
 * Add an item to the system.
 
-* Format: `items add <item_name>`
+* Format: `items add <item_name>` followed by `<item_price>` and `<item_stock>`
 
-* Example: `items add PS5`
+* Example: `items add PS5` followed by `100` and `10`
+  (Please note that if an item to be added already exists in the system, additional stock will be requested and the item
+  information will be updated accordingly.)
 
 * Expected Output:
 
 ```
+____________________________________________________________
 Got it! The item [PS5] is added.
+____________________________________________________________
 ```
 
-#### Showing the item list: `items list`
+#### Show the item list: `items list`
 
 * Display all recorded items in the system.
 
@@ -105,14 +151,19 @@ Got it! The item [PS5] is added.
 * Expected Output:
 
 ```
-Here are the list of items.
-1. PS5
-2. bag
+____________________________________________________________
+Here is the list of items in the warehouse.
+____________________________________________________________
+
+1. PS5, S$100.00, 10
+2. bag, S$20.00, 20
+____________________________________________________________
+
 ```
 
 #### Delete an item: `items delete`
 
-* Delete item number _ from item list.
+* Delete an item from the item list.
 
 * Format: `items delete <item_index>`
 
@@ -121,10 +172,12 @@ Here are the list of items.
 * Expected Output:
 
 ```
-Got it! The item [glove] is deleted.
+____________________________________________________________
+Got it! The item [bag] is deleted.
+____________________________________________________________
 ```
 
-#### Emptying the item list: `items clear`
+#### Empty the item list: `items clear`
 
 * Clear all recorded items in the system.
 
@@ -133,7 +186,63 @@ Got it! The item [glove] is deleted.
 * Expected Output:
 
 ```
+____________________________________________________________
 Done! I just cleared all items for you.
+____________________________________________________________
+```
+
+#### Update an item: `items update`
+
+* Update either the price of stock of an item in the system.
+
+* Format: `items update` followed by `p` or `s`
+
+* Expected Output:
+
+```
+____________________________________________________________
+What would you like to update, price or stock? (p/s)
+____________________________________________________________
+```
+
+if `p` is entered, the user needs to enter `<revised_item_price>`<br/>
+
+Expected Output:
+
+```
+____________________________________________________________
+Done! I just updated the item price for you.
+____________________________________________________________
+```
+
+if `s` is entered, the user needs to enter `<revised_item_stock>`
+
+Expected Output:
+
+```
+____________________________________________________________
+Done! I just updated the item stock for you.
+____________________________________________________________
+```
+
+#### Find items: `items find`
+
+* Display all items relating to the keyword
+
+* Format: `items find <item_name>`
+
+* Example: `items find PS5`
+
+* Expected Output:
+
+```
+____________________________________________________________
+Here is the list of relevant items found.
+____________________________________________________________
+
+1. PS5, S$23.00, 199
+____________________________________________________________
+
 ```
 
 ### Orders
@@ -141,21 +250,26 @@ Done! I just cleared all items for you.
 #### Show orders-related commands : `orders`
 
 * Show commands related to orders and brief description of the commands:
-add order, list orders, remove orders, clear orders
+  add order, list orders, remove orders, clear orders
 
 * Format: `orders`
 
 * Expected Output:
 
 ```
+____________________________________________________________
 Orders-Related Options:
   1. orders add <order_name>        Add an order
   2. orders list                    List all orders
-  3. orders delete <order_index>    Remove an order
+  3. orders delete <order_index>    Delete an order
   4. orders clear                   Empty all orders
+  5. orders price <order_index>     Check the total price of an order
+  6. orders done <order_index>      Update the status of an order
+  7. orders find <order_name>       Finding an order
+____________________________________________________________
 ```
 
-#### Adding an order: `orders add`
+#### Add an order: `orders add`
 
 * Add an order to the system.
 
@@ -164,25 +278,54 @@ Orders-Related Options:
 ```
 orders add <customer_name>
 Input the items to be added to this order.
-<index> <index> <index>
-```
-
-* Example:
-
-```
-orders add weisheng
-Input the items to be added to this order.
-1 2 
+<item_index> <item_quantity>
 ```
 
 * Expected Output:
 
 ```
+____________________________________________________________
+Here is the list of items in the warehouse.
+____________________________________________________________
+
+1. PS5, S$23.00, 199
+2. bag, S$20.00, 20
+3. milk, S$5.60, 20
+4. tea, S$4.40, 34
+____________________________________________________________
 Input the items to be added to this order.
-Got it! The order for customer [weisheng] is added.
+____________________________________________________________
 ```
 
-#### Showing the order list: `orders list`
+Input:
+
+```
+orders add weisheng
+1 2
+```
+
+Expected Output:
+
+```
+____________________________________________________________
+PS5 and stock of 2 added to the order.
+____________________________________________________________
+Type (stop) to stop adding items to order, else continue entering items in the same format.
+Note that you need at least 1 item in the order.
+____________________________________________________________
+```
+
+Input: `stop`
+
+Expected Output:
+
+```
+____________________________________________________________
+Got it! The order for customer [weisheng] is added.
+____________________________________________________________
+```
+
+#### Show the order list: `orders list`
 
 * Display all recorded orders in the system.
 
@@ -191,16 +334,22 @@ Got it! The order for customer [weisheng] is added.
 * Expected Output:
 
 ```
-Here are the list of orders.
-1. weisheng
-    1. PS5
-    2. bag
-2. Coco
-    1. PS5
+____________________________________________________________
+Here is the list of orders.
+____________________________________________________________
 
+weisheng []
+    1. PS5, S$23.00, 2
+    Total Price : S$46.00
+____________________________________________________________
+Coco []
+    1. milk, S$5.60, 3
+    2. tea, S$3.40, 2
+    Total Price : S$27.00
+____________________________________________________________
 ```
 
-#### Removing an order: `orders delete`
+#### Remove an order: `orders delete`
 
 * Delete an order from the order list
 
@@ -211,11 +360,12 @@ Here are the list of orders.
 * Expected Output:
 
 ```
+____________________________________________________________
 Got it! The order for customer [Coco] is deleted.
+____________________________________________________________
 ```
 
-
-#### Emptying the order list: `orders clear`
+#### Empty the order list: `orders clear`
 
 * Clear all recorded orders in the system.
 
@@ -224,8 +374,90 @@ Got it! The order for customer [Coco] is deleted.
 * Expected Output:
 
 ```
+____________________________________________________________
 Done! I just cleared all orders for you.
+____________________________________________________________
 ```
+
+#### Find orders: `orders find`
+
+* Display all orders relating to the order name
+
+* Format: `orders find <order_name>`
+
+* Example: `orders find Coco`
+
+* Expected Output:
+
+```
+____________________________________________________________
+Here is the list of relevant orders found.
+____________________________________________________________
+
+Coco []
+    1. milk, S$5.60, 3
+    2. tea, S$3.40, 2
+    Total Price : S$27.00
+____________________________________________________________
+```
+
+#### Get the total price of an order: `orders price`
+
+* Check total price of a specific order.
+
+* Format: `orders price <order_index>`
+
+* Example: `orders price 2`
+
+* Expected Output:
+
+```
+____________________________________________________________
+The total price for customer [coco]'s order is S$27.00.
+____________________________________________________________
+```
+
+#### Update the status of an order: `orders done`
+
+* Change the shipping status of an order once it is shipped.
+
+* Format: `orders done <order_index>`
+
+* Example: `orders done 2`
+  
+* Format: `orders done 2`
+
+* Expected Output:
+
+```
+____________________________________________________________
+Got it! The order for customer [coco] is completed.
+Generating receipt for customer: coco
+Receipt generated for customer: coco
+____________________________________________________________
+```
+
+### Storage
+
+#### Load, create and save data
+
+While initializing easyLog, it automatically looks for an available save file to load so that you can continue your
+progress from the previous exit. If there are no save file available to load, easyLog will automatically create a save
+file and save your data and information when exiting the app. The save file will be named as `easyLog.txt` and will be
+located in the same folder/directory as the easyLog app.
+
+The save file can be copied to another machine and placed in the same folder/directory that contains the easyLog app. Do
+take note that only one `easyLog.txt` should be in the directory or there would be an error. This transfer of save file
+allows you to work on multiple devices if you choose to do so.
+
+It is not recommended that you manipulate the data in `easyLog.txt`. However, if you are an expert user and confident,
+do feel free to manipulate the data in `easyLog.txt` manually if it enhances your workflow.
+
+#### Generate receipts
+
+When [`orders done`](#update-the-shipping-status-of-an-order-orders-ship) feature is executed, a receipt will be automatically generated
+that contains the order details that was deleted. The generated receipts can be found in the same directory as the
+location of the easyLog app inside a `Receipts` folder. The receipts generated will be in a `.txt` format.
 
 ### Exit the program: `exit`
 
@@ -236,15 +468,28 @@ Done! I just cleared all orders for you.
 * Expected Output:
 
 ```
+____________________________________________________________
+Save data saved.
+____________________________________________________________
 Bye. Thanks for using easyLog!
+____________________________________________________________
 ```
 
 ## FAQ
 
-**Q1**: Where is the saved file (record) stored or created after I exit the program?
+**Q1**: I do not seem to be able to add an item. Why is this so?
 
-> The saved file or record is not stored anywhere for easyLog v1.0. This feature will be added in the next iteration
-> (i.e., easyLog v2.0).
+> There could be many possibilities which can result in you not being able to add an item. We advise you to follow
+> the below steps when intending to add an item. <br/>
+>
+> Please note that you need to specify the description of the item. For instance, you can do this
+> by typing `orders add n/Competitive Programming 4: The Lower Bound of Programming Contests in the 2020s`. <br/>
+>
+> After that, input the **price per item** *(unit price)*. Please note that the unit price is either zero (free item) or
+> a positive number smaller or equal to 1000000000 (the system currently accepts a unit price not more than
+> SG$1,000,000,000). For example, you can enter `p/100` for the item price field. <br/>
+>
+> Lastly, please provide number of items to be added, also known as stock. (TO BE REVISED)
 
 **Q2**: I do not seem to be able to add an order. Why is this so?
 
@@ -252,7 +497,7 @@ Bye. Thanks for using easyLog!
 > the below steps when intending to add an order. <br/>
 >
 > Please note that you need to specify a customer's name as he or she is the one whom the order of interest will be
-> sent to. For instance, you can do this by typing `orders add Alice`. <br/>
+> sent to. For instance, you can do this by typing `orders add n/Alice`. <br/>
 >
 > After that, input the item number found in the item list (if unsure, simply type `items list` to check). Please
 > separate each item number by exactly one empty space (i.e., ` `). Do not attempt to enter an item number
@@ -271,6 +516,17 @@ system?
 >
 > You should not worry too much as easyLog is highly optimized for fast typists working in a warehouse like you.
 
+**Q4**: Why does easyLog only allow me to enter additional stock number when I add an item which already exists in the
+> system? Why cannot I update the unit price?
+
+> It is typically hard for users to remember all items in the system. Hence, we make it easier and more efficient when
+> easyLog detects the item to be added already exists in the item list. Since this only happens when the user stocks up
+> a particular item, we allow the user to increase the stock as long as the total number of item stock is within the
+> threshold (i.e., 1000000). However, it does not naturally happen when a user wants to update the unit price when he or
+> she adds an item which already exists in the system.
+>
+> When it happens, the user is welcomed to use `item update` command instead.
+
 ## Command Summary
 
 Command | Format | Example |
@@ -279,11 +535,16 @@ help | `help` | `help` |
 item | `items` | `items` |
 items add | `items add <item_name>` | `items add PS5` |
 items list | `items list`      | `items list` |
-items delete | `tems delete <item_index>` | `items delete 2` |
+items delete | `items delete <item_index>` | `items delete 2` |
 items clear | `items clear ` | `items clear` |
+items find | `items find` | `items find <item_name>`|
+items update | `items update` | `items update`|
 orders | `orders` | `orders` |
-orders add | `orders add <order_name> `<br />` Input the items to be added to this order. `<br />` <index> <index>` | `orders add weisheng`<br />` Input the items to be added to this order.`<br />` 1 2 ` |
+orders add | `orders add <order_name> `<br />` Input the items to be added to this order. `<br />` <item_index> <item_quantity>` | `orders add weisheng`<br />` Input the items to be added to this order.`<br />` 1 2 ` |
 orders list | `orders list` | `orders list` |
 orders delete | `orders delete <order_index>` | `orders delete 2` |
 orders clear | `orders clear` | `orders clear` |
+orders find | `orders find` | `orders find <order_name>`|
+orders price | `orders price <order_index>` | `orders price 2` |
+orders done  | `orders done <order_index>` | `orders done 2` |
 exit | `exit` | `exit` |

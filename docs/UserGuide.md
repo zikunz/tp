@@ -1,10 +1,22 @@
 # easyLog User Guide
 
-easyLog is a **desktop logistic management application optimized for home-based businesses to manage items
-and orders via a carefully designed Command Line Interface** (CLI). Primarily, easyLog allows users to add new items and
-orders, view existing items and orders, remove specific items and orders and clear all existing items and orders in the
-inventory at ease. If a user types fast, easyLog can get logistic management tasks done more easily and faster than
-traditional Graphical User Interface (GUI) applications while still having the benefits of GUI.
+Welcome to the User Guide of **easyLog**! <br>
+
+Are you a home-based business owner tired of using a pen and paper to keep track of your inventory? Do you have limited
+budget investing in a new system to manage your business? Fret not, easyLog, our free and desktop logistic management
+application will get you covered! It is the application to boost your productivity when it comes to managing your items
+and orders. Primarily, the current version of easyLog allows you to add new items and orders, view existing items and
+orders, remove specific items and orders and clear all existing items and orders in the inventory at ease. You can also
+generate a receipt for your customer or simply, for your own record.
+
+easyLog is highly optimized for home-based business owners like you via a carefully designed Command Line Interface
+(CLI); this means that you need to operate the application by typing commands into a command terminal. If you type fast,
+easyLog can get logistic management tasks done more easily and significantly faster than traditional Graphical User
+Interface (GUI) applications while still having the benefits of GUI; GUI applications allow users to interact with the
+application through visuals such as buttons.
+
+If this sounds great to you, we encourage you to visit [1. Quick start](#1-quick-start) to start learning how to manage
+your business using easyLog.
 
 - [1. Quick start](#1-quick-start)
 - [2. Features](#2-features)

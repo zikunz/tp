@@ -288,7 +288,26 @@ ____________________________________________________________
 
 #### 2.3.2. Add an order: `orders add`
 
-Add an order to the system.
+When receiving an order from your customer, `orders add` feature allows you to input the details of the order from your
+customer into the easyLog app and allows you to manage your orders. (Further features to manage orders will be explained
+in future sections.)
+
+Steps to add an order in easyLog:
+1. Input `orders add <customer_name>` command
+2. You will be prompted to key in the item number and quantity to be added to the order.
+3. Input in this format`<item_number> <space> <item_quantity>` for items to be added to the order.
+4. Repeat step 3 if there are more items to be added into the order.
+5. Input `stop` to stop adding items to the order.
+6. Order details will then be added into the system.
+
+Note:
+1. Order has to contain at least 1 item to be added into the system.
+2. Item quantity to be inputted into the order cannot be more than the current stock in the inventory.
+3. While adding items into the order, if the app encounters any format error in the input, it may cause order details to
+   be added wrongly. Do use [`orders delete`](#234-remove-an-order-orders-delete) feature to delete the order and
+   re-input the order details in the correct format.
+5. When in doubt, do follow the prompts shown on command terminal.
+   
 
 Format:
 
@@ -301,6 +320,7 @@ Input the items to be added to this order.
 Expected Output:
 
 ```
+orders add weisheng (user input)
 ____________________________________________________________
 Here is the list of items in the warehouse.
 ____________________________________________________________
@@ -312,32 +332,15 @@ ____________________________________________________________
 ____________________________________________________________
 Input the items to be added to this order.
 ____________________________________________________________
-```
-
-Input:
-
-```
-orders add weisheng
-1 2
-```
-
-Expected Output:
-
-```
+1 2 (user input)
 ____________________________________________________________
 PS5 and stock of 2 added to the order.
 ____________________________________________________________
 Type (stop) to stop adding items to order, else continue entering items in the same format.
 Note that you need at least 1 item in the order.
 ____________________________________________________________
-```
-
-Input: `stop`
-
-Expected Output:
-
-```
-____________________________________________________________
+stop (user input)
+_____________________________________________________
 Got it! The order for customer [weisheng] is added.
 ____________________________________________________________
 ```

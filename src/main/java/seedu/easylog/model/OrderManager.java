@@ -15,6 +15,10 @@ public class OrderManager {
 
     private static final ArrayList<Order> FOUND_LIST = new ArrayList<>();
 
+    /**
+     * Adds an order to the order list
+     * @param order name of order to be added
+     */
     public void addOrder(Order order) {
         ORDER_LIST.add(order);
     }
@@ -47,6 +51,10 @@ public class OrderManager {
         return ORDER_LIST.size();
     }
 
+    /**
+     * Gets the list of orders
+     * @return the list of orders
+     */
     public ArrayList<Order> getOrderList() {
         return ORDER_LIST;
     }
@@ -94,6 +102,11 @@ public class OrderManager {
         return getOrder(index).getStockCounts();
     }
 
+    /**
+     * Prints the order for each order name
+     * @param order the order to be printed
+     * @return the print out order of the selected order
+     */
     public String getIndividualOrderPrintFormat(Order order) {
         String customerName = order.getCustomerName();
         String customersItemList = "";
@@ -110,6 +123,10 @@ public class OrderManager {
                 + totalPrice + "\n" + Messages.MESSAGE_LINE;
     }
 
+    /**
+     * Gets the format of the printed order list
+     * @return the formatted order list
+     */
     public String getOrderListPrintFormat() {
         String rawOrderListOutput = "";
         for (Order order: ORDER_LIST) {

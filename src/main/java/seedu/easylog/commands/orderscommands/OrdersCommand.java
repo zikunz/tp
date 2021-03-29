@@ -4,6 +4,9 @@ import seedu.easylog.storage.Receipt;
 import seedu.easylog.ui.Ui;
 import seedu.easylog.parser.OrdersParser;
 
+/**
+ * OrderCommand constructor
+ */
 public abstract class OrdersCommand {
 
     public Ui ui = new Ui();

@@ -21,11 +21,23 @@ public class Parser {
     public static Receipt receipt = new Receipt();
     public static Ui ui = new Ui();
 
+    /**
+     * Splits the input to process the command, word and arguments
+     * @param rawUserInput the input from user
+     * @return the splitted command, word and arguments
+     */
     public static String[] splitCommandWordAndArgs(String rawUserInput) {
         String[] splitCommand = rawUserInput.split(" ", 2);
         return splitCommand.length == 2 ? splitCommand : new String[]{splitCommand[0], ""};
     }
 
+    /**
+     * Processes the user input
+     * @param rawUserInput the input from user
+     * @param itemManager item manager
+     * @param orderManager order manager
+     * @throws IOException Exception when there is invalid input
+     */
     public void processUserInput(String rawUserInput, ItemManager itemManager, OrderManager orderManager)
             throws IOException {
         String[] commandTypeAndParams = splitCommandWordAndArgs(rawUserInput);
@@ -49,6 +61,14 @@ public class Parser {
         }
     }
 
+    /**
+     * Processes the input to file
+     * @param commandType the type of command
+     * @param commandArgs the argument of command
+     * @param itemManager item manager
+     * @param orderManager order manager
+     * @throws InvalidFileInputException Exception when there is invalid file input
+     */
     public void processFileInput(String commandType, String commandArgs, ItemManager itemManager,
                                  OrderManager orderManager) throws InvalidFileInputException {
         switch (commandType) {

@@ -3,6 +3,7 @@ package seedu.easylog.commands.orderscommands;
 import seedu.easylog.model.OrderManager;
 
 public class OrdersListCommand extends OrdersCommand {
+
     /**
      * Prints the list of orders.
      */

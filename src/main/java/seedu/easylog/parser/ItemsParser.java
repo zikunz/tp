@@ -27,6 +27,9 @@ import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NullItemStockException;
 import seedu.easylog.exceptions.WrongItemFieldException;
 import seedu.easylog.exceptions.WrongUpdateCommandException;
+import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
+import seedu.easylog.exceptions.NonNumericItemPriceException;
+
 import seedu.easylog.model.ItemManager;
 
 import java.math.BigDecimal;
@@ -55,7 +58,7 @@ public class ItemsParser extends Parser {
                 ui.showEmptyItemPrice();
             } catch (NullItemPriceException e) {
                 ui.showNullItemPrice();
-            } catch (NumberFormatException e) {
+            } catch (NonIntegerNumericItemStockException | NonNumericItemPriceException e) {
                 ui.showNonNumericInputForAdd();
             } catch (InvalidItemStockException e) {
                 ui.showInvalidItemStock();
@@ -113,6 +116,8 @@ public class ItemsParser extends Parser {
                 ui.showEmptyItemStock();
             } catch (NullItemStockException e) {
                 ui.showNullItemStock();
+            } catch (NonIntegerNumericItemStockException | NonNumericItemPriceException e) {
+                ui.showNonNumericInputForAdd();
             }
             break;
         case (Constants.COMMAND_FIND):
@@ -149,7 +154,8 @@ public class ItemsParser extends Parser {
 
     public void processUpdateAttributeInput(String updateInput, int itemIndex, ItemManager itemManager) throws
             EmptyItemPriceException, InvalidItemPriceException, NullItemPriceException, NullItemStockException,
-            EmptyItemStockException, InvalidItemStockException, WrongItemFieldException {
+            EmptyItemStockException, InvalidItemStockException, WrongItemFieldException, NonIntegerNumericItemStockException,
+            NonNumericItemPriceException {
         if (updateInput.equals("p")) {
             ui.askForRevisedItemPrice();
             ItemsPromptPriceCommand itemsPromptPriceCommand = new ItemsPromptPriceCommand();

@@ -15,6 +15,12 @@ public class Order {
     protected ArrayList<Integer> itemsStockCount;
     protected boolean isDone;
 
+    /**
+     * Order constructor
+     * @param customerName input string of the name of customers
+     * @param itemsInOrder input string of the item to be added to order
+     * @param itemsStockCount input string of the number of items to be added to order
+     */
     public Order(String customerName, ArrayList<Item> itemsInOrder, ArrayList<Integer> itemsStockCount) {
         this.customerName = customerName;
         this.itemsInOrder = itemsInOrder;
@@ -24,30 +30,51 @@ public class Order {
         assert itemsInOrder != null;
     }
 
+    /**
+     * Gets the name of the customer
+     * @return the name of customer
+     */
     public String getCustomerName() {
         return customerName;
     }
 
+    /**
+     * Gets the items in the order
+     * @return the items added in the order
+     */
     public ArrayList<Item> getItemsInOrder() {
         return itemsInOrder;
     }
 
-    public Item getItemInOrder(int i) {
-        return itemsInOrder.get(i);
-    }
-
+    /**
+     * Gets the stock count of a item in the order
+     * @return the number of stock of a item in the order
+     */
     public ArrayList<Integer> getStockCounts() {
         return itemsStockCount;
     }
 
+    /**
+     * Gets the order added message
+     * @return order added message
+     */
     public String getAddOrderMessage() {
         return "Got it! The order for customer [" + customerName + "] is added.";
     }
 
+    /**
+     * Gets the order delete message
+     * @return order delete message
+     */
     public String getDeleteOrderMessage() {
         return "Got it! The order for customer [" + customerName + "] is deleted.";
     }
 
+    /**
+     * Gets the total price of items in order
+     * @param itemsInOrder the list of items in order
+     * @return the total price of all items in order
+     */
     public BigDecimal getOrderTotalPrice(ArrayList<Item> itemsInOrder) {
         BigDecimal totalPrice = new BigDecimal(0);
         int stockIndex = 0;
@@ -57,19 +84,35 @@ public class Order {
         return totalPrice;
     }
 
+    /**
+     * Gets the total price in order message
+     * @param order the order to be selected for total price calculation
+     * @return the message for the total price of order
+     */
     public String getOrderTotalPriceMessage(Order order) {
         return "The total price for customer [" + customerName + "]'s order is S$"
                 + order.getOrderTotalPrice(itemsInOrder) + ".";
     }
 
+    /**
+     * Gets the status of the order
+     * @return boolean flag of the status of order
+     */
     public boolean getStatus() {
         return isDone;
     }
 
+    /**
+     * To mark an order as done
+     */
     public void markAsDone() {
         isDone = true;
     }
 
+    /**
+     * Gets the status of order message
+     * @return the status of order message
+     */
     public String getOrderStatusMessage() {
         return "Got it! The order for customer [" + customerName + "] is completed.";
     }

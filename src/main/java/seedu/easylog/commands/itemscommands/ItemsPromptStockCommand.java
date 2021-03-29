@@ -1,9 +1,11 @@
 package seedu.easylog.commands.itemscommands;
 
 import seedu.easylog.common.Constants;
+import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
 import seedu.easylog.exceptions.NullItemStockException;
 import seedu.easylog.exceptions.EmptyItemStockException;
 import seedu.easylog.exceptions.InvalidItemStockException;
+import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
 
 public class ItemsPromptStockCommand extends ItemsCommand {
     /**
@@ -12,7 +14,7 @@ public class ItemsPromptStockCommand extends ItemsCommand {
      * @return item stock
      */
     public int execute(boolean itemAlreadyExists) throws NullItemStockException, EmptyItemStockException,
-            InvalidItemStockException {
+            InvalidItemStockException, NonIntegerNumericItemStockException {
         if (itemAlreadyExists) {
             ui.promptAdditionalItemStock();
         } else {
@@ -20,6 +22,12 @@ public class ItemsPromptStockCommand extends ItemsCommand {
         }
 
         String stockInString = Constants.SCANNER.nextLine();
+
+        try {
+            Integer.parseInt(stockInString);
+        } catch (NumberFormatException e) {
+            throw new NonIntegerNumericItemStockException();
+        }
         if (stockInString == null) {
             throw new NullItemStockException();
         }

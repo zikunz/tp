@@ -11,6 +11,12 @@ public class Item {
     protected BigDecimal itemPrice;
     protected int itemStock;
 
+    /**
+     * Item constructor
+     * @param itemName input string of the name of item
+     * @param price input string of the price of item
+     * @param stock input string of the stock number of item
+     */
     public Item(String itemName, BigDecimal price, int stock) {
         this.itemName = itemName;
         this.itemPrice = price;
@@ -18,6 +24,10 @@ public class Item {
         assert itemName != null;
     }
 
+    /**
+     * Gets the name of the item
+     * @return the name of the item
+     */
     public String getItemName() {
         return itemName;
     }

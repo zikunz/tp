@@ -72,11 +72,11 @@ continuously take in input from the user until the user types in a exit command.
 
 ### 2.3 Storage Component
 
-![image](https://user-images.githubusercontent.com/57165946/112269495-66ffb200-8cb3-11eb-9f0b-4d33db48d492.png)
+![Storage Diagram](https://user-images.githubusercontent.com/57165946/112991416-ab022380-9199-11eb-9ead-cdfcd19cf8e5.png)
 
 The storage component deals with
 - loading, saving and creating save data.
-- generation of receipts when order is done. (NOT YET IMPLEMENTED)
+- generation of receipts when order is done.
 
 ### 2.4 Ui Component
 

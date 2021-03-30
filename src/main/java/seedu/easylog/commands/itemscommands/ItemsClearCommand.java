@@ -1,14 +1,20 @@
 package seedu.easylog.commands.itemscommands;
 
 import seedu.easylog.exceptions.ItemListAlreadyClearedException;
+import seedu.easylog.model.ItemManager;
 
 public class ItemsClearCommand extends ItemsCommand {
-
-    public void execute() throws ItemListAlreadyClearedException {
+    /**
+     * Clears all items in the system.
+     */
+    public void execute(ItemManager itemManager) throws ItemListAlreadyClearedException {
         if (itemManager.getSize() == 0) {
             throw new ItemListAlreadyClearedException();
         }
+        assert ui != null : "ui should not be null";
         ui.showClearedItemList();
+
+        assert itemManager != null : "itemManager should not be null";
         itemManager.clearItemList();
     }
 }

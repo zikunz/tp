@@ -53,7 +53,7 @@ public class OrdersAddCommand extends OrdersCommand {
         itemsListCommand.execute(itemManager);
         ui.showAddItemsToOrder();
         String addItemsToOrderInput = Constants.SCANNER.nextLine();
-        Order order = ordersParser.processItemsAddedToExitingOrder(customerName, addItemsToOrderInput,
+        Order order = ordersParser.processItemsAddedToExistingOrder(customerName, addItemsToOrderInput,
                 itemManager, orderManager);
         orderManager.addOrder(order);
         ui.showOrderAdded(order);

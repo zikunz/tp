@@ -3,6 +3,7 @@ package seedu.easylog.commands.orderscommands;
 import seedu.easylog.model.OrderManager;
 
 public class OrdersListCommand extends OrdersCommand {
+
     /**
      * Prints the list of orders.
      */
@@ -10,15 +11,6 @@ public class OrdersListCommand extends OrdersCommand {
 
         String rawOrderListOutput = orderManager.getOrderListPrintFormat();
         ui.showOrderList(rawOrderListOutput);
-        
-        /*
-        boolean isCorrectOutput = false;
-        if (rawOrderListOutput == "" || rawOrderListOutput.startsWith("1. ")) {
-            isCorrectOutput = true;
-        }
 
-        assert isCorrectOutput == true : "rawOrderListOutput is either empty "
-                + "or starts with \"1. First Customer's Name\"";
-        */        
     }
 }

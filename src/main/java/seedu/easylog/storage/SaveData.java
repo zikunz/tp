@@ -65,6 +65,7 @@ public class SaveData extends Storage {
         for (Order order: orderManager.getOrderList()) {
             fw.write("orders " + order.saveToFileFormat(itemManager) + "\n");
         }
+        fw.write("ReceiptCounter " + Receipt.receiptCounter);
         fw.close();
         ui.showSaveDataSaved();
     }

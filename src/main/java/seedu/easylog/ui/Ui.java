@@ -31,11 +31,17 @@ public class Ui {
     }
 
     public void showAddItem(Item item) {
+        System.out.println(Messages.MESSAGE_LINE);
         System.out.println(item.getAddItemMessage());
+        System.out.println(Messages.MESSAGE_LINE);
     }
 
     public void showItemEmptyName() {
         System.out.println(Messages.MESSAGE_EMPTY_ITEM_NAME);
+    }
+
+    public void showRepeatedItem() {
+        System.out.println(Messages.MESSAGE_REPEAT_ITEM);
     }
 
     public void showOrderEmptyCustomerName() {
@@ -52,6 +58,7 @@ public class Ui {
 
     public void showDeletedItem(Item item) {
         System.out.println(item.getDeleteItemMessage());
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     public void showItemEmptyNumber() {
@@ -77,6 +84,7 @@ public class Ui {
         } else {
             System.out.println(Messages.MESSAGE_LIST_ITEMS);
             System.out.print(rawItemListOutput);
+            System.out.print(Messages.MESSAGE_LINE);
         }
     }
 
@@ -116,7 +124,9 @@ public class Ui {
     }
 
     public void showOrderAdded(Order order) {
+        System.out.print(Messages.MESSAGE_LINE);
         System.out.println(order.getAddOrderMessage());
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     /**
@@ -125,7 +135,9 @@ public class Ui {
      * @param order an object to store orders information
      */
     public void showOrderDeleted(Order order) {
+        System.out.print(Messages.MESSAGE_LINE);
         System.out.println(order.getDeleteOrderMessage());
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     /**
@@ -184,8 +196,10 @@ public class Ui {
 
     public void showItemNotFoundWhenAddingToOrder(int index) {
         int itemNumber = index + Constants.ARRAY_OFFSET;
+        System.out.print(Messages.MESSAGE_LINE);
         System.out.println("Item number " + itemNumber + " does not exist. "
                 + "Please try another valid item number until at least one item is added to the order.");
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     /**
@@ -246,6 +260,15 @@ public class Ui {
      */
     public void showInvalidItemStock() {
         System.out.println(Messages.MESSAGE_SHOW_INVALID_ITEM_STOCK);
+    }
+
+    /**
+     * Prints a message to notify the user that the total item stock is more than 1000000000.
+     * This means the user should input another valid number such that
+     * total item stock is a positive integer smaller than or equal to 100000000.
+     */
+    public void showInvalidTotalItemStock() {
+        System.out.println(Messages.MESSAGE_SHOW_INVALID_TOTAL_ITEM_STOCK);
     }
 
     /**
@@ -333,14 +356,17 @@ public class Ui {
      * Prints a message to inform the users about the total price of their order.
      */
     public void showOrderTotalPrice(Order order) {
+        System.out.print(Messages.MESSAGE_LINE);
         System.out.println(order.getOrderTotalPriceMessage(order));
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     /**
      * Prints a message to inform the users about the shipping status of their order.
      */
-    public void showOrderShippingStatus(Order order) {
-        System.out.println(order.getOrderShippingStatusMessage());
+    public void showOrderStatus(Order order) {
+        System.out.print(Messages.MESSAGE_LINE);
+        System.out.println(order.getOrderStatusMessage());
     }
 
     /**
@@ -368,11 +394,16 @@ public class Ui {
         System.out.println(Messages.MESSAGE_NOT_ENOUGH_STOCK);
     }
 
+    public void showRepeatedOrder() {
+        System.out.println(Messages.MESSAGE_REPEAT_ORDER);
+    }
+
     public void showContinueAddingItemsToOrder() {
         System.out.println(Messages.MESSAGE_CONTINUE_ADDING_ITEM_TO_ORDER);
     }
 
     public void showItemAndStockAddedToOrder(String itemName, int stockAdded) {
+        System.out.print(Messages.MESSAGE_LINE);
         System.out.println(itemName + " and stock of " + stockAdded + " added to the order.");
     }
 
@@ -394,6 +425,7 @@ public class Ui {
         } else {
             System.out.println(Messages.MESSAGE_FOUNDLIST_ITEMS);
             System.out.print(rawItemListOutput);
+            System.out.print(Messages.MESSAGE_LINE);
         }
     }
 
@@ -403,6 +435,7 @@ public class Ui {
         } else {
             System.out.println(Messages.MESSAGE_FOUNDLIST_ORDERS);
             System.out.print(rawOrderListOutput);
+            System.out.print(Messages.MESSAGE_LINE);
         }
     }
 
@@ -436,6 +469,7 @@ public class Ui {
 
     /**
      * Shows which line in the file causes and error when trying to process it.
+     *
      * @param fileLine Line of the file with the format error.
      */
     public void showInvalidFileInputLine(int fileLine) {
@@ -444,5 +478,35 @@ public class Ui {
 
     public void showErrorWhileSaving() {
         System.out.println(Messages.MESSAGE_ERROR_WHILE_SAVING);
+    }
+
+    public void showGeneratingReceipt(String customerName) {
+        System.out.println("Generating receipt for customer: " + customerName);
+    }
+
+    public void showReceiptGenerated(String customerName) {
+        System.out.println("Receipt generated for customer: " + customerName);
+        System.out.println(Messages.MESSAGE_LINE);
+
+    }
+
+    public void showErrorGeneratingReceipt(String customerName) {
+        System.out.println("Error while generating receipt for customer: " + customerName);
+    }
+
+    /**
+     * Prints a message to show that an item already exists.
+     * This means the user should proceed to enter a valid number to increment the stock,
+     * subject to total item stock smaller or equal to 1000000000.
+     */
+    public void showItemIsAlreadyExisting() {
+        System.out.println(Messages.MESSAGE_ITEM_IS_ALREADY_EXISTING);
+    }
+
+    /**
+     * Prints a message to ask the user about the additional stock of the item entered earlier.
+     */
+    public void promptAdditionalItemStock() {
+        System.out.println(Messages.MESSAGE_PROMPT_ADDITIONAL_ITEM_STOCK);
     }
 }

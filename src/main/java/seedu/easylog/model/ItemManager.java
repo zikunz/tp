@@ -12,12 +12,23 @@ import java.util.ArrayList;
  */
 public class ItemManager {
 
-    private static final ArrayList<Item> ITEM_LIST = new ArrayList<>();
-    
-    private static final ArrayList<Item> FOUND_LIST = new ArrayList<>();
+    protected ArrayList<Item> itemList;
 
+    protected ArrayList<Item> foundList = new ArrayList<>();
+
+    protected ArrayList<String> itemDescriptionRecord = new ArrayList<>();
+
+    public ItemManager() {
+        this.itemList = new ArrayList<>();
+    }
+
+    /**
+     * Adds item to the item list.
+     * @param item item to be added to the item list
+     */
     public void addItem(Item item) {
-        ITEM_LIST.add(item);
+        itemList.add(item);
+        itemDescriptionRecord.add(item.getItemName());
     }
 
     /**
@@ -26,7 +37,7 @@ public class ItemManager {
      * @return The list of items in the system
      */
     public ArrayList<Item> getItemList() {
-        return ITEM_LIST;
+        return itemList;
     }
 
     /**
@@ -77,24 +88,26 @@ public class ItemManager {
      * Removes a specific item from the system.
      */
     public void deleteItem(int index) {
-        ITEM_LIST.remove(index);
+        itemList.remove(index);
+        itemDescriptionRecord.remove(index);
     }
 
     /**
      * Finds items by keyword.
-     * 
+     *
      * @param keyword keyword to be searched
      */
     public void findItem(String keyword) {
         for (int i = 0; i < getSize(); i++) {
             if (getItem(i).itemName.contains(keyword)) {
-                FOUND_LIST.add(getItem(i));
+                foundList.add(getItem(i));
             }
         }
     }
 
     /**
      * get index of the item name in the inventory.
+     *
      * @param itemName name of the item to get it's index.
      * @return index of the corresponding item name in the inventory.
      */
@@ -112,18 +125,19 @@ public class ItemManager {
     /**
      * Gets the found items.
      *
-     * @return list of found item(s) from ITEM_LIST
+     * @return list of found item(s) from itemList
      */
     public ArrayList<Item> getFoundList() {
-        return FOUND_LIST;
+        return foundList;
     }
 
     /**
      * Gets the number of relevant items after search.
-     * @return the size of FOUND_LIST
+     *
+     * @return the size of foundList
      */
     public int foundSize() {
-        return FOUND_LIST.size();
+        return foundList.size();
     }
 
     /**
@@ -132,7 +146,7 @@ public class ItemManager {
      * @return the description of the specific item
      */
     public Item getItem(int index) {
-        return ITEM_LIST.get(index);
+        return itemList.get(index);
     }
 
     /**
@@ -141,27 +155,28 @@ public class ItemManager {
      * @return the size of item list
      */
     public int getSize() {
-        return ITEM_LIST.size();
+        return itemList.size();
     }
 
     /**
      * Clears all items in the system.
      */
     public void clearItemList() {
-        ITEM_LIST.clear();
+        itemList.clear();
+        itemDescriptionRecord.clear();
     }
 
     /**
      * Clears all found items in Found List.
      */
     public void clearFoundList() {
-        FOUND_LIST.clear();
+        foundList.clear();
     }
 
     /**
-     * Gets the latest item added to the ITEM_LIST.
+     * Gets the latest item added to the itemList.
      *
-     * @return Latest item added to ITEM_LIST
+     * @return Latest item added to itemList
      */
     public Item getLatestItemAdded() {
         int index = getSize() - Constants.ARRAY_OFFSET;
@@ -184,6 +199,38 @@ public class ItemManager {
     public void setRevisedItemStock(int itemIndex, int revisedItemStock) {
         Item itemToBeUpdated = getItem(itemIndex);
         itemToBeUpdated.setItemStock(revisedItemStock);
+    }
+
+    /**
+     * Gets the item stock of a particular item.
+     *
+     * @param item item of interest
+     * @return the current stock of the specified item
+     */
+    public int getItemStock(Item item) {
+        return item.getItemStock();
+    }
+
+    /**
+     * Checks if the item exist in the item list.
+     * @param itemName the item to be checked
+     * @return the existence of item in the item list
+     */
+    public boolean checkRepeatItem(String itemName) {
+        for (Item item : itemList) {
+            if (item.itemName.equals(itemName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Gets the item descriptions from the item list.
+     * @return the descriptions of items form the item list
+     */
+    public ArrayList<String> getItemDescriptionRecord() {
+        return itemDescriptionRecord;
     }
 }
 

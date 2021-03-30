@@ -59,7 +59,8 @@ Save data not found.
 
 ### 2.1 Architecture
 
-![image](https://user-images.githubusercontent.com/57165946/112262176-2f3f3d00-8ca8-11eb-81a6-c6053c111188.png)
+![Architecture Diagram](https://user-images.githubusercontent.com/57165946/112990632-ddf7e780-9198-11eb-99ec-f29aafbfc04f.png)
+
 
 The Architecture Diagram shown above illustrates the high-level design of easyLog. We will now proceed to explain each
 component and their respective functionalities below.

@@ -55,22 +55,22 @@ public class OrderTest {
         assertEquals(itemList, order.getItemsInOrder());
     }
 
-    @Test
-    public void saveToFileFormatTest() {
-        ItemManager itemManager = new ItemManager();
-        Item itemOne = new Item("milk", new BigDecimal("5.6"), Integer.parseInt("20"));
-        Item itemTwo = new Item("tea", new BigDecimal("3.4"), Integer.parseInt("20"));
-        itemManager.addItem(itemOne);
-        itemManager.addItem(itemTwo);
-        ArrayList<Item> itemList = new ArrayList<>();
-        itemList.add(itemOne);
-        itemList.add(itemTwo);
-        ArrayList<Integer> itemStockList = new ArrayList<>();
-        itemStockList.add(Integer.parseInt("1"));
-        itemStockList.add(Integer.parseInt("2"));
-        Order order = new Order("Coco", itemList, itemStockList);
-
-        String expectedOutput = "Coco 1 2 itemQuantity 1 2 ";
-        assertEquals(expectedOutput, order.saveToFileFormat(itemManager));
-    }
+//    @Test
+//    public void saveToFileFormatTest() {
+//        ItemManager itemManager = new ItemManager();
+//        Item itemOne = new Item("milk", new BigDecimal("5.6"), Integer.parseInt("20"));
+//        Item itemTwo = new Item("tea", new BigDecimal("3.4"), Integer.parseInt("20"));
+//        itemManager.addItem(itemOne);
+//        itemManager.addItem(itemTwo);
+//        ArrayList<Item> itemList = new ArrayList<>();
+//        itemList.add(itemOne);
+//        itemList.add(itemTwo);
+//        ArrayList<Integer> itemStockList = new ArrayList<>();
+//        itemStockList.add(Integer.parseInt("1"));
+//        itemStockList.add(Integer.parseInt("2"));
+//        Order order = new Order("Coco", itemList, itemStockList);
+//
+//        String expectedOutput = "Coco 1 2 itemQuantity 1 2 ";
+//        assertEquals(expectedOutput, order.saveToFileFormat(itemManager));
+//    }
 }

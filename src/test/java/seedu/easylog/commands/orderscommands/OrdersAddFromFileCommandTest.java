@@ -23,10 +23,9 @@ public class OrdersAddFromFileCommandTest {
         testItemsInOrder.add(testItem);
         testQuantityOfItemsInOrder.add(10);
         Order testOrder = new Order("weisheng", testItemsInOrder, testQuantityOfItemsInOrder);
-        OrderManager orderManager = new OrderManager();
-        orderManager.addOrder(testOrder);
 
         String inputFromFile = "weisheng 1 itemQuantity 10";
+        OrderManager orderManager = new OrderManager();
         OrdersAddFromFileCommand ordersAddFromFileCommand = new OrdersAddFromFileCommand();
         ordersAddFromFileCommand.execute(inputFromFile, itemManager, orderManager);
         Order orderAdded = orderManager.getLatestOrderAdded();

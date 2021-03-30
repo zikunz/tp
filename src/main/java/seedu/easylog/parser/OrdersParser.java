@@ -163,7 +163,7 @@ public class OrdersParser extends Parser {
      * @return the items added to the order which already exists
      * @throws OrderEmptyException Exception when there is no item in order
      */
-    public Order processItemsAddedToExitingOrder(String customerName, String addItemsToOrderInput,
+    public Order processItemsAddedToExistingOrder(String customerName, String addItemsToOrderInput,
                                                  ItemManager itemManager, OrderManager orderManager)
             throws OrderEmptyException {
         int orderIndex;

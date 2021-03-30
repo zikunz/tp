@@ -16,7 +16,6 @@ public class OrdersAddFromFileCommandTest {
     @Test
     public void executeOrdersAddFromFileTest() {
         ItemManager itemManager = new ItemManager();
-        OrderManager orderManager = new OrderManager();
         Item testItem = new Item("PS5", new BigDecimal("599.00"), 10);
         itemManager.addItem(testItem);
         ArrayList<Item> testItemsInOrder = new ArrayList<>();
@@ -24,6 +23,7 @@ public class OrdersAddFromFileCommandTest {
         testItemsInOrder.add(testItem);
         testQuantityOfItemsInOrder.add(10);
         Order testOrder = new Order("weisheng", testItemsInOrder, testQuantityOfItemsInOrder);
+        OrderManager orderManager = new OrderManager();
         orderManager.addOrder(testOrder);
 
         String inputFromFile = "weisheng 1 itemQuantity 10";

@@ -17,6 +17,7 @@ public class OrderManager {
 
     /**
      * Adds an order to the order list.
+     *
      * @param order name of order to be added
      */
     public void addOrder(Order order) {
@@ -53,6 +54,7 @@ public class OrderManager {
 
     /**
      * Gets the list of orders.
+     *
      * @return the list of orders
      */
     public ArrayList<Order> getOrderList() {
@@ -82,6 +84,17 @@ public class OrderManager {
     }
 
     /**
+     * Gets the stocks of customer's items specified by the index
+     * of the order given.
+     *
+     * @param index index of the order given
+     * @return the stocks of customer's items specified by the index of the order given
+     */
+    public ArrayList<Integer> getItemsStockInOrder(int index) {
+        return getOrder(index).getStockCounts();
+    }
+
+    /**
      * Clears all orders in the system.
      */
     public void clearOrderList() {
@@ -98,12 +111,10 @@ public class OrderManager {
         return getOrder(index);
     }
 
-    public ArrayList<Integer> getStockCountInOrder(int index) {
-        return getOrder(index).getStockCounts();
-    }
 
     /**
      * Prints the order for each order name.
+     *
      * @param order the order to be printed
      * @return the print out order of the selected order
      */
@@ -111,7 +122,7 @@ public class OrderManager {
         String customerName = order.getCustomerName();
         String customersItemList = "";
         int itemAndStockIndex = 0;
-        for (Item item: order.getItemsInOrder()) {
+        for (Item item : order.getItemsInOrder()) {
             customersItemList += Messages.MESSAGE_INDENTATION + (itemAndStockIndex + 1) + ". "
                     + item.getItemName() + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
                     + item.getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
@@ -125,11 +136,12 @@ public class OrderManager {
 
     /**
      * Gets the format of the printed order list.
+     *
      * @return the formatted order list
      */
     public String getOrderListPrintFormat() {
         String rawOrderListOutput = "";
-        for (Order order: ORDER_LIST) {
+        for (Order order : ORDER_LIST) {
             String individualOrderOutput = getIndividualOrderPrintFormat(order);
             rawOrderListOutput += individualOrderOutput;
         }
@@ -150,13 +162,30 @@ public class OrderManager {
     }
 
     /**
+     * Finds the index of the order by customer's name.
+     *
+     * @param name name to be searched
+     * @return findIndex index of the found order
+     */
+    public int findOrderIndex(String name) {
+        int findIndex = -1;
+        for (int i = 0; i < getSize(); i++) {
+            if (getCustomerName(i).contains(name)) {
+                findIndex = i;
+                break;
+            }
+        }
+        return findIndex;
+    }
+
+    /**
      * Gets the list of orders in String format to be printed as output to the user.
      *
      * @return String format for the list of relevant orders to be printed
      */
     public String getFoundOrderListPrintFormat() {
         String rawFoundOrderListOutput = "";
-        for (Order order: FOUND_LIST) {
+        for (Order order : FOUND_LIST) {
             String individualOrderOutput = getIndividualOrderPrintFormat(order);
             rawFoundOrderListOutput += individualOrderOutput;
         }
@@ -165,6 +194,7 @@ public class OrderManager {
 
     /**
      * Checks if any relevant orders found.
+     *
      * @return the presence of valid order in FOUND_LIST
      */
     public boolean foundOrderEmpty() {
@@ -182,8 +212,14 @@ public class OrderManager {
         FOUND_LIST.clear();
     }
 
+    /**
+     * Checks whether the input customer name exists or not.
+     *
+     * @param orderName customer name to be added
+     * @return false if this is not a repetitive customer name
+     */
     public boolean checkRepeatOrder(String orderName) {
-        for (Order order: ORDER_LIST) {
+        for (Order order : ORDER_LIST) {
             if (orderName.equals(order.customerName)) {
                 return true;
             }

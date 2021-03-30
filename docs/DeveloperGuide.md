@@ -85,7 +85,7 @@ input.
 
 ### 2.5 Parser Component
 
-![image](https://user-images.githubusercontent.com/57165946/112273156-fdce6d80-8cb7-11eb-9693-f46855141e7d.png)
+![Parser Diagram](https://user-images.githubusercontent.com/57165946/112991918-42677680-919a-11eb-8868-79391cfc2c9e.png)
 
 The parser components deals with the input of the user. It makes sense of the users input and executes commands
 according to the input of the user

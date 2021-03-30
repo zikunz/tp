@@ -92,7 +92,7 @@ according to the input of the user
 
 ### 2.6 Command Component
 
-![Command UML](https://user-images.githubusercontent.com/60378963/112716136-7a16ba00-8f1f-11eb-90a6-8c26f3e7edcb.jpg)
+![Command Diagram](https://user-images.githubusercontent.com/57165946/112992782-15679380-919b-11eb-8c46-436ba701a754.png)
 
 Different Commands execute by the program.
 

@@ -199,7 +199,7 @@ public class OrderManager {
     /**
      * Checks if any relevant orders found.
      *
-     * @return the presence of valid order in FOUND_LIST
+     * @return the presence of valid order in foundList
      */
     public boolean foundOrderEmpty() {
         if (FOUND_LIST.size() > 0) {
@@ -210,7 +210,7 @@ public class OrderManager {
     }
 
     /**
-     * Clears the existing orders in FOUND_LIST.
+     * Clears the existing orders in foundList.
      */
     public void clearFoundList() {
         FOUND_LIST.clear();

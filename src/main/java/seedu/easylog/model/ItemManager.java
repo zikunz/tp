@@ -14,9 +14,9 @@ public class ItemManager {
 
     protected ArrayList<Item> itemList;
 
-    protected final ArrayList<Item> FOUND_LIST = new ArrayList<>();
+    protected ArrayList<Item> foundList = new ArrayList<>();
 
-    protected final ArrayList<String> ITEM_DESCRIPTION_RECORD = new ArrayList<>();
+    protected ArrayList<String> itemDescriptionRecord = new ArrayList<>();
 
     public ItemManager() {
         this.itemList = new ArrayList<>();
@@ -28,7 +28,7 @@ public class ItemManager {
      */
     public void addItem(Item item) {
         itemList.add(item);
-        ITEM_DESCRIPTION_RECORD.add(item.getItemName());
+        itemDescriptionRecord.add(item.getItemName());
     }
 
     /**
@@ -89,7 +89,7 @@ public class ItemManager {
      */
     public void deleteItem(int index) {
         itemList.remove(index);
-        ITEM_DESCRIPTION_RECORD.remove(index);
+        itemDescriptionRecord.remove(index);
     }
 
     /**
@@ -100,7 +100,7 @@ public class ItemManager {
     public void findItem(String keyword) {
         for (int i = 0; i < getSize(); i++) {
             if (getItem(i).itemName.contains(keyword)) {
-                FOUND_LIST.add(getItem(i));
+                foundList.add(getItem(i));
             }
         }
     }
@@ -128,16 +128,16 @@ public class ItemManager {
      * @return list of found item(s) from itemList
      */
     public ArrayList<Item> getFoundList() {
-        return FOUND_LIST;
+        return foundList;
     }
 
     /**
      * Gets the number of relevant items after search.
      *
-     * @return the size of FOUND_LIST
+     * @return the size of foundList
      */
     public int foundSize() {
-        return FOUND_LIST.size();
+        return foundList.size();
     }
 
     /**
@@ -163,14 +163,14 @@ public class ItemManager {
      */
     public void clearItemList() {
         itemList.clear();
-        ITEM_DESCRIPTION_RECORD.clear();
+        itemDescriptionRecord.clear();
     }
 
     /**
      * Clears all found items in Found List.
      */
     public void clearFoundList() {
-        FOUND_LIST.clear();
+        foundList.clear();
     }
 
     /**
@@ -230,7 +230,7 @@ public class ItemManager {
      * @return the descriptions of items form the item list
      */
     public ArrayList<String> getItemDescriptionRecord() {
-        return ITEM_DESCRIPTION_RECORD;
+        return itemDescriptionRecord;
     }
 }
 

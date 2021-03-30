@@ -12,18 +12,22 @@ import java.util.ArrayList;
  */
 public class ItemManager {
 
-    private static final ArrayList<Item> ITEM_LIST = new ArrayList<>();
+    protected ArrayList<Item> itemList;
 
-    private static final ArrayList<Item> FOUND_LIST = new ArrayList<>();
+    protected final ArrayList<Item> FOUND_LIST = new ArrayList<>();
 
-    private static final ArrayList<String> ITEM_DESCRIPTION_RECORD = new ArrayList<>();
+    protected final ArrayList<String> ITEM_DESCRIPTION_RECORD = new ArrayList<>();
+
+    public ItemManager() {
+        this.itemList = new ArrayList<>();
+    }
 
     /**
      * Adds item to the item list.
      * @param item item to be added to the item list
      */
     public void addItem(Item item) {
-        ITEM_LIST.add(item);
+        itemList.add(item);
         ITEM_DESCRIPTION_RECORD.add(item.getItemName());
     }
 
@@ -33,7 +37,7 @@ public class ItemManager {
      * @return The list of items in the system
      */
     public ArrayList<Item> getItemList() {
-        return ITEM_LIST;
+        return itemList;
     }
 
     /**
@@ -84,7 +88,7 @@ public class ItemManager {
      * Removes a specific item from the system.
      */
     public void deleteItem(int index) {
-        ITEM_LIST.remove(index);
+        itemList.remove(index);
         ITEM_DESCRIPTION_RECORD.remove(index);
     }
 
@@ -121,7 +125,7 @@ public class ItemManager {
     /**
      * Gets the found items.
      *
-     * @return list of found item(s) from ITEM_LIST
+     * @return list of found item(s) from itemList
      */
     public ArrayList<Item> getFoundList() {
         return FOUND_LIST;
@@ -142,7 +146,7 @@ public class ItemManager {
      * @return the description of the specific item
      */
     public Item getItem(int index) {
-        return ITEM_LIST.get(index);
+        return itemList.get(index);
     }
 
     /**
@@ -151,14 +155,14 @@ public class ItemManager {
      * @return the size of item list
      */
     public int getSize() {
-        return ITEM_LIST.size();
+        return itemList.size();
     }
 
     /**
      * Clears all items in the system.
      */
     public void clearItemList() {
-        ITEM_LIST.clear();
+        itemList.clear();
         ITEM_DESCRIPTION_RECORD.clear();
     }
 
@@ -170,9 +174,9 @@ public class ItemManager {
     }
 
     /**
-     * Gets the latest item added to the ITEM_LIST.
+     * Gets the latest item added to the itemList.
      *
-     * @return Latest item added to ITEM_LIST
+     * @return Latest item added to itemList
      */
     public Item getLatestItemAdded() {
         int index = getSize() - Constants.ARRAY_OFFSET;
@@ -212,8 +216,8 @@ public class ItemManager {
      * @param itemName the item to be checked
      * @return the existence of item in the item list
      */
-    public static boolean checkRepeatItem(String itemName) {
-        for (Item item : ITEM_LIST) {
+    public boolean checkRepeatItem(String itemName) {
+        for (Item item : itemList) {
             if (item.itemName.equals(itemName)) {
                 return true;
             }

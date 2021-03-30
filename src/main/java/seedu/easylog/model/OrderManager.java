@@ -11,9 +11,13 @@ import java.util.ArrayList;
  */
 public class OrderManager {
 
-    private static final ArrayList<Order> ORDER_LIST = new ArrayList<>();
+    protected ArrayList<Order> orderList;
 
     private static final ArrayList<Order> FOUND_LIST = new ArrayList<>();
+
+    public OrderManager() {
+        this.orderList = new ArrayList<>();
+    }
 
     /**
      * Adds an order to the order list.
@@ -21,7 +25,7 @@ public class OrderManager {
      * @param order name of order to be added
      */
     public void addOrder(Order order) {
-        ORDER_LIST.add(order);
+        orderList.add(order);
     }
 
     /**
@@ -30,7 +34,7 @@ public class OrderManager {
      * @param index the number of the order to be deleted.
      */
     public void deleteOrder(int index) {
-        ORDER_LIST.remove(index);
+        orderList.remove(index);
     }
 
     /**
@@ -40,7 +44,7 @@ public class OrderManager {
      * @return a item list
      */
     public Order getOrder(int index) {
-        return ORDER_LIST.get(index);
+        return orderList.get(index);
     }
 
     /**
@@ -49,7 +53,7 @@ public class OrderManager {
      * @return the size of order list
      */
     public int getSize() {
-        return ORDER_LIST.size();
+        return orderList.size();
     }
 
     /**
@@ -58,7 +62,7 @@ public class OrderManager {
      * @return the list of orders
      */
     public ArrayList<Order> getOrderList() {
-        return ORDER_LIST;
+        return orderList;
     }
 
     /**
@@ -98,7 +102,7 @@ public class OrderManager {
      * Clears all orders in the system.
      */
     public void clearOrderList() {
-        ORDER_LIST.clear();
+        orderList.clear();
     }
 
     /**
@@ -141,7 +145,7 @@ public class OrderManager {
      */
     public String getOrderListPrintFormat() {
         String rawOrderListOutput = "";
-        for (Order order : ORDER_LIST) {
+        for (Order order : orderList) {
             String individualOrderOutput = getIndividualOrderPrintFormat(order);
             rawOrderListOutput += individualOrderOutput;
         }
@@ -219,7 +223,7 @@ public class OrderManager {
      * @return false if this is not a repetitive customer name
      */
     public boolean checkRepeatOrder(String orderName) {
-        for (Order order : ORDER_LIST) {
+        for (Order order : orderList) {
             if (orderName.equals(order.customerName)) {
                 return true;
             }

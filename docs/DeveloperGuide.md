@@ -98,6 +98,15 @@ Different Commands execute by the program.
 
 ### 2.7 Model Component
 
+![Command Diagram](https://user-images.githubusercontent.com/75139323/113109924-0d5e3100-9239-11eb-8159-94fb4aaf10dc.png)
+
+The model component consists of `Item`, `ItemManager`, `Order` and `OrderManager` classes.
+
+* Item: Consists of items in the inventory.
+* ItemManager: Contains the item list e.g., it has operations to add / delete items in the list.
+* Order: Consists of orders by customers.
+* OrderManager: Contains the order list e.g., it has operations to add / delete orders in the list.
+
 ### 2.8 Exceptions Component
 Possible exceptions existing in the program.
 

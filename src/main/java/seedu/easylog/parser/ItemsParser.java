@@ -79,6 +79,8 @@ public class ItemsParser extends Parser {
                 ui.showInvalidItemNumber();
             } catch (NumberFormatException e) {
                 ui.showNonIntegerItemNumber();
+            } catch (ItemNotFoundException e) {
+                ui.showItemNotFound();
             }
             break;
         case (Constants.COMMAND_LIST):

@@ -6,9 +6,21 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-    * [To be added](#to-be-added)
-        + [To be added](#to-be-added)
+- [1. Introduction](#introduction)
+    - [1.1. Software Overview](#11-software-overview)
+    - [1.2. Prerequisites](#12-prerequisites)
+    - [1.3. Setting up](#13-setting-up)
+- [2. Design](#2-design)
+    - [2.1. Architecture](#21-architecture)
+    - [2.2. EasyLog Component](#22-easylog-component)
+    - [2.3. Storage Component](#23-storage-component)
+    - [2.4. Ui Component](#24-ui-component)
+    - [2.5. Parser Component](#25-parser-component)
+    - [2.6. Command Component](#26-command-component)
+    - [2.7. Model Component](#27-model-component)
+    - [2.8. Exceptions Component](#28-exceptions-component)
+    - [2.9. Common Component](#29-common-component)
+- [3. Implementation](#3-implementation)
 
 ## 1. Introduction
 
@@ -106,7 +118,7 @@ Common components contains the constants and messages used in the program.
 - Constants: Fixed values used in the program
 - Messages: Output response from the program.
 
-## Implementation
+## 3. Implementation
 
 
 

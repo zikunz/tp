@@ -12,7 +12,7 @@ public class Item {
     protected String itemName;
     protected BigDecimal itemPrice;
     protected int itemStock;
-    protected int itemsSales;
+    protected int itemSales;
 
     /**
      * Item constructor.
@@ -25,7 +25,7 @@ public class Item {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemStock = itemStock;
-        this.itemsSales = 0;
+        this.itemSales = 0;
         assert itemName != null;
     }
 
@@ -89,7 +89,7 @@ public class Item {
      * @param newItemSold new number of items sold (number of items added to an order).
      */
     public void setItemSold(int newItemSold) {
-        this.itemsSales = newItemSold;
+        this.itemSales = newItemSold;
     }
 
     /**
@@ -98,7 +98,7 @@ public class Item {
      * @return item sold
      */
     public int getItemSold() {
-        return itemsSales;
+        return itemSales;
     }
 
     /**
@@ -107,6 +107,6 @@ public class Item {
      * @return 1 line string that contains details regarding the item.
      */
     public String saveToFileFormat() {
-        return itemName + " " + itemPrice.toPlainString() + " " + itemStock;
+        return itemName + " " + itemPrice.toPlainString() + " " + itemStock + " " + itemSales;
     }
 }

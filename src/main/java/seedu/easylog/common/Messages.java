@@ -23,15 +23,19 @@ public class Messages {
     public static final String MESSAGE_FOUND_LIST_ORDERS = MESSAGE_LINE
             + "Here is the list of relevant orders found.\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_ADD_ITEMS_TO_ORDER = "Input the items to be added to this order.\n"
+    public static final String MESSAGE_ADD_ITEMS_TO_ORDER = "Input the item to be added to this order.\n"
             + "Input format: <item_index> <item_quantity>\n"
+            + "Type <stop> to stop adding items to order,"
+            + " else continue entering items in the same format.\n"
+            + "Do note that you need at least 1 item in the order for <stop> to work.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_SHOW_ALL_COMMANDS = MESSAGE_LINE
             + "General Options:\n"
             + "  1. items                          Show items-related commands\n"
             + "  2. items add <item_name>          Add an item\n"
             + "  3. items list                     List all items\n"
-            + "  4. items delete <item_index>      Delete an item\n"
+            + "  4.1 items delete <item_index>     Delete an item\n"
+            + "  4.2 items delete <item_name>      Delete an item\n"
             + "  5. items clear                    Empty all items\n"
             + "  6. items find <item_name>         Find an item\n"
             + "  7. items update                   Update the detail of an item\n"
@@ -95,7 +99,8 @@ public class Messages {
             + "Items-Related Options:\n"
             + "  1. items add <item_name>          Add an item\n"
             + "  2. items list                     List all items\n"
-            + "  3. items delete <item_index>      Delete an item\n"
+            + "  3.1 items delete <item_index>     Delete an item\n"
+            + "  3.2 items delete <item_name>      Delete an item\n"
             + "  4. items clear                    Empty all items\n"
             + "  5. items find <item_name>         Find an item\n"
             + "  6. items update                   Update the detail of an item\n"
@@ -229,10 +234,9 @@ public class Messages {
             + " else continue entering items in the same format.\n"
             + "Note that you need at least 1 item in the order.\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_INVALID_STOP_ADDING_ITEM_TO_ORDER = MESSAGE_LINE
-            + "Invalid stop command to stop adding"
-            + " items to the order. Type (stop) for the correct command.\n"
-            + "Please retry orders add command.\n"
+    public static final String MESSAGE_INVALID_WHILE_ADDING_ITEM_TO_ORDER = MESSAGE_LINE
+            + "Invalid input format while adding items to order.\n"
+            + "Please retry adding items to the order.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_INVALID_FORMAT_ORDERS_ADD = MESSAGE_LINE
             + "Invalid format for inputting of items into order.\n"
@@ -279,5 +283,6 @@ public class Messages {
             + "stocking them up if they are not enough :)";
     public static final String MESSAGE_SHOW_NO_ITEMS_TIPS_CAN_BE_GIVEN = "No item-related tips can be given because "
             + "you have not sold any single item yet.";
+    public static final String MESSAGE_RECEIPT_HEADER = "Order details as shown below";
 }
 

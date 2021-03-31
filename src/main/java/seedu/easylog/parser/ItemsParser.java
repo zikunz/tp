@@ -7,7 +7,7 @@ import seedu.easylog.commands.itemscommands.ItemsFindCommand;
 import seedu.easylog.commands.itemscommands.ItemsListCommand;
 import seedu.easylog.commands.itemscommands.ItemsPromptPriceCommand;
 import seedu.easylog.commands.itemscommands.ItemsPromptStockCommand;
-import seedu.easylog.commands.itemscommands.ItemsTipsCommand;
+import seedu.easylog.commands.itemscommands.ItemsStatisticsCommand;
 import seedu.easylog.commands.itemscommands.ItemsUpdateCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyItemIndexException;
@@ -22,7 +22,7 @@ import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.exceptions.InvalidTotalItemStockException;
 import seedu.easylog.exceptions.ItemListAlreadyClearedException;
 import seedu.easylog.exceptions.ItemNotFoundException;
-import seedu.easylog.exceptions.NoItemsTipsCanBeGivenException;
+import seedu.easylog.exceptions.NoItemsStatisticsCanBeGivenException;
 import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
 import seedu.easylog.exceptions.NonNumericItemPriceException;
 import seedu.easylog.exceptions.NullItemPriceException;
@@ -40,7 +40,7 @@ import java.util.ArrayList;
  */
 public class ItemsParser extends Parser {
     public static void processItemsInput(String itemsInput, ItemManager itemManager) throws
-            NoItemsTipsCanBeGivenException {
+            NoItemsStatisticsCanBeGivenException {
         String[] splitItemsArg = splitCommandWordAndArgs(itemsInput);
         String itemsType = splitItemsArg[0];
         String itemsArg = splitItemsArg[1];
@@ -129,10 +129,10 @@ public class ItemsParser extends Parser {
                 ui.showItemNotFound();
             }
             break;
-        case (Constants.COMMAND_TIPS):
+        case (Constants.COMMAND_STATISTICS):
             try {
-                new ItemsTipsCommand().execute(itemManager);
-            } catch (NoItemsTipsCanBeGivenException e) {
+                new ItemsStatisticsCommand().execute(itemManager);
+            } catch (NoItemsStatisticsCanBeGivenException e) {
                 ui.showNoItemsTipsCanBeGiven();
             }
             break;

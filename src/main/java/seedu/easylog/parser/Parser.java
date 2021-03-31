@@ -6,7 +6,7 @@ import seedu.easylog.commands.itemscommands.ItemsAddFromFileCommand;
 import seedu.easylog.commands.orderscommands.OrdersAddFromFileCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.InvalidFileInputException;
-import seedu.easylog.exceptions.NoItemsTipsCanBeGivenException;
+import seedu.easylog.exceptions.NoItemsStatisticsCanBeGivenException;
 import seedu.easylog.model.ItemManager;
 import seedu.easylog.model.OrderManager;
 import seedu.easylog.storage.Receipt;
@@ -42,7 +42,7 @@ public class Parser {
      * @throws IOException Exception when there is invalid input
      */
     public void processUserInput(String rawUserInput, ItemManager itemManager, OrderManager orderManager)
-            throws IOException, NoItemsTipsCanBeGivenException {
+            throws IOException, NoItemsStatisticsCanBeGivenException {
         String[] commandTypeAndParams = splitCommandWordAndArgs(rawUserInput);
         String commandType = commandTypeAndParams[0];
         String commandArgs = commandTypeAndParams[1];

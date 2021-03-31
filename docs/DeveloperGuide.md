@@ -11,25 +11,25 @@
     - [1.2. Prerequisites](#12-prerequisites)
     - [1.3. Setting up](#13-setting-up)
 - [2. Design](#2-design)
-    - [2.1. Architecture](#2.1-architecture)
-    - [2.2. EasyLog Component](#2.2-easylog-component)
-    - [2.3. UI Component](#2.3-ui-component)
-    - [2.4. Parser Component](#2.4-parser-component)
-    - [2.5. Command Component](#2.5-command-component)
-    - [2.6. Model Component](#2.6-model-component)
-    - [2.7. Storage Component](#2.7-storage-component)
-    - [2.8. Common Component](#2.8-common-component)
+    - [2.1. Architecture](#21-architecture)
+    - [2.2. EasyLog Component](#22-easylog-component)
+    - [2.3. UI Component](#23-ui-component)
+    - [2.4. Parser Component](#24-parser-component)
+    - [2.5. Command Component](#25-command-component)
+    - [2.6. Model Component](#26-model-component)
+    - [2.7. Storage Component](#27-storage-component)
+    - [2.8. Common Component](#28-common-component)
 - [3. Implementation](#3-implementation)
 - [4. Documentation](#4-documentation)
 - [5. Testing](#5-testing)<br>
-  [5.1 Running Tests](#5.1running-tests)<br>
-  [5.2. Types of Tests](#5.2types-of-tests)<br>
-- [6. Dev Ops](#dev-ops)<br>
-    - [6.1. Build Automation](#build-automation)<br>
-    - [6.2. Continuous Integration](#continuous-integration)<br>
-    - [6.3. Coverage Report](#coverage-report)<br>
-    - [6.4. Making a Release](#making-a-release)<br>
-    - [6.5. Managing Dependencies](#managing-dependencies)
+  [5.1 Running Tests](#51-running-tests)<br>
+  [5.2. Types of Tests](#52-types-of-tests)<br>
+- [6. Dev Ops](#6-dev-ops)<br>
+    - [6.1. Build Automation](#61-build-automation)<br>
+    - [6.2. Continuous Integration](#62-continuous-integration)<br>
+    - [6.3. Coverage Report](#63-coverage-report)<br>
+    - [6.4. Making a Release](#64-making-a-release)<br>
+    - [6.5. Managing Dependencies](#65-managing-dependencies)
 - [Appendices](#appendices)
     - [Appendix A: Product Scope](#appendix-a-product-scope)
     - [Appendix B: User Stories](#appendix-b-user-stories)

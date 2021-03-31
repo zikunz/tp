@@ -1,5 +1,7 @@
 package seedu.easylog.model;
 
+import seedu.easylog.common.Messages;
+
 import java.math.BigDecimal;
 
 /**
@@ -59,7 +61,8 @@ public class Item {
     }
 
     public String getDeleteItemMessage() {
-        return "Got it! The item [" + itemName + "] is deleted.";
+        return Messages.MESSAGE_LINE
+                + "Got it! The item [" + itemName + "] is deleted.";
     }
 
     /**

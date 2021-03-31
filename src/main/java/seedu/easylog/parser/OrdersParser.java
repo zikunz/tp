@@ -11,7 +11,6 @@ import seedu.easylog.common.Constants;
 
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyItemListException;
-import seedu.easylog.exceptions.OrderEmptyException;
 import seedu.easylog.exceptions.RepeatedOrderException;
 import seedu.easylog.exceptions.InvalidItemStockException;
 import seedu.easylog.exceptions.EmptyNumberException;
@@ -118,7 +117,7 @@ public class OrdersParser extends Parser {
     public Order processItemsAddedToOrder(String customerName, String addItemsToOrderInput, ItemManager itemManager) {
         ArrayList<Item> itemsAddedToOrder = new ArrayList<>();
         ArrayList<Integer> itemsStockAddedToOrder = new ArrayList<>();
-        while(!addItemsToOrderInput.equals("stop") || itemsAddedToOrder.isEmpty()) {
+        while (!addItemsToOrderInput.equals("stop") || itemsAddedToOrder.isEmpty()) {
             String[] splitInput = addItemsToOrderInput.split(" ");
             try {
                 int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;
@@ -168,7 +167,7 @@ public class OrdersParser extends Parser {
         itemsAddedToExistingOrder = orderManager.getItemsInOrder(orderIndex);
         itemsStockAddedToExistingOrder = orderManager.getItemsStockInOrder(orderIndex);
         orderManager.deleteOrder(orderIndex);
-        while(!addItemsToOrderInput.equals("stop") || itemsAddedToExistingOrder.isEmpty()) {
+        while (!addItemsToOrderInput.equals("stop") || itemsAddedToExistingOrder.isEmpty()) {
             String[] splitInput = addItemsToOrderInput.split(" ");
             try {
                 int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;

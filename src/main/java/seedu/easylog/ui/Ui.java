@@ -548,6 +548,6 @@ public class Ui {
     }
 
     public String showReceiptHeader() {
-        return(Messages.MESSAGE_RECEIPT_HEADER + "\n");
+        return (Messages.MESSAGE_RECEIPT_HEADER + "\n");
     }
 }

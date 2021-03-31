@@ -148,7 +148,7 @@ public class OrdersParser extends Parser {
                 ui.showNotEnoughStock();
             }
             ui.showContinueAddingItemsToOrder();
-            addItemsToOrderInput = Constants.SCANNER.nextLine();
+            addItemsToOrderInput = ui.askForUserInput();
         } while (!addItemsToOrderInput.equals("stop"));
         if (itemsAddedToOrder.isEmpty()) {
             throw new OrderEmptyException();
@@ -200,7 +200,7 @@ public class OrdersParser extends Parser {
                 ui.showNotEnoughStock();
             }
             ui.showContinueAddingItemsToOrder();
-            addItemsToOrderInput = Constants.SCANNER.nextLine();
+            addItemsToOrderInput = ui.askForUserInput();
         } while (!addItemsToOrderInput.equals("stop"));
         if (itemsAddedToExistingOrder.isEmpty()) {
             throw new OrderEmptyException();

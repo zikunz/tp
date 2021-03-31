@@ -1,6 +1,7 @@
 package seedu.easylog.item;
 
 import org.junit.jupiter.api.Test;
+import seedu.easylog.common.Messages;
 import seedu.easylog.model.Item;
 
 import java.math.BigDecimal;
@@ -33,7 +34,8 @@ public class ItemTest {
 
     @Test
     public void testGetDeletedItemMessage() {
-        assertEquals("Got it! The item [PS5] is deleted.", testItem.getDeleteItemMessage());
+        assertEquals(Messages.MESSAGE_LINE
+                + "Got it! The item [PS5] is deleted.", testItem.getDeleteItemMessage());
     }
 
     @Test

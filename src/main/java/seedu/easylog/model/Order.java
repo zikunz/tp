@@ -87,6 +87,7 @@ public class Order {
         int stockIndex = 0;
         for (Item item : itemsInOrder) {
             totalPrice = totalPrice.add(item.getItemPrice().multiply(new BigDecimal(itemsStockCount.get(stockIndex))));
+            ++stockIndex;
         }
         return totalPrice;
     }

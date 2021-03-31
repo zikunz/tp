@@ -5,10 +5,18 @@ import seedu.easylog.common.Messages;
 import seedu.easylog.model.Item;
 import seedu.easylog.model.Order;
 
+import java.util.Scanner;
+
 /**
  * Handles ui related methods.
  */
 public class Ui {
+
+    public static final Scanner SCANNER = new Scanner(System.in);
+
+    public String askForUserInput() {
+        return SCANNER.nextLine();
+    }
 
     public void showGreeting() {
         System.out.println(Messages.MESSAGE_GREETING);
@@ -508,5 +516,35 @@ public class Ui {
      */
     public void promptAdditionalItemStock() {
         System.out.println(Messages.MESSAGE_PROMPT_ADDITIONAL_ITEM_STOCK);
+    }
+
+    /**
+     * Prints a message to show the most popular item
+     * and suggests the user to stock up if not enough.
+     *
+     * @param itemDescription description of the most popular item
+     */
+    public void showTipsForMostPopularItem(String itemDescription) {
+        System.out.println(Messages.MESSAGE_SHOW_MOST_POPULAR_ITEM + itemDescription
+                + Messages.SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEM_IS_NOT_ENOUGH);
+    }
+
+    /**
+     * Prints a message to show the most popular items
+     * and suggests the user to stock up if not enough.
+     *
+     * @param itemDescriptions descriptions of the most popular items
+     */
+    public void showTipsForMostPopularItems(String itemDescriptions) {
+        System.out.println(Messages.MESSAGE_SHOW_MOST_POPULAR_ITEMS + itemDescriptions
+                + Messages.SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEMS_ARE_NOT_ENOUGH);
+    }
+
+    /**
+     * Prints a message to show that no tips regarding items can be given.
+     * This means the user has not sold any single item yet.
+     */
+    public void showNoItemsTipsCanBeGiven() {
+        System.out.println(Messages.MESSAGE_SHOW_NO_ITEMS_TIPS_CAN_BE_GIVEN);
     }
 }

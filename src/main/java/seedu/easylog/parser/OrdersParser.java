@@ -131,6 +131,9 @@ public class OrdersParser extends Parser {
             try {
                 Item itemToBeAddedToOrder = itemManager.getItem(itemIndex);
                 int currentItemStock = itemToBeAddedToOrder.getItemStock();
+
+                itemManager.incrementItemSold(itemToBeAddedToOrder, stockAdded);
+
                 if (stockAdded < 0 || stockAdded > currentItemStock) {
                     throw new InvalidItemStockException();
                 }
@@ -145,7 +148,7 @@ public class OrdersParser extends Parser {
                 ui.showNotEnoughStock();
             }
             ui.showContinueAddingItemsToOrder();
-            addItemsToOrderInput = Constants.SCANNER.nextLine();
+            addItemsToOrderInput = ui.askForUserInput();
         } while (!addItemsToOrderInput.equals("stop"));
         if (itemsAddedToOrder.isEmpty()) {
             throw new OrderEmptyException();
@@ -164,7 +167,7 @@ public class OrdersParser extends Parser {
      * @throws OrderEmptyException Exception when there is no item in order
      */
     public Order processItemsAddedToExistingOrder(String customerName, String addItemsToOrderInput,
-                                                 ItemManager itemManager, OrderManager orderManager)
+                                                  ItemManager itemManager, OrderManager orderManager)
             throws OrderEmptyException {
         int orderIndex;
         orderIndex = orderManager.findOrderIndex(customerName);
@@ -180,6 +183,9 @@ public class OrdersParser extends Parser {
             try {
                 Item itemToBeAddedToOrder = itemManager.getItem(itemIndex);
                 int currentItemStock = itemToBeAddedToOrder.getItemStock();
+
+                itemManager.incrementItemSold(itemToBeAddedToOrder, stockAdded);
+
                 if (stockAdded < 0 || stockAdded > currentItemStock) {
                     throw new InvalidItemStockException();
                 }
@@ -194,7 +200,7 @@ public class OrdersParser extends Parser {
                 ui.showNotEnoughStock();
             }
             ui.showContinueAddingItemsToOrder();
-            addItemsToOrderInput = Constants.SCANNER.nextLine();
+            addItemsToOrderInput = ui.askForUserInput();
         } while (!addItemsToOrderInput.equals("stop"));
         if (itemsAddedToExistingOrder.isEmpty()) {
             throw new OrderEmptyException();

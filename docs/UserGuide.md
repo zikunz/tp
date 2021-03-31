@@ -107,14 +107,14 @@ General Options:
   3. items list                     List all items
   4. items delete <item_index>      Delete an item
   5. items clear                    Empty all items
-  6. items find <item_name>         Finding an item
-  7. items update                   pdate the detail of an item
+  6. items find <item_name>         Find an item
+  7. items update                   Update the detail of an item
   8. orders                         Show orders-related commands
   9. orders add <order_name>        Add an order
   10. orders list                   List all orders
   11. orders delete <order_index>   Delete an order
   12. orders clear                  Empty all orders
-  13. orders find <order_name>      Finding an order
+  13. orders find <order_name>      Find an order
 ____________________________________________________________
 ```
 
@@ -138,7 +138,7 @@ Items-Related Options:
   2. items list                     List all items
   3. items delete <item_index>      Delete an item
   4. items clear                    Empty all items
-  5. items find <item_name>         Finding an item
+  5. items find <item_name>         Find an item
   6. items update                   Update the detail of an item
 ____________________________________________________________
 ```
@@ -172,15 +172,16 @@ ____________________________________________________________
 
 #### 2.2.3. Show the item list: `items list`
 
-Display all recorded items in the system.
+You can use this command to view all the recorded items in the system.
 
 Format: `items list`
 
 Expected Output:
 
 ```
+items list (user input)
 ____________________________________________________________
-Here is the list of items in the warehouse.
+Here is the list of items.
 ____________________________________________________________
 
 1. PS5, S$100.00, 10
@@ -295,7 +296,7 @@ Orders-Related Options:
   4. orders clear                   Empty all orders
   5. orders price <order_index>     Check the total price of an order
   6. orders done <order_index>      Update the status of an order
-  7. orders find <order_name>       Finding an order
+  7. orders find <order_name>       Find an order
 ____________________________________________________________
 ```
 
@@ -436,7 +437,7 @@ ____________________________________________________________
 
 #### 2.3.7. Get the total price of an order: `orders price`
 
-Check total price of a specific order.
+You can use this command to check the total price of a specific order.
 
 Format: `orders price <order_index>`
 
@@ -445,14 +446,15 @@ Example: `orders price 2`
 Expected Output:
 
 ```
+orders price 2 (user input)
 ____________________________________________________________
-The total price for customer [coco]'s order is S$27.00.
+The total price for customer [coco]'s order is S$23.60.
 ____________________________________________________________
 ```
 
 #### 2.3.8. Update the status of an order: `orders done`
 
-Change the shipping status of an order once it is shipped.
+You can use this command to change the status of an order once it is completed.
 
 Format: `orders done <order_index>`
 
@@ -463,6 +465,7 @@ Format: `orders done 2`
 Expected Output:
 
 ```
+orders done 2 (user input)
 ____________________________________________________________
 Got it! The order for customer [coco] is completed.
 Generating receipt for customer: coco

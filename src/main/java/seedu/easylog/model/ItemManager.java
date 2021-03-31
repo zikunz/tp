@@ -24,6 +24,7 @@ public class ItemManager {
 
     /**
      * Adds item to the item list.
+     *
      * @param item item to be added to the item list
      */
     public void addItem(Item item) {
@@ -213,6 +214,7 @@ public class ItemManager {
 
     /**
      * Checks if the item exist in the item list.
+     *
      * @param itemName the item to be checked
      * @return the existence of item in the item list
      */
@@ -227,10 +229,122 @@ public class ItemManager {
 
     /**
      * Gets the item descriptions from the item list.
+     *
      * @return the descriptions of items form the item list
      */
     public ArrayList<String> getItemDescriptionRecord() {
         return itemDescriptionRecord;
+    }
+
+    /**
+     * Increments the item sold after an item is added to an order.
+     */
+    public void incrementItemSold(Item item, int newItemSold) {
+        int currentItemSold = item.getItemSold();
+        int updatedItemSold = currentItemSold + newItemSold;
+
+        item.setItemSold(updatedItemSold);
+    }
+
+    /**
+     * Gets the sales of the most popular item(s).
+     *
+     * @return sales of most popular item(s).
+     */
+    public int countSalesOfMostPopularItems() {
+        int largestSales = 0;
+
+        for (Item item : itemList) {
+            if (item.itemSold > largestSales) {
+                largestSales = item.itemSold;
+            }
+        }
+
+        return largestSales;
+    }
+
+    /**
+     * Counts the number of most popular item(s).
+     *
+     * @return number of most popular item(s).
+     */
+    public int countNumberOfMostPopularItems() {
+        int numberOfMostPopularItems = 0;
+        int largestSales = countSalesOfMostPopularItems();
+
+        if (largestSales == 0) {
+            return numberOfMostPopularItems;
+        }
+
+        for (Item item : itemList) {
+            if (item.itemSold == largestSales) {
+                numberOfMostPopularItems++;
+            }
+        }
+
+        return numberOfMostPopularItems;
+    }
+
+    /**
+     * Gets the description of most popular item(s).
+     *
+     * @return description of most popular item(s).
+     */
+    public String getMostPopularItemDescriptions() {
+        String mostPopularItemDescriptions = "";
+        int numberOfMostPopularItems = countNumberOfMostPopularItems();
+        int largestSales = countSalesOfMostPopularItems();
+        int count = 0;
+
+        if (numberOfMostPopularItems == 1) {
+            for (Item item : itemList) {
+                if (item.itemSold == largestSales) {
+                    mostPopularItemDescriptions += item.itemName;
+                }
+            }
+        }
+
+        if (numberOfMostPopularItems > 1) {
+            for (Item item : itemList) {
+                if (item.itemSold == largestSales) {
+                    if (count == 0) {
+                        mostPopularItemDescriptions += item.itemName;
+                    } else {
+                        mostPopularItemDescriptions = mostPopularItemDescriptions + ", " + item.itemName;
+                    }
+                    count++;
+                }
+            }
+        }
+
+        return mostPopularItemDescriptions;
+    }
+
+    /**
+     * Deletes the item from item list by name.
+     * @param name the name of item to be deleted
+     */
+    public void deleteByname(String name) {
+        for (int i = 0; i < itemList.size(); i++) {
+            if (name.equals(itemList.get(i).itemName)) {
+                itemList.remove(i);
+                break;
+            }
+        }
+    }
+
+    /**
+     * Changes relevant string to item type.
+     * @param name the name of string to be changed
+     * @return string in item type if in item list, null otherwise
+     */
+    public Item changeItemFormat(String name) {
+        for (int i = 0; i < itemList.size(); i++) {
+            if (name.equals(itemList.get(i).itemName)) {
+                return itemList.get(i);
+            }
+        }
+        return null;
     }
 }
 

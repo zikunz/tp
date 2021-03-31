@@ -21,7 +21,7 @@ public class ItemsPromptStockCommand extends ItemsCommand {
             ui.promptItemStock();
         }
 
-        String stockInString = Constants.SCANNER.nextLine();
+        String stockInString = ui.askForUserInput();
 
         try {
             Integer.parseInt(stockInString);

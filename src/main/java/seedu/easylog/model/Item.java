@@ -1,5 +1,7 @@
 package seedu.easylog.model;
 
+import seedu.easylog.common.Messages;
+
 import java.math.BigDecimal;
 
 /**
@@ -10,22 +12,26 @@ public class Item {
     protected String itemName;
     protected BigDecimal itemPrice;
     protected int itemStock;
+    protected int itemSold;
 
     /**
      * Item constructor.
-     * @param itemName input string of the name of item
-     * @param price input string of the price of item
-     * @param stock input string of the stock number of item
+     *
+     * @param itemName  input string of the name of item
+     * @param itemPrice input string of the price of item
+     * @param itemStock input string of the stock number of item
      */
-    public Item(String itemName, BigDecimal price, int stock) {
+    public Item(String itemName, BigDecimal itemPrice, int itemStock) {
         this.itemName = itemName;
-        this.itemPrice = price;
-        this.itemStock = stock;
+        this.itemPrice = itemPrice;
+        this.itemStock = itemStock;
+        this.itemSold = 0;
         assert itemName != null;
     }
 
     /**
      * Gets the name of the item.
+     *
      * @return the name of the item
      */
     public String getItemName() {
@@ -55,11 +61,13 @@ public class Item {
     }
 
     public String getDeleteItemMessage() {
-        return "Got it! The item [" + itemName + "] is deleted.";
+        return Messages.MESSAGE_LINE
+                + "Got it! The item [" + itemName + "] is deleted.";
     }
 
     /**
      * Sets the price of an item of interest.
+     *
      * @param itemPrice price of the item in BigDecimal.
      */
     public void setItemPrice(BigDecimal itemPrice) {
@@ -68,6 +76,7 @@ public class Item {
 
     /**
      * Sets the stock of an item of interest.
+     *
      * @param itemStock amount of stock of the item in integer.
      */
     public void setItemStock(int itemStock) {
@@ -75,7 +84,26 @@ public class Item {
     }
 
     /**
+     * Sets the total item sold of an item of interest.
+     *
+     * @param newItemSold new number of items sold (number of items added to an order).
+     */
+    public void setItemSold(int newItemSold) {
+        this.itemSold = newItemSold;
+    }
+
+    /**
+     * Gets the total item sold of an item of interest.
+     *
+     * @return item sold
+     */
+    public int getItemSold() {
+        return itemSold;
+    }
+
+    /**
      * Convert item attributes to a string to save in save file.
+     *
      * @return 1 line string that contains details regarding the item.
      */
     public String saveToFileFormat() {

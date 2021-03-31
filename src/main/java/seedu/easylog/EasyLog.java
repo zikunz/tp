@@ -1,6 +1,7 @@
 package seedu.easylog;
 
 import seedu.easylog.common.Constants;
+import seedu.easylog.exceptions.NoItemsStatisticsCanBeGivenException;
 import seedu.easylog.model.ItemManager;
 import seedu.easylog.model.OrderManager;
 import seedu.easylog.parser.Parser;
@@ -10,7 +11,6 @@ import seedu.easylog.ui.Ui;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.logging.Logger;
 
 public class EasyLog {
 
@@ -24,7 +24,7 @@ public class EasyLog {
     /**
      * Main entry-point for the easyLog application.
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NoItemsStatisticsCanBeGivenException {
         UI.showGreeting();
         try {
             SAVE_DATA.loadFile(ITEM_MANAGER, ORDER_MANAGER);
@@ -33,7 +33,7 @@ public class EasyLog {
         }
         LOGGING.setUpLogger();
         while (true) {
-            String userInput = Constants.SCANNER.nextLine();
+            String userInput = UI.askForUserInput();
             LOGGING.writeInfoLevelLog("Asking for user input.");
             PARSER.processUserInput(userInput, ITEM_MANAGER, ORDER_MANAGER);
         }

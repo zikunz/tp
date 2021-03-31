@@ -324,7 +324,7 @@ public class ItemManager {
      * Deletes the item from item list by name.
      * @param name the name of item to be deleted
      */
-    public void deleteByname (String name) {
+    public void deleteByname(String name) {
         for (int i = 0; i < itemList.size(); i++) {
             if (name.equals(itemList.get(i).itemName)) {
                 itemList.remove(i);
@@ -338,10 +338,10 @@ public class ItemManager {
      * @param name the name of string to be changed
      * @return string in item type if in item list, null otherwise
      */
-    public Item changeItemFormat (String name) {
+    public Item changeItemFormat(String name) {
         for (int i = 0; i < itemList.size(); i++) {
             if (name.equals(itemList.get(i).itemName)) {
-               return itemList.get(i);
+                return itemList.get(i);
             }
         }
         return null;

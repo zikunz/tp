@@ -48,7 +48,7 @@ business using easyLog.
 ## 1. Quick start
 
 1. Ensure you have Java 11 or above installed in your Computer.
-2. Download the latest easyLog.jar from [here](https://github.com/AY2021S2-CS2113T-T09-4/tp/releases/v1.0).
+2. Download the latest easyLog.jar from [here](https://github.com/AY2021S2-CS2113T-T09-4/tp/releases/v2.0).
 3. Copy the file to the folder you want to use as the home folder for your easyLog.
 4. Open up a terminal/command window at the location where easyLog.jar is located.
 5. Run the command `java -jar easyLog.jar`

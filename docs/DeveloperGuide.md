@@ -96,7 +96,7 @@ continuously take in input from the user until the user types in a exit command.
 
 ### 2.3 Storage Component
 
-![Storage Diagram](https://user-images.githubusercontent.com/57165946/112991416-ab022380-9199-11eb-9ead-cdfcd19cf8e5.png)
+![image](https://user-images.githubusercontent.com/57165946/113095572-3d500900-9226-11eb-83b0-44d3729442b7.png)
 
 The storage component deals with
 - loading, saving and creating save data.

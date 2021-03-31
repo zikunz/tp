@@ -40,7 +40,8 @@ public class ItemTest {
 
     @Test
     public void testSaveToFileFormat() {
-        String expectedOutput = "PS5 599.00 10";
+        testItem.setItemSold(10);
+        String expectedOutput = "PS5 599.00 10 10";
         assertEquals(expectedOutput, testItem.saveToFileFormat());
     }
 }

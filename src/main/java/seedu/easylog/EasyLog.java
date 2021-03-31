@@ -33,7 +33,7 @@ public class EasyLog {
         }
         LOGGING.setUpLogger();
         while (true) {
-            String userInput = Constants.SCANNER.nextLine();
+            String userInput = UI.askForUserInput();
             LOGGING.writeInfoLevelLog("Asking for user input.");
             PARSER.processUserInput(userInput, ITEM_MANAGER, ORDER_MANAGER);
         }

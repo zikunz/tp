@@ -6,24 +6,35 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-    * [To be added](#to-be-added)
-        + [To be added](#to-be-added)
+- [1. Introduction](#1-introduction)
+    - [1.1. Software Overview](#11-software-overview)
+    - [1.2. Prerequisites](#12-prerequisites)
+    - [1.3. Setting up](#13-setting-up)
+- [2. Design](#2-design)
+    - [2.1. Architecture](#21-architecture)
+    - [2.2. EasyLog Component](#22-easylog-component)
+    - [2.3. UI Component](#23-ui-component)
+    - [2.4. Parser Component](#24-parser-component)
+    - [2.5. Command Component](#25-command-component)
+    - [2.6. Model Component](#26-model-component)
+    - [2.7. Storage Component](#27-storage-component)
+    - [2.8. Common Component](#28-common-component)
+- [3. Implementation](#3-implementation)
 
 ## 1. Introduction
 
 ### 1.1 Software Overview
 
-easyLog is a Command Line Interface (CLI) application for warehouse employees to manage items and orders in the
-warehouse. easyLog allows users to add new items and orders, view existing items and orders, remove specific items and
-orders and clear all existing items and orders in the warehouse at ease. If the user types fast, easyLog can get
+easyLog is a Command Line Interface (CLI) application for home based businesses to manage items and orders in their
+inventory. easyLog allows users to add new items and orders, view existing items and orders, remove specific items and
+orders and clear all existing items and orders in the inventory at ease. If the user types fast, easyLog can get
 logistic management tasks done faster than traditional Graphical User Interface (GUI) applications.
 
 easyLog, comprises a Parser component, Ui component, Storage component, Item component, Order component and Command
 component. Each component consists of various classes that work in tandem, to ensure it meets the purpose of our
 program.
 
-The purpose of this developer guide is to allow any interested contributors, who wish to develop this application
+The purpose of this developer guide is to allow any interested contributors who wish to develop this application
 further or just curious about the workings of this application. This would allow potential contributors to be able to
 dive right in to improving the code, performance, features or even adding new features much more easily due to the
 understanding of the structure of the codebase and implementation of existing features.
@@ -49,10 +60,22 @@ understanding of the structure of the codebase and implementation of existing fe
 5. Upon successful run, the following opening message will be shown:
 
 ```
+                       _                 
+                      | |                
+   ___  __ _ ___ _   _| |     ___   __ _ 
+  / _ \/ _` / __| | | | |    / _ \ / _` |
+ |  __/ (_| \__ \ |_| | |___| (_) | (_| |
+  \___|\__,_|___/\__, |______\___/ \__, |
+                  __/ |             __/ |
+                 |___/             |___/ 
+____________________________________________________________
 Hello! I'm easyLog!
 What can I do for you? Enter help to view commands.
+____________________________________________________________
+
 Looking for save data.
 Save data not found.
+____________________________________________________________
 ```
 
 ## 2. Design
@@ -61,52 +84,75 @@ Save data not found.
 
 ![Architecture Diagram](https://user-images.githubusercontent.com/57165946/112990632-ddf7e780-9198-11eb-99ec-f29aafbfc04f.png)
 
+The EasyLog component contains the main method which is required by Java to run the application. Its main 
+responsibility is to initialize the app and after initialization continuously ask for user's input until the exit
+command is executed. More details of the EasyLog component will be explained in the future sections.
 
-The Architecture Diagram shown above illustrates the high-level design of easyLog. We will now proceed to explain each
-component and their respective functionalities below.
+Apart from the `EasyLog` component, the application also consists of the following components:
+- `Ui`: Handles asking for user's input and printing of feedback from user's input.
+- `Parser`: Processes user's input to decide what command should be executed.
+- `Command`: Executes actions related to the command.
+- `Model`: Holds data related to inputs from the user.
+- `Storage`: Handles loading, creating and saving of data into `.txt` files.
+- `Common`: Contains variables and messages commonly used in all the components.
 
 ### 2.2 EasyLog Component
 
-The EasyLog component initializes the app and looks for any available save file to load. It then proceeds to
-continuously take in input from the user until the user types in a exit command.
+The EasyLog component is responsible for initializing the app. It initializes the app by
+instantiating classes from the `Ui`, `Parser`, `Model` and `Storage` components. More details regarding the
+initialization will be covered in the [Implementation](#3-implementation) section.
 
-### 2.3 Storage Component
+### 2.3 Ui Component
 
-![Storage Diagram](https://user-images.githubusercontent.com/57165946/112991416-ab022380-9199-11eb-9ead-cdfcd19cf8e5.png)
+The UI component does the following:
+1. It asks for users input.
+2. It is responsible for printing and showing responses to the user's input while executing commands related to the
+user's input.
 
-The storage component deals with
-- loading, saving and creating save data.
-- generation of receipts when order is done.
+### 2.4 Parser Component
 
-### 2.4 Ui Component
+![Parser Diagram](https://user-images.githubusercontent.com/57165946/113112907-4c41b600-923c-11eb-897a-314cd186b578.png)
 
-The ui component deals with interactions with the user by displaying the appropriate messages according to the users
-input.
+The Parser component deals with the input of the user. It makes sense of the users input and executes respective
+commands according to the user's input. This component consists of 3 different classes:
+1. `Parser` class to determine the type of feature the user wants to use. (e.g. items or orders feature)
+2. `ItemsParser` class to process inputs related to `items` features.
+3. `OrdersParser` class to process inputs related to `orders` features.
 
-### 2.5 Parser Component
 
-![Parser Diagram](https://user-images.githubusercontent.com/57165946/112991918-42677680-919a-11eb-8868-79391cfc2c9e.png)
-
-The parser components deals with the input of the user. It makes sense of the users input and executes commands
-according to the input of the user
-
-### 2.6 Command Component
+### 2.5 Command Component
 
 ![Command Diagram](https://user-images.githubusercontent.com/60378963/113083308-92802080-920e-11eb-8e4b-66bc7fdf79f2.png)
 
 Different Commands execute by the program.
 
-### 2.7 Model Component
+### 2.6 Model Component
 
-### 2.8 Exceptions Component
-Possible exceptions existing in the program.
+![Command Diagram](https://user-images.githubusercontent.com/75139323/113109924-0d5e3100-9239-11eb-8159-94fb4aaf10dc.png)
 
-### 2.9 Common Component
-Common components contains the constants and messages used in the program.
-- Constants: Fixed values used in the program
-- Messages: Output response from the program.
+The model component consists of `Item`, `ItemManager`, `Order` and `OrderManager` classes.
 
-## Implementation
+* Item: Consists of items in the inventory.
+* ItemManager: Contains the item list e.g., it has operations to add / delete items in the list.
+* Order: Consists of orders by customers.
+* OrderManager: Contains the order list e.g., it has operations to add / delete orders in the list.
+
+### 2.7 Storage Component
+
+![image](https://user-images.githubusercontent.com/57165946/113095572-3d500900-9226-11eb-83b0-44d3729442b7.png)
+
+The Storage component consists of 3 different classes
+1. `Storage` class to initialize required classes for it's subclasses.
+2. `SaveData` class to deal with the loading, saving and creation of save data.
+3. `Receipt` class to deal with the generation of receipts when an order is done.
+
+### 2.8 Common Component
+
+The Common component consists of 2 different classes:
+1. `Constants` class to store all variables that are frequently used in the various components.
+2. `Messages` class to store all the texts for the UI to print onto the command line.
+
+## 3. Implementation
 
 
 
@@ -175,4 +221,4 @@ Abbreviation | Full title | Definition
 
 {Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing} <br> <br>
 
-[Return to Top](#introduction)
+[Return to Top](#1-introduction)

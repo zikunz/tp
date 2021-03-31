@@ -28,7 +28,7 @@ public class OrderManagerTest {
         OrderManager orderManager = new OrderManager();
         orderManager.addOrder(orderOne);
 
-        assertEquals("Yiwen\n"
+        assertEquals("1.Yiwen\n"
                         + "    1. PS5, S$100.00, 1\n"
                         + "    2. MP3, S$36.00, 1\n"
                         + "    Total Price : S$136.00\n"

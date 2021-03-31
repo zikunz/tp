@@ -18,7 +18,7 @@ public class ItemsPromptPriceCommand extends ItemsCommand {
     public BigDecimal execute() throws NullItemPriceException, EmptyItemPriceException, InvalidItemPriceException,
             NonNumericItemPriceException {
         ui.promptItemPrice();
-        String priceInString = Constants.SCANNER.nextLine();
+        String priceInString = ui.askForUserInput();
         try {
             Integer.parseInt(priceInString);
         } catch (NumberFormatException e) {

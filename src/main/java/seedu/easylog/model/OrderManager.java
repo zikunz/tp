@@ -195,7 +195,7 @@ public class OrderManager {
         for (Order order : FOUND_LIST) {
             String customerName = order.getCustomerName();
             String individualOrderOutput = getIndividualOrderPrintFormat(order);
-            rawFoundOrderListOutput += orderIndex + "." + customerName+"\n" + individualOrderOutput;
+            rawFoundOrderListOutput += orderIndex + "." + customerName + "\n" + individualOrderOutput;
         }
         return rawFoundOrderListOutput;
     }

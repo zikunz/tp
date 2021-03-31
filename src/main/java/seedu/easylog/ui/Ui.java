@@ -512,24 +512,24 @@ public class Ui {
 
     /**
      * Prints a message to show the most popular item
-     * and suggests the user to stock up if not enough
+     * and suggests the user to stock up if not enough.
      *
      * @param itemDescription description of the most popular item
      */
     public void showTipsForMostPopularItem(String itemDescription) {
-        System.out.println(Messages.MESSAGE_SHOW_MOST_POPULAR_ITEM + itemDescription +
-                Messages.SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEM_IS_NOT_ENOUGH);
+        System.out.println(Messages.MESSAGE_SHOW_MOST_POPULAR_ITEM + itemDescription
+                + Messages.SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEM_IS_NOT_ENOUGH);
     }
 
     /**
      * Prints a message to show the most popular items
-     * and suggests the user to stock up if not enough
+     * and suggests the user to stock up if not enough.
      *
      * @param itemDescriptions descriptions of the most popular items
      */
     public void showTipsForMostPopularItems(String itemDescriptions) {
-        System.out.println(Messages.MESSAGE_SHOW_MOST_POPULAR_ITEMS + itemDescriptions +
-                Messages.SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEMS_ARE_NOT_ENOUGH);
+        System.out.println(Messages.MESSAGE_SHOW_MOST_POPULAR_ITEMS + itemDescriptions
+                + Messages.SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEMS_ARE_NOT_ENOUGH);
     }
 
     /**

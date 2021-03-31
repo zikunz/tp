@@ -44,12 +44,6 @@ public class OrdersParser extends Parser {
             } catch (EmptyItemListException e) {
                 ui.showEmptyItemList();
                 ui.showAddItemFirst();
-            } catch (OrderEmptyException e) {
-                ui.showOrderEmpty();
-            } catch (NumberFormatException e) {
-                ui.showInvalidStopAddingItemToOrder();
-            } catch (ArrayIndexOutOfBoundsException e) {
-                ui.showInvalidFormatOrdersAdd();
             } catch (RepeatedOrderException e) {
                 ui.showRepeatedOrder();
             }
@@ -118,17 +112,15 @@ public class OrdersParser extends Parser {
      * @param addItemsToOrderInput the item added to the order
      * @param itemManager          item manager
      * @return the items added to order
-     * @throws OrderEmptyException Exception when there is no item in order
      */
-    public Order processItemsAddedToOrder(String customerName, String addItemsToOrderInput, ItemManager itemManager)
-            throws OrderEmptyException {
+    public Order processItemsAddedToOrder(String customerName, String addItemsToOrderInput, ItemManager itemManager) {
         ArrayList<Item> itemsAddedToOrder = new ArrayList<>();
         ArrayList<Integer> itemsStockAddedToOrder = new ArrayList<>();
-        do {
+        while(!addItemsToOrderInput.equals("stop") || itemsAddedToOrder.isEmpty()) {
             String[] splitInput = addItemsToOrderInput.split(" ");
-            int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;
-            int stockAdded = Integer.parseInt(splitInput[1]);
             try {
+                int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;
+                int stockAdded = Integer.parseInt(splitInput[1]);
                 Item itemToBeAddedToOrder = itemManager.getItem(itemIndex);
                 int currentItemStock = itemToBeAddedToOrder.getItemStock();
 
@@ -142,16 +134,16 @@ public class OrdersParser extends Parser {
                 itemsAddedToOrder.add(itemManager.getItem(itemIndex));
                 itemsStockAddedToOrder.add(stockAdded);
                 ui.showItemAndStockAddedToOrder(itemToBeAddedToOrder.getItemName(), stockAdded);
+            } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
+                ui.showInvalidWhileAddingItemToOrder();
             } catch (IndexOutOfBoundsException e) {
-                ui.showItemNotFoundWhenAddingToOrder(itemIndex);
+
+                ui.showItemNotFoundWhenAddingToOrder(splitInput[0]);
             } catch (InvalidItemStockException e) {
                 ui.showNotEnoughStock();
             }
-            ui.showContinueAddingItemsToOrder();
+            ui.showAddItemsToOrder();
             addItemsToOrderInput = ui.askForUserInput();
-        } while (!addItemsToOrderInput.equals("stop"));
-        if (itemsAddedToOrder.isEmpty()) {
-            throw new OrderEmptyException();
         }
         return new Order(customerName, itemsAddedToOrder, itemsStockAddedToOrder);
     }
@@ -164,11 +156,9 @@ public class OrdersParser extends Parser {
      * @param itemManager          item manager
      * @param orderManager         order manager
      * @return the items added to the order which already exists
-     * @throws OrderEmptyException Exception when there is no item in order
      */
     public Order processItemsAddedToExistingOrder(String customerName, String addItemsToOrderInput,
-                                                  ItemManager itemManager, OrderManager orderManager)
-            throws OrderEmptyException {
+                                                  ItemManager itemManager, OrderManager orderManager) {
         int orderIndex;
         orderIndex = orderManager.findOrderIndex(customerName);
         ArrayList<Item> itemsAddedToExistingOrder;
@@ -176,11 +166,11 @@ public class OrdersParser extends Parser {
         itemsAddedToExistingOrder = orderManager.getItemsInOrder(orderIndex);
         itemsStockAddedToExistingOrder = orderManager.getItemsStockInOrder(orderIndex);
         orderManager.deleteOrder(orderIndex);
-        do {
+        while(!addItemsToOrderInput.equals("stop") || itemsAddedToExistingOrder.isEmpty()) {
             String[] splitInput = addItemsToOrderInput.split(" ");
-            int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;
-            int stockAdded = Integer.parseInt(splitInput[1]);
             try {
+                int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;
+                int stockAdded = Integer.parseInt(splitInput[1]);
                 Item itemToBeAddedToOrder = itemManager.getItem(itemIndex);
                 int currentItemStock = itemToBeAddedToOrder.getItemStock();
 
@@ -194,19 +184,17 @@ public class OrdersParser extends Parser {
                 itemsAddedToExistingOrder.add(itemManager.getItem(itemIndex));
                 itemsStockAddedToExistingOrder.add(stockAdded);
                 ui.showItemAndStockAddedToOrder(itemToBeAddedToOrder.getItemName(), stockAdded);
+            } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
+                ui.showInvalidWhileAddingItemToOrder();
             } catch (IndexOutOfBoundsException e) {
-                ui.showItemNotFoundWhenAddingToOrder(itemIndex);
+
+                ui.showItemNotFoundWhenAddingToOrder(splitInput[0]);
             } catch (InvalidItemStockException e) {
                 ui.showNotEnoughStock();
             }
-            ui.showContinueAddingItemsToOrder();
+            ui.showAddItemsToOrder();
             addItemsToOrderInput = ui.askForUserInput();
-        } while (!addItemsToOrderInput.equals("stop"));
-        if (itemsAddedToExistingOrder.isEmpty()) {
-            throw new OrderEmptyException();
         }
         return new Order(customerName, itemsAddedToExistingOrder, itemsStockAddedToExistingOrder);
     }
-
-
 }

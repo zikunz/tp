@@ -202,10 +202,9 @@ public class Ui {
         System.out.println(Messages.MESSAGE_CLEAR_ORDER_LIST);
     }
 
-    public void showItemNotFoundWhenAddingToOrder(int index) {
-        int itemNumber = index + Constants.ARRAY_OFFSET;
+    public void showItemNotFoundWhenAddingToOrder(String itemIndex) {
         System.out.print(Messages.MESSAGE_LINE);
-        System.out.println("Item number " + itemNumber + " does not exist. "
+        System.out.println(itemIndex + " does not exist. "
                 + "Please try another valid item number until at least one item is added to the order.");
         System.out.print(Messages.MESSAGE_LINE);
     }
@@ -412,11 +411,11 @@ public class Ui {
 
     public void showItemAndStockAddedToOrder(String itemName, int stockAdded) {
         System.out.print(Messages.MESSAGE_LINE);
-        System.out.println(itemName + " and stock of " + stockAdded + " added to the order.");
+        System.out.println(itemName + " and stock of " + stockAdded + " added to the order." + Messages.MESSAGE_LINE);
     }
 
-    public void showInvalidStopAddingItemToOrder() {
-        System.out.println(Messages.MESSAGE_INVALID_STOP_ADDING_ITEM_TO_ORDER);
+    public void showInvalidWhileAddingItemToOrder() {
+        System.out.println(Messages.MESSAGE_INVALID_WHILE_ADDING_ITEM_TO_ORDER);
     }
 
     public void showInvalidFormatOrdersAdd() {
@@ -546,5 +545,9 @@ public class Ui {
      */
     public void showNoItemsTipsCanBeGiven() {
         System.out.println(Messages.MESSAGE_SHOW_NO_ITEMS_TIPS_CAN_BE_GIVEN);
+    }
+
+    public String showReceiptHeader() {
+        return(Messages.MESSAGE_RECEIPT_HEADER + "\n");
     }
 }

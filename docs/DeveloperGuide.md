@@ -6,20 +6,19 @@
 
 ## Table of Contents
 
-- [1. Introduction](#introduction)
+- [1. Introduction](#1-introduction)
     - [1.1. Software Overview](#11-software-overview)
     - [1.2. Prerequisites](#12-prerequisites)
     - [1.3. Setting up](#13-setting-up)
 - [2. Design](#2-design)
     - [2.1. Architecture](#21-architecture)
     - [2.2. EasyLog Component](#22-easylog-component)
-    - [2.3. Storage Component](#23-storage-component)
-    - [2.4. Ui Component](#24-ui-component)
-    - [2.5. Parser Component](#25-parser-component)
-    - [2.6. Command Component](#26-command-component)
-    - [2.7. Model Component](#27-model-component)
-    - [2.8. Exceptions Component](#28-exceptions-component)
-    - [2.9. Common Component](#29-common-component)
+    - [2.3. UI Component](#23-ui-component)
+    - [2.4. Parser Component](#24-parser-component)
+    - [2.5. Command Component](#25-command-component)
+    - [2.6. Model Component](#26-model-component)
+    - [2.7. Storage Component](#27-storage-component)
+    - [2.8. Common Component](#28-common-component)
 - [3. Implementation](#3-implementation)
 
 ## 1. Introduction
@@ -85,50 +84,64 @@ ____________________________________________________________
 
 ![Architecture Diagram](https://user-images.githubusercontent.com/57165946/112990632-ddf7e780-9198-11eb-99ec-f29aafbfc04f.png)
 
+The EasyLog component contains the main method which is required by Java to run the application. Its main 
+responsibility is to initialize the app and after initialization continuously ask for user's input until the exit
+command is executed. More details of the EasyLog component will be explained in the future sections.
 
-The Architecture Diagram shown above illustrates the high-level design of easyLog. We will now proceed to explain each
-component and their respective functionalities below.
+Apart from the `EasyLog` component, the application also consists of the following components:
+- `Ui`: Handles asking for user's input and printing of feedback from user's input.
+- `Parser`: Processes user's input to decide what command should be executed.
+- `Command`: Executes actions related to the command.
+- `Model`: Holds data related to inputs from the user.
+- `Storage`: Handles loading, creating and saving of data into `.txt` files.
+- `Common`: Contains variables and messages commonly used in all the components.
 
 ### 2.2 EasyLog Component
 
-The EasyLog component initializes the app and looks for any available save file to load. It then proceeds to
-continuously take in input from the user until the user types in a exit command.
+The EasyLog component is responsible for initializing the app. It initializes the app by
+instantiating classes from the `Ui`, `Parser`, `Model` and `Storage` components. More details regarding the
+initialization will be covered in the [Implementation](#3-implementation) section.
 
-### 2.3 Storage Component
+### 2.3 Ui Component
 
-![image](https://user-images.githubusercontent.com/57165946/113095572-3d500900-9226-11eb-83b0-44d3729442b7.png)
+The UI component does the following:
+1. It asks for users input.
+2. It is responsible for printing and showing responses to the user's input while executing commands related to the
+user's input.
 
-The storage component deals with
-- loading, saving and creating save data.
-- generation of receipts when order is done.
-
-### 2.4 Ui Component
-
-The ui component deals with interactions with the user by displaying the appropriate messages according to the users
-input.
-
-### 2.5 Parser Component
+### 2.4 Parser Component
 
 ![Parser Diagram](https://user-images.githubusercontent.com/57165946/113112907-4c41b600-923c-11eb-897a-314cd186b578.png)
 
-The parser components deals with the input of the user. It makes sense of the users input and executes commands
-according to the input of the user
+The Parser component deals with the input of the user. It makes sense of the users input and executes respective
+commands according to the user's input. This component consists of 3 different classes:
+1. `Parser` class to determine the type of feature the user wants to use. (e.g. items or orders feature)
+2. `ItemsParser` class to process inputs related to `items` features.
+3. `OrdersParser` class to process inputs related to `orders` features.
 
-### 2.6 Command Component
+
+### 2.5 Command Component
 
 ![Command Diagram](https://user-images.githubusercontent.com/60378963/113083308-92802080-920e-11eb-8e4b-66bc7fdf79f2.png)
 
 Different Commands execute by the program.
 
-### 2.7 Model Component
+### 2.6 Model Component
 
-### 2.8 Exceptions Component
-Possible exceptions existing in the program.
+### 2.7 Storage Component
 
-### 2.9 Common Component
-Common components contains the constants and messages used in the program.
-- Constants: Fixed values used in the program
-- Messages: Output response from the program.
+![image](https://user-images.githubusercontent.com/57165946/113095572-3d500900-9226-11eb-83b0-44d3729442b7.png)
+
+The Storage component consists of 3 different classes
+1. `Storage` class to initialize required classes for it's subclasses.
+2. `SaveData` class to deal with the loading, saving and creation of save data.
+3. `Receipt` class to deal with the generation of receipts when an order is done.
+
+### 2.8 Common Component
+
+The Common component consists of 2 different classes:
+1. `Constants` class to store all variables that are frequently used in the various components.
+2. `Messages` class to store all the texts for the UI to print onto the command line.
 
 ## 3. Implementation
 

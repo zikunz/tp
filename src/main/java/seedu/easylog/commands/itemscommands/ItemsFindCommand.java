@@ -14,7 +14,7 @@ public class ItemsFindCommand extends ItemsCommand {
             throw new EmptyNameException();
         }
         itemManager.findItem(itemDescription);
-        if (itemManager.foundSize() == 0) {
+        if (itemManager.getFoundSize() == 0) {
             throw new ItemNotFoundException();
         }
         String rawFoundListOutput = itemManager.getFoundListPrintFormat(itemManager.getFoundList());

@@ -6,6 +6,7 @@ import seedu.easylog.commands.itemscommands.ItemsAddFromFileCommand;
 import seedu.easylog.commands.orderscommands.OrdersAddFromFileCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.InvalidFileInputException;
+import seedu.easylog.exceptions.NoItemsStatisticsCanBeGivenException;
 import seedu.easylog.model.ItemManager;
 import seedu.easylog.model.OrderManager;
 import seedu.easylog.storage.Receipt;
@@ -23,6 +24,7 @@ public class Parser {
 
     /**
      * Splits the input to process the command, word and arguments.
+     *
      * @param rawUserInput the input from user
      * @return the splitted command, word and arguments
      */
@@ -33,13 +35,14 @@ public class Parser {
 
     /**
      * Processes the user input.
+     *
      * @param rawUserInput the input from user
-     * @param itemManager item manager
+     * @param itemManager  item manager
      * @param orderManager order manager
      * @throws IOException Exception when there is invalid input
      */
     public void processUserInput(String rawUserInput, ItemManager itemManager, OrderManager orderManager)
-            throws IOException {
+            throws IOException, NoItemsStatisticsCanBeGivenException {
         String[] commandTypeAndParams = splitCommandWordAndArgs(rawUserInput);
         String commandType = commandTypeAndParams[0];
         String commandArgs = commandTypeAndParams[1];
@@ -63,9 +66,10 @@ public class Parser {
 
     /**
      * Processes the input to file.
-     * @param commandType the type of command
-     * @param commandArgs the argument of command
-     * @param itemManager item manager
+     *
+     * @param commandType  the type of command
+     * @param commandArgs  the argument of command
+     * @param itemManager  item manager
      * @param orderManager order manager
      * @throws InvalidFileInputException Exception when there is invalid file input
      */

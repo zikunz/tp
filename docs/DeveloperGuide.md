@@ -128,6 +128,15 @@ Different Commands execute by the program.
 
 ### 2.6 Model Component
 
+![Command Diagram](https://user-images.githubusercontent.com/75139323/113109924-0d5e3100-9239-11eb-8159-94fb4aaf10dc.png)
+
+The model component consists of `Item`, `ItemManager`, `Order` and `OrderManager` classes.
+
+* Item: Consists of items in the inventory.
+* ItemManager: Contains the item list e.g., it has operations to add / delete items in the list.
+* Order: Consists of orders by customers.
+* OrderManager: Contains the order list e.g., it has operations to add / delete orders in the list.
+
 ### 2.7 Storage Component
 
 ![image](https://user-images.githubusercontent.com/57165946/113095572-3d500900-9226-11eb-83b0-44d3729442b7.png)
@@ -212,4 +221,4 @@ Abbreviation | Full title | Definition
 
 {Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing} <br> <br>
 
-[Return to Top](#introduction)
+[Return to Top](#1-introduction)

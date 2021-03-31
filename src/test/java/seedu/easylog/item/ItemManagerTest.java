@@ -12,9 +12,8 @@ public class ItemManagerTest {
     @Test
     public void testGetItemListPrintFormat() {
 
-        BigDecimal priceOne, priceTwo;
-        priceOne = new BigDecimal("100.00");
-        priceTwo = new BigDecimal("36.00");
+        BigDecimal priceOne = new BigDecimal("100.00");
+        BigDecimal priceTwo = new BigDecimal("36.00");
         Item itemOne = new Item("PS5",priceOne,5);
         Item itemTwo = new Item("MP3", priceTwo,5);
         ItemManager itemManager = new ItemManager();

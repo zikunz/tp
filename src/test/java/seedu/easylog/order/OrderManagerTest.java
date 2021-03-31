@@ -14,10 +14,9 @@ public class OrderManagerTest {
 
     @Test
     public void testGetOrderListPrintFormat() {
-        BigDecimal priceOne, priceTwo;
         ItemManager itemsInOrder = new ItemManager();
-        priceOne = new BigDecimal("100.00");
-        priceTwo = new BigDecimal("36.00");
+        BigDecimal priceOne = new BigDecimal("100.00");
+        BigDecimal priceTwo = new BigDecimal("36.00");
         Item itemOne = new Item("PS5",priceOne,5);
         Item itemTwo = new Item("MP3", priceTwo,5);
         itemsInOrder.addItem(itemOne);

@@ -35,7 +35,7 @@ easyLog, comprises a Parser component, Ui component, Storage component, Item com
 component. Each component consists of various classes that work in tandem, to ensure it meets the purpose of our
 program.
 
-The purpose of this developer guide is to allow any interested contributors, who wish to develop this application
+The purpose of this developer guide is to allow any interested contributors who wish to develop this application
 further or just curious about the workings of this application. This would allow potential contributors to be able to
 dive right in to improving the code, performance, features or even adding new features much more easily due to the
 understanding of the structure of the codebase and implementation of existing features.

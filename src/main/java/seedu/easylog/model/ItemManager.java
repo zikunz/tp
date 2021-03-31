@@ -319,5 +319,27 @@ public class ItemManager {
 
         return mostPopularItemDescriptions;
     }
+
+    /**
+     * Deletes the item from item list by name.
+     * @param name the name of item to be deleted
+     */
+    public void deleteByname (String name) {
+        for (int i = 0; i < itemList.size(); i++) {
+            if (name.equals(itemList.get(i).itemName)) {
+                itemList.remove(i);
+                break;
+            }
+        }
+    }
+
+    public Item changeItemFormat (String name) {
+        for (int i = 0; i < itemList.size(); i++) {
+            if (name.equals(itemList.get(i).itemName)) {
+               return itemList.get(i);
+            }
+        }
+        return null;
+    }
 }
 

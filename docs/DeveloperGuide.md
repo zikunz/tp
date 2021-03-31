@@ -109,7 +109,7 @@ input.
 
 ### 2.5 Parser Component
 
-![Parser Diagram](https://user-images.githubusercontent.com/57165946/112991918-42677680-919a-11eb-8868-79391cfc2c9e.png)
+![Parser Diagram](https://user-images.githubusercontent.com/57165946/113112907-4c41b600-923c-11eb-897a-314cd186b578.png)
 
 The parser components deals with the input of the user. It makes sense of the users input and executes commands
 according to the input of the user

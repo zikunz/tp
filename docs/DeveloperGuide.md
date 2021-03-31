@@ -59,7 +59,8 @@ Save data not found.
 
 ### 2.1 Architecture
 
-![image](https://user-images.githubusercontent.com/57165946/112262176-2f3f3d00-8ca8-11eb-81a6-c6053c111188.png)
+![Architecture Diagram](https://user-images.githubusercontent.com/57165946/112990632-ddf7e780-9198-11eb-99ec-f29aafbfc04f.png)
+
 
 The Architecture Diagram shown above illustrates the high-level design of easyLog. We will now proceed to explain each
 component and their respective functionalities below.
@@ -71,11 +72,11 @@ continuously take in input from the user until the user types in a exit command.
 
 ### 2.3 Storage Component
 
-![image](https://user-images.githubusercontent.com/57165946/112269495-66ffb200-8cb3-11eb-9f0b-4d33db48d492.png)
+![Storage Diagram](https://user-images.githubusercontent.com/57165946/112991416-ab022380-9199-11eb-9ead-cdfcd19cf8e5.png)
 
 The storage component deals with
 - loading, saving and creating save data.
-- generation of receipts when order is done. (NOT YET IMPLEMENTED)
+- generation of receipts when order is done.
 
 ### 2.4 Ui Component
 
@@ -84,14 +85,14 @@ input.
 
 ### 2.5 Parser Component
 
-![image](https://user-images.githubusercontent.com/57165946/112273156-fdce6d80-8cb7-11eb-9693-f46855141e7d.png)
+![Parser Diagram](https://user-images.githubusercontent.com/57165946/112991918-42677680-919a-11eb-8868-79391cfc2c9e.png)
 
 The parser components deals with the input of the user. It makes sense of the users input and executes commands
 according to the input of the user
 
 ### 2.6 Command Component
 
-![Command UML](https://user-images.githubusercontent.com/60378963/112716136-7a16ba00-8f1f-11eb-90a6-8c26f3e7edcb.jpg)
+![Command Diagram](https://user-images.githubusercontent.com/60378963/113083308-92802080-920e-11eb-8e4b-66bc7fdf79f2.png)
 
 Different Commands execute by the program.
 

@@ -56,6 +56,20 @@ public class OrderTest {
     }
 
     @Test
+    public void getOrderTotalPriceTest() {
+        Item itemOne = new Item("milk", new BigDecimal("2.00"), 5);
+        Item itemTwo = new Item("tea", new BigDecimal("1.00"), 5);
+        ItemManager itemsInOrder = new ItemManager();
+        itemsInOrder.addItem(itemOne);
+        itemsInOrder.addItem(itemTwo);
+        ArrayList<Integer> quantityOfItems = new ArrayList<>();
+        quantityOfItems.add(1);
+        quantityOfItems.add(1);
+        Order order = new Order("Coco", itemsInOrder.getItemList(), quantityOfItems);
+        assertEquals(new BigDecimal("3.00"), order.getOrderTotalPrice(itemsInOrder.getItemList()));
+    }
+
+    @Test
     public void saveToFileFormatTest() {
         ItemManager itemManager = new ItemManager();
         Item itemOne = new Item("milk", new BigDecimal("5.6"), Integer.parseInt("20"));

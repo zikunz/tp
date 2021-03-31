@@ -30,7 +30,5 @@ public class ItemsDeleteCommand extends ItemsCommand {
             ui.showDeletedItem(itemManager.changeItemFormat(itemsArg));
             itemManager.deleteByname(itemsArg);
         }
-//        int size = itemManager.getSize();
-//        assert itemManager.getSize() == size - 1 : "After a valid deletion, one item is deleted.";
     }
 }

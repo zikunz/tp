@@ -333,6 +333,11 @@ public class ItemManager {
         }
     }
 
+    /**
+     * Changes relevant string to item type.
+     * @param name the name of string to be changed
+     * @return string in item type if in item list, null otherwise
+     */
     public Item changeItemFormat (String name) {
         for (int i = 0; i < itemList.size(); i++) {
             if (name.equals(itemList.get(i).itemName)) {

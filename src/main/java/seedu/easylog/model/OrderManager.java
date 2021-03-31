@@ -148,7 +148,7 @@ public class OrderManager {
         for (Order order : orderList) {
             String customerName = order.getCustomerName();
             String individualOrderOutput = getIndividualOrderPrintFormat(order);
-            rawOrderListOutput += orderIndex + "." +customerName+"\n"+ individualOrderOutput;
+            rawOrderListOutput += orderIndex + "." + customerName + "\n" + individualOrderOutput;
             ++orderIndex;
         }
         return rawOrderListOutput;
@@ -191,9 +191,11 @@ public class OrderManager {
      */
     public String getFoundOrderListPrintFormat() {
         String rawFoundOrderListOutput = "";
+        int orderIndex = 1;
         for (Order order : FOUND_LIST) {
+            String customerName = order.getCustomerName();
             String individualOrderOutput = getIndividualOrderPrintFormat(order);
-            rawFoundOrderListOutput += individualOrderOutput;
+            rawFoundOrderListOutput += orderIndex + "." + customerName+"\n" + individualOrderOutput;
         }
         return rawFoundOrderListOutput;
     }

@@ -255,8 +255,8 @@ public class ItemManager {
         int largestSales = 0;
 
         for (Item item : itemList) {
-            if (item.itemsSales > largestSales) {
-                largestSales = item.itemsSales;
+            if (item.itemSales > largestSales) {
+                largestSales = item.itemSales;
             }
         }
 
@@ -277,7 +277,7 @@ public class ItemManager {
         }
 
         for (Item item : itemList) {
-            if (item.itemsSales == largestSales) {
+            if (item.itemSales == largestSales) {
                 numberOfMostPopularItems++;
             }
         }
@@ -298,7 +298,7 @@ public class ItemManager {
 
         if (numberOfMostPopularItems == 1) {
             for (Item item : itemList) {
-                if (item.itemsSales == largestSales) {
+                if (item.itemSales == largestSales) {
                     mostPopularItemDescriptions += item.itemName;
                 }
             }
@@ -306,7 +306,7 @@ public class ItemManager {
 
         if (numberOfMostPopularItems > 1) {
             for (Item item : itemList) {
-                if (item.itemsSales == largestSales) {
+                if (item.itemSales == largestSales) {
                     if (count == 0) {
                         mostPopularItemDescriptions += item.itemName;
                     } else {

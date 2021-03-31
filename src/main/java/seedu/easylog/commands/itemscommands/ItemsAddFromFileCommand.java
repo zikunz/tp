@@ -17,7 +17,9 @@ public class ItemsAddFromFileCommand extends ItemsCommand {
         String itemName = rawItemFileInput[0];
         BigDecimal itemPrice = new BigDecimal(rawItemFileInput[1]);
         int itemStock = Integer.parseInt(rawItemFileInput[2]);
+        int itemSales = Integer.parseInt(rawItemFileInput[3]);
         Item itemToBeAddedFromFile = new Item(itemName, itemPrice, itemStock);
+        itemToBeAddedFromFile.setItemSold(itemSales);
         itemManager.addItem(itemToBeAddedFromFile);
     }
 }

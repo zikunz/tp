@@ -15,9 +15,11 @@ public class ItemsAddFromFileCommandTest {
         String testItemName = "PS5";
         BigDecimal testItemPrice = new BigDecimal("599.00");
         int testItemStock = 10;
+        int testItemSales = 10;
         Item testItem = new Item(testItemName, testItemPrice, testItemStock);
+        testItem.setItemSold(testItemSales);
 
-        String inputFromFile = "PS5 599.00 10";
+        String inputFromFile = "PS5 599.00 10 10";
         ItemManager itemManager = new ItemManager();
         ItemsAddFromFileCommand itemsAddFromFileCommand = new ItemsAddFromFileCommand();
         itemsAddFromFileCommand.execute(inputFromFile, itemManager);
@@ -26,5 +28,6 @@ public class ItemsAddFromFileCommandTest {
         assertEquals(testItem.getItemName(), itemAdded.getItemName());
         assertEquals(testItem.getItemPrice(), itemAdded.getItemPrice());
         assertEquals(testItem.getItemStock(), itemAdded.getItemStock());
+        assertEquals(testItem.getItemSold(), itemAdded.getItemSold());
     }
 }

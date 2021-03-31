@@ -105,7 +105,8 @@ General Options:
   1. items                          Show items-related commands
   2. items add <item_name>          Add an item
   3. items list                     List all items
-  4. items delete <item_index>      Delete an item
+  4.1 items delete <item_index>     Delete an item
+  4.2 items delete <item_name>      Delete an item
   5. items clear                    Empty all items
   6. items find <item_name>         Find an item
   7. items update                   Update the detail of an item
@@ -136,7 +137,8 @@ ____________________________________________________________
 Items-Related Options:
   1. items add <item_name>          Add an item
   2. items list                     List all items
-  3. items delete <item_index>      Delete an item
+  3.1 items delete <item_index>     Delete an item
+  3.2 items delete <item_name>      Delete an item
   4. items clear                    Empty all items
   5. items find <item_name>         Find an item
   6. items update                   Update the detail of an item
@@ -194,13 +196,26 @@ ____________________________________________________________
 
 Delete an item from the item list.
 
-Format: `items delete <item_index>`
+Format 1: `items delete <item_index>`
 
-Example: `items delete 2`
+Example 1: `items delete 2`
 
-Expected Output:
+Expected Output 1:
 
 ```
+items delete 2 (users input)
+____________________________________________________________
+Got it! The item [bag] is deleted.
+____________________________________________________________
+```
+Format 2: `items delete <item_name>`
+
+Example 2: `items delete bang`
+
+Expected Output 2:
+
+```
+items delete bag (user input)
 ____________________________________________________________
 Got it! The item [bag] is deleted.
 ____________________________________________________________
@@ -578,7 +593,7 @@ help | `help` | `help` |
 item | `items` | `items` |
 items add | `items add <item_name>` | `items add PS5` |
 items list | `items list`      | `items list` |
-items delete | `items delete <item_index>` | `items delete 2` |
+items delete | `items delete <item_index>`<br> `items delete<item_name>` | `items delete 2`<br>`items delete bag` |
 items clear | `items clear ` | `items clear` |
 items find | `items find` | `items find <item_name>`|
 items update | `items update` | `items update`|

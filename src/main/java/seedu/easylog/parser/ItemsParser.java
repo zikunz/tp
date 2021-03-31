@@ -7,10 +7,9 @@ import seedu.easylog.commands.itemscommands.ItemsFindCommand;
 import seedu.easylog.commands.itemscommands.ItemsListCommand;
 import seedu.easylog.commands.itemscommands.ItemsPromptPriceCommand;
 import seedu.easylog.commands.itemscommands.ItemsPromptStockCommand;
+import seedu.easylog.commands.itemscommands.ItemsTipsCommand;
 import seedu.easylog.commands.itemscommands.ItemsUpdateCommand;
-
 import seedu.easylog.common.Constants;
-
 import seedu.easylog.exceptions.EmptyItemIndexException;
 import seedu.easylog.exceptions.EmptyItemPriceException;
 import seedu.easylog.exceptions.EmptyItemStockException;
@@ -23,13 +22,13 @@ import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.exceptions.InvalidTotalItemStockException;
 import seedu.easylog.exceptions.ItemListAlreadyClearedException;
 import seedu.easylog.exceptions.ItemNotFoundException;
+import seedu.easylog.exceptions.NoItemsTipsCanBeGivenException;
+import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
+import seedu.easylog.exceptions.NonNumericItemPriceException;
 import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NullItemStockException;
 import seedu.easylog.exceptions.WrongItemFieldException;
 import seedu.easylog.exceptions.WrongUpdateCommandException;
-import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
-import seedu.easylog.exceptions.NonNumericItemPriceException;
-
 import seedu.easylog.model.ItemManager;
 
 import java.math.BigDecimal;
@@ -40,7 +39,8 @@ import java.util.ArrayList;
  * Process items command input.
  */
 public class ItemsParser extends Parser {
-    public static void processItemsInput(String itemsInput, ItemManager itemManager) {
+    public static void processItemsInput(String itemsInput, ItemManager itemManager) throws
+            NoItemsTipsCanBeGivenException {
         String[] splitItemsArg = splitCommandWordAndArgs(itemsInput);
         String itemsType = splitItemsArg[0];
         String itemsArg = splitItemsArg[1];
@@ -129,6 +129,13 @@ public class ItemsParser extends Parser {
                 ui.showItemNotFound();
             }
             break;
+        case (Constants.COMMAND_TIPS):
+            try {
+                new ItemsTipsCommand().execute(itemManager);
+            } catch (NoItemsTipsCanBeGivenException e) {
+                ui.showNoItemsTipsCanBeGiven();
+            }
+            break;
         default:
             ui.showItemsHelp();
         }
@@ -136,6 +143,7 @@ public class ItemsParser extends Parser {
 
     /**
      * Processes the input price.
+     *
      * @param priceInString the price of input in string
      * @return the price of input in BigDecimal
      */
@@ -151,6 +159,7 @@ public class ItemsParser extends Parser {
 
     /**
      * process the amount of stock input in string.
+     *
      * @param stockInString the amount of stocks in string
      * @return the amount of stocks in integer
      */
@@ -164,18 +173,19 @@ public class ItemsParser extends Parser {
 
     /**
      * Process the updates of an item.
+     *
      * @param updateInput the type of update
-     * @param itemIndex the index of item to be updated
+     * @param itemIndex   the index of item to be updated
      * @param itemManager item manager
-     * @throws EmptyItemPriceException Exception when the item price is empty
-     * @throws InvalidItemPriceException Exception when the item price is invalid
-     * @throws NullItemPriceException Exception when the item price is Null
-     * @throws NullItemStockException Exception when the item stock is Null
-     * @throws EmptyItemStockException Exception when the item stock is empty
-     * @throws InvalidItemStockException Exception when the item stock is invalid
-     * @throws WrongItemFieldException Exception when the item field is wrong
+     * @throws EmptyItemPriceException             Exception when the item price is empty
+     * @throws InvalidItemPriceException           Exception when the item price is invalid
+     * @throws NullItemPriceException              Exception when the item price is Null
+     * @throws NullItemStockException              Exception when the item stock is Null
+     * @throws EmptyItemStockException             Exception when the item stock is empty
+     * @throws InvalidItemStockException           Exception when the item stock is invalid
+     * @throws WrongItemFieldException             Exception when the item field is wrong
      * @throws NonIntegerNumericItemStockException Exception when the update item stock is not a number
-     * @throws NonNumericItemPriceException Exception when the update item price is not a number
+     * @throws NonNumericItemPriceException        Exception when the update item price is not a number
      */
     public void processUpdateAttributeInput(String updateInput, int itemIndex, ItemManager itemManager) throws
             EmptyItemPriceException, InvalidItemPriceException, NullItemPriceException, NullItemStockException,

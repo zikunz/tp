@@ -267,5 +267,13 @@ public class Messages {
             + "what is the new stock to be added?";
     public static final String MESSAGE_PROMPT_ADDITIONAL_ITEM_STOCK = "Please enter the additional stock of the item.\n"
             + MESSAGE_LINE;
+    public static final String MESSAGE_SHOW_MOST_POPULAR_ITEM = "The most popular item is ";
+    public static final String MESSAGE_SHOW_MOST_POPULAR_ITEMS = "The most popular items are ";
+    public static final String SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEM_IS_NOT_ENOUGH = ". Please consider stocking "
+            + "it up if it is not enough :)";
+    public static final String SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEMS_ARE_NOT_ENOUGH = ". Please consider "
+            + "stocking them up if they are not enough :)";
+    public static final String MESSAGE_SHOW_NO_ITEMS_TIPS_CAN_BE_GIVEN = "No item-related tips can be given because "
+            + "you have not sold any single item yet.";
 }
 

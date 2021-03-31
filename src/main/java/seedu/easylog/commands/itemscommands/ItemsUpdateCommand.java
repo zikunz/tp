@@ -37,7 +37,7 @@ public class ItemsUpdateCommand extends ItemsCommand {
         ItemsListCommand itemsListCommand = new ItemsListCommand();
         itemsListCommand.execute(itemManager); // Show item list to allow user to see the item index to update
 
-        String itemIndexInString = Constants.SCANNER.nextLine();
+        String itemIndexInString = ui.askForUserInput();
         if (itemIndexInString.equals("")) {
             throw new EmptyItemIndexException();
         }
@@ -48,7 +48,7 @@ public class ItemsUpdateCommand extends ItemsCommand {
         }
 
         ui.askForItemFieldToBeUpdated();
-        String itemField = Constants.SCANNER.nextLine();
+        String itemField = ui.askForUserInput();
         itemsParser.processUpdateAttributeInput(itemField, itemIndex, itemManager);
     }
 }

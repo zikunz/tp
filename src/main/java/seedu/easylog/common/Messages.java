@@ -12,7 +12,7 @@ public class Messages {
             + "                 |___/             |___/ \n";
     public static final String MESSAGE_LINE = "____________________________________________________________\n";
     public static final String MESSAGE_LIST_ITEMS = MESSAGE_LINE
-            + "Here is the list of items in the warehouse.\n"
+            + "Here is the list of items.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_FOUNDLIST_ITEMS = MESSAGE_LINE
             + "Here is the list of relevant items found.\n"
@@ -33,14 +33,14 @@ public class Messages {
             + "  3. items list                     List all items\n"
             + "  4. items delete <item_index>      Delete an item\n"
             + "  5. items clear                    Empty all items\n"
-            + "  6. items find <item_name>         Finding an item\n"
+            + "  6. items find <item_name>         Find an item\n"
             + "  7. items update                   Update the detail of an item\n"
             + "  8. orders                         Show orders-related commands\n"
             + "  9. orders add <order_name>        Add an order\n"
             + "  10. orders list                   List all orders\n"
             + "  11. orders delete <order_index>   Delete an order\n"
             + "  12. orders clear                  Empty all orders\n"
-            + "  13. orders find <order_name>      Finding an order\n"
+            + "  13. orders find <order_name>      Find an order\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_GREETING = MESSAGE_LOGO
             + MESSAGE_LINE
@@ -86,7 +86,7 @@ public class Messages {
             + "  4. orders clear                   Empty all orders\n"
             + "  5. orders price <order_index>     Check the total price of an order\n"
             + "  6. orders done <order_index>      Update the status of an order\n"
-            + "  7. orders find <order_name>       Finding an order\n"
+            + "  7. orders find <order_name>       Find an order\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_SHOW_ITEMS_COMMANDS = MESSAGE_LINE
             + "Items-Related Options:\n"
@@ -94,7 +94,7 @@ public class Messages {
             + "  2. items list                     List all items\n"
             + "  3. items delete <item_index>      Delete an item\n"
             + "  4. items clear                    Empty all items\n"
-            + "  5. items find <item_name>         Finding an item\n"
+            + "  5. items find <item_name>         Find an item\n"
             + "  6. items update                   Update the detail of an item\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_ALREADY_CLEARED_ITEM_LIST = MESSAGE_LINE
@@ -110,7 +110,7 @@ public class Messages {
             + "Done! I just cleared all orders for you.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ITEM_LIST = MESSAGE_LINE
-            + "There is no item in the warehouse at the moment.\n"
+            + "There is no item in the system at the moment.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ORDER_LIST = MESSAGE_LINE
             + "There is no order at the moment.\n"

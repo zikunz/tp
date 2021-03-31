@@ -11,16 +11,31 @@
     - [1.2. Prerequisites](#12-prerequisites)
     - [1.3. Setting up](#13-setting-up)
 - [2. Design](#2-design)
-    - [2.1. Architecture](#21-architecture)
-    - [2.2. EasyLog Component](#22-easylog-component)
-    - [2.3. UI Component](#23-ui-component)
-    - [2.4. Parser Component](#24-parser-component)
-    - [2.5. Command Component](#25-command-component)
-    - [2.6. Model Component](#26-model-component)
-    - [2.7. Storage Component](#27-storage-component)
-    - [2.8. Common Component](#28-common-component)
+    - [2.1. Architecture](#2.1-architecture)
+    - [2.2. EasyLog Component](#2.2-easylog-component)
+    - [2.3. UI Component](#2.3-ui-component)
+    - [2.4. Parser Component](#2.4-parser-component)
+    - [2.5. Command Component](#2.5-command-component)
+    - [2.6. Model Component](#2.6-model-component)
+    - [2.7. Storage Component](#2.7-storage-component)
+    - [2.8. Common Component](#2.8-common-component)
 - [3. Implementation](#3-implementation)
-
+- [4. Documentation](#4-documentation)
+- [5. Testing](#5-testing)<br>
+  [5.1 Running Tests](#5.1running-tests)<br>
+  [5.2. Types of Tests](#5.2types-of-tests)<br>
+- [6. Dev Ops](#dev-ops)<br>
+    - [6.1. Build Automation](#build-automation)<br>
+    - [6.2. Continuous Integration](#continuous-integration)<br>
+    - [6.3. Coverage Report](#coverage-report)<br>
+    - [6.4. Making a Release](#making-a-release)<br>
+    - [6.5. Managing Dependencies](#managing-dependencies)
+- [Appendices](#appendices)
+    - [Appendix A: Product Scope](#appendix-a-product-scope)
+    - [Appendix B: User Stories](#appendix-b-user-stories)
+    - [Appendix C: Non-Functional Requirements](#appendix-c-non-functional-requirements)
+    - [Appendix D: Glossary](#appendix-d-glossary)
+    
 ## 1. Introduction
 
 ### 1.1 Software Overview
@@ -128,7 +143,7 @@ Different Commands execute by the program.
 
 ### 2.6 Model Component
 
-![Command Diagram](https://user-images.githubusercontent.com/75139323/113109924-0d5e3100-9239-11eb-8159-94fb4aaf10dc.png)
+![Command Diagram](https://user-images.githubusercontent.com/75139323/113146529-5f677c80-9262-11eb-9cff-300d5496d089.png)
 
 The model component consists of `Item`, `ItemManager`, `Order` and `OrderManager` classes.
 
@@ -154,24 +169,60 @@ The Common component consists of 2 different classes:
 
 ## 3. Implementation
 
+## 4. Documentation
 
+All documentation can be found under the `docs/` folder. Alternatively, visit
+https://ay2021s2-cs2113t-t09-4.github.io/tp/ to browse all the document.
 
-## Product scope
+* [Jekyll](https://jekyllrb.com/) is used to manage the documentation.
+* [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) is used to write the documentation.
+* [diagrams.net](https://draw.io/) (formerly draw.io) is used to create various UML diagrams.
+
+## 5. Testing
+
+## 5.1. Running Tests
+
+There are two ways to test easyLog.
+
+**Method 1: Using IntelliJ JUnit Tests**
+
+**Method 2: Using Gradle**
+
+## 5.2. Types of Tests
+
+We have employed several types of tests as follows:
+
+## 6. Dev Ops
+
+### 6.1. Build Automation
+
+### 6.2. Continuous Integration
+
+### 6.3. Coverage Report
+
+### 6.4. Making a Release
+
+### 6.5. Managing Dependencies
+
+## Appendices
+
+### Appendix A: Product Scope
+
 ### Target user profile
 
-- IT savvy home-based businessman
-- has a need to manage numerous sales data
-- the list gets constantly updated (add & delete items/orders)
-- prefers typing over mouse/handwritten
-- can type fast
-- enjoys using CLI software
+- IT savvy home-based businessmen
+- Have a need to manage numerous sales data
+- The inventory list gets constantly updated (add & delete items/orders)
+- Prefer typing over mouse/handwritten
+- Can type fast
+- Enjoy using CLI software
 
 ### Value proposition
 
-A simple database application that helps target user to store and accesse a collection of data electronically from a computer
-system.
+A simple database application that helps target user to store and accesse a collection of data electronically from a
+computer system.
 
-## User Stories
+### Appendix B: User Stories
 
 |Version| As a ... | I want to ... | So that I can ...|
 |--------|----------|---------------|------------------|
@@ -200,13 +251,13 @@ system.
 |v2.0|user|check the total price of a specific order|feedback to customer when they ask for it and do not have to look through the order list.|
 |v2.0|user|update the status of an order|differentiate the orders by their status.|
 
-## Non-Functional Requirements
+### Appendix C: Non-Functional Requirements
 
-- Be able to work on any mainstream OS as long as it has Java 11 or above installed.
-- Be able to respond to any command in less than 2 seconds.
+- A user should be able to work on any mainstream OS as long as it has Java 11 or above installed.
+- A user should be able to respond to any command in less than 2 seconds.
 - A user should be able to complete majority of tasks faster using CLI than GUI.
 
-## Glossary
+### Appendix D: Glossary
 
 Abbreviation | Full title | Definition
 -------- | ---------- | ----------
@@ -215,10 +266,5 @@ Abbreviation | Full title | Definition
 **CLI** | Command Line Interface | A program that accepts text inputs to execute operating system functions
 **GUI** | Graphical User Interface | An interface that allows users to interact through graphical icons
 **Mainstream OS** | Windows, Linux, Unix, OS-X | Operating systems
-
-
-## Instructions for manual testing
-
-{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing} <br> <br>
 
 [Return to Top](#1-introduction)

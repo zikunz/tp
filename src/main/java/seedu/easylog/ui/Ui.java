@@ -411,7 +411,7 @@ public class Ui {
 
     public void showItemAndStockAddedToOrder(String itemName, int stockAdded) {
         System.out.print(Messages.MESSAGE_LINE);
-        System.out.println(itemName + " and stock of " + stockAdded + " added to the order." + Messages.MESSAGE_LINE);
+        System.out.println(itemName + " and stock of " + stockAdded + " added to the order.\n" + Messages.MESSAGE_LINE);
     }
 
     public void showInvalidWhileAddingItemToOrder() {

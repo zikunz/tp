@@ -359,14 +359,20 @@ ____________________________________________________________
 3. milk, S$5.60, 20
 4. tea, S$4.40, 34
 ____________________________________________________________
-Input the items to be added to this order.
+Input the item to be added to this order.
+Input format: <item_index> <item_quantity>
+Type <stop> to stop adding items to order, else continue entering items in the same format.
+Do note that you need at least 1 item in the order for <stop> to work.
 ____________________________________________________________
 1 2 (user input)
 ____________________________________________________________
 PS5 and stock of 2 added to the order.
 ____________________________________________________________
-Type (stop) to stop adding items to order, else continue entering items in the same format.
-Note that you need at least 1 item in the order.
+
+Input the item to be added to this order.
+Input format: <item_index> <item_quantity>
+Type <stop> to stop adding items to order, else continue entering items in the same format.
+Do note that you need at least 1 item in the order for <stop> to work.
 ____________________________________________________________
 stop (user input)
 _____________________________________________________

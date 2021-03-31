@@ -17,7 +17,7 @@ public class ItemsAddFromFileCommandTest {
         int testItemStock = 10;
         int testItemSales = 10;
         Item testItem = new Item(testItemName, testItemPrice, testItemStock);
-        testItem.setItemSold(testItemSales);
+        testItem.setItemSales(testItemSales);
 
         String inputFromFile = "PS5 599.00 10 10";
         ItemManager itemManager = new ItemManager();
@@ -28,6 +28,6 @@ public class ItemsAddFromFileCommandTest {
         assertEquals(testItem.getItemName(), itemAdded.getItemName());
         assertEquals(testItem.getItemPrice(), itemAdded.getItemPrice());
         assertEquals(testItem.getItemStock(), itemAdded.getItemStock());
-        assertEquals(testItem.getItemSold(), itemAdded.getItemSold());
+        assertEquals(testItem.getItemSales(), itemAdded.getItemSales());
     }
 }

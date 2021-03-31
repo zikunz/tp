@@ -84,20 +84,20 @@ public class Item {
     }
 
     /**
-     * Sets the total item sold of an item of interest.
+     * Sets the total item sales of an item of interest.
      *
-     * @param newItemSold new number of items sold (number of items added to an order).
+     * @param itemsSales new number of items sales (number of items added to an order).
      */
-    public void setItemSold(int newItemSold) {
-        this.itemSales = newItemSold;
+    public void setItemSales(int itemsSales) {
+        this.itemSales = itemsSales;
     }
 
     /**
-     * Gets the total item sold of an item of interest.
+     * Gets the total item sales of an item of interest.
      *
-     * @return item sold
+     * @return item sales
      */
-    public int getItemSold() {
+    public int getItemSales() {
         return itemSales;
     }
 

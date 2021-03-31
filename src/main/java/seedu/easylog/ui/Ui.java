@@ -1,6 +1,5 @@
 package seedu.easylog.ui;
 
-import seedu.easylog.common.Constants;
 import seedu.easylog.common.Messages;
 import seedu.easylog.model.Item;
 import seedu.easylog.model.Order;
@@ -523,7 +522,7 @@ public class Ui {
      *
      * @param itemDescription description of the most popular item
      */
-    public void showTipsForMostPopularItem(String itemDescription) {
+    public void showStatisticsForMostPopularItem(String itemDescription) {
         System.out.println(Messages.MESSAGE_SHOW_MOST_POPULAR_ITEM + itemDescription
                 + Messages.SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEM_IS_NOT_ENOUGH);
     }
@@ -534,7 +533,7 @@ public class Ui {
      *
      * @param itemDescriptions descriptions of the most popular items
      */
-    public void showTipsForMostPopularItems(String itemDescriptions) {
+    public void showStatisticsForMostPopularItems(String itemDescriptions) {
         System.out.println(Messages.MESSAGE_SHOW_MOST_POPULAR_ITEMS + itemDescriptions
                 + Messages.SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEMS_ARE_NOT_ENOUGH);
     }

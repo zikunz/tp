@@ -237,13 +237,13 @@ public class ItemManager {
     }
 
     /**
-     * Increments the item sold after an item is added to an order.
+     * Increments the item sales after an item is added to an order.
      */
-    public void incrementItemSold(Item item, int newItemSold) {
-        int currentItemSold = item.getItemSold();
-        int updatedItemSold = currentItemSold + newItemSold;
+    public void incrementItemSales(Item item, int newItemSales) {
+        int currentItemSales = item.getItemSales();
+        int updatedItemSales = currentItemSales + newItemSales;
 
-        item.setItemSold(updatedItemSold);
+        item.setItemSales(updatedItemSales);
     }
 
     /**

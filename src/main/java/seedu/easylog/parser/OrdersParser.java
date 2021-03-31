@@ -125,7 +125,7 @@ public class OrdersParser extends Parser {
                 Item itemToBeAddedToOrder = itemManager.getItem(itemIndex);
                 int currentItemStock = itemToBeAddedToOrder.getItemStock();
 
-                itemManager.incrementItemSold(itemToBeAddedToOrder, stockAdded);
+                itemManager.incrementItemSales(itemToBeAddedToOrder, stockAdded);
 
                 if (stockAdded < 0 || stockAdded > currentItemStock) {
                     throw new InvalidItemStockException();
@@ -175,7 +175,7 @@ public class OrdersParser extends Parser {
                 Item itemToBeAddedToOrder = itemManager.getItem(itemIndex);
                 int currentItemStock = itemToBeAddedToOrder.getItemStock();
 
-                itemManager.incrementItemSold(itemToBeAddedToOrder, stockAdded);
+                itemManager.incrementItemSales(itemToBeAddedToOrder, stockAdded);
 
                 if (stockAdded < 0 || stockAdded > currentItemStock) {
                     throw new InvalidItemStockException();

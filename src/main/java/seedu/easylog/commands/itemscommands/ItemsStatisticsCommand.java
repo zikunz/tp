@@ -7,6 +7,8 @@ public class ItemsStatisticsCommand extends ItemsCommand {
     /**
      * Print out the most popular item (the item which has most number of sales).
      * If ties, all items having the most number of sales will be shown.
+     *
+     * @param itemManager item manager
      */
     public void execute(ItemManager itemManager) throws NoItemsStatisticsCanBeGivenException {
         int numberOfMostPopularItems = itemManager.countNumberOfMostPopularItems();
@@ -14,9 +16,9 @@ public class ItemsStatisticsCommand extends ItemsCommand {
         String itemDescriptions = itemManager.getMostPopularItemDescriptions();
 
         if (numberOfMostPopularItems == 1) {
-            ui.showTipsForMostPopularItem(itemDescriptions);
+            ui.showStatisticsForMostPopularItem(itemDescriptions);
         } else if (numberOfMostPopularItems > 1) {
-            ui.showTipsForMostPopularItems(itemDescriptions);
+            ui.showStatisticsForMostPopularItems(itemDescriptions);
         } else {
             throw new NoItemsStatisticsCanBeGivenException();
         }

@@ -24,7 +24,7 @@ public class Constants {
     public static final String COMMAND_PRICE = "price";
     public static final String COMMAND_DONE = "done";
     public static final String COMMAND_FIND = "find";
-    public static final String COMMAND_TIPS = "tips";
+    public static final String COMMAND_STATISTICS = "statistics";
 
     public static final String COMMAND_RECEIPT_COUNTER = "ReceiptCounter";
     public static final String ITEM_NAME_AND_PRICE_SEPARATOR = ", S$";

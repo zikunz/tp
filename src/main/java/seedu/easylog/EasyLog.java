@@ -1,7 +1,7 @@
 package seedu.easylog;
 
 import seedu.easylog.common.Constants;
-import seedu.easylog.exceptions.NoItemsTipsCanBeGivenException;
+import seedu.easylog.exceptions.NoItemsStatisticsCanBeGivenException;
 import seedu.easylog.model.ItemManager;
 import seedu.easylog.model.OrderManager;
 import seedu.easylog.parser.Parser;
@@ -24,7 +24,7 @@ public class EasyLog {
     /**
      * Main entry-point for the easyLog application.
      */
-    public static void main(String[] args) throws IOException, NoItemsTipsCanBeGivenException {
+    public static void main(String[] args) throws IOException, NoItemsStatisticsCanBeGivenException {
         UI.showGreeting();
         try {
             SAVE_DATA.loadFile(ITEM_MANAGER, ORDER_MANAGER);

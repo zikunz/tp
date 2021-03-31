@@ -1,5 +1,6 @@
 package seedu.easylog.storage;
 
+import seedu.easylog.common.Messages;
 import seedu.easylog.model.Order;
 import seedu.easylog.model.OrderManager;
 
@@ -33,6 +34,8 @@ public class Receipt extends Storage {
         receipt.createNewFile();
         FileWriter fw = new FileWriter(receiptFilePath);
         Order orderToAddToReceipt = orderManager.getOrder(orderIndex);
+        fw.write(Messages.MESSAGE_LINE);
+        fw.write(ui.showReceiptHeader());
         fw.write(orderManager.getIndividualOrderPrintFormat(orderToAddToReceipt));
         fw.close();
         ui.showReceiptGenerated(customerName);

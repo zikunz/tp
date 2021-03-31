@@ -440,7 +440,7 @@ public class Ui {
         if (rawOrderListOutput.equals("")) {
             System.out.println(Messages.MESSAGE_EMPTY_ORDER_LIST);
         } else {
-            System.out.println(Messages.MESSAGE_FOUNDLIST_ORDERS);
+            System.out.println(Messages.MESSAGE_FOUND_LIST_ORDERS);
             System.out.print(rawOrderListOutput);
             System.out.print(Messages.MESSAGE_LINE);
         }

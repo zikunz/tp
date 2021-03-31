@@ -123,7 +123,6 @@ public class OrderManager {
      * @return the print out order of the selected order
      */
     public String getIndividualOrderPrintFormat(Order order) {
-        String customerName = order.getCustomerName();
         String customersItemList = "";
         int itemAndStockIndex = 0;
         for (Item item : order.getItemsInOrder()) {
@@ -134,7 +133,7 @@ public class OrderManager {
             ++itemAndStockIndex;
         }
         BigDecimal totalPrice = order.getOrderTotalPrice(order.getItemsInOrder());
-        return customerName + "\n" + customersItemList + Messages.MESSAGE_INDENTATION + Constants.TOTAL_PRICE_FORMAT
+        return customersItemList + Messages.MESSAGE_INDENTATION + Constants.TOTAL_PRICE_FORMAT
                 + totalPrice + "\n" + Messages.MESSAGE_LINE;
     }
 
@@ -145,9 +144,12 @@ public class OrderManager {
      */
     public String getOrderListPrintFormat() {
         String rawOrderListOutput = "";
+        int orderIndex = 1;
         for (Order order : orderList) {
+            String customerName = order.getCustomerName();
             String individualOrderOutput = getIndividualOrderPrintFormat(order);
-            rawOrderListOutput += individualOrderOutput;
+            rawOrderListOutput += orderIndex + "." +customerName+"\n"+ individualOrderOutput;
+            ++orderIndex;
         }
         return rawOrderListOutput;
     }

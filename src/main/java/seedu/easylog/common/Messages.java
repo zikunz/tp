@@ -35,12 +35,13 @@ public class Messages {
             + "  5. items clear                    Empty all items\n"
             + "  6. items find <item_name>         Finding an item\n"
             + "  7. items update                   Update the detail of an item\n"
-            + "  8. orders                         Show orders-related commands\n"
-            + "  9. orders add <order_name>        Add an order\n"
-            + "  10. orders list                   List all orders\n"
-            + "  11. orders delete <order_index>   Delete an order\n"
-            + "  12. orders clear                  Empty all orders\n"
-            + "  13. orders find <order_name>      Finding an order\n"
+            + "  8. items stats                    Discover the most popular item(s)\n"
+            + "  9. orders                         Show orders-related commands\n"
+            + "  10. orders add <order_name>       Add an order\n"
+            + "  11. orders list                   List all orders\n"
+            + "  12. orders delete <order_index>   Delete an order\n"
+            + "  13. orders clear                  Empty all orders\n"
+            + "  14. orders find <order_name>      Finding an order\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_GREETING = MESSAGE_LOGO
             + MESSAGE_LINE
@@ -96,6 +97,7 @@ public class Messages {
             + "  4. items clear                    Empty all items\n"
             + "  5. items find <item_name>         Finding an item\n"
             + "  6. items update                   Update the detail of an item\n"
+            + "  7. items stats                    Discover the most popular item(s)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_ALREADY_CLEARED_ITEM_LIST = MESSAGE_LINE
             + "OOPS!!! There is no single item which can be cleared right now!\n"

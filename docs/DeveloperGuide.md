@@ -61,10 +61,22 @@ understanding of the structure of the codebase and implementation of existing fe
 5. Upon successful run, the following opening message will be shown:
 
 ```
+                       _                 
+                      | |                
+   ___  __ _ ___ _   _| |     ___   __ _ 
+  / _ \/ _` / __| | | | |    / _ \ / _` |
+ |  __/ (_| \__ \ |_| | |___| (_) | (_| |
+  \___|\__,_|___/\__, |______\___/ \__, |
+                  __/ |             __/ |
+                 |___/             |___/ 
+____________________________________________________________
 Hello! I'm easyLog!
 What can I do for you? Enter help to view commands.
+____________________________________________________________
+
 Looking for save data.
 Save data not found.
+____________________________________________________________
 ```
 
 ## 2. Design

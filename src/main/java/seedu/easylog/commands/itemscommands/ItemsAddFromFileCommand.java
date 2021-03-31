@@ -19,7 +19,7 @@ public class ItemsAddFromFileCommand extends ItemsCommand {
         int itemStock = Integer.parseInt(rawItemFileInput[2]);
         int itemSales = Integer.parseInt(rawItemFileInput[3]);
         Item itemToBeAddedFromFile = new Item(itemName, itemPrice, itemStock);
-        itemToBeAddedFromFile.setItemSold(itemSales);
+        itemToBeAddedFromFile.setItemSales(itemSales);
         itemManager.addItem(itemToBeAddedFromFile);
     }
 }

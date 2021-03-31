@@ -86,10 +86,10 @@ public class Item {
     /**
      * Sets the total item sales of an item of interest.
      *
-     * @param itemsSales new number of items sales (number of items added to an order).
+     * @param itemSales new number of item sales (number of items added to an order).
      */
-    public void setItemSales(int itemsSales) {
-        this.itemSales = itemsSales;
+    public void setItemSales(int itemSales) {
+        this.itemSales = itemSales;
     }
 
     /**

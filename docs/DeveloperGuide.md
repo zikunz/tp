@@ -92,7 +92,7 @@ according to the input of the user
 
 ### 2.6 Command Component
 
-![Command Diagram](https://user-images.githubusercontent.com/57165946/112992782-15679380-919b-11eb-8c46-436ba701a754.png)
+![Command Diagram](https://user-images.githubusercontent.com/60378963/113083308-92802080-920e-11eb-8e4b-66bc7fdf79f2.png)
 
 Different Commands execute by the program.
 

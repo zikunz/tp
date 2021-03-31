@@ -5,10 +5,18 @@ import seedu.easylog.common.Messages;
 import seedu.easylog.model.Item;
 import seedu.easylog.model.Order;
 
+import java.util.Scanner;
+
 /**
  * Handles ui related methods.
  */
 public class Ui {
+
+    public static final Scanner SCANNER = new Scanner(System.in);
+
+    public String askForUserInput() {
+        return SCANNER.nextLine();
+    }
 
     public void showGreeting() {
         System.out.println(Messages.MESSAGE_GREETING);

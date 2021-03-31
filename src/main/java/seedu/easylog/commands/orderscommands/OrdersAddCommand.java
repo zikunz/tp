@@ -30,7 +30,7 @@ public class OrdersAddCommand extends OrdersCommand {
             ItemsListCommand itemsListCommand = new ItemsListCommand();
             itemsListCommand.execute(itemManager); // to show available items and item stock
             ui.showAddItemsToOrder();
-            String addItemsToOrderInput = Constants.SCANNER.nextLine();
+            String addItemsToOrderInput = ui.askForUserInput();
             Order order = ordersParser.processItemsAddedToOrder(customerName, addItemsToOrderInput, itemManager);
             orderManager.addOrder(order);
             assert orderManager.getLatestOrderAdded().equals(order);
@@ -52,7 +52,7 @@ public class OrdersAddCommand extends OrdersCommand {
         ItemsListCommand itemsListCommand = new ItemsListCommand();
         itemsListCommand.execute(itemManager);
         ui.showAddItemsToOrder();
-        String addItemsToOrderInput = Constants.SCANNER.nextLine();
+        String addItemsToOrderInput = ui.askForUserInput();
         Order order = ordersParser.processItemsAddedToExistingOrder(customerName, addItemsToOrderInput,
                 itemManager, orderManager);
         orderManager.addOrder(order);

@@ -43,11 +43,12 @@ public class Messages {
             + "  9. orders                         Show orders-related commands\n"
             + "  10. orders add <order_name>       Add an order\n"
             + "  11. orders list                   List all orders\n"
-            + "  12. orders delete <order_index>   Delete an order\n"
+            + "  12.1 orders delete <order_index>  Delete an order\n"
+            + "  12.2 orders delete <order_name>   Delete an order\n"
             + "  13. orders clear                  Empty all orders\n"
-            + "  14. orders price <order_index>     Check the total price of an order\n"
-            + "  15. orders done <order_index>      Update the status of an order\n"
-            + "  16. orders find <order_name>      Finding an order\n"
+            + "  14. orders price <order_index>    Check the total price of an order\n"
+            + "  15. orders done <order_index>     Update the status of an order\n"
+            + "  16. orders find <order_name>      Find an order\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_GREETING = MESSAGE_LOGO
             + MESSAGE_LINE
@@ -63,7 +64,7 @@ public class Messages {
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ITEM_NAME = MESSAGE_LINE
             + "OOPS!!! The item name is missing!\n"
-            + "Please complete the item information! :)n"
+            + "Please complete the item information! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ORDER_CUSTOMER_NAME = MESSAGE_LINE
             + "OOPS!!! The customer name is missing!\n"
@@ -136,7 +137,7 @@ public class Messages {
     public static final String MESSAGE_NON_INTEGER_ITEM_NUMBER = MESSAGE_LINE
             + "OOPS!!! The input item information "
             + "is not an integer number!\n"
-            + "Please input the item information again! :)"
+            + "Please input the item information again! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_PROMPT_ITEM_PRICE = MESSAGE_LINE
             + "Please enter the price of the item.\n"
@@ -158,7 +159,7 @@ public class Messages {
             + "Please input again and complete the item price! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_NON_NUMERIC_INPUT_FOR_ADD = MESSAGE_LINE
-            + "OOPS!!! The input item is not a number!\n"
+            + "OOPS!!! The input for stock/price is not a number!\n"
             + "Please retry items add command and give a number for stock/price! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_NON_NUMERIC_INPUT_FOR_UPDATE = MESSAGE_LINE
@@ -180,7 +181,7 @@ public class Messages {
             + MESSAGE_LINE;
     public static final String MESSAGE_NULL_ITEM_STOCK = MESSAGE_LINE
             + "OOPS!!! The input item stock is null!\n"
-            + "Please input again and give a valid item stock! :)"
+            + "Please input again and give a valid item stock! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ITEM_STOCK = MESSAGE_LINE
             + "OOPS!!! The input item stock is empty!\n"
@@ -193,13 +194,12 @@ public class Messages {
     public static final String MESSAGE_ASK_FOR_ITEM_INDEX = MESSAGE_LINE
             + "Below is the exhaustive list for all items.\n"
             + "May I know which item should be updated?\n"
-            + "Please input the index of the item of interest only.";
+            + "Please input the index of the item of interest only.\n";
     public static final String MESSAGE_ASK_FOR_ITEM_FIELD_TO_BE_UPDATED = MESSAGE_LINE
             + "What would you like to update, price or stock? (p/s)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_PRICE = MESSAGE_LINE
-            + "What is the revised item price?\n"
-            + MESSAGE_LINE;
+            + "What is the revised item price?\n";
     public static final String MESSAGE_SHOW_UPDATE_ITEM_PRICE = MESSAGE_LINE
             + "Done! I just updated the item price for you.\n"
             + MESSAGE_LINE;
@@ -216,8 +216,7 @@ public class Messages {
             + "Please input again and complete the item index! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_STOCK = MESSAGE_LINE
-            + "What is the revised item stock?\n"
-            + MESSAGE_LINE;
+            + "What is the revised item stock?\n";
     public static final String MESSAGE_SHOW_UPDATE_ITEM_STOCK = MESSAGE_LINE
             + "Done! I just updated the item stock for you.\n"
             + MESSAGE_LINE;
@@ -226,7 +225,7 @@ public class Messages {
             + "command again!\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_NOT_ENOUGH_STOCK = MESSAGE_LINE
-            + "Not enough stock to be added into the order. "
+            + "Not enough stock to be added into the order.\n"
             + "Please retry and type valid stock number.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_CONTINUE_ADDING_ITEM_TO_ORDER = MESSAGE_LINE
@@ -253,7 +252,7 @@ public class Messages {
     public static final String MESSAGE_SAVE_DATA_LOADED = "Save data loaded.\n" + MESSAGE_LINE;
     public static final String MESSAGE_SAVE_DATA_CREATED = MESSAGE_LINE
             + "Save data created as there is no existing save data";
-    public static final String MESSAGE_SAVE_DATA_SAVED = MESSAGE_LINE + "Save data saved.";
+    public static final String MESSAGE_SAVE_DATA_SAVED = MESSAGE_LINE + "Save data saved.\n";
     public static final String MESSAGE_SAVE_DATA_NOT_FOUND = "Save data not found.\n" + MESSAGE_LINE;
     public static final String MESSAGE_INVALID_FILE_INPUT_LINE = "Invalid file input at line : ";
     public static final String MESSAGE_ERROR_WHILE_SAVING = MESSAGE_LINE
@@ -262,7 +261,8 @@ public class Messages {
             + MESSAGE_LINE;
     public static final String MESSAGE_REPEAT_ITEM = MESSAGE_LINE
             + "OOPS!! This item already exist.\n"
-            + "Please use update function to make modification or use a different name. Thank you!\n"
+            + "Please use update function to make modification or use a different name.\n"
+            + "Thank you!\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_REPEAT_ORDER = MESSAGE_LINE
             + "OOPS!! This order already exist.\n"
@@ -271,18 +271,22 @@ public class Messages {
             + "For completed order, please delete and create a new order to proceed on.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_ITEM_IS_ALREADY_EXISTING = MESSAGE_LINE
-            + "The item entered already exists in the system, "
-            + "what is the new stock to be added?";
+            + "The item entered already exists in the system.\n"
+            + "What is the new stock to be added?\n";
     public static final String MESSAGE_PROMPT_ADDITIONAL_ITEM_STOCK = "Please enter the additional stock of the item.\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_SHOW_MOST_POPULAR_ITEM = "The most popular item is ";
-    public static final String MESSAGE_SHOW_MOST_POPULAR_ITEMS = "The most popular items are ";
+    public static final String MESSAGE_SHOW_MOST_POPULAR_ITEM = MESSAGE_LINE + "The most popular item is ";
+    public static final String MESSAGE_SHOW_MOST_POPULAR_ITEMS = MESSAGE_LINE + "The most popular items are ";
     public static final String SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEM_IS_NOT_ENOUGH = ". Please consider stocking "
-            + "it up if it is not enough :)";
+            + "it up if it is not enough :)\n"
+            + MESSAGE_LINE;
     public static final String SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEMS_ARE_NOT_ENOUGH = ". Please consider "
-            + "stocking them up if they are not enough :)";
-    public static final String MESSAGE_SHOW_NO_ITEMS_TIPS_CAN_BE_GIVEN = "No item-related tips can be given because "
-            + "you have not sold any single item yet.";
-    public static final String MESSAGE_RECEIPT_HEADER = "Order details as shown below";
+            + "stocking them up if they are not enough :)\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_SHOW_NO_ITEMS_TIPS_CAN_BE_GIVEN = MESSAGE_LINE
+            + "No item-related tips can be given.\n"
+            + "As you have not sold any single item yet.\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_RECEIPT_HEADER = MESSAGE_LINE + "Order details as shown below\n";
 }
 

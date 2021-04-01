@@ -18,9 +18,9 @@ public class Order {
     /**
      * Order constructor.
      *
-     * @param customerName    input string of the name of customers
-     * @param itemsInOrder    input string of the item to be added to order
-     * @param itemsStockCount input string of the number of items to be added to order
+     * @param customerName    input String of the name of customers
+     * @param itemsInOrder    input ArrayList of the item to be added to order
+     * @param itemsStockCount input ArrayList of the number of items to be added to order
      */
     public Order(String customerName, ArrayList<Item> itemsInOrder, ArrayList<Integer> itemsStockCount) {
         this.customerName = customerName;

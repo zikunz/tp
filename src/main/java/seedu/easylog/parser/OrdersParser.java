@@ -138,7 +138,6 @@ public class OrdersParser extends Parser {
             } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
                 ui.showInvalidWhileAddingItemToOrder();
             } catch (IndexOutOfBoundsException e) {
-
                 ui.showItemNotFoundWhenAddingToOrder(splitInput[0]);
             } catch (InvalidItemStockException e) {
                 ui.showNotEnoughStock();

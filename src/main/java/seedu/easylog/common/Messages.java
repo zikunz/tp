@@ -247,16 +247,15 @@ public class Messages {
     public static final String MESSAGE_ORDER_NOT_FOUND = MESSAGE_LINE
             + "Sorry! No relevant order is found.\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_SAVE_DATA_LOADING = "Loading save data.";
-    public static final String MESSAGE_LOOKING_FOR_SAVE_DATA = "Looking for save data.";
+    public static final String MESSAGE_SAVE_DATA_LOADING = "Loading save data.\n";
+    public static final String MESSAGE_LOOKING_FOR_SAVE_DATA = "Looking for save data.\n";
     public static final String MESSAGE_SAVE_DATA_LOADED = "Save data loaded.\n" + MESSAGE_LINE;
     public static final String MESSAGE_SAVE_DATA_CREATED = MESSAGE_LINE
-            + "Save data created as there is no existing save data";
+            + "Save data created as there is no existing save data\n";
     public static final String MESSAGE_SAVE_DATA_SAVED = MESSAGE_LINE + "Save data saved.\n";
     public static final String MESSAGE_SAVE_DATA_NOT_FOUND = "Save data not found.\n" + MESSAGE_LINE;
     public static final String MESSAGE_INVALID_FILE_INPUT_LINE = "Invalid file input at line : ";
-    public static final String MESSAGE_ERROR_WHILE_SAVING = MESSAGE_LINE
-            + "Error while saving. Save file may or may not be "
+    public static final String MESSAGE_ERROR_WHILE_SAVING = "Error while saving. Save file may or may not be "
             + "saved correctly\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_REPEAT_ITEM = MESSAGE_LINE

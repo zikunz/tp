@@ -3,9 +3,8 @@ package seedu.easylog.commands.itemscommands;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyItemPriceException;
 import seedu.easylog.exceptions.InvalidItemPriceException;
-import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
-import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NonNumericItemPriceException;
+import seedu.easylog.exceptions.NullItemPriceException;
 
 import java.math.BigDecimal;
 
@@ -18,9 +17,10 @@ public class ItemsPromptPriceCommand extends ItemsCommand {
     public BigDecimal execute() throws NullItemPriceException, EmptyItemPriceException, InvalidItemPriceException,
             NonNumericItemPriceException {
         ui.promptItemPrice();
+
         String priceInString = ui.askForUserInput();
         try {
-            Integer.parseInt(priceInString);
+            Double.parseDouble(priceInString);
         } catch (NumberFormatException e) {
             throw new NonNumericItemPriceException();
         }

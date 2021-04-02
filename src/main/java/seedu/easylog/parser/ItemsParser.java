@@ -39,8 +39,7 @@ import java.util.ArrayList;
  * Process items command input.
  */
 public class ItemsParser extends Parser {
-    public static void processItemsInput(String itemsInput, ItemManager itemManager) throws
-            NoItemsStatisticsCanBeGivenException {
+    public static void processItemsInput(String itemsInput, ItemManager itemManager) {
         String[] splitItemsArg = splitCommandWordAndArgs(itemsInput);
         String itemsType = splitItemsArg[0];
         String itemsArg = splitItemsArg[1];

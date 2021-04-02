@@ -22,6 +22,10 @@ public class ItemsAddCommand extends ItemsCommand {
 
     /**
      * Adds items to the system.
+     *
+     * @param itemDescription       description of an item
+     * @param itemManager           item manager
+     * @param itemDescriptionRecord ArrayList of item descriptions
      */
     public void execute(String itemDescription, ItemManager itemManager, ArrayList<String> itemDescriptionRecord)
             throws EmptyNameException, EmptyItemPriceException, InvalidItemPriceException, NullItemPriceException,
@@ -33,7 +37,7 @@ public class ItemsAddCommand extends ItemsCommand {
 
         boolean itemAlreadyExists = false;
         if (itemDescriptionRecord.contains(itemDescription)) {
-            handleAnItemWhichAlreadyExists(itemAlreadyExists, itemDescriptionRecord, itemDescription, itemManager);
+            handleAnItemWhichAlreadyExists(itemDescriptionRecord, itemDescription, itemManager);
             return;
         }
 
@@ -55,18 +59,17 @@ public class ItemsAddCommand extends ItemsCommand {
      * the user will be prompted to enter the additional stock to be increment
      * the total number of stock.
      *
-     * @param itemAlreadyExists     a boolean flag which indicate if the item exist in the item list
      * @param itemDescriptionRecord the arrayList of all item descriptions in the system
      * @param itemDescription       the description of an item
      * @param itemManager           item manager
      */
-    private void handleAnItemWhichAlreadyExists(boolean itemAlreadyExists, ArrayList<String> itemDescriptionRecord,
+    private void handleAnItemWhichAlreadyExists(ArrayList<String> itemDescriptionRecord,
                                                 String itemDescription, ItemManager itemManager) throws
             NullItemStockException, EmptyItemStockException, InvalidItemStockException, InvalidTotalItemStockException,
             NonIntegerNumericItemStockException {
         ui.showItemIsAlreadyExisting();
 
-        itemAlreadyExists = true;
+        boolean itemAlreadyExists = true;
         ItemsPromptStockCommand itemsPromptStockCommand = new ItemsPromptStockCommand();
         int itemStock = itemsPromptStockCommand.execute(itemAlreadyExists);
 

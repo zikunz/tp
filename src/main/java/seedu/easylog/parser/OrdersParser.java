@@ -11,7 +11,7 @@ import seedu.easylog.common.Constants;
 
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyItemListException;
-import seedu.easylog.exceptions.RepeatedOrderException;
+import seedu.easylog.exceptions.EmptyInformationException;
 import seedu.easylog.exceptions.InvalidItemStockException;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
@@ -29,7 +29,6 @@ import java.util.ArrayList;
  * Process orders commands input.
  */
 public class OrdersParser extends Parser {
-
     public static void processOrdersInput(String ordersInput, ItemManager itemManager, OrderManager orderManager) {
         String[] splitOrdersArg = splitCommandWordAndArgs(ordersInput);
         String ordersType = splitOrdersArg[0];
@@ -42,16 +41,13 @@ public class OrdersParser extends Parser {
                 ui.showOrderEmptyCustomerName();
             } catch (EmptyItemListException e) {
                 ui.showEmptyItemList();
-                ui.showAddItemFirst();
-            } catch (RepeatedOrderException e) {
-                ui.showRepeatedOrder();
             }
             break;
         case (Constants.COMMAND_DELETE):
             try {
                 new OrdersDeleteCommand().execute(ordersArg, orderManager);
-            } catch (EmptyNumberException e) {
-                ui.showOrderEmptyNumber();
+            } catch (EmptyInformationException e) {
+                ui.showOrderEmptyInformation();
             } catch (InvalidNumberException e) {
                 ui.showInvalidOrderNumber();
             } catch (NumberFormatException e) {
@@ -96,7 +92,7 @@ public class OrdersParser extends Parser {
             try {
                 new OrdersFindCommand().execute(ordersArg, orderManager);
             } catch (EmptyNameException e) {
-                ui.showItemEmptyName();
+                ui.showOrderEmptyCustomerName();
             } catch (OrderNotFoundException e) {
                 ui.showOrderNotFound();
             }

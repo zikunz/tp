@@ -1,20 +1,18 @@
 package seedu.easylog.commands.itemscommands;
 
 import seedu.easylog.common.Constants;
-
-import seedu.easylog.exceptions.WrongUpdateCommandException;
-import seedu.easylog.exceptions.WrongItemFieldException;
 import seedu.easylog.exceptions.EmptyItemIndexException;
-import seedu.easylog.exceptions.InvalidItemIndexException;
 import seedu.easylog.exceptions.EmptyItemPriceException;
+import seedu.easylog.exceptions.EmptyItemStockException;
+import seedu.easylog.exceptions.InvalidItemIndexException;
 import seedu.easylog.exceptions.InvalidItemPriceException;
+import seedu.easylog.exceptions.InvalidItemStockException;
+import seedu.easylog.exceptions.NonIntegerItemStockException;
+import seedu.easylog.exceptions.NonNumericItemPriceException;
 import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NullItemStockException;
-import seedu.easylog.exceptions.EmptyItemStockException;
-import seedu.easylog.exceptions.InvalidItemStockException;
-import seedu.easylog.exceptions.NonNumericItemPriceException;
-import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
-
+import seedu.easylog.exceptions.WrongItemFieldException;
+import seedu.easylog.exceptions.WrongUpdateCommandException;
 import seedu.easylog.model.ItemManager;
 
 public class ItemsUpdateCommand extends ItemsCommand {
@@ -28,7 +26,7 @@ public class ItemsUpdateCommand extends ItemsCommand {
     public void execute(String extraDescription, ItemManager itemManager) throws WrongUpdateCommandException,
             WrongItemFieldException, EmptyItemIndexException, InvalidItemIndexException, EmptyItemPriceException,
             InvalidItemPriceException, NullItemPriceException, NullItemStockException, EmptyItemStockException,
-            InvalidItemStockException, NonIntegerNumericItemStockException, NonNumericItemPriceException {
+            InvalidItemStockException, NonIntegerItemStockException, NonNumericItemPriceException {
         if (!extraDescription.isEmpty()) {
             throw new WrongUpdateCommandException();
         }

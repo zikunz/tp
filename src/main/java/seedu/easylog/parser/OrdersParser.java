@@ -3,21 +3,19 @@ package seedu.easylog.parser;
 import seedu.easylog.commands.orderscommands.OrdersAddCommand;
 import seedu.easylog.commands.orderscommands.OrdersClearCommand;
 import seedu.easylog.commands.orderscommands.OrdersDeleteCommand;
-import seedu.easylog.commands.orderscommands.OrdersListCommand;
-import seedu.easylog.commands.orderscommands.OrdersPriceCommand;
 import seedu.easylog.commands.orderscommands.OrdersDoneCommand;
 import seedu.easylog.commands.orderscommands.OrdersFindCommand;
+import seedu.easylog.commands.orderscommands.OrdersListCommand;
+import seedu.easylog.commands.orderscommands.OrdersPriceCommand;
 import seedu.easylog.common.Constants;
-
-import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyItemListException;
-import seedu.easylog.exceptions.RepeatedOrderException;
-import seedu.easylog.exceptions.InvalidItemStockException;
+import seedu.easylog.exceptions.EmptyItemNameException;
 import seedu.easylog.exceptions.EmptyNumberException;
+import seedu.easylog.exceptions.InvalidItemStockException;
 import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.exceptions.OrderListAlreadyClearedException;
 import seedu.easylog.exceptions.OrderNotFoundException;
-
+import seedu.easylog.exceptions.RepeatedOrderException;
 import seedu.easylog.model.Item;
 import seedu.easylog.model.ItemManager;
 import seedu.easylog.model.Order;
@@ -38,7 +36,7 @@ public class OrdersParser extends Parser {
         case (Constants.COMMAND_ADD):
             try {
                 new OrdersAddCommand().execute(ordersArg, itemManager, orderManager);
-            } catch (EmptyNameException e) {
+            } catch (EmptyItemNameException e) {
                 ui.showOrderEmptyCustomerName();
             } catch (EmptyItemListException e) {
                 ui.showEmptyItemList();
@@ -95,7 +93,7 @@ public class OrdersParser extends Parser {
         case (Constants.COMMAND_FIND):
             try {
                 new OrdersFindCommand().execute(ordersArg, orderManager);
-            } catch (EmptyNameException e) {
+            } catch (EmptyItemNameException e) {
                 ui.showItemEmptyName();
             } catch (OrderNotFoundException e) {
                 ui.showOrderNotFound();

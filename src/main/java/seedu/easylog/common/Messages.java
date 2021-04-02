@@ -158,9 +158,13 @@ public class Messages {
             + "OOPS!!! The input item price is empty!\n"
             + "Please input again and complete the item price! :)\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_NON_NUMERIC_INPUT_FOR_ADD = MESSAGE_LINE
-            + "OOPS!!! The input for stock/price is not a number!\n"
-            + "Please retry items add command and give a number for stock/price! :)\n"
+    public static final String MESSAGE_NON_INTEGER_ITEM_PRICE_INPUT_FOR_ADD = MESSAGE_LINE
+            + "OOPS!!! The input for price is not an integer!\n"
+            + "Please retry items add command and give a number for price! :)\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_NON_NUMERIC_ITEM_STOCK_INPUT_FOR_ADD = MESSAGE_LINE
+            + "OOPS!!! The input for price is not a number!\n"
+            + "Please retry items add command and give a number for stock! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_NON_NUMERIC_INPUT_FOR_UPDATE = MESSAGE_LINE
             + "OOPS!!! The input item is not a number!\n"

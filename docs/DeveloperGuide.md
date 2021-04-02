@@ -20,6 +20,7 @@
     - [2.7. Storage Component](#27-storage-component)
     - [2.8. Common Component](#28-common-component)
 - [3. Implementation](#3-implementation)
+    - [3.1. App Initialization](#31-app-initialization)
 - [4. Documentation](#4-documentation)
 - [5. Testing](#5-testing)<br>
   [5.1 Running Tests](#51-running-tests)<br>
@@ -168,6 +169,23 @@ The Common component consists of 2 different classes:
 2. `Messages` class to store all the texts for the UI to print onto the command line.
 
 ## 3. Implementation
+
+In this section, we explain the details and implementation of the more important features of easyLog.
+
+## 3.1. App Initialization
+
+![App Initialization Diagram](https://user-images.githubusercontent.com/57165946/113379984-99916500-93ad-11eb-8fa7-f3c00fd71163.png)
+
+As seen from the sequence diagram above, upon initialization,
+1. The main class located in EasyLog will show the user a greeting message.
+2. Proceed to load save file if any. More details on the implementation of loading save files will be
+discussed in future sections.
+3. Set up the environment for logging messages to be logged.
+4. Proceed to ask for user's input.
+5. Write a log to show that user's input has been requested.
+6. Proceed to process user input to determine the type of command to execute. More details on the implementation of
+processing user input will be discussed in future sections.
+7. Repeat steps 4-6 if user does not input exit command.   
 
 ## 4. Documentation
 

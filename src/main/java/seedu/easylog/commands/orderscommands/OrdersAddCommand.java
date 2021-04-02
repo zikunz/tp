@@ -1,8 +1,10 @@
 package seedu.easylog.commands.orderscommands;
 
 import seedu.easylog.commands.itemscommands.ItemsListCommand;
+import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyItemListException;
-import seedu.easylog.exceptions.EmptyItemNameException;
+import seedu.easylog.exceptions.EmptyNameException;
+import seedu.easylog.exceptions.OrderEmptyException;
 import seedu.easylog.exceptions.RepeatedOrderException;
 
 import seedu.easylog.model.ItemManager;
@@ -15,9 +17,9 @@ import seedu.easylog.model.OrderManager;
 public class OrdersAddCommand extends OrdersCommand {
 
     public void execute(String customerName, ItemManager itemManager, OrderManager orderManager)
-            throws EmptyItemNameException, EmptyItemListException, RepeatedOrderException {
+            throws EmptyNameException, EmptyItemListException {
         if (customerName.equals("")) {
-            throw new EmptyItemNameException();
+            throw new EmptyNameException();
         }
         if (itemManager.getItemList().isEmpty()) {
             throw new EmptyItemListException();
@@ -56,6 +58,3 @@ public class OrdersAddCommand extends OrdersCommand {
         ui.showOrderAdded(order);
     }
 }
-
-
-

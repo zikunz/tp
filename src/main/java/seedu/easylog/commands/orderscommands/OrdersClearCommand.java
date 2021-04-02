@@ -1,12 +1,13 @@
 package seedu.easylog.commands.orderscommands;
 
 import seedu.easylog.exceptions.OrderListAlreadyClearedException;
+import seedu.easylog.model.OrderManager;
 
 public class OrdersClearCommand extends OrdersCommand {
     /**
      * Clears all orders in the system.
      */
-    public void execute() throws OrderListAlreadyClearedException {
+    public void execute(OrderManager orderManager) throws OrderListAlreadyClearedException {
         if (orderManager.getSize() == 0) {
             throw new OrderListAlreadyClearedException();
         }

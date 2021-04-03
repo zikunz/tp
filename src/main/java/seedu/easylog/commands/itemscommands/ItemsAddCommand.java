@@ -31,8 +31,7 @@ public class ItemsAddCommand extends ItemsCommand {
             throw new NullItemNameException();
         }
 
-        String itemDescriptionAfterTrimming = itemDescription.trim();
-        if (itemDescriptionAfterTrimming.equals("")) {
+        if (itemDescription.equals("")) {
             throw new EmptyItemNameException();
         }
 

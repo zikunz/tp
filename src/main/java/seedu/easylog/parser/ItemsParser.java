@@ -267,8 +267,7 @@ public class ItemsParser extends Parser {
             throw new NullItemPriceException();
         }
 
-        String itemPriceInStringAfterTrimming = itemPriceInString.trim();
-        if (itemPriceInStringAfterTrimming.equals("")) {
+        if (itemPriceInString.equals("")) {
             throw new EmptyItemPriceException();
         }
 
@@ -292,8 +291,7 @@ public class ItemsParser extends Parser {
             throw new NullItemStockException();
         }
 
-        String itemStockInStringAfterTrimming = itemStockInString.trim();
-        if (itemStockInStringAfterTrimming.equals("")) {
+        if (itemStockInString.equals("")) {
             throw new EmptyItemStockException();
         }
 

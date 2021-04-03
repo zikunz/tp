@@ -163,9 +163,13 @@ public class Messages {
             + "OOPS!!! The input item price is empty!\n"
             + "Please input again and complete the item price! :)\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_NON_NUMERIC_INPUT_FOR_ADD = MESSAGE_LINE
-            + "OOPS!!! The input for stock/price is not a number!\n"
-            + "Please retry items add command and give a number for stock/price! :)\n"
+    public static final String MESSAGE_NON_INTEGER_ITEM_PRICE_INPUT_FOR_ADD = MESSAGE_LINE
+            + "OOPS!!! The input for price is not an integer!\n"
+            + "Please retry items add command and give a number for price! :)\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_NON_NUMERIC_ITEM_STOCK_INPUT_FOR_ADD = MESSAGE_LINE
+            + "OOPS!!! The input for price is not a number!\n"
+            + "Please retry items add command and give a number for stock! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_NON_NUMERIC_INPUT_FOR_UPDATE = MESSAGE_LINE
             + "OOPS!!! The input item is not a number!\n"
@@ -176,7 +180,7 @@ public class Messages {
             + MESSAGE_LINE;
     public static final String MESSAGE_SHOW_INVALID_ITEM_STOCK = MESSAGE_LINE
             + "OOPS!!! The item stock is invalid!\n"
-            + "Note: The stock to be entered should be either 0 or a positive integer number "
+            + "Note: The stock to be entered should be a positive integer number "
             + "smaller than or equal to 100000000 "
             + "(The warehouse cannot store more than one hundred million items.)\n"
             + MESSAGE_LINE;

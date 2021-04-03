@@ -264,8 +264,8 @@ public class Ui {
      * Prints a message to notify the user that the input  is not numeric.
      * This means the user should input a numeric and valid field.
      */
-    public void showNonNumericInputForAdd() {
-        System.out.print(Messages.MESSAGE_NON_NUMERIC_INPUT_FOR_ADD);
+    public void showNonIntegerItemPriceInputForAdd() {
+        System.out.print(Messages.MESSAGE_NON_INTEGER_ITEM_PRICE_INPUT_FOR_ADD);
     }
 
     public void showNonNumericInputForUpdate() {
@@ -586,5 +586,37 @@ public class Ui {
 
     public String showReceiptHeader() {
         return (Messages.MESSAGE_RECEIPT_HEADER + "\n");
+    }
+
+    public void showNullItemName() {
+        System.out.println("Null item name");
+    }
+
+    public void showIncorrectNumberOfItemPriceAndStockInput() {
+        System.out.println("incorrect number of inputs, must be exactly 2");
+    }
+
+    public void askForItemPriceAndStock() {
+        System.out.println("Please input item price and stock");
+    }
+
+    public void showNonNumericItemStockInputForAdd() {
+        System.out.print(Messages.MESSAGE_NON_NUMERIC_ITEM_STOCK_INPUT_FOR_ADD);
+    }
+
+    public void showEmptyItemPriceAndStockInput() {
+        System.out.println("Empty item price and stock input");
+    }
+
+    public void showNullItemPriceAndStockInput() {
+        System.out.println("Null item price and stock input");
+    }
+
+    public void showNonNumericItemPrice() {
+        System.out.println("item price is not numeric");
+    }
+
+    public void showNonNumericItemStockInput() {
+        System.out.println("item stock is not numeric");
     }
 }

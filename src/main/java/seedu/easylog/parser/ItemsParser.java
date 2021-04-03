@@ -57,9 +57,9 @@ public class ItemsParser extends Parser {
             } catch (EmptyItemNameException e) {
                 ui.showItemEmptyName();
             } catch (NonIntegerItemStockException e) {
-                ui.showNonIntegerItemPriceInputForAdd();
+                ui.showNonIntegerItemStock();
             } catch (NonNumericItemPriceException e) {
-                ui.showNonNumericItemStockInputForAdd();
+                ui.showNonNumericItemPrice();
             } catch (InvalidTotalItemStockException e) {
                 ui.showInvalidTotalItemStock();
             } catch (NullItemNameException e) {
@@ -236,7 +236,7 @@ public class ItemsParser extends Parser {
             } catch (EmptyItemPriceException e) {
                 ui.showEmptyItemPrice();
             } catch (NonNumericItemPriceException e) {
-                ui.showNonNumericItemStockInputForAdd();
+                ui.showNonNumericItemPrice();
             } catch (InvalidItemPriceException e) {
                 ui.showInvalidItemPrice();
             } catch (NullItemStockException e) {
@@ -244,7 +244,7 @@ public class ItemsParser extends Parser {
             } catch (EmptyItemStockException e) {
                 ui.showEmptyItemStock();
             } catch (NonIntegerItemStockException e) {
-                ui.showNonIntegerItemPriceInputForAdd();
+                ui.showNonIntegerItemStock();
             } catch (InvalidItemStockException e) {
                 ui.showInvalidItemStock();
             } catch (IncorrectNumberOfItemPriceAndStockInputException e) {

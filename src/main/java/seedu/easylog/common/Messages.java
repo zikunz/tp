@@ -66,6 +66,26 @@ public class Messages {
             + "OOPS!!! The item name is missing!\n"
             + "Please complete the item information! :)\n"
             + MESSAGE_LINE;
+    public static final String MESSAGE_NULL_ITEM_NAME = MESSAGE_LINE
+            + "OOPS!!! The item name is null!\n"
+            + "Please retry adding the item name! :)\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_ASK_FOR_ITEM_PRICE_AND_STOCK = MESSAGE_LINE
+            + "Please input item price and stock.\n"
+            + "Input format: <item_price> <item_quantity>.\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_INCORRECT_ITEM_PRICE_AND_STOCK_FORMAT = MESSAGE_LINE
+            + "Invalid input format while adding the item price and stock.\n";
+    public static final String MESSAGE_EMPTY_ITEM_PRICE_AND_STOCK = MESSAGE_LINE
+            + "Empty item price and stock.\n";
+    public static final String MESSAGE_NULL_ITEM_PRICE_AND_STOCK = MESSAGE_LINE
+            + "Null item price and stock.\n";
+    public static final String MESSAGE_NON_NUMERIC_ITEM_PRICE = MESSAGE_LINE
+            + "Non-numeric item price.\n";
+    public static final String MESSAGE_NON_INTEGER_ITEM_PRICE = MESSAGE_LINE
+            + "Non-integer item stock.\n";
+    public static final String MESSAGE_NON_NUMERIC_ITEM_STOCK = MESSAGE_LINE
+            + "Non-numeric item stock.\n";
     public static final String MESSAGE_EMPTY_ORDER_CUSTOMER_NAME = MESSAGE_LINE
             + "OOPS!!! The customer name is missing!\n"
             + "Please complete the order information! :)\n"

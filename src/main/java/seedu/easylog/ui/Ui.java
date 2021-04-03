@@ -268,6 +268,7 @@ public class Ui {
         System.out.print(Messages.MESSAGE_NON_INTEGER_ITEM_PRICE_INPUT_FOR_ADD);
     }
 
+
     public void showNonNumericInputForUpdate() {
         System.out.print(Messages.MESSAGE_NON_NUMERIC_INPUT_FOR_UPDATE);
     }
@@ -588,35 +589,77 @@ public class Ui {
         return (Messages.MESSAGE_RECEIPT_HEADER + "\n");
     }
 
+    /**
+     * Prints a message to notify the user that the input item name is null.
+     * This means the user should check the input again and retry.
+     */
     public void showNullItemName() {
-        System.out.println("Null item name");
+        System.out.print(Messages.MESSAGE_NULL_ITEM_NAME);
     }
 
+    /**
+     * Prints a message to notify the user that the format
+     * while adding item price and stock is incorrect.
+     * This means the user should check the input again and retry.
+     */
     public void showIncorrectNumberOfItemPriceAndStockInput() {
-        System.out.println("incorrect number of inputs, must be exactly 2");
+        System.out.print(Messages.MESSAGE_INCORRECT_ITEM_PRICE_AND_STOCK_FORMAT);
     }
 
+    /**
+     * Prints a message to ask the item price and stock from the user
+     * and show the correct input format to the user.
+     * This means the user should follow the instruction and input the item price and stock.
+     */
     public void askForItemPriceAndStock() {
-        System.out.println("Please input item price and stock");
+        System.out.print(Messages.MESSAGE_ASK_FOR_ITEM_PRICE_AND_STOCK);
     }
 
+    /**
+     * Prints a message to notify the user that the input item stock is non-numeric.
+     * This means the user should check the input stock again and retry.
+     */
     public void showNonNumericItemStockInputForAdd() {
         System.out.print(Messages.MESSAGE_NON_NUMERIC_ITEM_STOCK_INPUT_FOR_ADD);
     }
 
+    /**
+     * Prints a message to notify the user that there are no input item price and stock.
+     * This means the user should complete the item information.
+     */
     public void showEmptyItemPriceAndStockInput() {
-        System.out.println("Empty item price and stock input");
+        System.out.print(Messages.MESSAGE_EMPTY_ITEM_PRICE_AND_STOCK);
     }
 
+    /**
+     * Prints a message to notify the user that the input item price and stock are null.
+     * This means the user should check the input again and retry.
+     */
     public void showNullItemPriceAndStockInput() {
-        System.out.println("Null item price and stock input");
+        System.out.print(Messages.MESSAGE_NULL_ITEM_PRICE_AND_STOCK);
     }
 
+    /**
+     * Prints a message to notify the user that the input item price is non-numeric.
+     * This means the user should check the input price again and retry.
+     */
     public void showNonNumericItemPrice() {
-        System.out.println("item price is not numeric");
+        System.out.print(Messages.MESSAGE_NON_NUMERIC_ITEM_PRICE);
     }
 
+    /**
+     * Prints a message to notify the user that the input item stock is not an integer.
+     * This means the user should check the input stock again and retry.
+     */
+    public void showNonIntegerItemStock() {
+        System.out.print(Messages.MESSAGE_NON_INTEGER_ITEM_PRICE);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item stock is non-numeric.
+     * This means the user should check the input stock again and retry.
+     */
     public void showNonNumericItemStockInput() {
-        System.out.println("item stock is not numeric");
+        System.out.println(Messages.MESSAGE_NON_NUMERIC_ITEM_STOCK);
     }
 }

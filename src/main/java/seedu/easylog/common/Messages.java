@@ -180,7 +180,7 @@ public class Messages {
             + MESSAGE_LINE;
     public static final String MESSAGE_SHOW_INVALID_ITEM_STOCK = MESSAGE_LINE
             + "OOPS!!! The item stock is invalid!\n"
-            + "Note: The stock to be entered should be either 0 or a positive integer number "
+            + "Note: The stock to be entered should be a positive integer number "
             + "smaller than or equal to 100000000 "
             + "(The warehouse cannot store more than one hundred million items.)\n"
             + MESSAGE_LINE;

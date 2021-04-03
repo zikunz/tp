@@ -110,6 +110,30 @@ public class Ui {
     }
 
     /**
+     * Prints a message to notify the user that the input item type is not valid.
+     * This means the user should choose a valid type p or s.
+     */
+    public void showInvalidItemType() {
+        System.out.print(Messages.MESSAGE_INVALID_UPDATE_ITEM_FIELD);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item type is not valid.
+     * This means the user should choose a valid type p or s.
+     */
+    public void showEmptyItemType() {
+        System.out.print(Messages.MESSAGE_EMPTY_UPDATE_ITEM_FIELD);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item number is not an integer.
+     * This means the user should input an integer type item number.
+     */
+    public void showNonIntegerItemIndexForUpdate() {
+        System.out.print(Messages.MESSAGE_NON_INTEGER_ITEM_NUMBER_FOR_UPDATE);
+    }
+
+    /**
      * Prints the list of all items in the system.
      *
      * @param rawItemListOutput List of items in String format
@@ -164,6 +188,7 @@ public class Ui {
 
     /**
      * Prints a message to notify the user that the order has been successfully added.
+     *
      * @param order an object to store order's information
      */
     public void showOrderAdded(Order order) {
@@ -189,6 +214,14 @@ public class Ui {
      */
     public void showInvalidItemNumber() {
         System.out.print(Messages.MESSAGE_INVALID_ITEM_NUMBER);
+    }
+
+    /**
+     * Prints a message to notify the user that the input order number is out of range.
+     * This means the user should input another order number.
+     */
+    public void showInvalidItemIndexInput() {
+        System.out.print(Messages.MESSAGE_INVALID_UPDATE_ITEM_INDEX);
     }
 
     /**
@@ -260,6 +293,10 @@ public class Ui {
         System.out.print(Messages.MESSAGE_SHOW_INVALID_ITEM_PRICE);
     }
 
+    public void showInvalidRevisedItemPrice() {
+        System.out.print(Messages.MESSAGE_SHOW_INVALID_REVISED_ITEM_PRICE);
+    }
+
     /**
      * Prints a message to notify the user that the input  is not numeric.
      * This means the user should input a numeric and valid field.
@@ -270,7 +307,7 @@ public class Ui {
 
 
     public void showNonNumericInputForUpdate() {
-        System.out.print(Messages.MESSAGE_NON_NUMERIC_INPUT_FOR_UPDATE);
+        System.out.print(Messages.MESSAGE_NON_NUMERIC_INPUT_INDEX_FOR_UPDATE);
     }
 
     /**
@@ -290,6 +327,14 @@ public class Ui {
     }
 
     /**
+     * Prints a message to notify the user that the input revised item stock is empty.
+     * This means the user should input a non-empty and valid item stock.
+     */
+    public void showEmptyRevisedItemStock() {
+        System.out.print(Messages.MESSAGE_EMPTY_REVISED_ITEM_STOCK);
+    }
+
+    /**
      * Prints a message to ask the user about the stock of the item entered earlier.
      */
     public void promptItemStock() {
@@ -303,6 +348,15 @@ public class Ui {
      */
     public void showInvalidItemStock() {
         System.out.print(Messages.MESSAGE_SHOW_INVALID_ITEM_STOCK);
+    }
+
+    /**
+     * Prints a message to notify the user that the input revised item stock is invalid.
+     * This means the user should input either 0 or a positive integer number
+     * smaller than or equal to 100000000.
+     */
+    public void showInvalidRevisedItemStock() {
+        System.out.print(Messages.MESSAGE_SHOW_INVALID_REVISED_ITEM_STOCK);
     }
 
     /**
@@ -329,6 +383,7 @@ public class Ui {
     public void showEmptyItemStock() {
         System.out.print(Messages.MESSAGE_EMPTY_ITEM_STOCK);
     }
+
 
     /**
      * Prints a message to notify the user that the update command is entered wrongly.
@@ -621,6 +676,22 @@ public class Ui {
      */
     public void showNonNumericItemStockInputForAdd() {
         System.out.print(Messages.MESSAGE_NON_NUMERIC_ITEM_STOCK_INPUT_FOR_ADD);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item index is non-numeric.
+     * This means the user should check the input stock again and retry.
+     */
+    public void showNonNumericItemUpdateIndex() {
+        System.out.print(Messages.MESSAGE_NON_NUMERIC_ITEM_STOCK_INPUT_FOR_ADD);
+    }
+
+    /**
+     * Prints a message to notify the user that there is no item index.
+     * This means the user should complete the item information.
+     */
+    public void showEmptyItemIndexInput() {
+        System.out.print(Messages.MESSAGE_EMPTY_UPDATE_ITEM_INDEX);
     }
 
     /**

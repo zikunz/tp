@@ -98,6 +98,8 @@ public class Messages {
             + "OOPS!!! The item number is invalid!\n"
             + "Please input the item information again! :)\n"
             + MESSAGE_LINE;
+    public static final String MESSAGE_INVALID_UPDATE_ITEM_INDEX = MESSAGE_LINE
+            + "Invalid index number.\n";
     public static final String MESSAGE_INVALID_ORDER_NUMBER = MESSAGE_LINE
             + "OOPS!!! The order number is invalid!\n"
             + "Please input the order information again! :)\n"
@@ -164,6 +166,12 @@ public class Messages {
             + "is not an integer number!\n"
             + "Please input the item information again! :)\n"
             + MESSAGE_LINE;
+    public static final String MESSAGE_EMPTY_UPDATE_ITEM_FIELD = MESSAGE_LINE
+            + "Empty item field.\n ";
+    public static final String MESSAGE_INVALID_UPDATE_ITEM_FIELD = MESSAGE_LINE
+            + "Invalid input item field.\n";
+    public static final String MESSAGE_NON_INTEGER_ITEM_NUMBER_FOR_UPDATE = MESSAGE_LINE
+            + "Non-integer item index.\n";
     public static final String MESSAGE_PROMPT_ITEM_PRICE = MESSAGE_LINE
             + "Please enter the price of the item.\n"
             + MESSAGE_LINE;
@@ -175,14 +183,16 @@ public class Messages {
             + "If you enter any number having a scale greater than 2, it will be automatically rounded up "
             + "to a number having an exact scale of 2.\n"
             + MESSAGE_LINE;
+    public static final String MESSAGE_SHOW_INVALID_REVISED_ITEM_PRICE = MESSAGE_LINE
+            + "Invalid item price.\n";
     public static final String MESSAGE_NULL_ITEM_PRICE = MESSAGE_LINE
             + "OOPS!!! The input item price is null!\n"
             + "Please input again and complete the item price! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ITEM_PRICE = MESSAGE_LINE
-            + "OOPS!!! The input item price is empty!\n"
-            + "Please input again and complete the item price! :)\n"
-            + MESSAGE_LINE;
+            + "Empty item price.\n";
+    public static final String MESSAGE_EMPTY_REVISED_ITEM_STOCK = MESSAGE_LINE
+            + "Empty item stock.\n";
     public static final String MESSAGE_NON_INTEGER_ITEM_PRICE_INPUT_FOR_ADD = MESSAGE_LINE
             + "OOPS!!! The input for price is not an integer!\n"
             + "Please retry items add command and give a number for price! :)\n"
@@ -195,6 +205,8 @@ public class Messages {
             + "OOPS!!! The input item is not a number!\n"
             + "Please retry items update command and give a number for stock/price! :)\n"
             + MESSAGE_LINE;
+    public static final String MESSAGE_NON_NUMERIC_INPUT_INDEX_FOR_UPDATE = MESSAGE_LINE
+            + "Non-numeric item index.\n";
     public static final String MESSAGE_PROMPT_ITEM_STOCK = MESSAGE_LINE
             + "Please enter the stock of the item.\n"
             + MESSAGE_LINE;
@@ -204,6 +216,8 @@ public class Messages {
             + "smaller than or equal to 100000000 "
             + "(The warehouse cannot store more than one hundred million items.)\n"
             + MESSAGE_LINE;
+    public static final String MESSAGE_SHOW_INVALID_REVISED_ITEM_STOCK = MESSAGE_LINE
+            + "Invalid item stock.\n";
     public static final String MESSAGE_SHOW_INVALID_TOTAL_ITEM_STOCK = MESSAGE_LINE
             + "OOPS!!! The total item stock is more than 1000000000!\n"
             + "Please input again and give a valid item stock! :)\n"
@@ -244,6 +258,8 @@ public class Messages {
             + "OOPS!!! The item index is empty!\n"
             + "Please input again and complete the item index! :)\n"
             + MESSAGE_LINE;
+    public static final String MESSAGE_EMPTY_UPDATE_ITEM_INDEX = MESSAGE_LINE
+            + "Empty item index.\n";
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_STOCK = MESSAGE_LINE
             + "What is the revised item stock?\n";
     public static final String MESSAGE_SHOW_UPDATE_ITEM_STOCK = MESSAGE_LINE

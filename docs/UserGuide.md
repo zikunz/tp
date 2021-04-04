@@ -7,7 +7,8 @@ budget investing in a new system to manage your business? Fret not, easyLog, our
 management application will get you covered! It is the application to boost your productivity when it comes to managing
 your items and orders and best of all, it is free! Primarily, the current version of easyLog allows you to add new items
 and orders , view existing items and orders, remove specific items and orders and clear all existing items and orders in
-the inventory at ease. You can also generate a receipt for your customer or simply for your own record.
+the inventory at ease. You can also generate a receipt for your customer and view which item generate most number of
+sales.
 
 easyLog is highly optimized for home-based business owners like you via a carefully designed Command Line Interface
 (CLI); this means that you will run the application by typing commands into a command terminal<sup>2</sup>. If you type
@@ -84,11 +85,15 @@ Section 2 will explain the features available in easyLog.
 
 ###### Notes about the command format:
 
-* Word(s) in UPPER_CASE is / are parameter(s) to be entered by the user. e.g. In `add n/CUSTOMER_NAME`, `CUSTOMER_NAME`
-  which can be used as `add n/Alice Tan`
+* Any word in UPPER_CASE is a parameter to be entered by the user (e.g., in `add n/CUSTOMER_NAME`, `CUSTOMER_NAME` is a
+  parameter and a valid command can be `add n/Alice Tan`).
 
-* Any extraneous parameters for commands not taking in parameters (such as `help` and `exit`) will not be ignored. The
-  system will notify the user that it cannot be understood by easyLog.
+* Any extraneous parameters for commands not taking in any single parameter (such as `help` and `exit`) will not be
+  ignored. However, any leading and trailing whitespaces will be neglected. This means, for instance, `  help  ` will
+  trigger [2.1 viewing help: `help`](#21-viewing-help-help) command whereas `help me` will not be understood by easyLog
+  (i.e., easyLog will show it does not understand your command).
+
+* 💡 refers to a tip which contain important information such as what the range of valid inputs are.
 
 ### 2.1 Viewing help: `help`
 
@@ -171,6 +176,10 @@ ____________________________________________________________
 Got it! The item [PS5] is added.
 ____________________________________________________________
 ```
+
+💡 item names cannot be empty or consist of only white spaces. <br>
+💡 item price must be a number ranging from 0 to 1,000,000,000 (inclusive). <br>
+💡 item stock has to be a integer ranging from 0 to 1,000,000,000 (inclusive). <br>
 
 #### 2.2.3. Show the item list: `items list`
 

@@ -119,7 +119,7 @@ General Options:
   7. items update                   Update the detail of an item
   8. items stats                    Discover the most popular item(s)
   9. orders                         Show orders-related commands
-  10. orders add <order_name>       Add an order
+  10. orders add <customer_name>    Add an order
   11. orders list                   List all orders
   12.1 orders delete <order_index>  Delete an order
   12.2 orders delete <order_name>   Delete an order
@@ -337,7 +337,7 @@ Expected Output:
 ```
 ____________________________________________________________
 Orders-Related Options:
-  1. orders add <order_name>        Add an order
+  1. orders add <customer_name>     Add an order
   2. orders list                    List all orders
   3. orders delete <order_index>    Delete an order
   4. orders clear                   Empty all orders
@@ -638,7 +638,7 @@ items find | `items find` | `items find <item_name>`|
 items update | `items update` | `items update`|
 items stats | `items stats` | `items stats`|
 orders | `orders` | `orders` |
-orders add | `orders add <order_name> `<br>` Input the items to be added to this order. `<br>` <item_index> <item_quantity>` | `orders add weisheng`<br>` Input the items to be added to this order.`<br />` 1 2 ` |
+orders add | `orders add <customer_name> `<br>` Input the items to be added to this order. `<br>` <item_index> <item_quantity>` | `orders add weisheng`<br>` Input the items to be added to this order.`<br />` 1 2 ` |
 orders list | `orders list` | `orders list` |
 orders delete | `orders delete <order_index>` | `orders delete 2` |
 orders clear | `orders clear` | `orders clear` |

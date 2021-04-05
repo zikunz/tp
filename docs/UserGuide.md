@@ -622,7 +622,7 @@ system?
 > threshold (i.e., 1000000). However, it does not naturally happen when a user wants to update the unit price when he or
 > she adds an item which already exists in the system.
 >
-> When it happens, the user is welcomed to use `item update` command instead.
+> When it happens, the user is welcomed to use `items update` command instead.
 
 ## 4. Command Summary
 

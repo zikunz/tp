@@ -29,7 +29,9 @@ business using easyLog.
     * [2.2.3. Show the item list : `items list`](#223-show-the-item-list-items-list)
     * [2.2.4. Delete an item: `delete`](#224-delete-an-item-items-delete)
     * [2.2.5. Empty the item list: `items clear`](#225-empty-the-item-list-items-clear)
-    - [2.2.6. Find items: `items find`](#226-update-an-item-items-update)
+    - [2.2.6. Update an item: `items update`](#226-update-an-item-items-update)
+    - [2.2.7. Find items: `items find`](#227-find-items-items-find)
+    - [2.2.8. Discover the most popular item(s): `items stats`](#228-discover-the-most-popular-items-items-stats)
   * [2.3. Orders](#23-orders)
     - [2.3.1. Show orders-related commands: `orders`](#231-show-orders-related-commands--orders)
     - [2.3.2. Add an order: `orders add`](#232-add-an-order-orders-add)
@@ -115,12 +117,16 @@ General Options:
   5. items clear                    Empty all items
   6. items find <item_name>         Find an item
   7. items update                   Update the detail of an item
-  8. orders                         Show orders-related commands
-  9. orders add <order_name>        Add an order
-  10. orders list                   List all orders
-  11. orders delete <order_index>   Delete an order
-  12. orders clear                  Empty all orders
-  13. orders find <order_name>      Find an order
+  8. items stats                    Discover the most popular item(s)
+  9. orders                         Show orders-related commands
+  10. orders add <order_name>       Add an order
+  11. orders list                   List all orders
+  12.1 orders delete <order_index>  Delete an order
+  12.2 orders delete <order_name>   Delete an order
+  13. orders clear                  Empty all orders
+  14. orders price <order_index>    Check the total price of an order
+  15. orders done <order_index>     Update the status of an order
+  16. orders find <order_name>      Find an order
 ____________________________________________________________
 ```
 
@@ -147,6 +153,7 @@ Items-Related Options:
   4. items clear                    Empty all items
   5. items find <item_name>         Find an item
   6. items update                   Update the detail of an item
+  7. items stats                    Get the statistic of items
 ____________________________________________________________
 ```
 
@@ -165,13 +172,10 @@ Expected Output:
 ```
 items add PS5 (user input)
 ____________________________________________________________
-Please enter the price of the item.
+Please input item price and stock.
+Input format: <item_price> <item_quantity>.
 ____________________________________________________________
-100 (user input)
-____________________________________________________________
-Please enter the stock of the item.
-____________________________________________________________
-10 (user input)
+100 10
 ____________________________________________________________
 Got it! The item [PS5] is added.
 ____________________________________________________________
@@ -219,7 +223,7 @@ ____________________________________________________________
 ```
 Format 2: `items delete <item_name>`
 
-Example 2: `items delete bang`
+Example 2: `items delete bag`
 
 Expected Output 2:
 
@@ -294,6 +298,25 @@ Here is the list of relevant items found.
 ____________________________________________________________
 
 1. PS5, S$23.00, 199
+____________________________________________________________
+
+```
+
+#### 2.2.8. Discover the most popular item(s): `items stats`
+
+You can use this command to find the item(s) with the highest demand 
+and try to stock up item accordingly.
+
+Format: `items stats`
+
+Example: `items stats`
+
+Expected Output:
+
+```
+items stats (users input)
+____________________________________________________________
+The most popular item is PS5. Please consider stocking it up if it is not enough :)
 ____________________________________________________________
 
 ```
@@ -530,7 +553,7 @@ format. This allows the list of orders while using the app to be kept clean with
 easier viewing. Also, the generated receipts allows you to keep track of your revenue or to handle your taxes.
 Furthermore, receipts are numbered to show you how many orders you have fulfilled.
 
-(**ADD IMAGE OF RECEIPT FOLDER HERE**)
+![Receipt](https://user-images.githubusercontent.com/60378963/113499419-7b13a100-9548-11eb-80eb-35e9cb2aeb5f.jpg)
 
 ### 2.5. Exit the program: `exit`
 
@@ -541,6 +564,7 @@ Format: `exit`
 Expected Output:
 
 ```
+exit (users input)
 ____________________________________________________________
 Save data saved.
 ____________________________________________________________
@@ -606,14 +630,15 @@ Command | Format | Example |
 ------- | ------- | ------- | 
 help | `help` | `help` |
 item | `items` | `items` |
-items add | `items add <item_name>` | `items add PS5` |
+items add | `items add <item_name>`<br>`Please input item price and stock.`<br>`<item_price> <item_quantity>` | `items add PS5`<br>`Please input item price and stock.`<br>`1 2`|
 items list | `items list`      | `items list` |
-items delete | `items delete <item_index>`<br> `items delete<item_name>` | `items delete 2`<br>`items delete bag` |
+items delete | `items delete <item_index>`<br>`items delete<item_name>` | `items delete 2`<br>`items delete bag` |
 items clear | `items clear ` | `items clear` |
 items find | `items find` | `items find <item_name>`|
 items update | `items update` | `items update`|
+items stats | `items stats` | `items stats`|
 orders | `orders` | `orders` |
-orders add | `orders add <order_name> `<br />` Input the items to be added to this order. `<br />` <item_index> <item_quantity>` | `orders add weisheng`<br />` Input the items to be added to this order.`<br />` 1 2 ` |
+orders add | `orders add <order_name> `<br>` Input the items to be added to this order. `<br>` <item_index> <item_quantity>` | `orders add weisheng`<br>` Input the items to be added to this order.`<br />` 1 2 ` |
 orders list | `orders list` | `orders list` |
 orders delete | `orders delete <order_index>` | `orders delete 2` |
 orders clear | `orders clear` | `orders clear` |

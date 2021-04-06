@@ -74,6 +74,6 @@ public class ItemsAddCommand extends ItemsCommand {
             throw new InvalidTotalItemStockException();
         }
         itemManager.setRevisedItemStock(itemIndex, revisedStock);
-        ui.showUpdateItemStock();
+        ui.showUpdateItemStock(itemManager.getItem(itemIndex));
     }
 }

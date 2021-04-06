@@ -419,8 +419,10 @@ public class Ui {
     /**
      * Prints a message to notify the user the item field is updated successfully.
      */
-    public void showUpdateItemPrice() {
-        System.out.print(Messages.MESSAGE_SHOW_UPDATE_ITEM_PRICE);
+    public void showUpdateItemPrice(Item item) {
+        System.out.print(Messages.MESSAGE_LINE);
+        System.out.print(item.getUpdatedPriceMessage());
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     /**
@@ -477,8 +479,10 @@ public class Ui {
     /**
      * Prints a message to notify the user the item field is updated successfully.
      */
-    public void showUpdateItemStock() {
-        System.out.print(Messages.MESSAGE_SHOW_UPDATE_ITEM_STOCK);
+    public void showUpdateItemStock(Item item) {
+        System.out.print(Messages.MESSAGE_LINE);
+        System.out.print(item.getUpdatedStockMessage());
+        System.out.print(Messages.MESSAGE_LINE);
     }
 
     /**

@@ -199,7 +199,7 @@ public class ItemsParser extends Parser {
                 }
             }
             itemManager.setRevisedItemPrice(itemIndex, revisedItemPrice);
-            ui.showUpdateItemPrice();
+            ui.showUpdateItemPrice(itemManager.getItem(itemIndex));
         } else if (updateInput.equals("s")) {
             boolean stopAskingStock = false;
             int revisedStock = -1;
@@ -221,7 +221,7 @@ public class ItemsParser extends Parser {
                 }
             }
             itemManager.setRevisedItemStock(itemIndex, revisedStock);
-            ui.showUpdateItemStock();
+            ui.showUpdateItemStock(itemManager.getItem(itemIndex));
         }
     }
 

@@ -56,13 +56,45 @@ public class Item {
         return itemStock;
     }
 
+    /**
+     * Returns a message to show the item has been added successfully.
+     *
+     * @return item added message
+     */
     public String getAddItemMessage() {
         return "Got it! The item [" + itemName + "] is added.";
     }
 
+    /**
+     * Returns a message to show the item has been deleted successfully.
+     *
+     * @return item deleted message
+     */
     public String getDeleteItemMessage() {
         return Messages.MESSAGE_LINE
                 + "Got it! The item [" + itemName + "] is deleted.";
+    }
+
+    /**
+     * Returns a message to show the item price has been updated successfully.
+     *
+     * @return item price updated message
+     */
+    public String getUpdatedPriceMessage() {
+        return "Done! I just updated the item price ["
+                + itemPrice
+                + "] for you.\n";
+    }
+
+    /**
+     * Returns a message to show the item stock has been updated successfully.
+     *
+     * @return item stock updated message
+     */
+    public String getUpdatedStockMessage() {
+        return "Done! I just updated the item stock ["
+                + itemStock
+                + "] for you.\n";
     }
 
     /**

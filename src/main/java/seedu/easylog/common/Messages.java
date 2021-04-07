@@ -300,7 +300,7 @@ public class Messages {
             + "Save data created as there is no existing save data\n";
     public static final String MESSAGE_SAVE_DATA_SAVED = MESSAGE_LINE + "Save data saved.\n";
     public static final String MESSAGE_SAVE_DATA_NOT_FOUND = "Save data not found.\n" + MESSAGE_LINE;
-    public static final String MESSAGE_INVALID_FILE_INPUT_LINE = "Invalid file input at line : ";
+    public static final String MESSAGE_INVALID_FILE_INPUT_LINE = "Invalid line from save file at line : ";
     public static final String MESSAGE_ERROR_WHILE_SAVING = "Error while saving. Save file may or may not be "
             + "saved correctly\n"
             + MESSAGE_LINE;

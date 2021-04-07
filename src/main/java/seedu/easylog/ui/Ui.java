@@ -575,7 +575,7 @@ public class Ui {
      * @param fileLine Line of the file with the format error.
      */
     public void showInvalidFileInputLine(int fileLine) {
-        System.out.print(Messages.MESSAGE_INVALID_FILE_INPUT_LINE + fileLine);
+        System.out.println(Messages.MESSAGE_INVALID_FILE_INPUT_LINE + fileLine);
     }
 
     public void showErrorWhileSaving() {
@@ -588,6 +588,7 @@ public class Ui {
 
     public void showReceiptGenerated(String customerName) {
         System.out.println("Receipt generated for customer: " + customerName);
+        System.out.println("Do note that the receipt file can only be accessed when you exit the app.");
         System.out.print(Messages.MESSAGE_LINE);
     }
 

@@ -367,14 +367,16 @@ Steps to add an order in easyLog:
 Note:
 1. Order has to contain at least 1 item to be added into the system.
 2. The customer name cannot exceed 30 characters including spaces. 
-2. Item quantity to be inputted into the order cannot be less than 1 or more than the current stock in the inventory.
-3. Item quantity for each item inputted into the order would be removed from the inventory stock of that item 
+3. Item quantity to be inputted into the order cannot be less than 1 or more than the current stock in the inventory.
+4. Item quantity for each item inputted into the order would be removed from the inventory stock of that item 
    and tracked separately. The quantity would only be returned and added back to the inventory count for that item
    if the order is not done and deleted.
-4. While adding items into the order, if the app encounters any format error in the input, it may cause order details to
+5. When adding the same item twice into the order, it will not combine the total stock of that item added but instead
+   show as 2 separate additions of the same item.
+6. While adding items into the order, if the app encounters any format error in the input, it may cause order details to
    be added wrongly. Do use [`orders delete`](#234-remove-an-order-orders-delete) feature to delete the order and
    re-input the order details in the correct format.
-5. When in doubt, do follow the prompts shown on the command terminal.
+7. When in doubt, do follow the prompts shown on the command terminal.
    
 
 Format:
@@ -556,7 +558,8 @@ do feel free to manipulate the data in `easyLog.txt` manually if it enhances you
 When [`orders done`](#238-update-the-status-of-an-order-orders-done) feature is executed, a receipt will be 
 automatically generated that contains the order details that was deleted. The generated receipts can be found in the 
 same directory as the location of the easyLog app inside a `Receipts` folder. The receipts generated will be in a `.txt` 
-format. This allows the list of orders while using the app to be kept clean with only the orders that are not done for
+format. (Note that the receipts generated can only be seen when you [exit](#25-exit-the-program-exit) the app) This 
+allows the list of orders while using the app to be kept clean with only the orders that are not done for
 easier viewing. Also, the generated receipts allows you to keep track of your revenue or to handle your taxes.
 Furthermore, receipts are numbered to show you how many orders you have fulfilled.
 

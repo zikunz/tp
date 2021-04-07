@@ -9,6 +9,7 @@ import seedu.easylog.commands.orderscommands.OrdersDoneCommand;
 import seedu.easylog.commands.orderscommands.OrdersFindCommand;
 import seedu.easylog.common.Constants;
 
+import seedu.easylog.exceptions.CustomerNameTooLongException;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyItemListException;
 import seedu.easylog.exceptions.EmptyInformationException;
@@ -41,6 +42,8 @@ public class OrdersParser extends Parser {
                 ui.showOrderEmptyCustomerName();
             } catch (EmptyItemListException e) {
                 ui.showEmptyItemList();
+            } catch (CustomerNameTooLongException e) {
+                ui.showCustomerNameTooLong();
             }
             break;
         case (Constants.COMMAND_DELETE):

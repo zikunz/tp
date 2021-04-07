@@ -102,7 +102,7 @@ Section 2 will explain the features available in easyLog.
 
 ### 2.1 Viewing help: `help`
 
-Shows available commands of the app.
+As a first-time user, you can simply type `help` to view all available commands of the app.
 
 Format: `help`
 
@@ -139,7 +139,8 @@ Section 2.2 will explain the features related to items.
 
 #### 2.2.1. Show items-related commands: `items`
 
-Show commands related to items and brief description of the commands: add item, list items, remove items, clear items
+As a first-time user, you can simply type `items` to view all commands related to items. At the same time, you can see
+the brief description of those commands.
 
 Format: `items`
 
@@ -162,11 +163,15 @@ ____________________________________________________________
 
 #### 2.2.2. Add an item: `items add`
 
-Add an item to the system.
+Are you sometimes overwhelmed by handling a large variety of items? No worries, (items add) feature can help you.
+Let's just assume you are a home-based baker and you have a variety of cookies to sell. Now, you are going to record
+the first type of cookie - brownie. The price of each brownie is 5 dollars and the stock of brownie is 50. You just 
+need to type `items add` followed by item name `brownie`, item price `5` and item stock `50`, then press enter. Done! 
+You can see the confirmation message when the item is recorded successfully. Just like this, you can record more items.
 
 Format: `items add <item_name>` followed by `<item_price>` and `<item_stock>`
 
-Example: `items add PS5` followed by `100` and `10`
+Example: `items add brownie 5 50`
   (Please note that if an item to be added already exists in the system, additional stock will be requested and the item
   information will be updated accordingly.)
 
@@ -190,7 +195,11 @@ ____________________________________________________________
 
 #### 2.2.3. Show the item list: `items list`
 
-You can use this command to view all the recorded items in the system.
+Your business runs smoothly for a period of time. In order to maintain competitive and reasonable prices
+and make sure there is enough stock to sell, it's time to check the variety of items, as well as the price and stock of 
+each. (items list) feature help you to show the complete list quickly and accurately.
+Not just for this purpose, every time you would like to check all items in the list, 
+you just need to type `items list` and press enter.
 
 Format: `items list`
 
@@ -253,37 +262,25 @@ ____________________________________________________________
 
 #### 2.2.6. Update an item: `items update`
 
-Update either the price of stock of an item in the system.
+When you want to update either the price or stock of an item in the system, (items update) feature can help you to 
+achieve this easily. Please follow the steps:
+1. Input `items update` command.
+2. If the item list is not empty, easyLog will show the complete item list to you and you will be prompted to key in 
+   the item index to indicate which item you would like to update; if the item list is empty, easyLog will show a 
+   message to remind you to add items into the system first.
+3. After input a valid item index, you will be prompted to key in `p` or `s` to indicate either the item price or stock 
+   you would like to update.
+4. If `p` is entered in step 3, you need to enter the revised item price; if `s` is entered in step 3, you need to enter
+the revised item stock.
+5. Press enter.  
+6. You can see a confirmation message when the item price/stock has been updated successfully.
 
-Format: `items update` followed by `p` or `s`
+Format: `items update` <br/>
+        `p` or `s` <br/>
+        `<revised_item_price>` or `<revised_item_stock>`
 
-Expected Output:
-
-```
-____________________________________________________________
-What would you like to update, price or stock? (p/s)
-____________________________________________________________
-```
-
-if `p` is entered, the user needs to enter `<revised_item_price>`<br/>
-
-Expected Output:
-
-```
-____________________________________________________________
-Done! I just updated the item price for you.
-____________________________________________________________
-```
-
-if `s` is entered, the user needs to enter `<revised_item_stock>`
 
 Expected Output:
-
-```
-____________________________________________________________
-Done! I just updated the item stock for you.
-____________________________________________________________
-```
 
 #### 2.2.7. Find items: `items find`
 
@@ -330,8 +327,8 @@ Section 2.3 will explain the features related to orders.
 
 #### 2.3.1. Show orders-related commands : `orders`
 
-Show commands related to orders and brief description of the commands:
-  add order, list orders, remove orders, clear orders
+As a first-time user, you can simply type `orders` to view all commands related to orders. At the same time, you can see
+the brief description of those commands.
 
 Format: `orders`
 

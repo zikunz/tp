@@ -95,7 +95,7 @@ Section 2 will explain the features available in easyLog.
   trigger [2.1 viewing help: `help`](#21-viewing-help-help) command whereas `help me` will not be understood by easyLog
   (i.e., easyLog will show it does not understand your command).
 
-* In the user guide, you will come acorss differnt symbols having different meanings as follows:
+* In the user guide, you will come across different symbols having different meanings as follows:
 
 > 💡 refers to a tip which is useful when operating easyLog. <br>
 > ❗ represents a warning containing important information such as what the range of valid inputs are.
@@ -366,14 +366,15 @@ Steps to add an order in easyLog:
 
 Note:
 1. Order has to contain at least 1 item to be added into the system.
-2. Item quantity to be inputted into the order cannot be more than the current stock in the inventory.
+2. The customer name cannot exceed 30 characters including spaces. 
+2. Item quantity to be inputted into the order cannot be less than 1 or more than the current stock in the inventory.
 3. Item quantity for each item inputted into the order would be removed from the inventory stock of that item 
    and tracked separately. The quantity would only be returned and added back to the inventory count for that item
    if the order is not done and deleted.
 4. While adding items into the order, if the app encounters any format error in the input, it may cause order details to
    be added wrongly. Do use [`orders delete`](#234-remove-an-order-orders-delete) feature to delete the order and
    re-input the order details in the correct format.
-5. When in doubt, do follow the prompts shown on command terminal.
+5. When in doubt, do follow the prompts shown on the command terminal.
    
 
 Format:

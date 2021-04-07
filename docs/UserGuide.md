@@ -367,14 +367,16 @@ Steps to add an order in easyLog:
 Note:
 1. Order has to contain at least 1 item to be added into the system.
 2. The customer name cannot exceed 30 characters including spaces. 
-2. Item quantity to be inputted into the order cannot be less than 1 or more than the current stock in the inventory.
-3. Item quantity for each item inputted into the order would be removed from the inventory stock of that item 
+3. Item quantity to be inputted into the order cannot be less than 1 or more than the current stock in the inventory.
+4. Item quantity for each item inputted into the order would be removed from the inventory stock of that item 
    and tracked separately. The quantity would only be returned and added back to the inventory count for that item
    if the order is not done and deleted.
-4. While adding items into the order, if the app encounters any format error in the input, it may cause order details to
+5. When adding the same item twice into the order, it will not combine the total stock of that item added but instead
+   show as 2 separate additions of the same item.
+6. While adding items into the order, if the app encounters any format error in the input, it may cause order details to
    be added wrongly. Do use [`orders delete`](#234-remove-an-order-orders-delete) feature to delete the order and
    re-input the order details in the correct format.
-5. When in doubt, do follow the prompts shown on the command terminal.
+7. When in doubt, do follow the prompts shown on the command terminal.
    
 
 Format:

@@ -123,7 +123,7 @@ public class OrdersParser extends Parser {
 
                 itemManager.incrementItemSales(itemToBeAddedToOrder, stockAdded);
 
-                if (stockAdded < 0 || stockAdded > currentItemStock) {
+                if (stockAdded < 1 || stockAdded > currentItemStock) {
                     throw new InvalidItemStockException();
                 }
                 int updatedItemStock = currentItemStock - stockAdded;
@@ -172,7 +172,7 @@ public class OrdersParser extends Parser {
 
                 itemManager.incrementItemSales(itemToBeAddedToOrder, stockAdded);
 
-                if (stockAdded < 0 || stockAdded > currentItemStock) {
+                if (stockAdded < 1 || stockAdded > currentItemStock) {
                     throw new InvalidItemStockException();
                 }
                 int updatedItemStock = currentItemStock - stockAdded;

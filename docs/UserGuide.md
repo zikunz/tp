@@ -556,7 +556,8 @@ do feel free to manipulate the data in `easyLog.txt` manually if it enhances you
 When [`orders done`](#238-update-the-status-of-an-order-orders-done) feature is executed, a receipt will be 
 automatically generated that contains the order details that was deleted. The generated receipts can be found in the 
 same directory as the location of the easyLog app inside a `Receipts` folder. The receipts generated will be in a `.txt` 
-format. This allows the list of orders while using the app to be kept clean with only the orders that are not done for
+format. (Note that the receipts generated can only be seen when you [exit](#25-exit-the-program-exit) the app) This 
+allows the list of orders while using the app to be kept clean with only the orders that are not done for
 easier viewing. Also, the generated receipts allows you to keep track of your revenue or to handle your taxes.
 Furthermore, receipts are numbered to show you how many orders you have fulfilled.
 

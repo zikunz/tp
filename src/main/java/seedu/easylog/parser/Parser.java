@@ -42,7 +42,7 @@ public class Parser {
      * @throws IOException Exception when there is invalid input
      */
     public void processUserInput(String rawUserInput, ItemManager itemManager, OrderManager orderManager)
-            throws IOException, NoItemsStatisticsCanBeGivenException {
+            throws IOException {
         String[] commandTypeAndParams = splitCommandWordAndArgs(rawUserInput);
         String commandType = commandTypeAndParams[0];
         String commandArgs = commandTypeAndParams[1];

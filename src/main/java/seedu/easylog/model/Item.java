@@ -139,6 +139,6 @@ public class Item {
      * @return 1 line string that contains details regarding the item.
      */
     public String saveToFileFormat() {
-        return itemName + " " + itemPrice.toPlainString() + " " + itemStock + " " + itemSales;
+        return itemPrice.toPlainString() + " " + itemStock + " " + itemSales + " " + itemName;
     }
 }

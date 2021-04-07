@@ -737,4 +737,8 @@ public class Ui {
     public void showNonNumericItemStockInput() {
         System.out.println(Messages.MESSAGE_NON_NUMERIC_ITEM_STOCK);
     }
+
+    public void showCustomerNameTooLong() {
+        System.out.print(Messages.MESSAGE_CUSTOMER_NAME_TOO_LONG);
+    }
 }

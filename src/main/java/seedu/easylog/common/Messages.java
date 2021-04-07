@@ -332,5 +332,10 @@ public class Messages {
             + "As you have not sold any single item yet.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_RECEIPT_HEADER = MESSAGE_LINE + "Order details as shown below\n";
+    public static final String MESSAGE_CUSTOMER_NAME_TOO_LONG = MESSAGE_LINE
+            + "Customer name inputted is too length.\n"
+            + "Note that the customer name length limit is 30 characters including spaces.\n"
+            + "Please try orders add <customer_name> again if you wish to add an order.\n"
+            + MESSAGE_LINE;
 }
 

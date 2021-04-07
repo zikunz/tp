@@ -513,9 +513,6 @@ public class Ui {
         System.out.print(Messages.MESSAGE_INVALID_WHILE_ADDING_ITEM_TO_ORDER);
     }
 
-    public void showInvalidFormatOrdersAdd() {
-        System.out.print(Messages.MESSAGE_INVALID_FORMAT_ORDERS_ADD);
-    }
 
     public void showItemNotFound() {
         System.out.print(Messages.MESSAGE_ITEM_NOT_FOUND);

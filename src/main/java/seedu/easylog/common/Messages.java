@@ -280,6 +280,7 @@ public class Messages {
             + MESSAGE_LINE;
     public static final String MESSAGE_INVALID_WHILE_ADDING_ITEM_TO_ORDER = MESSAGE_LINE
             + "Invalid input format while adding items to order.\n"
+            + "Note that <item_index> and <item_quantity> needs to be whole numbers.\n"
             + "Please retry adding items to the order.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_INVALID_FORMAT_ORDERS_ADD = MESSAGE_LINE

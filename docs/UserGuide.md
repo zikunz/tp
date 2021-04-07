@@ -95,7 +95,10 @@ Section 2 will explain the features available in easyLog.
   trigger [2.1 viewing help: `help`](#21-viewing-help-help) command whereas `help me` will not be understood by easyLog
   (i.e., easyLog will show it does not understand your command).
 
-* 💡 refers to a tip which contain important information such as what the range of valid inputs are.
+* In the user guide, you will come acorss differnt symbols having different meanings as follows:
+
+> 💡 refers to a tip which is useful when operating easyLog. <br>
+> ❗ represents a warning containing important information such as what the range of valid inputs are.
 
 ### 2.1 Viewing help: `help`
 

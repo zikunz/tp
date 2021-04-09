@@ -21,6 +21,9 @@
     - [2.8. Common Component](#28-common-component)
 - [3. Implementation](#3-implementation)
     - [3.1. App Initialization](#31-app-initialization)
+    - [3.2. Loading of save data](#32-loading-of-save-data)
+    - [3.3. Creation or saving of save data](#33-creation-or-saving-of-save-data)
+    - [3.4. Orders done and generation of receipt](#34-orders-done-and-generation-of-receipt)
 - [4. Documentation](#4-documentation)
 - [5. Testing](#5-testing)<br>
   [5.1 Running Tests](#51-running-tests)<br>
@@ -182,14 +185,34 @@ In this section, we explain the details and implementation of the more important
 
 As seen from the sequence diagram above, upon initialization,
 1. The main class located in EasyLog will show the user a greeting message.
-2. Proceed to load save file if any. More details on the implementation of loading save files will be
-discussed in future sections.
+2. Proceed to load save file if any. Details on the [implementation of loading save files](#32-loading-of-save-data) 
+   can be seen here
 3. Set up the environment for logging messages to be logged.
 4. Proceed to ask for user's input.
 5. Write a log to show that user's input has been requested.
 6. Proceed to process user input to determine the type of command to execute. More details on the implementation of
 processing user input will be discussed in future sections.
-7. Repeat steps 4-6 if user does not input exit command.   
+7. Repeat steps 4-6 if user does not input exit command. 
+
+## 3.2. Loading of save data
+
+![LoadFile Diagram](https://user-images.githubusercontent.com/57165946/113980223-cb586f00-9878-11eb-87a7-1ba5d501b09d.png)
+
+As seen form the sequence diagram above (note that some trivial details are removed from the diagram), when loadFile 
+method in SaveData class is being executed,
+1. Show the user a message that it is looking for save data.
+2. Check whether the save file exists (not shown in the diagram).
+3. If the save data does not exist, it will terminate the loadFile method.
+4. If the save data exists, it will show the user a message that it is loading the save data.
+5. Create a scanner object using the save file (not shown in the diagram).
+6. Read return a line in the save data.
+7. Process the line of input from the save data.
+8. Repeat step 6 and 7 until there no more lines to be read from the save data.
+9. Show the user that the save data has been successfully loaded.
+
+## 3.3. Creation or saving of save data
+
+## 3.4. Orders done and generation of receipt 
 
 ## 4. Documentation
 

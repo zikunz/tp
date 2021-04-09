@@ -211,7 +211,7 @@ method in SaveData class is being executed,
 9. Repeat step 6 and 7 until there no more lines to be read from the save data.
 10. Show the user that the save data has been successfully loaded.
 
-## 3.3. Creation or saving of save data
+## 3.3. Exit command and creation or saving of save data
 
 ## 3.4. Orders done and generation of receipt 
 

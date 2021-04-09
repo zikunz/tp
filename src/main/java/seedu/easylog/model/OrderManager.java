@@ -129,13 +129,6 @@ public class OrderManager {
     }
 
     /**
-     * Clears all orders in the system.
-     */
-    public void clearOrderList() {
-        orderList.clear();
-    }
-
-    /**
      * Get latest order added to the order list.
      *
      * @return Latest order added to the order list.

@@ -67,6 +67,12 @@ public class OrdersParser extends Parser {
                 new OrdersClearCommand().execute(orderManager);
             } catch (OrderListAlreadyClearedException e) {
                 ui.showAlreadyClearedOrderList();
+            } catch (InvalidNumberException e) {
+                ui.showInvalidOrderNumber();
+            } catch (OrderNotFoundException e) {
+                ui.showOrderNotFound();
+            } catch (EmptyInformationException e) {
+                ui.showOrderEmptyInformation();
             }
             break;
         case (Constants.COMMAND_PRICE):

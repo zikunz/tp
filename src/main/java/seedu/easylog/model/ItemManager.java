@@ -13,10 +13,7 @@ import java.util.ArrayList;
 public class ItemManager {
 
     protected ArrayList<Item> itemList;
-
     protected ArrayList<Item> foundList = new ArrayList<>();
-
-    protected ArrayList<String> itemDescriptionRecord = new ArrayList<>();
 
     public ItemManager() {
         this.itemList = new ArrayList<>();
@@ -29,7 +26,6 @@ public class ItemManager {
      */
     public void addItem(Item item) {
         itemList.add(item);
-        itemDescriptionRecord.add(item.getItemName());
     }
 
     /**
@@ -90,7 +86,6 @@ public class ItemManager {
      */
     public void deleteItem(int index) {
         itemList.remove(index);
-        itemDescriptionRecord.remove(index);
     }
 
     /**
@@ -164,7 +159,6 @@ public class ItemManager {
      */
     public void clearItemList() {
         itemList.clear();
-        itemDescriptionRecord.clear();
     }
 
     /**
@@ -225,15 +219,6 @@ public class ItemManager {
             }
         }
         return false;
-    }
-
-    /**
-     * Gets the item descriptions from the item list.
-     *
-     * @return the descriptions of items form the item list
-     */
-    public ArrayList<String> getItemDescriptionRecord() {
-        return itemDescriptionRecord;
     }
 
     /**
@@ -322,6 +307,7 @@ public class ItemManager {
 
     /**
      * Deletes the item from item list by name.
+     *
      * @param name the name of item to be deleted
      */
     public void deleteByname(String name) {
@@ -335,6 +321,7 @@ public class ItemManager {
 
     /**
      * Changes relevant string to item type.
+     *
      * @param name the name of string to be changed
      * @return string in item type if in item list, null otherwise
      */

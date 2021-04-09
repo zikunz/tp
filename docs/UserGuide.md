@@ -206,7 +206,7 @@ ____________________________________________________________
 ```
 
 Note:
-> 📄 Clearing all orders will add back items belonging to the orders back to the system. <br>
+> 📄 Clearing all orders will add back items belonging to the orders back to the inventory. <br>
 
 #### 2.2.6. Update an item: `items update`
 

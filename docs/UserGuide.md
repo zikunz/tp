@@ -127,7 +127,7 @@ Steps to check all items-related commands:
 
 #### 2.2.2. Add an item: `items add`
 
-When you sometimes overwhelmed by handling a large variety of items, `items add` feature allows you to record the
+When you are sometimes overwhelmed by handling a large variety of items, `items add` feature allows you to record the
 details of those items one by one into the easyLog app.
 
 Steps to add an item in easyLog:
@@ -140,15 +140,15 @@ Steps to add an item in easyLog:
 
 Note:
 > 📄 item names cannot be empty or consist of only white spaces. <br>
+> 📄 item names cannot exceed 30 characters including spaces. <br>
 > 📄 item price must be a number ranging from 0 to 1,000,000,000 (inclusive). <br>
 > 📄 item stock has to be an integer ranging from 0 to 1,000,000,000 (inclusive). <br>
 > 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
 
 #### 2.2.3. Show the item list: `items list`
 
-After your business has been running successfully for a period of time, whenever you would like to check all items in
-the list, `items list` feature allows you to check the variety of items, as well as the price and stock of each item by
-quickly and accurately displaying the complete item list.
+Whenever you would like to check all items and their prices and stocks in your inventory, `items list` feature allows 
+you to achieve it by quickly and accurately displaying the complete item list.
 
 Steps to check the complete item list:
 

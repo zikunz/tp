@@ -27,9 +27,10 @@ public class ItemsUpdateCommandTest {
         // Wrong items update command
         Item firstItem = new Item("CS2113T Textbook", BigDecimal.valueOf(50), 10);
         itemManager.addItem(firstItem);
-        WrongUpdateCommandException wrongUpdateCommandException = assertThrows(WrongUpdateCommandException.class, () -> {
-            itemsUpdateCommand.execute(" CS2113T Textbook", itemManager);
-        });
+        WrongUpdateCommandException wrongUpdateCommandException = assertThrows(WrongUpdateCommandException.class,
+                () -> {
+                    itemsUpdateCommand.execute(" CS2113T Textbook", itemManager);
+                });
         wrongUpdateCommandException = assertThrows(WrongUpdateCommandException.class, () -> {
             itemsUpdateCommand.execute(" ", itemManager);
         });

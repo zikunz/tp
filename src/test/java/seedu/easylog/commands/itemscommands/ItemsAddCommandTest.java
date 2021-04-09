@@ -14,12 +14,12 @@ public class ItemsAddCommandTest {
         ItemManager itemManager = new ItemManager();
         ArrayList<String> itemDescriptionRecord = null;
 
-//        // Null item description
+//        Null item description
 //        NullItemNameException nullItemNameException = assertThrows(NullItemNameException.class, () -> {
 //            itemsAddCommand.execute(null, itemManager, itemDescriptionRecord);
 //        });
 //
-//        // Empty item description
+//        Empty item description
 //        EmptyItemNameException emptyItemNameException = assertThrows(EmptyItemNameException.class, () -> {
 //            itemsAddCommand.execute("", itemManager, itemDescriptionRecord);
 //        });

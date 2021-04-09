@@ -35,11 +35,11 @@ class ItemsClearCommandTest {
         Item thirdItem = new Item("Logitech BRIO Webcam", BigDecimal.valueOf(300), 5);
         Item fourthItem = new Item("Lenovo China-exclusive Legion R9000X", BigDecimal.valueOf(2000),
                 2);
-        Item FifthItem = new Item("Guy's Perfume", BigDecimal.valueOf(100), 20);
+        Item fifthItem = new Item("Guy's Perfume", BigDecimal.valueOf(100), 20);
         itemManager.addItem(secondItem);
         itemManager.addItem(thirdItem);
         itemManager.addItem(fourthItem);
-        itemManager.addItem(FifthItem);
+        itemManager.addItem(fifthItem);
         itemsClearCommand.execute(itemManager);
         assertSame(0, itemManager.getSize());
     }

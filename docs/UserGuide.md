@@ -141,8 +141,10 @@ Steps to add an item in easyLog:
 Note:
 > 📄 item names cannot be empty or consist of only white spaces. <br>
 > 📄 item names cannot exceed 30 characters including spaces. <br>
-> 📄 item price must be a number ranging from 0 to 1,000,000,000 (inclusive). <br>
-> 📄 item stock has to be an integer ranging from 0 to 1,000,000,000 (inclusive). <br>
+> 📄 item price must be a number ranging from 0 (free item) to 1,000,000,000 (inclusive). <br>
+> 📄 item stock has to be a positive integer ranging from 1 to 1,000,000,000 (inclusive). <br>
+> 📄 If an item name is already found in the item list, adding new items with the same name will
+> still be successfully but take note that they will be tracked differently. <br>
 > 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
 
 #### 2.2.3. Show the item list: `items list`
@@ -202,6 +204,9 @@ ____________________________________________________________
 Done! I just cleared all items for you.
 ____________________________________________________________
 ```
+
+Note:
+> 📄 Clearing all orders will add back items belonging to the orders back to the system. <br>
 
 #### 2.2.6. Update an item: `items update`
 

@@ -28,7 +28,8 @@ public class OrdersDeleteCommand extends OrdersCommand {
             if ((index < 0) || (index >= size)) {
                 throw new InvalidOrderIndexException();
             }
-            addBackItemsAndRemoveItemSales(ordersArg, itemManager, orderManager);
+            int orderIndex = Integer.parseInt(ordersArg) - Constants.ARRAY_OFFSET;
+            addBackItemsAndRemoveItemSales(orderIndex, itemManager, orderManager);
             ui.showOrderDeleted(orderManager.getOrder(index));
             orderManager.deleteOrder(index);
         } catch (NumberFormatException e) {
@@ -42,19 +43,18 @@ public class OrdersDeleteCommand extends OrdersCommand {
         }
     }
 
-    public void addBackItemsAndRemoveItemSales(String ordersArg, ItemManager itemManager, OrderManager orderManager) {
-        int index = Integer.parseInt(ordersArg) - Constants.ARRAY_OFFSET;
-        if (!orderManager.getOrder(index).getStatus()) {
+    public void addBackItemsAndRemoveItemSales(int orderIndex, ItemManager itemManager, OrderManager orderManager) {
+        if (!orderManager.getOrder(orderIndex).getStatus()) {
             // return item stock to inventory if order is not complete.
             int itemIndex = 0;
-            for (Item item : orderManager.getItemsInOrder(index)) {
+            for (Item item : orderManager.getItemsInOrder(orderIndex)) {
                 if (itemManager.getItemList().contains(item)) {
                     int itemCurrentStock = item.getItemStock();
-                    int itemsStockInOrder = orderManager.getOrder(index).getStockCounts().get(itemIndex);
+                    int itemsStockInOrder = orderManager.getOrder(orderIndex).getStockCounts().get(itemIndex);
                     int itemUpdateStock = itemCurrentStock + itemsStockInOrder;
                     item.setItemStock(itemUpdateStock);
                     int itemCurrentSales = item.getItemSales();
-                    int itemSalesInOrder = orderManager.getOrder(index).getStockCounts().get(itemIndex);
+                    int itemSalesInOrder = orderManager.getOrder(orderIndex).getStockCounts().get(itemIndex);
                     int itemUpdateSales = itemCurrentSales - itemSalesInOrder;
                     item.setItemSales(itemUpdateSales);
                     ++itemIndex;

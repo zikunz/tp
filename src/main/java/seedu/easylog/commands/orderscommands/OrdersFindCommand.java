@@ -8,8 +8,8 @@ public class OrdersFindCommand extends OrdersCommand {
     /**
      * Prints relevant orders by customer's name.
      */
-    public void execute(String customerName, OrderManager orderManager) 
-        throws EmptyNameException, OrderNotFoundException {
+    public void execute(String customerName, OrderManager orderManager)
+            throws EmptyNameException, OrderNotFoundException {
         if (customerName.equals("")) {
             throw new EmptyNameException();
         }

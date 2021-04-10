@@ -9,15 +9,17 @@ import seedu.easylog.commands.orderscommands.OrdersDoneCommand;
 import seedu.easylog.commands.orderscommands.OrdersFindCommand;
 import seedu.easylog.common.Constants;
 
+import seedu.easylog.exceptions.CustomerNameTooLongException;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyItemListException;
-import seedu.easylog.exceptions.OrderEmptyException;
-import seedu.easylog.exceptions.RepeatedOrderException;
+import seedu.easylog.exceptions.EmptyOrderIndexException;
 import seedu.easylog.exceptions.InvalidItemStockException;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.exceptions.OrderListAlreadyClearedException;
+import seedu.easylog.exceptions.EmptyOrderListException;
 import seedu.easylog.exceptions.OrderNotFoundException;
+import seedu.easylog.exceptions.InvalidOrderIndexException;
 
 import seedu.easylog.model.Item;
 import seedu.easylog.model.ItemManager;
@@ -30,7 +32,6 @@ import java.util.ArrayList;
  * Process orders commands input.
  */
 public class OrdersParser extends Parser {
-
     public static void processOrdersInput(String ordersInput, ItemManager itemManager, OrderManager orderManager) {
         String[] splitOrdersArg = splitCommandWordAndArgs(ordersInput);
         String ordersType = splitOrdersArg[0];
@@ -43,26 +44,21 @@ public class OrdersParser extends Parser {
                 ui.showOrderEmptyCustomerName();
             } catch (EmptyItemListException e) {
                 ui.showEmptyItemList();
-                ui.showAddItemFirst();
-            } catch (OrderEmptyException e) {
-                ui.showOrderEmpty();
-            } catch (NumberFormatException e) {
-                ui.showInvalidStopAddingItemToOrder();
-            } catch (ArrayIndexOutOfBoundsException e) {
-                ui.showInvalidFormatOrdersAdd();
-            } catch (RepeatedOrderException e) {
-                ui.showRepeatedOrder();
+            } catch (CustomerNameTooLongException e) {
+                ui.showCustomerNameTooLong();
             }
             break;
         case (Constants.COMMAND_DELETE):
             try {
-                new OrdersDeleteCommand().execute(ordersArg, orderManager);
-            } catch (EmptyNumberException e) {
-                ui.showOrderEmptyNumber();
-            } catch (InvalidNumberException e) {
+                new OrdersDeleteCommand().execute(ordersArg, itemManager, orderManager);
+            } catch (EmptyOrderListException e) {
+                ui.showEmptyOrderList();
+            } catch (EmptyOrderIndexException e) {
+                ui.showOrderEmptyIndex();
+            } catch (InvalidOrderIndexException e) {
                 ui.showInvalidOrderNumber();
             } catch (NumberFormatException e) {
-                ui.showNonIntegerOrderNumber();
+                ui.showNonIntegerOrderIndex();
             }
             break;
         case (Constants.COMMAND_LIST):
@@ -70,7 +66,7 @@ public class OrdersParser extends Parser {
             break;
         case (Constants.COMMAND_CLEAR):
             try {
-                new OrdersClearCommand().execute(orderManager);
+                new OrdersClearCommand().execute(itemManager, orderManager);
             } catch (OrderListAlreadyClearedException e) {
                 ui.showAlreadyClearedOrderList();
             }
@@ -83,7 +79,7 @@ public class OrdersParser extends Parser {
             } catch (InvalidNumberException e) {
                 ui.showInvalidOrderNumber();
             } catch (NumberFormatException e) {
-                ui.showNonIntegerOrderNumber();
+                ui.showNonIntegerOrderIndex();
             }
             break;
         case (Constants.COMMAND_DONE):
@@ -94,14 +90,14 @@ public class OrdersParser extends Parser {
             } catch (InvalidNumberException e) {
                 ui.showInvalidOrderNumber();
             } catch (NumberFormatException e) {
-                ui.showNonIntegerOrderNumber();
+                ui.showNonIntegerOrderIndex();
             }
             break;
         case (Constants.COMMAND_FIND):
             try {
                 new OrdersFindCommand().execute(ordersArg, orderManager);
             } catch (EmptyNameException e) {
-                ui.showItemEmptyName();
+                ui.showOrderEmptyCustomerName();
             } catch (OrderNotFoundException e) {
                 ui.showOrderNotFound();
             }
@@ -118,23 +114,21 @@ public class OrdersParser extends Parser {
      * @param addItemsToOrderInput the item added to the order
      * @param itemManager          item manager
      * @return the items added to order
-     * @throws OrderEmptyException Exception when there is no item in order
      */
-    public Order processItemsAddedToOrder(String customerName, String addItemsToOrderInput, ItemManager itemManager)
-            throws OrderEmptyException {
+    public Order processItemsAddedToOrder(String customerName, String addItemsToOrderInput, ItemManager itemManager) {
         ArrayList<Item> itemsAddedToOrder = new ArrayList<>();
         ArrayList<Integer> itemsStockAddedToOrder = new ArrayList<>();
-        do {
+        while (!addItemsToOrderInput.equals("stop") || itemsAddedToOrder.isEmpty()) {
             String[] splitInput = addItemsToOrderInput.split(" ");
-            int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;
-            int stockAdded = Integer.parseInt(splitInput[1]);
             try {
+                int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;
+                int stockAdded = Integer.parseInt(splitInput[1]);
                 Item itemToBeAddedToOrder = itemManager.getItem(itemIndex);
                 int currentItemStock = itemToBeAddedToOrder.getItemStock();
 
-                itemManager.incrementItemSold(itemToBeAddedToOrder, stockAdded);
+                itemManager.incrementItemSales(itemToBeAddedToOrder, stockAdded);
 
-                if (stockAdded < 0 || stockAdded > currentItemStock) {
+                if (stockAdded < 1 || stockAdded > currentItemStock) {
                     throw new InvalidItemStockException();
                 }
                 int updatedItemStock = currentItemStock - stockAdded;
@@ -142,16 +136,15 @@ public class OrdersParser extends Parser {
                 itemsAddedToOrder.add(itemManager.getItem(itemIndex));
                 itemsStockAddedToOrder.add(stockAdded);
                 ui.showItemAndStockAddedToOrder(itemToBeAddedToOrder.getItemName(), stockAdded);
+            } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
+                ui.showInvalidWhileAddingItemToOrder();
             } catch (IndexOutOfBoundsException e) {
-                ui.showItemNotFoundWhenAddingToOrder(itemIndex);
+                ui.showItemNotFoundWhenAddingToOrder(splitInput[0]);
             } catch (InvalidItemStockException e) {
                 ui.showNotEnoughStock();
             }
-            ui.showContinueAddingItemsToOrder();
+            ui.showAddItemsToOrder();
             addItemsToOrderInput = ui.askForUserInput();
-        } while (!addItemsToOrderInput.equals("stop"));
-        if (itemsAddedToOrder.isEmpty()) {
-            throw new OrderEmptyException();
         }
         return new Order(customerName, itemsAddedToOrder, itemsStockAddedToOrder);
     }
@@ -164,11 +157,9 @@ public class OrdersParser extends Parser {
      * @param itemManager          item manager
      * @param orderManager         order manager
      * @return the items added to the order which already exists
-     * @throws OrderEmptyException Exception when there is no item in order
      */
     public Order processItemsAddedToExistingOrder(String customerName, String addItemsToOrderInput,
-                                                  ItemManager itemManager, OrderManager orderManager)
-            throws OrderEmptyException {
+                                                  ItemManager itemManager, OrderManager orderManager) {
         int orderIndex;
         orderIndex = orderManager.findOrderIndex(customerName);
         ArrayList<Item> itemsAddedToExistingOrder;
@@ -176,17 +167,17 @@ public class OrdersParser extends Parser {
         itemsAddedToExistingOrder = orderManager.getItemsInOrder(orderIndex);
         itemsStockAddedToExistingOrder = orderManager.getItemsStockInOrder(orderIndex);
         orderManager.deleteOrder(orderIndex);
-        do {
+        while (!addItemsToOrderInput.equals("stop") || itemsAddedToExistingOrder.isEmpty()) {
             String[] splitInput = addItemsToOrderInput.split(" ");
-            int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;
-            int stockAdded = Integer.parseInt(splitInput[1]);
             try {
+                int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;
+                int stockAdded = Integer.parseInt(splitInput[1]);
                 Item itemToBeAddedToOrder = itemManager.getItem(itemIndex);
                 int currentItemStock = itemToBeAddedToOrder.getItemStock();
 
-                itemManager.incrementItemSold(itemToBeAddedToOrder, stockAdded);
+                itemManager.incrementItemSales(itemToBeAddedToOrder, stockAdded);
 
-                if (stockAdded < 0 || stockAdded > currentItemStock) {
+                if (stockAdded < 1 || stockAdded > currentItemStock) {
                     throw new InvalidItemStockException();
                 }
                 int updatedItemStock = currentItemStock - stockAdded;
@@ -194,19 +185,17 @@ public class OrdersParser extends Parser {
                 itemsAddedToExistingOrder.add(itemManager.getItem(itemIndex));
                 itemsStockAddedToExistingOrder.add(stockAdded);
                 ui.showItemAndStockAddedToOrder(itemToBeAddedToOrder.getItemName(), stockAdded);
+            } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
+                ui.showInvalidWhileAddingItemToOrder();
             } catch (IndexOutOfBoundsException e) {
-                ui.showItemNotFoundWhenAddingToOrder(itemIndex);
+
+                ui.showItemNotFoundWhenAddingToOrder(splitInput[0]);
             } catch (InvalidItemStockException e) {
                 ui.showNotEnoughStock();
             }
-            ui.showContinueAddingItemsToOrder();
+            ui.showAddItemsToOrder();
             addItemsToOrderInput = ui.askForUserInput();
-        } while (!addItemsToOrderInput.equals("stop"));
-        if (itemsAddedToExistingOrder.isEmpty()) {
-            throw new OrderEmptyException();
         }
         return new Order(customerName, itemsAddedToExistingOrder, itemsStockAddedToExistingOrder);
     }
-
-
 }

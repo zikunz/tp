@@ -1,21 +1,23 @@
 package seedu.easylog.commands.itemscommands;
 
 import seedu.easylog.common.Constants;
-
-import seedu.easylog.exceptions.WrongUpdateCommandException;
-import seedu.easylog.exceptions.WrongItemFieldException;
 import seedu.easylog.exceptions.EmptyItemIndexException;
-import seedu.easylog.exceptions.InvalidItemIndexException;
 import seedu.easylog.exceptions.EmptyItemPriceException;
+import seedu.easylog.exceptions.EmptyItemStockException;
+import seedu.easylog.exceptions.InvalidItemIndexException;
 import seedu.easylog.exceptions.InvalidItemPriceException;
+import seedu.easylog.exceptions.InvalidItemStockException;
+import seedu.easylog.exceptions.NonIntegerItemStockException;
+import seedu.easylog.exceptions.NonNumericItemPriceException;
 import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NullItemStockException;
-import seedu.easylog.exceptions.EmptyItemStockException;
-import seedu.easylog.exceptions.InvalidItemStockException;
-import seedu.easylog.exceptions.NonNumericItemPriceException;
-import seedu.easylog.exceptions.NonIntegerNumericItemStockException;
-
+import seedu.easylog.exceptions.WrongItemFieldException;
+import seedu.easylog.exceptions.WrongUpdateCommandException;
+import seedu.easylog.exceptions.EmptyItemFieldException;
+import seedu.easylog.exceptions.InvalidItemFieldException;
+import seedu.easylog.exceptions.EmptyItemListException;
 import seedu.easylog.model.ItemManager;
+
 
 public class ItemsUpdateCommand extends ItemsCommand {
     /**
@@ -28,27 +30,59 @@ public class ItemsUpdateCommand extends ItemsCommand {
     public void execute(String extraDescription, ItemManager itemManager) throws WrongUpdateCommandException,
             WrongItemFieldException, EmptyItemIndexException, InvalidItemIndexException, EmptyItemPriceException,
             InvalidItemPriceException, NullItemPriceException, NullItemStockException, EmptyItemStockException,
-            InvalidItemStockException, NonIntegerNumericItemStockException, NonNumericItemPriceException {
+            InvalidItemStockException, NonIntegerItemStockException, NonNumericItemPriceException,
+            EmptyItemFieldException, InvalidItemFieldException, EmptyItemListException {
+        int listSize = itemManager.getSize();
+        if (listSize == 0) {
+            throw new EmptyItemListException();
+        }
         if (!extraDescription.isEmpty()) {
             throw new WrongUpdateCommandException();
         }
+        boolean stopAskingForItemIndex = false;
+        String itemIndexInString = " ";
+        while (!stopAskingForItemIndex) {
+            ui.askForItemIndex();
+            ItemsListCommand itemsListCommand = new ItemsListCommand();
+            itemsListCommand.execute(itemManager); // Show item list to allow user to see the item index to update
 
-        ui.askForItemIndex();
-        ItemsListCommand itemsListCommand = new ItemsListCommand();
-        itemsListCommand.execute(itemManager); // Show item list to allow user to see the item index to update
-
-        String itemIndexInString = ui.askForUserInput();
-        if (itemIndexInString.equals("")) {
-            throw new EmptyItemIndexException();
+            itemIndexInString = ui.askForUserInput();
+            try {
+                if (itemIndexInString.equals("")) {
+                    throw new EmptyItemIndexException();
+                }
+                int itemIndex = Integer.parseInt(itemIndexInString) - Constants.ARRAY_OFFSET;
+                int size = itemManager.getSize();
+                if (itemIndex < 0 || itemIndex >= size) {
+                    throw new InvalidItemIndexException();
+                }
+                stopAskingForItemIndex = true;
+            } catch (EmptyItemIndexException e) {
+                ui.showEmptyItemIndexInput();
+            } catch (InvalidItemIndexException e) {
+                ui.showInvalidItemIndexInput();
+            } catch (NumberFormatException e) {
+                ui.showNonIntegerItemIndexForUpdate();
+            }
         }
+        String itemField;
+        do {
+            ui.askForItemFieldToBeUpdated();
+            itemField = ui.askForUserInput();
+            try {
+                if (itemField.equals("")) {
+                    throw new EmptyItemFieldException();
+                }
+                if (!(itemField.equals("p") || itemField.equals("s"))) {
+                    throw new InvalidItemFieldException();
+                }
+            } catch (EmptyItemFieldException e) {
+                ui.showEmptyItemType();
+            } catch (InvalidItemFieldException e) {
+                ui.showInvalidItemType();
+            }
+        } while (!(itemField.equals("p") || itemField.equals("s")));
         int itemIndex = Integer.parseInt(itemIndexInString) - Constants.ARRAY_OFFSET;
-        int size = itemManager.getSize();
-        if (itemIndex < 0 || itemIndex >= size) {
-            throw new InvalidItemIndexException();
-        }
-
-        ui.askForItemFieldToBeUpdated();
-        String itemField = ui.askForUserInput();
         itemsParser.processUpdateAttributeInput(itemField, itemIndex, itemManager);
     }
 }

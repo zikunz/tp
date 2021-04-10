@@ -12,7 +12,7 @@ public class Item {
     protected String itemName;
     protected BigDecimal itemPrice;
     protected int itemStock;
-    protected int itemSold;
+    protected int itemSales;
 
     /**
      * Item constructor.
@@ -25,7 +25,7 @@ public class Item {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemStock = itemStock;
-        this.itemSold = 0;
+        this.itemSales = 0;
         assert itemName != null;
     }
 
@@ -56,13 +56,45 @@ public class Item {
         return itemStock;
     }
 
+    /**
+     * Returns a message to show the item has been added successfully.
+     *
+     * @return item added message
+     */
     public String getAddItemMessage() {
         return "Got it! The item [" + itemName + "] is added.";
     }
 
+    /**
+     * Returns a message to show the item has been deleted successfully.
+     *
+     * @return item deleted message
+     */
     public String getDeleteItemMessage() {
         return Messages.MESSAGE_LINE
                 + "Got it! The item [" + itemName + "] is deleted.";
+    }
+
+    /**
+     * Returns a message to show the item price has been updated successfully.
+     *
+     * @return item price updated message
+     */
+    public String getUpdatedPriceMessage() {
+        return "Done! I just updated the item price ["
+                + itemPrice
+                + "] for you.\n";
+    }
+
+    /**
+     * Returns a message to show the item stock has been updated successfully.
+     *
+     * @return item stock updated message
+     */
+    public String getUpdatedStockMessage() {
+        return "Done! I just updated the item stock ["
+                + itemStock
+                + "] for you.\n";
     }
 
     /**
@@ -84,21 +116,21 @@ public class Item {
     }
 
     /**
-     * Sets the total item sold of an item of interest.
+     * Sets the total item sales of an item of interest.
      *
-     * @param newItemSold new number of items sold (number of items added to an order).
+     * @param itemSales new number of item sales (number of items added to an order).
      */
-    public void setItemSold(int newItemSold) {
-        this.itemSold = newItemSold;
+    public void setItemSales(int itemSales) {
+        this.itemSales = itemSales;
     }
 
     /**
-     * Gets the total item sold of an item of interest.
+     * Gets the total item sales of an item of interest.
      *
-     * @return item sold
+     * @return item sales
      */
-    public int getItemSold() {
-        return itemSold;
+    public int getItemSales() {
+        return itemSales;
     }
 
     /**
@@ -107,6 +139,6 @@ public class Item {
      * @return 1 line string that contains details regarding the item.
      */
     public String saveToFileFormat() {
-        return itemName + " " + itemPrice.toPlainString() + " " + itemStock;
+        return itemPrice.toPlainString() + " " + itemStock + " " + itemSales + " " + itemName;
     }
 }

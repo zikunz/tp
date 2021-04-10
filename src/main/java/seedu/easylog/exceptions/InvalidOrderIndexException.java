@@ -1,5 +1,5 @@
 package seedu.easylog.exceptions;
 
-public class InvalidItemStockException extends Throwable {
+public class InvalidOrderIndexException extends Throwable {
     // no other code needed
 }

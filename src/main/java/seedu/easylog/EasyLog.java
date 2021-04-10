@@ -1,6 +1,5 @@
 package seedu.easylog;
 
-import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.NoItemsStatisticsCanBeGivenException;
 import seedu.easylog.model.ItemManager;
 import seedu.easylog.model.OrderManager;

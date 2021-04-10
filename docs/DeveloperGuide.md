@@ -1,16 +1,26 @@
-# Developer Guide
+# easyLog Developer Guide
+
+By: `Ong Wei Sheng`, `Zhu Zikun`, `Qiu Yi Wen`, `Li Kexuan`, `Jiang Qixiong`
+
+Last Updated: `10 April 2021` <br>
 
 ![Supported Java versions](https://img.shields.io/badge/Java-11-blue.svg)
 ![Supported OS](https://img.shields.io/badge/Supported%20OS-Windows|MacOS|Linux-yellow.svg)
 ![Java CI](https://github.com/AY2021S1-CS2113T-T09-4/tp/workflows/Java%20CI/badge.svg)
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/75139323/114268337-233ad580-9a33-11eb-9834-952e9a86fbaa.png" width="500">
+</p>
+
+***
+
 ## Table of Contents
 
-- [1. Introduction](#1-introduction)
+- [1. **Introduction**](#1-introduction)
     - [1.1. Software Overview](#11-software-overview)
     - [1.2. Prerequisites](#12-prerequisites)
-    - [1.3. Setting up](#13-setting-up)
-- [2. Design](#2-design)
+    - [1.3. Setting Up](#13-setting-up)
+- [2. **Design**](#2-design)
     - [2.1. Architecture](#21-architecture)
     - [2.2. EasyLog Component](#22-easylog-component)
     - [2.3. UI Component](#23-ui-component)
@@ -19,7 +29,29 @@
     - [2.6. Model Component](#26-model-component)
     - [2.7. Storage Component](#27-storage-component)
     - [2.8. Common Component](#28-common-component)
-- [3. Implementation](#3-implementation)
+- [3. **Implementation**](#3-implementation)
+    - [3.1. App Initialization](#31-app-initialization)
+    - [3.2. Loading of Save Data](#32-loading-of-save-data)
+    - [3.3. Creation or Saving of Save Data](#33-creation-or-saving-of-save-data)
+    - [3.4. Orders Done and Generation of Receipts](#34-orders-done-and-generation-of-receipt)
+- [4. **Documentation**](#4-documentation)
+- [5. **Testing**](#5-testing)
+    - [5.1. Types of Tests](#52-types-of-tests)
+    - [5.2. Running Tests](#51-running-tests)
+- [6. **Dev Ops**](#dev-ops)
+    - [6.1. Build Automation](#61-build-automation)
+    - [6.2. Continuous Integration](#62-continuous-integration)
+    - [6.3. Coverage Report](#63-coverage-report)
+    - [6.4. Making a Release](#64-making-a-release)
+    - [6.5. Managing Dependencies](#65-managing-dependencies)
+- [**Appendices**](#appendices)
+    - [Appendix A: Product Scope](#appendix-a-product-scope)
+    - [Appendix B: User Stories](#appendix-b-user-stories)
+    - [Appendix C: Non-Functional Requirements](#appendix-c-non-functional-requirements)
+    - [Appendix D: Glossary](#appendix-d-glossary)
+    - [Appendix E: Instructions for Manual Testing](#appendix-e-instructions-for-manual-testing)
+
+***
 
 ## 1. Introduction
 
@@ -39,12 +71,16 @@ further or just curious about the workings of this application. This would allow
 dive right in to improving the code, performance, features or even adding new features much more easily due to the
 understanding of the structure of the codebase and implementation of existing features.
 
+[Return to Top](#1-introduction)
+
 ### 1.2 Prerequisites
 
 - Java 11 (can be downloaded from [here](https://www.oracle.com/sg/java/technologies/javase-jdk11-downloads.html))
-- IntelliJ Idea (can be downloaded from [here](https://www.jetbrains.com/idea/download/#section=mac))
+- IntelliJ IDEA (can be downloaded from [here](https://www.jetbrains.com/idea/download/#section=mac))
 
-### 1.3 Setting up
+[Return to Top](#1-introduction)
+
+### 1.3 Setting Up
 
 1. Fork the easyLog repository [here](https://github.com/AY2021S2-CS2113T-T09-4/tp) and git clone it to any location on
    your computer.
@@ -78,7 +114,15 @@ Save data not found.
 ____________________________________________________________
 ```
 
+[Return to Top](#1-introduction)
+
+***
+
 ## 2. Design
+
+In this section, TO BE ADDED
+
+[Return to Top](#1-introduction)
 
 ### 2.1 Architecture
 
@@ -96,11 +140,15 @@ Apart from the `EasyLog` component, the application also consists of the followi
 - `Storage`: Handles loading, creating and saving of data into `.txt` files.
 - `Common`: Contains variables and messages commonly used in all the components.
 
+[Return to Top](#1-introduction)
+
 ### 2.2 EasyLog Component
 
 The EasyLog component is responsible for initializing the app. It initializes the app by
 instantiating classes from the `Ui`, `Parser`, `Model` and `Storage` components. More details regarding the
 initialization will be covered in the [Implementation](#3-implementation) section.
+
+[Return to Top](#1-introduction)
 
 ### 2.3 Ui Component
 
@@ -108,6 +156,8 @@ The UI component does the following:
 1. It asks for users input.
 2. It is responsible for printing and showing responses to the user's input while executing commands related to the
 user's input.
+
+[Return to Top](#1-introduction)
 
 ### 2.4 Parser Component
 
@@ -119,16 +169,24 @@ commands according to the user's input. This component consists of 3 different c
 2. `ItemsParser` class to process inputs related to `items` features.
 3. `OrdersParser` class to process inputs related to `orders` features.
 
+[Return to Top](#1-introduction)
 
 ### 2.5 Command Component
 
-![Command Diagram](https://user-images.githubusercontent.com/60378963/113083308-92802080-920e-11eb-8e4b-66bc7fdf79f2.png)
+![Command Class Diagram](https://user-images.githubusercontent.com/60378963/113397031-ff421900-93ce-11eb-8e31-a9207d23f2f1.png)
+All four ExitCommand, OrdersCommand, ItemsCommand and HelpCommand classes extend the abstract Command class.
+OrdersCommand and ItemsCommand Classes are abstract class and it has various Command classes (e.g. OrdersXXXCommand, ItemsXXXCommand) extending them, in order to
+deal with different command actions ask by the user.
 
-Different Commands execute by the program.
+1. Once the user input is been parsed by the `Parser` class new `Command` object will be created.
+2. Different actions will be executed by the execute method in different `Command` class.
+3. Command execution take place and it will affect the `Model` and its data (e.g. adding a new item).
+
+[Return to Top](#1-introduction)
 
 ### 2.6 Model Component
 
-![Command Diagram](https://user-images.githubusercontent.com/75139323/113109924-0d5e3100-9239-11eb-8159-94fb4aaf10dc.png)
+![Command Diagram](https://user-images.githubusercontent.com/75139323/113146529-5f677c80-9262-11eb-9cff-300d5496d089.png)
 
 The model component consists of `Item`, `ItemManager`, `Order` and `OrderManager` classes.
 
@@ -136,6 +194,8 @@ The model component consists of `Item`, `ItemManager`, `Order` and `OrderManager
 * ItemManager: Contains the item list e.g., it has operations to add / delete items in the list.
 * Order: Consists of orders by customers.
 * OrderManager: Contains the order list e.g., it has operations to add / delete orders in the list.
+
+[Return to Top](#1-introduction)
 
 ### 2.7 Storage Component
 
@@ -146,32 +206,212 @@ The Storage component consists of 3 different classes
 2. `SaveData` class to deal with the loading, saving and creation of save data.
 3. `Receipt` class to deal with the generation of receipts when an order is done.
 
+[Return to Top](#1-introduction)
+
 ### 2.8 Common Component
 
 The Common component consists of 2 different classes:
 1. `Constants` class to store all variables that are frequently used in the various components.
 2. `Messages` class to store all the texts for the UI to print onto the command line.
 
+[Return to Top](#1-introduction)
+
 ## 3. Implementation
 
+In this section, we explain the details and implementation of the more important features of easyLog.
 
+[Return to Top](#1-introduction)
 
-## Product scope
-### Target user profile
+### 3.1. App Initialization
 
-- IT savvy home-based businessman
-- has a need to manage numerous sales data
-- the list gets constantly updated (add & delete items/orders)
-- prefers typing over mouse/handwritten
-- can type fast
-- enjoys using CLI software
+![App Initialization Diagram](https://user-images.githubusercontent.com/57165946/113379984-99916500-93ad-11eb-8fa7-f3c00fd71163.png)
 
-### Value proposition
+As seen from the sequence diagram above, upon initialization,
+1. The main class located in EasyLog will show the user a greeting message.
+2. Proceed to load save file if any. Details on the [implementation of loading save files](#32-loading-of-save-data) 
+   can be seen here
+3. Set up the environment for logging messages to be logged.
+4. Proceed to ask for user's input.
+5. Write a log to show that user's input has been requested.
+6. Proceed to process user input to determine the type of command to execute. More details on the implementation of
+processing user input will be discussed in future sections.
+7. Repeat steps 4-6 if user does not input exit command.
 
-A simple database application that helps target user to store and accesse a collection of data electronically from a computer
-system.
+[Return to Top](#1-introduction)
+   
+### 3.2. Loading of Save Data
 
-## User Stories
+![LoadFile Diagram](https://user-images.githubusercontent.com/57165946/114254030-ad594e80-99df-11eb-8c03-730630b57d49.png)
+
+As seen form the sequence diagram above (note that some trivial details are removed from the diagram), when loadFile 
+method in SaveData class is being executed,
+1. Show the user a message that it is looking for save data.
+2. Creates a file object with pathname of the save file.   
+3. Check whether the save file exists through the file object previously created.
+4. If the save file does not exist, it will terminate the loadFile method and show the user that no save data was found.
+5. If the save file exists, it will show the user a message that it is loading the save data.
+6. Create a scanner object using the save file.
+7. Read the first line in the save data.
+8. Process the line of input from the save data.
+9. Repeat step 6 and 7 until there no more lines to be read from the save data.
+10. Show the user that the save data has been successfully loaded.
+
+[Return to Top](#1-introduction)
+    
+### 3.3. Exit Command and Creation or Saving of Save Data
+
+[Return to Top](#1-introduction)
+
+### 3.4. Orders Done and Generation of Receipts 
+
+[Return to Top](#1-introduction)
+
+***
+
+[Return to Top](#1-introduction)
+## 4. Documentation
+
+All documentation can be found under the `docs/` folder. Alternatively, visit
+https://ay2021s2-cs2113t-t09-4.github.io/tp/ to browse all the document.
+
+* [Jekyll](https://jekyllrb.com/) is used to manage the documentation.
+* [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) is used to write the documentation.
+* [diagrams.net](https://draw.io/) (formerly draw.io) is used to create various UML diagrams. <br>
+
+[Return to Top](#1-introduction)
+
+***
+
+## 5. Testing
+
+In this section, we present different types of tests and how they can be run.
+
+[Return to Top](#1-introduction)
+
+### 5.1. Types of Tests
+There are primarily three types of tests:
+
+1. Unit tests targeting the lowest level methods/classes. <br>
+   e.g. TO BE ADDED
+
+2. Integration tests that are checking the integration of multiple code units (those code units are assumed to be working).
+   e.g. TO BE ADDED
+
+[Return to Top](#1-introduction)
+
+### 5.2. Running Tests
+There are multiple ways to run tests for easyLog. Two of them are listed below:
+
+**Method 1: Using IntelliJ JUnit test runner**
+
+- To run all tests, right-click the `src/test/java` folder and choose `Run 'Tests in tp.test'`.
+- To run a subset of tests, you can right-click a test test class before choosing `Run <test.java>`, where 
+  `<test.java>` is the name of the test class (e.g., `itemsAddCommandTest`).
+
+Method 2: Using Gradle <br> 
+* Open a console and run the command gradlew clean test (Mac/Linux: ./gradlew clean test)
+
+🔗 **Link**: Read [this Gradle Tutorial from the se-edu/guides](https://se-education.org/guides/tutorials/gradle.html) to learn more about using Gradle.
+
+- To run all tests, open a console and run the command `gradlew clean test` if you are a Windows user. For macOS or 
+  Linux users, please run the command `./gradlew clean test` instead.
+
+> **Note:** If you are new to Gradle, refer to this [Gradle Tutorial](#https://se-education.org/guides/tutorials/gradle.html) to learn more about how to use Gradle commands.
+
+We invite you to visit [Appendix E: Instructions for Manual Testing](#appendix-e-instructions-for-manual-testing) to 
+learn more about manual testing for easyLog.
+
+[Return to Top](#1-introduction)
+
+1. Unit tests. Tests are conducted on the fundamental level methods/classes. <br>
+e.g. `seedu.easyLog.commons.ConstantsTest`
+
+2. Integration tests. Tests are conducted on checking the integration of multiple code units. <br>
+e.g. `seedu.easyLog.storage.OrderManagerTest`
+
+3. Hybrids of unit and integration tests. Tests are conducted on multiple code units as well as their logic connections. <br>
+e.g. `seedu.easyLog.parser.ItemsParserTest`
+
+## 6. Dev Ops
+
+Int this section, we discuss several important aspects of Dev Ops which can shorten the system development life cycle 
+and provide continuous delivery with high software quality.
+
+[Return to Top](#1-introduction)
+
+### 6.1. Build Automation
+We use Gradle for tasks related to build automation such as running tests and checking code for style compliance.
+
+To run all build-related tasks:
+
+1. Open a terminal in the project’s root directory.
+2. Run the command:
+  - Windows: `gradlew build`
+  - macOS / Linux: `./gradlew build`
+3. A message stating `BUILD SUCCESSFUL` will be shown in the terminal if all tasks are run successfully. Otherwise, 
+   refer to the error report provided to resolve the issues before trying again.
+
+[Return to Top](#1-introduction)
+
+### 6.2. Continuous Integration
+We use Github Actions for continuous integration. No setup will be required for users who fork from the 
+AY2021S2-CS2113T-T09-4/tp repository.
+
+Whenever you create a pull request to the master branch of AY2021S2-CS2113T-T09-4/tp:
+- Various checks will automatically be executed for your pull request.
+- If any checks fail, please view the cause of any errors shown and fix them in your branch before pushing it again.
+- Ensure that all checks pass before the reviwer merges your pull request.
+
+[Return to Top](#1-introduction)
+
+### 6.3. Coverage Report
+We use the IntelliJ IDEA’s coverage analysis tool for coverage reporting. A tutorial on how to install and use this tool
+can be found [here](https://www.youtube.com/watch?v=yNYzZvyA2ik).
+
+[Return to Top](#1-introduction)
+
+### 6.4. Making a Release
+
+You can follow the steps below to make a new release:
+1. Generate the JAR file using Gradle by opening a terminal in the project’s root directory, and run the command:
+  - Windows: `gradlew clean shadowJar`
+  - macOS / Linux: `./gradlew clean shadowJar`
+2. Find the JAR file in the `build/libs` directory.
+3. Tag the repository with the new version number (e.g. `v2.1`).
+4. Create a new release using Github and upload the JAR file found in step 3.
+
+[Return to Top](#1-introduction)
+
+### 6.5. Managing Dependencies
+Currently, the [Gson library](#https://github.com/google/gson) is being used for JSON parsing, and the 
+[Apache Commons Lang](#https://commons.apache.org/proper/commons-lang) is being used for string processing 
+in easyLog. Below are 2 ways to manage these dependencies.
+- Use Gradle to manage and automatically download dependencies (recommended).
+- Manually download and include those libraries in the repo (this requires extra work and bloats the repository size).
+
+[Return to Top](#1-introduction)
+
+## Appendices
+
+### Appendix A: Product Scope
+
+### Target User Profile
+
+- IT savvy home-based businessmen
+- Have a need to manage numerous sales data
+- The inventory list gets constantly updated (add & delete items/orders)
+- Prefer typing over mouse/handwritten
+- Can type fast
+- Enjoy using CLI software
+
+### Value Proposition
+
+A simple database application that helps target user to store and access a collection of data electronically from a
+computer system.
+
+[Return to Top](#1-introduction)
+
+### Appendix B: User Stories
 
 |Version| As a ... | I want to ... | So that I can ...|
 |--------|----------|---------------|------------------|
@@ -199,26 +439,27 @@ system.
 |v2.0|user|specify the quantity of a item to add to the order|calculate the total price of the order and update the item inventory correctly.|
 |v2.0|user|check the total price of a specific order|feedback to customer when they ask for it and do not have to look through the order list.|
 |v2.0|user|update the status of an order|differentiate the orders by their status.|
+[Return to Top](#1-introduction)
 
-## Non-Functional Requirements
+### Appendix C: Non-Functional Requirements
 
-- Be able to work on any mainstream OS as long as it has Java 11 or above installed.
-- Be able to respond to any command in less than 2 seconds.
+- A user should be able to work on any mainstream OS as long as it has Java 11 or above installed.
+- A user should be able to respond to any command in less than 2 seconds.
 - A user should be able to complete majority of tasks faster using CLI than GUI.
 
-## Glossary
+[Return to Top](#1-introduction)
+  
+### Appendix D: Glossary
 
-Abbreviation | Full title | Definition
+Abbreviation | Full Title | Definition
 -------- | ---------- | ----------
 **CI**   | Continuous Integration | Combining parts of a software product to form a whole
 **IntelliJ** | IntelliJ | An Integrated Development Environment written in Java
 **CLI** | Command Line Interface | A program that accepts text inputs to execute operating system functions
 **GUI** | Graphical User Interface | An interface that allows users to interact through graphical icons
 **Mainstream OS** | Windows, Linux, Unix, OS-X | Operating systems
+[Return to Top](#1-introduction)
 
-
-## Instructions for manual testing
-
-{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing} <br> <br>
+### Appendix E: Instructions for Manual Testing
 
 [Return to Top](#1-introduction)

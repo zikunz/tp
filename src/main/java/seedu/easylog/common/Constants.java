@@ -24,10 +24,12 @@ public class Constants {
     public static final String COMMAND_PRICE = "price";
     public static final String COMMAND_DONE = "done";
     public static final String COMMAND_FIND = "find";
-    public static final String COMMAND_STATISTICS = "statistics";
+    public static final String COMMAND_STATISTICS = "stats";
 
     public static final String COMMAND_RECEIPT_COUNTER = "ReceiptCounter";
     public static final String ITEM_NAME_AND_PRICE_SEPARATOR = ", S$";
     public static final String ITEM_PRICE_AND_STOCK_SEPARATOR = ", ";
     public static final String TOTAL_PRICE_FORMAT = "Total Price : S$";
+    public static final int ITEM_NAME_LENGTH_LIMIT = 30;
+    public static final int CUSTOMER_NAME_LENGTH_LIMIT = 30;
 }

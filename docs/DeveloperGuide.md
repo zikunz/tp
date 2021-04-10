@@ -228,15 +228,29 @@ https://ay2021s2-cs2113t-t09-4.github.io/tp/ to browse all the document.
 
 ## 5.1. Running Tests
 
-There are two ways to test easyLog.
+There are two ways to run tests.
 
-**Method 1: Using IntelliJ JUnit Tests**
+Method 1: Using IntelliJ JUnit test runner <br>
+* To run all tests, right-click on the src/test/java folder and choose Run 'Tests' <br>
+* To run a subset of tests, you can right-click on a test package, test class, or a test and choose Run '<Test_name>' <br>
 
-**Method 2: Using Gradle**
+Method 2: Using Gradle <br>
+* Open a console and run the command gradlew clean test (Mac/Linux: ./gradlew clean test)
+
+🔗 **Link**: Read [this Gradle Tutorial from the se-edu/guides](https://se-education.org/guides/tutorials/gradle.html) to learn more about using Gradle.
 
 ## 5.2. Types of Tests
 
 We have employed several types of tests as follows:
+
+1. Unit tests. Tests are conducted on the fundamental level methods/classes. <br>
+e.g. `seedu.easyLog.commons.ConstantsTest`
+
+2. Integration tests. Tests are conducted on checking the integration of multiple code units. <br>
+e.g. `seedu.easyLog.storage.OrderManagerTest`
+
+3. Hybrids of unit and integration tests. Tests are conducted on multiple code units as well as their logic connections. <br>
+e.g. `seedu.easyLog.parser.ItemsParserTest`
 
 ## 6. Dev Ops
 

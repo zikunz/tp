@@ -238,8 +238,12 @@ processing user input will be discussed in future sections.
 7. Repeat steps 4-6 if user does not input exit command.
 
 [Return to Top](#1-introduction)
+
+### 3.2. Processing of user inputs
+
+[Return to Top](#1-introduction)
    
-### 3.2. Loading of Save Data
+### 3.3. Loading of save data
 
 ![LoadFile Diagram](https://user-images.githubusercontent.com/57165946/114254030-ad594e80-99df-11eb-8c03-730630b57d49.png)
 
@@ -258,17 +262,26 @@ method in SaveData class is being executed,
 
 [Return to Top](#1-introduction)
     
-### 3.3. Exit Command and Creation or Saving of Save Data
+### 3.4. Exit command and creating and/or saving of save data
+
+![Exit and SaveFileDiagram](https://user-images.githubusercontent.com/57165946/114278157-0d440980-9a61-11eb-9161-d5efca2ca4e4.png)
 
 [Return to Top](#1-introduction)
 
-### 3.4. Orders Done and Generation of Receipts 
+### 3.5. Orders done and generation of receipts
+
+![Orders Done Command Diagram](https://user-images.githubusercontent.com/57165946/114278262-7deb2600-9a61-11eb-9fba-d88613e50cbc.png)
+
+add steps comment here
+
+![Generating receipt Diagram](https://user-images.githubusercontent.com/57165946/114278283-a5da8980-9a61-11eb-9e90-8a15900c890f.png)
+
+add steps comment here
 
 [Return to Top](#1-introduction)
 
 ***
 
-[Return to Top](#1-introduction)
 ## 4. Documentation
 
 All documentation can be found under the `docs/` folder. Alternatively, visit

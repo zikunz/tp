@@ -163,33 +163,21 @@ Note:
 
 #### 2.2.4. Delete an item: `items delete`
 
-Delete an item from the item list.
+When you want to delete an item in the system, the `items delete` feature allows you to
+achieve this easily.
 
-Format 1: `items delete <item_index>`
+Steps to delete an item in esayLog
 
-Example 1: `items delete 2`
-
-Expected Output 1:
-
-```
-items delete 2 (users input)
-____________________________________________________________
-Got it! The item [bag] is deleted.
-____________________________________________________________
-```
-
-Format 2: `items delete <item_name>`
-
-Example 2: `items delete bag`
-
-Expected Output 2:
-
-```
-items delete bag (user input)
-____________________________________________________________
-Got it! The item [bag] is deleted.
-____________________________________________________________
-```
+1. Input `items list` command to check the item index to be deleted.
+2. Input `items delete <space> <item_index>` for the order to be removed from the item list.
+3. Press enter.
+4. You can see the confirmation message when the item is removed successfully.
+   
+Note:
+> 📄 If there is no item in the system, a message will be shown to notify you to add orders first. <br>
+> 📄 If you remember the item's index, you can skip step 1. <br>
+> 📄 The item_index should only be in Arabic numerals. <br>
+> 📄 The item_index should not be more than the total number of items in the item list.
 
 #### 2.2.5. Empty the item list: `items clear`
 
@@ -237,23 +225,19 @@ Note:
 
 #### 2.2.7. Find items: `items find`
 
-Display all items relating to the keyword
+Whenever you would like to find relevant items and their prices and stocks in your inventory, 
+the `items find` feature allows you to achieve it by quickly and accurately 
+displaying the relevant item from the item list.
 
-Format: `items find <item_name>`
+Steps to check the complete item list:
 
-Example: `items find PS5`
+1. Input `items find` command.
+2. Press enter.
+3. Relevant items will be shown, including the name, price as well as stock.
 
-Expected Output:
+Note:
+> 📄 The input is case-sensitive, please be mindful of the exact wording. <br>
 
-```
-____________________________________________________________
-Here is the list of relevant items found.
-____________________________________________________________
-
-1. PS5, S$23.00, 199
-____________________________________________________________
-
-```
 
 #### 2.2.8. Discover the most popular item(s): `items stats`
 
@@ -396,10 +380,10 @@ Steps to remove an order from the order list:
 4. You can see the confirmation message when the order is removed successfully.
 
 Note:
-> 📄 If there is no order in the system, a message will be shown to notify you to add orders first.
-> 📄 If you remember the customer's order index, you can skip step 1.
+> 📄 If there is no order in the system, a message will be shown to notify you to add orders first. <br>
+> 📄 If you remember the customer's order index, you can skip step 1. <br>
 > 📄 Unless the item has been deleted from the item list, every item under the deleted order 
-> will be added back to the inventory.
+> will be added back to the inventory. <br>
 
 #### 2.3.5. Empty the order list: `orders clear`
 

@@ -196,7 +196,7 @@ processing user input will be discussed in future sections.
 
 ## 3.2. Loading of save data
 
-![LoadFile Diagram](https://user-images.githubusercontent.com/57165946/114195903-77867c80-9983-11eb-9e76-587739948d14.png)
+![LoadFile Diagram](https://user-images.githubusercontent.com/57165946/114254030-ad594e80-99df-11eb-8c03-730630b57d49.png)
 
 As seen form the sequence diagram above (note that some trivial details are removed from the diagram), when loadFile 
 method in SaveData class is being executed,

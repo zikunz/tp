@@ -228,7 +228,7 @@ https://ay2021s2-cs2113t-t09-4.github.io/tp/ to browse all the document.
 
 ## 5.1. Running Tests
 
-There are two ways to run tests on eastLog.
+There are two ways to run tests on easyLog.
 
 Method 1: Using IntelliJ JUnit test runner <br>
 * To run all tests, right-click on the src/test/java folder and choose Run 'Tests' <br>

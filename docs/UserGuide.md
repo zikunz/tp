@@ -9,7 +9,7 @@ Last Updated: `10 April 2021` <br>
 </p>
 
 Are you a home-based business owner tired of using a pen and paper to keep track of your inventory? Do you have limited
-budget to invest in a new system to manage your business? Fret not, easyLog, our cross-platform<sup>[1](#1-super-script)
+budget to invest in a new system to manage your business? Fret not, easyLog, our cross-platform<sup>[1]()
 </sup> logistics management application will get you covered! It is the application to boost your productivity when it
 comes to managing your items and orders and best of all, it is free! Primarily, the current version of easyLog allows
 you to add new items and orders, update existing items and orders, view existing items and orders, remove specific items
@@ -632,8 +632,9 @@ Command | Format | Example |
 [**orders done**](#238-update-the-status-of-an-order-orders-done)  | `orders done <order_index>` | `orders done 2` |
 [**exit**](#25-exit-the-program-exit) | `exit` | `exit` |
 
-[1.](#1-super-script) Currently supports Windows, macOS and Linux machines which have Java 11 installed. <br>
-[2.](#2-super-script) Depending on which operating system you are using, how to open the command terminal application to
+
+[1. ](#30-super-script-1) Currently supports Windows, macOS and Linux machines which have Java 11 installed. <br>
+[2. ](#2-super-script) Depending on which operating system you are using, how to open the command terminal application to
 operate easyLog differs. Please refer to [1. Quick start](#1-quick-start) for more information. <br>
 [3. ](#3-super-script) Best selling item(s) are defined to be item(s) which have most number of sales. That is, the
 item(s) is / are added to orders most number of times. (TO BE ADDED)

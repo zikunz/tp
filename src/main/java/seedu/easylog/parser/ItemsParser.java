@@ -10,13 +10,16 @@ import seedu.easylog.commands.itemscommands.ItemsPromptStockCommand;
 import seedu.easylog.commands.itemscommands.ItemsStatisticsCommand;
 import seedu.easylog.commands.itemscommands.ItemsUpdateCommand;
 import seedu.easylog.common.Constants;
+import seedu.easylog.exceptions.EmptyItemFieldException;
 import seedu.easylog.exceptions.EmptyItemIndexException;
+import seedu.easylog.exceptions.EmptyItemListException;
 import seedu.easylog.exceptions.EmptyItemNameException;
 import seedu.easylog.exceptions.EmptyItemPriceAndStockInputException;
 import seedu.easylog.exceptions.EmptyItemPriceException;
 import seedu.easylog.exceptions.EmptyItemStockException;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.IncorrectNumberOfItemPriceAndStockInputException;
+import seedu.easylog.exceptions.InvalidItemFieldException;
 import seedu.easylog.exceptions.InvalidItemIndexException;
 import seedu.easylog.exceptions.InvalidItemPriceException;
 import seedu.easylog.exceptions.InvalidItemStockException;
@@ -33,15 +36,12 @@ import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NullItemStockException;
 import seedu.easylog.exceptions.WrongItemFieldException;
 import seedu.easylog.exceptions.WrongUpdateCommandException;
-import seedu.easylog.exceptions.EmptyItemListException;
-import seedu.easylog.exceptions.EmptyItemFieldException;
-import seedu.easylog.exceptions.InvalidItemFieldException;
+import seedu.easylog.exceptions.ItemNameTooLongException;
 import seedu.easylog.model.Item;
 import seedu.easylog.model.ItemManager;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
 
 /**
  * Process items command input.
@@ -51,14 +51,15 @@ public class ItemsParser extends Parser {
         String[] splitItemsArg = splitCommandWordAndArgs(itemsInput);
         String itemsType = splitItemsArg[0];
         String itemsArg = splitItemsArg[1];
-        ArrayList<String> itemDescriptionRecord = itemManager.getItemDescriptionRecord();
 
         switch (itemsType) {
         case (Constants.COMMAND_ADD):
             try {
-                new ItemsAddCommand().execute(itemsArg, itemManager, itemDescriptionRecord);
+                new ItemsAddCommand().execute(itemsArg, itemManager);
             } catch (EmptyItemNameException e) {
                 ui.showItemEmptyName();
+            } catch (ItemNameTooLongException e) {
+                ui.showItemNameTooLong();
             } catch (NonIntegerItemStockException e) {
                 ui.showNonIntegerItemStock();
             } catch (NonNumericItemPriceException e) {

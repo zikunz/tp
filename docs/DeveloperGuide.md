@@ -196,7 +196,7 @@ processing user input will be discussed in future sections.
 
 ## 3.2. Loading of save data
 
-![LoadFile Diagram](https://user-images.githubusercontent.com/57165946/114195903-77867c80-9983-11eb-9e76-587739948d14.png)
+![LoadFile Diagram](https://user-images.githubusercontent.com/57165946/114254030-ad594e80-99df-11eb-8c03-730630b57d49.png)
 
 As seen form the sequence diagram above (note that some trivial details are removed from the diagram), when loadFile 
 method in SaveData class is being executed,
@@ -211,7 +211,7 @@ method in SaveData class is being executed,
 9. Repeat step 6 and 7 until there no more lines to be read from the save data.
 10. Show the user that the save data has been successfully loaded.
 
-## 3.3. Creation or saving of save data
+## 3.3. Exit command and creation or saving of save data
 
 ## 3.4. Orders done and generation of receipt 
 

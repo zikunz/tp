@@ -242,7 +242,7 @@ public class Messages {
             + "What would you like to update, price or stock? (p/s)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_PRICE = MESSAGE_LINE
-            + "What is the revised item price?\n";
+            + "What is the revised item price? Enter the same price if you no longer want to update the item price.\n";
     public static final String MESSAGE_SHOW_UPDATE_ITEM_PRICE = MESSAGE_LINE
             + "Done! I just updated the item price for you.\n"
             + MESSAGE_LINE;
@@ -261,7 +261,7 @@ public class Messages {
     public static final String MESSAGE_EMPTY_UPDATE_ITEM_INDEX = MESSAGE_LINE
             + "Empty item index.\n";
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_STOCK = MESSAGE_LINE
-            + "What is the revised item stock?\n";
+            + "What is the revised item stock? Enter the same stock if you no longer want to update the item stock.\n";
     public static final String MESSAGE_SHOW_UPDATE_ITEM_STOCK = MESSAGE_LINE
             + "Done! I just updated the item stock for you.\n"
             + MESSAGE_LINE;

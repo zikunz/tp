@@ -206,7 +206,7 @@ ____________________________________________________________
 ```
 
 Note:
-> 📄 Clearing all orders will add back items belonging to the orders back to the system. <br>
+> 📄 Clearing all orders will add back items belonging to the orders back to the inventory. <br>
 
 #### 2.2.6. Update an item: `items update`
 
@@ -231,6 +231,8 @@ Note:
 > 📄 item field `p` or `s` must be lower-case. <br>
 > 📄 item price must be a number ranging from 0 to 1,000,000,000 (inclusive). <br>
 > 📄 item stock has to be an integer ranging from 0 to 1,000,000,000 (inclusive). <br>
+> 📄 You are allowed to update an item with its current price or current stock. It is interpreted as you no longer want
+> to update any fields of the item. <br>
 > 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
 
 #### 2.2.7. Find items: `items find`

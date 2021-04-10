@@ -266,6 +266,19 @@ method in SaveData class is being executed,
 
 [Return to Top](#1-introduction)
 
+### 3.5. Orders Delete
+![OrdersDelete Diagram](https://user-images.githubusercontent.com/60382244/114287343-b528f980-9a98-11eb-8b65-c654d25f7ee9.png)
+As seen form the sequence diagram above (note that some trivial details are removed from the diagram), when an order is
+deleted
+1. The Ui reads the input from user.
+2. The main class receives the input from ui.
+3. The main class sends the input to Parser.
+4. The Parser parse the input and sends it to OrdersParser.
+5. The OrdersParser parse the input and sends it to OrdersDeleteCommand.
+6. The OrdersDeleteCommand execute to delete the selected order.
+7. The ItemManager update the quantity of items in deleted order.
+8. The OrdersManager delete the order selected.
+9. The deleted order message is sent to the user.
 ***
 
 [Return to Top](#1-introduction)
@@ -461,5 +474,6 @@ Abbreviation | Full Title | Definition
 [Return to Top](#1-introduction)
 
 ### Appendix E: Instructions for Manual Testing
+
 
 [Return to Top](#1-introduction)

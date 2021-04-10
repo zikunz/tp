@@ -566,7 +566,7 @@ help | `help` | `help` |
 item | `items` | `items` |
 items add | `items add <item_name>`<br>`Please input item price and stock.`<br>`<item_price> <item_quantity>` | `items add PS5`<br>`Please input item price and stock.`<br>`1 2`|
 items list | `items list`      | `items list` |
-items delete | `items delete <item_index>`<br>`items delete<item_name>` | `items delete 2`<br>`items delete bag` |
+items delete | `items delete <item_index> `| `items delete 2` |
 items clear | `items clear ` | `items clear` |
 items find | `items find` | `items find <item_name>`|
 items update | `items update` | `items update`|

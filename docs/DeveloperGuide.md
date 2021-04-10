@@ -297,10 +297,6 @@ There are primarily three types of tests:
 2. Integration tests that are checking the integration of multiple code units (those code units are assumed to be working).
    e.g. TO BE ADDED
 
-3. Hybrid test consisitng of both unit and integration tests. These tests are checking multiple code units as well as
-   how they are connected together.
-   e.g. TO BE ADDED
-
 [Return to Top](#1-introduction)
 
 ### 5.2. Running Tests
@@ -312,7 +308,10 @@ There are multiple ways to run tests for easyLog. Two of them are listed below:
 - To run a subset of tests, you can right-click a test test class before choosing `Run <test.java>`, where 
   `<test.java>` is the name of the test class (e.g., `itemsAddCommandTest`).
 
-**Method 2: Using Gradle**
+Method 2: Using Gradle <br> 
+* Open a console and run the command gradlew clean test (Mac/Linux: ./gradlew clean test)
+
+🔗 **Link**: Read [this Gradle Tutorial from the se-edu/guides](https://se-education.org/guides/tutorials/gradle.html) to learn more about using Gradle.
 
 - To run all tests, open a console and run the command `gradlew clean test` if you are a Windows user. For macOS or 
   Linux users, please run the command `./gradlew clean test` instead.
@@ -323,6 +322,15 @@ We invite you to visit [Appendix E: Instructions for Manual Testing](#appendix-e
 learn more about manual testing for easyLog.
 
 [Return to Top](#1-introduction)
+
+1. Unit tests. Tests are conducted on the fundamental level methods/classes. <br>
+e.g. `seedu.easyLog.commons.ConstantsTest`
+
+2. Integration tests. Tests are conducted on checking the integration of multiple code units. <br>
+e.g. `seedu.easyLog.storage.OrderManagerTest`
+
+3. Hybrids of unit and integration tests. Tests are conducted on multiple code units as well as their logic connections. <br>
+e.g. `seedu.easyLog.parser.ItemsParserTest`
 
 ## 6. Dev Ops
 

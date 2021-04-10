@@ -99,7 +99,7 @@ Section 2 will explain the features available in easyLog.
 
 ### 2.1 Viewing help: `help`
 
-As a first-time user or whenever you forget some commands or just need to check a particular command format, `help`
+As a first-time user or whenever you forget some commands or just need to check a particular command format, the `help`
 feature will show all available commands of easyLog for you. At the same time, you can see the brief description of
 those commands.
 
@@ -116,7 +116,7 @@ Section 2.2 will explain the features related to items.
 #### 2.2.1. Show items-related commands: `items`
 
 As a first-time user, or whenever you forget some of items-related commands or just need to check a particular command
-format, `items` feature will show all available commands related to items. At the same time, you can see the brief
+format, the `items` feature will show all available commands related to items. At the same time, you can see the brief
 description of those commands.
 
 Steps to check all items-related commands:
@@ -127,8 +127,8 @@ Steps to check all items-related commands:
 
 #### 2.2.2. Add an item: `items add`
 
-When you are sometimes overwhelmed by handling a large variety of items, `items add` feature allows you to record the
-details of those items one by one into the easyLog app.
+When you are sometimes overwhelmed by handling a large variety of items, the `items add` feature allows you to record 
+the details of those items one by one into the easyLog app.
 
 Steps to add an item in easyLog:
 
@@ -149,7 +149,7 @@ Note:
 
 #### 2.2.3. Show the item list: `items list`
 
-Whenever you would like to check all items and their prices and stocks in your inventory, `items list` feature allows 
+Whenever you would like to check all items and their prices and stocks in your inventory, the `items list` feature allows 
 you to achieve it by quickly and accurately displaying the complete item list.
 
 Steps to check the complete item list:
@@ -210,8 +210,8 @@ Note:
 
 #### 2.2.6. Update an item: `items update`
 
-When you want to update either the price or stock of an item in the system, `items update` feature allows you to achieve
-this easily.
+When you want to update either the price or stock of an item in the system, the `items update` feature allows you to 
+achieve this easily.
 
 Steps to update an item:
 
@@ -387,19 +387,19 @@ ____________________________________________________________
 
 #### 2.3.4. Remove an order: `orders delete`
 
-Delete an order from the order list
+When your customer would like to cancel his or her order, the `orders delete` feature allows you to achieve it.
 
-Format: `orders delete <order_index>`
+Steps to remove an order from the order list:
+1. Input `orders list` command to check the customer's order index to be deleted.
+2. Input `orders delete <space> <order_index>` for the order to be removed from the order list.
+3. Press enter.
+4. You can see the confirmation message when the order is removed successfully.
 
-Example: `orders delete 2`
-
-Expected Output:
-
-```
-____________________________________________________________
-Got it! The order for customer [Coco] is deleted.
-____________________________________________________________
-```
+Note:
+> 📄 If there is no order in the system, a message will be shown to notify you to add orders first.
+> 📄 If you remember the customer's order index, you can skip step 1.
+> 📄 Unless the item has been deleted from the item list, every item under the deleted order 
+> will be added back to the inventory.
 
 #### 2.3.5. Empty the order list: `orders clear`
 

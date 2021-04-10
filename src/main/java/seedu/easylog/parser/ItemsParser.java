@@ -28,13 +28,15 @@ import seedu.easylog.exceptions.InvalidTotalItemStockException;
 import seedu.easylog.exceptions.ItemListAlreadyClearedException;
 import seedu.easylog.exceptions.ItemNotFoundException;
 import seedu.easylog.exceptions.NoItemsStatisticsCanBeGivenException;
-import seedu.easylog.exceptions.NonIntegerItemStockException;
+import seedu.easylog.exceptions.NonNumericOrIntegerItemStockException;
 import seedu.easylog.exceptions.NonNumericItemPriceException;
 import seedu.easylog.exceptions.NullItemNameException;
 import seedu.easylog.exceptions.NullItemPriceAndStockInputException;
 import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NullItemStockException;
 import seedu.easylog.exceptions.WrongItemFieldException;
+import seedu.easylog.exceptions.WrongItemsClearCommandException;
+import seedu.easylog.exceptions.WrongItemsStatsCommandException;
 import seedu.easylog.exceptions.WrongUpdateCommandException;
 import seedu.easylog.exceptions.ItemNameTooLongException;
 import seedu.easylog.model.Item;
@@ -60,8 +62,8 @@ public class ItemsParser extends Parser {
                 ui.showItemEmptyName();
             } catch (ItemNameTooLongException e) {
                 ui.showItemNameTooLong();
-            } catch (NonIntegerItemStockException e) {
-                ui.showNonIntegerItemStock();
+            } catch (NonNumericOrIntegerItemStockException e) {
+                ui.showNonNumericOrIntegerItemStock();
             } catch (NonNumericItemPriceException e) {
                 ui.showNonNumericItemPrice();
             } catch (InvalidTotalItemStockException e) {
@@ -94,9 +96,11 @@ public class ItemsParser extends Parser {
             break;
         case (Constants.COMMAND_CLEAR):
             try {
-                new ItemsClearCommand().execute(itemManager);
+                new ItemsClearCommand().execute(itemsArg,itemManager);
             } catch (ItemListAlreadyClearedException e) {
                 ui.showAlreadyClearedItemList();
+            } catch (WrongItemsClearCommandException e) {
+                ui.showWrongItemsClearCommand();
             }
             break;
         case (Constants.COMMAND_UPDATE):
@@ -128,7 +132,7 @@ public class ItemsParser extends Parser {
                 ui.showNullItemStock();
             } catch (NonNumericItemPriceException e) {
                 ui.showNonNumericItemPrice();
-            } catch (NonIntegerItemStockException e) {
+            } catch (NonNumericOrIntegerItemStockException e) {
                 ui.showNonNumericItemStockInput();
             } catch (EmptyItemFieldException e) {
                 ui.showEmptyItemType();
@@ -147,9 +151,11 @@ public class ItemsParser extends Parser {
             break;
         case (Constants.COMMAND_STATISTICS):
             try {
-                new ItemsStatisticsCommand().execute(itemManager);
+                new ItemsStatisticsCommand().execute(itemsArg,itemManager);
             } catch (NoItemsStatisticsCanBeGivenException e) {
                 ui.showNoItemsTipsCanBeGiven();
+            } catch (WrongItemsStatsCommandException e) {
+                ui.showWrongItemsStatsCommand();
             }
             break;
         default:
@@ -182,7 +188,7 @@ public class ItemsParser extends Parser {
     public void processUpdateAttributeInput(String updateInput, int itemIndex, ItemManager itemManager) {
         if (updateInput.equals("p")) {
             boolean stopAskingPrice = false;
-            BigDecimal revisedItemPrice = new BigDecimal(-10);
+            BigDecimal revisedItemPrice = new BigDecimal(Constants.INVALID_ITEM_PRICE);
             while (!stopAskingPrice) {
                 ui.askForRevisedItemPrice();
                 try {
@@ -203,7 +209,7 @@ public class ItemsParser extends Parser {
             ui.showUpdateItemPrice(itemManager.getItem(itemIndex));
         } else if (updateInput.equals("s")) {
             boolean stopAskingStock = false;
-            int revisedStock = -1;
+            int revisedStock = Constants.INVALID_ITEM_STOCK;
             while (!stopAskingStock) {
                 ui.askForRevisedItemStock();
                 try {
@@ -217,8 +223,8 @@ public class ItemsParser extends Parser {
                     ui.showEmptyRevisedItemStock();
                 } catch (InvalidItemStockException e) {
                     ui.showInvalidRevisedItemStock();
-                } catch (NonIntegerItemStockException e) {
-                    ui.showNonIntegerItemStock();
+                } catch (NonNumericOrIntegerItemStockException e) {
+                    ui.showNonNumericOrIntegerItemStock();
                 }
             }
             itemManager.setRevisedItemStock(itemIndex, revisedStock);
@@ -269,8 +275,8 @@ public class ItemsParser extends Parser {
                 ui.showNullItemStock();
             } catch (EmptyItemStockException e) {
                 ui.showEmptyItemStock();
-            } catch (NonIntegerItemStockException e) {
-                ui.showNonIntegerItemStock();
+            } catch (NonNumericOrIntegerItemStockException e) {
+                ui.showNonNumericOrIntegerItemStock();
             } catch (InvalidItemStockException e) {
                 ui.showInvalidItemStock();
             } catch (IncorrectNumberOfItemPriceAndStockInputException e) {
@@ -312,7 +318,7 @@ public class ItemsParser extends Parser {
     }
 
     public int itemStockInStringToIntegerFormat(String itemStockInString) throws NullItemStockException,
-            EmptyItemStockException, NonIntegerItemStockException, InvalidItemStockException {
+            EmptyItemStockException, NonNumericOrIntegerItemStockException, InvalidItemStockException {
         if (itemStockInString == null) {
             throw new NullItemStockException();
         }
@@ -322,13 +328,14 @@ public class ItemsParser extends Parser {
         }
 
         try {
-            int itemStockInInteger = Integer.parseInt(itemStockInString);
-            if (itemStockInInteger < Constants.MINIMUM_ITEM_STOCK
-                    || itemStockInInteger > Constants.MAXIMUM_ITEM_STOCK) {
+            double itemStockInDouble = Double.parseDouble(itemStockInString);
+            if (itemStockInDouble < Constants.MINIMUM_ITEM_STOCK
+                    || itemStockInDouble > Constants.MAXIMUM_ITEM_STOCK) {
                 throw new InvalidItemStockException();
             }
+            Integer.parseInt(itemStockInString);
         } catch (NumberFormatException e) {
-            throw new NonIntegerItemStockException();
+            throw new NonNumericOrIntegerItemStockException();
         }
 
         int itemStockInInteger = Integer.parseInt(itemStockInString);

@@ -5,7 +5,7 @@ import seedu.easylog.exceptions.EmptyItemNameException;
 import seedu.easylog.exceptions.EmptyItemStockException;
 import seedu.easylog.exceptions.InvalidItemStockException;
 import seedu.easylog.exceptions.InvalidTotalItemStockException;
-import seedu.easylog.exceptions.NonIntegerItemStockException;
+import seedu.easylog.exceptions.NonNumericOrIntegerItemStockException;
 import seedu.easylog.exceptions.NonNumericItemPriceException;
 import seedu.easylog.exceptions.NullItemNameException;
 import seedu.easylog.exceptions.NullItemStockException;
@@ -22,7 +22,7 @@ public class ItemsAddCommand extends ItemsCommand {
      * @param itemManager     item manager
      */
     public void execute(String itemDescription, ItemManager itemManager)
-            throws EmptyItemNameException, NonIntegerItemStockException, NonNumericItemPriceException,
+            throws EmptyItemNameException, NonNumericOrIntegerItemStockException, NonNumericItemPriceException,
             InvalidTotalItemStockException, NullItemNameException, NullItemStockException, EmptyItemStockException,
             InvalidItemStockException, ItemNameTooLongException {
         if (itemDescription == null) {

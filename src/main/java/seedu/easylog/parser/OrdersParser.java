@@ -66,7 +66,7 @@ public class OrdersParser extends Parser {
             break;
         case (Constants.COMMAND_CLEAR):
             try {
-                new OrdersClearCommand().execute(orderManager);
+                new OrdersClearCommand().execute(itemManager, orderManager);
             } catch (OrderListAlreadyClearedException e) {
                 ui.showAlreadyClearedOrderList();
             }

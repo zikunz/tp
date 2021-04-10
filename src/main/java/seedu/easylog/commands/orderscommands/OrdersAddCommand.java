@@ -26,37 +26,16 @@ public class OrdersAddCommand extends OrdersCommand {
         if (itemManager.getItemList().isEmpty()) {
             throw new EmptyItemListException();
         }
-        if (orderManager.checkRepeatOrder(customerName)) {
-            repeatedOrdersAdd(customerName, itemManager, orderManager);
-        } else {
-            ItemsListCommand itemsListCommand = new ItemsListCommand();
-            itemsListCommand.execute(itemManager); // to show available items and item stock
-            ui.showAddItemsToOrder();
-            String addItemsToOrderInput = ui.askForUserInput();
-            Order order = ordersParser.processItemsAddedToOrder(customerName, addItemsToOrderInput, itemManager);
-            orderManager.addOrder(order);
-            assert orderManager.getLatestOrderAdded().equals(order);
-            ui.showOrderAdded(order);
-        }
-    }
 
-    /**
-     * Adds an order which already exists.
-     * The user will be prompted to enter the item under the existing customer name.
-     *
-     * @param customerName a boolean flag which indicate if the item exist in the item list
-     * @param itemManager  the arrayList of all item descriptions in the system
-     * @param orderManager the description of an item
-     */
-    public void repeatedOrdersAdd(String customerName, ItemManager itemManager,
-                                  OrderManager orderManager) {
         ItemsListCommand itemsListCommand = new ItemsListCommand();
-        itemsListCommand.execute(itemManager);
+        itemsListCommand.execute(itemManager); // to show available items and item stock
         ui.showAddItemsToOrder();
         String addItemsToOrderInput = ui.askForUserInput();
-        Order order = ordersParser.processItemsAddedToExistingOrder(customerName, addItemsToOrderInput,
-                itemManager, orderManager);
+        Order order = ordersParser.processItemsAddedToOrder(customerName, addItemsToOrderInput, itemManager);
         orderManager.addOrder(order);
+        assert orderManager.getLatestOrderAdded().equals(order);
         ui.showOrderAdded(order);
     }
+
+
 }

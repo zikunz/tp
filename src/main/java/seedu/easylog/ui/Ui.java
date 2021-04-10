@@ -67,11 +67,11 @@ public class Ui {
     }
 
     /**
-     * Prints a message to notify the user that there is no input order information.
-     * This means the user should complete the order index or the customer name of this order.
+     * Prints a message to notify the user that there is no input order index.
+     * This means the user should complete the order index of this order.
      */
-    public void showOrderEmptyInformation() {
-        System.out.print(Messages.MESSAGE_EMPTY_ORDER_INFORMATION);
+    public void showOrderEmptyIndex() {
+        System.out.print(Messages.MESSAGE_EMPTY_ORDER_INDEX);
     }
 
 
@@ -225,11 +225,11 @@ public class Ui {
     }
 
     /**
-     * Prints a message to notify the user that the input order number is not an integer.
-     * This means the user should input an integer type order number.
+     * Prints a message to notify the user that the input order index is not an integer.
+     * This means the user should input an integer type order index.
      */
-    public void showNonIntegerOrderNumber() {
-        System.out.print(Messages.MESSAGE_NON_INTEGER_ORDER_NUMBER);
+    public void showNonIntegerOrderIndex() {
+        System.out.print(Messages.MESSAGE_NON_INTEGER_ORDER_INDEX);
     }
 
     /**
@@ -736,6 +736,25 @@ public class Ui {
         System.out.println(Messages.MESSAGE_NON_NUMERIC_ITEM_STOCK);
     }
 
+    /**
+     * Prints a message to notify the user that the input item name is too long.
+     * This means the user should input an alternative item name within 30 characters including spaces.
+     */
+    public void showItemNameTooLong() {
+        System.out.print(Messages.MESSAGE_ITEM_NAME_TOO_LONG);
+    }
+
+    /**
+     * Prints a message to notify the user that the order list is empty.
+     */
+    public void showEmptyOrderList() {
+        System.out.print(Messages.MESSAGE_EMPTY_ORDER_LIST_TO_DELETE);
+    }
+
+    /**
+     * Prints a message to notify the user that the input customer name is too long.
+     * This means the user should input an alternative customer name within 30 characters including spaces.
+     */
     public void showCustomerNameTooLong() {
         System.out.print(Messages.MESSAGE_CUSTOMER_NAME_TOO_LONG);
     }

@@ -36,6 +36,7 @@ import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NullItemStockException;
 import seedu.easylog.exceptions.WrongItemFieldException;
 import seedu.easylog.exceptions.WrongUpdateCommandException;
+import seedu.easylog.exceptions.ItemNameTooLongException;
 import seedu.easylog.model.Item;
 import seedu.easylog.model.ItemManager;
 
@@ -57,6 +58,8 @@ public class ItemsParser extends Parser {
                 new ItemsAddCommand().execute(itemsArg, itemManager);
             } catch (EmptyItemNameException e) {
                 ui.showItemEmptyName();
+            } catch (ItemNameTooLongException e) {
+                ui.showItemNameTooLong();
             } catch (NonIntegerItemStockException e) {
                 ui.showNonIntegerItemStock();
             } catch (NonNumericItemPriceException e) {

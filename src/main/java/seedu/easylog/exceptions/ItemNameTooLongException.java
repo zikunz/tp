@@ -1,5 +1,5 @@
 package seedu.easylog.exceptions;
 
-public class EmptyInformationException extends Throwable{
+public class ItemNameTooLongException extends Throwable {
     //no other code needed
 }

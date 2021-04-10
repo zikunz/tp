@@ -101,8 +101,8 @@ public class Messages {
     public static final String MESSAGE_INVALID_UPDATE_ITEM_INDEX = MESSAGE_LINE
             + "Invalid index number.\n";
     public static final String MESSAGE_INVALID_ORDER_NUMBER = MESSAGE_LINE
-            + "OOPS!!! The order number is invalid!\n"
-            + "Please input the order information again! :)\n"
+            + "OOPS!!! The order index is out of range!\n"
+            + "Please input the order index again! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ITEM_NUMBER = MESSAGE_LINE
             + "OOPS!!! The item number is missing!\n"
@@ -148,18 +148,18 @@ public class Messages {
     public static final String MESSAGE_EMPTY_ORDER_LIST = MESSAGE_LINE
             + "There is no order at the moment.\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_EMPTY_ORDER_INFORMATION = MESSAGE_LINE
-            + "OOPS!!! The order information is missing!\n"
-            + "Please complete the order index or customer name! :)\n"
+    public static final String MESSAGE_EMPTY_ORDER_INDEX = MESSAGE_LINE
+            + "OOPS!!! The order index is missing!\n"
+            + "Please complete the order index! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_ADD_ITEM_FIRST = MESSAGE_LINE
             + "Please add items to the system first.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_INDENTATION = "    ";
-    public static final String MESSAGE_NON_INTEGER_ORDER_NUMBER = MESSAGE_LINE
-            + "OOPS!!! The input order information "
+    public static final String MESSAGE_NON_INTEGER_ORDER_INDEX = MESSAGE_LINE
+            + "OOPS!!! The input order index "
             + "is not an integer number!\n"
-            + "Please input the order information again! :)\n"
+            + "Please input the order index again! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_NON_INTEGER_ITEM_NUMBER = MESSAGE_LINE
             + "OOPS!!! The input item information "
@@ -333,8 +333,17 @@ public class Messages {
             + "As you have not sold any single item yet.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_RECEIPT_HEADER = MESSAGE_LINE + "Order details as shown below\n";
+    public static final String MESSAGE_ITEM_NAME_TOO_LONG = MESSAGE_LINE
+            + "Item name inputted is too lengthy.\n"
+            + "Note that the item name length limit is 30 characters including spaces.\n"
+            + "Please try items add <item_name> again if you wish to add an item.\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_EMPTY_ORDER_LIST_TO_DELETE = MESSAGE_LINE
+            + "There is no order at the moment.\n"
+            + "Please add orders to the system first.\n"
+            + MESSAGE_LINE;
     public static final String MESSAGE_CUSTOMER_NAME_TOO_LONG = MESSAGE_LINE
-            + "Customer name inputted is too length.\n"
+            + "Customer name inputted is too lengthy.\n"
             + "Note that the customer name length limit is 30 characters including spaces.\n"
             + "Please try orders add <customer_name> again if you wish to add an order.\n"
             + MESSAGE_LINE;

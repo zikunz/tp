@@ -28,21 +28,10 @@ public class OrdersDeleteCommand extends OrdersCommand {
             if ((index < 0) || (index >= size)) {
                 throw new InvalidOrderIndexException();
             }
-            if (!orderManager.getOrder(index).getStatus()) {
-                // return item stock to inventory if order is not complete.
-                int itemStockIndex = 0;
-                for (Item item : orderManager.getItemsInOrder(index)) {
-                    if (itemManager.getItemList().contains(item)) {
-                        int itemCurrentStock = item.getItemStock();
-                        int itemsStockInOrder = orderManager.getOrder(index).getStockCounts().get(itemStockIndex);
-                        int itemUpdateStock = itemCurrentStock + itemsStockInOrder;
-                        item.setItemStock(itemUpdateStock);
-                        ++itemStockIndex;
-                    }
-                }
-                ui.showOrderDeleted(orderManager.getOrder(index));
-                orderManager.deleteOrder(index);
-            }
+            int orderIndex = Integer.parseInt(ordersArg) - Constants.ARRAY_OFFSET;
+            addBackItemsAndRemoveItemSales(orderIndex, itemManager, orderManager);
+            ui.showOrderDeleted(orderManager.getOrder(index));
+            orderManager.deleteOrder(index);
         } catch (NumberFormatException e) {
             ui.showNonIntegerOrderIndex();
         }
@@ -51,6 +40,26 @@ public class OrdersDeleteCommand extends OrdersCommand {
         if (size > 1) {
             assert orderManager.getOrder(orderManager.getSize() - 1) == orderManager.getOrder(size - 2) :
                     "After a valid deletion, the second last order becomes the last order";
+        }
+    }
+
+    public void addBackItemsAndRemoveItemSales(int orderIndex, ItemManager itemManager, OrderManager orderManager) {
+        if (!orderManager.getOrder(orderIndex).getStatus()) {
+            // return item stock to inventory if order is not complete.
+            int itemIndex = 0;
+            for (Item item : orderManager.getItemsInOrder(orderIndex)) {
+                if (itemManager.getItemList().contains(item)) {
+                    int itemCurrentStock = item.getItemStock();
+                    int itemsStockInOrder = orderManager.getOrder(orderIndex).getStockCounts().get(itemIndex);
+                    int itemUpdateStock = itemCurrentStock + itemsStockInOrder;
+                    item.setItemStock(itemUpdateStock);
+                    int itemCurrentSales = item.getItemSales();
+                    int itemSalesInOrder = orderManager.getOrder(orderIndex).getStockCounts().get(itemIndex);
+                    int itemUpdateSales = itemCurrentSales - itemSalesInOrder;
+                    item.setItemSales(itemUpdateSales);
+                    ++itemIndex;
+                }
+            }
         }
     }
 }

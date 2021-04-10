@@ -181,7 +181,8 @@ Steps to check the complete item list:
 3. Complete item list then will be shown, including the item index, name, price as well as stock.
 
 Note:
-> 📄 If there is no items in the system, a message will be shown to notify you to add items first. <br>
+> 📄 If there are no items in the system, a message will be shown to notify you to add items first. <br>
+> 📄 Nothing should be entered after the `items list` command.
 
 #### 2.2.4. Delete an item: `items delete`
 
@@ -248,11 +249,11 @@ Whenever you would like to find relevant items and their prices and stocks in yo
 the `items find` feature allows you to achieve it by quickly and accurately 
 displaying the relevant item from the item list.
 
-Steps to check the complete item list:
+Steps to find an item:
 
-1. Input `items find` command.
+1. Input `items find <space> <item_name>` to obtain items related to the item name.
 2. Press enter.
-3. Relevant items will be shown, including the name, price as well as stock.
+3. All items related to the item name will be shown.
 
 Note:
 > 📄 The input is case-sensitive, please be mindful of the exact wording. <br>
@@ -426,14 +427,20 @@ ____________________________________________________________
 
 Note:
 > 📄 If there is no order in the system, a message will be shown to notify you that you should not use `orders clear`
-> feature.
+> feature.<br>
 > 📄 Items which belong to the orders cleared will be added back to the inventory. It is the same as executing
 > `orders delete` feature for N times, where N represents number of existing orders.
 
 #### 2.3.6. Find orders: `orders find`
 
-Display all orders relating to the order name
+You can use this command to search for any order in the system quickly without looking through the order list one bye one.
 
+Steps to find an order:
+
+1. Input `orders find <space> <order_name>` to obtain orders related to the order name.
+2. Press enter.
+3. All orders related to the order name will be shown.
+   
 Format: `orders find <order_name>`
 
 Example: `orders find Coco`
@@ -452,9 +459,19 @@ Coco []
 ____________________________________________________________
 ```
 
+Note:
+> 📄 The input is case-sensitive, please be mindful of the exact wording. <br>
+
 #### 2.3.7. Get the total price of an order: `orders price`
 
 You can use this command to check the total price of a specific order.
+
+Steps to obtain the price of an order:
+
+1. Input `orders list` command to check the order index.
+2. Input `orders price <space> <order_index>` to obtain the price for a specific order.
+3. Press enter.
+4. Total price of an order will be shown.
 
 Format: `orders price <order_index>`
 
@@ -469,9 +486,20 @@ The total price for customer [coco]'s order is S$23.60.
 ____________________________________________________________
 ```
 
+Note:
+> 📄 If the order index keyed in is not an integer or an integer that does not exist in the order list, 
+> an error message will be shown to the user.
+
 #### 2.3.8. Update the status of an order: `orders done`
 
 You can use this command to change the status of an order once it is completed.
+
+Steps to change the status of an order:
+
+1. Input `orders list` command to check the order index.
+2. Input `orders done <space> <order_index>` to change the status of a specific order.
+3. Press enter.
+4. You can see the confirmation message when the order status is changed correctly.
 
 Format: `orders done <order_index>`
 
@@ -489,6 +517,13 @@ Generating receipt for customer: coco
 Receipt generated for customer: coco
 ____________________________________________________________
 ```
+
+Note:
+> 📄 If the order index keyed in is not an integer or an integer that is not exist in the order list,
+> an error message will be shown to the user.<br>
+> 📄 Once an order is completed, it will be deleted automatically from the system 
+> and a receipt will be generated.<br>
+> 📄 The receipt will be saved in the receipt folder.
 
 ### 2.4. Storage
 

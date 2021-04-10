@@ -15,20 +15,12 @@ public class ItemsDeleteCommand extends ItemsCommand {
         if (itemsArg.equals("")) {
             throw new EmptyNumberException();
         }
-        try {
-            int index = Integer.parseInt(itemsArg) - Constants.ARRAY_OFFSET;
-            int size = itemManager.getSize();
-            if ((index < 0) || (index >= size)) {
-                throw new InvalidNumberException();
-            }
-            ui.showDeletedItem(itemManager.getItem(index));
-            itemManager.deleteItem(index);
-        } catch (NumberFormatException e) {
-            if (itemManager.changeItemFormat(itemsArg) == null) {
-                throw new ItemNotFoundException();
-            }
-            ui.showDeletedItem(itemManager.changeItemFormat(itemsArg));
-            itemManager.deleteByname(itemsArg);
+        int index = Integer.parseInt(itemsArg) - Constants.ARRAY_OFFSET;
+        int size = itemManager.getSize();
+        if ((index < 0) || (index >= size)) {
+            throw new InvalidNumberException();
         }
+        ui.showDeletedItem(itemManager.getItem(index));
+        itemManager.deleteItem(index);
     }
 }

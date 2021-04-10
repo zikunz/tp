@@ -1,6 +1,7 @@
 package seedu.easylog.commands.orderscommands;
 
 import seedu.easylog.exceptions.OrderListAlreadyClearedException;
+import seedu.easylog.model.ItemManager;
 import seedu.easylog.model.OrderManager;
 
 public class OrdersClearCommand extends OrdersCommand {
@@ -13,8 +14,8 @@ public class OrdersClearCommand extends OrdersCommand {
         }
         assert ui != null : "ui should not be null";
         ui.showClearedOrderList();
-
         assert orderManager != null : "orderManager should not be null";
         orderManager.clearOrderList();
+
     }
 }

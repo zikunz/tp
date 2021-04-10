@@ -1,24 +1,33 @@
 # easyLog User Guide
 
-Welcome to the user guide of **easyLog**! <br>
+By: `Ong Wei Sheng`, `Zhu Zikun`, `Qiu Yi Wen`, `Li Kexuan`, `Jiang Qixiong`
+
+Last Updated: `10 April 2021` <br>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/75139323/114268337-233ad580-9a33-11eb-9834-952e9a86fbaa.png" width="500">
+</p>
 
 Are you a home-based business owner tired of using a pen and paper to keep track of your inventory? Do you have limited
-budget investing in a new system to manage your business? Fret not, easyLog, our cross-platform<sup>1</sup> logistic
-management application will get you covered! It is the application to boost your productivity when it comes to managing
-your items and orders and best of all, it is free! Primarily, the current version of easyLog allows you to add new items
-and orders , view existing items and orders, remove specific items and orders and clear all existing items and orders in
-the inventory at ease. You can also generate a receipt for your customer and view which item generate most number of
-sales.
+budget to invest in a new system to manage your business? Fret not, easyLog, our cross-platform<sup>[1](#1-super-script)
+</sup> logistics management application will get you covered! It is the application to boost your productivity when it
+comes to managing your items and orders and best of all, it is free! Primarily, the current version of easyLog allows
+you to add new items and orders, update existing items and orders, view existing items and orders, remove specific items
+and orders and clear all existing items and orders in the inventory at ease. You can also generate a receipt for your
+customer and find out your best-selling product(s)<sup>[3](#3-super-script)</sup>.
 
 easyLog is highly optimized for home-based business owners like you via a carefully designed Command Line Interface
-(CLI); this means that you will run the application by typing commands into a command terminal<sup>2</sup>. If you type
-fast, easyLog can get logistic management tasks done more easily and significantly more efficiently than traditional
-Graphical User Interface (GUI) applications while still having the benefits of GUI; GUI applications allow users to
-interact with the application through visuals such as buttons, at the expense of lower precision and slower speed as
-compared to CLI.
+(CLI); this means that you will run the application by typing commands into a command terminal<sup>[2](#2-super-script)
+</sup>. If you type fast, easyLog can get logistics management tasks done more efficiently than traditional Graphical
+User Interface (GUI) applications; GUI applications allow users to interact with the applications through visuals such
+as buttons, at the expense of lower precision and slower speed as compared to CLI.
 
-If this sounds great to you, we encourage you to visit [1. Quick start](#1-quick-start) to learn how to manage your
-business using easyLog.
+If this sounds great to you, we encourage you to visit [1. Quick start](#1-quick-start) to start learning how to manage
+your inventory using easyLog. This guide also gives you a step-by-step instructions to use various features easyLog has
+to offer and we have prepared Frequently Asked Questions (FAQ) and a concise table of Command Summary for you. We invite
+you to click a hyperlink to explore easyLog.
+
+***
 
 - [1. Quick start](#1-quick-start)
 - [2. Features](#2-features)
@@ -26,9 +35,9 @@ business using easyLog.
   * [2.2. Items](#22-items)
     - [2.2.1. Show items-related commands: `items`](#221-show-items-related-commands-items)
     - [2.2.2. Add an item: `items add`](#222-add-an-item-items-add)
-    * [2.2.3. Show the item list : `items list`](#223-show-the-item-list-items-list)
-    * [2.2.4. Delete an item: `delete`](#224-delete-an-item-items-delete)
-    * [2.2.5. Empty the item list: `items clear`](#225-empty-the-item-list-items-clear)
+    - [2.2.3. Show the item list : `items list`](#223-show-the-item-list-items-list)
+    - [2.2.4. Delete an item: `delete`](#224-delete-an-item-items-delete)
+    - [2.2.5. Empty the item list: `items clear`](#225-empty-the-item-list-items-clear)
     - [2.2.6. Update an item: `items update`](#226-update-an-item-items-update)
     - [2.2.7. Find items: `items find`](#227-find-items-items-find)
     - [2.2.8. Discover the most popular item(s): `items stats`](#228-discover-the-most-popular-items-items-stats)
@@ -48,14 +57,25 @@ business using easyLog.
 - [3. FAQ](#3-faq)
 - [4. Command Summary](#4-command-summary)
 
-## 1. Quick start
+***
 
-1. Ensure you have Java 11 or above installed in your Computer.
-2. Download the latest easyLog.jar from [here](https://github.com/AY2021S2-CS2113T-T09-4/tp/releases/v2.0).
-3. Copy the file to the folder you want to use as the home folder for your easyLog.
-4. Open up a terminal/command window at the location where easyLog.jar is located.
-5. Run the command `java -jar easyLog.jar`
-6. The app should load as shown below
+## 1. Quick start
+Setting up easyLog is made really easy. It does not even require an installation and a few simple 
+steps listed below will be good to go.
+
+1. Ensure your device has Java 11 installed.
+
+> To check if you have Java 11 installed, simply type `java --version` in the command terminal of your operating system.
+> <br>
+> For Windows users, you can type `cmd` in the Windows search box before pressing Enter to open the Command Prompt. <br>
+> For macOS users, you can press Command and Space to launch Spotlight and type `Terminal` before pressing Enter. <br>
+> For Ubuntu users, you can press Ctrl + Alt + T to open a terminal window.
+
+2. Download the latest easyLog.jar from [here](https://github.com/AY2021S2-CS2113T-T09-4/tp/releases/v2.1).
+3. Put the downloaded jar file in an empty folder in which easyLog is allowed to create files
+   (i.e., do not use a write-protected folder).
+4. In the same command terminal, run the command `java -jar easyLog.jar`.
+6. The app should load and the welcome page is as shown below:
 
 ```
                        _                 
@@ -81,14 +101,16 @@ ____________________________________________________________
 7. Type a command and press enter to continue using the app.
 8. Refer to the [Features](#features) below for details of each command.
 
+***
+
 ## 2. Features
 
 Section 2 will explain the features available in easyLog.
 
 ###### Notes about the command format:
 
-* Any word in UPPER_CASE is a parameter to be entered by the user (e.g., in `add n/CUSTOMER_NAME`, `CUSTOMER_NAME` is a
-  parameter and a valid command can be `add n/Alice Tan`).
+* Any word surrounded by `<>` is a parameter to be entered by the user (e.g., in `items add <item_name>`, `item_name` is
+  a parameter and a valid command can be `items add mp3`).
 
 * Any extraneous parameters for commands not taking in any single parameter (such as `help` and `exit`) will not be
   ignored. However, any leading and trailing whitespaces will be neglected. This means, for instance, `  help  ` will
@@ -128,21 +150,21 @@ Steps to check all items-related commands:
 #### 2.2.2. Add an item: `items add`
 
 When you are sometimes overwhelmed by handling a large variety of items, the `items add` feature allows you to record 
-the details of those items one by one into the easyLog app.
+the details of those items one by one into the easyLog application.
 
 Steps to add an item in easyLog:
 
 1. Input `items add <item_name>` command.
-2. You will be prompted to key in the item price and the item stock.
+2. You will be prompted to key in the item (unit) price and the item stock.
 3. Input in this format `<item_price> <space> <item_stock>` for the price and stock to be added to the items details.
 4. Press enter.
 5. You can see the confirmation message when the item is recorded successfully.
 
 Note:
-> 📄 item names cannot be empty or consist of only white spaces. <br>
-> 📄 item names cannot exceed 30 characters including spaces. <br>
-> 📄 item price must be a number ranging from 0 (free item) to 1,000,000,000 (inclusive). <br>
-> 📄 item stock has to be a positive integer ranging from 1 to 1,000,000,000 (inclusive). <br>
+> 📄 Item names cannot be empty or consist of only white spaces. <br>
+> 📄 Item names cannot exceed 30 characters, including spaces. <br>
+> 📄 Item price must be a number ranging from 0 (free item) to 1,000,000,000 (inclusive). <br>
+> 📄 Item stock has to be a positive integer ranging from 1 to 1,000,000,000 (inclusive). <br>
 > 📄 If an item name is already found in the item list, adding new items with the same name will
 > still be successfully but take note that they will be tracked differently. <br>
 > 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
@@ -159,7 +181,7 @@ Steps to check the complete item list:
 3. Complete item list then will be shown, including the item index, name, price as well as stock.
 
 Note:
-> 📄 If there is no item in the system, a message will be shown to notify you to add items first. <br>
+> 📄 If there is no items in the system, a message will be shown to notify you to add items first. <br>
 
 #### 2.2.4. Delete an item: `items delete`
 
@@ -193,7 +215,8 @@ ____________________________________________________________
 
 #### 2.2.5. Empty the item list: `items clear`
 
-Clear all recorded items in the system.
+If your naughty children have added too many items which do not exist in your inventory, instead of deleting them one by
+one, you can easily clear all recorded items in the inventory and add back existing items.
 
 Format: `items clear`
 
@@ -205,9 +228,6 @@ Done! I just cleared all items for you.
 ____________________________________________________________
 ```
 
-Note:
-> 📄 Clearing all orders will add back items belonging to the orders back to the inventory. <br>
-
 #### 2.2.6. Update an item: `items update`
 
 When you want to update either the price or stock of an item in the system, the `items update` feature allows you to 
@@ -218,19 +238,18 @@ Steps to update an item:
 1. Input `items update` command.
 2. If the item list is not empty, easyLog will show the complete item list to you and you will be prompted to key in the
    item index to indicate which item you would like to update; if the item list is empty, easyLog will show a message to
-   remind you to add items into the system first.
-3. After input a valid item index, you will be prompted to key in `p` or `s` to indicate either the item price or stock
-   you would like to update.
+   remind you to add at least one item to the inventory first.
+3. After inputting a valid item index, you will be prompted to key in either `p` or `s` to let the system know you would
+   like to update the item price or stock respectively.
 4. If `p` is entered in step 3, you need to enter the revised item price; if `s` is entered in step 3, you need to enter
    the revised item stock.
 5. Press enter.
 6. You can see a confirmation message when the item price/stock has been updated successfully.
 
 Note:
-> 📄 If there is no item in the system, a message will be shown to notify you to add items first. <br>
-> 📄 item field `p` or `s` must be lower-case. <br>
-> 📄 item price must be a number ranging from 0 to 1,000,000,000 (inclusive). <br>
-> 📄 item stock has to be an integer ranging from 0 to 1,000,000,000 (inclusive). <br>
+> 📄 Item fields (i.e., `p` and `s`) must be lower-case. <br>
+> 📄 Item price must be a number ranging from 0 (free item) to 1,000,000,000 (inclusive). <br>
+> 📄 Item stock has to be a positive integer ranging from 0 to 1,000,000,000 (inclusive). <br>
 > 📄 You are allowed to update an item with its current price or current stock. It is interpreted as you no longer want
 > to update any fields of the item. <br>
 > 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
@@ -257,7 +276,9 @@ ____________________________________________________________
 
 #### 2.2.8. Discover the most popular item(s): `items stats`
 
-You can use this command to find the item(s) with the highest demand 
+If you would like to gain some useful insights from the sales history since you start using easyLog, the `items stats` 
+feature will let you know the most popular item(s) and you are reminded you stock up 
+find the item(s) with the highest demand 
 and try to stock up item accordingly.
 
 Format: `items stats`
@@ -273,6 +294,9 @@ The most popular item is PS5. Please consider stocking it up if it is not enough
 ____________________________________________________________
 
 ```
+Note:
+> 📄 Item fields (i.e., `p` and `s`) must be lower-case. <br>
+> 
 
 ### 2.3. Orders
 
@@ -403,7 +427,8 @@ Note:
 
 #### 2.3.5. Empty the order list: `orders clear`
 
-Clear all recorded orders in the system.
+In the very unlikely event that all orders are cancelled, instead of deleting them one by one, you can use the
+`orders clear` feature to do it efficiently.
 
 Format: `orders clear`
 
@@ -414,6 +439,12 @@ ____________________________________________________________
 Done! I just cleared all orders for you.
 ____________________________________________________________
 ```
+
+Note:
+> 📄 If there is no order in the system, a message will be shown to notify you that you should not use `orders clear`
+> feature.
+> 📄 Items which belong to the orders cleared will be added back to the inventory. It is the same as executing
+> `orders delete` feature for N times, where N represents number of existing orders.
 
 #### 2.3.6. Find orders: `orders find`
 
@@ -522,6 +553,8 @@ Bye. Thanks for using easyLog!
 ____________________________________________________________
 ```
 
+***
+
 ## 3. FAQ
 
 **Q1**: I do not seem to be able to add an item. Why is this so?
@@ -563,8 +596,8 @@ system?
 >
 > You should not worry too much as easyLog is highly optimized for fast typists working in a warehouse like you.
 
-**Q4**: Why does easyLog only allow me to enter additional stock number when I add an item which already exists in the
-> system? Why cannot I update the unit price?
+**Q4**: Why does easyLog only allow me to enter additional stock number when I add an item which already exists in the 
+system? Why cannot I update the unit price?
 
 > It is typically hard for users to remember all items in the system. Hence, we make it easier and more efficient when
 > easyLog detects the item to be added already exists in the item list. Since this only happens when the user stocks up
@@ -574,29 +607,33 @@ system?
 >
 > When it happens, the user is welcomed to use `items update` command instead.
 
+***
+
 ## 4. Command Summary
 
 Command | Format | Example |
 ------- | ------- | ------- | 
-help | `help` | `help` |
-item | `items` | `items` |
-items add | `items add <item_name>`<br>`Please input item price and stock.`<br>`<item_price> <item_quantity>` | `items add PS5`<br>`Please input item price and stock.`<br>`1 2`|
-items list | `items list`      | `items list` |
-items delete | `items delete <item_index>`<br>`items delete<item_name>` | `items delete 2`<br>`items delete bag` |
-items clear | `items clear ` | `items clear` |
-items find | `items find` | `items find <item_name>`|
-items update | `items update` | `items update`|
-items stats | `items stats` | `items stats`|
-orders | `orders` | `orders` |
-orders add | `orders add <customer_name> `<br>` Input the items to be added to this order. `<br>` <item_index> <item_quantity>` | `orders add weisheng`<br>` Input the items to be added to this order.`<br />` 1 2 ` |
-orders list | `orders list` | `orders list` |
-orders delete | `orders delete <order_index>` | `orders delete 2` |
-orders clear | `orders clear` | `orders clear` |
-orders find | `orders find` | `orders find <order_name>`|
-orders price | `orders price <order_index>` | `orders price 2` |
-orders done  | `orders done <order_index>` | `orders done 2` |
-exit | `exit` | `exit` |
+[**help**](#21-viewing-help-help) | `help` | `help` |
+[**items**](#221-show-items-related-commands-items) | `items` | `items` |
+[**items add**](#222-add-an-item-items-add) | `items add <item_name>`<br>`Please input item price and stock.`<br>`<item_price> <item_quantity>` | `items add PS5`<br>`Please input item price and stock.`<br>`1 2`|
+[**items list**](#223-show-the-item-list-items-list) | `items list`      | `items list` |
+[**items delete**](#224-delete-an-item-items-delete) | `items delete <item_index>` | `items delete 2` |
+[**items clear**](#225-empty-the-item-list-items-clear) | `items clear ` | `items clear` |
+[**items find**](#226-update-an-item-items-update) | `items find` | `items find <item_name>`|
+[**items update**](#227-find-items-items-find) | `items update` | `items update`|
+[**items stats**](#228-discover-the-most-popular-items-items-stats) | `items stats` | `items stats`|
+[**orders**](#231-show-orders-related-commands--orders) | `orders` | `orders` |
+[**orders add**](#232-add-an-order-orders-add) | `orders add <customer_name> `<br>` Input the items to be added to this order. `<br>` <item_index> <item_quantity>` | `orders add weisheng`<br>` Input the items to be added to this order.`<br />` 1 2 ` |
+[**orders list**](#233-show-the-order-list-orders-list) | `orders list` | `orders list` |
+[**orders delete**](#234-remove-an-order-orders-delete) | `orders delete <order_index>` | `orders delete 2` |
+[**orders clear**](#235-empty-the-order-list-orders-clear) | `orders clear` | `orders clear` |
+[**orders find**](#236-find-orders-orders-find) | `orders find` | `orders find <order_name>`|
+[**orders price**](#237-get-the-total-price-of-an-order-orders-price) | `orders price <order_index>` | `orders price 2` |
+[**orders done**](#238-update-the-status-of-an-order-orders-done)  | `orders done <order_index>` | `orders done 2` |
+[**exit**](#25-exit-the-program-exit) | `exit` | `exit` |
 
-[1.](#1-super-script) Currently supports Windows, macOS and Linus machines. <br>
-[2.](#2-super-script) Depending on which operating system you are using, the command terminal application differs.
-Please refer to [1. Quick start](#1-quick-start) for more information.
+[1.](#1-super-script) Currently supports Windows, macOS and Linux machines which have Java 11 installed. <br>
+[2.](#2-super-script) Depending on which operating system you are using, how to open the command terminal application to
+operate easyLog differs. Please refer to [1. Quick start](#1-quick-start) for more information. <br>
+[3. ](#3-super-script) Best selling item(s) are defined to be item(s) which have most number of sales. That is, the
+item(s) is / are added to orders most number of times. (TO BE ADDED)

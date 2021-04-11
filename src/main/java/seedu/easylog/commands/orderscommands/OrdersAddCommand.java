@@ -38,12 +38,15 @@ public class OrdersAddCommand extends OrdersCommand {
             throw new InvalidInventoryException();
         }
 
+        logging.writeInfoLevelLog("Showing user inventory list.");
         ItemsListCommand itemsListCommand = new ItemsListCommand();
         itemsListCommand.execute(itemManager); // to show available items and item stock
         ui.showAddItemsToOrder();
+        logging.writeInfoLevelLog("Asking for user to input item_index and item_quantity into the order.");
         String addItemsToOrderInput = ui.askForUserInput();
         Order order = ordersParser.processItemsAddedToOrder(customerName, addItemsToOrderInput, itemManager);
         orderManager.addOrder(order);
+        logging.writeInfoLevelLog("Order details has been added to OrderManager.");
         assert orderManager.getLatestOrderAdded().equals(order);
         ui.showOrderAdded(order);
     }

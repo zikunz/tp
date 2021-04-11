@@ -36,9 +36,11 @@ public class EasyLog {
                 String userInput = UI.askForUserInput();
                 LOGGING.writeInfoLevelLog("Asking for user input.");
                 PARSER.processUserInput(userInput, ITEM_MANAGER, ORDER_MANAGER);
+                LOGGING.writeInfoLevelLog("User input processed and executed");
             }
         } catch (Exception e) {
             UI.showUnknownErrorOccurred();
+            LOGGING.writeInfoLevelLog("Unknown error has occured.");
         }
     }
 }

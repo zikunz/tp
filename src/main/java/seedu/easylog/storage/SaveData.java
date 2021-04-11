@@ -27,8 +27,10 @@ public class SaveData extends Storage {
     public void loadFile(ItemManager itemManager, OrderManager orderManager) throws FileNotFoundException {
         ui.showLookingForSaveData();
         File saveData = new File("easyLog.txt");
+        logging.writeInfoLevelLog("Looking for existence of save file.");
         if (saveData.exists()) {
             ui.showSaveDataLoading();
+            logging.writeInfoLevelLog("Save file exists, beginning to load save file.");
         }
         Scanner s = new Scanner(saveData);
         int fileLine = 1;
@@ -45,6 +47,7 @@ public class SaveData extends Storage {
             ++fileLine;
         }
         ui.showSaveDataLoaded();
+        logging.writeInfoLevelLog("Save file has been loaded.");
     }
 
     /**

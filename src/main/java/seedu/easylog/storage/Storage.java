@@ -7,4 +7,5 @@ public class Storage {
 
     public Ui ui = new Ui();
     public Parser parser = new Parser();
+    public Logging logging = new Logging();
 }

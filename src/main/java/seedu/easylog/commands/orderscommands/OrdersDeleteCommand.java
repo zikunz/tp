@@ -38,6 +38,7 @@ public class OrdersDeleteCommand extends OrdersCommand {
     }
 
     public void addBackItemsAndRemoveItemSales(int orderIndex, ItemManager itemManager, OrderManager orderManager) {
+        //@@author e00426142
         if (!orderManager.getOrder(orderIndex).getStatus()) {
             // return item stock to inventory if order is not complete.
             int itemIndex = 0;
@@ -47,6 +48,7 @@ public class OrdersDeleteCommand extends OrdersCommand {
                     int itemsStockInOrder = orderManager.getOrder(orderIndex).getStockCounts().get(itemIndex);
                     int itemUpdateStock = itemCurrentStock + itemsStockInOrder;
                     item.setItemStock(itemUpdateStock);
+                    //@@author Cocokkkk
                     int itemCurrentSales = item.getItemSales();
                     int itemSalesInOrder = orderManager.getOrder(orderIndex).getStockCounts().get(itemIndex);
                     int itemUpdateSales = itemCurrentSales - itemSalesInOrder;

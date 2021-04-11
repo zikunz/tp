@@ -168,23 +168,6 @@ public class OrderManager {
     }
 
     /**
-     * Finds the index of the order by customer's name.
-     *
-     * @param name name to be searched
-     * @return findIndex index of the found order
-     */
-    public int findOrderIndex(String name) {
-        int findIndex = -1;
-        for (int i = 0; i < getSize(); i++) {
-            if (getCustomerName(i).contains(name)) {
-                findIndex = i;
-                break;
-            }
-        }
-        return findIndex;
-    }
-
-    /**
      * Gets the list of orders in String format to be printed as output to the user.
      *
      * @return String format for the list of relevant orders to be printed

@@ -23,23 +23,17 @@ public class OrdersDeleteCommand extends OrdersCommand {
             throw new EmptyOrderListException();
         }
         try {
-            int index = Integer.parseInt(ordersArg) - Constants.ARRAY_OFFSET;
+            double orderIndexInDouble = Double.parseDouble(ordersArg) - Constants.ARRAY_OFFSET;
             int size = orderManager.getSize();
-            if ((index < 0) || (index >= size)) {
+            if ((orderIndexInDouble < 0) || (orderIndexInDouble >= size)) {
                 throw new InvalidOrderIndexException();
             }
             int orderIndex = Integer.parseInt(ordersArg) - Constants.ARRAY_OFFSET;
             addBackItemsAndRemoveItemSales(orderIndex, itemManager, orderManager);
-            ui.showOrderDeleted(orderManager.getOrder(index));
-            orderManager.deleteOrder(index);
+            ui.showOrderDeleted(orderManager.getOrder(orderIndex));
+            orderManager.deleteOrder(orderIndex);
         } catch (NumberFormatException e) {
-            ui.showNonIntegerOrderIndex();
-        }
-        int size = orderManager.getSize();
-        assert orderManager.getSize() == size - 1 : "After a valid deletion, the size decreases by 1";
-        if (size > 1) {
-            assert orderManager.getOrder(orderManager.getSize() - 1) == orderManager.getOrder(size - 2) :
-                    "After a valid deletion, the second last order becomes the last order";
+            ui.showNonIntegerOrNonNumericOrderIndex();
         }
     }
 

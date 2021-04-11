@@ -2,7 +2,7 @@ package seedu.easylog.commands.itemscommands;
 
 import seedu.easylog.exceptions.EmptyItemStockException;
 import seedu.easylog.exceptions.InvalidItemStockException;
-import seedu.easylog.exceptions.NonIntegerItemStockException;
+import seedu.easylog.exceptions.NonNumericOrIntegerItemStockException;
 import seedu.easylog.exceptions.NullItemStockException;
 
 public class ItemsPromptStockCommand extends ItemsCommand {
@@ -12,12 +12,8 @@ public class ItemsPromptStockCommand extends ItemsCommand {
      * @return item stock
      */
     public int execute(boolean itemAlreadyExists) throws NullItemStockException, EmptyItemStockException,
-            InvalidItemStockException, NonIntegerItemStockException {
-        if (itemAlreadyExists) {
-            ui.promptAdditionalItemStock();
-        } else {
-            ui.promptItemStock();
-        }
+            InvalidItemStockException, NonNumericOrIntegerItemStockException {
+        ui.promptItemStock();
 
         String itemStockInString = ui.askForUserInput();
 

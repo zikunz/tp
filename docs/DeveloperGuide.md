@@ -474,6 +474,109 @@ Abbreviation | Full Title | Definition
 [Return to Top](#1-introduction)
 
 ### Appendix E: Instructions for Manual Testing
+Given below are instructions to test easyLog manually.
 
+> **Note:** These instructions only provide a starting point for testers to work on;
+testers are expected to do more *exploratory* testing.
 
+**Launching easyLog** <br>
+1. Initial launch of easyLog <br><br>
+   i. Download the jar file here and copy into an empty folder. <br><br>
+   ii. Open up a command window to that folder with the jar file. <br><br>
+   iii. Run the command java -jar easyLog.jar<br><br>
+   *Expected*: easyLog will be loaded, and a welcome message will be shown.
+   Ensure that the version number in the welcome matches version of the jar file downloaded. <br>
+
+**Check Items**<br>
+1. Check if a new item is added in the item list.<br><br>
+   *Prerequisite*: The item to be added is not found in item list.<br><br>
+   *Testcase*: `items add pen` followed by `13 12`.<br><br>
+   *Expected*: Item 'pen' is added in item list with price $13 and quantity 12.<br><br>
+
+2. Check if repeated item is updated.<br><br>
+   *Prerequisite*: The item list already contains item.<br><br>
+   *Testcase*: `items update` followed by `1` followed by `p` and followed by `15`.<br><br>
+   *Expected*: When input `item list`, the first item is priced at 15 with original quantity.<br><br>
+
+3. Check it item list is cleared.<br><br>
+   *Prerequisite*: The item list already contains item.<br><br>
+   *Testcase*: `items clear`.<br><br>
+   *Expected*: When input `item list`, there is a message informing no item in the system.<br><br>
+
+4. Check if item is deleted.<br><br>
+   *Prerequisite*: The item list already contains item.<br><br>
+   *Testcase*: `items delete 1`.<br><br>
+   *Expected*: When input `item list`, the first item in the original list is deleted.<br><br>
+
+5. Check if item can be found in list.<br><br>
+   *Prerequisite*: The item list already contains item, e.g. "PS1".<br><br>
+   *Testcase*: `items find PS`.<br><br>
+   *Expected*: A list of item containing "PS" will be shown.<br><br>
+
+6. Check if all items can be listed.<br><br>
+   *Prerequisite*: The item list already contains item.<br><br>
+   *Testcase*: `items list`.<br><br>
+   *Expected*: A list of items added to item list will be shown.<br><br>
+
+**Check Orders**<br>
+1. Check if a new order is added.<br><br>
+   *Prerequisite*:<br>
+   i. The item list contains some items.<br>
+   ii. The order list does not contain the same order name.<br><br>
+   *Testcase*: `orders add yw` followed by `1 2` followed by `stop`.<br><br>
+   *Expected*: A message showing cunstomer [yw] is added.<br><br>
+
+2. Check if correct items are added. <br><br>
+   *Prerequisite*:<br>
+   i. The item list contains some items.<br>
+   ii. The order list does not contain the same order name.<br><br>
+   *Testcase*: `orders add yw` followed by `1 2` followed by `stop` followed by `orders list`.<br><br>
+   *Expected*: In the list of orders, under yw, two of the first item in item list are added and the
+   total price is reflected.<br><br>
+
+3. Check if the orders are cleared.<br><br>
+   *Prerequisite*:<br>
+   i. The item list contains some items.<br>
+   ii. The order list contains some orders, e.g. yw.<br><br>
+   *Testcase*: `orders clear` followed by `orders list`.<br><br>
+   *Expected*: A message showing no order at the moment.<br><br>
+
+4. Check if order deleted.<br><br>
+   *Prerequisite*:<br>
+   i. The item list contains some items.<br>
+   ii. The order list contains some orders, e.g. yw.<br><br>
+   *Testcase*: `orders delete 1` followed by `orders list`.<br><br>
+   *Expected*: The first order in the original order list is deleted.<br><br>
+
+5. Check if an order can be found.<br><br>
+   *Prerequisite*:<br>
+   i. The item list contains some items.<br>
+   ii. The order list contains some orders, e.g. yw.<br><br>
+   *Testcase*: `orders find yw`.<br><br>
+   *Expected*: A list of orders relating to yw will be shown.<br><br>
+
+6. Check if status of order can be updated.<br><br>
+   *Prerequisite*:<br>
+   i. The item list contains some items.<br>
+   ii. The order list contains some orders, e.g. yw.<br><br>
+   *Testcase*: `orders done 1`.<br><br>
+   *Expected*: A message showing the order is completed will be shown. In addition, a receipt will be generated.<br><br>
+
+**Help**<br>
+1. Viewing help for easyLog.<br><br>
+   *Testcase*: Input `help`.<br><br>
+   *Expected*: A list of commands for easyLog will be shown.<br><br>
+
+2. Viewing help for items commands.<br><br>
+   *Testcase*: Input `items help`.<br><br>
+   *Expected*: A list of commands for items will be shown.<br><br>
+
+3. Viewing help for orders commands.<br><br>
+   *Testcase*: Input `orders help`.<br><br>
+   *Expected*: A list of commands for orders will be shown.<br><br>
+
+**Exit easyLog**<br>
+1. Exit easyLog.<br><br>
+   *Testcase*: Input `exit`.<br><br>
+   *Expected*: easyLog exits with exit message.<br><br>
 [Return to Top](#1-introduction)

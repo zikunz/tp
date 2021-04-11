@@ -17,7 +17,7 @@ RepoSense code contribution: <br>
 
 1. Items Add feature.
 2. Items Update feature. 
-3. Items stats feature.   
+3. Items Stats feature.   
 4. Orders Delete feature.
 
 ### Enhancements implemented
@@ -31,8 +31,8 @@ RepoSense code contribution: <br>
    command to delete an order.
 3. Orders delete feature: <br>
    Extracted a method to combine the number of sales will decrease, and the items will be added 
-   back to item list when deleting an order,such another teammate can call this method when he implemented another feature to
-   improve code re-usability.
+   back to item list when deleting an order,such another teammate can call this method when he implemented another
+   feature to improve code re-usability.
 4. Exceptions for features: <br>
    Ensured exception can be caught correctly and easyLog will show correct error messages.
 5. JUnitTest: <br>
@@ -61,6 +61,10 @@ RepoSense code contribution: <br>
 2. Did some smoke-tests to test the features.
 3. Added header comments to the non-private classes/methods.
 4. Updated user/developer docs that are not specific to a feature.
+
+### Review/mentoring contributions
+
+1. Gave some suggestions to others and tried to answer some questions from others.
 
 ### Contributions beyond the project team
 

@@ -1,6 +1,7 @@
 package seedu.easylog.commands.orderscommands;
 
 import seedu.easylog.exceptions.OrderListAlreadyClearedException;
+import seedu.easylog.exceptions.WrongOrdersClearCommandException;
 import seedu.easylog.model.ItemManager;
 import seedu.easylog.model.Order;
 import seedu.easylog.model.OrderManager;
@@ -11,7 +12,11 @@ public class OrdersClearCommand extends OrdersCommand {
     /**
      * Clears all orders in the system.
      */
-    public void execute(ItemManager itemManager, OrderManager orderManager) throws OrderListAlreadyClearedException {
+    public void execute(String extraDescription, ItemManager itemManager, OrderManager orderManager) throws
+            OrderListAlreadyClearedException, WrongOrdersClearCommandException {
+        if (!extraDescription.isEmpty()) {
+            throw new WrongOrdersClearCommandException();
+        }
         if (orderManager.getSize() == 0) {
             throw new OrderListAlreadyClearedException();
         }

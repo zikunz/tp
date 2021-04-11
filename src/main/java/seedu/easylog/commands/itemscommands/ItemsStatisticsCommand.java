@@ -1,6 +1,7 @@
 package seedu.easylog.commands.itemscommands;
 
 import seedu.easylog.exceptions.NoItemsStatisticsCanBeGivenException;
+import seedu.easylog.exceptions.WrongItemsStatsCommandException;
 import seedu.easylog.model.ItemManager;
 
 public class ItemsStatisticsCommand extends ItemsCommand {
@@ -10,7 +11,11 @@ public class ItemsStatisticsCommand extends ItemsCommand {
      *
      * @param itemManager item manager
      */
-    public void execute(ItemManager itemManager) throws NoItemsStatisticsCanBeGivenException {
+    public void execute(String extraDescription, ItemManager itemManager) throws NoItemsStatisticsCanBeGivenException,
+            WrongItemsStatsCommandException {
+        if (!extraDescription.isEmpty()) {
+            throw new WrongItemsStatsCommandException();
+        }
         int numberOfMostPopularItems = itemManager.countNumberOfMostPopularItems();
 
         String itemDescriptions = itemManager.getMostPopularItemDescriptions();

@@ -34,6 +34,7 @@ Last Updated: `10 April 2021` <br>
     - [3.2. Loading of Save Data](#32-loading-of-save-data)
     - [3.3. Creation or Saving of Save Data](#33-creation-or-saving-of-save-data)
     - [3.4. Orders Done and Generation of Receipts](#34-orders-done-and-generation-of-receipt)
+    - [3.5. Orders Add](#35-orders-add)
 - [4. **Documentation**](#4-documentation)
 - [5. **Testing**](#5-testing)
     - [5.1. Types of Tests](#52-types-of-tests)
@@ -263,6 +264,25 @@ method in SaveData class is being executed,
 [Return to Top](#1-introduction)
 
 ### 3.4. Orders Done and Generation of Receipts 
+
+[Return to Top](#1-introduction)
+
+### 3.5. Orders Add
+
+![Orders add diagram](https://user-images.githubusercontent.com/60378963/114283955-4d19e980-9a7f-11eb-9d54-6762938de6bb.png)
+
+As seen from the sequence diagram above, when user wants to add an Order.
+1. User input "Orders add Yiwen" string.
+2. Ui will send the userInput to the parser to process it.
+3. A new OrdersAddCommand object is been created and its execute method is being called.
+4. A new ItemManger object is been created and its execute method is being called.
+5. Ui shows a list of items.
+6. Ui prompts the user to add items in the item list to order.
+7. Ui ask for user input.
+8. user enter the item index.
+9. Repeat step 6 to 8 until stop command is keyed in.
+10. Orders added to order list.
+11. Ui shows order is added.
 
 [Return to Top](#1-introduction)
 

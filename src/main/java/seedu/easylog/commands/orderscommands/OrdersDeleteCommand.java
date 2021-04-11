@@ -23,34 +23,37 @@ public class OrdersDeleteCommand extends OrdersCommand {
             throw new EmptyOrderListException();
         }
         try {
-            int index = Integer.parseInt(ordersArg) - Constants.ARRAY_OFFSET;
+            double orderIndexInDouble = Double.parseDouble(ordersArg) - Constants.ARRAY_OFFSET;
             int size = orderManager.getSize();
-            if ((index < 0) || (index >= size)) {
+            if ((orderIndexInDouble < 0) || (orderIndexInDouble >= size)) {
                 throw new InvalidOrderIndexException();
             }
-            if (!orderManager.getOrder(index).getStatus()) {
-                // return item stock to inventory if order is not complete.
-                int itemStockIndex = 0;
-                for (Item item : orderManager.getItemsInOrder(index)) {
-                    if (itemManager.getItemList().contains(item)) {
-                        int itemCurrentStock = item.getItemStock();
-                        int itemsStockInOrder = orderManager.getOrder(index).getStockCounts().get(itemStockIndex);
-                        int itemUpdateStock = itemCurrentStock + itemsStockInOrder;
-                        item.setItemStock(itemUpdateStock);
-                        ++itemStockIndex;
-                    }
-                }
-                ui.showOrderDeleted(orderManager.getOrder(index));
-                orderManager.deleteOrder(index);
-            }
+            int orderIndex = Integer.parseInt(ordersArg) - Constants.ARRAY_OFFSET;
+            addBackItemsAndRemoveItemSales(orderIndex, itemManager, orderManager);
+            ui.showOrderDeleted(orderManager.getOrder(orderIndex));
+            orderManager.deleteOrder(orderIndex);
         } catch (NumberFormatException e) {
-            ui.showNonIntegerOrderIndex();
+            ui.showNonIntegerOrNonNumericOrderIndex();
         }
-        int size = orderManager.getSize();
-        assert orderManager.getSize() == size - 1 : "After a valid deletion, the size decreases by 1";
-        if (size > 1) {
-            assert orderManager.getOrder(orderManager.getSize() - 1) == orderManager.getOrder(size - 2) :
-                    "After a valid deletion, the second last order becomes the last order";
+    }
+
+    public void addBackItemsAndRemoveItemSales(int orderIndex, ItemManager itemManager, OrderManager orderManager) {
+        if (!orderManager.getOrder(orderIndex).getStatus()) {
+            // return item stock to inventory if order is not complete.
+            int itemIndex = 0;
+            for (Item item : orderManager.getItemsInOrder(orderIndex)) {
+                if (itemManager.getItemList().contains(item)) {
+                    int itemCurrentStock = item.getItemStock();
+                    int itemsStockInOrder = orderManager.getOrder(orderIndex).getStockCounts().get(itemIndex);
+                    int itemUpdateStock = itemCurrentStock + itemsStockInOrder;
+                    item.setItemStock(itemUpdateStock);
+                    int itemCurrentSales = item.getItemSales();
+                    int itemSalesInOrder = orderManager.getOrder(orderIndex).getStockCounts().get(itemIndex);
+                    int itemUpdateSales = itemCurrentSales - itemSalesInOrder;
+                    item.setItemSales(itemUpdateSales);
+                    ++itemIndex;
+                }
+            }
         }
     }
 }

@@ -35,6 +35,8 @@ Last Updated: `10 April 2021` <br>
     - [3.3. Creation or Saving of Save Data](#33-creation-or-saving-of-save-data)
     - [3.4. Orders Done and Generation of Receipts](#34-orders-done-and-generation-of-receipt)
     - [3.5. Orders Add](#35-orders-add)
+    - [3.6. Orders Delete](#36-orders-delete)
+    - [3.7. Items Add](#37-items-add)
 - [4. **Documentation**](#4-documentation)
 - [5. **Testing**](#5-testing)
     - [5.1. Types of Tests](#52-types-of-tests)
@@ -302,6 +304,26 @@ deleted
 8. The OrdersManager delete the order selected.
 9. The deleted order message is sent to the user.
 
+[Return to Top](#1-introduction)
+
+***
+
+### 3.7. Items Add
+![itemsAdd Diagram](https://user-images.githubusercontent.com/77385307/114296774-a7e32d80-9adf-11eb-9def-9fe89db8f5fc.png)
+The `items add` feature is designed to allow users to add items to the system, including the item name, price and stock
+of each item. As seen from the sequence diagram above (note that some trivial details are removed from the diagram), 
+when an item is added into the system:
+1. User executes the `itemsAddcommand` by typing `items add <item_name>`.
+2. easyLog invokes `itemsParser` and calls the `promptAndProcessItemPriceAndStock(String)`method to ask user the
+   `itemPrice` and `itemStock` of this item.
+3. easyLog will keep asking user the `itemPrice` and `itemStock` by calling 
+   `itemPriceInStringToBigDecimalFormat(String)`and `itemStockInStringToIntegerFormat(String)` methods, until the 
+   `itemPrice` and `itemStock` given by the user are both valid.
+4. Then, `itemsParser` creates a new `Item` object, which would be returned to `itemsAddCommand`.
+5. easyLog then invokes `itemsManager` and calls the `addItem(Item)` method to add this item into the system.
+6. After the item is added successfully, `UI` sends back the confirmation message to user by calling `showAddItem(Item)`
+   method.
+   
 [Return to Top](#1-introduction)
 
 ***

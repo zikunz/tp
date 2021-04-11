@@ -2,14 +2,6 @@ package seedu.easylog.common;
 
 public class Messages {
 
-    public static final String MESSAGE_LOGO = "                       _                 \n"
-            + "                      | |                \n"
-            + "   ___  __ _ ___ _   _| |     ___   __ _ \n"
-            + "  / _ \\/ _` / __| | | | |    / _ \\ / _` |\n"
-            + " |  __/ (_| \\__ \\ |_| | |___| (_) | (_| |\n"
-            + "  \\___|\\__,_|___/\\__, |______\\___/ \\__, |\n"
-            + "                  __/ |             __/ |\n"
-            + "                 |___/             |___/ \n";
     public static final String MESSAGE_LINE = "____________________________________________________________\n";
     public static final String MESSAGE_LIST_ITEMS = MESSAGE_LINE
             + "Here is the list of items.\n"
@@ -50,8 +42,7 @@ public class Messages {
             + "  15. orders done <order_index>     Update the status of an order\n"
             + "  16. orders find <order_name>      Find an order\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_GREETING = MESSAGE_LOGO
-            + MESSAGE_LINE
+    public static final String MESSAGE_GREETING = MESSAGE_LINE
             + "Hello! I'm easyLog!\n"
             + "What can I do for you? Enter help to view commands.\n"
             + MESSAGE_LINE;
@@ -86,8 +77,8 @@ public class Messages {
     public static final String MESSAGE_NON_NUMERIC_OR_INTEGER_ITEM_STOCK = MESSAGE_LINE
             + "The item stock is either not a number or out of the int value range in Java.\n";
     public static final String MESSAGE_EMPTY_ORDER_CUSTOMER_NAME = MESSAGE_LINE
-            + "OOPS!!! The customer name is missing!\n"
-            + "Please complete the order information! :)\n"
+            + "The customer name is missing.\n"
+            + "Please complete the order information then try orders add command again.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ORDER_NUMBER = MESSAGE_LINE
             + "OOPS!!! The order number is missing!\n"
@@ -343,6 +334,16 @@ public class Messages {
             + "Customer name inputted is too lengthy.\n"
             + "Note that the customer name length limit is 30 characters including spaces.\n"
             + "Please try orders add <customer_name> again if you wish to add an order.\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_INVALID_INVENTORY = MESSAGE_LINE
+            + "All items in inventory have stock 0.\n"
+            + "Use <items update> feature first to update the stocks of the item\n"
+            + "in the inventory before continuing to add an order.\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_UNKNOWN_ERROR_OCCURRED = MESSAGE_LINE
+            + "Unknown error has occurred while using easyLog.\n"
+            + "Kindly follow command format using <help> to prevent such errors.\n"
+            + "Please restart command from the beginning to try again.\n"
             + MESSAGE_LINE;
 }
 

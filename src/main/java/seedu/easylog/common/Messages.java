@@ -2,14 +2,6 @@ package seedu.easylog.common;
 
 public class Messages {
 
-    public static final String MESSAGE_LOGO = "                       _                 \n"
-            + "                      | |                \n"
-            + "   ___  __ _ ___ _   _| |     ___   __ _ \n"
-            + "  / _ \\/ _` / __| | | | |    / _ \\ / _` |\n"
-            + " |  __/ (_| \\__ \\ |_| | |___| (_) | (_| |\n"
-            + "  \\___|\\__,_|___/\\__, |______\\___/ \\__, |\n"
-            + "                  __/ |             __/ |\n"
-            + "                 |___/             |___/ \n";
     public static final String MESSAGE_LINE = "____________________________________________________________\n";
     public static final String MESSAGE_LIST_ITEMS = MESSAGE_LINE
             + "Here is the list of items.\n"
@@ -50,8 +42,7 @@ public class Messages {
             + "  15. orders done <order_index>     Update the status of an order\n"
             + "  16. orders find <order_name>      Find an order\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_GREETING = MESSAGE_LOGO
-            + MESSAGE_LINE
+    public static final String MESSAGE_GREETING = MESSAGE_LINE
             + "Hello! I'm easyLog!\n"
             + "What can I do for you? Enter help to view commands.\n"
             + MESSAGE_LINE;

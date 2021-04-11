@@ -20,6 +20,8 @@ import seedu.easylog.exceptions.OrderListAlreadyClearedException;
 import seedu.easylog.exceptions.EmptyOrderListException;
 import seedu.easylog.exceptions.OrderNotFoundException;
 import seedu.easylog.exceptions.InvalidOrderIndexException;
+import seedu.easylog.exceptions.WrongOrdersClearCommandException;
+
 
 import seedu.easylog.model.Item;
 import seedu.easylog.model.ItemManager;
@@ -58,7 +60,7 @@ public class OrdersParser extends Parser {
             } catch (InvalidOrderIndexException e) {
                 ui.showInvalidOrderNumber();
             } catch (NumberFormatException e) {
-                ui.showNonIntegerOrderIndex();
+                ui.showNonIntegerOrNonNumericOrderIndex();
             }
             break;
         case (Constants.COMMAND_LIST):
@@ -66,9 +68,11 @@ public class OrdersParser extends Parser {
             break;
         case (Constants.COMMAND_CLEAR):
             try {
-                new OrdersClearCommand().execute(itemManager, orderManager);
+                new OrdersClearCommand().execute(ordersArg, itemManager, orderManager);
             } catch (OrderListAlreadyClearedException e) {
                 ui.showAlreadyClearedOrderList();
+            } catch (WrongOrdersClearCommandException e) {
+                ui.showWrongOrdersClearCommand();
             }
             break;
         case (Constants.COMMAND_PRICE):
@@ -79,7 +83,7 @@ public class OrdersParser extends Parser {
             } catch (InvalidNumberException e) {
                 ui.showInvalidOrderNumber();
             } catch (NumberFormatException e) {
-                ui.showNonIntegerOrderIndex();
+                ui.showNonIntegerOrNonNumericOrderIndex();
             }
             break;
         case (Constants.COMMAND_DONE):
@@ -90,7 +94,7 @@ public class OrdersParser extends Parser {
             } catch (InvalidNumberException e) {
                 ui.showInvalidOrderNumber();
             } catch (NumberFormatException e) {
-                ui.showNonIntegerOrderIndex();
+                ui.showNonIntegerOrNonNumericOrderIndex();
             }
             break;
         case (Constants.COMMAND_FIND):

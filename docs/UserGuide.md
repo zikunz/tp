@@ -156,17 +156,24 @@ Steps to add an item in easyLog:
 
 1. Input `items add <item_name>` command.
 2. You will be prompted to key in the item (unit) price and the item stock.
-3. Input in this format `<item_price> <space> <item_stock>` for the price and stock to be added to the items details.
+3. Input in this format `<item_price> <item_stock>` for the price and stock to be added to the items details.
 4. Press enter.
 5. You can see the confirmation message when the item is recorded successfully.
 
 Note:
-> 📄 Item names cannot be empty or consist of only white spaces. <br>
-> 📄 Item names cannot exceed 30 characters, including spaces. <br>
-> 📄 Item price must be a number ranging from 0 (free item) to 1,000,000,000 (inclusive). <br>
-> 📄 Item stock has to be a positive integer ranging from 1 to 1,000,000,000 (inclusive). <br>
+> 📄 There should be exactly 1 empty space between <item_price> and <item_stock>.
+> 📄 Valid item names cannot be empty or consist of purely white spaces. <br>
+> 📄 Valid item names cannot exceed 30 characters, including spaces. The name of an item starts after the first empty space 
+> after `add`. <br>
 > 📄 If an item name is already found in the item list, adding new items with the same name will
 > still be successfully but take note that they will be tracked differently. <br>
+> 📄 A valid item price must be a number ranging from 0 (free item) to 1,000,000,000 (inclusive). <br>
+> 📄 Item price recorded has exactly 2 decimal places and will be rounded if applicable (i.e., if the third decimal 
+> place is 4 or less, all the digits after the third digit will be removed. If the third decimal is 5 or greater, 1 will
+> be added to the second decimal place). 
+> 📄 If an invalid item price is entered, easyLog will not check the validity of item stock and will only notify the user
+> that item price entered is wrong.
+> 📄 Item stock has to be a positive integer ranging from 1 to 1,000,000,000 (inclusive). <br>
 > 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
 
 #### 2.2.3. Show the item list: `items list`
@@ -181,7 +188,7 @@ Steps to check the complete item list:
 3. Complete item list then will be shown, including the item index, name, price as well as stock.
 
 Note:
-> 📄 If there are no items in the system, a message will be shown to notify you to add items first. <br>
+> 📄 If there are no items in the system, a message will be shown to notify you to add at least one item first. <br>
 > 📄 Nothing should be entered after the `items list` command.
 
 #### 2.2.4. Delete an item: `items delete`
@@ -189,7 +196,7 @@ Note:
 When you want to delete an item in the system, the `items delete` feature allows you to
 achieve this easily.
 
-Steps to delete an item in esayLog
+Steps to delete an item in easyLog
 
 1. Input `items list` command to check the item index to be deleted.
 2. Input `items delete <space> <item_index>` for the order to be removed from the item list.
@@ -207,15 +214,7 @@ Note:
 If your naughty children have added too many items which do not exist in your inventory, instead of deleting them one by
 one, you can easily clear all recorded items in the inventory and add back existing items.
 
-Format: `items clear`
 
-Expected Output:
-
-```
-____________________________________________________________
-Done! I just cleared all items for you.
-____________________________________________________________
-```
 
 #### 2.2.6. Update an item: `items update`
 
@@ -266,19 +265,6 @@ feature will let you know the most popular item(s) and you are reminded you stoc
 find the item(s) with the highest demand 
 and try to stock up item accordingly.
 
-Format: `items stats`
-
-Example: `items stats`
-
-Expected Output:
-
-```
-items stats (users input)
-____________________________________________________________
-The most popular item is PS5. Please consider stocking it up if it is not enough :)
-____________________________________________________________
-
-```
 Note:
 > 📄 Item fields (i.e., `p` and `s`) must be lower-case. <br>
 > 
@@ -399,31 +385,24 @@ ____________________________________________________________
 When your customer would like to cancel his or her order, the `orders delete` feature allows you to achieve it.
 
 Steps to remove an order from the order list:
-1. Input `orders list` command to check the customer's order index to be deleted.
+1. (Optional) Input `orders list` command to check the customer's order index to be deleted.
 2. Input `orders delete <space> <order_index>` for the order to be removed from the order list.
 3. Press enter.
 4. You can see the confirmation message when the order is removed successfully.
 
 Note:
-> 📄 If there is no order in the system, a message will be shown to notify you to add orders first. <br>
+> 📄 If there is no order in the system, a message will be shown to notify you to add at least one order first. <br>
 > 📄 If you remember the customer's order index, you can skip step 1. <br>
 > 📄 Unless the item has been deleted from the item list, every item under the deleted order 
 > will be added back to the inventory. <br>
+> 📄 If an out-of-range order index is entered, easyLog will not check if the order index is an integer. For
+> instance, if there are only 2 orders placed by customers, inputting `orders delete 2.6` will cause easyLog show
+> that it is an out-of-range error. <br>
 
 #### 2.3.5. Empty the order list: `orders clear`
 
 In the very unlikely event that all orders are cancelled, instead of deleting them one by one, you can use the
 `orders clear` feature to do it efficiently.
-
-Format: `orders clear`
-
-Expected Output:
-
-```
-____________________________________________________________
-Done! I just cleared all orders for you.
-____________________________________________________________
-```
 
 Note:
 > 📄 If there is no order in the system, a message will be shown to notify you that you should not use `orders clear`

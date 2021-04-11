@@ -514,7 +514,7 @@ Note:
 > an error message will be shown to the user.<br>
 > 📄 Once an order is completed, it will be deleted automatically from the system 
 > and a receipt will be generated.<br>
-> 📄 The receipt will be saved in the receipt folder.
+> 📄 More details on receipt generation can be seen [here](#242-generate-receipts).
 
 ### 2.4. Storage
 

@@ -54,10 +54,6 @@ public class Ui {
         System.out.print(Messages.MESSAGE_EMPTY_ITEM_NAME);
     }
 
-    public void showRepeatedItem() {
-        System.out.print(Messages.MESSAGE_REPEAT_ITEM);
-    }
-
     /**
      * Prints a message to notify the user that there is no input customer name for this order.
      * This means that the user should complete the customer name.
@@ -126,11 +122,11 @@ public class Ui {
     }
 
     /**
-     * Prints a message to notify the user that the input item number is not an integer.
-     * This means the user should input an integer type item number.
+     * Prints a message to notify the user that the input item number is either not a number or not an integer.
+     * This means the user should check the item index and input again.
      */
-    public void showNonIntegerItemIndexForUpdate() {
-        System.out.print(Messages.MESSAGE_NON_INTEGER_ITEM_NUMBER_FOR_UPDATE);
+    public void showNonIntegerOrNonNumericItemIndexForUpdate() {
+        System.out.print(Messages.MESSAGE_NON_NUMERIC_OR_NON_INTEGER_ITEM_NUMBER_FOR_UPDATE);
     }
 
     /**
@@ -155,9 +151,6 @@ public class Ui {
         System.out.print(Messages.MESSAGE_EMPTY_ITEM_LIST);
     }
 
-    public void showAddItemFirst() {
-        System.out.print(Messages.MESSAGE_ADD_ITEM_FIRST);
-    }
 
     /**
      * Prints the list of all orders in the system.
@@ -225,11 +218,11 @@ public class Ui {
     }
 
     /**
-     * Prints a message to notify the user that the input order index is not an integer.
-     * This means the user should input an integer type order index.
+     * Prints a message to notify the user that the input order index is either not a number or not an integer.
+     * This means the user should check and input order index again.
      */
-    public void showNonIntegerOrderIndex() {
-        System.out.print(Messages.MESSAGE_NON_INTEGER_ORDER_INDEX);
+    public void showNonIntegerOrNonNumericOrderIndex() {
+        System.out.print(Messages.MESSAGE_NON_INTEGER_OR_NON_NUMERIC_ORDER_INDEX);
     }
 
     /**
@@ -297,18 +290,27 @@ public class Ui {
         System.out.print(Messages.MESSAGE_SHOW_INVALID_REVISED_ITEM_PRICE);
     }
 
-    /**
-     * Prints a message to notify the user that the input  is not numeric.
-     * This means the user should input a numeric and valid field.
-     */
-    public void showNonIntegerItemPriceInputForAdd() {
-        System.out.print(Messages.MESSAGE_NON_INTEGER_ITEM_PRICE_INPUT_FOR_ADD);
-    }
-
 
     public void showNonNumericInputForUpdate() {
         System.out.print(Messages.MESSAGE_NON_NUMERIC_INPUT_INDEX_FOR_UPDATE);
     }
+
+    /**
+     * Prints a message to notify the user that the input item index is null.
+     * This means the user should input a non-null and valid item index.
+     */
+    public void showNullItemIndex() {
+        System.out.print(Messages.MESSAGE_NULL_ITEM_INDEX);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item field is null.
+     * This means the user should input a non-null and valid item field.
+     */
+    public void showNullItemField() {
+        System.out.print(Messages.MESSAGE_NULL_ITEM_FIELD);
+    }
+
 
     /**
      * Prints a message to notify the user that the input item price is null.
@@ -384,14 +386,40 @@ public class Ui {
         System.out.print(Messages.MESSAGE_EMPTY_ITEM_STOCK);
     }
 
+    /**
+     * Prints a message to notify the user that the items clear command is entered wrongly.
+     * This means the user should input "items clear" exactly if he / she
+     * really wants to execute a clear command for all items.
+     */
+    public void showWrongItemsClearCommand() {
+        System.out.print(Messages.MESSAGE_WRONG_ITEMS_CLEAR_COMMAND);
+    }
 
     /**
-     * Prints a message to notify the user that the update command is entered wrongly.
+     * Prints a message to notify the user that the items stats command is entered wrongly.
+     * This means the user should input "items stats" exactly if he / she
+     * really wants to use this feature to see the most popular item(s).
+     */
+    public void showWrongItemsStatsCommand() {
+        System.out.print(Messages.MESSAGE_WRONG_ITEMS_STATS_COMMAND);
+    }
+
+    /**
+     * Prints a message to notify the user that the items update command is entered wrongly.
      * This means the user should input "items update" exactly if he / she
      * really wants to execute an update command for any item of interest.
      */
     public void showWrongUpdateCommand() {
         System.out.print(Messages.MESSAGE_WRONG_UPDATE_COMMAND);
+    }
+
+    /**
+     * Prints a message to notify the user that the orders clear command is entered wrongly.
+     * This means the user should input "orders clear" exactly if he / she
+     * really wants to execute a clear command for all orders.
+     */
+    public void showWrongOrdersClearCommand() {
+        System.out.print(Messages.MESSAGE_WRONG_ORDERS_CLEAR_COMMAND);
     }
 
     /**
@@ -485,19 +513,8 @@ public class Ui {
         System.out.print(Messages.MESSAGE_LINE);
     }
 
-    /**
-     * Prints a message to notify user to retype orders add command due to no item added to the order.
-     */
-    public void showOrderEmpty() {
-        System.out.print(Messages.MESSAGE_EMPTY_ORDER);
-    }
-
     public void showNotEnoughStock() {
         System.out.print(Messages.MESSAGE_NOT_ENOUGH_STOCK);
-    }
-
-    public void showRepeatedOrder() {
-        System.out.print(Messages.MESSAGE_REPEAT_ORDER);
     }
 
     public void showContinueAddingItemsToOrder() {
@@ -597,22 +614,6 @@ public class Ui {
     }
 
     /**
-     * Prints a message to show that an item already exists.
-     * This means the user should proceed to enter a valid number to increment the stock,
-     * subject to total item stock smaller or equal to 1000000000.
-     */
-    public void showItemIsAlreadyExisting() {
-        System.out.print(Messages.MESSAGE_ITEM_IS_ALREADY_EXISTING);
-    }
-
-    /**
-     * Prints a message to ask the user about the additional stock of the item entered earlier.
-     */
-    public void promptAdditionalItemStock() {
-        System.out.print(Messages.MESSAGE_PROMPT_ADDITIONAL_ITEM_STOCK);
-    }
-
-    /**
      * Prints a message to show the most popular item
      * and suggests the user to stock up if not enough.
      *
@@ -673,22 +674,6 @@ public class Ui {
     }
 
     /**
-     * Prints a message to notify the user that the input item stock is non-numeric.
-     * This means the user should check the input stock again and retry.
-     */
-    public void showNonNumericItemStockInputForAdd() {
-        System.out.print(Messages.MESSAGE_NON_NUMERIC_ITEM_STOCK_INPUT_FOR_ADD);
-    }
-
-    /**
-     * Prints a message to notify the user that the input item index is non-numeric.
-     * This means the user should check the input stock again and retry.
-     */
-    public void showNonNumericItemUpdateIndex() {
-        System.out.print(Messages.MESSAGE_NON_NUMERIC_ITEM_STOCK_INPUT_FOR_ADD);
-    }
-
-    /**
      * Prints a message to notify the user that there is no item index.
      * This means the user should complete the item information.
      */
@@ -721,11 +706,11 @@ public class Ui {
     }
 
     /**
-     * Prints a message to notify the user that the input item stock is not an integer.
-     * This means the user should check the input stock again and retry.
+     * Prints a message to notify the user that the input item stock is either not a number or not an integer.
+     * This means the user should check the input stock again.
      */
-    public void showNonIntegerItemStock() {
-        System.out.print(Messages.MESSAGE_NON_INTEGER_ITEM_PRICE);
+    public void showNonNumericOrIntegerItemStock() {
+        System.out.print(Messages.MESSAGE_NON_NUMERIC_OR_INTEGER_ITEM_STOCK);
     }
 
     /**
@@ -733,7 +718,7 @@ public class Ui {
      * This means the user should check the input stock again and retry.
      */
     public void showNonNumericItemStockInput() {
-        System.out.println(Messages.MESSAGE_NON_NUMERIC_ITEM_STOCK);
+        System.out.println(Messages.MESSAGE_NON_NUMERIC_OR_INTEGER_ITEM_STOCK);
     }
 
     /**

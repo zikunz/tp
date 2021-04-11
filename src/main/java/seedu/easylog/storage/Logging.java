@@ -9,7 +9,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class Logging extends Storage {
+public class Logging {
 
     Logger logger = Logger.getLogger("easyLogLogs");
     FileHandler fh;

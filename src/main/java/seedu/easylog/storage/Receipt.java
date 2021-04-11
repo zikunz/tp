@@ -24,21 +24,28 @@ public class Receipt extends Storage {
     public void generateReceipt(int orderIndex, OrderManager orderManager) throws IOException {
         String customerName = orderManager.getCustomerName(orderIndex);
         ui.showGeneratingReceipt(customerName);
+        logging.writeInfoLevelLog("Starting generation of receipt.");
         File receiptDirectory = new File("Receipts");
         if (!receiptDirectory.exists()) { // if the directory does not exist
+            logging.writeInfoLevelLog("Receipt directory not found and being created now.");
             receiptDirectory.mkdir();
         }
         String receiptName = customerName + receiptCounter;
         String receiptFilePath = "Receipts/" + receiptName + ".txt";
         File receipt = new File(receiptFilePath);
         receipt.createNewFile();
+        logging.writeInfoLevelLog("Receipt file has been created.");
         FileWriter fw = new FileWriter(receiptFilePath);
         Order orderToAddToReceipt = orderManager.getOrder(orderIndex);
+        logging.writeInfoLevelLog("Writing order details to receipt.");
         fw.write(ui.showReceiptHeader());
         fw.write(orderManager.getIndividualOrderPrintFormat(orderToAddToReceipt));
         fw.close();
+        logging.writeInfoLevelLog("Order details has been written to the receipt.");
         ui.showReceiptGenerated(customerName);
+        logging.writeInfoLevelLog("Receipt has been successfully generated.");
         ++receiptCounter;
+        logging.writeInfoLevelLog("Incrementing receiptCounter.");
     }
 
     /**

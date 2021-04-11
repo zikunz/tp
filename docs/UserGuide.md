@@ -131,6 +131,10 @@ Steps to check all available commands:
 2. Press Enter.
 3. All available commands will then be shown.
 
+Note:
+
+> 📄 Anything typed after `help` will be ignored and the `help` command will execute as per normal. e.g., `help asdas`
+
 ### 2.2 Items
 
 Section 2.2 will explain the features related to items.
@@ -139,7 +143,8 @@ Section 2.2 will explain the features related to items.
 
 As a first-time user, or whenever you forget some of items-related commands or just need to check a particular command
 format, the `items` feature will show all available commands related to items. At the same time, you can see the brief
-description of those commands.
+description of those commands. Also typing any invalid items-related commands would also show you all the avaialble
+orders-related commands.
 
 Steps to check all items-related commands:
 
@@ -189,7 +194,8 @@ Steps to check the complete item list:
 
 Note:
 > 📄 If there are no items in the system, a message will be shown to notify you to add at least one item first. <br>
-> 📄 Nothing should be entered after the `items list` command.
+> 📄 Anything typed after `items list` will be ignored, and the command will execute as per normal e.g.,
+> <items list asdsdad>.
 
 #### 2.2.4. Delete an item: `items delete`
 
@@ -277,7 +283,8 @@ Section 2.3 will explain the features related to orders.
 
 As a first-time user, or whenever you forget some of orders-related commands or just need to check a particular command
 format, `orders` feature will show all available commands related to orders. At the same time, you can see the brief
-description of those commands.
+description of those commands. Also typing any invalid orders-related commands would also show you all the available
+orders-related commands.
 
 Steps to check all orders-related commands:
 
@@ -300,18 +307,19 @@ Steps to add an order in easyLog:
 6. Order details will then be added into the system.
 
 Note:
-1. Order has to contain at least 1 item to be added into the system.
-2. The customer name cannot exceed 30 characters including spaces. 
-3. Item quantity to be inputted into the order cannot be less than 1 or more than the current stock in the inventory.
-4. Item quantity for each item inputted into the order would be removed from the inventory stock of that item 
+> 📄 Order has to contain at least 1 item to be added into the system. <br>
+> 📄 The customer name cannot exceed 30 characters including spaces. <br>
+> 📄 Item quantity to be inputted into the order cannot be less than 1 or more than the current stock in the inventory. 
+> <br>
+> 📄 Item quantity for each item inputted into the order would be removed from the inventory stock of that item 
    and tracked separately. The quantity would only be returned and added back to the inventory count for that item
-   if the order is not done and deleted.
-5. When adding the same item twice into the order, it will not combine the total stock of that item added but instead
-   show as 2 separate additions of the same item.
-6. While adding items into the order, if the app encounters any format error in the input, it may cause order details to
+   if the order is not done and deleted. <br>
+> 📄 When adding the same item twice into the order, it will not combine the total stock of that item added but instead
+   show as 2 separate additions of the same item. <br>
+> 📄 While adding items into the order, if the app encounters any format error in the input, it may cause order details to
    be added wrongly. Do use [`orders delete`](#234-remove-an-order-orders-delete) feature to delete the order and
-   re-input the order details in the correct format.
-7. When in doubt, do follow the prompts shown on the command terminal.
+   re-input the order details in the correct format. <br>
+> 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
    
 
 Format:
@@ -379,6 +387,10 @@ Coco []
     Total Price : S$27.00
 ____________________________________________________________
 ```
+
+Note:
+> 📄 Anything typed after `orders list` will be ignored and the command will execute as per normal e.g.,
+> `items list asdasdadasd`.
 
 #### 2.3.4. Remove an order: `orders delete`
 
@@ -515,28 +527,44 @@ progress from the previous exit. If there are no save file available to load, ea
 file for you and save your data and information when exiting the app. The save file will be named as `easyLog.txt` and 
 will be located in the same folder/directory as the easyLog app.
 
-The save file can be copied to another machine and placed in the same folder/directory that contains the easyLog app. Do
-take note that only one `easyLog.txt` should be in the directory or there would be an error. This transfer of save file
+The save file can be copied to another device and placed in the same folder/directory that contains the easyLog app. Do 
+take note that only one `easyLog.txt` should be in the directory or there would be an error. This transfer of save file 
 allows you to work on multiple devices if you choose to do so.
 
 It is not recommended that you manipulate/edit the data in `easyLog.txt`. However, if you are an expert user and confident,
 do feel free to manipulate the data in `easyLog.txt` manually if it enhances your workflow.
+
+Note:
+> 📄 Item details save format are as followed below. <br>
+> `items <item_price> <item_stock> <item_sales> <item_name>` <br>
+> 📄 Order details save format are as followed below. <br>
+> `orders <customer_name> <item_index> itemQuantity <item_quantity>` <br>
+> 📄 Receipt counter save format are as followed below. <br>
+> `ReceiptCounter <receipt_count>`
 
 #### 2.4.2. Generate receipts
 
 When [`orders done`](#238-update-the-status-of-an-order-orders-done) feature is executed, a receipt will be 
 automatically generated that contains the order details that was deleted. The generated receipts can be found in the 
 same directory as the location of the easyLog app inside a `Receipts` folder. The receipts generated will be in a `.txt` 
-format. (Note that the receipts generated can only be seen when you [exit](#25-exit-the-program-exit) the app) This 
-allows the list of orders while using the app to be kept clean with only the orders that are not done for
+format. This allows the list of orders while using the app to be kept clean with only the orders that are not done for
 easier viewing. Also, the generated receipts allows you to keep track of your revenue or to handle your taxes.
 Furthermore, receipts are numbered to show you how many orders you have fulfilled.
+
+Note:
+
+> 📄 The receipts generated can only be seen when you [exit](#25-exit-the-program-exit) the app.
 
 ![Receipt](https://user-images.githubusercontent.com/60378963/113499419-7b13a100-9548-11eb-80eb-35e9cb2aeb5f.jpg)
 
 ### 2.5. Exit the program: `exit`
 
 Exit the app.
+
+Note:
+
+> 📄 Anything type after `exit` will be ignored, and the command will execute as per normal e.g., 
+> `exit adasadadas`.
 
 Format: `exit`
 

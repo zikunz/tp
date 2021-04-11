@@ -31,10 +31,12 @@ Last Updated: `10 April 2021` <br>
     - [2.8. Common Component](#28-common-component)
 - [3. **Implementation**](#3-implementation)
     - [3.1. App Initialization](#31-app-initialization)
-    - [3.2. Loading of Save Data](#32-loading-of-save-data)
-    - [3.3. Creation or Saving of Save Data](#33-creation-or-saving-of-save-data)
-    - [3.4. Orders Done and Generation of Receipts](#34-orders-done-and-generation-of-receipt)
-    - [3.5. Orders Add](#35-orders-add)
+    - [3.2. Processing of user inputs](#32-processing-of-user-inputs)
+    - [3.3. Loading of save data](#33-loading-of-save-data)
+    - [3.6. Orders Add](#35-orders-add)
+    - [3.7. Orders Delete](#36-orders-delete)  
+    - [3.8. Marking a order as done and generation of receipts](#35-marking-a-order-as-done-and-generation-of-receipts)
+    - [3.9. Exit command and creating and/or saving of save data](#34-exit-command-and-creating-andor-saving-of-save-data)
 - [4. **Documentation**](#4-documentation)
 - [5. **Testing**](#5-testing)
     - [5.1. Types of Tests](#52-types-of-tests)
@@ -162,7 +164,7 @@ user's input.
 
 ### 2.4 Parser Component
 
-![Parser Diagram](https://user-images.githubusercontent.com/57165946/113112907-4c41b600-923c-11eb-897a-314cd186b578.png)
+![Parser Diagram](https://user-images.githubusercontent.com/57165946/114297222-f8f42100-9ae1-11eb-9460-00f8045a2dc6.png)
 
 The Parser component deals with the input of the user. It makes sense of the users input and executes respective
 commands according to the user's input. This component consists of 3 different classes:
@@ -217,6 +219,8 @@ The Common component consists of 2 different classes:
 
 [Return to Top](#1-introduction)
 
+***
+
 ## 3. Implementation
 
 In this section, we explain the details and implementation of the more important features of easyLog.
@@ -228,19 +232,40 @@ In this section, we explain the details and implementation of the more important
 ![App Initialization Diagram](https://user-images.githubusercontent.com/57165946/113379984-99916500-93ad-11eb-8fa7-f3c00fd71163.png)
 
 As seen from the sequence diagram above, upon initialization,
-1. The main class located in EasyLog will show the user a greeting message.
-2. Proceed to load save file if any. Details on the [implementation of loading save files](#32-loading-of-save-data) 
+1. The main class located in `EasyLog` will show the user a greeting message.
+2. Proceed to load save file if any. Details on the [implementation of loading save files](#33-loading-of-save-data) 
    can be seen here
 3. Set up the environment for logging messages to be logged.
 4. Proceed to ask for user's input.
 5. Write a log to show that user's input has been requested.
 6. Proceed to process user input to determine the type of command to execute. More details on the implementation of
-processing user input will be discussed in future sections.
+[processing inputs](#32-processing-of-user-inputs) will be discussed in the next section.
 7. Repeat steps 4-6 if user does not input exit command.
 
 [Return to Top](#1-introduction)
 
 ### 3.2. Processing of user inputs
+
+As mentioned in the design of the [Parser component](#24-parser-component), the Parser component handles the processing
+of inputs.
+
+We will now explain the steps to how user inputs is being processed:
+1. User input is firstly being split using the `splitCommandWordAndArgs` method in the `Parser` class. This is to
+determine the type of feature that the user wants to use e.g., `items` feature, `orders` feature, `help` feature, or the
+   `exit`feature.
+2. The `processUserInput` in the `Parser` class then determines the type of feature to be executed using
+the command word provided by the user. If `items` and `orders` feature are being executed, the remaining arguments being
+   typed by the user is being processed using the `processItemsInput` method from the `ItemsParser` class or the
+   `processOrdersInput` method using the `OrdersParser` class respectively.
+3. Note that if `help` command or `exit` command is being inputted by the user, the `processUserInput` from the `Parser`
+class will directly call the `execute` method of the relevant command.
+4. `processItemsInput` and `processOrdersInput` will then also use the `splitCommandWordAndArgs` method to similarly
+determine the type of `items` and `orders` features to execute e.g., `items add`, `orders add`, `items update` etc.
+5. After determining the type of `items` and `orders` feature to execute, the `execute` methods of the respective 
+   commands will be called by either the `processItemsInput` or `processOrdersInput` method and the command arguments
+   would also be passed into the `execute` method for the respective commands in order to properly execute the command
+   inputted by the user.
+   
 
 [Return to Top](#1-introduction)
    
@@ -248,36 +273,28 @@ processing user input will be discussed in future sections.
 
 ![LoadFile Diagram](https://user-images.githubusercontent.com/57165946/114254030-ad594e80-99df-11eb-8c03-730630b57d49.png)
 
-As seen form the sequence diagram above (note that some trivial details are removed from the diagram), when loadFile 
-method in SaveData class is being executed,
+As seen form the sequence diagram above (note that some trivial details are removed from the diagram), when `loadFile` 
+method in the `SaveData` class is being executed,
 1. Show the user a message that it is looking for save data.
-2. Creates a file object with pathname of the save file.   
-3. Check whether the save file exists through the file object previously created.
-4. If the save file does not exist, it will terminate the loadFile method and show the user that no save data was found.
+2. Creates a `File` object with pathname of the save file.   
+3. Check whether the save file exists through the `File` object previously created.
+4. If the save file does not exist, it will terminate the `loadFile` method and show the user that no save data was found.
 5. If the save file exists, it will show the user a message that it is loading the save data.
-6. Create a scanner object using the save file.
+6. Create a `Scanner` object using the save file.
 7. Read the first line in the save data.
 8. Process the line of input from the save data.
 9. Repeat step 6 and 7 until there no more lines to be read from the save data.
 10. Show the user that the save data has been successfully loaded.
 
 [Return to Top](#1-introduction)
-    
-### 3.4. Exit command and creating and/or saving of save data
 
-![Exit and SaveFileDiagram](https://user-images.githubusercontent.com/57165946/114278157-0d440980-9a61-11eb-9161-d5efca2ca4e4.png)
+### 3.4. Items Add
 
-[Return to Top](#1-introduction)
+(Insert stuff here)
 
-### 3.5. Orders done and generation of receipts
+### 3.5. Items Update
 
-![Orders Done Command Diagram](https://user-images.githubusercontent.com/57165946/114278262-7deb2600-9a61-11eb-9fba-d88613e50cbc.png)
-
-add steps comment here
-
-![Generating receipt Diagram](https://user-images.githubusercontent.com/57165946/114278283-a5da8980-9a61-11eb-9e90-8a15900c890f.png)
-
-add steps comment here
+(Insert stuff here)
 
 [Return to Top](#1-introduction)
 
@@ -300,8 +317,6 @@ As seen from the sequence diagram above, when user wants to add an Order.
 
 [Return to Top](#1-introduction)
 
-***
-
 ### 3.6. Orders Delete
 ![OrdersDelete Diagram](https://user-images.githubusercontent.com/60382244/114287343-b528f980-9a98-11eb-8b65-c654d25f7ee9.png)
 As seen form the sequence diagram above (note that some trivial details are removed from the diagram), when an order is
@@ -315,6 +330,56 @@ deleted
 7. The ItemManager update the quantity of items in deleted order.
 8. The OrdersManager delete the order selected.
 9. The deleted order message is sent to the user.
+
+[Return to Top](#1-introduction)
+
+### 3.5. Marking a order as done and generation of receipts
+
+The `orders done` feature and generation of receipts are split into 2 parts where the first sequence diagram shows the 
+implementation for `orders done` feature, and the second sequence diagram shows the implementation when generating a
+receipt.
+
+![Orders Done Command Diagram (1)](https://user-images.githubusercontent.com/57165946/114294627-8465b600-9ad2-11eb-9ace-c4b603834216.png)
+
+As seen from the sequence diagram above, when the `execute` method in `OrdersDoneCommand` class is executed,
+1. Processes user's input to determine the order index that the user wants to mark as done.
+2. Show a message to the user that the order has been marked as done.
+3. Mark the order as done using the `OrderManager` class.
+4. Generate a receipt using the details in the order that has been marked as done. (Implementation of generation of
+   receipt will be explained in the next sequence diagram).
+5. Delete the order from the current list of orders. This is so as to keep the list of orders with just orders that are
+not yet done or fulfilled as the user can view the done orders using the receipts generated.
+
+![Generating receipt Diagram](https://user-images.githubusercontent.com/57165946/114278283-a5da8980-9a61-11eb-9e90-8a15900c890f.png)
+
+As seen from the sequence diagram above, when the `generateReceipt` method from the `Receipt` class is called,
+1. It gets the customer name of the order that was marked as done using the `getCustomerName method `from the 
+   `OrderManager` class.
+2. Shows the user that the receipt is being generated.
+3. Create a new directory named `Receipts` if the directory does not already exist in the folder that the `easyLog.jar`
+file is being executed from using the `File` class.
+4. Create a new receipt file to contain the details of the order also using the `File` class.
+5. `FileWriter` object called `fw` is then created to write the relevant order details into the receipt file that was 
+   previously created in step 4.
+6. Close the `fw` object using the `close` method when the order details are written finish into the receipt file.
+7. Show the user that the receipt has been generated.
+
+[Return to Top](#1-introduction)
+
+### 3.4. Exit command and creating and/or saving of save data
+
+![Exit and SaveFileDiagram (1)](https://user-images.githubusercontent.com/57165946/114295168-07d4d680-9ad6-11eb-8cb2-be6b09073112.png)
+
+As seen from the above sequence diagram, when the execute method of the `ExitCommand` class is being called,
+1. It calls the `saveFile` method from `SaveData` class.
+2. The `saveFile` method then creates a new `File` object called `saveData`.
+3. `saveData` object then checks if a save file previously exists, if the save file does not exists, it creates the
+save file using the `saveData` object.
+4. `FileWriter` object called `fw` is then called to write details like item details, orders details and receipt counter
+into the save file.
+5. Close the `fw` object using the `close` method when the order details are written finish into the save file.
+6. Show the user a message that the data has been saved into the save file.
+7. Exit the program using `System.exit(0)` method.
 
 [Return to Top](#1-introduction)
 

@@ -747,4 +747,8 @@ public class Ui {
     public void showInvalidInventory() {
         System.out.print(Messages.MESSAGE_INVALID_INVENTORY);
     }
+
+    public void showUnknownErrorOccurred() {
+        System.out.print(Messages.MESSAGE_UNKNOWN_ERROR_OCCURRED);
+    }
 }

@@ -31,10 +31,14 @@ public class EasyLog {
             UI.showNoSaveDataFound();
         }
         LOGGING.setUpLogger();
-        while (true) {
-            String userInput = UI.askForUserInput();
-            LOGGING.writeInfoLevelLog("Asking for user input.");
-            PARSER.processUserInput(userInput, ITEM_MANAGER, ORDER_MANAGER);
+        try {
+            while (true) {
+                String userInput = UI.askForUserInput();
+                LOGGING.writeInfoLevelLog("Asking for user input.");
+                PARSER.processUserInput(userInput, ITEM_MANAGER, ORDER_MANAGER);
+            }
+        } catch (Exception e) {
+            UI.showUnknownErrorOccurred();
         }
     }
 }

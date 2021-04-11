@@ -349,5 +349,10 @@ public class Messages {
             + "Use <items update> feature first to update the stocks of the item\n"
             + "in the inventory before continuing to add an order.\n"
             + MESSAGE_LINE;
+    public static final String MESSAGE_UNKNOWN_ERROR_OCCURRED = MESSAGE_LINE
+            + "Unknown error has occurred while using easyLog.\n"
+            + "Kindly follow command format using <help> to prevent such errors.\n"
+            + "Please restart command from the beginning to try again.\n"
+            + MESSAGE_LINE;
 }
 

@@ -743,4 +743,8 @@ public class Ui {
     public void showCustomerNameTooLong() {
         System.out.print(Messages.MESSAGE_CUSTOMER_NAME_TOO_LONG);
     }
+
+    public void showInvalidInventory() {
+        System.out.print(Messages.MESSAGE_INVALID_INVENTORY);
+    }
 }

@@ -86,8 +86,8 @@ public class Messages {
     public static final String MESSAGE_NON_NUMERIC_OR_INTEGER_ITEM_STOCK = MESSAGE_LINE
             + "The item stock is either not a number or out of the int value range in Java.\n";
     public static final String MESSAGE_EMPTY_ORDER_CUSTOMER_NAME = MESSAGE_LINE
-            + "OOPS!!! The customer name is missing!\n"
-            + "Please complete the order information! :)\n"
+            + "The customer name is missing.\n"
+            + "Please complete the order information then try orders add command again.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ORDER_NUMBER = MESSAGE_LINE
             + "OOPS!!! The order number is missing!\n"
@@ -343,6 +343,11 @@ public class Messages {
             + "Customer name inputted is too lengthy.\n"
             + "Note that the customer name length limit is 30 characters including spaces.\n"
             + "Please try orders add <customer_name> again if you wish to add an order.\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_INVALID_INVENTORY = MESSAGE_LINE
+            + "All items in inventory have stock 0.\n"
+            + "Use <items update> feature first to update the stocks of the item\n"
+            + "in the inventory before continuing to add an order.\n"
             + MESSAGE_LINE;
 }
 

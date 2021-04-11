@@ -13,6 +13,7 @@ import seedu.easylog.exceptions.CustomerNameTooLongException;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyItemListException;
 import seedu.easylog.exceptions.EmptyOrderIndexException;
+import seedu.easylog.exceptions.InvalidInventoryException;
 import seedu.easylog.exceptions.InvalidItemStockException;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
@@ -48,6 +49,8 @@ public class OrdersParser extends Parser {
                 ui.showEmptyItemList();
             } catch (CustomerNameTooLongException e) {
                 ui.showCustomerNameTooLong();
+            } catch (InvalidInventoryException e) {
+                ui.showInvalidInventory();
             }
             break;
         case (Constants.COMMAND_DELETE):

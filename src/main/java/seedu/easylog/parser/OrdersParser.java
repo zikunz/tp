@@ -35,6 +35,7 @@ import java.util.ArrayList;
  * Process orders commands input.
  */
 public class OrdersParser extends Parser {
+
     public static void processOrdersInput(String ordersInput, ItemManager itemManager, OrderManager orderManager) {
         String[] splitOrdersArg = splitCommandWordAndArgs(ordersInput);
         String ordersType = splitOrdersArg[0];
@@ -154,55 +155,5 @@ public class OrdersParser extends Parser {
             addItemsToOrderInput = ui.askForUserInput();
         }
         return new Order(customerName, itemsAddedToOrder, itemsStockAddedToOrder);
-    }
-
-    /**
-     * Processes the items added to the order which already exists.
-     *
-     * @param customerName         the customer name of order
-     * @param addItemsToOrderInput the item added to the order
-     * @param itemManager          item manager
-     * @param orderManager         order manager
-     * @return the items added to the order which already exists
-     */
-    public Order processItemsAddedToExistingOrder(String customerName, String addItemsToOrderInput,
-                                                  ItemManager itemManager, OrderManager orderManager) {
-        int orderIndex;
-        orderIndex = orderManager.findOrderIndex(customerName);
-        ArrayList<Item> itemsAddedToExistingOrder;
-        ArrayList<Integer> itemsStockAddedToExistingOrder;
-        itemsAddedToExistingOrder = orderManager.getItemsInOrder(orderIndex);
-        itemsStockAddedToExistingOrder = orderManager.getItemsStockInOrder(orderIndex);
-        orderManager.deleteOrder(orderIndex);
-        while (!addItemsToOrderInput.equals("stop") || itemsAddedToExistingOrder.isEmpty()) {
-            String[] splitInput = addItemsToOrderInput.split(" ");
-            try {
-                int itemIndex = Integer.parseInt(splitInput[0]) - Constants.ARRAY_OFFSET;
-                int stockAdded = Integer.parseInt(splitInput[1]);
-                Item itemToBeAddedToOrder = itemManager.getItem(itemIndex);
-                int currentItemStock = itemToBeAddedToOrder.getItemStock();
-
-                itemManager.incrementItemSales(itemToBeAddedToOrder, stockAdded);
-
-                if (stockAdded < 1 || stockAdded > currentItemStock) {
-                    throw new InvalidItemStockException();
-                }
-                int updatedItemStock = currentItemStock - stockAdded;
-                itemToBeAddedToOrder.setItemStock(updatedItemStock);
-                itemsAddedToExistingOrder.add(itemManager.getItem(itemIndex));
-                itemsStockAddedToExistingOrder.add(stockAdded);
-                ui.showItemAndStockAddedToOrder(itemToBeAddedToOrder.getItemName(), stockAdded);
-            } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
-                ui.showInvalidWhileAddingItemToOrder();
-            } catch (IndexOutOfBoundsException e) {
-
-                ui.showItemNotFoundWhenAddingToOrder(splitInput[0]);
-            } catch (InvalidItemStockException e) {
-                ui.showNotEnoughStock();
-            }
-            ui.showAddItemsToOrder();
-            addItemsToOrderInput = ui.askForUserInput();
-        }
-        return new Order(customerName, itemsAddedToExistingOrder, itemsStockAddedToExistingOrder);
     }
 }

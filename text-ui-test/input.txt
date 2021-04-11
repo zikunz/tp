@@ -1,25 +1,35 @@
 help
-items help
-orders help
-orders add weisheng
-items add ps5
-items add keyboard
-items list
-items delete 2
-items delete 0
-items delete
-orders add weisheng
-2
-3
+items
+orders
+items add pen
+13 12
+items update
 1
-items add water
-orders add zikun
-1 2
-orders list
-orders delete 2
-orders delete 0
-orders delete
-items delete 2
+p
+15
+items clear
 items list
+items add PS5
+599 100
+items delete 1
+items list
+items add PS4
+299 100
+items find PS
+items list
+orders add yw
+1 2
+stop
+orders clear
 orders list
+orders add ws
+1 2
+stop
+orders delete 1
+orders list
+orders add zk
+1 2
+stop
+orders find z
+orders done 1
 exit

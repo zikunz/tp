@@ -16,9 +16,8 @@ RepoSense code contribution: <br>
 ### Features implemented
 
 1. Items Add feature.
-2. Items Update feature. 
-3. Items Stats feature.   
-4. Orders Delete feature.
+2. Items Update feature.
+3. Orders Delete feature.
 
 ### Enhancements implemented
 

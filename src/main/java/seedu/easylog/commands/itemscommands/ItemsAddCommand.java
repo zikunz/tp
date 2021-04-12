@@ -14,9 +14,8 @@ import seedu.easylog.model.Item;
 import seedu.easylog.model.ItemManager;
 
 public class ItemsAddCommand extends ItemsCommand {
-
     /**
-     * Adds items to the system.
+     * Adds an item to the item list.
      *
      * @param itemDescription description of an item
      * @param itemManager     item manager
@@ -38,8 +37,10 @@ public class ItemsAddCommand extends ItemsCommand {
         }
 
         Item item = itemsParser.promptAndProcessItemPriceAndStock(itemDescription);
+        assert itemManager != null;
         itemManager.addItem(item);
 
+        assert item != null;
         assert itemManager.getLatestItemAdded().equals(item);
         ui.showAddItem(item);
     }

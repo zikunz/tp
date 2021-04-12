@@ -65,10 +65,8 @@ public class ItemsUpdateCommand extends ItemsCommand {
                 stopAskingForItemIndex = true;
             } catch (EmptyItemIndexException e) {
                 ui.showEmptyItemIndexInput();
-            } catch (InvalidItemIndexException e) {
+            } catch (InvalidItemIndexException | NumberFormatException e) {
                 ui.showInvalidItemIndexInput();
-            } catch (NumberFormatException e) {
-                ui.showNonIntegerOrNonNumericItemIndexForUpdate();
             } catch (NullItemIndexException e) {
                 ui.showNullItemIndex();
             }

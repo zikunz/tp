@@ -7,6 +7,7 @@ public class Constants {
     public static final int MAXIMUM_ITEM_PRICE = 1000000000;
     public static final int MINIMUM_ITEM_STOCK = 1;
     public static final int MAXIMUM_ITEM_STOCK = 1000000000;
+    public static final int NUMBER_OF_ITEM_FIELDS = 2;
 
     // Commands constants
     public static final String COMMAND_HELP = "help";

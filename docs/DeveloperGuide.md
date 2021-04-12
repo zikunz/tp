@@ -2,7 +2,7 @@
 
 By: `Ong Wei Sheng`, `Zhu Zikun`, `Qiu Yi Wen`, `Li Kexuan`, `Jiang Qixiong`
 
-Last Updated: `10 April 2021` <br>
+Last Updated: `12 April 2021` <br>
 
 ![Supported Java versions](https://img.shields.io/badge/Java-11-blue.svg)
 ![Supported OS](https://img.shields.io/badge/Supported%20OS-Windows|MacOS|Linux-yellow.svg)
@@ -189,14 +189,29 @@ deal with different command actions ask by the user.
 
 ### 2.6 Model Component
 
-![Command Diagram](https://user-images.githubusercontent.com/75139323/113146529-5f677c80-9262-11eb-9cff-300d5496d089.png)
+![Command Diagram](https://user-images.githubusercontent.com/75139323/114337070-02819580-9b83-11eb-85fb-6177ef53999e.png)
 
-The model component consists of `Item`, `ItemManager`, `Order` and `OrderManager` classes.
+The model component consists of four classes, namely, `Item`, `ItemManager`, `Order` and `OrderManager` classes. `Item` 
+and `Order` classes represent real-world item and order objects easyLog is tasked to keep track of. Note that the UML 
+diagram above omits less important details for more comprehensibility.
 
-* Item: Consists of items in the inventory.
-* ItemManager: Contains the item list e.g., it has operations to add / delete items in the list.
-* Order: Consists of orders by customers.
-* OrderManager: Contains the order list e.g., it has operations to add / delete orders in the list.
+1. `Item` class is used to store item attributes (i.e., item description, unit price, stock and sales). Primarily, `Item`
+  class has all necessary getter and setter methods for`itemManager` to modify a particular item's attributes when
+  necessary.
+
+2. `ItemManager` class stores the item list (the list of items existing in the inventory) and a founded item list (the
+  list of items found when the user gives `items find` command). Primarily, `ItemManager` includes methods which various
+  item-related commands (e.g., `ItemsAddCommand`) require to perform neccesary operations to modify (e.g., add) items in
+  the item list.
+
+3. `Order` class is used to store order attributes (i.e., customer's name, descriptions of items ordered, quantities of
+  items ordered and whether the order is done). Primarily, `Order` class has all necessary getter and setter methods
+  for `orderManager` to modify a particular order's attributes when necessary.
+
+4. `OrderManager` class stores the order list (the list of orders placed by customers) and a founded order list (the list
+  of orders founded when the user gives `orders find` command). Primarily, `OrderManager` has methods which various
+  orders-related commands (e.g., `OrdersAddCommand`) require to perform neccesary operations to modify (e.g., add)
+  orders in the orders list.
 
 [Return to Top](#1-introduction)
 
@@ -288,15 +303,6 @@ method in the `SaveData` class is being executed,
 
 [Return to Top](#1-introduction)
 
-### 3.4. Items Add
-
-(Insert stuff here)
-
-### 3.5. Items Update
-
-(Insert stuff here)
-
-[Return to Top](#1-introduction)
 
 ***
 
@@ -315,6 +321,46 @@ when an item is added into the system:
 5. easyLog then invokes `itemsManager` and calls the `addItem(Item)` method to add this item into the system.
 6. After the item is added successfully, `UI` sends back the confirmation message to user by calling `showAddItem(Item)`
    method.
+
+[Return to Top](#1-introduction)
+
+### 3.5. Items Update
+Please note that less important details are omitted for better comprehensibility. For instance, in the first diagram of this section, 
+only the interactions after `ItemsUpdateCommand.execute()` is modelled. In the second diagram of this section, 
+details of `itemsPromptPriceCommand' and `itemsPromptPriceCommand` are omitted.
+
+![Items Update Figure 1](https://user-images.githubusercontent.com/75139323/114384288-1a780a00-9bc1-11eb-99c1-5c4af2e119f3.png)
+The diagram above shows the first stage of `itemsUpdateCommand`, after the user user executes the `itemUpdateCommand` 
+by typing `items update` and easyLog invokes `itemsParser`.
+
+1. `ItemUpdateCommand` first gets the item size from `ItemManager`.
+2. `ItemUpdateCommand` calls askForItemIndex from `UI` to print a message that an item index is required.
+3. `ItemUpdateCommand` creates a new `ItemsListCommand` object and uses `ItemsListCommand.execute()` to get the item list
+for the user.
+4. `ItemUpdateCommand` prompts the user for input by calling `askForUserInput()` from `UI`.
+5. `ItemUpdateCommand` gets the item size from `ItemManager` again.
+6. If the input given by the user is invalid (not a valid item index), start from step 2 again.
+7. `ItemUpdateCommand` calls `askForItemFieldToBeUpdated` and askForUserInput() from `UI` to print a question message 
+   and get the user input.
+8. If the input given by the user is invalid (not `p` or `s`), start from step 7 again.
+
+
+
+
+![Items Update Figure 2](https://user-images.githubusercontent.com/75139323/114397749-9a0dd500-9bd1-11eb-9cff-72275205458f.png)
+Next,
+
+9. `ItemUpdateCommand` calls `processUpdateAttributeInput` of `ItemsParser`.
+
+If the user input is "p":
+10. `ItemsParser` calls `askForRevisedItemPrice` from `UI`. `ItemsParser` creates an object of 
+`ItemsPromptPriceCommand` and its `execute()` method is executed to ask the user for a valid `revisedItemPrice`. 
+The details are omitted to increase comprehensibility. If the item price given is not valid, the user needs to keep 
+entering it until it is valid. 
+11. `ItemsParser` calls `ItemManager` to set the revised price, getting the item of interest before calling `UI` to show
+it is updated correctly.
+
+If the user input is "s", the logic is largely similar to when it is "p". The explanations are omitted here to avoid repetition.
 
 [Return to Top](#1-introduction)
 
@@ -355,7 +401,7 @@ deleted
 
 [Return to Top](#1-introduction)
 
-### 3.5. Marking a order as done and generation of receipts
+### 3.5. Marking an order as done and generation of receipts
 
 The `orders done` feature and generation of receipts are split into 2 parts where the first sequence diagram shows the 
 implementation for `orders done` feature, and the second sequence diagram shows the implementation when generating a
@@ -429,11 +475,14 @@ In this section, we present different types of tests and how they can be run.
 ### 5.1. Types of Tests
 There are primarily three types of tests:
 
-1. Unit tests targeting the lowest level methods/classes. <br>
-   e.g. TO BE ADDED
+1. Unit tests. Tests are conducted on the fundamental level methods/classes. <br>
+   e.g. `seedu.easyLog.commons.ConstantsTest`
 
-2. Integration tests that are checking the integration of multiple code units (those code units are assumed to be working).
-   e.g. TO BE ADDED
+2. Integration tests. Tests are conducted on checking the integration of multiple code units. <br>
+   e.g. `seedu.easyLog.storage.OrderManagerTest`
+
+3. Hybrids of unit and integration tests. Tests are conducted on multiple code units as well as their logic connections. <br>
+   e.g. `seedu.easyLog.parser.ItemsParserTest`
 
 [Return to Top](#1-introduction)
 
@@ -459,16 +508,9 @@ Method 2: Using Gradle <br>
 We invite you to visit [Appendix E: Instructions for Manual Testing](#appendix-e-instructions-for-manual-testing) to 
 learn more about manual testing for easyLog.
 
-[Return to Top](#1-introduction)
 
-1. Unit tests. Tests are conducted on the fundamental level methods/classes. <br>
-e.g. `seedu.easyLog.commons.ConstantsTest`
 
-2. Integration tests. Tests are conducted on checking the integration of multiple code units. <br>
-e.g. `seedu.easyLog.storage.OrderManagerTest`
 
-3. Hybrids of unit and integration tests. Tests are conducted on multiple code units as well as their logic connections. <br>
-e.g. `seedu.easyLog.parser.ItemsParserTest`
 
 ## 6. Dev Ops
 

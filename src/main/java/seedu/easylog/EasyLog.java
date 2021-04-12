@@ -39,7 +39,7 @@ public class EasyLog {
             }
         } catch (Exception e) {
             UI.showUnknownErrorOccurred();
-            LOGGING.writeSevereLevelLog("Unknown error has occured.");
+            LOGGING.writeInfoLevelLog("Unknown error has occurred.");
         }
     }
 }

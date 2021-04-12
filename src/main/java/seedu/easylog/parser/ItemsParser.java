@@ -102,7 +102,7 @@ public class ItemsParser extends Parser {
             break;
         case (Constants.COMMAND_CLEAR):
             try {
-                new ItemsClearCommand().execute(itemsArg,itemManager);
+                new ItemsClearCommand().execute(itemsArg, itemManager);
             } catch (ItemListAlreadyClearedException e) {
                 ui.showAlreadyClearedItemList();
             } catch (WrongItemsClearCommandException e) {
@@ -157,7 +157,7 @@ public class ItemsParser extends Parser {
             break;
         case (Constants.COMMAND_STATISTICS):
             try {
-                new ItemsStatisticsCommand().execute(itemsArg,itemManager);
+                new ItemsStatisticsCommand().execute(itemsArg, itemManager);
             } catch (NoItemsStatisticsCanBeGivenException e) {
                 ui.showNoItemsTipsCanBeGiven();
             } catch (WrongItemsStatsCommandException e) {
@@ -267,7 +267,7 @@ public class ItemsParser extends Parser {
 
                 String[] splitInput = itemPriceAndStockInput.split(" ");
 
-                if (splitInput.length != 2) { // magic number to be refactored later
+                if (splitInput.length != Constants.NUMBER_OF_ITEM_FIELDS) {
                     throw new IncorrectNumberOfItemPriceAndStockInputException();
                 }
 
@@ -332,7 +332,7 @@ public class ItemsParser extends Parser {
                 throw new InvalidItemPriceException();
             }
         } catch (NumberFormatException e) {
-            throw new NonNumericItemPriceException();
+            throw new InvalidItemPriceException();
         }
 
         return new BigDecimal(itemPriceInString);
@@ -366,7 +366,7 @@ public class ItemsParser extends Parser {
             }
             Integer.parseInt(itemStockInString);
         } catch (NumberFormatException e) {
-            throw new NonNumericOrIntegerItemStockException();
+            throw new InvalidItemStockException();
         }
 
         return Integer.parseInt(itemStockInString);

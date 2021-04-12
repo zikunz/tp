@@ -189,38 +189,29 @@ deal with different command actions ask by the user.
 
 ### 2.6 Model Component
 
-![Command Diagram](https://user-images.githubusercontent.com/75139323/113146529-5f677c80-9262-11eb-9cff-300d5496d089.png)
+![Command Diagram](https://user-images.githubusercontent.com/75139323/114337070-02819580-9b83-11eb-85fb-6177ef53999e.png)
 
-The model component consists of `Item`, `ItemManager`, `Order` and `OrderManager` classes. `Item` and `Order` classes
-represent real-world item and order objects easyLog is tasked to keep track of. Note that the UML diagram above omits 
-less important details for more comprehensibility.
+The model component consists of four classes, namely, `Item`, `ItemManager`, `Order` and `OrderManager` classes. `Item` 
+and `Order` classes represent real-world item and order objects easyLog is tasked to keep track of. Note that the UML 
+diagram above omits less important details for more comprehensibility.
 
-* `Item` class is a blueprint from which `Item` objects are created. It represents various items found in the inventory
-  of a home-based business owner. `Item` class is used to store item attributes (i.e., item description, unit price,
-  stock and sales). `Item` class also has its own constructor and all necessary getter and setter methods for
-  `itemManager` to modify a particular item's attributes when necessary. `Item` class also includes some methods to
-  return a String consisting of some items attributes for Ui (interaction with the user) and SaveData (saving of data)
-  classes to use.
+1. `Item` class is used to store item attributes (i.e., item description, unit price, stock and sales). Primarily, `Item`
+  class has all necessary getter and setter methods for`itemManager` to modify a particular item's attributes when
+  necessary.
 
-* `ItemManager` class stores the item list (the list of items existing in the inventory) and a founded item list
-  (the list of items found when the user gives `items find` command). Primarily, `ItemManager` includes methods which
-  various item-related commands (e.g., `ItemsAddCommand` and `ItemsClearCommand`) require to perform correct and
-  neccesary operations to modify (e.g., add and clear) items in the item list. In addition, `ItemManager` uses classes
-  in the common component (e.g., `Constants` and `Messages`) to avoid magic numbers and ??.
+2. `ItemManager` class stores the item list (the list of items existing in the inventory) and a founded item list (the
+  list of items found when the user gives `items find` command). Primarily, `ItemManager` includes methods which various
+  item-related commands (e.g., `ItemsAddCommand`) require to perform neccesary operations to modify (e.g., add) items in
+  the item list.
 
-* `Order` class is a template from which `Order` objects are created. It represents various orders placed by the
-  customers of a home-based business owner.`Order` class is used to store order attributes (i.e., customer's name,
-  descriptions of items ordered, quantities of items ordered and whether the order is done). `Order` class also has its
-  own its constructor and all necessary getter and setter methods for `orderManager` to modify a particular order's
-  attributes when necessary. Similar to `Item` class, `Order` class also includes some methods to return a String
-  consisting of some items attributes for Ui (interaction with the user) and SaveData (saving of data)
-  classes to use.
+3. `Order` class is used to store order attributes (i.e., customer's name, descriptions of items ordered, quantities of
+  items ordered and whether the order is done). Primarily, `Order` class has all necessary getter and setter methods
+  for `orderManager` to modify a particular order's attributes when necessary.
 
-* `OrderManager` class stores the order list ((the list of orders placed by customers) and a founded order list (the
-  list of orders founded when the user gives `orders find` command). Primarily, `OrderManager` includes methods which
-  various orders-related commands (e.g., `OrdersAddCommand` and `OrdersClearCommand`) require to perform correct and
-  neccesary operations to modify (e.g., add and clear) orders in the orders list. In addition, `OrderManager` uses
-  classes in the common component (e.g., `Constants` and `Messages`) to avoid magic numbers and ??.
+4. `OrderManager` class stores the order list (the list of orders placed by customers) and a founded order list (the list
+  of orders founded when the user gives `orders find` command). Primarily, `OrderManager` has methods which various
+  orders-related commands (e.g., `OrdersAddCommand`) require to perform neccesary operations to modify (e.g., add)
+  orders in the orders list.
 
 [Return to Top](#1-introduction)
 
@@ -318,7 +309,7 @@ method in the `SaveData` class is being executed,
 
 ### 3.5. Items Update
 
-(Insert stuff here)
+![Items Update Figure 1](https://user-images.githubusercontent.com/75139323/114384288-1a780a00-9bc1-11eb-99c1-5c4af2e119f3.png)
 
 [Return to Top](#1-introduction)
 
@@ -379,7 +370,7 @@ deleted
 
 [Return to Top](#1-introduction)
 
-### 3.5. Marking a order as done and generation of receipts
+### 3.5. Marking an order as done and generation of receipts
 
 The `orders done` feature and generation of receipts are split into 2 parts where the first sequence diagram shows the 
 implementation for `orders done` feature, and the second sequence diagram shows the implementation when generating a

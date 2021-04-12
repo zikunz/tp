@@ -96,7 +96,7 @@ public class ItemsParser extends Parser {
             break;
         case (Constants.COMMAND_CLEAR):
             try {
-                new ItemsClearCommand().execute(itemsArg,itemManager);
+                new ItemsClearCommand().execute(itemsArg, itemManager);
             } catch (ItemListAlreadyClearedException e) {
                 ui.showAlreadyClearedItemList();
             } catch (WrongItemsClearCommandException e) {
@@ -151,7 +151,7 @@ public class ItemsParser extends Parser {
             break;
         case (Constants.COMMAND_STATISTICS):
             try {
-                new ItemsStatisticsCommand().execute(itemsArg,itemManager);
+                new ItemsStatisticsCommand().execute(itemsArg, itemManager);
             } catch (NoItemsStatisticsCanBeGivenException e) {
                 ui.showNoItemsTipsCanBeGiven();
             } catch (WrongItemsStatsCommandException e) {
@@ -214,8 +214,7 @@ public class ItemsParser extends Parser {
                 ui.askForRevisedItemStock();
                 try {
                     ItemsPromptStockCommand itemsPromptStockCommand = new ItemsPromptStockCommand();
-                    boolean itemAlreadyExists = false;
-                    revisedStock = itemsPromptStockCommand.execute(itemAlreadyExists);
+                    revisedStock = itemsPromptStockCommand.execute();
                     stopAskingStock = true;
                 } catch (NullItemStockException e) {
                     ui.showNullItemStock();
@@ -232,6 +231,12 @@ public class ItemsParser extends Parser {
         }
     }
 
+    /**
+     * Prompt and process the pair of item price and stock.
+     *
+     * @param itemDescription the pair of item price and stock
+     *                        entered by the user
+     */
     public Item promptAndProcessItemPriceAndStock(String itemDescription) {
         BigDecimal itemPrice = null;
         int itemStock = 0;
@@ -252,7 +257,7 @@ public class ItemsParser extends Parser {
 
                 String[] splitInput = itemPriceAndStockInput.split(" ");
 
-                if (splitInput.length != 2) { // magic number to be refactored later
+                if (splitInput.length != Constants.NUMBER_OF_ITEM_FIELDS) {
                     throw new IncorrectNumberOfItemPriceAndStockInputException();
                 }
 
@@ -293,6 +298,11 @@ public class ItemsParser extends Parser {
         return item;
     }
 
+    /**
+     * Converts item price from String to BigDecimal.
+     *
+     * @param itemPriceInString String format of item price
+     */
     public BigDecimal itemPriceInStringToBigDecimalFormat(String itemPriceInString) throws NullItemPriceException,
             EmptyItemPriceException, NonNumericItemPriceException, InvalidItemPriceException {
         if (itemPriceInString == null) {
@@ -309,7 +319,7 @@ public class ItemsParser extends Parser {
                 throw new InvalidItemPriceException();
             }
         } catch (NumberFormatException e) {
-            throw new NonNumericItemPriceException();
+            throw new InvalidItemPriceException();
         }
 
         BigDecimal itemPriceInBigDecimal = new BigDecimal(itemPriceInString);
@@ -317,6 +327,11 @@ public class ItemsParser extends Parser {
         return itemPriceInBigDecimal;
     }
 
+    /**
+     * Converts item stock from String to int.
+     *
+     * @param itemStockInString String format of item stock
+     */
     public int itemStockInStringToIntegerFormat(String itemStockInString) throws NullItemStockException,
             EmptyItemStockException, NonNumericOrIntegerItemStockException, InvalidItemStockException {
         if (itemStockInString == null) {
@@ -335,7 +350,7 @@ public class ItemsParser extends Parser {
             }
             Integer.parseInt(itemStockInString);
         } catch (NumberFormatException e) {
-            throw new NonNumericOrIntegerItemStockException();
+            throw new InvalidItemStockException();
         }
 
         int itemStockInInteger = Integer.parseInt(itemStockInString);

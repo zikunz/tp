@@ -10,6 +10,7 @@ public class ItemsClearCommand extends ItemsCommand {
      */
     public void execute(String extraDescription, ItemManager itemManager) throws ItemListAlreadyClearedException,
             WrongItemsClearCommandException {
+
         if (!extraDescription.isEmpty()) {
             throw new WrongItemsClearCommandException();
         }

@@ -72,6 +72,8 @@ public class Messages {
             + "Empty item price and stock.\n";
     public static final String MESSAGE_NULL_ITEM_PRICE_AND_STOCK = MESSAGE_LINE
             + "Null item price and stock.\n";
+    public static final String MESSAGE_NON_NUMERIC_OR_INTEGER_ITEM_PRICE = MESSAGE_LINE
+            + "Item price entered is either non-numeric or exceed double range in Java.\n";
     public static final String MESSAGE_NON_NUMERIC_ITEM_PRICE = MESSAGE_LINE
             + "Non-numeric item price.\n";
     public static final String MESSAGE_NON_NUMERIC_OR_INTEGER_ITEM_STOCK = MESSAGE_LINE

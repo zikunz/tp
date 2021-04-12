@@ -11,7 +11,7 @@ public class ItemsPromptStockCommand extends ItemsCommand {
      *
      * @return item stock
      */
-    public int execute(boolean itemAlreadyExists) throws NullItemStockException, EmptyItemStockException,
+    public int execute() throws NullItemStockException, EmptyItemStockException,
             InvalidItemStockException, NonNumericOrIntegerItemStockException {
         ui.promptItemStock();
 

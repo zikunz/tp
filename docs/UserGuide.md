@@ -2,30 +2,36 @@
 
 By: `Ong Wei Sheng`, `Zhu Zikun`, `Qiu Yi Wen`, `Li Kexuan`, `Jiang Qixiong`
 
-Last Updated: `10 April 2021` <br>
+Last Updated: `12 April 2021` <br>
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/75139323/114268337-233ad580-9a33-11eb-9834-952e9a86fbaa.png" width="500">
 </p>
 
 Are you a home-based business owner tired of using a pen and paper to keep track of your inventory? Do you have limited
-budget to invest in a new system to manage your business? Fret not, easyLog, our cross-platform<sup>[1](#1-super-script)
+budget to invest in a new system to manage your business? Fret not, easyLog, our cross-platform<sup>1
 </sup> logistics management application will get you covered! It is the application to boost your productivity when it
 comes to managing your items and orders and best of all, it is free! Primarily, the current version of easyLog allows
 you to add new items and orders, update existing items and orders, view existing items and orders, remove specific items
-and orders and clear all existing items and orders in the inventory at ease. You can also generate a receipt for your
-customer and find out your best-selling product(s)<sup>[3](#3-super-script)</sup>.
+and orders and clear all existing items and orders in the inventory at ease. You can also generate receipts for your
+customers and find out your best-selling product(s)<sup>2</sup>.
 
 easyLog is highly optimized for home-based business owners like you via a carefully designed Command Line Interface
-(CLI); this means that you will run the application by typing commands into a command terminal<sup>[2](#2-super-script)
+(CLI); this means that you will run the application by typing commands into a command terminal<sup>3
 </sup>. If you type fast, easyLog can get logistics management tasks done more efficiently than traditional Graphical
 User Interface (GUI) applications; GUI applications allow users to interact with the applications through visuals such
 as buttons, at the expense of lower precision and slower speed as compared to CLI.
 
 If this sounds great to you, we encourage you to visit [1. Quick start](#1-quick-start) to start learning how to manage
-your inventory using easyLog. This guide also gives you a step-by-step instructions to use various features easyLog has
-to offer and we have prepared Frequently Asked Questions (FAQ) and a concise table of Command Summary for you. We invite
-you to click a hyperlink to explore easyLog.
+your inventory using easyLog. This guide also gives you a step-by-step instruction to use various features easyLog has
+to offer and we have prepared [Frequently Asked Questions (FAQ)](#3-faq) and a concise table of
+[Command Summary](#4-command-summary) for you. We invite you to explore easyLog.
+
+1.Currently supports Windows, macOS and Linux machines which have Java 11 installed. <br>
+2 Depending on which operating system you are using, how to open the command terminal application to operate easyLog
+differs. Please refer to [1. Quick start](#1-quick-start) for more information. <br>
+3 Best selling item(s) are defined to be item(s) which have most number of sales. That is, the item(s) is/are added to
+orders for most number of times.
 
 ***
 
@@ -166,18 +172,17 @@ Steps to add an item in easyLog:
 5. You can see the confirmation message when the item is recorded successfully.
 
 Note:
-> 📄 There should be exactly 1 empty space between <item_price> and <item_stock>.
-> 📄 Valid item names cannot be empty or consist of purely white spaces. <br>
+> 📄 There should be exactly 1 empty space between <item_price> and <item_stock>. <br>
+> 📄 Valid item names cannot be empty or consist of purely white space(s). <br>
 > 📄 Valid item names cannot exceed 30 characters, including spaces. The name of an item starts after the first empty space 
-> after `add`. <br>
+> after "add" in `items add`. <br>
 > 📄 If an item name is already found in the item list, adding new items with the same name will
 > still be successfully but take note that they will be tracked differently. <br>
 > 📄 A valid item price must be a number ranging from 0 (free item) to 1,000,000,000 (inclusive). <br>
-> 📄 Item price recorded has exactly 2 decimal places and will be rounded if applicable (i.e., if the third decimal 
-> place is 4 or less, all the digits after the third digit will be removed. If the third decimal is 5 or greater, 1 will
-> be added to the second decimal place). 
+> 📄 Item price recorded has exactly 2 decimal places and will be rounded if applicable (e.g., 4.595 will be rounded to 
+> 4.60 and 68.58432 will be rounded to 68.58). <br>
 > 📄 If an invalid item price is entered, easyLog will not check the validity of item stock and will only notify the user
-> that item price entered is wrong.
+> that item price entered is wrong. <br>
 > 📄 Item stock has to be a positive integer ranging from 1 to 1,000,000,000 (inclusive). <br>
 > 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
 
@@ -217,9 +222,17 @@ Note:
 
 #### 2.2.5. Empty the item list: `items clear`
 
-If your naughty children have added too many items which do not exist in your inventory, instead of deleting them one by
-one, you can easily clear all recorded items in the inventory and add back existing items.
+If you would like to clear all existing items in your inventory, you can use the `items clear` feature to do that 
+easily.
 
+Steps to update an item:
+1. Input `items clear` command.
+2. Press enter.
+6. You can see a confirmation message when the item inventory is emptied successfully.
+
+Note:
+> 📄 If there is no single item in the item list, you will be notified that you should not use `items clear` 
+> command. <br>
 
 
 #### 2.2.6. Update an item: `items update`
@@ -266,14 +279,13 @@ Note:
 
 #### 2.2.8. Discover the most popular item(s): `items stats`
 
-If you would like to gain some useful insights from the sales history since you start using easyLog, the `items stats` 
-feature will let you know the most popular item(s) and you are reminded you stock up 
-find the item(s) with the highest demand 
-and try to stock up item accordingly.
+If you would like to gain some useful insights from the orders history since you start using easyLog, the `items stats`
+feature will let you know the most popular item(s) ordered by customers. You will also be reminded to stock up.
 
 Note:
-> 📄 Item fields (i.e., `p` and `s`) must be lower-case. <br>
-> 
+> 📄 There can be multiple items which are the most popular. This happens when more than one items have most number 
+> If tie <br>
+> 📄 If the item no longer exists <br>
 
 ### 2.3. Orders
 
@@ -417,10 +429,10 @@ In the very unlikely event that all orders are cancelled, instead of deleting th
 `orders clear` feature to do it efficiently.
 
 Note:
-> 📄 If there is no order in the system, a message will be shown to notify you that you should not use `orders clear`
-> feature.<br>
+> 📄 If there is no single order in the system, a message will be shown to notify you that you should not use
+> `orders clear` feature.<br>
 > 📄 Items which belong to the orders cleared will be added back to the inventory. It is the same as executing
-> `orders delete` feature for N times, where N represents number of existing orders.
+> `orders delete` feature for every order in the order list. <br>
 
 #### 2.3.6. Find orders: `orders find`
 
@@ -657,9 +669,3 @@ Command | Format | Example |
 [**orders price**](#237-get-the-total-price-of-an-order-orders-price) | `orders price <order_index>` | `orders price 2` |
 [**orders done**](#238-update-the-status-of-an-order-orders-done)  | `orders done <order_index>` | `orders done 2` |
 [**exit**](#25-exit-the-program-exit) | `exit` | `exit` |
-
-[1.](#1-super-script) Currently supports Windows, macOS and Linux machines which have Java 11 installed. <br>
-[2.](#2-super-script) Depending on which operating system you are using, how to open the command terminal application to
-operate easyLog differs. Please refer to [1. Quick start](#1-quick-start) for more information. <br>
-[3. ](#3-super-script) Best selling item(s) are defined to be item(s) which have most number of sales. That is, the
-item(s) is / are added to orders most number of times. (TO BE ADDED)

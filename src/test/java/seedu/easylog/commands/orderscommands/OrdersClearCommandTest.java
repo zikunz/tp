@@ -32,7 +32,6 @@ class OrdersClearCommandTest {
     @Test
     public void clear_extraDescription_failure() {
         // 1 order
-        String customerName = "Kexuan";
         String itemName = "iPhone X charger";
         BigDecimal itemPrice = new BigDecimal(1499.50);
         int itemStock = 10;
@@ -44,10 +43,11 @@ class OrdersClearCommandTest {
         stocks.add(itemStock);
         items.add(itemManager.getItem(itemIndex));
 
+        String customerName = "Kexuan";
         Order firstOrder = new Order(customerName, items, stocks);
         orderManager.addOrder(firstOrder);
         assertEquals(1, orderManager.getSize());
-        assertThrows(WrongItemsClearCommandException.class, () -> {
+        assertThrows(WrongOrdersClearCommandException.class, () -> {
             ordersClearCommand.execute("WrongOrdersClearCommandException", itemManager, orderManager);
         });
 
@@ -57,7 +57,6 @@ class OrdersClearCommandTest {
     @Test
     public void clear_oneOrder_success() throws OrderListAlreadyClearedException, WrongOrdersClearCommandException {
         // 1 order
-        String customerName = "Kexuan";
         String itemName = "iPhone X charger";
         BigDecimal itemPrice = new BigDecimal(1499.50);
         int itemStock = 10;
@@ -69,6 +68,7 @@ class OrdersClearCommandTest {
         stocks.add(itemStock);
         items.add(itemManager.getItem(itemIndex));
 
+        String customerName = "Kexuan";
         Order firstOrder = new Order(customerName, items, stocks);
         orderManager.addOrder(firstOrder);
         assertEquals(1, orderManager.getSize());
@@ -80,8 +80,6 @@ class OrdersClearCommandTest {
     public void clear_multipleOrder_success() throws OrderListAlreadyClearedException,
             WrongOrdersClearCommandException {
         // multiple orders
-        String customer1 = "Yiwen";
-        String customer2 = "Qixiong";
         String itemName = "iPhone X charger";
         BigDecimal itemPrice = new BigDecimal(1499.50);
         int itemStock = 100;
@@ -94,6 +92,8 @@ class OrdersClearCommandTest {
         stocks.add(itemStock / 2);
         items.add(itemManager.getItem(itemIndex));
 
+        String customer1 = "Yiwen";
+        String customer2 = "Qixiong";
         Order firstOrder = new Order(customer1, items, stocks);
         Order secondOrder = new Order(customer2, items, stocks);
         orderManager.addOrder(firstOrder);

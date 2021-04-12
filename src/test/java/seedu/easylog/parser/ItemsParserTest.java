@@ -7,6 +7,7 @@ import seedu.easylog.exceptions.InvalidItemPriceException;
 import seedu.easylog.exceptions.InvalidItemStockException;
 import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NullItemStockException;
+import seedu.easylog.exceptions.NonNumericItemPriceException;
 
 import java.math.BigDecimal;
 

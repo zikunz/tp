@@ -75,31 +75,12 @@ steps listed below will be good to go.
 3. Put the downloaded jar file in an empty folder in which easyLog is allowed to create files
    (i.e., do not use a write-protected folder).
 4. In the same command terminal, run the command `java -jar easyLog.jar`.
-6. The app should load and the welcome page is as shown below:
+5. The app should load and the welcome page is as shown below:
 
-```
-                       _                 
-                      | |                
-   ___  __ _ ___ _   _| |     ___   __ _ 
-  / _ \/ _` / __| | | | |    / _ \ / _` |
- |  __/ (_| \__ \ |_| | |___| (_) | (_| |
-  \___|\__,_|___/\__, |______\___/ \__, |
-                  __/ |             __/ |
-                 |___/             |___/ 
-____________________________________________________________
-Hello! I'm easyLog!
-What can I do for you? Enter help to view commands.
-____________________________________________________________
+![Initiation](https://user-images.githubusercontent.com/60378963/114325708-1669cf00-9b64-11eb-86b8-2a8ef6b22bee.jpg)
 
-Looking for save data.
-Loading save data.
-Save data loaded.
-____________________________________________________________
-```
-
-
-7. Type a command and press enter to continue using the app.
-8. Refer to the [Features](#features) below for details of each command.
+6. Type a command and press enter to continue using the app.
+7. Refer to the [Features](#features) below for details of each command.
 
 ***
 
@@ -135,6 +116,9 @@ Note:
 
 > 📄 Anything typed after `help` will be ignored and the `help` command will execute as per normal. e.g., `help asdas`
 
+Expected Output:
+![Help](https://user-images.githubusercontent.com/60378963/114325820-942dda80-9b64-11eb-9ce2-01403d0f0869.jpg)
+
 ### 2.2 Items
 
 Section 2.2 will explain the features related to items.
@@ -151,6 +135,9 @@ Steps to check all items-related commands:
 1. Input `items` command.
 2. Press Enter.
 3. All available commands related to items will then be shown.
+   
+Expected Output:
+![items related](https://user-images.githubusercontent.com/60378963/114325962-2d5cf100-9b65-11eb-99c3-5c50a4604911.png)
 
 #### 2.2.2. Add an item: `items add`
 
@@ -180,6 +167,9 @@ Note:
 > that item price entered is wrong.
 > 📄 Item stock has to be a positive integer ranging from 1 to 1,000,000,000 (inclusive). <br>
 > 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
+ 
+Expected Output:
+![items add](https://user-images.githubusercontent.com/60378963/114326072-9b091d00-9b65-11eb-8899-f123cfd64352.png)
 
 #### 2.2.3. Show the item list: `items list`
 
@@ -197,6 +187,9 @@ Note:
 > 📄 Anything typed after `items list` will be ignored, and the command will execute as per normal e.g.,
 > <items list asdsdad>.
 
+Expected Output:
+![items list](https://user-images.githubusercontent.com/60378963/114326125-cf7cd900-9b65-11eb-98c4-1849703c4a0f.png)
+
 #### 2.2.4. Delete an item: `items delete`
 
 When you want to delete an item in the system, the `items delete` feature allows you to
@@ -204,7 +197,7 @@ achieve this easily.
 
 Steps to delete an item in easyLog
 
-1. Input `items list` command to check the item index to be deleted.
+1. (Optional) Input `items list` command to check the item index to be deleted.
 2. Input `items delete <space> <item_index>` for the order to be removed from the item list.
 3. Press enter.
 4. You can see the confirmation message when the item is removed successfully.
@@ -215,11 +208,16 @@ Note:
 > 📄 The item_index should only be in Arabic numerals. <br>
 > 📄 The item_index should not be more than the total number of items in the item list.
 
+Expected Output:
+![items delete](https://user-images.githubusercontent.com/60378963/114326249-84af9100-9b66-11eb-8b46-448fbf0acf41.png)
+
 #### 2.2.5. Empty the item list: `items clear`
 
 If your naughty children have added too many items which do not exist in your inventory, instead of deleting them one by
 one, you can easily clear all recorded items in the inventory and add back existing items.
 
+Expected Output:
+![items clear](https://user-images.githubusercontent.com/60378963/114326195-2c788f00-9b66-11eb-999e-0444b9797a4e.png)
 
 
 #### 2.2.6. Update an item: `items update`
@@ -248,6 +246,9 @@ Note:
 > to update any fields of the item. <br>
 > 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
 
+Expected Output:
+![items update](https://user-images.githubusercontent.com/60378963/114326352-fee01580-9b66-11eb-8a37-7cd9c5f3ab94.png)
+
 #### 2.2.7. Find items: `items find`
 
 Whenever you would like to find relevant items and their prices and stocks in your inventory, 
@@ -263,6 +264,8 @@ Steps to find an item:
 Note:
 > 📄 The input is case-sensitive, please be mindful of the exact wording. <br>
 
+Expected Output:
+![items find](https://user-images.githubusercontent.com/60378963/114326420-46ff3800-9b67-11eb-9dc7-4bb37827ecec.png)
 
 #### 2.2.8. Discover the most popular item(s): `items stats`
 
@@ -273,7 +276,9 @@ and try to stock up item accordingly.
 
 Note:
 > 📄 Item fields (i.e., `p` and `s`) must be lower-case. <br>
-> 
+
+Expected Output:
+![items stats](https://user-images.githubusercontent.com/60378963/114327246-d35f2a00-9b6a-11eb-922b-bd2155641b99.png)
 
 ### 2.3. Orders
 
@@ -291,6 +296,9 @@ Steps to check all orders-related commands:
 1. Input `orders` command.
 2. Press Enter.
 3. All available commands related to orders will then be shown.
+
+Expected Output:
+![orders related](https://user-images.githubusercontent.com/60378963/114326479-95acd200-9b67-11eb-8621-40eebbea04a0.png)
 
 #### 2.3.2. Add an order: `orders add`
 
@@ -331,66 +339,21 @@ Input the items to be added to this order.
 ```
 
 Expected Output:
+![orders add](https://user-images.githubusercontent.com/60378963/114326565-fd631d00-9b67-11eb-8277-9fc6dc864496.png)
 
-```
-orders add weisheng (user input)
-____________________________________________________________
-Here is the list of items in the warehouse.
-____________________________________________________________
-
-1. PS5, S$23.00, 199
-2. bag, S$20.00, 20
-3. milk, S$5.60, 20
-4. tea, S$4.40, 34
-____________________________________________________________
-Input the item to be added to this order.
-Input format: <item_index> <item_quantity>
-Type <stop> to stop adding items to order, else continue entering items in the same format.
-Do note that you need at least 1 item in the order for <stop> to work.
-____________________________________________________________
-1 2 (user input)
-____________________________________________________________
-PS5 and stock of 2 added to the order.
-____________________________________________________________
-
-Input the item to be added to this order.
-Input format: <item_index> <item_quantity>
-Type <stop> to stop adding items to order, else continue entering items in the same format.
-Do note that you need at least 1 item in the order for <stop> to work.
-____________________________________________________________
-stop (user input)
-_____________________________________________________
-Got it! The order for customer [weisheng] is added.
-____________________________________________________________
-```
 
 #### 2.3.3. Show the order list: `orders list`
 
-Display all recorded orders in the system.
+You can use this command to track all the orders recorded in the system.
 
 Format: `orders list`
 
-Expected Output:
-
-```
-____________________________________________________________
-Here is the list of orders.
-____________________________________________________________
-
-weisheng []
-    1. PS5, S$23.00, 2
-    Total Price : S$46.00
-____________________________________________________________
-Coco []
-    1. milk, S$5.60, 3
-    2. tea, S$3.40, 2
-    Total Price : S$27.00
-____________________________________________________________
-```
-
 Note:
 > 📄 Anything typed after `orders list` will be ignored and the command will execute as per normal e.g.,
-> `items list asdasdadasd`.
+> `order list asdasdadasd`.
+
+Expected Output:
+![orders list](https://user-images.githubusercontent.com/60378963/114326633-49ae5d00-9b68-11eb-954c-ed56c8980335.png)
 
 #### 2.3.4. Remove an order: `orders delete`
 
@@ -411,6 +374,9 @@ Note:
 > instance, if there are only 2 orders placed by customers, inputting `orders delete 2.6` will cause easyLog show
 > that it is an out-of-range error. <br>
 
+Expected Output:
+![orders delete](https://user-images.githubusercontent.com/60378963/114326779-fb4d8e00-9b68-11eb-8b6b-3c979179c3f9.png)
+
 #### 2.3.5. Empty the order list: `orders clear`
 
 In the very unlikely event that all orders are cancelled, instead of deleting them one by one, you can use the
@@ -421,6 +387,9 @@ Note:
 > feature.<br>
 > 📄 Items which belong to the orders cleared will be added back to the inventory. It is the same as executing
 > `orders delete` feature for N times, where N represents number of existing orders.
+
+Expected Output:
+![orders clear](https://user-images.githubusercontent.com/60378963/114326813-20da9780-9b69-11eb-9f54-c24eae7940b2.png)
 
 #### 2.3.6. Find orders: `orders find`
 
@@ -436,22 +405,11 @@ Format: `orders find <order_name>`
 
 Example: `orders find Coco`
 
-Expected Output:
-
-```
-____________________________________________________________
-Here is the list of relevant orders found.
-____________________________________________________________
-
-Coco []
-    1. milk, S$5.60, 3
-    2. tea, S$3.40, 2
-    Total Price : S$27.00
-____________________________________________________________
-```
-
 Note:
 > 📄 The input is case-sensitive, please be mindful of the exact wording. <br>
+
+Expected Output:
+![orders find](https://user-images.githubusercontent.com/60378963/114326910-7dd64d80-9b69-11eb-9dda-d9c0e6fb1032.png)
 
 #### 2.3.7. Get the total price of an order: `orders price`
 
@@ -459,27 +417,20 @@ You can use this command to check the total price of a specific order.
 
 Steps to obtain the price of an order:
 
-1. Input `orders list` command to check the order index.
-2. Input `orders price <space> <order_index>` to obtain the price for a specific order.
-3. Press enter.
-4. Total price of an order will be shown.
+1. Input `orders price <space> <order_index>` to obtain the price for a specific order.
+2. Press enter.
+3. Total price of an order will be shown.
 
 Format: `orders price <order_index>`
 
 Example: `orders price 2`
 
-Expected Output:
-
-```
-orders price 2 (user input)
-____________________________________________________________
-The total price for customer [coco]'s order is S$23.60.
-____________________________________________________________
-```
-
 Note:
-> 📄 If the order index keyed in is not an integer or an integer that does not exist in the order list, 
+> 📄 If the order index keyed in is not an integer or an integer that does not exist in the order list,
 > an error message will be shown to the user.
+
+Expected Output:
+![orders price](https://user-images.githubusercontent.com/60378963/114327050-0c4acf00-9b6a-11eb-931a-8589483154e7.png)
 
 #### 2.3.8. Update the status of an order: `orders done`
 
@@ -487,7 +438,7 @@ You can use this command to change the status of an order once it is completed.
 
 Steps to change the status of an order:
 
-1. Input `orders list` command to check the order index.
+1. (Optional) Input `orders list` command to check the order index.
 2. Input `orders done <space> <order_index>` to change the status of a specific order.
 3. Press enter.
 4. You can see the confirmation message when the order status is changed correctly.
@@ -495,19 +446,6 @@ Steps to change the status of an order:
 Format: `orders done <order_index>`
 
 Example: `orders done 2`
-  
-Format: `orders done 2`
-
-Expected Output:
-
-```
-orders done 2 (user input)
-____________________________________________________________
-Got it! The order for customer [coco] is completed.
-Generating receipt for customer: coco
-Receipt generated for customer: coco
-____________________________________________________________
-```
 
 Note:
 > 📄 If the order index keyed in is not an integer or an integer that is not exist in the order list,
@@ -515,6 +453,9 @@ Note:
 > 📄 Once an order is completed, it will be deleted automatically from the system 
 > and a receipt will be generated.<br>
 > 📄 More details on receipt generation can be seen [here](#242-generate-receipts).
+
+Expected Output:
+![Orders done](https://user-images.githubusercontent.com/60378963/114327144-6d72a280-9b6a-11eb-9b98-ee3637b01910.png)
 
 ### 2.4. Storage
 
@@ -569,17 +510,8 @@ Note:
 Format: `exit`
 
 Expected Output:
+![exit](https://user-images.githubusercontent.com/60378963/114327349-3b157500-9b6b-11eb-99ae-07b62bf80de0.png)
 
-```
-exit (users input)
-____________________________________________________________
-Save data saved.
-____________________________________________________________
-Bye. Thanks for using easyLog!
-____________________________________________________________
-```
-
-***
 
 ## 3. FAQ
 

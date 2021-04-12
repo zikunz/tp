@@ -41,7 +41,7 @@ I contributed to the following sections in the user guide:
 3. Section 2.3.7 (Orders price features)
 4. Section 2.3.8 (Orders done features)
 5. Section 4. (Command Summary)
-6. Added screenshots of all expected output.
+6. Added screenshots of all expected outputs.
 
 ### Contributions to developer guide
 

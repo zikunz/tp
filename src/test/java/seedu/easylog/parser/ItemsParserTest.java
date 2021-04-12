@@ -1,12 +1,7 @@
 package seedu.easylog.parser;
 
 import org.junit.jupiter.api.Test;
-import seedu.easylog.exceptions.EmptyItemPriceException;
-import seedu.easylog.exceptions.EmptyItemStockException;
-import seedu.easylog.exceptions.InvalidItemPriceException;
-import seedu.easylog.exceptions.InvalidItemStockException;
-import seedu.easylog.exceptions.NullItemPriceException;
-import seedu.easylog.exceptions.NullItemStockException;
+import seedu.easylog.exceptions.*;
 
 import java.math.BigDecimal;
 

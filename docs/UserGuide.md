@@ -319,7 +319,7 @@ Note:
 > 📄 The hard limit for items sales is 2147483647.
 
 Expected Output:
-![items stats](https://user-images.githubusercontent.com/60378963/114327246-d35f2a00-9b6a-11eb-922b-bd2155641b99.png)
+![items stats](https://user-images.githubusercontent.com/60378963/114408333-e2ca8b80-9bdb-11eb-8c15-267da392af35.png)
 
 [Return to Table of Contents](#table-of-contents)
 

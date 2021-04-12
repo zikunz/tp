@@ -10,13 +10,14 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class ItemsPromptPriceCommand extends ItemsCommand {
+
     /**
      * Prompts the user for the item price.
      *
      * @return item price
      */
-    public BigDecimal execute() throws NullItemPriceException, EmptyItemPriceException, InvalidItemPriceException,
-            NonNumericItemPriceException, InvalidItemPriceException {
+    public BigDecimal execute() throws NullItemPriceException, EmptyItemPriceException, NonNumericItemPriceException,
+            InvalidItemPriceException {
         ui.promptItemPrice();
 
         String itemPriceInString = ui.askForUserInput();

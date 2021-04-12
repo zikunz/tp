@@ -10,6 +10,7 @@ import seedu.easylog.model.OrderManager;
 import seedu.easylog.model.Item;
 
 public class OrdersDeleteCommand extends OrdersCommand {
+
     /**
      * Deletes a single order from the list of orders.
      */
@@ -37,6 +38,12 @@ public class OrdersDeleteCommand extends OrdersCommand {
         }
     }
 
+    /**
+     * Return item stocks to inventory and decrement item sales when unfulfilled order is deleted.
+     * @param orderIndex order index of the order to obtain the order details to return the stocks and decrease sales.
+     * @param itemManager manipulates inventory.
+     * @param orderManager manipulates orders.
+     */
     public void addBackItemsAndRemoveItemSales(int orderIndex, ItemManager itemManager, OrderManager orderManager) {
         //@@author e00426142
         if (!orderManager.getOrder(orderIndex).getStatus()) {

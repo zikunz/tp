@@ -41,18 +41,18 @@ public class Order {
     }
 
     /**
-     * Gets the items in the order.
+     * Gets list of items in the order.
      *
-     * @return the items added in the order
+     * @return the list of items in the order
      */
     public ArrayList<Item> getItemsInOrder() {
         return itemsInOrder;
     }
 
     /**
-     * Gets the stock count of a item in the order.
+     * Gets the list of stock count for all items in the order.
      *
-     * @return the number of stock of a item in the order
+     * @return list of stock count for all items in the order.
      */
     public ArrayList<Integer> getStockCounts() {
         return itemsStockCount;

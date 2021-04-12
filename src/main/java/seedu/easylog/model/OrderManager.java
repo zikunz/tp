@@ -13,7 +13,7 @@ public class OrderManager {
 
     protected ArrayList<Order> orderList;
 
-    private static final ArrayList<Order> FOUND_LIST = new ArrayList<>();
+    protected ArrayList<Order> foundOrderList = new ArrayList<>();
 
     public OrderManager() {
         this.orderList = new ArrayList<>();
@@ -88,17 +88,6 @@ public class OrderManager {
     }
 
     /**
-     * Gets the stocks of customer's items specified by the index
-     * of the order given.
-     *
-     * @param index index of the order given
-     * @return the stocks of customer's items specified by the index of the order given
-     */
-    public ArrayList<Integer> getItemsStockInOrder(int index) {
-        return getOrder(index).getStockCounts();
-    }
-
-    /**
      * Clears all orders in the system.
      */
     public void clearOrderList() {
@@ -114,7 +103,6 @@ public class OrderManager {
         int index = getSize() - Constants.ARRAY_OFFSET;
         return getOrder(index);
     }
-
 
     /**
      * Prints the order for each order name.
@@ -138,14 +126,15 @@ public class OrderManager {
     }
 
     /**
-     * Gets the format of the printed order list.
+     * Gets the format of the list of orders to be printed.
      *
-     * @return the formatted order list
+     * @param orderListToBePrinted list of orders to be printed.
+     * @return the formatted order list to be printed by Ui.
      */
-    public String getOrderListPrintFormat() {
+    public String getOrderListPrintFormat(ArrayList<Order> orderListToBePrinted) {
         String rawOrderListOutput = "";
         int orderIndex = 1;
-        for (Order order : orderList) {
+        for (Order order : orderListToBePrinted) {
             String customerName = order.getCustomerName();
             String individualOrderOutput = getIndividualOrderPrintFormat(order);
             rawOrderListOutput += orderIndex + "." + customerName + "\n" + individualOrderOutput;
@@ -162,34 +151,22 @@ public class OrderManager {
     public void findOrder(String name) {
         for (int i = 0; i < getSize(); i++) {
             if (getCustomerName(i).contains(name)) {
-                FOUND_LIST.add(getOrder(i));
+                foundOrderList.add(getOrder(i));
             }
         }
     }
 
-    /**
-     * Gets the list of orders in String format to be printed as output to the user.
-     *
-     * @return String format for the list of relevant orders to be printed
-     */
-    public String getFoundOrderListPrintFormat() {
-        String rawFoundOrderListOutput = "";
-        int orderIndex = 1;
-        for (Order order : FOUND_LIST) {
-            String customerName = order.getCustomerName();
-            String individualOrderOutput = getIndividualOrderPrintFormat(order);
-            rawFoundOrderListOutput += orderIndex + "." + customerName + "\n" + individualOrderOutput;
-        }
-        return rawFoundOrderListOutput;
+    public ArrayList<Order> getFoundOrderList() {
+        return foundOrderList;
     }
 
     /**
      * Checks if any relevant orders found.
      *
-     * @return the presence of valid order in foundList
+     * @return the presence of valid order in foundItemList
      */
     public boolean foundOrderEmpty() {
-        if (FOUND_LIST.size() > 0) {
+        if (foundOrderList.size() > 0) {
             return false;
         } else {
             return true;
@@ -197,10 +174,10 @@ public class OrderManager {
     }
 
     /**
-     * Clears the existing orders in foundList.
+     * Clears the existing orders in foundItemList.
      */
     public void clearFoundList() {
-        FOUND_LIST.clear();
+        foundOrderList.clear();
     }
 
 }

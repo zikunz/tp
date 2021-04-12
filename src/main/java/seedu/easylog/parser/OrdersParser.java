@@ -7,6 +7,7 @@ import seedu.easylog.commands.orderscommands.OrdersListCommand;
 import seedu.easylog.commands.orderscommands.OrdersPriceCommand;
 import seedu.easylog.commands.orderscommands.OrdersDoneCommand;
 import seedu.easylog.commands.orderscommands.OrdersFindCommand;
+import seedu.easylog.commands.orderscommands.OrdersHelpCommand;
 import seedu.easylog.common.Constants;
 
 import seedu.easylog.exceptions.CustomerNameTooLongException;
@@ -32,10 +33,17 @@ import seedu.easylog.model.OrderManager;
 import java.util.ArrayList;
 
 /**
- * Process orders commands input.
+ * Process orders related input.
  */
 public class OrdersParser extends Parser {
 
+    /**
+     * Process orders-related input from user and executes the relevant orders-related commands.
+     *
+     * @param ordersInput raw input related to orders.
+     * @param itemManager manipulates inventory.
+     * @param orderManager manipulates order.
+     */
     public static void processOrdersInput(String ordersInput, ItemManager itemManager, OrderManager orderManager) {
         String[] splitOrdersArg = splitCommandWordAndArgs(ordersInput);
         String ordersType = splitOrdersArg[0];
@@ -47,18 +55,18 @@ public class OrdersParser extends Parser {
                 new OrdersAddCommand().execute(ordersArg, itemManager, orderManager);
                 logging.writeInfoLevelLog("Orders add command has been successfully executed.");
             } catch (EmptyNameException e) {
-                logging.writeInfoLevelLog("No customer name inputted, orders add command sequence"
+                logging.writeWarningLevelLog("No customer name inputted, orders add command sequence"
                         + " terminated.");
                 ui.showOrderEmptyCustomerName();
             } catch (EmptyItemListException e) {
-                logging.writeInfoLevelLog("Inventory is empty, orders add command sequence terminated.");
+                logging.writeWarningLevelLog("Inventory is empty, orders add command sequence terminated.");
                 ui.showEmptyItemList();
             } catch (CustomerNameTooLongException e) {
-                logging.writeInfoLevelLog("Customer name inputted is too long, orders add command sequence"
+                logging.writeWarningLevelLog("Customer name inputted is too long, orders add command sequence"
                         + " terminated.");
                 ui.showCustomerNameTooLong();
             } catch (InvalidInventoryException e) {
-                logging.writeInfoLevelLog("All items in inventory have stock 0, orders add command"
+                logging.writeWarningLevelLog("All items in inventory have stock 0, orders add command"
                         + " sequence terminated.");
                 ui.showInvalidInventory();
             }
@@ -106,15 +114,15 @@ public class OrdersParser extends Parser {
                 new OrdersDoneCommand().execute(ordersArg, orderManager);
                 logging.writeInfoLevelLog("Orders done command has been successfully executed.");
             } catch (EmptyNumberException e) {
-                logging.writeInfoLevelLog("User did not provide order index, orders done command sequence"
+                logging.writeWarningLevelLog("User did not provide order index, orders done command sequence"
                         + " terminated.");
                 ui.showOrderEmptyNumber();
             } catch (InvalidNumberException e) {
-                logging.writeInfoLevelLog("User provided invalid order index, orders done command sequence"
+                logging.writeWarningLevelLog("User provided invalid order index, orders done command sequence"
                         + " terminated.");
                 ui.showInvalidOrderNumber();
             } catch (NumberFormatException e) {
-                logging.writeInfoLevelLog("User did not provided integer as order index, orders done"
+                logging.writeWarningLevelLog("User did not provided integer as order index, orders done"
                         + " command sequence terminated.");
                 ui.showNonIntegerOrNonNumericOrderIndex();
             }
@@ -129,7 +137,9 @@ public class OrdersParser extends Parser {
             }
             break;
         default:
-            ui.showOrdersHelp();
+            logging.writeWarningLevelLog("User inputted invalid orders-related command.");
+            new OrdersHelpCommand().execute();
+            logging.writeInfoLevelLog("Orders-related command shown and printed on the console.");
         }
     }
 
@@ -164,13 +174,13 @@ public class OrdersParser extends Parser {
                 itemsStockAddedToOrder.add(stockAdded);
                 ui.showItemAndStockAddedToOrder(itemToBeAddedToOrder.getItemName(), stockAdded);
             } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
-                logging.writeInfoLevelLog("User input wrong format, asked to re-input.");
+                logging.writeWarningLevelLog("User input wrong format, asked to re-input.");
                 ui.showInvalidWhileAddingItemToOrder();
             } catch (IndexOutOfBoundsException e) {
-                logging.writeInfoLevelLog("Item index inputted not found, asked to re-input.");
+                logging.writeWarningLevelLog("Item index inputted not found, asked to re-input.");
                 ui.showItemNotFoundWhenAddingToOrder(splitInput[0]);
             } catch (InvalidItemStockException e) {
-                logging.writeInfoLevelLog("Invalid item_quantity inputted, asked to re-input or update "
+                logging.writeWarningLevelLog("Invalid item_quantity inputted, asked to re-input or update "
                         + "stock");
                 ui.showNotEnoughStock();
             }

@@ -5,6 +5,7 @@ import seedu.easylog.exceptions.WrongItemsClearCommandException;
 import seedu.easylog.model.ItemManager;
 
 public class ItemsClearCommand extends ItemsCommand {
+
     /**
      * Clears all items in the system.
      */

@@ -5,6 +5,7 @@ import seedu.easylog.exceptions.OrderNotFoundException;
 import seedu.easylog.model.OrderManager;
 
 public class OrdersFindCommand extends OrdersCommand {
+
     /**
      * Prints relevant orders by customer's name.
      */
@@ -17,7 +18,7 @@ public class OrdersFindCommand extends OrdersCommand {
         if (orderManager.foundOrderEmpty()) {
             throw new OrderNotFoundException();
         }
-        String rawOrderListOutput = orderManager.getFoundOrderListPrintFormat();
+        String rawOrderListOutput = orderManager.getOrderListPrintFormat(orderManager.getFoundOrderList());
         ui.showFoundOrderList(rawOrderListOutput);
         orderManager.clearFoundList();
     }

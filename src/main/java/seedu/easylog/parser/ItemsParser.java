@@ -9,6 +9,7 @@ import seedu.easylog.commands.itemscommands.ItemsPromptPriceCommand;
 import seedu.easylog.commands.itemscommands.ItemsPromptStockCommand;
 import seedu.easylog.commands.itemscommands.ItemsStatisticsCommand;
 import seedu.easylog.commands.itemscommands.ItemsUpdateCommand;
+import seedu.easylog.commands.itemscommands.ItemsHelpCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyItemFieldException;
 import seedu.easylog.exceptions.EmptyItemIndexException;
@@ -46,9 +47,16 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * Process items command input.
+ * Process items related input.
  */
 public class ItemsParser extends Parser {
+
+    /**
+     * Process items-related input from user and executes the relevant items-related commands.
+     *
+     * @param itemsInput raw input related to items.
+     * @param itemManager manipulates inventory.
+     */
     public static void processItemsInput(String itemsInput, ItemManager itemManager) {
         String[] splitItemsArg = splitCommandWordAndArgs(itemsInput);
         String itemsType = splitItemsArg[0];
@@ -87,8 +95,6 @@ public class ItemsParser extends Parser {
                 ui.showInvalidItemNumber();
             } catch (NumberFormatException e) {
                 ui.showNonIntegerItemNumber();
-            } catch (ItemNotFoundException e) {
-                ui.showItemNotFound();
             }
             break;
         case (Constants.COMMAND_LIST):
@@ -159,13 +165,15 @@ public class ItemsParser extends Parser {
             }
             break;
         default:
-            ui.showItemsHelp();
+            logging.writeWarningLevelLog("User inputted invalid items-related command.");
+            new ItemsHelpCommand().execute();
+            logging.writeInfoLevelLog("Items-related command shown and printed on the console.");
         }
 
     }
 
     /**
-     * process the amount of stock input in string.
+     * Process the amount of stock input in string.
      *
      * @param stockInString the amount of stocks in string
      * @return the amount of stocks in integer
@@ -232,10 +240,12 @@ public class ItemsParser extends Parser {
     }
 
     /**
-     * Prompt and process the pair of item price and stock.
+     * Prompts the user for the item price and stock for the item that they want to enter into the inventory.
+     * Processes the input price and stock that the user has inputted.
+     * Then creates the item object for the item that they want to enter into the inventory.
      *
-     * @param itemDescription the pair of item price and stock
-     *                        entered by the user
+     * @param itemDescription name of the item to be inputted into the inventory.
+     * @return Item object with the relevant attributes/details that the user has inputted.
      */
     public Item promptAndProcessItemPriceAndStock(String itemDescription) {
         BigDecimal itemPrice = null;
@@ -293,15 +303,18 @@ public class ItemsParser extends Parser {
             }
         }
 
-        Item item = new Item(itemDescription, itemPrice, itemStock);
-
-        return item;
+        return new Item(itemDescription, itemPrice, itemStock);
     }
 
     /**
-     * Converts item price from String to BigDecimal.
+     * Convert the item price in string inputted by user to BigDecimal type.
      *
-     * @param itemPriceInString String format of item price
+     * @param itemPriceInString item price in string inputted by user
+     * @return item price inputted by user in BigDecimal type.
+     * @throws NullItemPriceException user inputted null.
+     * @throws EmptyItemPriceException user did not input any item price.
+     * @throws NonNumericItemPriceException user did not input valid price for the item e.g., not integer or double.
+     * @throws InvalidItemPriceException user inputted negative price or more than the limit.
      */
     public BigDecimal itemPriceInStringToBigDecimalFormat(String itemPriceInString) throws NullItemPriceException,
             EmptyItemPriceException, NonNumericItemPriceException, InvalidItemPriceException {
@@ -322,15 +335,18 @@ public class ItemsParser extends Parser {
             throw new InvalidItemPriceException();
         }
 
-        BigDecimal itemPriceInBigDecimal = new BigDecimal(itemPriceInString);
-
-        return itemPriceInBigDecimal;
+        return new BigDecimal(itemPriceInString);
     }
 
     /**
-     * Converts item stock from String to int.
+     * Convert the item stock in string to int type.
      *
-     * @param itemStockInString String format of item stock
+     * @param itemStockInString item stock in string inputted by the user.
+     * @return item stock inputted by user in int type.
+     * @throws NullItemStockException user entered null for item stock.
+     * @throws EmptyItemStockException user did not enter any item stock.
+     * @throws NonNumericOrIntegerItemStockException user entered non integer as item stock.
+     * @throws InvalidItemStockException user inputted negative stock or more than the limit.
      */
     public int itemStockInStringToIntegerFormat(String itemStockInString) throws NullItemStockException,
             EmptyItemStockException, NonNumericOrIntegerItemStockException, InvalidItemStockException {
@@ -353,8 +369,6 @@ public class ItemsParser extends Parser {
             throw new InvalidItemStockException();
         }
 
-        int itemStockInInteger = Integer.parseInt(itemStockInString);
-
-        return itemStockInInteger;
+        return Integer.parseInt(itemStockInString);
     }
 }

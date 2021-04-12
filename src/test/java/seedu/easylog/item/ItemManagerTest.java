@@ -21,7 +21,7 @@ public class ItemManagerTest {
         itemManager.addItem(itemTwo);
 
         assertEquals("1. PS5, S$100.00, 5\n" + "2. MP3, S$36.00, 5\n",
-                itemManager.getItemListPrintFormat(itemManager.getItemList(), false));
+                itemManager.getItemListPrintFormat(itemManager.getItemList()));
     }
 
 }

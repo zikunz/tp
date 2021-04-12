@@ -69,7 +69,7 @@ public class Parser {
             OrdersParser.processOrdersInput(commandArgs, itemManager, orderManager);
             break;
         default:
-            logging.writeInfoLevelLog("Invalid command has been inputted by user.");
+            logging.writeWarningLevelLog("Invalid command has been inputted by user.");
             ui.showInvalidCommand();
         }
     }

@@ -8,6 +8,7 @@ import seedu.easylog.model.OrderManager;
 import java.io.IOException;
 
 public class OrdersDoneCommand extends OrdersCommand {
+
     /**
      * Updating the status of the specific order.
      */
@@ -28,7 +29,7 @@ public class OrdersDoneCommand extends OrdersCommand {
             logging.writeInfoLevelLog("Generating receipt for order marked as done.");
             receipt.generateReceipt(orderIndex, orderManager);
         } catch (IOException e) {
-            logging.writeInfoLevelLog("Error occurred while attempting to generate receipt, generating"
+            logging.writeWarningLevelLog("Error occurred while attempting to generate receipt, generating"
                     + " receipt sequence terminated.");
             ui.showErrorGeneratingReceipt(orderManager.getOrder(orderIndex).getCustomerName());
         }

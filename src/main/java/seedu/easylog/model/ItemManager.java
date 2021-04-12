@@ -1,7 +1,5 @@
-
 package seedu.easylog.model;
 
-import seedu.easylog.common.Messages;
 import seedu.easylog.common.Constants;
 
 import java.math.BigDecimal;
@@ -13,7 +11,7 @@ import java.util.ArrayList;
 public class ItemManager {
 
     protected ArrayList<Item> itemList;
-    protected ArrayList<Item> foundList = new ArrayList<>();
+    protected ArrayList<Item> foundItemList = new ArrayList<>();
 
     public ItemManager() {
         this.itemList = new ArrayList<>();
@@ -39,46 +37,19 @@ public class ItemManager {
 
     /**
      * Gets the list of items in String format to be printed as output to the user.
-     * Indentation is added if this method is called to help print the list of orders.
-     * No indentation is added if this method is called when only printing the list of items.
      *
      * @return String format for the list of items to be printed
      */
-    public String getItemListPrintFormat(ArrayList<Item> itemListToBePrint, boolean shouldIncludeIndentation) {
+    public String getItemListPrintFormat(ArrayList<Item> itemListToBePrint) {
         String itemsListOutput = "";
 
-        if (shouldIncludeIndentation) {
-            for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
-                itemsListOutput += Messages.MESSAGE_INDENTATION + (itemIndex + 1) + ". "
-                        + itemListToBePrint.get(itemIndex).getItemName() + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
-                        + itemListToBePrint.get(itemIndex).getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
-                        + itemListToBePrint.get(itemIndex).getItemStock() + "\n";
-            }
-        } else {
-            for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
-                itemsListOutput += (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName()
-                        + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
-                        + itemListToBePrint.get(itemIndex).getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
-                        + itemListToBePrint.get(itemIndex).getItemStock() + "\n";
-            }
-        }
-        return itemsListOutput;
-    }
-
-    /**
-     * Gets the list of items in String format to be printed as output to the user.
-     *
-     * @return String format for the list of relevant items to be printed
-     */
-    public String getFoundListPrintFormat(ArrayList<Item> itemListToBePrint) {
-        String foundListOutput = "";
         for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
-            foundListOutput += (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName()
+            itemsListOutput += (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName()
                     + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
                     + itemListToBePrint.get(itemIndex).getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
                     + itemListToBePrint.get(itemIndex).getItemStock() + "\n";
         }
-        return foundListOutput;
+        return itemsListOutput;
     }
 
     /**
@@ -96,7 +67,7 @@ public class ItemManager {
     public void findItem(String keyword) {
         for (int i = 0; i < getSize(); i++) {
             if (getItem(i).itemName.contains(keyword)) {
-                foundList.add(getItem(i));
+                foundItemList.add(getItem(i));
             }
         }
     }
@@ -123,17 +94,17 @@ public class ItemManager {
      *
      * @return list of found item(s) from itemList
      */
-    public ArrayList<Item> getFoundList() {
-        return foundList;
+    public ArrayList<Item> getFoundItemList() {
+        return foundItemList;
     }
 
     /**
      * Gets the number of relevant items after search.
      *
-     * @return the size of foundList
+     * @return the size of foundItemList
      */
     public int getFoundSize() {
-        return foundList.size();
+        return foundItemList.size();
     }
 
     /**
@@ -165,7 +136,7 @@ public class ItemManager {
      * Clears all found items in Found List.
      */
     public void clearFoundList() {
-        foundList.clear();
+        foundItemList.clear();
     }
 
     /**
@@ -194,31 +165,6 @@ public class ItemManager {
     public void setRevisedItemStock(int itemIndex, int revisedItemStock) {
         Item itemToBeUpdated = getItem(itemIndex);
         itemToBeUpdated.setItemStock(revisedItemStock);
-    }
-
-    /**
-     * Gets the item stock of a particular item.
-     *
-     * @param item item of interest
-     * @return the current stock of the specified item
-     */
-    public int getItemStock(Item item) {
-        return item.getItemStock();
-    }
-
-    /**
-     * Checks if the item exist in the item list.
-     *
-     * @param itemName the item to be checked
-     * @return the existence of item in the item list
-     */
-    public boolean checkRepeatItem(String itemName) {
-        for (Item item : itemList) {
-            if (item.itemName.equals(itemName)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     /**
@@ -303,35 +249,6 @@ public class ItemManager {
         }
 
         return mostPopularItemDescriptions;
-    }
-
-    /**
-     * Deletes the item from item list by name.
-     *
-     * @param name the name of item to be deleted
-     */
-    public void deleteByname(String name) {
-        for (int i = 0; i < itemList.size(); i++) {
-            if (name.equals(itemList.get(i).itemName)) {
-                itemList.remove(i);
-                break;
-            }
-        }
-    }
-
-    /**
-     * Changes relevant string to item type.
-     *
-     * @param name the name of string to be changed
-     * @return string in item type if in item list, null otherwise
-     */
-    public Item changeItemFormat(String name) {
-        for (int i = 0; i < itemList.size(); i++) {
-            if (name.equals(itemList.get(i).itemName)) {
-                return itemList.get(i);
-            }
-        }
-        return null;
     }
 }
 

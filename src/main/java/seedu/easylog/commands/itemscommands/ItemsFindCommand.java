@@ -5,6 +5,7 @@ import seedu.easylog.exceptions.ItemNotFoundException;
 import seedu.easylog.model.ItemManager;
 
 public class ItemsFindCommand extends ItemsCommand {
+
     /**
      * Print out all the found items in the found list.
      */
@@ -17,7 +18,7 @@ public class ItemsFindCommand extends ItemsCommand {
         if (itemManager.getFoundSize() == 0) {
             throw new ItemNotFoundException();
         }
-        String rawFoundListOutput = itemManager.getFoundListPrintFormat(itemManager.getFoundList());
+        String rawFoundListOutput = itemManager.getItemListPrintFormat(itemManager.getFoundItemList());
         ui.showFoundList(rawFoundListOutput);
         itemManager.clearFoundList();
     }

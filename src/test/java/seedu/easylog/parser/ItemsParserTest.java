@@ -8,6 +8,8 @@ import seedu.easylog.exceptions.InvalidItemStockException;
 import seedu.easylog.exceptions.NullItemPriceException;
 import seedu.easylog.exceptions.NullItemStockException;
 
+import java.math.BigDecimal;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -16,9 +18,10 @@ public class ItemsParserTest {
     ItemsParser itemsParser = new ItemsParser();
 
     @Test
-    public void processPriceInputTest() {
+    public void processPriceInputTest() throws NonNumericItemPriceException, EmptyItemPriceException,
+            InvalidItemPriceException, NullItemPriceException {
         String testInput = "599.00";
-        //assertEquals(new BigDecimal(testInput), itemsParser.processPriceInput(testInput));
+        assertEquals(new BigDecimal(testInput), itemsParser.itemPriceInStringToBigDecimalFormat(testInput));
     }
 
     @Test

@@ -1,6 +1,5 @@
 package seedu.easylog.storage;
 
-import seedu.easylog.common.Messages;
 import seedu.easylog.model.Order;
 import seedu.easylog.model.OrderManager;
 

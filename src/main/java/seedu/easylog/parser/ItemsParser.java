@@ -1,6 +1,15 @@
 package seedu.easylog.parser;
 
-import seedu.easylog.commands.itemscommands.*;
+import seedu.easylog.commands.itemscommands.ItemsAddCommand;
+import seedu.easylog.commands.itemscommands.ItemsClearCommand;
+import seedu.easylog.commands.itemscommands.ItemsDeleteCommand;
+import seedu.easylog.commands.itemscommands.ItemsFindCommand;
+import seedu.easylog.commands.itemscommands.ItemsListCommand;
+import seedu.easylog.commands.itemscommands.ItemsPromptPriceCommand;
+import seedu.easylog.commands.itemscommands.ItemsPromptStockCommand;
+import seedu.easylog.commands.itemscommands.ItemsStatisticsCommand;
+import seedu.easylog.commands.itemscommands.ItemsUpdateCommand;
+import seedu.easylog.commands.itemscommands.ItemsHelpCommand;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyItemFieldException;
 import seedu.easylog.exceptions.EmptyItemIndexException;

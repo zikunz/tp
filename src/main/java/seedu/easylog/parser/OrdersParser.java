@@ -1,6 +1,13 @@
 package seedu.easylog.parser;
 
-import seedu.easylog.commands.orderscommands.*;
+import seedu.easylog.commands.orderscommands.OrdersAddCommand;
+import seedu.easylog.commands.orderscommands.OrdersClearCommand;
+import seedu.easylog.commands.orderscommands.OrdersDeleteCommand;
+import seedu.easylog.commands.orderscommands.OrdersListCommand;
+import seedu.easylog.commands.orderscommands.OrdersPriceCommand;
+import seedu.easylog.commands.orderscommands.OrdersDoneCommand;
+import seedu.easylog.commands.orderscommands.OrdersFindCommand;
+import seedu.easylog.commands.orderscommands.OrdersHelpCommand;
 import seedu.easylog.common.Constants;
 
 import seedu.easylog.exceptions.CustomerNameTooLongException;

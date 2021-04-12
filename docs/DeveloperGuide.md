@@ -184,7 +184,7 @@ user.
 
 ### 2.6 Model Component
 
-![Command Diagram](https://user-images.githubusercontent.com/75139323/114337070-02819580-9b83-11eb-85fb-6177ef53999e.png)
+![Model Diagram](https://user-images.githubusercontent.com/57165946/114408329-e1995e80-9bdb-11eb-99af-52120b495c09.png)
 
 The model component consists of four classes, namely, `Item`, `ItemManager`, `Order` and `OrderManager` classes. `Item` 
 and `Order` classes represent real-world item and order objects easyLog is tasked to keep track of. Note that the UML 
@@ -320,10 +320,10 @@ when an item is added into the system:
 ### 3.5. Items Update
 Please note that less important details are omitted for better comprehensibility. For instance, in the first diagram of this section, 
 only the interactions after `ItemsUpdateCommand.execute()` is modelled. In the second diagram of this section, 
-details of `itemsPromptPriceCommand' and `itemsPromptPriceCommand` are omitted.
+details of `itemsPromptPriceCommand` and `itemsPromptPriceCommand` are omitted.
 
 ![Items Update Figure 1](https://user-images.githubusercontent.com/75139323/114384288-1a780a00-9bc1-11eb-99c1-5c4af2e119f3.png)
-The diagram above shows the first stage of `itemsUpdateCommand`, after the user user executes the `itemUpdateCommand` 
+The diagram above shows the first stage of `itemsUpdateCommand`, after the user executes the `itemUpdateCommand` 
 by typing `items update` and easyLog invokes `itemsParser`.
 
 1. `ItemUpdateCommand` first gets the item size from `ItemManager`.
@@ -343,6 +343,7 @@ Next,
 9. `ItemUpdateCommand` calls `processUpdateAttributeInput` of `ItemsParser`.
 
 If the user input is "p":
+
 10. `ItemsParser` calls `askForRevisedItemPrice` from `UI`. `ItemsParser` creates an object of 
 `ItemsPromptPriceCommand` and its `execute()` method is executed to ask the user for a valid `revisedItemPrice`. 
 The details are omitted to increase comprehensibility. If the item price given is not valid, the user needs to keep 

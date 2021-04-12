@@ -28,10 +28,11 @@ to offer and we have prepared [Frequently Asked Questions (FAQ)](#3-faq) and a c
 [Command Summary](#4-command-summary) for you. We invite you to explore easyLog.
 
 1. Currently supports Windows, macOS and Linux machines which have Java 11 installed. <br>
-2. Depending on which operating system you are using, how to open the command terminal application to operate easyLog
+2. Best selling item(s) are defined to be item(s) which have most number of sales. That is, the item(s) is/are added to
+   orders for most number of times.   
+3. Depending on which operating system you are using, how to open the command terminal application to operate easyLog
    differs. Please refer to [Quick start](#1-quick-start) for more information. <br>
-3. Best selling item(s) are defined to be item(s) which have most number of sales. That is, the item(s) is/are added to
-   orders for most number of times.
+
 
 ***
 
@@ -307,8 +308,7 @@ If you would like to gain some useful insights from the orders history since you
 feature will let you know the most popular item(s) ordered by customers. You will also be reminded to stock up.
 
 Steps to obtain the most popular item(s) in the items list:
-
-1.Input `items stats`.
+1. Input `items stats`.
 2. Press enter.
 3. The most popular item(s) will be shown.
 
@@ -431,7 +431,7 @@ In the very unlikely event that all orders are cancelled, instead of deleting th
 `orders clear` feature to do it efficiently.
 
 steps to clear the order list:
-1. Input `orders clear`
+1. Input `orders clear`.
 3. Press enter.
 4. You can see the confirmation message that there is no single order now.
 
@@ -574,11 +574,11 @@ Expected Output:
 
 ## 3. FAQ
 
-**Q1**: easyLog keeps having a "bad init? error message despite the fact that I firsy use it.
+**Q1**: easyLog keeps having a "bad init" error message despite the fact that I first use it.
 > Please check and ensure that easyLog has the write permissions in the folder.
 
 **Q2**: Do I lose all my data after exiting easyLog?
-> No, all relevent records are saved upon `exit` command.
+> No, all relevant records are saved upon `exit` command.
 
 **Q3**: I do not seem to be able to add an item. Why is this so?
 
@@ -612,8 +612,6 @@ system?
 > In the event that you accidentally add an item or order, you can always undo it by deleting it. Likewise, you can
 > add an item or order back if you delete it mistakenly. For now, easyLog does not have a command to revert any
 > changes. We may consider adding it in the upcoming version. <br/>
->
-> You should not worry too much as easyLog is highly optimized to be easy to use for home-based business owners.
 
 [Return to Table of Contents](#table-of-contents)
 
@@ -641,3 +639,5 @@ Command | Format | Example |
 [**orders price**](#237-get-the-total-price-of-an-order-orders-price) | `orders price <order_index>` | `orders price 2` |
 [**orders done**](#238-update-the-status-of-an-order-orders-done)  | `orders done <order_index>` | `orders done 2` |
 [**exit**](#25-exit-the-program-exit) | `exit` | `exit` |
+
+[Return to Table of Contents](#table-of-contents)

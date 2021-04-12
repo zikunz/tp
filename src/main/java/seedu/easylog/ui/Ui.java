@@ -641,7 +641,7 @@ public class Ui {
      * @param itemDescriptions descriptions of the most popular items
      */
     public void showStatisticsForMostPopularItems(String itemDescriptions) {
-        System.out.print(Messages.MESSAGE_SHOW_MOST_POPULAR_ITEMS + itemDescriptions + "\n"
+        System.out.print(Messages.MESSAGE_SHOW_MOST_POPULAR_ITEMS + itemDescriptions
                 + Messages.SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEMS_ARE_NOT_ENOUGH);
     }
 

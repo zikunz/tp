@@ -47,7 +47,7 @@ class OrdersClearCommandTest {
         Order firstOrder = new Order(customerName, items, stocks);
         orderManager.addOrder(firstOrder);
         assertEquals(1, orderManager.getSize());
-        assertThrows(WrongItemsClearCommandException.class, () -> {
+        assertThrows(WrongOrdersClearCommandException.class, () -> {
             ordersClearCommand.execute("WrongOrdersClearCommandException", itemManager, orderManager);
         });
 

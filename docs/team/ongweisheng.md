@@ -58,10 +58,11 @@ I contributed to the following sections in the developer guide:
 5. Section 2.4. (Parser component design)
 6. Section 2.7. (Storage component)
 7. Section 3.1. (App Initialization implementation)
-8. Section 3.2. (Loading of save data implementation)
-9. Section 3.3. (Exit command and creation or saving of save data)
-10. Section 3.4. (Orders Done and generation of receipts)
-11. Appendix B (User stories)
+8. Section 3.2. (Processing of user inputs implementation)
+9. Section 3.3. (Loading of data implementation)
+10. Section 3.8. (Orders Done and generation of receipts implementation)
+11. Section 3.9. (Exit command and creating and/or saving of save data implementation)    
+12. Appendix B (User stories)
 
 ### Contributions to team-based tasks
 

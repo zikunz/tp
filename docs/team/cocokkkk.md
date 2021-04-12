@@ -50,7 +50,7 @@ RepoSense code contribution: <br>
 
 ### Contributions to developer guide
 
-1. Section 3.5 (Items Add)
+1. Section 3.4 (Items Add)
 2. Appendix C: Non-Functional Requirements
 3. Appendix D: Glossary
 

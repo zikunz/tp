@@ -303,15 +303,6 @@ method in the `SaveData` class is being executed,
 
 [Return to Top](#1-introduction)
 
-### 3.4. Items Add
-
-(Insert stuff here)
-
-### 3.5. Items Update
-
-![Items Update Figure 1](https://user-images.githubusercontent.com/75139323/114384288-1a780a00-9bc1-11eb-99c1-5c4af2e119f3.png)
-
-[Return to Top](#1-introduction)
 
 ***
 
@@ -330,6 +321,13 @@ when an item is added into the system:
 5. easyLog then invokes `itemsManager` and calls the `addItem(Item)` method to add this item into the system.
 6. After the item is added successfully, `UI` sends back the confirmation message to user by calling `showAddItem(Item)`
    method.
+
+[Return to Top](#1-introduction)
+
+### 3.5. Items Update
+
+![Items Update Figure 1](https://user-images.githubusercontent.com/75139323/114384288-1a780a00-9bc1-11eb-99c1-5c4af2e119f3.png)
+![Items Update Figure 2](https://user-images.githubusercontent.com/75139323/114390391-c7a25080-9bc8-11eb-8fa1-d6c3e18cede1.png)
 
 [Return to Top](#1-introduction)
 

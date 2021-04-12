@@ -30,7 +30,8 @@ The enhancements that I have implemented are the following:
 1. Returning of stocks of item when an incomplete order is being deleted from the order list.
 2. Ensured all the features implemented has a jUnitTest, to minimise the chance of bug.
 3. Designed the Ui for the entire EasyLog, including the logo and the separation line.
-   
+4. Orders price is been used in orders list.   
+
 ### Contributions to user guide
 
 I contributed to the following sections in the user guide:
@@ -40,6 +41,7 @@ I contributed to the following sections in the user guide:
 3. Section 2.3.7 (Orders price features)
 4. Section 2.3.8 (Orders done features)
 5. Section 4. (Command Summary)
+6. Added screenshots of all expected outputs.
 
 ### Contributions to developer guide
 

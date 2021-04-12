@@ -2,7 +2,7 @@
 
 By: `Ong Wei Sheng`, `Zhu Zikun`, `Qiu Yi Wen`, `Li Kexuan`, `Jiang Qixiong`
 
-Last Updated: `10 April 2021` <br>
+Last Updated: `12 April 2021` <br>
 
 ![Supported Java versions](https://img.shields.io/badge/Java-11-blue.svg)
 ![Supported OS](https://img.shields.io/badge/Supported%20OS-Windows|MacOS|Linux-yellow.svg)
@@ -325,9 +325,42 @@ when an item is added into the system:
 [Return to Top](#1-introduction)
 
 ### 3.5. Items Update
+Please note that less important details are omitted for better comprehensibility. For instance, in the first diagram of this section, 
+only the interactions after `ItemsUpdateCommand.execute()` is modelled. In the second diagram of this section, 
+details of `itemsPromptPriceCommand' and `itemsPromptPriceCommand` are omitted.
 
 ![Items Update Figure 1](https://user-images.githubusercontent.com/75139323/114384288-1a780a00-9bc1-11eb-99c1-5c4af2e119f3.png)
-![Items Update Figure 2](https://user-images.githubusercontent.com/75139323/114390391-c7a25080-9bc8-11eb-8fa1-d6c3e18cede1.png)
+The diagram above shows the first stage of `itemsUpdateCommand`, after the user user executes the `itemUpdateCommand` 
+by typing `items update` and easyLog invokes `itemsParser`.
+
+1. `ItemUpdateCommand` first gets the item size from `ItemManager`.
+2. `ItemUpdateCommand` calls askForItemIndex from `UI` to print a message that an item index is required.
+3. `ItemUpdateCommand` creates a new `ItemsListCommand` object and uses `ItemsListCommand.execute()` to get the item list
+for the user.
+4. `ItemUpdateCommand` prompts the user for input by calling `askForUserInput()` from `UI`.
+5. `ItemUpdateCommand` gets the item size from `ItemManager` again.
+6. If the input given by the user is invalid (not a valid item index), start from step 2 again.
+7. `ItemUpdateCommand` calls `askForItemFieldToBeUpdated` and askForUserInput() from `UI` to print a question message 
+   and get the user input.
+8. If the input given by the user is invalid (not `p` or `s`), start from step 7 again.
+
+
+
+
+![Items Update Figure 2](https://user-images.githubusercontent.com/75139323/114397749-9a0dd500-9bd1-11eb-9cff-72275205458f.png)
+Next,
+
+9. `ItemUpdateCommand` calls `processUpdateAttributeInput` of `ItemsParser`.
+
+If the user input is "p":
+10. `ItemsParser` calls `askForRevisedItemPrice` from `UI`. `ItemsParser` creates an object of 
+`ItemsPromptPriceCommand` and its `execute()` method is executed to ask the user for a valid `revisedItemPrice`. 
+The details are omitted to increase comprehensibility. If the item price given is not valid, the user needs to keep 
+entering it until it is valid. 
+11. `ItemsParser` calls `ItemManager` to set the revised price, getting the item of interest before calling `UI` to show
+it is updated correctly.
+
+If the user input is "s", the logic is largely similar to when it is "p". The explanations are omitted here to avoid repetition.
 
 [Return to Top](#1-introduction)
 
@@ -442,11 +475,14 @@ In this section, we present different types of tests and how they can be run.
 ### 5.1. Types of Tests
 There are primarily three types of tests:
 
-1. Unit tests targeting the lowest level methods/classes. <br>
-   e.g. TO BE ADDED
+1. Unit tests. Tests are conducted on the fundamental level methods/classes. <br>
+   e.g. `seedu.easyLog.commons.ConstantsTest`
 
-2. Integration tests that are checking the integration of multiple code units (those code units are assumed to be working).
-   e.g. TO BE ADDED
+2. Integration tests. Tests are conducted on checking the integration of multiple code units. <br>
+   e.g. `seedu.easyLog.storage.OrderManagerTest`
+
+3. Hybrids of unit and integration tests. Tests are conducted on multiple code units as well as their logic connections. <br>
+   e.g. `seedu.easyLog.parser.ItemsParserTest`
 
 [Return to Top](#1-introduction)
 
@@ -472,16 +508,9 @@ Method 2: Using Gradle <br>
 We invite you to visit [Appendix E: Instructions for Manual Testing](#appendix-e-instructions-for-manual-testing) to 
 learn more about manual testing for easyLog.
 
-[Return to Top](#1-introduction)
 
-1. Unit tests. Tests are conducted on the fundamental level methods/classes. <br>
-e.g. `seedu.easyLog.commons.ConstantsTest`
 
-2. Integration tests. Tests are conducted on checking the integration of multiple code units. <br>
-e.g. `seedu.easyLog.storage.OrderManagerTest`
 
-3. Hybrids of unit and integration tests. Tests are conducted on multiple code units as well as their logic connections. <br>
-e.g. `seedu.easyLog.parser.ItemsParserTest`
 
 ## 6. Dev Ops
 

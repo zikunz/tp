@@ -24,6 +24,7 @@ public class EasyLog {
     public static void main(String[] args) {
         UI.showGreeting();
         try {
+            LOGGING.writeInfoLevelLog("Starting load file sequence.");
             SAVE_DATA.loadFile(ITEM_MANAGER, ORDER_MANAGER);
         } catch (FileNotFoundException e) {
             UI.showNoSaveDataFound();
@@ -38,7 +39,7 @@ public class EasyLog {
             }
         } catch (Exception e) {
             UI.showUnknownErrorOccurred();
-            LOGGING.writeInfoLevelLog("Unknown error has occured.");
+            LOGGING.writeSevereLevelLog("Unknown error has occured.");
         }
     }
 }

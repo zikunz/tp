@@ -19,6 +19,8 @@ public class OrdersAddFromFileCommand extends OrdersCommand {
     public void execute(String orderFileInput, ItemManager itemManager, OrderManager orderManager) {
         String[] rawOrderFileInput = orderFileInput.split(" ");
         String customerName = rawOrderFileInput[0];
+        logging.writeInfoLevelLog("Adding " + customerName
+                + " order details into the system from save file.");
         ArrayList<Item> itemsInOrder = new ArrayList<>();
         ArrayList<Integer> quantifyOfItemsInOrder = new ArrayList<>();
         int sizeOfRawOrderFileInput = rawOrderFileInput.length;
@@ -40,5 +42,7 @@ public class OrdersAddFromFileCommand extends OrdersCommand {
         }
         Order orderToBeAddedFromFile = new Order(customerName, itemsInOrder, quantifyOfItemsInOrder);
         orderManager.addOrder(orderToBeAddedFromFile);
+        logging.writeInfoLevelLog("Order details for " + customerName + " has been added to the system from"
+                + " the save file");
     }
 }

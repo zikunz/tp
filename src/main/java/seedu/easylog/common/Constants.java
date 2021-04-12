@@ -1,8 +1,5 @@
 package seedu.easylog.common;
 
-import java.math.BigDecimal;
-import java.util.Scanner;
-
 public class Constants {
     public static final int ARRAY_OFFSET = 1;
     public static final int PRICING_SCALE = 2;
@@ -10,7 +7,6 @@ public class Constants {
     public static final int MAXIMUM_ITEM_PRICE = 1000000000;
     public static final int MINIMUM_ITEM_STOCK = 1;
     public static final int MAXIMUM_ITEM_STOCK = 1000000000;
-    public static final Scanner SCANNER = new Scanner(System.in);
 
     // Commands constants
     public static final String COMMAND_HELP = "help";

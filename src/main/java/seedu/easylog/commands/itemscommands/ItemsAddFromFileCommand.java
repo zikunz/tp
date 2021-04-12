@@ -18,8 +18,10 @@ public class ItemsAddFromFileCommand extends ItemsCommand {
         int itemStock = Integer.parseInt(rawItemFileInput[1]);
         int itemSales = Integer.parseInt(rawItemFileInput[2]);
         String itemName = rawItemFileInput[3];
+        logging.writeInfoLevelLog("Adding " + itemName + " into inventory from save file.");
         Item itemToBeAddedFromFile = new Item(itemName, itemPrice, itemStock);
         itemToBeAddedFromFile.setItemSales(itemSales);
         itemManager.addItem(itemToBeAddedFromFile);
+        logging.writeInfoLevelLog(itemName + " has been added into the inventory from save file.");
     }
 }

@@ -33,6 +33,6 @@ public class OrderManagerTest {
                         + "    2. MP3, S$36.00, 1\n"
                         + "    Total Price : S$136.00\n"
                         + "____________________________________________________________\n",
-                orderManager.getOrderListPrintFormat());
+                orderManager.getOrderListPrintFormat(orderManager.getOrderList()));
     }
 }

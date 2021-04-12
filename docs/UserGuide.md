@@ -12,9 +12,9 @@ Are you a home-based business owner tired of using a pen and paper to keep track
 budget to invest in a new system to manage your business? Fret not, easyLog, our cross-platform<sup>1
 </sup> logistics management application will get you covered! It is the application to boost your productivity when it
 comes to managing your items and orders and best of all, it is free! Primarily, the current version of easyLog allows
-you to add new items and orders, update existing items and orders, view existing items and orders, remove specific items
-and orders and clear all existing items and orders in the inventory at ease. You can also generate receipts for your
-customers and find out your best-selling product(s)<sup>2</sup>.
+you to add new items and orders, update existing items and orders, view existing items and orders, find exisiting items
+and orders, remove specific items and orders and clear all existing items and orders in the inventory at ease. You can
+also generate receipts for your customers and find out your best-selling product(s)<sup>2</sup>.
 
 easyLog is highly optimized for home-based business owners like you via a carefully designed Command Line Interface
 (CLI); this means that you will run the application by typing commands into a command terminal<sup>3
@@ -22,16 +22,16 @@ easyLog is highly optimized for home-based business owners like you via a carefu
 User Interface (GUI) applications; GUI applications allow users to interact with the applications through visuals such
 as buttons, at the expense of lower precision and slower speed as compared to CLI.
 
-If this sounds great to you, we encourage you to visit [1. Quick start](#1-quick-start) to start learning how to manage
+If this sounds great to you, we encourage you to visit [Quick start](#1-quick-start) to start learning how to manage
 your inventory using easyLog. This guide also gives you a step-by-step instruction to use various features easyLog has
 to offer and we have prepared [Frequently Asked Questions (FAQ)](#3-faq) and a concise table of
 [Command Summary](#4-command-summary) for you. We invite you to explore easyLog.
 
-1.Currently supports Windows, macOS and Linux machines which have Java 11 installed. <br>
-2 Depending on which operating system you are using, how to open the command terminal application to operate easyLog
-differs. Please refer to [1. Quick start](#1-quick-start) for more information. <br>
-3 Best selling item(s) are defined to be item(s) which have most number of sales. That is, the item(s) is/are added to
-orders for most number of times.
+1. Currently supports Windows, macOS and Linux machines which have Java 11 installed. <br>
+2. Depending on which operating system you are using, how to open the command terminal application to operate easyLog
+   differs. Please refer to [Quick start](#1-quick-start) for more information. <br>
+3. Best selling item(s) are defined to be item(s) which have most number of sales. That is, the item(s) is/are added to
+   orders for most number of times.
 
 ***
 
@@ -229,8 +229,7 @@ Steps to update an item:
 Note:
 > 📄 If there is no single item in the item list, you will be notified that you should not use `items clear` 
 > command. <br>
-=======
-steps to clear the item list:
+
 
 Expected Output:
 ![items clear](https://user-images.githubusercontent.com/60378963/114326195-2c788f00-9b66-11eb-999e-0444b9797a4e.png)
@@ -257,9 +256,10 @@ Steps to update an item:
 Note:
 > 📄 Item fields (i.e., `p` and `s`) must be lower-case. <br>
 > 📄 Item price must be a number ranging from 0 (free item) to 1,000,000,000 (inclusive). <br>
-> 📄 Item stock has to be a positive integer ranging from 0 to 1,000,000,000 (inclusive). <br>
+> 📄 Item stock has to be a positive integer ranging from 1 to 1,000,000,000 (inclusive). <br>
 > 📄 You are allowed to update an item with its current price or current stock. It is interpreted as you no longer want
 > to update any fields of the item. <br>
+> 📄 If you wish to update an item stock as 0, please use `items delete` command instead. <br>
 > 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
 
 Expected Output:
@@ -288,14 +288,17 @@ Expected Output:
 If you would like to gain some useful insights from the orders history since you start using easyLog, the `items stats`
 feature will let you know the most popular item(s) ordered by customers. You will also be reminded to stock up.
 
-steps to obtain the most popular item(s) in the items list:
+Steps to obtain the most popular item(s) in the items list:
+
+1.Input `items stats`.
+2. Press enter.
+3. The most popular item(s) will be shown.
 
 Note:
-> 📄 There can be multiple items which are the most popular. This happens when more than one items have most number 
-> If tie <br>
-> 📄 If the item no longer exists <br>
-=======
-> 📄 Item fields (i.e., `p` and `s`) must be lower-case. <br>
+> 📄 There can be multiple items which are the most popular. This happens when more than one items have most number of 
+> sales. <br>
+> 📄 If the item no longer exists in the item list, the number of sales of that item is lost. <br>
+> 📄 The hard limit for items sales is 2147483647.
 
 Expected Output:
 ![items stats](https://user-images.githubusercontent.com/60378963/114327246-d35f2a00-9b6a-11eb-922b-bd2155641b99.png)
@@ -392,6 +395,8 @@ Note:
 > 📄 If an out-of-range order index is entered, easyLog will not check if the order index is an integer. For
 > instance, if there are only 2 orders placed by customers, inputting `orders delete 2.6` will cause easyLog show
 > that it is an out-of-range error. <br>
+> 📄 `Orders delete` can make item stock temporarily go more than 1,000,000,000. If it happens, please move them out of
+> the inventory due to limited space available.
 
 Expected Output:
 ![orders delete](https://user-images.githubusercontent.com/60378963/114326779-fb4d8e00-9b68-11eb-8b6b-3c979179c3f9.png)
@@ -402,12 +407,17 @@ In the very unlikely event that all orders are cancelled, instead of deleting th
 `orders clear` feature to do it efficiently.
 
 steps to clear the order list:
+1. Input `orders clear`
+3. Press enter.
+4. You can see the confirmation message that there is no single order now.
 
 Note:
 > 📄 If there is no single order in the system, a message will be shown to notify you that you should not use
 > `orders clear` feature.<br>
 > 📄 Items which belong to the orders cleared will be added back to the inventory. It is the same as executing
 > `orders delete` feature for every order in the order list. <br>
+> > 📄 `Orders clear` can make item stock temporarily go more than 1,000,000,000. If it happens, please move them out of
+> the inventory due to limited space available.
 
 Expected Output:
 ![orders clear](https://user-images.githubusercontent.com/60378963/114326813-20da9780-9b69-11eb-9f54-c24eae7940b2.png)
@@ -521,37 +531,38 @@ Format: `exit`
 Expected Output:
 ![exit](https://user-images.githubusercontent.com/60378963/114327349-3b157500-9b6b-11eb-99ae-07b62bf80de0.png)
 
-
 ## 3. FAQ
 
-**Q1**: I do not seem to be able to add an item. Why is this so?
+**Q1**: easyLog keeps having a "bad init? error message despite the fact that I firsy use it.
+> Please check and ensure that easyLog has the write permissions in the folder.
+
+**Q2**: Do I lose all my data after exiting easyLog?
+> No, all relevent records are saved upon `exit` command.
+
+**Q3**: I do not seem to be able to add an item. Why is this so?
 
 > There could be many possibilities which can result in you not being able to add an item. We advise you to follow
 > the below steps when intending to add an item. <br/>
 >
 > Please note that you need to specify the description of the item. For instance, you can do this
-> by typing `orders add n/Competitive Programming 4: The Lower Bound of Programming Contests in the 2020s`. <br/>
+> by typing `orders add Competitive Programming 4`. <br/>
 >
-> After that, input the **price per item** *(unit price)*. Please note that the unit price is either zero (free item) or
-> a positive number smaller or equal to 1000000000 (the system currently accepts a unit price not more than
-> SG$1,000,000,000). For example, you can enter `p/100` for the item price field. <br/>
->
-> Lastly, please provide number of items to be added, also known as stock. (TO BE REVISED)
+> After that, input the **price per item** *(unit price)* and item stock. Please note that the unit price is either zero (free item) or
+> a positive number smaller or equal to 1000000000 while item stock is a positive number smaller or equal to 1000000000.
+> For example, you can enter `20 100`. <br/>
 
-**Q2**: I do not seem to be able to add an order. Why is this so?
+**Q4**: I do not seem to be able to add an order. Why is this so?
 
 > There could be many possibilities which can result in you not being able to add an order. We advise you to follow
 > the below steps when intending to add an order. <br/>
 >
 > Please note that you need to specify a customer's name as he or she is the one whom the order of interest will be
-> sent to. For instance, you can do this by typing `orders add n/Alice`. <br/>
+> sent to. For instance, you can do this by typing `orders add Alice`. <br/>
 >
-> After that, input the item number found in the item list (if unsure, simply type `items list` to check). Please
-> separate each item number by exactly one empty space (i.e., ` `). Do not attempt to enter an item number
-> which does not exist in the item list or belongs to another order. For example, you could type `1 2`, provided
-> the first and second items exist in the item list and are not added to other orders.
+> After that, input the item number found in the item list (if unsure, simply type `items list` to check) and the quantity.
+> For example, you could type `1 2`.
 
-**Q3**: I am scared that I input any command which I do not intend to execute. Is there a way to revert changes in the
+**Q5**: I am scared that I input any command which I do not intend to execute. Is there a way to revert changes in the
 system?
 
 > If you input any invalid command (e.g., an unrecognized command or a clearing command for the item list when the list
@@ -561,18 +572,9 @@ system?
 > add an item or order back if you delete it mistakenly. For now, easyLog does not have a command to revert any
 > changes. We may consider adding it in the upcoming version. <br/>
 >
-> You should not worry too much as easyLog is highly optimized for fast typists working in a warehouse like you.
+> You should not worry too much as easyLog is highly optimized for fast typists in a home-based business like you.
 
-**Q4**: Why does easyLog only allow me to enter additional stock number when I add an item which already exists in the 
-system? Why cannot I update the unit price?
 
-> It is typically hard for users to remember all items in the system. Hence, we make it easier and more efficient when
-> easyLog detects the item to be added already exists in the item list. Since this only happens when the user stocks up
-> a particular item, we allow the user to increase the stock as long as the total number of item stock is within the
-> threshold (i.e., 1000000). However, it does not naturally happen when a user wants to update the unit price when he or
-> she adds an item which already exists in the system.
->
-> When it happens, the user is welcomed to use `items update` command instead.
 
 ***
 

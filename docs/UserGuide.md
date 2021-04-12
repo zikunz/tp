@@ -35,6 +35,8 @@ to offer and we have prepared [Frequently Asked Questions (FAQ)](#3-faq) and a c
 
 ***
 
+## Table of Contents
+
 - [1. Quick start](#1-quick-start)
 - [2. Features](#2-features)
   * [2.1. Viewing help: `help`](#21-viewing-help-help)
@@ -66,7 +68,8 @@ to offer and we have prepared [Frequently Asked Questions (FAQ)](#3-faq) and a c
 ***
 
 ## 1. Quick start
-Setting up easyLog is made really easy. It does not even require an installation and a few simple 
+
+Setting up easyLog is made really easy. It does not even require an installation, and a few simple 
 steps listed below will be good to go.
 
 1. Ensure your device has Java 11 installed.
@@ -88,6 +91,8 @@ steps listed below will be good to go.
 6. Type a command and press enter to continue using the app.
 7. Refer to the [Features](#features) below for details of each command.
 
+[Return to Table of Contents](#table-of-contents)
+
 ***
 
 ## 2. Features
@@ -97,12 +102,10 @@ Section 2 will explain the features available in easyLog.
 ###### Notes about the command format:
 
 * Any word surrounded by `<>` is a parameter to be entered by the user (e.g., in `items add <item_name>`, `item_name` is
-  a parameter and a valid command can be `items add mp3`).
+  a parameter, and a valid command can be `items add mp3`).
 
-* Any extraneous parameters for commands not taking in any single parameter (such as `help` and `exit`) will not be
-  ignored. However, any leading and trailing whitespaces will be neglected. This means, for instance, `  help  ` will
-  trigger [2.1 viewing help: `help`](#21-viewing-help-help) command whereas `help me` will not be understood by easyLog
-  (i.e., easyLog will show it does not understand your command).
+* Any leading and trailing whitespaces will be neglected. This means, for instance, `<spaces> help <spaces>` will trigger 
+  [2.1 viewing help: `help`](#21-viewing-help-help).
 
 * In the user guide, you will come across 📄 which can refer to a tip or warning.
 
@@ -125,6 +128,8 @@ Note:
 Expected Output:
 ![help](https://user-images.githubusercontent.com/60378963/114348076-a32e8000-9b98-11eb-8ef0-132702980a68.png)
 
+[Return to Table of Contents](#table-of-contents)
+
 ### 2.2 Items
 
 Section 2.2 will explain the features related to items.
@@ -144,6 +149,8 @@ Steps to check all items-related commands:
    
 Expected Output:
 ![items related](https://user-images.githubusercontent.com/60378963/114348194-cb1de380-9b98-11eb-9134-7c4f56814500.png)
+
+[Return to Table of Contents](#table-of-contents)
 
 #### 2.2.2. Add an item: `items add`
 
@@ -176,6 +183,8 @@ Note:
 Expected Output:
 ![items add](https://user-images.githubusercontent.com/60378963/114326072-9b091d00-9b65-11eb-8899-f123cfd64352.png)
 
+[Return to Table of Contents](#table-of-contents)
+
 #### 2.2.3. Show the item list: `items list`
 
 Whenever you would like to check all items and their prices and stocks in your inventory, the `items list` feature allows 
@@ -194,6 +203,8 @@ Note:
 
 Expected Output:
 ![items list](https://user-images.githubusercontent.com/60378963/114326125-cf7cd900-9b65-11eb-98c4-1849703c4a0f.png)
+
+[Return to Table of Contents](#table-of-contents)
 
 #### 2.2.4. Delete an item: `items delete`
 
@@ -216,6 +227,8 @@ Note:
 Expected Output:
 ![items delete](https://user-images.githubusercontent.com/60378963/114326249-84af9100-9b66-11eb-8b46-448fbf0acf41.png)
 
+[Return to Table of Contents](#table-of-contents)
+
 #### 2.2.5. Empty the item list: `items clear`
 
 If you would like to clear all existing items in your inventory, you can use the `items clear` feature to do that 
@@ -234,6 +247,7 @@ Note:
 Expected Output:
 ![items clear](https://user-images.githubusercontent.com/60378963/114326195-2c788f00-9b66-11eb-999e-0444b9797a4e.png)
 
+[Return to Table of Contents](#table-of-contents)
 
 #### 2.2.6. Update an item: `items update`
 
@@ -265,6 +279,8 @@ Note:
 Expected Output:
 ![items update](https://user-images.githubusercontent.com/60378963/114326352-fee01580-9b66-11eb-8a37-7cd9c5f3ab94.png)
 
+[Return to Table of Contents](#table-of-contents)
+
 #### 2.2.7. Find items: `items find`
 
 Whenever you would like to find relevant items and their prices and stocks in your inventory, 
@@ -282,6 +298,8 @@ Note:
 
 Expected Output:
 ![items find](https://user-images.githubusercontent.com/60378963/114326420-46ff3800-9b67-11eb-9dc7-4bb37827ecec.png)
+
+[Return to Table of Contents](#table-of-contents)
 
 #### 2.2.8. Discover the most popular item(s): `items stats`
 
@@ -303,6 +321,7 @@ Note:
 Expected Output:
 ![items stats](https://user-images.githubusercontent.com/60378963/114327246-d35f2a00-9b6a-11eb-922b-bd2155641b99.png)
 
+[Return to Table of Contents](#table-of-contents)
 
 ### 2.3. Orders
 
@@ -323,6 +342,8 @@ Steps to check all orders-related commands:
 
 Expected Output:
 ![orders related](https://user-images.githubusercontent.com/60378963/114326479-95acd200-9b67-11eb-8621-40eebbea04a0.png)
+
+[Return to Table of Contents](#table-of-contents)
 
 #### 2.3.2. Add an order: `orders add`
 
@@ -356,6 +377,7 @@ Note:
 Expected Output:
 ![orders add](https://user-images.githubusercontent.com/60378963/114326565-fd631d00-9b67-11eb-8277-9fc6dc864496.png)
 
+[Return to Table of Contents](#table-of-contents)
 
 #### 2.3.3. Show the order list: `orders list`
 
@@ -367,8 +389,6 @@ Steps to open your order list:
 2. Press enter.
 3. Order list will be shown, including the order index, order name, items in the order and total price of the order.
 
-
-
 Note:
 > 📄 If there is no order in the system, a message will be shown to notify you to add at least one order first. <br>
 > 📄 Anything typed after `orders list` will be ignored and the command will execute as per normal e.g.,
@@ -376,6 +396,8 @@ Note:
 
 Expected Output:
 ![orders list](https://user-images.githubusercontent.com/60378963/114326633-49ae5d00-9b68-11eb-954c-ed56c8980335.png)
+
+[Return to Table of Contents](#table-of-contents)
 
 #### 2.3.4. Remove an order: `orders delete`
 
@@ -401,6 +423,8 @@ Note:
 Expected Output:
 ![orders delete](https://user-images.githubusercontent.com/60378963/114326779-fb4d8e00-9b68-11eb-8b6b-3c979179c3f9.png)
 
+[Return to Table of Contents](#table-of-contents)
+
 #### 2.3.5. Empty the order list: `orders clear`
 
 In the very unlikely event that all orders are cancelled, instead of deleting them one by one, you can use the
@@ -422,6 +446,8 @@ Note:
 Expected Output:
 ![orders clear](https://user-images.githubusercontent.com/60378963/114326813-20da9780-9b69-11eb-9f54-c24eae7940b2.png)
 
+[Return to Table of Contents](#table-of-contents)
+
 #### 2.3.6. Find orders: `orders find`
 
 You can use this command to search for any order in the system quickly without looking through the order list one bye one.
@@ -437,6 +463,8 @@ Note:
 
 Expected Output:
 ![orders find](https://user-images.githubusercontent.com/60378963/114326910-7dd64d80-9b69-11eb-9dda-d9c0e6fb1032.png)
+
+[Return to Table of Contents](#table-of-contents)
 
 #### 2.3.7. Get the total price of an order: `orders price`
 
@@ -454,6 +482,8 @@ Note:
 
 Expected Output:
 ![orders price](https://user-images.githubusercontent.com/60378963/114327050-0c4acf00-9b6a-11eb-931a-8589483154e7.png)
+
+[Return to Table of Contents](#table-of-contents)
 
 #### 2.3.8. Update the status of an order: `orders done`
 
@@ -475,6 +505,8 @@ Note:
 
 Expected Output:
 ![Orders done](https://user-images.githubusercontent.com/60378963/114327144-6d72a280-9b6a-11eb-9b98-ee3637b01910.png)
+
+[Return to Table of Contents](#table-of-contents)
 
 ### 2.4. Storage
 
@@ -502,6 +534,8 @@ Note:
 > 📄 Receipt counter save format are as followed below. <br>
 > `ReceiptCounter <receipt_count>`
 
+[Return to Table of Contents](#table-of-contents)
+
 #### 2.4.2. Generate receipts
 
 When [`orders done`](#238-update-the-status-of-an-order-orders-done) feature is executed, a receipt will be 
@@ -513,9 +547,12 @@ Furthermore, receipts are numbered to show you how many orders you have fulfille
 
 Note:
 
-> 📄 The receipts generated can only be seen when you [exit](#25-exit-the-program-exit) the app.
+> 📄 The receipts generated can only be seen in the directory where you start the app from when you 
+> [exit](#25-exit-the-program-exit) the app.
 
 ![receipt](https://user-images.githubusercontent.com/60378963/114349569-acb8e780-9b9a-11eb-8546-f328338d1641.png)
+
+[Return to Table of Contents](#table-of-contents)
 
 ### 2.5. Exit the program: `exit`
 
@@ -523,13 +560,17 @@ Exit the app.
 
 Note:
 
-> 📄 Anything type after `exit` will be ignored, and the command will execute as per normal e.g., 
+> 📄 Anything typed after `exit` will be ignored, and the command will execute as per normal e.g., 
 > `exit adasadadas`.
 
 Format: `exit`
 
 Expected Output:
 ![exit](https://user-images.githubusercontent.com/60378963/114327349-3b157500-9b6b-11eb-99ae-07b62bf80de0.png)
+
+[Return to Table of Contents](#table-of-contents)
+
+***
 
 ## 3. FAQ
 
@@ -572,9 +613,9 @@ system?
 > add an item or order back if you delete it mistakenly. For now, easyLog does not have a command to revert any
 > changes. We may consider adding it in the upcoming version. <br/>
 >
-> You should not worry too much as easyLog is highly optimized for fast typists in a home-based business like you.
+> You should not worry too much as easyLog is highly optimized to be easy to use for home-based business owners.
 
-
+[Return to Table of Contents](#table-of-contents)
 
 ***
 

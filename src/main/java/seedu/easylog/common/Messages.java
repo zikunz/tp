@@ -50,6 +50,7 @@ public class Messages {
     public static final String MESSAGE_INVALID_COMMAND = MESSAGE_LINE
             + "OOPS!!! I'm sorry! I don't know what that means.\n"
             + "Please input again! :)\n"
+            + "Type <help> to see the available command and their format.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ITEM_NAME = MESSAGE_LINE
             + "OOPS!!! The item name is missing!\n"
@@ -257,27 +258,14 @@ public class Messages {
             + "Empty item index.\n";
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_STOCK = MESSAGE_LINE
             + "What is the revised item stock? Enter the same stock if you no longer want to update the item stock.\n";
-    public static final String MESSAGE_EMPTY_ORDER = MESSAGE_LINE
-            + "No items added to the order. Please input `orders add` "
-            + "command again!\n"
-            + MESSAGE_LINE;
     public static final String MESSAGE_NOT_ENOUGH_STOCK = MESSAGE_LINE
             + "Not enough stock to be added into the order.\n"
             + "Please retry and type valid stock number.\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_CONTINUE_ADDING_ITEM_TO_ORDER = MESSAGE_LINE
-            + "Type <stop> to stop adding items to order,"
-            + " else continue entering items in the same format.\n"
-            + "Note that you need at least 1 item in the order.\n"
-            + MESSAGE_LINE;
     public static final String MESSAGE_INVALID_WHILE_ADDING_ITEM_TO_ORDER = MESSAGE_LINE
             + "Invalid input format while adding items to order.\n"
-            + "Note that <item_index> and <item_quantity> needs to be whole numbers.\n"
+            + "Note that <item_index> and <item_quantity> needs to be whole numbers or integers.\n"
             + "Please retry adding items to the order.\n"
-            + MESSAGE_LINE;
-    public static final String MESSAGE_INVALID_FORMAT_ORDERS_ADD = MESSAGE_LINE
-            + "Invalid format for inputting of items into order.\n"
-            + "Please retry orders add command.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_ITEM_NOT_FOUND = MESSAGE_LINE
             + "Sorry! No relevant item is found in the warehouse.\n"
@@ -295,17 +283,6 @@ public class Messages {
     public static final String MESSAGE_INVALID_FILE_INPUT_LINE = "Invalid line from save file at line : ";
     public static final String MESSAGE_ERROR_WHILE_SAVING = "Error while saving. Save file may or may not be "
             + "saved correctly\n"
-            + MESSAGE_LINE;
-    public static final String MESSAGE_REPEAT_ORDER = MESSAGE_LINE
-            + "OOPS!! This order already exist.\n"
-            + "Please use a different name for ordering. Thank you!\n"
-            + "To update an Order, please delete the original order and recreate a new one.\n"
-            + "For completed order, please delete and create a new order to proceed on.\n"
-            + MESSAGE_LINE;
-    public static final String MESSAGE_ITEM_IS_ALREADY_EXISTING = MESSAGE_LINE
-            + "The item entered already exists in the system.\n"
-            + "What is the new stock to be added?\n";
-    public static final String MESSAGE_PROMPT_ADDITIONAL_ITEM_STOCK = "Please enter the additional stock of the item.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_SHOW_MOST_POPULAR_ITEM = MESSAGE_LINE + "The most popular item is ";
     public static final String MESSAGE_SHOW_MOST_POPULAR_ITEMS = MESSAGE_LINE + "The most popular items are ";

@@ -117,7 +117,7 @@ Note:
 > 📄 Anything typed after `help` will be ignored and the `help` command will execute as per normal. e.g., `help asdas`
 
 Expected Output:
-![Help](https://user-images.githubusercontent.com/60378963/114325820-942dda80-9b64-11eb-9ce2-01403d0f0869.jpg)
+![help](https://user-images.githubusercontent.com/60378963/114348076-a32e8000-9b98-11eb-8ef0-132702980a68.png)
 
 ### 2.2 Items
 
@@ -137,7 +137,7 @@ Steps to check all items-related commands:
 3. All available commands related to items will then be shown.
    
 Expected Output:
-![items related](https://user-images.githubusercontent.com/60378963/114325962-2d5cf100-9b65-11eb-99c3-5c50a4604911.png)
+![items related](https://user-images.githubusercontent.com/60378963/114348194-cb1de380-9b98-11eb-9134-7c4f56814500.png)
 
 #### 2.2.2. Add an item: `items add`
 
@@ -174,13 +174,13 @@ Expected Output:
 #### 2.2.3. Show the item list: `items list`
 
 Whenever you would like to check all items and their prices and stocks in your inventory, the `items list` feature allows 
-you to achieve it by quickly and accurately displaying the complete item list.
+you to achieve it by quickly and accurately by displaying item list.
 
-Steps to check the complete item list:
+Steps to check the item list:
 
 1. Input `items list` command.
 2. Press enter.
-3. Complete item list then will be shown, including the item index, name, price as well as stock.
+3. Item list will be shown, including the item index, name, price as well as stock.
 
 Note:
 > 📄 If there are no items in the system, a message will be shown to notify you to add at least one item first. <br>
@@ -215,6 +215,11 @@ Expected Output:
 
 If your naughty children have added too many items which do not exist in your inventory, instead of deleting them one by
 one, you can easily clear all recorded items in the inventory and add back existing items.
+
+steps to clear the item list:
+
+Note:
+>
 
 Expected Output:
 ![items clear](https://user-images.githubusercontent.com/60378963/114326195-2c788f00-9b66-11eb-999e-0444b9797a4e.png)
@@ -274,6 +279,8 @@ feature will let you know the most popular item(s) and you are reminded you stoc
 find the item(s) with the highest demand 
 and try to stock up item accordingly.
 
+steps to obtain the most popular item(s) in the items list:
+
 Note:
 > 📄 Item fields (i.e., `p` and `s`) must be lower-case. <br>
 
@@ -328,15 +335,6 @@ Note:
    be added wrongly. Do use [`orders delete`](#234-remove-an-order-orders-delete) feature to delete the order and
    re-input the order details in the correct format. <br>
 > 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
-   
-
-Format:
-
-```
-orders add <customer_name>
-Input the items to be added to this order.
-<item_index> <item_quantity>
-```
 
 Expected Output:
 ![orders add](https://user-images.githubusercontent.com/60378963/114326565-fd631d00-9b67-11eb-8277-9fc6dc864496.png)
@@ -346,9 +344,16 @@ Expected Output:
 
 You can use this command to track all the orders recorded in the system.
 
-Format: `orders list`
+Steps to open your order list:
+
+1. Input `orders list` command.
+2. Press enter.
+3. Order list will be shown, including the order index, order name, items in the order and total price of the order.
+
+
 
 Note:
+> 📄 If there is no order in the system, a message will be shown to notify you to add at least one order first. <br>
 > 📄 Anything typed after `orders list` will be ignored and the command will execute as per normal e.g.,
 > `order list asdasdadasd`.
 
@@ -382,6 +387,8 @@ Expected Output:
 In the very unlikely event that all orders are cancelled, instead of deleting them one by one, you can use the
 `orders clear` feature to do it efficiently.
 
+steps to clear the order list:
+
 Note:
 > 📄 If there is no order in the system, a message will be shown to notify you that you should not use `orders clear`
 > feature.<br>
@@ -400,10 +407,6 @@ Steps to find an order:
 1. Input `orders find <space> <order_name>` to obtain orders related to the order name.
 2. Press enter.
 3. All orders related to the order name will be shown.
-   
-Format: `orders find <order_name>`
-
-Example: `orders find Coco`
 
 Note:
 > 📄 The input is case-sensitive, please be mindful of the exact wording. <br>
@@ -420,10 +423,6 @@ Steps to obtain the price of an order:
 1. Input `orders price <space> <order_index>` to obtain the price for a specific order.
 2. Press enter.
 3. Total price of an order will be shown.
-
-Format: `orders price <order_index>`
-
-Example: `orders price 2`
 
 Note:
 > 📄 If the order index keyed in is not an integer or an integer that does not exist in the order list,
@@ -442,11 +441,7 @@ Steps to change the status of an order:
 2. Input `orders done <space> <order_index>` to change the status of a specific order.
 3. Press enter.
 4. You can see the confirmation message when the order status is changed correctly.
-
-Format: `orders done <order_index>`
-
-Example: `orders done 2`
-
+`
 Note:
 > 📄 If the order index keyed in is not an integer or an integer that is not exist in the order list,
 > an error message will be shown to the user.<br>
@@ -496,7 +491,7 @@ Note:
 
 > 📄 The receipts generated can only be seen when you [exit](#25-exit-the-program-exit) the app.
 
-![Receipt](https://user-images.githubusercontent.com/60378963/113499419-7b13a100-9548-11eb-80eb-35e9cb2aeb5f.jpg)
+![receipt](https://user-images.githubusercontent.com/60378963/114349569-acb8e780-9b9a-11eb-8546-f328338d1641.png)
 
 ### 2.5. Exit the program: `exit`
 

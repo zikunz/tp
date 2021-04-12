@@ -286,8 +286,8 @@ public class Messages {
             + MESSAGE_LINE;
     public static final String MESSAGE_SHOW_MOST_POPULAR_ITEM = MESSAGE_LINE + "The most popular item is ";
     public static final String MESSAGE_SHOW_MOST_POPULAR_ITEMS = MESSAGE_LINE + "The most popular items are ";
-    public static final String SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEM_IS_NOT_ENOUGH = ".\nPlease consider stocking "
-            + "it up if it is not enough :)\n"
+    public static final String SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEM_IS_NOT_ENOUGH = ".\nPlease consider stocking"
+            + " it up if it is not enough :)\n"
             + MESSAGE_LINE;
     public static final String SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEMS_ARE_NOT_ENOUGH = ".\nPlease consider "
             + "stocking them up if they are not enough :)\n"

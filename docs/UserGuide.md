@@ -189,7 +189,7 @@ Expected Output:
 #### 2.2.3. Show the item list: `items list`
 
 Whenever you would like to check all items and their prices and stocks in your inventory, the `items list` feature allows 
-you to achieve it by quickly and accurately by displaying item list.
+you to achieve it by quickly and accurately displaying the item list.
 
 Steps to check the item list:
 
@@ -200,7 +200,7 @@ Steps to check the item list:
 Note:
 > 📄 If there are no items in the system, a message will be shown to notify you to add at least one item first. <br>
 > 📄 Anything typed after `items list` will be ignored, and the command will execute as per normal e.g.,
-> <items list asdsdad>.
+> `items list asdsdad`.
 
 Expected Output:
 ![items list](https://user-images.githubusercontent.com/60378963/114326125-cf7cd900-9b65-11eb-98c4-1849703c4a0f.png)
@@ -308,7 +308,7 @@ If you would like to gain some useful insights from the orders history since you
 feature will let you know the most popular item(s) ordered by customers. You will also be reminded to stock up.
 
 Steps to obtain the most popular item(s) in the items list:
-1. Input `items stats`.
+1. Input `items stats` command.
 2. Press enter.
 3. The most popular item(s) will be shown.
 
@@ -431,7 +431,7 @@ In the very unlikely event that all orders are cancelled, instead of deleting th
 `orders clear` feature to do it efficiently.
 
 steps to clear the order list:
-1. Input `orders clear`.
+1. Input `orders clear` command.
 3. Press enter.
 4. You can see the confirmation message that there is no single order now.
 
@@ -440,7 +440,7 @@ Note:
 > `orders clear` feature.<br>
 > 📄 Items which belong to the orders cleared will be added back to the inventory. It is the same as executing
 > `orders delete` feature for every order in the order list. <br>
-> > 📄 `Orders clear` can make item stock temporarily go more than 1,000,000,000. If it happens, please move them out of
+> 📄 `Orders clear` can make item stock temporarily go more than 1,000,000,000. If it happens, please move them out of
 > the inventory due to limited space available.
 
 Expected Output:

@@ -139,8 +139,8 @@ Section 2.2 will explain the features related to items.
 
 As a first-time user, or whenever you forget some of items-related commands or just need to check a particular command
 format, the `items` feature will show all available commands related to items. At the same time, you can see the brief
-description of those commands. Also typing any invalid items-related commands would also show you all the avaialble
-orders-related commands.
+description of those commands. Also typing any invalid items-related commands would also show you all the available
+items-related commands.
 
 Steps to check all items-related commands:
 

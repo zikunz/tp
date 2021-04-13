@@ -17,9 +17,10 @@ public class Order {
 
     /**
      * Order constructor.
-     * @param customerName input string of the name of customers
-     * @param itemsInOrder input string of the item to be added to order
-     * @param itemsStockCount input string of the number of items to be added to order
+     *
+     * @param customerName    input String of the name of customers
+     * @param itemsInOrder    input ArrayList of the item to be added to order
+     * @param itemsStockCount input ArrayList of the number of items to be added to order
      */
     public Order(String customerName, ArrayList<Item> itemsInOrder, ArrayList<Integer> itemsStockCount) {
         this.customerName = customerName;
@@ -32,6 +33,7 @@ public class Order {
 
     /**
      * Gets the name of the customer.
+     *
      * @return the name of customer
      */
     public String getCustomerName() {
@@ -39,16 +41,18 @@ public class Order {
     }
 
     /**
-     * Gets the items in the order.
-     * @return the items added in the order
+     * Gets list of items in the order.
+     *
+     * @return the list of items in the order
      */
     public ArrayList<Item> getItemsInOrder() {
         return itemsInOrder;
     }
 
     /**
-     * Gets the stock count of a item in the order.
-     * @return the number of stock of a item in the order
+     * Gets the list of stock count for all items in the order.
+     *
+     * @return list of stock count for all items in the order.
      */
     public ArrayList<Integer> getStockCounts() {
         return itemsStockCount;
@@ -56,6 +60,7 @@ public class Order {
 
     /**
      * Gets the order added message.
+     *
      * @return order added message
      */
     public String getAddOrderMessage() {
@@ -64,6 +69,7 @@ public class Order {
 
     /**
      * Gets the order delete message.
+     *
      * @return order delete message
      */
     public String getDeleteOrderMessage() {
@@ -72,6 +78,7 @@ public class Order {
 
     /**
      * Gets the total price of items in order.
+     *
      * @param itemsInOrder the list of items in order
      * @return the total price of all items in order
      */
@@ -80,12 +87,14 @@ public class Order {
         int stockIndex = 0;
         for (Item item : itemsInOrder) {
             totalPrice = totalPrice.add(item.getItemPrice().multiply(new BigDecimal(itemsStockCount.get(stockIndex))));
+            ++stockIndex;
         }
         return totalPrice;
     }
 
     /**
      * Gets the total price in order message.
+     *
      * @param order the order to be selected for total price calculation
      * @return the message for the total price of order
      */
@@ -96,6 +105,7 @@ public class Order {
 
     /**
      * Gets the status of the order.
+     *
      * @return boolean flag of the status of order
      */
     public boolean getStatus() {
@@ -111,6 +121,7 @@ public class Order {
 
     /**
      * Gets the status of order message.
+     *
      * @return the status of order message
      */
     public String getOrderStatusMessage() {
@@ -119,16 +130,17 @@ public class Order {
 
     /**
      * Convert order attributes to a string to save in save file.
+     *
      * @param itemManager manipulates item inventory.
      * @return 1 line string that contains details regarding the order.
      */
     public String saveToFileFormat(ItemManager itemManager) {
         String itemIndexes = "";
         String itemQuantities = "itemQuantity ";
-        for (Item item: itemsInOrder) {
+        for (Item item : itemsInOrder) {
             itemIndexes += (itemManager.getItemIndex(item.getItemName()) + Constants.ARRAY_OFFSET) + " ";
         }
-        for (int quantity: itemsStockCount) {
+        for (int quantity : itemsStockCount) {
             itemQuantities += quantity + " ";
         }
         return customerName + " " + itemIndexes + itemQuantities;

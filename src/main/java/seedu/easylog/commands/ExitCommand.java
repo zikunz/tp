@@ -12,8 +12,10 @@ public class ExitCommand extends Command {
 
     public void execute(ItemManager itemManager, OrderManager orderManager) throws IOException {
         try {
+            logging.writeInfoLevelLog("Starting save file sequence.");
             saveData.saveFile(itemManager, orderManager);
         } catch (IOException e) {
+            logging.writeWarningLevelLog("Error while trying to save data.");
             ui.showErrorWhileSaving();
         }
         ui.showExit();

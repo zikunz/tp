@@ -1,7 +1,5 @@
-
 package seedu.easylog.model;
 
-import seedu.easylog.common.Messages;
 import seedu.easylog.common.Constants;
 
 import java.math.BigDecimal;
@@ -12,19 +10,20 @@ import java.util.ArrayList;
  */
 public class ItemManager {
 
-    private static final ArrayList<Item> ITEM_LIST = new ArrayList<>();
+    protected ArrayList<Item> itemList;
+    protected ArrayList<Item> foundItemList = new ArrayList<>();
 
-    private static final ArrayList<Item> FOUND_LIST = new ArrayList<>();
-
-    private static final ArrayList<String> ITEM_DESCRIPTION_RECORD = new ArrayList<>();
+    public ItemManager() {
+        this.itemList = new ArrayList<>();
+    }
 
     /**
      * Adds item to the item list.
+     *
      * @param item item to be added to the item list
      */
     public void addItem(Item item) {
-        ITEM_LIST.add(item);
-        ITEM_DESCRIPTION_RECORD.add(item.getItemName());
+        itemList.add(item);
     }
 
     /**
@@ -33,59 +32,31 @@ public class ItemManager {
      * @return The list of items in the system
      */
     public ArrayList<Item> getItemList() {
-        return ITEM_LIST;
+        return itemList;
     }
 
     /**
      * Gets the list of items in String format to be printed as output to the user.
-     * Indentation is added if this method is called to help print the list of orders.
-     * No indentation is added if this method is called when only printing the list of items.
      *
      * @return String format for the list of items to be printed
      */
-    public String getItemListPrintFormat(ArrayList<Item> itemListToBePrint, boolean shouldIncludeIndentation) {
+    public String getItemListPrintFormat(ArrayList<Item> itemListToBePrint) {
         String itemsListOutput = "";
 
-        if (shouldIncludeIndentation) {
-            for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
-                itemsListOutput += Messages.MESSAGE_INDENTATION + (itemIndex + 1) + ". "
-                        + itemListToBePrint.get(itemIndex).getItemName() + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
-                        + itemListToBePrint.get(itemIndex).getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
-                        + itemListToBePrint.get(itemIndex).getItemStock() + "\n";
-            }
-        } else {
-            for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
-                itemsListOutput += (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName()
-                        + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
-                        + itemListToBePrint.get(itemIndex).getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
-                        + itemListToBePrint.get(itemIndex).getItemStock() + "\n";
-            }
-        }
-        return itemsListOutput;
-    }
-
-    /**
-     * Gets the list of items in String format to be printed as output to the user.
-     *
-     * @return String format for the list of relevant items to be printed
-     */
-    public String getFoundListPrintFormat(ArrayList<Item> itemListToBePrint) {
-        String foundListOutput = "";
         for (int itemIndex = 0; itemIndex < itemListToBePrint.size(); itemIndex++) {
-            foundListOutput += (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName()
+            itemsListOutput += (itemIndex + 1) + ". " + itemListToBePrint.get(itemIndex).getItemName()
                     + Constants.ITEM_NAME_AND_PRICE_SEPARATOR
                     + itemListToBePrint.get(itemIndex).getItemPrice() + Constants.ITEM_PRICE_AND_STOCK_SEPARATOR
                     + itemListToBePrint.get(itemIndex).getItemStock() + "\n";
         }
-        return foundListOutput;
+        return itemsListOutput;
     }
 
     /**
      * Removes a specific item from the system.
      */
     public void deleteItem(int index) {
-        ITEM_LIST.remove(index);
-        ITEM_DESCRIPTION_RECORD.remove(index);
+        itemList.remove(index);
     }
 
     /**
@@ -96,7 +67,7 @@ public class ItemManager {
     public void findItem(String keyword) {
         for (int i = 0; i < getSize(); i++) {
             if (getItem(i).itemName.contains(keyword)) {
-                FOUND_LIST.add(getItem(i));
+                foundItemList.add(getItem(i));
             }
         }
     }
@@ -121,19 +92,19 @@ public class ItemManager {
     /**
      * Gets the found items.
      *
-     * @return list of found item(s) from ITEM_LIST
+     * @return list of found item(s) from itemList
      */
-    public ArrayList<Item> getFoundList() {
-        return FOUND_LIST;
+    public ArrayList<Item> getFoundItemList() {
+        return foundItemList;
     }
 
     /**
      * Gets the number of relevant items after search.
      *
-     * @return the size of FOUND_LIST
+     * @return the size of foundItemList
      */
-    public int foundSize() {
-        return FOUND_LIST.size();
+    public int getFoundSize() {
+        return foundItemList.size();
     }
 
     /**
@@ -142,7 +113,7 @@ public class ItemManager {
      * @return the description of the specific item
      */
     public Item getItem(int index) {
-        return ITEM_LIST.get(index);
+        return itemList.get(index);
     }
 
     /**
@@ -151,28 +122,27 @@ public class ItemManager {
      * @return the size of item list
      */
     public int getSize() {
-        return ITEM_LIST.size();
+        return itemList.size();
     }
 
     /**
      * Clears all items in the system.
      */
     public void clearItemList() {
-        ITEM_LIST.clear();
-        ITEM_DESCRIPTION_RECORD.clear();
+        itemList.clear();
     }
 
     /**
      * Clears all found items in Found List.
      */
     public void clearFoundList() {
-        FOUND_LIST.clear();
+        foundItemList.clear();
     }
 
     /**
-     * Gets the latest item added to the ITEM_LIST.
+     * Gets the latest item added to the itemList.
      *
-     * @return Latest item added to ITEM_LIST
+     * @return Latest item added to itemList
      */
     public Item getLatestItemAdded() {
         int index = getSize() - Constants.ARRAY_OFFSET;
@@ -198,35 +168,87 @@ public class ItemManager {
     }
 
     /**
-     * Gets the item stock of a particular item.
-     *
-     * @param item item of interest
-     * @return the current stock of the specified item
+     * Increments the item sales after an item is added to an order.
      */
-    public int getItemStock(Item item) {
-        return item.getItemStock();
+    public void incrementItemSales(Item item, int newItemSales) {
+        int currentItemSales = item.getItemSales();
+        int updatedItemSales = currentItemSales + newItemSales;
+
+        item.setItemSales(updatedItemSales);
     }
 
     /**
-     * Checks if the item exist in the item list.
-     * @param itemName the item to be checked
-     * @return the existence of item in the item list
+     * Gets the sales of the most popular item(s).
+     *
+     * @return sales of most popular item(s).
      */
-    public static boolean checkRepeatItem(String itemName) {
-        for (Item item : ITEM_LIST) {
-            if (item.itemName.equals(itemName)) {
-                return true;
+    public int countSalesOfMostPopularItems() {
+        int largestSales = 0;
+
+        for (Item item : itemList) {
+            if (item.getItemSales() > largestSales) {
+                largestSales = item.getItemSales();
             }
         }
-        return false;
+
+        return largestSales;
     }
 
     /**
-     * Gets the item descriptions from the item list.
-     * @return the descriptions of items form the item list
+     * Counts the number of most popular item(s).
+     *
+     * @return number of most popular item(s).
      */
-    public ArrayList<String> getItemDescriptionRecord() {
-        return ITEM_DESCRIPTION_RECORD;
+    public int countNumberOfMostPopularItems() {
+        int numberOfMostPopularItems = 0;
+        int largestSales = countSalesOfMostPopularItems();
+
+        if (largestSales == 0) {
+            return numberOfMostPopularItems;
+        }
+
+        for (Item item : itemList) {
+            if (item.getItemSales() == largestSales) {
+                numberOfMostPopularItems++;
+            }
+        }
+
+        return numberOfMostPopularItems;
+    }
+
+    /**
+     * Gets the description of most popular item(s).
+     *
+     * @return description of most popular item(s).
+     */
+    public String getMostPopularItemDescriptions() {
+        String mostPopularItemDescriptions = "";
+        int numberOfMostPopularItems = countNumberOfMostPopularItems();
+        int largestSales = countSalesOfMostPopularItems();
+        int count = 0;
+
+        if (numberOfMostPopularItems == 1) {
+            for (Item item : itemList) {
+                if (item.getItemSales() == largestSales) {
+                    mostPopularItemDescriptions += item.itemName;
+                }
+            }
+        }
+
+        if (numberOfMostPopularItems > 1) {
+            for (Item item : itemList) {
+                if (item.getItemSales() == largestSales) {
+                    if (count == 0) {
+                        mostPopularItemDescriptions += item.itemName;
+                    } else {
+                        mostPopularItemDescriptions = mostPopularItemDescriptions + ", " + item.itemName;
+                    }
+                    count++;
+                }
+            }
+        }
+
+        return mostPopularItemDescriptions;
     }
 }
 

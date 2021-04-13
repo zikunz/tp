@@ -9,11 +9,17 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class Logging extends Storage {
+/**
+ * Deals with logging function for the app.
+ */
+public class Logging {
 
     Logger logger = Logger.getLogger("easyLogLogs");
     FileHandler fh;
 
+    /**
+     * Setting up the logging environment.
+     */
     public void setUpLogger() {
         // Reset logs from previous usage of the app
         LogManager.getLogManager().reset();
@@ -39,16 +45,28 @@ public class Logging extends Storage {
         }
     }
 
+    /**
+     * Method to log INFO message.
+     * @param logMessage Message to be logged as INFO.
+     */
     public void writeInfoLevelLog(String logMessage) {
         logger.setUseParentHandlers(false);
         logger.info(logMessage);
     }
 
+    /**
+     * Method to log WARNING message.
+     * @param logMessage Message to be logged as WARNING.
+     */
     public void writeWarningLevelLog(String logMessage) {
         logger.setUseParentHandlers(false);
         logger.warning(logMessage);
     }
 
+    /**
+     * Method to log SEVERE message.
+     * @param logMessage Message to be logged as SEVERE.
+     */
     public void writeSevereLevelLog(String logMessage) {
         logger.setUseParentHandlers(false);
         logger.severe(logMessage);

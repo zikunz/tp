@@ -6,6 +6,7 @@ import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.model.ItemManager;
 
 public class ItemsDeleteCommand extends ItemsCommand {
+
     /**
      * Deletes a single item from the list of items.
      */
@@ -20,6 +21,5 @@ public class ItemsDeleteCommand extends ItemsCommand {
         }
         ui.showDeletedItem(itemManager.getItem(index));
         itemManager.deleteItem(index);
-        assert itemManager.getSize() == size - 1 : "After a valid deletion, one item is deleted.";
     }
 }

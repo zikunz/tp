@@ -1,5 +1,5 @@
 package seedu.easylog.exceptions;
 
-public class RepeatedOrderException extends Throwable{
+public class NullItemIndexException extends Throwable {
     // no other code needed
 }

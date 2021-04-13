@@ -45,7 +45,7 @@ to offer and we have prepared [Frequently Asked Questions (FAQ)](#3-faq) and a c
     - [2.2.1. Show items-related commands: `items`](#221-show-items-related-commands-items)
     - [2.2.2. Add an item: `items add`](#222-add-an-item-items-add)
     - [2.2.3. Show the item list : `items list`](#223-show-the-item-list-items-list)
-    - [2.2.4. Delete an item: `delete`](#224-delete-an-item-items-delete)
+    - [2.2.4. Delete an item: `items delete`](#224-delete-an-item-items-delete)
     - [2.2.5. Empty the item list: `items clear`](#225-empty-the-item-list-items-clear)
     - [2.2.6. Update an item: `items update`](#226-update-an-item-items-update)
     - [2.2.7. Find items: `items find`](#227-find-items-items-find)
@@ -215,15 +215,15 @@ achieve this easily.
 Steps to delete an item in easyLog
 
 1. (Optional) Input `items list` command to check the item index to be deleted.
-2. Input `items delete <space> <item_index>` for the order to be removed from the item list.
+2. Input `items delete <space> <item_index>` for the item to be removed from the item list.
 3. Press enter.
 4. You can see the confirmation message when the item is removed successfully.
    
 Note:
-> 📄 If there is no item in the system, a message will be shown to notify you to add orders first. <br>
+> 📄 If there is no item in the system, a message will be shown to notify you to add items first. <br>
 > 📄 If you remember the item's index, you can skip step 1. <br>
 > 📄 The item_index should only be in Arabic numerals. <br>
-> 📄 The item_index should not be more than the total number of items in the item list.
+> 📄 The item_index should not be more than the total number of items in the item list.<br>
 
 Expected Output:
 ![items delete](https://user-images.githubusercontent.com/60378963/114326249-84af9100-9b66-11eb-8b46-448fbf0acf41.png)

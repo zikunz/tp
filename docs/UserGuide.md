@@ -41,29 +41,29 @@ to offer and we have prepared [Frequently Asked Questions (FAQ)](#3-faq) and a c
 
 - [1. Quick start](#1-quick-start)
 - [2. Features](#2-features)
-    * [2.1. Viewing help: `help`](#21-viewing-help-help)
-    * [2.2. Items](#22-items)
-        - [2.2.1. Show items-related commands: `items`](#221-show-items-related-commands-items)
-        - [2.2.2. Add an item: `items add`](#222-add-an-item-items-add)
-        - [2.2.3. Show the item list : `items list`](#223-show-the-item-list-items-list)
-        - [2.2.4. Delete an item: `items delete`](#224-delete-an-item-items-delete)
-        - [2.2.5. Empty the item list: `items clear`](#225-empty-the-item-list-items-clear)
-        - [2.2.6. Update an item: `items update`](#226-update-an-item-items-update)
-        - [2.2.7. Find items: `items find`](#227-find-items-items-find)
-        - [2.2.8. Discover the most popular item(s): `items stats`](#228-discover-the-most-popular-items-items-stats)
-    * [2.3. Orders](#23-orders)
-        - [2.3.1. Show orders-related commands: `orders`](#231-show-orders-related-commands--orders)
-        - [2.3.2. Add an order: `orders add`](#232-add-an-order-orders-add)
-        - [2.3.3. Show the order list: `orders list`](#233-show-the-order-list-orders-list)
-        - [2.3.4. Remove an order: `orders delete`](#234-remove-an-order-orders-delete)
-        - [2.3.5. Empty the order list: `orders clear`](#235-empty-the-order-list-orders-clear)
-        - [2.3.6. Find orders: `orders find`](#236-find-orders-orders-find)
-        - [2.3.7. Get the total price of an order:: `orders price`](#237-get-the-total-price-of-an-order-orders-price)
-        - [2.3.8. Update the status of an order: `orders done`](#238-update-the-status-of-an-order-orders-done)
-    * [2.4. Storage](#24-storage)
-        - [2.4.1 Load, create and save data](#241-load-create-and-save-data)
-        - [2.4.2 Generate receipts](#242-generate-receipts)
-    * [2.5. Exit the program: `exit`](#25-exit-the-program-exit)
+  * [2.1. Viewing help: `help`](#21-viewing-help-help)
+  * [2.2. Items](#22-items)
+    - [2.2.1. Show items-related commands: `items`](#221-show-items-related-commands-items)
+    - [2.2.2. Add an item: `items add`](#222-add-an-item-items-add)
+    - [2.2.3. Show the item list : `items list`](#223-show-the-item-list-items-list)
+    - [2.2.4. Delete an item: `items delete`](#224-delete-an-item-items-delete)
+    - [2.2.5. Empty the item list: `items clear`](#225-empty-the-item-list-items-clear)
+    - [2.2.6. Update an item: `items update`](#226-update-an-item-items-update)
+    - [2.2.7. Find items: `items find`](#227-find-items-items-find)
+    - [2.2.8. Discover the most popular item(s): `items stats`](#228-discover-the-most-popular-items-items-stats)
+  * [2.3. Orders](#23-orders)
+    - [2.3.1. Show orders-related commands: `orders`](#231-show-orders-related-commands--orders)
+    - [2.3.2. Add an order: `orders add`](#232-add-an-order-orders-add)
+    - [2.3.3. Show the order list: `orders list`](#233-show-the-order-list-orders-list)
+    - [2.3.4. Remove an order: `orders delete`](#234-remove-an-order-orders-delete)
+    - [2.3.5. Empty the order list: `orders clear`](#235-empty-the-order-list-orders-clear)
+    - [2.3.6. Find orders: `orders find`](#236-find-orders-orders-find)
+    - [2.3.7. Get the total price of an order:: `orders price`](#237-get-the-total-price-of-an-order-orders-price)
+    - [2.3.8. Update the status of an order: `orders done`](#238-update-the-status-of-an-order-orders-done)
+  * [2.4. Storage](#24-storage)
+    - [2.4.1 Load, create and save data](#241-load-create-and-save-data)
+    - [2.4.2 Generate receipts](#242-generate-receipts)
+  * [2.5. Exit the program: `exit`](#25-exit-the-program-exit)
 - [3. FAQ](#3-faq)
 - [4. Command Summary](#4-command-summary)
 
@@ -71,7 +71,7 @@ to offer and we have prepared [Frequently Asked Questions (FAQ)](#3-faq) and a c
 
 ## 1. Quick start
 
-Setting up easyLog is made really easy. It does not even require an installation, and a few simple
+Setting up easyLog is made really easy. It does not even require an installation, and a few simple 
 steps listed below will be good to go.
 
 1. Ensure your device has Java 11 installed.
@@ -189,7 +189,7 @@ Expected Output:
 
 #### 2.2.3. Show the item list: `items list`
 
-Whenever you would like to check all items and their prices and stocks in your inventory, the `items list` feature allows
+Whenever you would like to check all items and their prices and stocks in your inventory, the `items list` feature allows 
 you to achieve it by quickly and accurately displaying the item list.
 
 Steps to check the item list:
@@ -242,7 +242,7 @@ Steps to update an item:
 6. You can see a confirmation message when the item inventory is emptied successfully.
 
 Note:
-> 📄 If there is no single item in the item list, you will be notified that you should not use `items clear`
+> 📄 If there is no single item in the item list, you will be notified that you should not use `items clear` 
 > command. <br>
 
 
@@ -285,8 +285,8 @@ Expected Output:
 
 #### 2.2.7. Find items: `items find`
 
-Whenever you would like to find relevant items and their prices and stocks in your inventory,
-the `items find` feature allows you to achieve it by quickly and accurately
+Whenever you would like to find relevant items and their prices and stocks in your inventory, 
+the `items find` feature allows you to achieve it by quickly and accurately 
 displaying the relevant item from the item list.
 
 Steps to find an item:
@@ -363,16 +363,16 @@ Steps to add an order in easyLog:
 Note:
 > 📄 Order has to contain at least 1 item to be added into the system. <br>
 > 📄 The customer name cannot exceed 30 characters including spaces. <br>
-> 📄 Item quantity to be inputted into the order cannot be less than 1 or more than the current stock in the inventory.
+> 📄 Item quantity to be inputted into the order cannot be less than 1 or more than the current stock in the inventory. 
 > <br>
 > 📄 Item quantity for each item inputted into the order would be removed from the inventory stock of that item
-and tracked separately. The quantity would only be returned and added back to the inventory count for that item
-if the order is not done and deleted. <br>
+    and tracked separately. The quantity would only be returned and added back to the inventory count for that item
+    if the order is not done and deleted. <br>
 > 📄 When adding the same item twice into the order, it will not combine the total stock of that item added but instead
 show as 2 separate additions of the same item. <br>
 > 📄 While adding items into the order, if the app encounters any format error in the input, it may cause order details to
-be added wrongly. Do use [`orders delete`](#234-remove-an-order-orders-delete) feature to delete the order and
-re-input the order details in the correct format. <br>
+    be added wrongly. Do use [`orders delete`](#234-remove-an-order-orders-delete) feature to delete the order and
+    re-input the order details in the correct format. <br>
 > 📄 When in doubt, do follow the prompts shown on the command terminal. <br>
 
 Expected Output:
@@ -413,7 +413,7 @@ Steps to remove an order from the order list:
 Note:
 > 📄 If there is no order in the system, a message will be shown to notify you to add at least one order first. <br>
 > 📄 If you remember the customer's order index, you can skip step 1. <br>
-> 📄 Unless the item has been deleted from the item list, every item under the deleted order
+> 📄 Unless the item has been deleted from the item list, every item under the deleted order 
 > will be added back to the inventory. <br>
 > 📄 If an out-of-range order index is entered, easyLog will not check if the order index is an integer. For
 > instance, if there are only 2 orders placed by customers, inputting `orders delete 2.6` will cause easyLog show
@@ -496,8 +496,8 @@ Steps to change the status of an order:
 2. Input `orders done <space> <order_index>` to change the status of a specific order.
 3. Press enter.
 4. You can see the confirmation message when the order status is changed correctly.
-   `
-   Note:
+`
+Note:
 > 📄 If the order index keyed in is not an integer or an integer that is not exist in the order list,
 > an error message will be shown to the user.<br>
 > 📄 Once an order is completed, it will be deleted automatically from the system
@@ -517,11 +517,11 @@ Section 2.4 will explain storage related features.
 
 While initializing easyLog, it automatically looks for an available save file to load so that you can continue your
 progress from the previous exit. If there are no save file available to load, easyLog will automatically create a save
-file for you and save your data and information when exiting the app. The save file will be named as `easyLog.txt` and
+file for you and save your data and information when exiting the app. The save file will be named as `easyLog.txt` and 
 will be located in the same folder/directory as the easyLog app.
 
-The save file can be copied to another device and placed in the same folder/directory that contains the easyLog app. Do
-take note that only one `easyLog.txt` should be in the directory or there would be an error. This transfer of save file
+The save file can be copied to another device and placed in the same folder/directory that contains the easyLog app. Do 
+take note that only one `easyLog.txt` should be in the directory or there would be an error. This transfer of save file 
 allows you to work on multiple devices if you choose to do so.
 
 It is not recommended that you manipulate/edit the data in `easyLog.txt`. However, if you are an expert user and confident,
@@ -539,16 +539,16 @@ Note:
 
 #### 2.4.2. Generate receipts
 
-When [`orders done`](#238-update-the-status-of-an-order-orders-done) feature is executed, a receipt will be
-automatically generated that contains the order details that was deleted. The generated receipts can be found in the
-same directory as the location of the easyLog app inside a `Receipts` folder. The receipts generated will be in a `.txt`
+When [`orders done`](#238-update-the-status-of-an-order-orders-done) feature is executed, a receipt will be 
+automatically generated that contains the order details that was deleted. The generated receipts can be found in the 
+same directory as the location of the easyLog app inside a `Receipts` folder. The receipts generated will be in a `.txt` 
 format. This allows the list of orders while using the app to be kept clean with only the orders that are not done for
 easier viewing. Also, the generated receipts allows you to keep track of your revenue or to handle your taxes.
 Furthermore, receipts are numbered to show you how many orders you have fulfilled.
 
 Note:
 
-> 📄 The receipts generated can only be seen in the directory where you start the app from when you
+> 📄 The receipts generated can only be seen in the directory where you start the app from when you 
 > [exit](#25-exit-the-program-exit) the app.
 
 ![receipt](https://user-images.githubusercontent.com/60378963/114349569-acb8e780-9b9a-11eb-8546-f328338d1641.png)

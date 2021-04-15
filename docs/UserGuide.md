@@ -60,7 +60,7 @@ to offer and we have prepared [Frequently Asked Questions (FAQ)](#3-faq) and a c
     - [2.3.6. Find orders: `orders find`](#236-find-orders-orders-find)
     - [2.3.7. Get the total price of an order:: `orders price`](#237-get-the-total-price-of-an-order-orders-price)
     - [2.3.8. Update the status of an order: `orders done`](#238-update-the-status-of-an-order-orders-done)
-  * [2.4. Storage](#24-storage)
+  * [2.4. Storage](#24-storage) 
     - [2.4.1 Load, create and save data](#241-load-create-and-save-data)
     - [2.4.2 Generate receipts](#242-generate-receipts)
   * [2.5. Exit the program: `exit`](#25-exit-the-program-exit)
@@ -106,7 +106,7 @@ Section 2 will explain the features available in easyLog.
 * Any word surrounded by `<>` is a parameter to be entered by the user (e.g., in `items add <item_name>`, `item_name` is
   a parameter, and a valid command can be `items add mp3`).
 
-* Any leading and trailing whitespaces will be neglected. This means, for instance, `<spaces> help <spaces>` will trigger
+* Any leading and trailing whitespaces will be neglected. This means, for instance, `<spaces> help <spaces>` will trigger 
   [2.1 viewing help: `help`](#21-viewing-help-help).
 
 * In the user guide, you will come across 📄 which can refer to a tip or warning.
@@ -156,7 +156,7 @@ Expected Output:
 
 #### 2.2.2. Add an item: `items add`
 
-When you are sometimes overwhelmed by handling a large variety of items, the `items add` feature allows you to record
+When you are sometimes overwhelmed by handling a large variety of items, the `items add` feature allows you to record 
 the details of those items one by one into the easyLog application.
 
 Steps to add an item in easyLog:
@@ -170,12 +170,12 @@ Steps to add an item in easyLog:
 Note:
 > 📄 There should be exactly 1 empty space between <item_price> and <item_stock>. <br>
 > 📄 Valid item names cannot be empty or consist of purely white space(s). <br>
-> 📄 Valid item names cannot exceed 30 characters, including spaces. The name of an item starts after the first empty space
+> 📄 Valid item names cannot exceed 30 characters, including spaces. The name of an item starts after the first empty space 
 > after "add" in `items add`. <br>
 > 📄 If an item name is already found in the item list, adding new items with the same name will
 > still be successful but take note that they will be tracked differently. <br>
 > 📄 A valid item price must be a number ranging from 0 (free item) to 1,000,000,000 (inclusive). <br>
-> 📄 Item price recorded has exactly 2 decimal places and will be rounded if applicable (e.g., 4.595 will be rounded to
+> 📄 Item price recorded has exactly 2 decimal places and will be rounded if applicable (e.g., 4.595 will be rounded to 
 > 4.60 and 68.58432 will be rounded to 68.58). <br>
 > 📄 If an invalid item price is entered, easyLog will not check the validity of item stock and will only notify the user
 > that item price entered is wrong (e.g., empty item price, invalid item price). <br>
@@ -233,7 +233,7 @@ Expected Output:
 
 #### 2.2.5. Empty the item list: `items clear`
 
-If you would like to clear all existing items in your inventory, you can use the `items clear` feature to do that
+If you would like to clear all existing items in your inventory, you can use the `items clear` feature to do that 
 easily.
 
 Steps to update an item:
@@ -253,7 +253,7 @@ Expected Output:
 
 #### 2.2.6. Update an item: `items update`
 
-When you want to update either the price or stock of an item in the system, the `items update` feature allows you to
+When you want to update either the price or stock of an item in the system, the `items update` feature allows you to 
 achieve this easily.
 
 Steps to update an item:
@@ -314,7 +314,7 @@ Steps to obtain the most popular item(s) in the items list:
 3. The most popular item(s) will be shown.
 
 Note:
-> 📄 There can be multiple items which are the most popular. This happens when more than one item have most number of
+> 📄 There can be multiple items which are the most popular. This happens when more than one item have the most number of 
 > sales. <br>
 > 📄 If the item no longer exists in the item list, the number of sales of that item is lost. <br>
 > 📄 The hard limit for items sales is 2147483647.
@@ -500,7 +500,7 @@ Steps to change the status of an order:
 Note:
 > 📄 If the order index keyed in is not an integer or an integer that is not exist in the order list,
 > an error message will be shown to the user.<br>
-> 📄 Once an order is completed, it will be deleted automatically from the system
+> 📄 Once an order is completed, it will be deleted automatically from the system 
 > and a receipt will be generated.<br>
 > 📄 More details on receipt generation can be seen [here](#242-generate-receipts).
 
@@ -561,7 +561,7 @@ Exit the app.
 
 Note:
 
-> 📄 Anything typed after `exit` will be ignored, and the command will execute as per normal e.g.,
+> 📄 Anything typed after `exit` will be ignored, and the command will execute as per normal e.g., 
 > `exit adasadadas`.
 
 Format: `exit`

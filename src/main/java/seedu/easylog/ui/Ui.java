@@ -40,6 +40,10 @@ public class Ui {
         System.out.print(Messages.MESSAGE_INVALID_COMMAND);
     }
 
+    /**
+     * Show message for when item has been added into the inventory.
+     * @param item item that was added into the inventory.
+     */
     public void showAddItem(Item item) {
         System.out.print(Messages.MESSAGE_LINE);
         System.out.println(item.getAddItemMessage());
@@ -175,6 +179,9 @@ public class Ui {
         System.out.print(Messages.MESSAGE_SHOW_ORDERS_RELATED_COMMANDS);
     }
 
+    /**
+     * Show message to tell user to input item index and item quantity to be added into the specific order.
+     */
     public void showAddItemsToOrder() {
         System.out.print(Messages.MESSAGE_ADD_ITEMS_TO_ORDER);
     }
@@ -263,9 +270,14 @@ public class Ui {
         System.out.print(Messages.MESSAGE_CLEAR_ORDER_LIST);
     }
 
-    public void showItemNotFoundWhenAddingToOrder(String itemIndex) {
+    /**
+     * Show message when user tried to input item not found in inventory into the order.
+     *
+     * @param itemIndexNotOffsetted item index that the user tried to enter into the order.
+     */
+    public void showItemNotFoundWhenAddingToOrder(String itemIndexNotOffsetted) {
         System.out.print(Messages.MESSAGE_LINE);
-        System.out.println(itemIndex + " does not exist. "
+        System.out.println(itemIndexNotOffsetted + " does not exist. "
                 + "Please try another valid item number until at least one item is added to the order.");
         System.out.print(Messages.MESSAGE_LINE);
     }
@@ -517,19 +529,17 @@ public class Ui {
         System.out.print(Messages.MESSAGE_NOT_ENOUGH_STOCK);
     }
 
-    public void showContinueAddingItemsToOrder() {
-        System.out.print(Messages.MESSAGE_CONTINUE_ADDING_ITEM_TO_ORDER);
-    }
-
     public void showItemAndStockAddedToOrder(String itemName, int stockAdded) {
         System.out.print(Messages.MESSAGE_LINE);
         System.out.print(itemName + " and stock of " + stockAdded + " added to the order.\n" + Messages.MESSAGE_LINE);
     }
 
+    /**
+     * Show message to tell user that wrong format is inputted while trying to add item details into the order.
+     */
     public void showInvalidWhileAddingItemToOrder() {
         System.out.print(Messages.MESSAGE_INVALID_WHILE_ADDING_ITEM_TO_ORDER);
     }
-
 
     public void showItemNotFound() {
         System.out.print(Messages.MESSAGE_ITEM_NOT_FOUND);
@@ -742,5 +752,13 @@ public class Ui {
      */
     public void showCustomerNameTooLong() {
         System.out.print(Messages.MESSAGE_CUSTOMER_NAME_TOO_LONG);
+    }
+
+    public void showInvalidInventory() {
+        System.out.print(Messages.MESSAGE_INVALID_INVENTORY);
+    }
+
+    public void showUnknownErrorOccurred() {
+        System.out.print(Messages.MESSAGE_UNKNOWN_ERROR_OCCURRED);
     }
 }

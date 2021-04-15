@@ -2,7 +2,7 @@
 
 By: `Ong Wei Sheng`, `Zhu Zikun`, `Qiu Yi Wen`, `Li Kexuan`, `Jiang Qixiong`
 
-Last Updated: `10 April 2021` <br>
+Last Updated: `12 April 2021` <br>
 
 ![Supported Java versions](https://img.shields.io/badge/Java-11-blue.svg)
 ![Supported OS](https://img.shields.io/badge/Supported%20OS-Windows|MacOS|Linux-yellow.svg)
@@ -31,17 +31,19 @@ Last Updated: `10 April 2021` <br>
     - [2.8. Common Component](#28-common-component)
 - [3. **Implementation**](#3-implementation)
     - [3.1. App Initialization](#31-app-initialization)
-    - [3.2. Loading of Save Data](#32-loading-of-save-data)
-    - [3.3. Creation or Saving of Save Data](#33-creation-or-saving-of-save-data)
-    - [3.4. Orders Done and Generation of Receipts](#34-orders-done-and-generation-of-receipt)
-    - [3.5. Items Add](#35-items-add)
-    - [3.6. Orders Add](#36-orders-add)
-    - [3.7. Orders Delete](#37-orders-delete)
+    - [3.2. Processing of user inputs](#32-processing-of-user-inputs)
+    - [3.3. Loading of save data](#33-loading-of-save-data)
+    - [3.4. Items add](#34-items-add)
+    - [3.5. Items update](#35-items-update)
+    - [3.6. Orders add](#36-orders-add)
+    - [3.7. Orders delete](#37-orders-delete)
+    - [3.8. Marking an order as done and generation of receipts](#38-marking-an-order-as-done-and-generation-of-receipts)
+    - [3.9. Exit command and creating and/or saving of save data](#39-exit-command-and-creating-andor-saving-of-save-data)
 - [4. **Documentation**](#4-documentation)
 - [5. **Testing**](#5-testing)
-    - [5.1. Types of Tests](#52-types-of-tests)
-    - [5.2. Running Tests](#51-running-tests)
-- [6. **Dev Ops**](#dev-ops)
+    - [5.1. Types of Tests](#51-types-of-tests)
+    - [5.2. Running Tests](#52-running-tests)
+- [6. **Dev Ops**](#6-dev-ops)
     - [6.1. Build Automation](#61-build-automation)
     - [6.2. Continuous Integration](#62-continuous-integration)
     - [6.3. Coverage Report](#63-coverage-report)
@@ -74,14 +76,14 @@ further or just curious about the workings of this application. This would allow
 dive right in to improving the code, performance, features or even adding new features much more easily due to the
 understanding of the structure of the codebase and implementation of existing features.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Content](#table-of-contents)
 
 ### 1.2 Prerequisites
 
 - Java 11 (can be downloaded from [here](https://www.oracle.com/sg/java/technologies/javase-jdk11-downloads.html))
 - IntelliJ IDEA (can be downloaded from [here](https://www.jetbrains.com/idea/download/#section=mac))
 
-[Return to Top](#1-introduction)
+[Return to Table Of Content](#table-of-contents)
 
 ### 1.3 Setting Up
 
@@ -99,14 +101,6 @@ understanding of the structure of the codebase and implementation of existing fe
 5. Upon successful run, the following opening message will be shown:
 
 ```
-                       _                 
-                      | |                
-   ___  __ _ ___ _   _| |     ___   __ _ 
-  / _ \/ _` / __| | | | |    / _ \ / _` |
- |  __/ (_| \__ \ |_| | |___| (_) | (_| |
-  \___|\__,_|___/\__, |______\___/ \__, |
-                  __/ |             __/ |
-                 |___/             |___/ 
 ____________________________________________________________
 Hello! I'm easyLog!
 What can I do for you? Enter help to view commands.
@@ -117,15 +111,15 @@ Save data not found.
 ____________________________________________________________
 ```
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ***
 
 ## 2. Design
 
-In this section, TO BE ADDED
+In this section, we discuss the various design of the different components of the application.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 2.1 Architecture
 
@@ -143,7 +137,7 @@ Apart from the `EasyLog` component, the application also consists of the followi
 - `Storage`: Handles loading, creating and saving of data into `.txt` files.
 - `Common`: Contains variables and messages commonly used in all the components.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 2.2 EasyLog Component
 
@@ -151,7 +145,7 @@ The EasyLog component is responsible for initializing the app. It initializes th
 instantiating classes from the `Ui`, `Parser`, `Model` and `Storage` components. More details regarding the
 initialization will be covered in the [Implementation](#3-implementation) section.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 2.3 Ui Component
 
@@ -160,11 +154,11 @@ The UI component does the following:
 2. It is responsible for printing and showing responses to the user's input while executing commands related to the
 user's input.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 2.4 Parser Component
 
-![Parser Diagram](https://user-images.githubusercontent.com/57165946/113112907-4c41b600-923c-11eb-897a-314cd186b578.png)
+![Parser Diagram](https://user-images.githubusercontent.com/57165946/114297222-f8f42100-9ae1-11eb-9460-00f8045a2dc6.png)
 
 The Parser component deals with the input of the user. It makes sense of the users input and executes respective
 commands according to the user's input. This component consists of 3 different classes:
@@ -172,33 +166,49 @@ commands according to the user's input. This component consists of 3 different c
 2. `ItemsParser` class to process inputs related to `items` features.
 3. `OrdersParser` class to process inputs related to `orders` features.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 2.5 Command Component
 
 ![Command Class Diagram](https://user-images.githubusercontent.com/60378963/113397031-ff421900-93ce-11eb-8e31-a9207d23f2f1.png)
 All four ExitCommand, OrdersCommand, ItemsCommand and HelpCommand classes extend the abstract Command class.
-OrdersCommand and ItemsCommand Classes are abstract class and it has various Command classes (e.g. OrdersXXXCommand, ItemsXXXCommand) extending them, in order to
-deal with different command actions ask by the user.
+OrdersCommand and ItemsCommand Classes are abstract class, and it has various Command classes 
+(e.g. OrdersXXXCommand, ItemsXXXCommand) extending them, in order to deal with different command actions ask by the 
+user.
 
 1. Once the user input is been parsed by the `Parser` class new `Command` object will be created.
 2. Different actions will be executed by the execute method in different `Command` class.
-3. Command execution take place and it will affect the `Model` and its data (e.g. adding a new item).
+3. Command execution takes place, and it will affect the `Model` and its data (e.g. adding a new item).
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 2.6 Model Component
 
-![Command Diagram](https://user-images.githubusercontent.com/75139323/113146529-5f677c80-9262-11eb-9cff-300d5496d089.png)
+![Model Diagram](https://user-images.githubusercontent.com/57165946/114408329-e1995e80-9bdb-11eb-99af-52120b495c09.png)
 
-The model component consists of `Item`, `ItemManager`, `Order` and `OrderManager` classes.
+The model component consists of four classes, namely, `Item`, `ItemManager`, `Order` and `OrderManager` classes. `Item` 
+and `Order` classes represent real-world item and order objects easyLog is tasked to keep track of. Note that the UML 
+diagram above omits less important details for more comprehensibility.
 
-* Item: Consists of items in the inventory.
-* ItemManager: Contains the item list e.g., it has operations to add / delete items in the list.
-* Order: Consists of orders by customers.
-* OrderManager: Contains the order list e.g., it has operations to add / delete orders in the list.
+1. `Item` class is used to store item attributes (i.e., item description, unit price, stock and sales). Primarily, `Item`
+  class has all necessary getter and setter methods for`itemManager` to modify a particular item's attributes when
+  necessary.
 
-[Return to Top](#1-introduction)
+2. `ItemManager` class stores the item list (the list of items existing in the inventory) and a founded item list (the
+  list of items found when the user gives `items find` command). Primarily, `ItemManager` includes methods which various
+  item-related commands (e.g., `ItemsAddCommand`) required to perform neccesary operations to modify (e.g., add) items in
+  the item list.
+
+3. `Order` class is used to store order attributes (i.e., customer's name, descriptions of items ordered, quantities of
+  items ordered and whether the order is done). Primarily, `Order` class has all necessary getter and setter methods
+  for `orderManager` to modify a particular order's attributes when necessary.
+
+4. `OrderManager` class stores the order list (the list of orders placed by customers) and a founded order list (the list
+  of orders founded when the user gives `orders find` command). Primarily, `OrderManager` has methods which various
+  orders-related commands (e.g., `OrdersAddCommand`) required to perform neccesary operations to modify (e.g., add)
+  orders in the orders list.
+
+[Return to Table Of Contents](#table-of-contents)
 
 ### 2.7 Storage Component
 
@@ -208,8 +218,10 @@ The Storage component consists of 3 different classes
 1. `Storage` class to initialize required classes for it's subclasses.
 2. `SaveData` class to deal with the loading, saving and creation of save data.
 3. `Receipt` class to deal with the generation of receipts when an order is done.
+4. `Logging` class to setup logging environment and allow log messages to be entered. (Not shown in storage diagram)
+`Logging` class is not related to the above 3 classes.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 2.8 Common Component
 
@@ -217,61 +229,77 @@ The Common component consists of 2 different classes:
 1. `Constants` class to store all variables that are frequently used in the various components.
 2. `Messages` class to store all the texts for the UI to print onto the command line.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
+
+***
 
 ## 3. Implementation
 
 In this section, we explain the details and implementation of the more important features of easyLog.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 3.1. App Initialization
 
 ![App Initialization Diagram](https://user-images.githubusercontent.com/57165946/113379984-99916500-93ad-11eb-8fa7-f3c00fd71163.png)
 
 As seen from the sequence diagram above, upon initialization,
-1. The main class located in EasyLog will show the user a greeting message.
-2. Proceed to load save file if any. Details on the [implementation of loading save files](#32-loading-of-save-data) 
+1. The main class located in `EasyLog` will show the user a greeting message.
+2. Proceed to load save file if any. Details on the [implementation of loading save files](#33-loading-of-save-data) 
    can be seen here
 3. Set up the environment for logging messages to be logged.
 4. Proceed to ask for user's input.
 5. Write a log to show that user's input has been requested.
 6. Proceed to process user input to determine the type of command to execute. More details on the implementation of
-processing user input will be discussed in future sections.
+[processing inputs](#32-processing-of-user-inputs) will be discussed in the next section.
 7. Repeat steps 4-6 if user does not input exit command.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
+
+### 3.2. Processing of user inputs
+
+As mentioned in the design of the [Parser component](#24-parser-component), the Parser component handles the processing
+of inputs.
+
+We will now explain the steps to how user inputs is being processed:
+1. User input is firstly being split using the `splitCommandWordAndArgs` method in the `Parser` class. This is to
+determine the type of feature that the user wants to use e.g., `items` feature, `orders` feature, `help` feature, or the
+   `exit`feature.
+2. The `processUserInput` in the `Parser` class then determines the type of feature to be executed using
+the command word provided by the user. If `items` and `orders` feature are being executed, the remaining arguments being
+   typed by the user is being processed using the `processItemsInput` method from the `ItemsParser` class or the
+   `processOrdersInput` method using the `OrdersParser` class respectively.
+3. Note that if `help` command or `exit` command is being inputted by the user, the `processUserInput` from the `Parser`
+class will directly call the `execute` method of the relevant command.
+4. `processItemsInput` and `processOrdersInput` will then also use the `splitCommandWordAndArgs` method to similarly
+determine the type of `items` and `orders` features to execute e.g., `items add`, `orders add`, `items update` etc.
+5. After determining the type of `items` and `orders` feature to execute, the `execute` methods of the respective 
+   commands will be called by either the `processItemsInput` or `processOrdersInput` method and the command arguments
+   would also be passed into the `execute` method for the respective commands in order to properly execute the command
+   inputted by the user.
+
+[Return to Table Of Contents](#table-of-contents)
    
-### 3.2. Loading of Save Data
+### 3.3. Loading of save data
 
 ![LoadFile Diagram](https://user-images.githubusercontent.com/57165946/114254030-ad594e80-99df-11eb-8c03-730630b57d49.png)
 
-As seen form the sequence diagram above (note that some trivial details are removed from the diagram), when loadFile 
-method in SaveData class is being executed,
+As seen form the sequence diagram above (note that some trivial details are removed from the diagram), when `loadFile` 
+method in the `SaveData` class is being executed,
 1. Show the user a message that it is looking for save data.
-2. Creates a file object with pathname of the save file.   
-3. Check whether the save file exists through the file object previously created.
-4. If the save file does not exist, it will terminate the loadFile method and show the user that no save data was found.
+2. Creates a `File` object with pathname of the save file.   
+3. Check whether the save file exists through the `File` object previously created.
+4. If the save file does not exist, it will terminate the `loadFile` method and show the user that no save data was found.
 5. If the save file exists, it will show the user a message that it is loading the save data.
-6. Create a scanner object using the save file.
+6. Create a `Scanner` object using the save file.
 7. Read the first line in the save data.
 8. Process the line of input from the save data.
 9. Repeat step 6 and 7 until there no more lines to be read from the save data.
 10. Show the user that the save data has been successfully loaded.
 
-[Return to Top](#1-introduction)
-    
-### 3.3. Exit Command and Creation or Saving of Save Data
+[Return to Table Of Contents](#table-of-contents)
 
-[Return to Top](#1-introduction)
-
-### 3.4. Orders Done and Generation of Receipts 
-
-[Return to Top](#1-introduction)
-
-***
-
-### 3.5. Items Add
+### 3.4. Items Add
 ![itemsAdd Diagram](https://user-images.githubusercontent.com/77385307/114296774-a7e32d80-9adf-11eb-9def-9fe89db8f5fc.png)
 The `items add` feature is designed to allow users to add items to the system, including the item name, price and stock
 of each item. As seen from the sequence diagram above (note that some trivial details are removed from the diagram),
@@ -287,9 +315,45 @@ when an item is added into the system:
 6. After the item is added successfully, `UI` sends back the confirmation message to user by calling `showAddItem(Item)`
    method.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
-***
+### 3.5. Items Update
+Please note that less important details are omitted for better comprehensibility. For instance, in the first diagram of this section, 
+only the interactions after `ItemsUpdateCommand.execute()` is modelled. In the second diagram of this section, 
+details of `itemsPromptPriceCommand` and `itemsPromptPriceCommand` are omitted.
+
+![Items Update Figure 1](https://user-images.githubusercontent.com/75139323/114384288-1a780a00-9bc1-11eb-99c1-5c4af2e119f3.png)
+The diagram above shows the first stage of `itemsUpdateCommand`, after the user executes the `itemUpdateCommand` 
+by typing `items update` and easyLog invokes `itemsParser`.
+
+1. `ItemUpdateCommand` first gets the item size from `ItemManager`.
+2. `ItemUpdateCommand` calls askForItemIndex from `UI` to print a message that an item index is required.
+3. `ItemUpdateCommand` creates a new `ItemsListCommand` object and uses `ItemsListCommand.execute()` to get the item list
+for the user.
+4. `ItemUpdateCommand` prompts the user for input by calling `askForUserInput()` from `UI`.
+5. `ItemUpdateCommand` gets the item size from `ItemManager` again.
+6. If the input given by the user is invalid (not a valid item index), start from step 2 again.
+7. `ItemUpdateCommand` calls `askForItemFieldToBeUpdated` and askForUserInput() from `UI` to print a question message 
+   and get the user input.
+8. If the input given by the user is invalid (not `p` or `s`), start from step 7 again.
+
+![Items Update Figure 2](https://user-images.githubusercontent.com/75139323/114397749-9a0dd500-9bd1-11eb-9cff-72275205458f.png)
+Next,
+
+9. `ItemUpdateCommand` calls `processUpdateAttributeInput` of `ItemsParser`.
+
+If the user input is "p":
+
+10. `ItemsParser` calls `askForRevisedItemPrice` from `UI`. `ItemsParser` creates an object of 
+`ItemsPromptPriceCommand` and its `execute()` method is executed to ask the user for a valid `revisedItemPrice`. 
+The details are omitted to increase comprehensibility. If the item price given is not valid, the user needs to keep 
+entering it until it is valid. 
+11. `ItemsParser` calls `ItemManager` to set the revised price, getting the item of interest before calling `UI` to show
+it is updated correctly.
+
+If the user input is "s", the logic is largely similar to when it is "p". The explanations are omitted here to avoid repetition.
+
+[Return to Table Of Contents](#table-of-contents)
 
 ### 3.6. Orders Add
 
@@ -308,9 +372,7 @@ As seen from the sequence diagram above, when user wants to add an Order.
 10. Orders added to order list.
 11. Ui shows order is added.
 
-[Return to Top](#1-introduction)
-
-***
+[Return to Table Of Contents](#table-of-contents)
 
 ### 3.7. Orders Delete
 ![OrdersDelete Diagram](https://user-images.githubusercontent.com/60382244/114287343-b528f980-9a98-11eb-8b65-c654d25f7ee9.png)
@@ -326,11 +388,60 @@ deleted
 8. The OrdersManager delete the order selected.
 9. The deleted order message is sent to the user.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
+
+### 3.8. Marking an order as done and generation of receipts
+
+The `orders done` feature and generation of receipts are split into 2 parts where the first sequence diagram shows the 
+implementation for `orders done` feature, and the second sequence diagram shows the implementation when generating a
+receipt.
+
+![Orders Done Command Diagram (1)](https://user-images.githubusercontent.com/57165946/114294627-8465b600-9ad2-11eb-9ace-c4b603834216.png)
+
+As seen from the sequence diagram above, when the `execute` method in `OrdersDoneCommand` class is executed,
+1. Processes user's input to determine the order index that the user wants to mark as done.
+2. Show a message to the user that the order has been marked as done.
+3. Mark the order as done using the `OrderManager` class.
+4. Generate a receipt using the details in the order that has been marked as done. (Implementation of generation of
+   receipt will be explained in the next sequence diagram).
+5. Delete the order from the current list of orders. This is so as to keep the list of orders with just orders that are
+not yet done or fulfilled as the user can view the done orders using the receipts generated.
+
+![Generating receipt Diagram](https://user-images.githubusercontent.com/57165946/114278283-a5da8980-9a61-11eb-9e90-8a15900c890f.png)
+
+As seen from the sequence diagram above, when the `generateReceipt` method from the `Receipt` class is called,
+1. It gets the customer name of the order that was marked as done using the `getCustomerName method `from the 
+   `OrderManager` class.
+2. Shows the user that the receipt is being generated.
+3. Create a new directory named `Receipts` if the directory does not already exist in the folder that the `easyLog.jar`
+file is being executed from using the `File` class.
+4. Create a new receipt file to contain the details of the order also using the `File` class.
+5. `FileWriter` object called `fw` is then created to write the relevant order details into the receipt file that was 
+   previously created in step 4.
+6. Close the `fw` object using the `close` method when the order details are written finish into the receipt file.
+7. Show the user that the receipt has been generated.
+
+[Return to Table Of Contents](#table-of-contents)
+
+### 3.9. Exit command and creating and/or saving of save data
+
+![Exit and SaveFileDiagram (1)](https://user-images.githubusercontent.com/57165946/114295168-07d4d680-9ad6-11eb-8cb2-be6b09073112.png)
+
+As seen from the above sequence diagram, when the execute method of the `ExitCommand` class is being called,
+1. It calls the `saveFile` method from `SaveData` class.
+2. The `saveFile` method then creates a new `File` object called `saveData`.
+3. `saveData` object then checks if a save file previously exists, if the save file does not exists, it creates the
+save file using the `saveData` object.
+4. `FileWriter` object called `fw` is then called to write details like item details, orders details and receipt counter
+into the save file.
+5. Close the `fw` object using the `close` method when the order details are written finish into the save file.
+6. Show the user a message that the data has been saved into the save file.
+7. Exit the program using `System.exit(0)` method.
+
+[Return to Table Of Contents](#table-of-contents)
 
 ***
 
-[Return to Top](#1-introduction)
 ## 4. Documentation
 
 All documentation can be found under the `docs/` folder. Alternatively, visit
@@ -340,7 +451,7 @@ https://ay2021s2-cs2113t-t09-4.github.io/tp/ to browse all the document.
 * [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) is used to write the documentation.
 * [diagrams.net](https://draw.io/) (formerly draw.io) is used to create various UML diagrams. <br>
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ***
 
@@ -348,18 +459,21 @@ https://ay2021s2-cs2113t-t09-4.github.io/tp/ to browse all the document.
 
 In this section, we present different types of tests and how they can be run.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 5.1. Types of Tests
 There are primarily three types of tests:
 
-1. Unit tests targeting the lowest level methods/classes. <br>
-   e.g. TO BE ADDED
+1. Unit tests. Tests are conducted on the fundamental level methods/classes. <br>
+   e.g. `seedu.easyLog.commons.ConstantsTest`
 
-2. Integration tests that are checking the integration of multiple code units (those code units are assumed to be working).
-   e.g. TO BE ADDED
+2. Integration tests. Tests are conducted on checking the integration of multiple code units. <br>
+   e.g. `seedu.easyLog.storage.OrderManagerTest`
 
-[Return to Top](#1-introduction)
+3. Hybrids of unit and integration tests. Tests are conducted on multiple code units as well as their logic connections. <br>
+   e.g. `seedu.easyLog.parser.ItemsParserTest`
+
+[Return to Table Of Contents](#table-of-contents)
 
 ### 5.2. Running Tests
 There are multiple ways to run tests for easyLog. Two of them are listed below:
@@ -383,23 +497,16 @@ Method 2: Using Gradle <br>
 We invite you to visit [Appendix E: Instructions for Manual Testing](#appendix-e-instructions-for-manual-testing) to 
 learn more about manual testing for easyLog.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
-1. Unit tests. Tests are conducted on the fundamental level methods/classes. <br>
-e.g. `seedu.easyLog.commons.ConstantsTest`
-
-2. Integration tests. Tests are conducted on checking the integration of multiple code units. <br>
-e.g. `seedu.easyLog.storage.OrderManagerTest`
-
-3. Hybrids of unit and integration tests. Tests are conducted on multiple code units as well as their logic connections. <br>
-e.g. `seedu.easyLog.parser.ItemsParserTest`
+***
 
 ## 6. Dev Ops
 
 Int this section, we discuss several important aspects of Dev Ops which can shorten the system development life cycle 
 and provide continuous delivery with high software quality.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 6.1. Build Automation
 We use Gradle for tasks related to build automation such as running tests and checking code for style compliance.
@@ -413,7 +520,7 @@ To run all build-related tasks:
 3. A message stating `BUILD SUCCESSFUL` will be shown in the terminal if all tasks are run successfully. Otherwise, 
    refer to the error report provided to resolve the issues before trying again.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 6.2. Continuous Integration
 We use Github Actions for continuous integration. No setup will be required for users who fork from the 
@@ -422,15 +529,15 @@ AY2021S2-CS2113T-T09-4/tp repository.
 Whenever you create a pull request to the master branch of AY2021S2-CS2113T-T09-4/tp:
 - Various checks will automatically be executed for your pull request.
 - If any checks fail, please view the cause of any errors shown and fix them in your branch before pushing it again.
-- Ensure that all checks pass before the reviwer merges your pull request.
+- Ensure that all checks pass before the reviewer merges your pull request.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 6.3. Coverage Report
 We use the IntelliJ IDEA’s coverage analysis tool for coverage reporting. A tutorial on how to install and use this tool
 can be found [here](https://www.youtube.com/watch?v=yNYzZvyA2ik).
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 6.4. Making a Release
 
@@ -442,7 +549,7 @@ You can follow the steps below to make a new release:
 3. Tag the repository with the new version number (e.g. `v2.1`).
 4. Create a new release using Github and upload the JAR file found in step 3.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### 6.5. Managing Dependencies
 Currently, the [Gson library](#https://github.com/google/gson) is being used for JSON parsing, and the 
@@ -451,7 +558,9 @@ in easyLog. Below are 2 ways to manage these dependencies.
 - Use Gradle to manage and automatically download dependencies (recommended).
 - Manually download and include those libraries in the repo (this requires extra work and bloats the repository size).
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
+
+***
 
 ## Appendices
 
@@ -471,7 +580,7 @@ in easyLog. Below are 2 ways to manage these dependencies.
 A simple database application that helps target user to store and access a collection of data electronically from a
 computer system.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
 
 ### Appendix B: User Stories
 
@@ -490,8 +599,6 @@ computer system.
 |v1.0|user|view all orders-related commands|refer to them when I forget how to use the orders feature|
 |v2.0|user|create, save data and load existing data|work on another device with the saved data|
 |v2.0|expert user|create, save data and load existing data|edit the data file directly|
-|v2.0|user|delete multiple items|save time by not deleting items one by one|
-|v2.0|user|delete multiple orders|save time by not deleting orders one by one|
 |v2.0|user|find relevant items|save time by looking through relevant items|
 |v2.0|user|find relevant orders|save time by looking through relevant orders|
 |v2.0|user|add a new item with a specified unit price|calculate order price more easily|
@@ -501,7 +608,10 @@ computer system.
 |v2.0|user|specify the quantity of a item to add to the order|calculate the total price of the order and update the item inventory correctly.|
 |v2.0|user|check the total price of a specific order|feedback to customer when they ask for it and do not have to look through the order list.|
 |v2.0|user|update the status of an order|differentiate the orders by their status.|
-[Return to Top](#1-introduction)
+|v2.0|user|view receipt of a order that is done|check done orders and deal with taxes.|
+|v2.1|user|view sales statistics |know what is my most popular items and update stocks accordingly.|
+
+[Return to Table Of Contents](#table-of-contents)
 
 ### Appendix C: Non-Functional Requirements
 
@@ -509,7 +619,7 @@ computer system.
 - A user should be able to respond to any command in less than 2 seconds.
 - A user should be able to complete majority of tasks faster using CLI than GUI.
 
-[Return to Top](#1-introduction)
+[Return to Table Of Contents](#table-of-contents)
   
 ### Appendix D: Glossary
 
@@ -520,7 +630,8 @@ Abbreviation | Full Title | Definition
 **CLI** | Command Line Interface | A program that accepts text inputs to execute operating system functions
 **GUI** | Graphical User Interface | An interface that allows users to interact through graphical icons
 **Mainstream OS** | Windows, Linux, Unix, OS-X | Operating systems
-[Return to Top](#1-introduction)
+
+[Return to Table Of Contents](#table-of-contents)
 
 ### Appendix E: Instructions for Manual Testing
 Given below are instructions to test easyLog manually.
@@ -628,4 +739,7 @@ testers are expected to do more *exploratory* testing.
 1. Exit easyLog.<br><br>
    *Testcase*: Input `exit`.<br><br>
    *Expected*: easyLog exits with exit message.<br><br>
-[Return to Top](#1-introduction)
+
+[Return to Table Of Contents](#table-of-contents)
+   
+***

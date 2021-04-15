@@ -5,6 +5,7 @@ import seedu.easylog.exceptions.WrongItemsStatsCommandException;
 import seedu.easylog.model.ItemManager;
 
 public class ItemsStatisticsCommand extends ItemsCommand {
+
     /**
      * Print out the most popular item (the item which has most number of sales).
      * If ties, all items having the most number of sales will be shown.

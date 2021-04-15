@@ -3,15 +3,14 @@ package seedu.easylog.commands.itemscommands;
 import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
-import seedu.easylog.exceptions.ItemNotFoundException;
 import seedu.easylog.model.ItemManager;
 
 public class ItemsDeleteCommand extends ItemsCommand {
+
     /**
      * Deletes a single item from the list of items.
      */
-    public void execute(String itemsArg, ItemManager itemManager) throws EmptyNumberException, InvalidNumberException,
-            ItemNotFoundException {
+    public void execute(String itemsArg, ItemManager itemManager) throws EmptyNumberException, InvalidNumberException {
         if (itemsArg.equals("")) {
             throw new EmptyNumberException();
         }

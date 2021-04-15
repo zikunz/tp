@@ -22,6 +22,7 @@ import seedu.easylog.model.ItemManager;
 
 
 public class ItemsUpdateCommand extends ItemsCommand {
+
     /**
      * Updates a particular field of an item of interest in the system.
      *
@@ -61,14 +62,11 @@ public class ItemsUpdateCommand extends ItemsCommand {
                 if (itemIndexInDouble < 0 || itemIndexInDouble >= size) {
                     throw new InvalidItemIndexException();
                 }
-                int itemIndex = Integer.parseInt(itemIndexInString) - Constants.ARRAY_OFFSET;
                 stopAskingForItemIndex = true;
             } catch (EmptyItemIndexException e) {
                 ui.showEmptyItemIndexInput();
-            } catch (InvalidItemIndexException e) {
+            } catch (InvalidItemIndexException | NumberFormatException e) {
                 ui.showInvalidItemIndexInput();
-            } catch (NumberFormatException e) {
-                ui.showNonIntegerOrNonNumericItemIndexForUpdate();
             } catch (NullItemIndexException e) {
                 ui.showNullItemIndex();
             }

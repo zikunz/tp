@@ -9,6 +9,7 @@ import seedu.easylog.model.OrderManager;
 import java.util.ArrayList;
 
 public class OrdersClearCommand extends OrdersCommand {
+
     /**
      * Clears all orders in the system.
      */
@@ -22,9 +23,6 @@ public class OrdersClearCommand extends OrdersCommand {
         }
 
         assert ui != null : "ui should not be null";
-        assert orderManager != null : "orderManager should not be null";
-
-        ui.showClearedOrderList();
 
         ArrayList<Order> orderList = orderManager.getOrderList();
         int orderListSize = orderList.size();
@@ -36,5 +34,6 @@ public class OrdersClearCommand extends OrdersCommand {
 
         orderManager.clearOrderList();
         logging.writeInfoLevelLog("All orders are cleared.");
+        ui.showClearedOrderList();
     }
 }

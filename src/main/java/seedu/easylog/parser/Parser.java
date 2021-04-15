@@ -9,6 +9,7 @@ import seedu.easylog.exceptions.InvalidFileInputException;
 import seedu.easylog.exceptions.NoItemsStatisticsCanBeGivenException;
 import seedu.easylog.model.ItemManager;
 import seedu.easylog.model.OrderManager;
+import seedu.easylog.storage.Logging;
 import seedu.easylog.storage.Receipt;
 import seedu.easylog.ui.Ui;
 
@@ -21,6 +22,7 @@ public class Parser {
 
     public static Receipt receipt = new Receipt();
     public static Ui ui = new Ui();
+    public static Logging logging = new Logging();
 
     /**
      * Splits the input to process the command, word and arguments.
@@ -29,6 +31,7 @@ public class Parser {
      * @return the splitted command, word and arguments
      */
     public static String[] splitCommandWordAndArgs(String rawUserInput) {
+        logging.writeInfoLevelLog("Splitting user input to command type and arguments.");
         String[] splitCommand = rawUserInput.split(" ", 2);
         return splitCommand.length == 2 ? splitCommand : new String[]{splitCommand[0], ""};
     }
@@ -43,23 +46,30 @@ public class Parser {
      */
     public void processUserInput(String rawUserInput, ItemManager itemManager, OrderManager orderManager)
             throws IOException {
+        logging.writeInfoLevelLog("Beginning to process user input.");
         String[] commandTypeAndParams = splitCommandWordAndArgs(rawUserInput);
         String commandType = commandTypeAndParams[0];
         String commandArgs = commandTypeAndParams[1];
         switch (commandType) {
         case (Constants.COMMAND_HELP):
+            logging.writeInfoLevelLog("Help command inputted by user to be executed.");
             new HelpCommand().execute();
+            logging.writeInfoLevelLog("Help command has been successfully executed.");
             break;
         case (Constants.COMMAND_EXIT):
+            logging.writeInfoLevelLog("Exit command inputted by user to be executed.");
             new ExitCommand().execute(itemManager, orderManager);
             break;
         case (Constants.COMMAND_ITEMS):
+            logging.writeInfoLevelLog("Processing items-related command inputted by user.");
             ItemsParser.processItemsInput(commandArgs, itemManager);
             break;
         case (Constants.COMMAND_ORDERS):
+            logging.writeInfoLevelLog("Processing orders-related command inputted by user.");
             OrdersParser.processOrdersInput(commandArgs, itemManager, orderManager);
             break;
         default:
+            logging.writeWarningLevelLog("Invalid command has been inputted by user.");
             ui.showInvalidCommand();
         }
     }

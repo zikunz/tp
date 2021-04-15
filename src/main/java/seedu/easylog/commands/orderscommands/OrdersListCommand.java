@@ -9,8 +9,7 @@ public class OrdersListCommand extends OrdersCommand {
      */
     public void execute(OrderManager orderManager) {
 
-        String rawOrderListOutput = orderManager.getOrderListPrintFormat();
+        String rawOrderListOutput = orderManager.getOrderListPrintFormat(orderManager.getOrderList());
         ui.showOrderList(rawOrderListOutput);
-
     }
 }

@@ -2,14 +2,6 @@ package seedu.easylog.common;
 
 public class Messages {
 
-    public static final String MESSAGE_LOGO = "                       _                 \n"
-            + "                      | |                \n"
-            + "   ___  __ _ ___ _   _| |     ___   __ _ \n"
-            + "  / _ \\/ _` / __| | | | |    / _ \\ / _` |\n"
-            + " |  __/ (_| \\__ \\ |_| | |___| (_) | (_| |\n"
-            + "  \\___|\\__,_|___/\\__, |______\\___/ \\__, |\n"
-            + "                  __/ |             __/ |\n"
-            + "                 |___/             |___/ \n";
     public static final String MESSAGE_LINE = "____________________________________________________________\n";
     public static final String MESSAGE_LIST_ITEMS = MESSAGE_LINE
             + "Here is the list of items.\n"
@@ -34,8 +26,7 @@ public class Messages {
             + "  1. items                          Show items-related commands\n"
             + "  2. items add <item_name>          Add an item\n"
             + "  3. items list                     List all items\n"
-            + "  4.1 items delete <item_index>     Delete an item\n"
-            + "  4.2 items delete <item_name>      Delete an item\n"
+            + "  4. items delete <item_index>      Delete an item\n"
             + "  5. items clear                    Empty all items\n"
             + "  6. items find <item_name>         Find an item\n"
             + "  7. items update                   Update the detail of an item\n"
@@ -43,15 +34,13 @@ public class Messages {
             + "  9. orders                         Show orders-related commands\n"
             + "  10. orders add <order_name>       Add an order\n"
             + "  11. orders list                   List all orders\n"
-            + "  12.1 orders delete <order_index>  Delete an order\n"
-            + "  12.2 orders delete <order_name>   Delete an order\n"
+            + "  12. orders delete <order_index>   Delete an order\n"
             + "  13. orders clear                  Empty all orders\n"
             + "  14. orders price <order_index>    Check the total price of an order\n"
             + "  15. orders done <order_index>     Update the status of an order\n"
             + "  16. orders find <order_name>      Find an order\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_GREETING = MESSAGE_LOGO
-            + MESSAGE_LINE
+    public static final String MESSAGE_GREETING = MESSAGE_LINE
             + "Hello! I'm easyLog!\n"
             + "What can I do for you? Enter help to view commands.\n"
             + MESSAGE_LINE;
@@ -61,6 +50,7 @@ public class Messages {
     public static final String MESSAGE_INVALID_COMMAND = MESSAGE_LINE
             + "OOPS!!! I'm sorry! I don't know what that means.\n"
             + "Please input again! :)\n"
+            + "Type <help> to see the available command and their format.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ITEM_NAME = MESSAGE_LINE
             + "OOPS!!! The item name is missing!\n"
@@ -81,13 +71,15 @@ public class Messages {
             + "Empty item price and stock.\n";
     public static final String MESSAGE_NULL_ITEM_PRICE_AND_STOCK = MESSAGE_LINE
             + "Null item price and stock.\n";
+    public static final String MESSAGE_NON_NUMERIC_OR_INTEGER_ITEM_PRICE = MESSAGE_LINE
+            + "Item price entered is either non-numeric or exceed double range in Java.\n";
     public static final String MESSAGE_NON_NUMERIC_ITEM_PRICE = MESSAGE_LINE
             + "Non-numeric item price.\n";
     public static final String MESSAGE_NON_NUMERIC_OR_INTEGER_ITEM_STOCK = MESSAGE_LINE
             + "The item stock is either not a number or out of the int value range in Java.\n";
     public static final String MESSAGE_EMPTY_ORDER_CUSTOMER_NAME = MESSAGE_LINE
-            + "OOPS!!! The customer name is missing!\n"
-            + "Please complete the order information! :)\n"
+            + "The customer name is missing.\n"
+            + "Please complete the order information then try orders add command again.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ORDER_NUMBER = MESSAGE_LINE
             + "OOPS!!! The order number is missing!\n"
@@ -121,8 +113,7 @@ public class Messages {
             + "Items-Related Options:\n"
             + "  1. items add <item_name>          Add an item\n"
             + "  2. items list                     List all items\n"
-            + "  3.1 items delete <item_index>     Delete an item\n"
-            + "  3.2 items delete <item_name>      Delete an item\n"
+            + "  3. items delete <item_index>      Delete an item\n"
             + "  4. items clear                    Empty all items\n"
             + "  5. items find <item_name>         Find an item\n"
             + "  6. items update                   Update the detail of an item\n"
@@ -267,27 +258,14 @@ public class Messages {
             + "Empty item index.\n";
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_STOCK = MESSAGE_LINE
             + "What is the revised item stock? Enter the same stock if you no longer want to update the item stock.\n";
-    public static final String MESSAGE_EMPTY_ORDER = MESSAGE_LINE
-            + "No items added to the order. Please input `orders add` "
-            + "command again!\n"
-            + MESSAGE_LINE;
     public static final String MESSAGE_NOT_ENOUGH_STOCK = MESSAGE_LINE
             + "Not enough stock to be added into the order.\n"
             + "Please retry and type valid stock number.\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_CONTINUE_ADDING_ITEM_TO_ORDER = MESSAGE_LINE
-            + "Type <stop> to stop adding items to order,"
-            + " else continue entering items in the same format.\n"
-            + "Note that you need at least 1 item in the order.\n"
-            + MESSAGE_LINE;
     public static final String MESSAGE_INVALID_WHILE_ADDING_ITEM_TO_ORDER = MESSAGE_LINE
             + "Invalid input format while adding items to order.\n"
-            + "Note that <item_index> and <item_quantity> needs to be whole numbers.\n"
+            + "Note that <item_index> and <item_quantity> needs to be whole numbers or integers.\n"
             + "Please retry adding items to the order.\n"
-            + MESSAGE_LINE;
-    public static final String MESSAGE_INVALID_FORMAT_ORDERS_ADD = MESSAGE_LINE
-            + "Invalid format for inputting of items into order.\n"
-            + "Please retry orders add command.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_ITEM_NOT_FOUND = MESSAGE_LINE
             + "Sorry! No relevant item is found in the warehouse.\n"
@@ -306,23 +284,12 @@ public class Messages {
     public static final String MESSAGE_ERROR_WHILE_SAVING = "Error while saving. Save file may or may not be "
             + "saved correctly\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_REPEAT_ORDER = MESSAGE_LINE
-            + "OOPS!! This order already exist.\n"
-            + "Please use a different name for ordering. Thank you!\n"
-            + "To update an Order, please delete the original order and recreate a new one.\n"
-            + "For completed order, please delete and create a new order to proceed on.\n"
-            + MESSAGE_LINE;
-    public static final String MESSAGE_ITEM_IS_ALREADY_EXISTING = MESSAGE_LINE
-            + "The item entered already exists in the system.\n"
-            + "What is the new stock to be added?\n";
-    public static final String MESSAGE_PROMPT_ADDITIONAL_ITEM_STOCK = "Please enter the additional stock of the item.\n"
-            + MESSAGE_LINE;
     public static final String MESSAGE_SHOW_MOST_POPULAR_ITEM = MESSAGE_LINE + "The most popular item is ";
     public static final String MESSAGE_SHOW_MOST_POPULAR_ITEMS = MESSAGE_LINE + "The most popular items are ";
-    public static final String SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEM_IS_NOT_ENOUGH = ". Please consider stocking "
-            + "it up if it is not enough :)\n"
+    public static final String SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEM_IS_NOT_ENOUGH = ".\nPlease consider stocking"
+            + " it up if it is not enough :)\n"
             + MESSAGE_LINE;
-    public static final String SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEMS_ARE_NOT_ENOUGH = ". Please consider "
+    public static final String SHOW_CONSIDER_STOCK_UP_IF_MOST_POPULAR_ITEMS_ARE_NOT_ENOUGH = ".\nPlease consider "
             + "stocking them up if they are not enough :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_SHOW_NO_ITEMS_TIPS_CAN_BE_GIVEN = MESSAGE_LINE
@@ -343,6 +310,16 @@ public class Messages {
             + "Customer name inputted is too lengthy.\n"
             + "Note that the customer name length limit is 30 characters including spaces.\n"
             + "Please try orders add <customer_name> again if you wish to add an order.\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_INVALID_INVENTORY = MESSAGE_LINE
+            + "All items in inventory have stock 0.\n"
+            + "Use <items update> feature first to update the stocks of the item\n"
+            + "in the inventory before continuing to add an order.\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_UNKNOWN_ERROR_OCCURRED = MESSAGE_LINE
+            + "Unknown error has occurred while using easyLog.\n"
+            + "Kindly follow command format using <help> to prevent such errors.\n"
+            + "Please restart command from the beginning to try again.\n"
             + MESSAGE_LINE;
 }
 

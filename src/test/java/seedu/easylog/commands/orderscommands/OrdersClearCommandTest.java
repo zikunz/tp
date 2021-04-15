@@ -1,63 +1,107 @@
-//package seedu.easylog.commands.orderscommands;
-//
-//import org.junit.jupiter.api.DisplayName;
-//import org.junit.jupiter.api.Test;
-//import seedu.easylog.exceptions.OrderListAlreadyClearedException;
-//import seedu.easylog.model.Item;
-//import seedu.easylog.model.ItemManager;
-//import seedu.easylog.model.Order;
-//import seedu.easylog.model.OrderManager;
-//import seedu.easylog.parser.OrdersParser;
-//
-//import java.util.ArrayList;
-//
-//import static org.junit.jupiter.api.Assertions.assertSame;
-//
-//class OrdersClearCommandTest {
-//    @Test
-//    @DisplayName("(If Any, All Orders) Should Be Cleared Correctly")
-//    public void ordersClearCommand_shouldBeClearedCorrectly() throws OrderListAlreadyClearedException {
-//        OrdersClearCommand ordersClearCommand = new OrdersClearCommand();
-//        OrderManager secondOrderManager = new OrderManager();
-//        OrdersParser ordersParser = new OrdersParser();
-//        ItemManager itemManager = new ItemManager();
-//
-//        // 1 order
-//        String nameForKexuan = "Kexuan";
-//        Item firstItem = new Item("iPhone X charger");
-//        itemManager.addItem(firstItem);
-//        String itemIndexForKexuan = "1";
-//        ArrayList<Item> itemForKexuan = ordersParser.processItemsAddedToOrder(itemIndexForKexuan, itemManager);
-//
-//        Order firstOrder = new Order(nameForKexuan, itemForKexuan);
-//        secondOrderManager.addOrder(firstOrder);
-//
-//        ordersClearCommand.execute(secondOrderManager);
-//        assertSame(0, secondOrderManager.getSize());
-//
-//        // multiple orders
-//        String nameForYiwen = "Yiwen";
-//        String nameForQixiong = "Qixiong";
-//
-//        Item secondItem = new Item("Competitive Programming 3");
-//        Item thirdItem = new Item("Competitive Programming 4");
-//
-//        itemManager.addItem(secondItem);
-//        itemManager.addItem(thirdItem);
-//
-//        String itemIndexForYiwen = "2";
-//        String itemsIndexForQixiong = "3";
-//
-//        ArrayList<Item> itemForYiwen = ordersParser.processItemsAddedToOrder(itemIndexForYiwen, itemManager);
-//        ArrayList<Item> itemForQixiong = ordersParser.processItemsAddedToOrder(itemsIndexForQixiong, itemManager);
-//
-//        Order secondOrder = new Order(nameForYiwen, itemForYiwen);
-//        Order thirdOrder = new Order(nameForQixiong, itemForQixiong);
-//
-//        secondOrderManager.addOrder(secondOrder);
-//        secondOrderManager.addOrder(thirdOrder);
-//
-//        ordersClearCommand.execute(secondOrderManager);
-//        assertSame(0, secondOrderManager.getSize());
-//    }
-//}
+package seedu.easylog.commands.orderscommands;
+
+import org.junit.jupiter.api.Test;
+import seedu.easylog.exceptions.OrderListAlreadyClearedException;
+import seedu.easylog.exceptions.WrongItemsClearCommandException;
+import seedu.easylog.exceptions.WrongOrdersClearCommandException;
+import seedu.easylog.model.Item;
+import seedu.easylog.model.ItemManager;
+import seedu.easylog.model.Order;
+import seedu.easylog.model.OrderManager;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+class OrdersClearCommandTest {
+    OrdersClearCommand ordersClearCommand = new OrdersClearCommand();
+    OrderManager orderManager = new OrderManager();
+    ItemManager itemManager = new ItemManager();
+
+    @Test
+    public void clear_noOrder_failure() {
+        // No item to clear
+        assertThrows(OrderListAlreadyClearedException.class, () -> {
+            ordersClearCommand.execute("", itemManager, orderManager);
+        });
+    }
+
+
+    @Test
+    public void clear_extraDescription_failure() {
+        // 1 order
+        String itemName = "iPhone X charger";
+        BigDecimal itemPrice = new BigDecimal(1499.50);
+        int itemStock = 10;
+        Item firstItem = new Item(itemName, itemPrice, itemStock);
+        itemManager.addItem(firstItem);
+        int itemIndex = 0;
+        ArrayList<Item> items = new ArrayList<>();
+        ArrayList<Integer> stocks = new ArrayList<>();
+        stocks.add(itemStock);
+        items.add(itemManager.getItem(itemIndex));
+
+        String customerName = "Kexuan";
+        Order firstOrder = new Order(customerName, items, stocks);
+        orderManager.addOrder(firstOrder);
+        assertEquals(1, orderManager.getSize());
+        assertThrows(WrongOrdersClearCommandException.class, () -> {
+            ordersClearCommand.execute("WrongOrdersClearCommandException", itemManager, orderManager);
+        });
+
+    }
+
+
+    @Test
+    public void clear_oneOrder_success() throws OrderListAlreadyClearedException, WrongOrdersClearCommandException {
+        // 1 order
+        String itemName = "iPhone X charger";
+        BigDecimal itemPrice = new BigDecimal(1499.50);
+        int itemStock = 10;
+        Item firstItem = new Item(itemName, itemPrice, itemStock);
+        itemManager.addItem(firstItem);
+        int itemIndex = 0;
+        ArrayList<Item> items = new ArrayList<>();
+        ArrayList<Integer> stocks = new ArrayList<>();
+        stocks.add(itemStock);
+        items.add(itemManager.getItem(itemIndex));
+
+        String customerName = "Kexuan";
+        Order firstOrder = new Order(customerName, items, stocks);
+        orderManager.addOrder(firstOrder);
+        assertEquals(1, orderManager.getSize());
+        ordersClearCommand.execute("", itemManager, orderManager);
+        assertEquals(0, orderManager.getSize());
+    }
+
+    @Test
+    public void clear_multipleOrder_success() throws OrderListAlreadyClearedException,
+            WrongOrdersClearCommandException {
+        // multiple orders
+        String itemName = "iPhone X charger";
+        BigDecimal itemPrice = new BigDecimal(1499.50);
+        int itemStock = 100;
+        Item firstItem = new Item(itemName, itemPrice, itemStock);
+        int itemIndex = 0;
+
+        itemManager.addItem(firstItem);
+        ArrayList<Item> items = new ArrayList<>();
+        ArrayList<Integer> stocks = new ArrayList<>();
+        stocks.add(itemStock / 2);
+        items.add(itemManager.getItem(itemIndex));
+
+        String customer1 = "Yiwen";
+        String customer2 = "Qixiong";
+        Order firstOrder = new Order(customer1, items, stocks);
+        Order secondOrder = new Order(customer2, items, stocks);
+        orderManager.addOrder(firstOrder);
+        assertEquals(1, orderManager.getSize());
+        orderManager.addOrder(secondOrder);
+        assertEquals(2, orderManager.getSize());
+        ordersClearCommand.execute("", itemManager, orderManager);
+        assertEquals(0, orderManager.getSize());
+    }
+
+}

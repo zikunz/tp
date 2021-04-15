@@ -5,11 +5,13 @@ import seedu.easylog.exceptions.WrongItemsClearCommandException;
 import seedu.easylog.model.ItemManager;
 
 public class ItemsClearCommand extends ItemsCommand {
+
     /**
      * Clears all items in the system.
      */
     public void execute(String extraDescription, ItemManager itemManager) throws ItemListAlreadyClearedException,
             WrongItemsClearCommandException {
+
         if (!extraDescription.isEmpty()) {
             throw new WrongItemsClearCommandException();
         }
